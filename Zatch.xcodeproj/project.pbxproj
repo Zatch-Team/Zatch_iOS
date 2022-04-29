@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5706785F281C0C4900F48342 /* MainGatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5706785E281C0C4900F48342 /* MainGatchTableViewCell.xib */; };
+		57067861281C0C7900F48342 /* MainGatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57067860281C0C7900F48342 /* MainGatchCollectionViewCell.xib */; };
+		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
+		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
+		5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */; };
+		5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
 		575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */; };
 		575BF70127E0CBC6008D5B3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF70027E0CBC6008D5B3C /* ViewController.swift */; };
@@ -40,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5706785E281C0C4900F48342 /* MainGatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainGatchTableViewCell.xib; sourceTree = "<group>"; };
+		57067860281C0C7900F48342 /* MainGatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainGatchCollectionViewCell.xib; sourceTree = "<group>"; };
+		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGatchTableViewCell.swift; sourceTree = "<group>"; };
+		5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57067862281C13D500F48342 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				57067865281C167100F48342 /* UIFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		575BF6F027E0CBC6008D5B3C = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +131,15 @@
 			children = (
 				575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */,
 				575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */,
+				57067863281C143A00F48342 /* UIColor.swift */,
 				575BF70027E0CBC6008D5B3C /* ViewController.swift */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				57E31E9327E15BA3002DE500 /* MainViewController.swift */,
 				57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */,
+				5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */,
+				5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */,
 				57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */,
+				57067862281C13D500F48342 /* Font */,
 				57E31EC527E17F83002DE500 /* xib */,
 				575BF70527E0CBC8008D5B3C /* Assets.xcassets */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
@@ -147,6 +171,8 @@
 			children = (
 				57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */,
 				57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */,
+				5706785E281C0C4900F48342 /* MainGatchTableViewCell.xib */,
+				57067860281C0C7900F48342 /* MainGatchCollectionViewCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -255,9 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */,
+				57067861281C0C7900F48342 /* MainGatchCollectionViewCell.xib in Resources */,
 				57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */,
 				575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */,
 				57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */,
+				5706785F281C0C4900F48342 /* MainGatchTableViewCell.xib in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,11 +312,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */,
+				57067864281C143A00F48342 /* UIColor.swift in Sources */,
 				575BF70127E0CBC6008D5B3C /* ViewController.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
+				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */,
+				5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,12 @@ class MainViewController: ViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let cellNib: UINib = UINib(nibName: "MainZatchTableViewCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "mainZatchTableCell")
+        let zatchCellNib: UINib = UINib(nibName: "MainZatchTableViewCell", bundle: nil)
+        tableView.register(zatchCellNib, forCellReuseIdentifier: "mainZatchTableCell")
+        
+        let gatchCellNib : UINib = UINib(nibName: "MainGatchTableViewCell", bundle: nil)
+        tableView.register(gatchCellNib, forCellReuseIdentifier: "mainGatchTableCell")
+        
         tableView.showsVerticalScrollIndicator = false
     }
 
@@ -50,7 +54,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
             cell = tableView.dequeueReusableCell(withIdentifier: "mainZatchTableCell", for: indexPath)
             break
         case 1:
-            cell = UITableViewCell()
+            cell = tableView.dequeueReusableCell(withIdentifier: "mainGatchTableCell", for: indexPath)
             break
         default:
             cell = UITableViewCell()

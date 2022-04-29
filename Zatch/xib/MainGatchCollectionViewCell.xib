@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainGatchCollectionCell" id="bQS-Pu-GQk" customClass="MainGatchCollectionViewCell" customModule="Zatch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="219" height="188"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="862-dy-261">
+                <rect key="frame" x="0.0" y="0.0" width="219" height="188"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="efn-6o-dsf">
+                        <rect key="frame" x="0.0" y="0.0" width="219" height="133"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="녹차 아이스크림 1kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlG-wv-Vca">
+                        <rect key="frame" x="0.0" y="137" width="106.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1L-rG-3lv">
+                        <rect key="frame" x="16" y="159" width="3" height="2"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTC-os-V4q">
+                        <rect key="frame" x="0.0" y="162" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="efn-6o-dsf" firstAttribute="leading" secondItem="862-dy-261" secondAttribute="leading" id="2er-xr-A7b"/>
+                    <constraint firstItem="HlG-wv-Vca" firstAttribute="leading" secondItem="862-dy-261" secondAttribute="leading" id="7wh-Ey-RV2"/>
+                    <constraint firstAttribute="bottom" secondItem="qTC-os-V4q" secondAttribute="bottom" constant="5" id="G1S-6c-21h"/>
+                    <constraint firstItem="qTC-os-V4q" firstAttribute="leading" secondItem="862-dy-261" secondAttribute="leading" id="JFi-AX-zm0"/>
+                    <constraint firstItem="efn-6o-dsf" firstAttribute="top" secondItem="862-dy-261" secondAttribute="top" id="U0J-mz-te6"/>
+                    <constraint firstItem="HlG-wv-Vca" firstAttribute="top" secondItem="efn-6o-dsf" secondAttribute="bottom" constant="4" id="hps-fp-aMC"/>
+                    <constraint firstAttribute="trailing" secondItem="efn-6o-dsf" secondAttribute="trailing" id="x8F-no-1hV"/>
+                    <constraint firstItem="qTC-os-V4q" firstAttribute="top" secondItem="HlG-wv-Vca" secondAttribute="bottom" constant="9" id="zRu-JU-lbI"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="image" destination="efn-6o-dsf" id="RiD-Lm-IT9"/>
+                <outlet property="info" destination="qTC-os-V4q" id="Fpy-Nm-yAo"/>
+                <outlet property="title" destination="HlG-wv-Vca" id="sEO-Ng-bno"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="77.678571428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>
