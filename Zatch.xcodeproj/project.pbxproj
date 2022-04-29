@@ -15,6 +15,11 @@
 		575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */; };
 		575BF71427E0CBC8008D5B3C /* ZatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71327E0CBC8008D5B3C /* ZatchTests.swift */; };
 		575BF71F27E0CBC8008D5B3C /* ZatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */; };
+		57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31E9327E15BA3002DE500 /* MainViewController.swift */; };
+		57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */; };
+		57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */; };
+		57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */; };
+		57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		575BF71A27E0CBC8008D5B3C /* ZatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchUITests.swift; sourceTree = "<group>"; };
 		575BF72027E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E31E9327E15BA3002DE500 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchTableViewCell.swift; sourceTree = "<group>"; };
+		57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchTableViewCell.xib; sourceTree = "<group>"; };
+		57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,10 @@
 				575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */,
 				575BF70027E0CBC6008D5B3C /* ViewController.swift */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
+				57E31E9327E15BA3002DE500 /* MainViewController.swift */,
+				57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */,
+				57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */,
+				57E31EC527E17F83002DE500 /* xib */,
 				575BF70527E0CBC8008D5B3C /* Assets.xcassets */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
 				575BF70A27E0CBC8008D5B3C /* Info.plist */,
@@ -126,6 +140,15 @@
 				575BF72027E0CBC8008D5B3C /* Info.plist */,
 			);
 			path = ZatchUITests;
+			sourceTree = "<group>";
+		};
+		57E31EC527E17F83002DE500 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */,
+				57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */,
+				57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */,
 				575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */,
+				57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */,
 				575BF70127E0CBC6008D5B3C /* ViewController.swift in Sources */,
+				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
+				57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
