@@ -25,7 +25,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가치 더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8f5-Y7-cKN">
                         <rect key="frame" x="284" y="27" width="60" height="16"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -34,7 +34,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="188" id="Jf8-HR-dWZ"/>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="360" id="MWm-FL-Mup"/>
+                            <constraint firstAttribute="width" constant="344" id="MWm-FL-Mup"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="afU-pQ-8hM">
                             <size key="itemSize" width="128" height="128"/>
@@ -60,7 +60,7 @@
                 <outlet property="moreButton" destination="8f5-Y7-cKN" id="gh0-98-ieg"/>
                 <outlet property="title" destination="eIE-pB-4Bw" id="yqh-Ve-c1v"/>
             </connections>
-            <point key="canvasLocation" x="298.55072463768118" y="70.982142857142847"/>
+            <point key="canvasLocation" x="298.55072463768118" y="70.3125"/>
         </tableViewCell>
     </objects>
     <resources>

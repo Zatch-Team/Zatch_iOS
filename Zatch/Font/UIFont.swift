@@ -11,10 +11,13 @@ import UIKit
 extension UIFont{
     
     enum Family: String {
-        case bold, medium, regular
+        case Bold, Medium, Regular
     }
     
-    static func roboto(size: CGFloat = 10, family: Family = .regular) -> UIFont {
-        return UIFont(name: "pretendard_\(family)", size: size)!
+    static func pretendard(size: CGFloat = 14, family: Family = .Regular) -> UIFont! {
+        guard let font: UIFont = UIFont(name: "Pretendard-\(family)", size: size) else{
+            return nil
+        }
+        return font
     }
 }

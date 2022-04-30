@@ -25,19 +25,22 @@ class MainGatchTableViewCell: UITableViewCell {
         
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 219, height: 124)
+        flowLayout.itemSize = CGSize(width: 219, height: 188)
         flowLayout.minimumInteritemSpacing = CGFloat(20)
         colletionView.collectionViewLayout = flowLayout
         colletionView.showsHorizontalScrollIndicator = false
         
+        title.font = UIFont.pretendard(size: 16, family: .Bold)
+        moreButton.textColor = .zatchYellow
+        moreButton.font = UIFont.pretendard(size: 13, family: .Bold)
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
 
 }
 

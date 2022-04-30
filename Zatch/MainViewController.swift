@@ -9,6 +9,11 @@ import UIKit
 
 class MainViewController: ViewController {
     
+    @IBOutlet weak var townText: UILabel!
+    @IBOutlet weak var townButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var notificationButton: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -24,20 +29,27 @@ class MainViewController: ViewController {
         tableView.register(gatchCellNib, forCellReuseIdentifier: "mainGatchTableCell")
         
         tableView.showsVerticalScrollIndicator = false
+    
+        townButton.setTitle("", for: .normal)
+        searchButton.setTitle("", for: .normal)
+        notificationButton.setTitle("", for: .normal)
+        
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
 
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func moveSearchVC(_ sender: UIButton){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let searchVC : SearchViewController = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchViewController
+        self.navigationController?.pushViewController(searchVC, animated: true)
     }
-    */
 
 }
+
+//MARK: Extension
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     
@@ -60,12 +72,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
             cell = UITableViewCell()
             break
         }
+        cell.selectionStyle = .none
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
+    
     
     
 }

@@ -29,13 +29,16 @@ class MainZatchTableViewCell: UITableViewCell {
         flowLayout.minimumInteritemSpacing = CGFloat(20)
         collectionView.collectionViewLayout = flowLayout
         collectionView.showsHorizontalScrollIndicator = false
+        
+        title.font = UIFont.pretendard(size: 16, family: .Bold)
+    
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
     
 }
 

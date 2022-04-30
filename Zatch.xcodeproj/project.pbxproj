@@ -13,14 +13,24 @@
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
 		5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */; };
 		5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */; };
+		57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
+		57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
+		57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
+		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
 		575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */; };
-		575BF70127E0CBC6008D5B3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF70027E0CBC6008D5B3C /* ViewController.swift */; };
 		575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70227E0CBC6008D5B3C /* Main.storyboard */; };
 		575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70527E0CBC8008D5B3C /* Assets.xcassets */; };
 		575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */; };
 		575BF71427E0CBC8008D5B3C /* ZatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71327E0CBC8008D5B3C /* ZatchTests.swift */; };
 		575BF71F27E0CBC8008D5B3C /* ZatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */; };
+		5767752A281CD130000BC7CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57677529281CD130000BC7CD /* ViewController.swift */; };
+		5767752C281CDA4B000BC7CD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* SearchViewController.swift */; };
+		5780238E281D029F0085457D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5780238D281D029F0085457D /* UIButton.swift */; };
+		57802391281D20FD0085457D /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802390281D20FD0085457D /* SearchCollectionViewCell.swift */; };
+		57802393281D21180085457D /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57802392281D21180085457D /* SearchCollectionViewCell.xib */; };
+		57802396281D25A70085457D /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802395281D25A70085457D /* UICheckBox.swift */; };
+		57802398281D27550085457D /* UICheckBoxProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802397281D27550085457D /* UICheckBoxProtocol.swift */; };
 		57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31E9327E15BA3002DE500 /* MainViewController.swift */; };
 		57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */; };
 		57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */; };
@@ -52,10 +62,13 @@
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGatchTableViewCell.swift; sourceTree = "<group>"; };
 		5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		57067873281C2F3900F48342 /* pretendard_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_medium.ttf; sourceTree = "<group>"; };
+		57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rixyeoljeongdo_pro_regular.otf; sourceTree = "<group>"; };
+		57067875281C2F3900F48342 /* pretendard_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_bold.ttf; sourceTree = "<group>"; };
+		57067876281C2F3900F48342 /* pretendard_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_regular.ttf; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		575BF70027E0CBC6008D5B3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		575BF70327E0CBC6008D5B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575BF70527E0CBC8008D5B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		575BF70827E0CBC8008D5B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +79,13 @@
 		575BF71A27E0CBC8008D5B3C /* ZatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchUITests.swift; sourceTree = "<group>"; };
 		575BF72027E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57677529281CD130000BC7CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5767752B281CDA4B000BC7CD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5780238D281D029F0085457D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		57802390281D20FD0085457D /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		57802392281D21180085457D /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		57802395281D25A70085457D /* UICheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
+		57802397281D27550085457D /* UICheckBoxProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBoxProtocol.swift; sourceTree = "<group>"; };
 		57E31E9327E15BA3002DE500 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchTableViewCell.swift; sourceTree = "<group>"; };
 		57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchTableViewCell.xib; sourceTree = "<group>"; };
@@ -101,6 +121,10 @@
 		57067862281C13D500F48342 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				57067875281C2F3900F48342 /* pretendard_bold.ttf */,
+				57067873281C2F3900F48342 /* pretendard_medium.ttf */,
+				57067876281C2F3900F48342 /* pretendard_regular.ttf */,
+				57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */,
 				57067865281C167100F48342 /* UIFont.swift */,
 			);
 			path = Font;
@@ -129,18 +153,19 @@
 		575BF6FB27E0CBC6008D5B3C /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
+				57802394281D21710085457D /* UIComponent */,
+				5780238F281D20D60085457D /* Search */,
 				575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */,
 				575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */,
-				57067863281C143A00F48342 /* UIColor.swift */,
-				575BF70027E0CBC6008D5B3C /* ViewController.swift */,
-				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				57E31E9327E15BA3002DE500 /* MainViewController.swift */,
+				57677529281CD130000BC7CD /* ViewController.swift */,
 				57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */,
+				57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */,
 				5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */,
 				5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */,
-				57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */,
-				57067862281C13D500F48342 /* Font */,
+				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				57E31EC527E17F83002DE500 /* xib */,
+				57067862281C13D500F48342 /* Font */,
 				575BF70527E0CBC8008D5B3C /* Assets.xcassets */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
 				575BF70A27E0CBC8008D5B3C /* Info.plist */,
@@ -164,6 +189,27 @@
 				575BF72027E0CBC8008D5B3C /* Info.plist */,
 			);
 			path = ZatchUITests;
+			sourceTree = "<group>";
+		};
+		5780238F281D20D60085457D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5767752B281CDA4B000BC7CD /* SearchViewController.swift */,
+				57802392281D21180085457D /* SearchCollectionViewCell.xib */,
+				57802390281D20FD0085457D /* SearchCollectionViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		57802394281D21710085457D /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				57067863281C143A00F48342 /* UIColor.swift */,
+				5780238D281D029F0085457D /* UIButton.swift */,
+				57802395281D25A70085457D /* UICheckBox.swift */,
+				57802397281D27550085457D /* UICheckBoxProtocol.swift */,
+			);
+			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		57E31EC527E17F83002DE500 /* xib */ = {
@@ -280,12 +326,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */,
 				575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */,
+				57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */,
 				57067861281C0C7900F48342 /* MainGatchCollectionViewCell.xib in Resources */,
 				57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */,
 				575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */,
+				57802393281D21180085457D /* SearchCollectionViewCell.xib in Resources */,
 				57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */,
 				5706785F281C0C4900F48342 /* MainGatchTableViewCell.xib in Resources */,
+				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
+				57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,16 +362,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5767752A281CD130000BC7CD /* ViewController.swift in Sources */,
+				5767752C281CDA4B000BC7CD /* SearchViewController.swift in Sources */,
 				57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
-				575BF70127E0CBC6008D5B3C /* ViewController.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				57802396281D25A70085457D /* UICheckBox.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
+				57802391281D20FD0085457D /* SearchCollectionViewCell.swift in Sources */,
+				57802398281D27550085457D /* UICheckBoxProtocol.swift in Sources */,
 				57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */,
 				5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */,
+				5780238E281D029F0085457D /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
