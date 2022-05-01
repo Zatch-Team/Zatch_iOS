@@ -45,28 +45,12 @@ class SearchResultViewController: UIViewController {
         return image
     }()
     
-    let myCategoryButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("category1", for: .normal)
-        return button
-    }()
-    
-    let wantCategoryButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("category1", for: .normal)
-        return button
-    }()
+    let myCategoryButton = SearchCategoryDot()
+    let wantCategoryButton = SearchCategoryDot()
     
     let townSelected = UILabel()
     let searchFilter = UILabel()
     let tableView = UITableView()
-    
-    let stackView : UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 12
-        return stack
-    }()
     
     let myStackView : UIStackView = {
         let stack = UIStackView()
@@ -98,12 +82,9 @@ class SearchResultViewController: UIViewController {
     func setUpView(){
 
         self.view.addSubview(topView)
-        
-        self.topView.addSubview(stackView)
-        
-        self.stackView.addArrangedSubview(myStackView)
-        self.stackView.addArrangedSubview(exchangeImage)
-        self.stackView.addArrangedSubview(wantStackView)
+        self.topView.addSubview(myStackView)
+        self.topView.addSubview(exchangeImage)
+        self.topView.addSubview(wantStackView)
         
         self.myStackView.addArrangedSubview(myCategoryButton)
         self.myStackView.addArrangedSubview(myZatch)
@@ -120,44 +101,20 @@ class SearchResultViewController: UIViewController {
             make.height.equalTo(116)
             make.width.equalToSuperview()
         }
-        
-        self.stackView.snp.makeConstraints{ make in
-            make.center.equalToSuperview()
-        }
     
-        
-        self.exchangeImage.snp.makeConstraints{ make in
-            make.leading.equalTo(myStackView.snp.trailing)
-            make.top.equalTo(myZatch)
+        self.exchangeImage.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
         
-        self.myStackView.snp.makeConstraints{ make in
+        self.myStackView.snp.makeConstraints { make in
             make.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
+            make.bottom.equalTo(exchangeImage)
         }
         
-        self.wantStackView.snp.makeConstraints{ make in
+        self.wantStackView.snp.makeConstraints { make in
             make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
+            make.bottom.equalTo(exchangeImage)
         }
-        
-        self.myCategoryButton.snp.makeConstraints { make in
-            make.top.equalTo(myStackView)
-        }
-        
-        self.myZatch.snp.makeConstraints { make in
-            make.top.equalTo(myCategoryButton)
-        }
-        
-        self.wantCategoryButton.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-    
-        }
-        
-        self.wantZatch.snp.makeConstraints { make in
-            make.top.equalTo(wantCategoryButton)
-            make.leading.equalToSuperview()
-        }
-        
         
     }
     
