@@ -12,10 +12,6 @@ class SearchVCCheckBox : UIButton{
     
     init(){
         super.init(frame: CGRect.zero)
-        self.titleLabel?.textColor = .black45
-        self.layer.cornerRadius = CGFloat(18)
-        self.titleLabel?.font = UIFont.pretendard(size: 13, family: .Medium)
-        self.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 12, right: 8)
         commonInit()
     }
     
@@ -29,8 +25,14 @@ class SearchVCCheckBox : UIButton{
     }
     
     private func commonInit(){
-        self.addTarget(self, action: #selector(check), for: .touchUpInside)
+        
         self.isChecked = false
+        self.layer.cornerRadius = CGFloat(15)
+        self.isEnabled = true
+        
+        self.addTarget(self, action: #selector(check), for: .touchUpInside)
+        
+        uncheckedState()
     }
     
     @objc func check(_sender : UIGestureRecognizer){
@@ -39,18 +41,33 @@ class SearchVCCheckBox : UIButton{
     
     private func setChecked(_ isChecked: Bool){
         if isChecked == true{
-            titleLabel?.textColor = .zatchYellow
-            self.titleLabel?.font = UIFont.pretendard(size: 13, family: .Bold)
+            checkedState()
         }else{
-            titleLabel?.textColor = .black45
+            uncheckedState()
         }
+    }
+    
+    private func checkedState(){
+        self.setTitleColor(.zatchYellow, for: .normal)
+        self.titleLabel?.font = UIFont.pretendard(size: 13, family: .Bold)
+        self.layer.borderColor = UIColor.zatchYellow.cgColor
+        self.layer.borderWidth = 1.5
+    }
+    
+    private func uncheckedState(){
+        self.setTitleColor(.black45, for: .normal)
+        self.titleLabel?.font = UIFont.pretendard(size: 13, family: .Medium)
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black45.cgColor
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)!
+        commonInit()
     }
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        commonInit()
     }
 }

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
+		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		5706785F281C0C4900F48342 /* MainGatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5706785E281C0C4900F48342 /* MainGatchTableViewCell.xib */; };
 		57067861281C0C7900F48342 /* MainGatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57067860281C0C7900F48342 /* MainGatchCollectionViewCell.xib */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
@@ -30,12 +32,16 @@
 		57802391281D20FD0085457D /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802390281D20FD0085457D /* SearchCollectionViewCell.swift */; };
 		57802393281D21180085457D /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57802392281D21180085457D /* SearchCollectionViewCell.xib */; };
 		57802396281D25A70085457D /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802395281D25A70085457D /* UICheckBox.swift */; };
-		57802398281D27550085457D /* UICheckBoxProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802397281D27550085457D /* UICheckBoxProtocol.swift */; };
+		579F5E56281E519600D3F0D5 /* SearchFlexLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E55281E519600D3F0D5 /* SearchFlexLayoutView.swift */; };
+		579F5E58281E574200D3F0D5 /* SecondSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* SecondSearchViewController.swift */; };
+		579F5E5A281E7F2800D3F0D5 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* SearchResultViewController.swift */; };
 		57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31E9327E15BA3002DE500 /* MainViewController.swift */; };
 		57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */; };
 		57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */; };
 		57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */; };
 		57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */; };
+		57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */; };
+		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5706785E281C0C4900F48342 /* MainGatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainGatchTableViewCell.xib; sourceTree = "<group>"; };
 		57067860281C0C7900F48342 /* MainGatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainGatchCollectionViewCell.xib; sourceTree = "<group>"; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -85,12 +92,23 @@
 		57802390281D20FD0085457D /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		57802392281D21180085457D /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		57802395281D25A70085457D /* UICheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
-		57802397281D27550085457D /* UICheckBoxProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBoxProtocol.swift; sourceTree = "<group>"; };
+		579F5E55281E519600D3F0D5 /* SearchFlexLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlexLayoutView.swift; sourceTree = "<group>"; };
+		579F5E57281E574200D3F0D5 /* SecondSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSearchViewController.swift; sourceTree = "<group>"; };
+		579F5E59281E7F2800D3F0D5 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		57E31E9327E15BA3002DE500 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchTableViewCell.swift; sourceTree = "<group>"; };
 		57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchTableViewCell.xib; sourceTree = "<group>"; };
 		57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchCollectionViewCell.xib; sourceTree = "<group>"; };
+		57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCheckBoxView.xib; sourceTree = "<group>"; };
+		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
+		9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.release.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +132,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23CFCBC801D90B1A2F9BB36B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */,
+				6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */,
+				A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */,
+				629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */,
+				D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */,
+				E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		57067862281C13D500F48342 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +171,8 @@
 				575BF71227E0CBC8008D5B3C /* ZatchTests */,
 				575BF71D27E0CBC8008D5B3C /* ZatchUITests */,
 				575BF6FA27E0CBC6008D5B3C /* Products */,
+				23CFCBC801D90B1A2F9BB36B /* Pods */,
+				FEF7190B609B082475C22250 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +233,9 @@
 				5767752B281CDA4B000BC7CD /* SearchViewController.swift */,
 				57802392281D21180085457D /* SearchCollectionViewCell.xib */,
 				57802390281D20FD0085457D /* SearchCollectionViewCell.swift */,
+				579F5E55281E519600D3F0D5 /* SearchFlexLayoutView.swift */,
+				579F5E57281E574200D3F0D5 /* SecondSearchViewController.swift */,
+				579F5E59281E7F2800D3F0D5 /* SearchResultViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -207,7 +246,7 @@
 				57067863281C143A00F48342 /* UIColor.swift */,
 				5780238D281D029F0085457D /* UIButton.swift */,
 				57802395281D25A70085457D /* UICheckBox.swift */,
-				57802397281D27550085457D /* UICheckBoxProtocol.swift */,
+				57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -223,6 +262,16 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		FEF7190B609B082475C22250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46AB3557798038E512E204D3 /* Pods_Zatch.framework */,
+				9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */,
+				BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 575BF72327E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "Zatch" */;
 			buildPhases = (
+				B2155CE5E1D4DABD971BD97E /* [CP] Check Pods Manifest.lock */,
 				575BF6F527E0CBC6008D5B3C /* Sources */,
 				575BF6F627E0CBC6008D5B3C /* Frameworks */,
 				575BF6F727E0CBC6008D5B3C /* Resources */,
+				687AD479EB57C1A10288F9EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +298,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 575BF72627E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "ZatchTests" */;
 			buildPhases = (
+				2C053A9D88A0449AF30A6042 /* [CP] Check Pods Manifest.lock */,
 				575BF70B27E0CBC8008D5B3C /* Sources */,
 				575BF70C27E0CBC8008D5B3C /* Frameworks */,
 				575BF70D27E0CBC8008D5B3C /* Resources */,
@@ -265,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 575BF72927E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "ZatchUITests" */;
 			buildPhases = (
+				951ABCB4FA1D5FB59BF0B290 /* [CP] Check Pods Manifest.lock */,
 				575BF71627E0CBC8008D5B3C /* Sources */,
 				575BF71727E0CBC8008D5B3C /* Frameworks */,
 				575BF71827E0CBC8008D5B3C /* Resources */,
+				F0452AE72637ACF0CFA360E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +390,7 @@
 				57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */,
 				5706785F281C0C4900F48342 /* MainGatchTableViewCell.xib in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
+				57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */,
 				57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);
@@ -357,11 +412,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C053A9D88A0449AF30A6042 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZatchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		687AD479EB57C1A10288F9EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		951ABCB4FA1D5FB59BF0B290 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zatch-ZatchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2155CE5E1D4DABD971BD97E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0452AE72637ACF0CFA360E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		575BF6F527E0CBC6008D5B3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				579F5E56281E519600D3F0D5 /* SearchFlexLayoutView.swift in Sources */,
 				5767752A281CD130000BC7CD /* ViewController.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* SearchViewController.swift in Sources */,
 				57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */,
@@ -369,11 +528,12 @@
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				57802396281D25A70085457D /* UICheckBox.swift in Sources */,
+				579F5E58281E574200D3F0D5 /* SecondSearchViewController.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57802391281D20FD0085457D /* SearchCollectionViewCell.swift in Sources */,
-				57802398281D27550085457D /* UICheckBoxProtocol.swift in Sources */,
+				579F5E5A281E7F2800D3F0D5 /* SearchResultViewController.swift in Sources */,
 				57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */,
 				5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */,
 				5780238E281D029F0085457D /* UIButton.swift in Sources */,
@@ -549,6 +709,7 @@
 		};
 		575BF72427E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -568,6 +729,7 @@
 		};
 		575BF72527E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -587,6 +749,7 @@
 		};
 		575BF72727E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -609,6 +772,7 @@
 		};
 		575BF72827E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -631,6 +795,7 @@
 		};
 		575BF72A27E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -651,6 +816,7 @@
 		};
 		575BF72B27E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

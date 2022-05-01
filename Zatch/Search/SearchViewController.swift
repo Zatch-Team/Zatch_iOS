@@ -6,22 +6,26 @@
 //
 
 import UIKit
+import FlexLayout
+import SnapKit
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var nextButton: PurpleButton!
     @IBOutlet var skipButton: UIButton!
     @IBOutlet var titleText: UILabel!
-    @IBOutlet var searchTextField: UITextField!
+    @IBOutlet var searchTextField: UILabel!
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
+    var currentSelected: SearchVCCheckBox?
+    
     let myZatchData: [String] = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요","아아앙아ㅏ앙아아앙아아"]
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.hidesBackButton = true
         
         searchCollectionView.dataSource = self
         searchCollectionView.delegate = self
@@ -32,7 +36,7 @@ class SearchViewController: UIViewController {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 12
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 200, height: 28)
+        flowLayout.estimatedItemSize = CGSize(width: 100, height: 28)
         flowLayout.minimumInteritemSpacing = CGFloat(8)
         searchCollectionView.collectionViewLayout = flowLayout
         searchCollectionView.showsHorizontalScrollIndicator = false
@@ -52,9 +56,19 @@ class SearchViewController: UIViewController {
         skipButton.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
         skipButton.titleLabel?.textColor = .black45
         
-        //text field custom
+        nextButton.addTarget(self, action: #selector(nextButtonClick(_:)), for: .touchUpInside)
         
     }
+
+    @objc
+    func nextButtonClick(_ sender: UIButton){
+
+        let nextVC = SecondSearchViewController()
+        nextVC.myLabel.text = searchTextField.text
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+
 
 }
 
@@ -69,16 +83,18 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if let cell: SearchCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionCell", for: indexPath) as? SearchCollectionViewCell {
             
             cell.productName.setTitle(myZatchData[indexPath.row], for: .normal)
-        
+            cell.productName.addTarget(self, action: #selector(selectItem(_:)), for: .touchUpInside)
             return cell
         }
         return UICollectionViewCell()
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//
-//    }
+    @objc
+    func selectItem(_ sender: SearchVCCheckBox){
+        currentSelected?.isChecked = false
+        currentSelected = sender
+        searchTextField.text = sender.title(for: .normal)
+    }
     
 
 }
