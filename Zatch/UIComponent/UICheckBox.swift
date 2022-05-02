@@ -29,8 +29,13 @@ class SearchVCCheckBox : UIButton{
         self.isChecked = false
         self.layer.cornerRadius = CGFloat(15)
         self.isEnabled = true
+        self.contentEdgeInsets = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12)
         
         self.addTarget(self, action: #selector(check), for: .touchUpInside)
+        
+        self.snp.makeConstraints{ make in
+            make.height.equalTo(28)
+        }
         
         uncheckedState()
     }

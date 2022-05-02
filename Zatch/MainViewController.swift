@@ -17,7 +17,10 @@ class MainViewController: ViewController {
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isHidden = true
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,17 +37,14 @@ class MainViewController: ViewController {
         searchButton.setTitle("", for: .normal)
         notificationButton.setTitle("", for: .normal)
         
-        
-        self.navigationController?.navigationBar.isHidden = true
-        
     }
 
     // MARK: - Navigation
     
     @IBAction func moveSearchVC(_ sender: UIButton){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let searchVC : SearchViewController = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchViewController
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        
+        let nextVC = SearchViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
 }

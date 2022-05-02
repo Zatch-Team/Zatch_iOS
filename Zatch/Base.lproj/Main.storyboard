@@ -181,9 +181,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="RZ4-cO-M6g">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow_left" id="dXu-Zh-6ma"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="RZ4-cO-M6g"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

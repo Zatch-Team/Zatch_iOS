@@ -16,8 +16,10 @@ class PurpleButton: UIButton{
         self.titleLabel?.font = UIFont.pretendard(family: .Bold)
         self.layer.cornerRadius = CGFloat(16)
         self.titleEdgeInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
-
         
+        self.snp.makeConstraints{ make in
+            make.height.equalTo(36)
+        }
     }
     
     required init(coder: NSCoder) {
@@ -26,5 +28,22 @@ class PurpleButton: UIButton{
     
     override init(frame: CGRect){
         super.init(frame: frame)
+    }
+}
+
+class NavigationBackButton: UIBarButtonItem{
+    
+    override init(){
+        super.init()
+        self.tintColor = .black
+        self.image = UIImage(named: "arrow_left")
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)!
+    }
+    
+    init(frame: CGRect){
+        super.init()
     }
 }

@@ -11,77 +11,60 @@ class SearchResultViewController: UIViewController {
     
     //MARK: UIComponent
     
-    let backButton: UIButton = {
-        let backButton = UIButton()
-        backButton.setImage(UIImage(named: "arrow_left"), for: .normal)
-        return backButton
-    }()
-    
+    let backButton = NavigationBackButton()
     let topView = UIView()
-    
-    let myZatch : UILabel = {
-        let label = UILabel()
-        label.text = "생수"
-        label.textAlignment = .right
-        label.textColor = .black85
-        label.font = UIFont.pretendard(size: 16, family: .Bold)
-        return label
-    }()
-    
-    let wantZatch : UILabel = {
-        let label = UILabel()
-        label.text = "라면"
-        label.textColor = .black85
-        label.font = UIFont.pretendard(size: 16, family: .Bold)
-        return label
-    }()
-    
-    let exchangeImage : UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "exchange_vertical")
-        image.snp.makeConstraints{ make in
-            make.size.equalTo(CGSize(width: 24, height: 24))
-        }
-        return image
-    }()
-    
+    let myZatch = UILabel()
+    let wantZatch = UILabel()
+    let exchangeImage = UIImageView()
     let myCategoryButton = SearchCategoryDot()
     let wantCategoryButton = SearchCategoryDot()
-    
     let townSelected = UILabel()
     let searchFilter = UILabel()
     let tableView = UITableView()
+    let myStackView = UIStackView()
+    let wantStackView = UIStackView()
     
-    let myStackView : UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 12
-        return stack
-    }()
-    
-    let wantStackView : UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 12
-        return stack
-    }()
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.hidesBackButton = true
+        
+        backButton.target = self
+        backButton.action = #selector(popNavigationVC)
+        self.navigationItem.setLeftBarButton(backButton, animated: true)
+        
+        setUpValue()
         setUpView()
         setUpConstraint()
         
     }
-
     
+    func setUpValue(){
+        
+        myZatch.text = "생수"
+        myZatch.textAlignment = .right
+        myZatch.textColor = .black85
+        myZatch.font = UIFont.pretendard(size: 16, family: .Bold)
+        
+        wantZatch.text = "라면"
+        wantZatch.textColor = .black85
+        wantZatch.font = UIFont.pretendard(size: 16, family: .Bold)
+        
+        exchangeImage.image = UIImage(named: "exchange_vertical")
+        
+        myStackView.axis = .vertical
+        myStackView.spacing = 12
+        
+        wantStackView.axis = .vertical
+        wantStackView.spacing = 12
+    }
+
     func setUpView(){
 
         self.view.addSubview(topView)
+        
         self.topView.addSubview(myStackView)
         self.topView.addSubview(exchangeImage)
         self.topView.addSubview(wantStackView)
@@ -110,7 +93,7 @@ class SearchResultViewController: UIViewController {
             make.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
             make.bottom.equalTo(exchangeImage)
         }
-        
+
         self.wantStackView.snp.makeConstraints { make in
             make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
             make.bottom.equalTo(exchangeImage)
@@ -118,15 +101,10 @@ class SearchResultViewController: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: Action
+    @objc
+    func popNavigationVC(){
+        self.navigationController?.popViewController(animated: true)
     }
-    */
 
 }
