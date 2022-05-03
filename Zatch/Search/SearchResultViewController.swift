@@ -13,6 +13,8 @@ class SearchResultViewController: UIViewController {
     
     let backButton = NavigationBackButton()
     let topView = UIView()
+    let separateLine = UIView()
+    let separateRectangle = UIView()
     let myZatch = UILabel()
     let wantZatch = UILabel()
     let exchangeImage = UIImageView()
@@ -59,6 +61,15 @@ class SearchResultViewController: UIViewController {
         
         wantStackView.axis = .vertical
         wantStackView.spacing = 12
+        
+        separateLine.backgroundColor = .black10
+        separateRectangle.backgroundColor = .black5
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.allowsSelection = false
+        tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: "ResultTableViewCell")
     }
 
     func setUpView(){
@@ -75,6 +86,9 @@ class SearchResultViewController: UIViewController {
         self.wantStackView.addArrangedSubview(wantCategoryButton)
         self.wantStackView.addArrangedSubview(wantZatch)
         
+        self.view.addSubview(tableView)
+        self.view.addSubview(separateLine)
+        self.view.addSubview(separateRectangle)
     }
     
     func setUpConstraint(){
@@ -99,6 +113,23 @@ class SearchResultViewController: UIViewController {
             make.bottom.equalTo(exchangeImage)
         }
         
+        self.separateLine.snp.makeConstraints{ make in
+            make.height.equalTo(1)
+            make.top.equalTo(topView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        self.separateRectangle.snp.makeConstraints{ make in
+            make.height.equalTo(8)
+            make.top.equalTo(separateLine.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        self.tableView.snp.makeConstraints{ make in
+            make.top.equalTo(separateRectangle.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        
     }
     
     //MARK: Action
@@ -107,4 +138,20 @@ class SearchResultViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell else{
+            return UITableViewCell()
+        }
+        return cell
+    }
 }

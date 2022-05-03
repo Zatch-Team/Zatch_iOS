@@ -23,10 +23,31 @@ extension UIColor{
         alpha: 1
     )
     
+    static let black5 = UIColor(
+        red: 242/255,
+        green: 242/255,
+        blue: 242/255,
+        alpha: 1
+    )
+    
+    static let black10 = UIColor(
+        red: 229/255,
+        green: 229/255,
+        blue: 229/255,
+        alpha: 1
+    )
+    
     static let black45 = UIColor(
         red: 140/255,
         green: 140/255,
         blue: 140/255,
+        alpha: 1
+    )
+    
+    static let black65 = UIColor(
+        red: 89/255,
+        green: 89/255,
+        blue: 89/255,
         alpha: 1
     )
     
