@@ -9,6 +9,13 @@ import UIKit
 
 extension UIColor{
     
+    static let zatchPurple40 = UIColor(
+        red: 216/255,
+        green: 203/255,
+        blue: 255/255,
+        alpha: 1
+    )
+    
     static let zatchPurple = UIColor(
         red: 158/255,
         green: 124/255,
@@ -16,10 +23,24 @@ extension UIColor{
         alpha: 1
     )
     
+    static let zatchYellow40 = UIColor(
+        red: 255/255,
+        green: 242/255,
+        blue: 225/255,
+        alpha: 1
+    )
+    
     static let zatchYellow = UIColor(
         red: 255/255,
         green: 189/255,
         blue: 107/255,
+        alpha: 1
+    )
+    
+    static let zatchDeepYellow = UIColor(
+        red: 255/255,
+        green: 171/255,
+        blue: 66/255,
         alpha: 1
     )
     

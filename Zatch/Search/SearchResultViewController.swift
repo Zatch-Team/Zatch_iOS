@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MaterialComponents
 
-class SearchResultViewController: UIViewController {
+class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: UIComponent
     
@@ -33,13 +34,12 @@ class SearchResultViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.hidesBackButton = true
         
-        backButton.target = self
-        backButton.action = #selector(popNavigationVC)
         self.navigationItem.setLeftBarButton(backButton, animated: true)
         
         setUpValue()
         setUpView()
         setUpConstraint()
+        setUpAction()
         
     }
     
@@ -49,6 +49,7 @@ class SearchResultViewController: UIViewController {
         myZatch.textAlignment = .right
         myZatch.textColor = .black85
         myZatch.font = UIFont.pretendard(size: 16, family: .Bold)
+        myZatch.isUserInteractionEnabled = true
         
         wantZatch.text = "라면"
         wantZatch.textColor = .black85
@@ -132,10 +133,28 @@ class SearchResultViewController: UIViewController {
         
     }
     
+    func setUpAction(){
+        
+        backButton.target = self
+        backButton.action = #selector(popNavigationVC)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openBottomSheetVC))
+        myZatch.addGestureRecognizer(tapGesture)
+
+    }
+    
     //MARK: Action
+    
     @objc
     func popNavigationVC(){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    func openBottomSheetVC(recognizer: UITapGestureRecognizer){
+        print("???")
+        let bottoSheetVC = MDCBottomSheetController(contentViewController: MyZatchBottomSheet())
+        present(bottoSheetVC, animated: true, completion: nil)
     }
 
 }
@@ -145,7 +164,6 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

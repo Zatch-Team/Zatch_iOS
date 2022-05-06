@@ -35,6 +35,8 @@
 		57802396281D25A70085457D /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57802395281D25A70085457D /* UICheckBox.swift */; };
 		579F5E58281E574200D3F0D5 /* SecondSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* SecondSearchViewController.swift */; };
 		579F5E5A281E7F2800D3F0D5 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* SearchResultViewController.swift */; };
+		57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */; };
+		57C585042821F2A70078FAFF /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585032821F2A70078FAFF /* Enum.swift */; };
 		57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31E9327E15BA3002DE500 /* MainViewController.swift */; };
 		57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */; };
 		57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */; };
@@ -95,6 +97,8 @@
 		57802395281D25A70085457D /* UICheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
 		579F5E57281E574200D3F0D5 /* SecondSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSearchViewController.swift; sourceTree = "<group>"; };
 		579F5E59281E7F2800D3F0D5 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchBottomSheet.swift; sourceTree = "<group>"; };
+		57C585032821F2A70078FAFF /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		57E31E9327E15BA3002DE500 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchTableViewCell.swift; sourceTree = "<group>"; };
 		57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchTableViewCell.xib; sourceTree = "<group>"; };
@@ -189,17 +193,13 @@
 		575BF6FB27E0CBC6008D5B3C /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
+				57C585032821F2A70078FAFF /* Enum.swift */,
+				57C585052821F2B30078FAFF /* Main */,
 				57802394281D21710085457D /* UIComponent */,
 				5780238F281D20D60085457D /* Search */,
 				575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */,
 				575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */,
-				57E31E9327E15BA3002DE500 /* MainViewController.swift */,
 				57677529281CD130000BC7CD /* ViewController.swift */,
-				57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */,
-				57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */,
-				5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */,
-				5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */,
-				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				57E31EC527E17F83002DE500 /* xib */,
 				57067862281C13D500F48342 /* Font */,
 				575BF70527E0CBC8008D5B3C /* Assets.xcassets */,
@@ -234,6 +234,7 @@
 				579F5E57281E574200D3F0D5 /* SecondSearchViewController.swift */,
 				579F5E59281E7F2800D3F0D5 /* SearchResultViewController.swift */,
 				5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */,
+				57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -241,14 +242,27 @@
 		57802394281D21710085457D /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				57067863281C143A00F48342 /* UIColor.swift */,
 				5780238D281D029F0085457D /* UIButton.swift */,
+				57067863281C143A00F48342 /* UIColor.swift */,
 				57802395281D25A70085457D /* UICheckBox.swift */,
 				57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */,
 				57713941281F58190066DEEB /* UILabel.swift */,
 				57713943281F596C0066DEEB /* UIContainerView.swift */,
 			);
 			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		57C585052821F2B30078FAFF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				57E31E9327E15BA3002DE500 /* MainViewController.swift */,
+				57E31EAF27E16A2A002DE500 /* MainZatchTableViewCell.swift */,
+				57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */,
+				5706786C281C281700F48342 /* MainGatchCollectionViewCell.swift */,
+				5706786A281C220B00F48342 /* MainGatchTableViewCell.swift */,
+				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		57E31EC527E17F83002DE500 /* xib */ = {
@@ -532,10 +546,12 @@
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
+				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* SearchResultViewController.swift in Sources */,
 				57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */,
 				5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
+				57C585042821F2A70078FAFF /* Enum.swift in Sources */,
 				5780238E281D029F0085457D /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
