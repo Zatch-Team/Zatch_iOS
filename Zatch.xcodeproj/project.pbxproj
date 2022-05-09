@@ -19,6 +19,8 @@
 		57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
 		57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
 		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
+		571AD7102828D37900390AAD /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD70F2828D37900390AAD /* CategoryBottomSheet.swift */; };
+		571AD7132828D9EB00390AAD /* CategoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryButtonView.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
 		575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */; };
@@ -75,6 +77,8 @@
 		57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rixyeoljeongdo_pro_regular.otf; sourceTree = "<group>"; };
 		57067875281C2F3900F48342 /* pretendard_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_bold.ttf; sourceTree = "<group>"; };
 		57067876281C2F3900F48342 /* pretendard_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_regular.ttf; sourceTree = "<group>"; };
+		571AD70F2828D37900390AAD /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryBottomSheet.swift; path = Zatch/Category/CategoryBottomSheet.swift; sourceTree = SOURCE_ROOT; };
+		571AD7122828D9EB00390AAD /* CategoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonView.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +172,15 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		571AD7112828D9C900390AAD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				571AD70F2828D37900390AAD /* CategoryBottomSheet.swift */,
+				571AD7122828D9EB00390AAD /* CategoryButtonView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		575BF6F027E0CBC6008D5B3C = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +206,7 @@
 		575BF6FB27E0CBC6008D5B3C /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
+				571AD7112828D9C900390AAD /* Category */,
 				57C585032821F2A70078FAFF /* Enum.swift */,
 				57C585052821F2B30078FAFF /* Main */,
 				57802394281D21710085457D /* UIComponent */,
@@ -541,8 +555,10 @@
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				571AD7132828D9EB00390AAD /* CategoryButtonView.swift in Sources */,
 				57802396281D25A70085457D /* UICheckBox.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* SecondSearchViewController.swift in Sources */,
+				571AD7102828D37900390AAD /* CategoryBottomSheet.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,

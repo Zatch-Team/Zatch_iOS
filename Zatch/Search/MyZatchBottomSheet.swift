@@ -6,16 +6,9 @@
 //
 
 import UIKit
-import MaterialComponents.MaterialBottomSheet
 import SnapKit
 import PinLayout
 import FlexLayout
-import MaterialComponents
-
-//enum SearchBS{
-//    case Find
-//    case Register
-//}
 
 enum SearchBS: String{
     case Find = "내가 찾는 재치"
@@ -38,12 +31,7 @@ class MyZatchBottomSheet: ViewController {
         setUpView()
         setUpValue()
         setUpConstraint()
-    }
-    
-    private func setUpValue(){
-        titleLabel.text = SearchBS.Register.rawValue
-        titleLabel.textColor = .black85
-        titleLabel.font = UIFont.pretendard(size: 16, family: .Bold)
+        
         
         flexContainer.flex.wrap(.wrap).direction(.row).define { flex in
             for i in zatchData{
@@ -53,6 +41,13 @@ class MyZatchBottomSheet: ViewController {
                 flex.addItem(button).marginEnd(8).marginBottom(16)
             }
         }
+    }
+    
+    private func setUpValue(){
+        titleLabel.text = SearchBS.Register.rawValue
+        titleLabel.textColor = .black85
+        titleLabel.font = UIFont.pretendard(size: 16, family: .Bold)
+        
     }
     
     private func setUpView(){
@@ -69,6 +64,7 @@ class MyZatchBottomSheet: ViewController {
         
         flexContainer.snp.makeConstraints{ make in
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
+            make.width.equalToSuperview()
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
             make.bottom.equalToSuperview().offset(-30)
@@ -86,16 +82,4 @@ class MyZatchBottomSheet: ViewController {
         
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

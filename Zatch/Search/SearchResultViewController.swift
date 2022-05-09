@@ -54,6 +54,7 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
         wantZatch.text = "라면"
         wantZatch.textColor = .black85
         wantZatch.font = UIFont.pretendard(size: 16, family: .Bold)
+        wantZatch.isUserInteractionEnabled = true
         
         exchangeImage.image = UIImage(named: "exchange_vertical")
         
@@ -138,8 +139,13 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
         backButton.target = self
         backButton.action = #selector(popNavigationVC)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openBottomSheetVC))
-        myZatch.addGestureRecognizer(tapGesture)
+        myZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openProductBottomSheet)))
+        
+        wantZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openProductBottomSheet)))
+        
+//        let categoryTapGesture = UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet))
+        myCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+        wantCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
 
     }
     
@@ -151,9 +157,14 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     @objc
-    func openBottomSheetVC(recognizer: UITapGestureRecognizer){
-        print("???")
+    func openProductBottomSheet(recognizer: UITapGestureRecognizer){
         let bottoSheetVC = MDCBottomSheetController(contentViewController: MyZatchBottomSheet())
+        present(bottoSheetVC, animated: true, completion: nil)
+    }
+    
+    @objc
+    func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
+        let bottoSheetVC = MDCBottomSheetController(contentViewController: CategoryBottomSheet())
         present(bottoSheetVC, animated: true, completion: nil)
     }
 
