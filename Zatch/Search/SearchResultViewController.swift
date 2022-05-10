@@ -164,7 +164,16 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @objc
     func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottoSheetVC = MDCBottomSheetController(contentViewController: CategoryBottomSheet())
+        
+        let vc = CategoryBottomSheet()
+        
+        vc.categorySelect = { category in
+            print(category)
+            (recognizer.view as? SearchCategoryDot)?.isChecked = true
+        }
+        
+        let bottoSheetVC = MDCBottomSheetController(contentViewController: vc)
+        
         present(bottoSheetVC, animated: true, completion: nil)
     }
 
