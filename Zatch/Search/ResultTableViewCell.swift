@@ -67,6 +67,7 @@ class ResultTableViewCell: UITableViewCell {
     }
     
     func setUpView(){
+        
         self.contentView.addSubview(productImage)
         
         self.productStackView.addArrangedSubview(myProduct)
@@ -79,6 +80,7 @@ class ResultTableViewCell: UITableViewCell {
     }
     
     func setUpConstraint(){
+        
         self.contentView.snp.makeConstraints{ make in
             make.width.equalToSuperview()
             make.height.equalTo(138)

@@ -10,7 +10,7 @@ import UIKit
 
 class TopTitleView: UIView{
     
-    let titleText = SearchTitle()
+    let titleText = TitleLabel()
     
     init(){
         super.init(frame: CGRect.zero)

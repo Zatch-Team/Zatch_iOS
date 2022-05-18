@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SearchTitle: UILabel {
+class TitleLabel: UILabel {
     
     init(){
         super.init(frame: CGRect.zero)
