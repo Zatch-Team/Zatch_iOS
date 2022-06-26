@@ -11,7 +11,7 @@ class CategoryUIView: UITableViewCell {
     
     let boundaryLine = UIView()
     let categoryText = UILabel()
-    let arrowImage = UIImageView()
+    let arrowImage = UIButton()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -70,7 +70,8 @@ class CategoryUIView: UITableViewCell {
         categoryText.text = "카테고리 선택"
         categoryText.font = UIFont.pretendard(family: .Medium)
         
-        arrowImage.image = UIImage(named: "arrow_down")
+        arrowImage.setImage(UIImage(named: "arrow_down"), for: .normal)
+        arrowImage.setImage(UIImage(named: "arrow_up"), for: .selected)
     }
 
 }

@@ -88,7 +88,7 @@ class ImageAddTableViewCell: UITableViewCell {
 extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -99,6 +99,8 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        //cell 재사용으로 인한 init 작업 진행
+        cell.backgroundView = UIImageView.init()
         cell.backgroundColor = .black
         cell.layer.cornerRadius = 4
         return cell

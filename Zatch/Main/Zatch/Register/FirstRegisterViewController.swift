@@ -29,6 +29,7 @@ class FirstRegisterViewController: UIViewController {
         backTableView.register(CategoryUIView.self, forCellReuseIdentifier: "CategoryUIView")
         backTableView.register(ProductInputUIView.self, forCellReuseIdentifier: "ProductInputUIView")
         backTableView.register(ImageAddTableViewCell.self, forCellReuseIdentifier: "ImageAddTableViewCell")
+        backTableView.register(ProductQuantityUIView.self, forCellReuseIdentifier: "ProductQuantityUIView")
     }
     
     func setUpView(){
@@ -78,7 +79,11 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return 3
+        }else{
+            return 4
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,16 +98,29 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageAddTableViewCell", for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
                 return cell
-            case 3:
-                break
-            case 4:
-                break
             default:
                 fatalError("index error")
             }
         }else{
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryUIView", for: indexPath) as? CategoryUIView else{ fatalError("Cell Casting Error")}
+                cell.categoryText.text = "입력사항 더보기"
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductQuantityUIView", for: indexPath) as? ProductQuantityUIView else{ fatalError("Cell Casting Error")}
+                return cell
+//            case 2:
+//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageAddTableViewCell", for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
+//                return cell
+//            case 3:
+//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageAddTableViewCell", for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
+//                return cell
+            default:
+                return UITableViewCell()
+            }
         }
-        return UITableViewCell()
+//        return UITableViewCell()
     }
     
 }

@@ -14,7 +14,7 @@ extension UIFont{
         case Bold, Medium, Regular
     }
     
-    static func pretendard(size: CGFloat = 14, family: Family = .Regular) -> UIFont! {
+    static func pretendard(size: CGFloat = 14, family: Family = .Medium) -> UIFont! {
         guard let font: UIFont = UIFont(name: "Pretendard-\(family)", size: size) else{
             return nil
         }
