@@ -21,15 +21,6 @@ class FirstWantTableViewCell: UITableViewCell {
         $0.backgroundColor = .black5
     }
     
-    
-    let buy = UILabel()
-    let count = UILabel()
-    let open = UILabel()
-    
-    let buyLabel = UILabel()
-    let countLabel = UILabel()
-    let openLabel = UILabel()
-    
     let firstView = UIView()
     let firstLeftView = UIView()
     let firstRightView = UIView()

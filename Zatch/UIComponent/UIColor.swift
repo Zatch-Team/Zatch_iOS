@@ -58,6 +58,13 @@ extension UIColor{
         alpha: 1
     )
     
+    static let black20 = UIColor(
+        red: 204/255,
+        green: 204/255,
+        blue: 204/255,
+        alpha: 1
+    )
+    
     static let black45 = UIColor(
         red: 140/255,
         green: 140/255,

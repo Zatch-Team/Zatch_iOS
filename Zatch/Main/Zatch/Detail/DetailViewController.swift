@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import Then
 
 class DetailViewController: UIViewController {
     
     let backTableView = UITableView().then{
         $0.separatorStyle = .none
-        $0
     }
+    
+    let bottomView = BottomFixView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +26,28 @@ class DetailViewController: UIViewController {
         backTableView.dataSource = self
         
         backTableView.register(DetailImageTableViewCell.self, forCellReuseIdentifier: "imageViewCell")
-        backTableView.register(FirstWantTableViewCell.self, forCellReuseIdentifier: "productInfoCell")
+        backTableView.register(FirstWantTableViewCell.self, forCellReuseIdentifier: "firstWantCell")
         backTableView.register(WantElseTableViewCell.self, forCellReuseIdentifier: "wantElseCell")
+        backTableView.register(ProductInfoTableViewCell.self, forCellReuseIdentifier: "productInfoCell")
+        backTableView.register(MoreTextTableViewCell.self, forCellReuseIdentifier: "moreTextCell")
+        backTableView.register(SimilarZatchTableViewCell.self, forCellReuseIdentifier: "similarZatchCell")
     }
     
     func setUpView(){
         self.view.addSubview(backTableView)
+        self.view.addSubview(bottomView)
     }
     
     func setUpConstraint(){
         backTableView.snp.makeConstraints{make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(bottomView.snp.top)
+        }
+        
+        bottomView.snp.makeConstraints{ make in
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
         }
     }
 
@@ -51,7 +60,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +77,7 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
             cell.detailImageView.backgroundColor = .gray
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "productInfoCell", for: indexPath) as? FirstWantTableViewCell else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "firstWantCell", for: indexPath) as? FirstWantTableViewCell else{
                 fatalError("Cell Casting Error")
             }
             return cell
@@ -78,7 +87,20 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
             }
             return cell
         case 3:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "productInfoCell", for: indexPath) as? ProductInfoTableViewCell else{
+                fatalError("Cell Casting Error")
+            }
+            return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "moreTextCell", for: indexPath) as? MoreTextTableViewCell else{
+                fatalError("Cell Casting Error")
+            }
+            return cell
+        case 5:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "similarZatchCell", for: indexPath) as? SimilarZatchTableViewCell else{
+                fatalError("Cell Casting Error")
+            }
+            return cell
         default:
             return UITableViewCell()
         }
