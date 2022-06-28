@@ -22,6 +22,7 @@ class FirstRegisterViewController: UIViewController {
         
         backTableView.delegate = self
         backTableView.dataSource = self
+
         backTableView.allowsSelection = false
         backTableView.separatorStyle = .none
         backTableView.isScrollEnabled = false
