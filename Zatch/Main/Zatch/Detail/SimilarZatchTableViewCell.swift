@@ -10,16 +10,17 @@ import UIKit
 class SimilarZatchTableViewCell: UITableViewCell {
     
     let collectionView : UICollectionView = {
+        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = CGSize(width: 124, height: 166)
         flowLayout.minimumInteritemSpacing = 12
-        
+
         let collectionView = UICollectionView(frame: .init(), collectionViewLayout: flowLayout)
         collectionView.register(SimilarZatchCollectionViewCell.self, forCellWithReuseIdentifier: "similarCollectionCell")
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isScrollEnabled = true
-        
+
         return collectionView
     }()
     
@@ -37,7 +38,6 @@ class SimilarZatchTableViewCell: UITableViewCell {
         
         setUpView()
         setUpConstraint()
-        
         
         collectionView.delegate = self
         collectionView.dataSource = self

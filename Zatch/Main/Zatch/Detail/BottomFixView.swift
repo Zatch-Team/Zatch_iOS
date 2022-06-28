@@ -24,6 +24,10 @@ class BottomFixView: UIView {
         $0.backgroundColor = .black5
     }
     
+    let upBorderLine = UIView().then{
+        $0.backgroundColor = .black5
+    }
+    
     let chatImage = UIImageView().then{
         $0.image = UIImage(named: "chat")
     }
@@ -67,6 +71,7 @@ class BottomFixView: UIView {
     func setUpView(){
         
         self.addSubview(stackView)
+        self.addSubview(upBorderLine)
         
         stackView.addArrangedSubview(leftStack)
         stackView.addArrangedSubview(borderLine)
@@ -83,6 +88,12 @@ class BottomFixView: UIView {
         
         self.snp.makeConstraints{ make in
             make.height.equalTo(60)
+        }
+        
+        upBorderLine.snp.makeConstraints{ make in
+            make.top.equalToSuperview()
+            make.height.equalTo(1)
+            make.width.equalToSuperview()
         }
         
         stackView.snp.makeConstraints{ make in
