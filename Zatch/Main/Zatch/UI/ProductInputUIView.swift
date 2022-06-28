@@ -32,20 +32,15 @@ class ProductInputUIView: UITableViewCell {
         
         backView.addSubview(boundaryLine)
         backView.addSubview(productName)
-        
     }
     
     func setUpConstraint(){
-        
-        self.contentView.snp.makeConstraints{ make in
-            make.width.equalToSuperview()
-            make.height.equalTo(53)
-        }
+    
         
         backView.snp.makeConstraints{ make in
+            make.top.equalToSuperview().offset(12)
+            make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(41)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
         }
         
         boundaryLine.snp.makeConstraints{ make in

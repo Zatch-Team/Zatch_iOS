@@ -30,7 +30,7 @@ class FirstRegisterViewController: UIViewController {
         backTableView.register(CategoryUIView.self, forCellReuseIdentifier: "CategoryUIView")
         backTableView.register(ProductInputUIView.self, forCellReuseIdentifier: "ProductInputUIView")
         backTableView.register(ImageAddTableViewCell.self, forCellReuseIdentifier: "ImageAddTableViewCell")
-        backTableView.register(ProductQuantityUIView.self, forCellReuseIdentifier: "ProductQuantityUIView")
+        backTableView.register(FirstProductInfoTableViewCell.self, forCellReuseIdentifier: "FirstProductInfoCell")
     }
     
     func setUpView(){
@@ -83,7 +83,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
         if section == 0 {
             return 3
         }else{
-            return 4
+            return 2
         }
     }
     
@@ -109,19 +109,12 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 cell.categoryText.text = "입력사항 더보기"
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductQuantityUIView", for: indexPath) as? ProductQuantityUIView else{ fatalError("Cell Casting Error")}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "FirstProductInfoCell", for: indexPath) as? FirstProductInfoTableViewCell else{ fatalError("Cell Casting Error")}
                 return cell
-//            case 2:
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageAddTableViewCell", for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
-//                return cell
-//            case 3:
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageAddTableViewCell", for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
-//                return cell
             default:
-                return UITableViewCell()
+                fatalError("index error")
             }
         }
-//        return UITableViewCell()
     }
     
 }

@@ -25,6 +25,9 @@ class ImageAddTableViewCell: UITableViewCell {
     }()
     
     let imageCountLabel = UILabel()
+    
+    let backView = UIView()
+    
     var imageCount: Int = 0 {
         didSet{
             
@@ -51,15 +54,17 @@ class ImageAddTableViewCell: UITableViewCell {
     
     func setUpView(){
         
-        self.contentView.addSubview(imageCollectionView)
-        self.contentView.addSubview(imageCountLabel)
+        self.contentView.addSubview(backView)
+        
+        self.backView.addSubview(imageCollectionView)
+        self.backView.addSubview(imageCountLabel)
     }
     
     func setUpConstraint(){
         
-        self.contentView.snp.makeConstraints{ make in
-            make.width.equalToSuperview()
+        self.backView.snp.makeConstraints{ make in
             make.height.equalTo(165)
+            make.top.bottom.leading.trailing.equalToSuperview()
         }
         
         imageCollectionView.snp.makeConstraints{ make in
@@ -79,8 +84,6 @@ class ImageAddTableViewCell: UITableViewCell {
         
         imageCountLabel.font = UIFont.pretendard(family: .Medium)
         imageCountLabel.text = "\(imageCount) / 10"
-        
-        self.contentView.backgroundColor = .red
     }
 
 }
@@ -101,7 +104,6 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         //cell 재사용으로 인한 init 작업 진행
         cell.backgroundView = UIImageView.init()
-        cell.backgroundColor = .black
         cell.layer.cornerRadius = 4
         return cell
         

@@ -41,6 +41,7 @@
 		5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */; };
 		5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */; };
 		5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */; };
+		5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */; };
 		576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* FirstRegisterViewController.swift */; };
 		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
@@ -123,6 +124,7 @@
 		5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTextTableViewCell.swift; sourceTree = "<group>"; };
 		5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchTableViewCell.swift; sourceTree = "<group>"; };
 		5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstProductInfoTableViewCell.swift; sourceTree = "<group>"; };
 		576EA922282B7F840028046C /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
@@ -293,12 +295,30 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		576EA921282B7F2D0028046C /* Register */ = {
+		5767D784286AD9650075DB28 /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
 				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		5767D785286AD96D0075DB28 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
+				5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		576EA921282B7F2D0028046C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5767D785286AD96D0075DB28 /* UIView */,
+				5767D784286AD9650075DB28 /* VC */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -346,7 +366,6 @@
 				57B5D6D228346AB100EA1439 /* ProductInputUIView.swift */,
 				57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */,
 				57B5D6D7283488B200EA1439 /* ImageAddCollectionViewCell.swift */,
-				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -634,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57ED69C0282A4D8000ACA67D /* CustomTapGesture.swift in Sources */,
+				5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */,
 				5767752A281CD130000BC7CD /* ViewController.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* SearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,

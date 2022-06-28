@@ -9,6 +9,7 @@ import UIKit
 
 class CategoryUIView: UITableViewCell {
     
+    let backView = UIView()
     let boundaryLine = UIView()
     let categoryText = UILabel()
     let arrowImage = UIButton()
@@ -31,22 +32,24 @@ class CategoryUIView: UITableViewCell {
     
     func setUpView(){
         
-        self.contentView.addSubview(boundaryLine)
-        self.contentView.addSubview(categoryText)
-        self.contentView.addSubview(arrowImage)
+        self.contentView.addSubview(backView)
         
+        self.backView.addSubview(boundaryLine)
+        self.backView.addSubview(categoryText)
+        self.backView.addSubview(arrowImage)
     }
     
     func setUpConstriant(){
         
-        self.contentView.snp.makeConstraints{ make in
+        self.backView.snp.makeConstraints{ make in
             make.width.equalToSuperview()
             make.height.equalTo(41)
+            make.top.bottom.equalToSuperview()
         }
         
         boundaryLine.snp.makeConstraints{ make in
             make.height.equalTo(1)
-            make.top.equalTo(self.snp.bottom)
+            make.bottom.equalToSuperview()
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
