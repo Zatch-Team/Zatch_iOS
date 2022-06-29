@@ -26,6 +26,7 @@ class FirstRegisterViewController: UIViewController {
         backTableView.allowsSelection = false
         backTableView.separatorStyle = .none
         backTableView.isScrollEnabled = false
+        backTableView.allowsSelection = false
         
         backTableView.register(CategoryUIView.self, forCellReuseIdentifier: "CategoryUIView")
         backTableView.register(ProductInputUIView.self, forCellReuseIdentifier: "ProductInputUIView")

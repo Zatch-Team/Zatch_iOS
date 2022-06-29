@@ -10,7 +10,10 @@ import UIKit
 class FirstProductInfoTableViewCell: UITableViewCell {
     
     let tableView = UITableView().then{
+        
         $0.separatorStyle = .none
+        $0.allowsSelection = false
+        
         $0.register(ProductQuantityUIView.self, forCellReuseIdentifier: "quantityCell")
         $0.register(ProductDateChoiceUIView.self, forCellReuseIdentifier: "buyDateCell")
         $0.register(ProductDateChoiceUIView.self, forCellReuseIdentifier: "endDateCell")
@@ -55,11 +58,13 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "buyDateCell", for: indexPath) as? ProductDateChoiceUIView else{
                 fatalError("cell indexing error")
             }
+            cell.titleLabel.text = "구매일자"
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "endDateCell", for: indexPath) as? ProductDateChoiceUIView else{
                 fatalError("cell indexing error")
             }
+            cell.titleLabel.text = "유통기한"
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "openCell", for: indexPath) as? ProductOpenUIView else{

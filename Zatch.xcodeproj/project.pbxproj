@@ -42,6 +42,7 @@
 		5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */; };
 		5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */; };
 		5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */; };
+		5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D789286C0AF70075DB28 /* ZatchRoundCheck.swift */; };
 		576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* FirstRegisterViewController.swift */; };
 		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
@@ -125,6 +126,7 @@
 		5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchTableViewCell.swift; sourceTree = "<group>"; };
 		5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstProductInfoTableViewCell.swift; sourceTree = "<group>"; };
+		5767D789286C0AF70075DB28 /* ZatchRoundCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRoundCheck.swift; sourceTree = "<group>"; };
 		576EA922282B7F840028046C /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
@@ -305,19 +307,27 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		5767D785286AD96D0075DB28 /* UIView */ = {
+		5767D785286AD96D0075DB28 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
 				5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */,
 			);
-			path = UIView;
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5767D788286C0ACB0075DB28 /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				5767D789286C0AF70075DB28 /* ZatchRoundCheck.swift */,
+			);
+			path = CheckBox;
 			sourceTree = "<group>";
 		};
 		576EA921282B7F2D0028046C /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5767D785286AD96D0075DB28 /* UIView */,
+				5767D785286AD96D0075DB28 /* UI */,
 				5767D784286AD9650075DB28 /* VC */,
 			);
 			path = Register;
@@ -348,6 +358,7 @@
 		57802394281D21710085457D /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				5767D788286C0ACB0075DB28 /* CheckBox */,
 				5780238D281D029F0085457D /* UIButton.swift */,
 				57067863281C143A00F48342 /* UIColor.swift */,
 				57802395281D25A70085457D /* UICheckBox.swift */,
@@ -668,6 +679,7 @@
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
 				57B5D6D328346AB100EA1439 /* ProductInputUIView.swift in Sources */,
+				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryButtonView.swift in Sources */,
 				57802396281D25A70085457D /* UICheckBox.swift in Sources */,

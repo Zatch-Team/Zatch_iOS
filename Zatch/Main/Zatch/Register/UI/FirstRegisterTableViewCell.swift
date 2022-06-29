@@ -99,7 +99,6 @@ class ProductDateChoiceUIView: UITableViewCell {
     let backView = UIView()
     
     let titleLabel = UILabel().then{
-        $0.text = "구매일자"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
@@ -143,9 +142,8 @@ class ProductDateChoiceUIView: UITableViewCell {
         $0.backgroundColor = .black5
     }
     
-    let checkButton = UIButton().then{
-        $0.setImage(UIImage(named: "zatch_uncheck"), for: .normal)
-        $0.setImage(UIImage(named: "zatch_check"), for: .selected)
+    let checkButton = ZatchRoundCheck().then{
+        $0.addTarget(self, action: #selector(checkButtonListener(_:)), for: .touchUpInside)
     }
     
     let checkButtonLabel = UILabel().then{
@@ -176,12 +174,16 @@ class ProductDateChoiceUIView: UITableViewCell {
         $0.spacing = 4
     }
     
+    var labelArray : [UILabel]!
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         setUpView()
         setUpConstriant()
+        
+        labelArray = [titleLabel,yearLabel,monthLabel,dateLabel]
 
     }
     
@@ -273,6 +275,23 @@ class ProductDateChoiceUIView: UITableViewCell {
         checkButtonLabel.snp.makeConstraints{ make in
             make.trailing.equalTo(dateLabel.snp.trailing)
             make.centerY.equalTo(checkButton)
+        }
+    }
+    
+    @objc
+    func checkButtonListener(_ sender: ZatchRoundCheck){
+        
+        if(sender.isSelected){
+            sender.isSelected = false
+            stackView.isUserInteractionEnabled = true
+            labelArray.forEach{ label in
+                label.textColor = .black
+            }
+        }else{
+            sender.isSelected = true
+            labelArray.forEach{ label in
+                label.textColor = .black20
+            }
         }
     }
 
