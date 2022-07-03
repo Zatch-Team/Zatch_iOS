@@ -305,40 +305,27 @@ class ProductOpenUIView: UITableViewCell {
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
     
-    let unOpenCheckBox = UIButton().then{
+    var radioButtonArray : [ZatchTextRadioButton]!
+    
+    let unOpenRadioButton = ZatchTextRadioButton().then{
         $0.setTitle("미개봉", for: .normal)
-        
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-        
-        $0.setBackgroundColor(.black10, for: .normal)
-        $0.setBackgroundColor(.zatchPurple40, for: .selected)
-        
-        $0.setTitleColor(.black20, for: .normal)
-        $0.setTitleColor(.zatchPurple, for: .selected)
-        
-        $0.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.isSelected = true
+        $0.addTarget(self, action: #selector(radioButtonSelectListener(_:)), for: .touchUpInside)
     }
-    let openCheckBox = UIButton().then{
+    
+    let openRadioButton = ZatchTextRadioButton().then{
         $0.setTitle("개봉", for: .normal)
-        
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-        
-        $0.setBackgroundColor(.black10, for: .normal)
-        $0.setBackgroundColor(.zatchPurple40, for: .selected)
-        
-        $0.setTitleColor(.black20, for: .normal)
-        $0.setTitleColor(.zatchPurple, for: .selected)
-        
-        $0.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.addTarget(self, action: #selector(radioButtonSelectListener(_:)), for: .touchUpInside)
     }
     
     let backView = UIView()
+    
     let stackView = UIStackView().then{
         $0.spacing = 8
         $0.axis = .horizontal
     }
+    
+    var currentSelect : ZatchTextRadioButton!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -346,6 +333,8 @@ class ProductOpenUIView: UITableViewCell {
 
         setUpView()
         setUpConstriant()
+        
+        currentSelect = unOpenRadioButton
 
     }
     
@@ -359,8 +348,8 @@ class ProductOpenUIView: UITableViewCell {
         backView.addSubview(titleLabel)
         backView.addSubview(stackView)
         
-        stackView.addArrangedSubview(unOpenCheckBox)
-        stackView.addArrangedSubview(openCheckBox)
+        stackView.addArrangedSubview(unOpenRadioButton)
+        stackView.addArrangedSubview(openRadioButton)
         
     }
     
@@ -383,14 +372,23 @@ class ProductOpenUIView: UITableViewCell {
             make.height.equalTo(20)
         }
         
-        unOpenCheckBox.snp.makeConstraints{ make in
+        unOpenRadioButton.snp.makeConstraints{ make in
             make.width.equalTo(48)
             make.height.equalTo(20)
         }
         
-        openCheckBox.snp.makeConstraints{ make in
+        openRadioButton.snp.makeConstraints{ make in
             make.width.equalTo(37)
             make.height.equalTo(20)
+        }
+    }
+    
+    @objc
+    func radioButtonSelectListener(_ sender: ZatchTextRadioButton){
+        if(currentSelect != sender){
+            currentSelect.isSelected = false
+            sender.isSelected = true
+            currentSelect = sender
         }
     }
 
