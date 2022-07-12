@@ -1,0 +1,6 @@
+framework module Pods_ZatchTests {
+  umbrella header "Pods-ZatchTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

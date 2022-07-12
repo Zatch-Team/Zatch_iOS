@@ -9,18 +9,22 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var navigationView: NavigationView!
+    
     let backTableView = UITableView().then{
         $0.separatorStyle = .none
+        $0.allowsSelection = false
     }
     
     let bottomView = BottomFixView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationView = NavigationView(frame: .zero, navigationController: self.navigationController)
 
         setUpView()
         setUpConstraint()
-        setUpValue()
         
         backTableView.delegate = self
         backTableView.dataSource = self
@@ -34,13 +38,19 @@ class DetailViewController: UIViewController {
     }
     
     func setUpView(){
+        self.view.addSubview(navigationView)
         self.view.addSubview(backTableView)
         self.view.addSubview(bottomView)
     }
     
     func setUpConstraint(){
+        
+        navigationView.snp.makeConstraints{ make in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
         backTableView.snp.makeConstraints{make in
-            make.top.equalToSuperview()
+            make.top.equalTo(navigationView.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(bottomView.snp.top)
         }
@@ -49,10 +59,6 @@ class DetailViewController: UIViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview()
         }
-    }
-
-    func setUpValue(){
-        
     }
 
 }

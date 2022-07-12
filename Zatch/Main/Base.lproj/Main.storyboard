@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1x8-qs-7k3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OOj-0L-WvF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="3544.9275362318845" y="103.79464285714285"/>
         </scene>
-        <!--First Register View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="BbO-4x-qEE">
             <objects>
-                <viewController id="1x8-qs-7k3" customClass="FirstRegisterViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1x8-qs-7k3" customClass="SearchViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XUy-vJ-xEE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

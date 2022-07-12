@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FlexLayout/FlexLayout.framework
+${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework
+${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Then/Then.framework
