@@ -13,6 +13,7 @@ class FirstProductInfoTableViewCell: UITableViewCell {
         
         $0.separatorStyle = .none
         $0.allowsSelection = false
+        $0.isScrollEnabled = true
         
         $0.register(ProductQuantityUIView.self, forCellReuseIdentifier: "quantityCell")
         $0.register(ProductDateChoiceUIView.self, forCellReuseIdentifier: "buyDateCell")

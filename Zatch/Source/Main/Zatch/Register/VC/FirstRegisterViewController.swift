@@ -9,12 +9,20 @@ import UIKit
 
 class FirstRegisterViewController: UIViewController {
     
+    var navigationView : NavigationView!
+    
     let topView = TopTitleView()
+    
     let backTableView = UITableView()
+    
     let nextButton = PurpleButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationView = NavigationView(frame: .zero, navigationController: self.navigationController).then{
+            $0.navigationTitle.text = "재치 등록하기"
+        }
 
         setUpView()
         setUpConstraint()
@@ -25,8 +33,8 @@ class FirstRegisterViewController: UIViewController {
 
         backTableView.allowsSelection = false
         backTableView.separatorStyle = .none
+        backTableView.showsVerticalScrollIndicator = false
         backTableView.isScrollEnabled = false
-        backTableView.allowsSelection = false
         
         backTableView.register(CategoryUIView.self, forCellReuseIdentifier: "CategoryUIView")
         backTableView.register(ProductInputUIView.self, forCellReuseIdentifier: "ProductInputUIView")
@@ -35,7 +43,7 @@ class FirstRegisterViewController: UIViewController {
     }
     
     func setUpView(){
-        
+        self.view.addSubview(navigationView)
         self.view.addSubview(topView)
         self.view.addSubview(backTableView)
         self.view.addSubview(nextButton)
@@ -43,9 +51,13 @@ class FirstRegisterViewController: UIViewController {
     
     func setUpConstraint(){
         
+        navigationView.snp.makeConstraints{ make in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
         topView.snp.makeConstraints{ make in
             make.width.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.top.equalTo(navigationView.snp.bottom)
             make.leading.trailing.equalToSuperview()
         }
         
@@ -66,7 +78,7 @@ class FirstRegisterViewController: UIViewController {
     
     func setUpValue(){
         
-        topView.titleText.text = "주고 싶은\n물건이 무엇인가요?"
+        topView.titleLabel.text = "주고 싶은\n물건이 무엇인가요?"
         
         nextButton.setTitle("다음 단계로", for: .normal)
         

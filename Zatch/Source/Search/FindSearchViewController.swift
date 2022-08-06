@@ -10,7 +10,7 @@ import SnapKit
 import FlexLayout
 import PinLayout
 
-class SecondSearchViewController: UIViewController {
+class FindSearchViewController: UIViewController {
     
     let titleLabel = UILabel()
     let myLabel = UILabel()
@@ -18,7 +18,6 @@ class SecondSearchViewController: UIViewController {
     let exchangeImage = UIImageView()
     let subTitle1 = UILabel()
     let subTitle2 = UILabel()
-    let backButton = NavigationBackButton()
     let nextButton = PurpleButton()
     let flexContainer1 = UIView()
     let flexContainer2 = UIView()
@@ -44,10 +43,7 @@ class SecondSearchViewController: UIViewController {
     
     //내용 설정
     func setUpValue(){
-        
-        backButton.target = self
-        backButton.action = #selector(popToSearchVC(_:))
-        self.navigationItem.setLeftBarButton(backButton, animated: true)
+
         
         titleLabel.text = "무엇을 찾고 있나요?"
         titleLabel.font = UIFont.pretendard(size: 20, family: .Bold)

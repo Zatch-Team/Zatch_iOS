@@ -43,8 +43,8 @@ class MainViewController: ViewController {
     
     @IBAction func moveSearchVC(_ sender: UIButton){
         //잠시 detail view controller로 임시 변경
-        let nextVC = DetailViewController()
-//        let nextVC = SearchViewController()
+//        let nextVC = DetailViewController()
+        let nextVC = MySearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 

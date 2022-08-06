@@ -12,7 +12,6 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
     
     //MARK: UIComponent
     
-    let backButton = NavigationBackButton()
     let topView = UIView()
     let separateLine = UIView()
     let separateRectangle = UIView()
@@ -31,10 +30,8 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.hidesBackButton = true
         
-        self.navigationItem.setLeftBarButton(backButton, animated: true)
         
         setUpValue()
         setUpView()
@@ -135,9 +132,6 @@ class SearchResultViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     func setUpAction(){
-        
-        backButton.target = self
-        backButton.action = #selector(popNavigationVC)
         
         myZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openProductBottomSheet)))
         

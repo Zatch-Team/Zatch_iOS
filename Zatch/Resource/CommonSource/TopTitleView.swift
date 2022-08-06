@@ -10,20 +10,9 @@ import UIKit
 
 class TopTitleView: UIView{
     
-    let titleText = TitleLabel()
-    
-    init(){
-        super.init(frame: CGRect.zero)
-        
-        self.snp.makeConstraints{ make in
-            make.height.equalTo(88)
-        }
-        self.addSubview(titleText)
-        
-        titleText.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(16)
-            make.leading.equalToSuperview().offset(28)
-        }
+    let titleLabel = UILabel().then{
+        $0.numberOfLines = 0
+        $0.font = UIFont.pretendard(size: 20, family: .Bold)
     }
     
     required init(coder: NSCoder) {
@@ -32,5 +21,15 @@ class TopTitleView: UIView{
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        
+        self.snp.makeConstraints{ make in
+            make.height.equalTo(88)
+        }
+        self.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints{ make in
+            make.top.equalToSuperview().offset(16)
+            make.leading.equalToSuperview().offset(28)
+        }
     }
 }
