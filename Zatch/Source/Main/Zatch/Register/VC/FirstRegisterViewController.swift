@@ -11,7 +11,7 @@ class FirstRegisterViewController: UIViewController {
     
     var navigationView : NavigationView!
     
-    let topView = TopTitleView()
+    let topView = TitleView()
     
     let backTableView = UITableView()
     

@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CellCalledViewController{
     func newCellIsSelected(_ indexPath: IndexPath)
+    func newCellIsSelected(_ cell: UICollectionViewCell)
 }

@@ -43,13 +43,7 @@ class SearchTagCollectionViewCell: UICollectionViewCell{
     
     //MARK: - Action
     @objc
-    func selectBtnIsTapped(){
-        if let collectionView = self.superview as? UICollectionView {
-            if let indexPath = collectionView.indexPath(for: self) {
-                delegate?.newCellIsSelected(indexPath)
-            }
-        }
-    }
+    func selectBtnIsTapped(){}
     
     //MARK: - LifeCycle
     

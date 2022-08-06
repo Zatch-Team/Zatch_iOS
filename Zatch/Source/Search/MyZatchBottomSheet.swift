@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import PinLayout
-import FlexLayout
 
 enum SearchBS: String{
     case Find = "내가 찾는 재치"
@@ -33,14 +31,14 @@ class MyZatchBottomSheet: ViewController {
         setUpConstraint()
         
         
-        flexContainer.flex.wrap(.wrap).direction(.row).define { flex in
-            for i in zatchData{
-                let button = SearchBSButton(bsType)
-                button.setTitle(i, for: .normal)
-                button.addTarget(self, action: #selector(selectItem), for: .touchUpInside)
-                flex.addItem(button).marginEnd(8).marginBottom(16)
-            }
-        }
+//        flexContainer.flex.wrap(.wrap).direction(.row).define { flex in
+//            for i in zatchData{
+//                let button = SearchBSButton(bsType)
+//                button.setTitle(i, for: .normal)
+//                button.addTarget(self, action: #selector(selectItem), for: .touchUpInside)
+//                flex.addItem(button).marginEnd(8).marginBottom(16)
+//            }
+//        }
     }
     
     private func setUpValue(){
@@ -69,11 +67,6 @@ class MyZatchBottomSheet: ViewController {
             make.trailing.equalToSuperview().offset(-30)
             make.bottom.equalToSuperview().offset(-30)
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        flexContainer.pin.layout()
-        flexContainer.flex.layout()
     }
     
     //MARK: - Action

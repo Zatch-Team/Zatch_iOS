@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import FlexLayout
 import SnapKit
-import PinLayout
 
-class MySearchViewController: UIViewController{
+class MySearchViewController: BaseViewController{
     
     //MARK: - Properties
     var currentSelected: SearchVCCheckBox?
@@ -21,9 +19,7 @@ class MySearchViewController: UIViewController{
     
     //MARK: UIComponent
     
-    var navigationView: NavigationView!
-    
-    let topView = TopTitleView().then{
+    let topView = TitleView().then{
         $0.titleLabel.text = "내가 교환할 재치를\n입력해주세요."
     }
     
@@ -68,23 +64,19 @@ class MySearchViewController: UIViewController{
         
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = false
-        self.view.backgroundColor = .white
-        
-        self.navigationView = NavigationView(frame: .zero, navigationController: self.navigationController)
-        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-            
-            $0.delegate = self
-            $0.dataSource = self
-            
-            $0.register(SearchTagCollectionViewCell.self, forCellWithReuseIdentifier: SearchTagCollectionViewCell.cellIdentifier)
             
             let layout = LeftAlignCollectionViewFlowLayout()
             layout.minimumLineSpacing = 12
             layout.minimumInteritemSpacing = 8
-            layout.sectionInset = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
+//            layout.sectionInset = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
+            
+            $0.delegate = self
+            $0.dataSource = self
+            
             $0.collectionViewLayout = layout
+            
+            $0.register(MySearchTagCollectionViewCell.self, forCellWithReuseIdentifier: MySearchTagCollectionViewCell.cellIdentifier)
         }
         
         setUpView()
@@ -95,42 +87,37 @@ class MySearchViewController: UIViewController{
     //MARK: Action
     
     @objc
-    func selectItem(_ sender: SearchVCCheckBox){
-        currentSelected?.isChecked = false
-        currentSelected = sender
-        selectTextField.text = sender.title(for: .normal)
-    }
-    
-    @objc
     func nextButtonClick(_ sender: UIButton){
         let nextVC = FindSearchViewController()
         nextVC.myLabel.text = selectTextField.text
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+}
+
+extension MySearchViewController: CellCalledViewController{
     
-    //MARK: - Helper
     func newCellIsSelected(_ indexPath: IndexPath){
+        if let currentTag = collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
+            currentTag.setBtnInitState()
+        }
+        
         if(currentSelect == indexPath.row){
             currentSelect = -1
             selectTextField.text = ""
         }else{
-            guard let newTag = collectionView.cellForItem(at: indexPath) as? SearchTagCollectionViewCell else { return }
-            
-            newTag.setBtnSelectedState()
-            selectTextField.text = myZatchData[indexPath.row]
-            
-            guard let currentTag = collectionView.cellForItem(at: [0, currentSelect]) as? SearchTagCollectionViewCell else {
+            if let newTag = collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
+                newTag.setBtnSelectedState()
+                selectTextField.text = myZatchData[indexPath.row]
                 currentSelect = indexPath.row
-                return }
-            
-            currentTag.setBtnInitState()
-            
-            currentSelect = indexPath.row
+            }
         }
     }
+    
+    func newCellIsSelected(_ cell: UICollectionViewCell) { }
 }
 
-extension MySearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CellCalledViewController{
+extension MySearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myZatchData.count
@@ -138,11 +125,14 @@ extension MySearchViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchTagCollectionViewCell.cellIdentifier, for: indexPath) as? SearchTagCollectionViewCell else{ fatalError() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MySearchTagCollectionViewCell.cellIdentifier,
+                                                            for: indexPath)
+                as? MySearchTagCollectionViewCell else{ fatalError() }
         
+        cell.delegate = self
         cell.selectBtn.setTitle(myZatchData[indexPath.row], for: .normal)
         cell.setBtnInitState()
-        cell.delegate = self
+        
         return cell
     }
     

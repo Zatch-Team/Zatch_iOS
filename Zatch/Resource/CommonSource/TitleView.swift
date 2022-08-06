@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TopTitleView: UIView{
+class TitleView: UIView{
     
     let titleLabel = UILabel().then{
         $0.numberOfLines = 0

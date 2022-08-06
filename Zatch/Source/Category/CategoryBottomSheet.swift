@@ -8,8 +8,6 @@
 import UIKit
 import MaterialComponents
 import SnapKit
-import FlexLayout
-import PinLayout
 
 
 class CategoryBottomSheet: UIViewController {
@@ -43,11 +41,6 @@ class CategoryBottomSheet: UIViewController {
         setUpView()
         setUpConstraint()
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        flexContainer.pin.layout()
-        flexContainer.flex.layout()
     }
     
     //MARK: - ViewSetting
@@ -105,12 +98,12 @@ class CategoryBottomSheet: UIViewController {
 //            }
 //        }
         
-        flexContainer.flex.addItem().direction(.row).define{flex in
-            
-            flex.addItem(label)
-            flex.addItem(label1)
-            flex.addItem(label2)
-        }
+//        flexContainer.flex.addItem().direction(.row).define{flex in
+//
+//            flex.addItem(label)
+//            flex.addItem(label1)
+//            flex.addItem(label2)
+//        }
         
     }
     

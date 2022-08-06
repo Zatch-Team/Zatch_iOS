@@ -7,10 +7,6 @@ target 'Zatch' do
 
   # Pods for Zatch
 
-  pod 'FlexLayout'
-
-  pod 'PinLayout'
-
   pod 'SnapKit', '~> 5.6.0'
 
   pod 'Then'

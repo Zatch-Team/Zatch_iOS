@@ -11,8 +11,6 @@ extension MySearchViewController{
     
     func setUpView(){
         
-        self.view.addSubview(navigationView)
-        
         self.view.addSubview(topView)
         
         self.view.addSubview(selectFrame)
@@ -27,10 +25,6 @@ extension MySearchViewController{
     }
     
     func setUpConstraints(){
-        
-        self.navigationView.snp.makeConstraints{ make in
-            make.top.leading.trailing.equalToSuperview()
-        }
         
         self.topView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(88)
