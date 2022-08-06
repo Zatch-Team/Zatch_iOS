@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchSelectCollectionViewCell: UICollectionViewCell{
+class SearchTagCollectionViewCell: UICollectionViewCell{
     
     //MARK: - Properties
     
@@ -36,7 +36,7 @@ class SearchSelectCollectionViewCell: UICollectionViewCell{
     
     func setBtnSelectedState(){
         self.selectBtn.layer.borderWidth = 1.5
-        self.selectBtn.titleLabel?.font = UIFont.pretendard(size: 13, family: .Medium)
+        self.selectBtn.titleLabel?.font = UIFont.pretendard(size: 13, family: .Bold)
         self.selectBtn.layer.borderColor = UIColor.zatchYellow.cgColor
         self.selectBtn.setTitleColor(.zatchYellow, for: .normal)
     }
@@ -44,11 +44,11 @@ class SearchSelectCollectionViewCell: UICollectionViewCell{
     //MARK: - Action
     @objc
     func selectBtnIsTapped(){
-        guard let collectionView = self.superview as? UICollectionView else { return }
-        
-        guard let indexPath = collectionView.indexPath(for: self) else { return }
-        
-        delegate?.newCellIsSelected(indexPath)
+        if let collectionView = self.superview as? UICollectionView {
+            if let indexPath = collectionView.indexPath(for: self) {
+                delegate?.newCellIsSelected(indexPath)
+            }
+        }
     }
     
     //MARK: - LifeCycle

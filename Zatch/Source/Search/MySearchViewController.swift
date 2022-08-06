@@ -62,8 +62,6 @@ class MySearchViewController: UIViewController{
     
     var collectionView : UICollectionView!
     
-    let flexContainer = UIView()
-    
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -75,20 +73,14 @@ class MySearchViewController: UIViewController{
         
         self.navigationView = NavigationView(frame: .zero, navigationController: self.navigationController)
         
-        let flexLayout = CollectionViewLeftAlignFlowLayout()
-        flexLayout.scrollDirection = .vertical
-        flexLayout.minimumLineSpacing = 12
-        flexLayout.minimumInteritemSpacing = 8
-//        flexLayout.estimatedItemSize = CGSize(width: 100, height: 28)
-        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
             
             $0.delegate = self
             $0.dataSource = self
             
-            $0.register(SearchSelectCollectionViewCell.self, forCellWithReuseIdentifier: SearchSelectCollectionViewCell.cellIdentifier)
+            $0.register(SearchTagCollectionViewCell.self, forCellWithReuseIdentifier: SearchTagCollectionViewCell.cellIdentifier)
             
-            let layout = CollectionViewLeftAlignFlowLayout()
+            let layout = LeftAlignCollectionViewFlowLayout()
             layout.minimumLineSpacing = 12
             layout.minimumInteritemSpacing = 8
             layout.sectionInset = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
@@ -98,14 +90,6 @@ class MySearchViewController: UIViewController{
         setUpView()
         setUpConstraints()
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-        super.viewDidLayoutSubviews()
-        
-        self.flexContainer.pin.layout()
-        self.flexContainer.flex.layout()
     }
     
     //MARK: Action
@@ -126,7 +110,23 @@ class MySearchViewController: UIViewController{
     
     //MARK: - Helper
     func newCellIsSelected(_ indexPath: IndexPath){
-        currentSelect = indexPath.row
+        if(currentSelect == indexPath.row){
+            currentSelect = -1
+            selectTextField.text = ""
+        }else{
+            guard let newTag = collectionView.cellForItem(at: indexPath) as? SearchTagCollectionViewCell else { return }
+            
+            newTag.setBtnSelectedState()
+            selectTextField.text = myZatchData[indexPath.row]
+            
+            guard let currentTag = collectionView.cellForItem(at: [0, currentSelect]) as? SearchTagCollectionViewCell else {
+                currentSelect = indexPath.row
+                return }
+            
+            currentTag.setBtnInitState()
+            
+            currentSelect = indexPath.row
+        }
     }
 }
 
@@ -138,7 +138,7 @@ extension MySearchViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchSelectCollectionViewCell.cellIdentifier, for: indexPath) as? SearchSelectCollectionViewCell else{ fatalError() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchTagCollectionViewCell.cellIdentifier, for: indexPath) as? SearchTagCollectionViewCell else{ fatalError() }
         
         cell.selectBtn.setTitle(myZatchData[indexPath.row], for: .normal)
         cell.setBtnInitState()

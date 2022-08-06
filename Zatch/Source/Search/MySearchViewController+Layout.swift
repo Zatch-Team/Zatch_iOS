@@ -21,11 +21,9 @@ extension MySearchViewController{
         self.selectFrame.addSubview(searchImage)
         
         self.view.addSubview(subTitle)
-        self.view.addSubview(flexContainer)
+        self.view.addSubview(collectionView)
         self.view.addSubview(nextButton)
         self.view.addSubview(skipButton)
-        
-        self.view.addSubview(collectionView)
     }
     
     func setUpConstraints(){
@@ -48,13 +46,21 @@ extension MySearchViewController{
         
         self.selectTextField.snp.makeConstraints{ make in
             make.height.equalTo(44)
-            make.top.equalTo(topView.snp.bottom).offset(54)
+            make.top.equalToSuperview().offset(54)
             make.leading.equalToSuperview().offset(40)
             make.trailing.equalToSuperview().offset(-40)
         }
+
+        self.searchImage.snp.makeConstraints{ make in
+            make.width.height.equalTo(24)
+            make.trailing.equalToSuperview().offset(-48)
+            make.bottom.equalTo(underLine).offset(-8)
+            make.top.equalToSuperview().offset(62)
+        }
         
         self.underLine.snp.makeConstraints{ make in
-            make.top.equalTo(selectTextField.snp.bottom).offset(8)
+//            make.top.equalTo(selectTextField.snp.bottom).offset(8)
+            make.top.equalTo(selectTextField.snp.bottom)
             make.height.equalTo(1.5)
             make.leading.equalTo(selectTextField)
             make.trailing.equalTo(selectTextField)

@@ -24,9 +24,9 @@
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
 		57468A76289D077200056691 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A75289D077200056691 /* PurpleButton.swift */; };
-		57468A78289D2CD800056691 /* SearchSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A77289D2CD800056691 /* SearchSelectCollectionViewCell.swift */; };
+		57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */; };
 		57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A7A289D3C2300056691 /* CellCalledViewController.swift */; };
-		57468A7D289DF60000056691 /* CollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A7C289DF60000056691 /* CollectionViewLeftAlignFlowLayout.swift */; };
+		57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
@@ -109,9 +109,9 @@
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57468A75289D077200056691 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
-		57468A77289D2CD800056691 /* SearchSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A7A289D3C2300056691 /* CellCalledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCalledViewController.swift; sourceTree = "<group>"; };
-		57468A7C289DF60000056691 /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
+		57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUIView.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */,
-				57468A77289D2CD800056691 /* SearchSelectCollectionViewCell.swift */,
+				57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -432,7 +432,7 @@
 				57067863281C143A00F48342 /* UIColor.swift */,
 				57802395281D25A70085457D /* UICheckBox.swift */,
 				57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */,
-				57468A7C289DF60000056691 /* CollectionViewLeftAlignFlowLayout.swift */,
+				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
 				57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */,
 			);
 			path = Resource;
@@ -768,11 +768,11 @@
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategoryUIView.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
-				57468A78289D2CD800056691 /* SearchSelectCollectionViewCell.swift in Sources */,
+				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */,
-				57468A7D289DF60000056691 /* CollectionViewLeftAlignFlowLayout.swift in Sources */,
+				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,
 				5767D777286832420075DB28 /* FirstWantTableViewCell.swift in Sources */,

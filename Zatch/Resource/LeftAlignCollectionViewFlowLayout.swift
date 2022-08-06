@@ -7,9 +7,7 @@
 
 import UIKit
 
-class CollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
-    
-    let cellSpacing: CGFloat = 10
+class LeftAlignCollectionViewFlowLayout: UICollectionViewFlowLayout {
  
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
