@@ -11,8 +11,6 @@ target 'Zatch' do
 
   pod 'Then'
 
-  pod 'MaterialComponents/BottomSheet'
-
   target 'ZatchTests' do
     inherit! :search_paths
     # Pods for testing

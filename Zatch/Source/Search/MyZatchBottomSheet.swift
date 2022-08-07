@@ -29,16 +29,6 @@ class MyZatchBottomSheet: ViewController {
         setUpView()
         setUpValue()
         setUpConstraint()
-        
-        
-//        flexContainer.flex.wrap(.wrap).direction(.row).define { flex in
-//            for i in zatchData{
-//                let button = SearchBSButton(bsType)
-//                button.setTitle(i, for: .normal)
-//                button.addTarget(self, action: #selector(selectItem), for: .touchUpInside)
-//                flex.addItem(button).marginEnd(8).marginBottom(16)
-//            }
-//        }
     }
     
     private func setUpValue(){

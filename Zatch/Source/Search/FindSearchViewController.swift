@@ -115,7 +115,7 @@ class FindSearchViewController: BaseViewController {
     
     @objc
     func moveToResultVC(_ sender: UIButton){
-        let nextVC = SearchResultViewController()
+        let nextVC = ResultSearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 

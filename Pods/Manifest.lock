@@ -1,52 +1,20 @@
 PODS:
-  - MaterialComponents/Availability (124.2.0)
-  - MaterialComponents/BottomSheet (124.2.0):
-    - MaterialComponents/Elevation
-    - MaterialComponents/private/KeyboardWatcher
-    - MaterialComponents/private/Math
-    - MaterialComponents/ShadowElevations
-    - MaterialComponents/ShadowLayer
-    - MaterialComponents/ShapeLibrary
-    - MaterialComponents/Shapes
-  - MaterialComponents/Elevation (124.2.0):
-    - MaterialComponents/Availability
-    - MaterialComponents/private/Color
-    - MaterialComponents/private/Math
-  - MaterialComponents/private/Application (124.2.0)
-  - MaterialComponents/private/Color (124.2.0):
-    - MaterialComponents/Availability
-  - MaterialComponents/private/KeyboardWatcher (124.2.0):
-    - MaterialComponents/private/Application
-  - MaterialComponents/private/Math (124.2.0)
-  - MaterialComponents/ShadowElevations (124.2.0)
-  - MaterialComponents/ShadowLayer (124.2.0):
-    - MaterialComponents/ShadowElevations
-  - MaterialComponents/ShapeLibrary (124.2.0):
-    - MaterialComponents/private/Math
-    - MaterialComponents/Shapes
-  - MaterialComponents/Shapes (124.2.0):
-    - MaterialComponents/private/Color
-    - MaterialComponents/private/Math
-    - MaterialComponents/ShadowLayer
   - SnapKit (5.6.0)
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - MaterialComponents/BottomSheet
   - SnapKit (~> 5.6.0)
   - Then
 
 SPEC REPOS:
   trunk:
-    - MaterialComponents
     - SnapKit
     - Then
 
 SPEC CHECKSUMS:
-  MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: da8d2fca101ef7db42657ffea3e63adcb096e1b1
+PODFILE CHECKSUM: e2005207abe0b5abbcd746f77d9f55a3775db810
 
 COCOAPODS: 1.11.3
