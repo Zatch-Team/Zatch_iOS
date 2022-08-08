@@ -133,11 +133,11 @@ class FirstWantTableViewCell: UITableViewCell {
         myZatchLabel.text = "몰랑이 피규어"
         
         wantZatchCategory.textColor = .zatchDeepYellow
-        wantZatchCategory.backgroundColor = .zatchYellow40
+        wantZatchCategory.backgroundColor = .yellow40
         wantZatchCategory.font = UIFont.pretendard(size: 12, family: .Medium)
         
         myZatchCategory.textColor = .zatchPurple
-        myZatchCategory.backgroundColor = .zatchPurple40
+        myZatchCategory.backgroundColor = .purple40
         wantZatchCategory.font = UIFont.pretendard(size: 12, family: .Medium)
         myZatchCategory.font = UIFont.pretendard(size: 12, family: .Medium)
         

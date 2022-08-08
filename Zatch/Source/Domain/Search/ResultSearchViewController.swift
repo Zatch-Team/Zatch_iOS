@@ -9,6 +9,10 @@ import UIKit
 
 class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegate {
     
+    //MARK: - Properties
+    var myZatchIndex: Int?
+    var wantZatchIndex: Int?
+    
     //MARK: UIComponent
     
     let topView = UIView()
@@ -27,15 +31,15 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.spacing = 14
     }
     
-    let myCategoryButton = SearchCategoryDot()
+    let myCategoryButton = SearchCateogryDotButton()
     
-    let myZatch = UILabel().then{
-        $0.text = "생수"
+    lazy var myZatch = UILabel().then{
         $0.numberOfLines = 1
         $0.textAlignment = .right
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
     }
     
     let wantStackView = UIStackView().then{
@@ -44,14 +48,14 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.spacing = 14
     }
     
-    let wantCategoryButton = SearchCategoryDot()
+    let wantCategoryButton = SearchCateogryDotButton()
     
-    let wantZatch = UILabel().then{
-        $0.text = "라면"
+    lazy var wantZatch = UILabel().then{
         $0.numberOfLines = 1
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
     }
     
     let exchangeImage = UIImageView().then{
@@ -105,10 +109,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     func setUpAction(){
         
-        myZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openProductBottomSheet)))
-        
-        wantZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openProductBottomSheet)))
-        
+    
 //        let categoryTapGesture = UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet))
         myCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
         wantCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
@@ -123,9 +124,27 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     }
     
     @objc
-    func openProductBottomSheet(recognizer: UITapGestureRecognizer){
-//        let bottoSheetVC = MDCBottomSheetController(contentViewController: MyZatchBottomSheet())
-//        present(bottoSheetVC, animated: true, completion: nil)
+    func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
+        let bottomSheet = MyZatchBottomSheet()
+        
+        bottomSheet.selectCompleteHandelr = { text, index in
+            self.myZatch.text = text
+            self.myZatchIndex = index
+        }
+        
+        bottomSheet.loadViewIfNeeded()
+        present(bottomSheet, animated: true, completion: nil)
+    }
+    
+    @objc
+    func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
+        let bottomSheet = WantZatchBottomSheet()
+        bottomSheet.selectCompleteHandelr = { text, index in
+            self.wantZatch.text = text
+            self.wantZatchIndex = index
+        }
+        bottomSheet.loadViewIfNeeded()
+        present(bottomSheet, animated: true, completion: nil)
     }
     
     @objc
@@ -133,14 +152,14 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         
         let vc = CategoryBottomSheet()
         
-        vc.categorySelect = { category in
-            print(category)
-            (recognizer.view as? SearchCategoryDot)?.isChecked = true
-        }
+//        vc.categorySelect = { category in
+//            print(category)
+//            (recognizer.view as? SearchCategoryDot)?.isChecked = true
+//        }
         
 //        let bottoSheetVC = MDCBottomSheetController(contentViewController: vc)
-//
-//        present(bottoSheetVC, animated: true, completion: nil)
+        vc.loadViewIfNeeded()
+        present(vc, animated: true, completion: nil)
     }
 
 }

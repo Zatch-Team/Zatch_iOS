@@ -11,7 +11,7 @@ import SnapKit
 class MySearchViewController: BaseViewController{
     
     //MARK: - Properties
-    var currentSelected: SearchVCCheckBox?
+//    var currentSelected: SearchVCCheckBox?
     
     let myZatchData: [String] = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
     

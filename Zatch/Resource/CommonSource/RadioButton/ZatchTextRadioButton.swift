@@ -25,7 +25,7 @@ class ZatchTextRadioButton: UIButton {
         self.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
         
         self.setBackgroundColor(.black10, for: .normal)
-        self.setBackgroundColor(.zatchPurple40, for: .selected)
+        self.setBackgroundColor(.purple40, for: .selected)
         
         self.setTitleColor(.black20, for: .normal)
         self.setTitleColor(.zatchPurple, for: .selected)
