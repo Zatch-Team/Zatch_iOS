@@ -31,7 +31,9 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.spacing = 14
     }
     
-    let myCategoryButton = SearchCateogryDotButton()
+    lazy var myCategoryButton = SearchCateogryDotButton().then{
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+    }
     
     lazy var myZatch = UILabel().then{
         $0.numberOfLines = 1
@@ -48,7 +50,9 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.spacing = 14
     }
     
-    let wantCategoryButton = SearchCateogryDotButton()
+    lazy var wantCategoryButton = SearchCateogryDotButton().then{
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+    }
     
     lazy var wantZatch = UILabel().then{
         $0.numberOfLines = 1
@@ -103,17 +107,6 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         
         setUpView()
         setUpConstraint()
-        setUpAction()
-        
-    }
-    
-    func setUpAction(){
-        
-    
-//        let categoryTapGesture = UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet))
-        myCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        wantCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-
     }
     
     //MARK: Action
@@ -155,12 +148,10 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         
         let vc = CategoryBottomSheet()
         
-//        vc.categorySelect = { category in
-//            print(category)
-//            (recognizer.view as? SearchCategoryDot)?.isChecked = true
-//        }
-        
-//        let bottoSheetVC = MDCBottomSheetController(contentViewController: vc)
+        vc.categorySelectHandler = { category in
+            print(category)
+            (recognizer.view as? SearchCateogryDotButton)?.isSelected = true
+        }
         
         vc.loadViewIfNeeded()
         present(vc, animated: true, completion: nil)

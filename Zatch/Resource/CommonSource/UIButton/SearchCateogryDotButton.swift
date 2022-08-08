@@ -8,51 +8,17 @@
 import UIKit
 
 class SearchCateogryDotButton: UIButton {
-
-    init(){
-        super.init(frame: CGRect.zero)
-        commonInit()
-    }
     
-    var isChecked: Bool = false {
-        didSet{
-            guard isChecked != oldValue else{
-                return
-            }
-            self.setChecked(isChecked)
-        }
-    }
-    
-    private func commonInit(){
+    //MARK: - LifeCycle
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
         
-        self.isChecked = false
-        self.isEnabled = true
         self.setImage(UIImage(named: "search_dot"), for: .normal)
-        
-        self.addTarget(self, action: #selector(check), for: .touchUpInside)
-        
+        self.setImage(UIImage(named: "search_dot_checked"), for: .selected)
     }
     
-    @objc func check(_sender : UIGestureRecognizer){
-        isChecked.toggle()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    private func setChecked(_ isChecked: Bool){
-        if isChecked == false{
-            self.setImage(UIImage(named: "search_dot"), for: .normal)
-        }else{
-            self.setImage(UIImage(named: "search_dot_checked"), for: .normal)
-        }
-    }
-    
-    required init(coder: NSCoder) {
-        super.init(coder: coder)!
-        commonInit()
-    }
-    
-    override init(frame: CGRect){
-        super.init(frame: frame)
-        commonInit()
-    }
-
 }

@@ -9,7 +9,7 @@ import UIKit
 
 enum BottomSheetSize: CGFloat{
     case SearchTag = 219
-    case Category = 524
+    case Category = 554
 }
 
 class SheetViewController: UIViewController, UIViewControllerTransitioningDelegate {

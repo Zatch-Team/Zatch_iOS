@@ -18,9 +18,13 @@ class ResultTableViewCell: UITableViewCell {
     
     let productStackView = UIStackView()
     
+    let selectedView = UIView()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.selectedBackgroundView = selectedView
         
         setUpView()
         setUpValue()
