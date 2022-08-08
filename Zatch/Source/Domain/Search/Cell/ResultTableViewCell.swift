@@ -9,17 +9,54 @@ import UIKit
 
 class ResultTableViewCell: UITableViewCell {
     
-    let productImage = UIImageView()
-    let myProduct = UILabel()
-    let wantProduct = UILabel()
-    let exchangeImage = UIImageView()
-    let etcInfoText = UILabel()
-    let heartButton = UIButton()
+    let productImage = UIImageView().then{
+        $0.backgroundColor = .black45
+        $0.layer.cornerRadius = 4
+    }
     
-    let productStackView = UIStackView()
+    let myProduct = UILabel().then{
+        $0.text = "삼다수 생수 1L"
+        $0.textColor = .black85
+        $0.font = UIFont.pretendard(family: .Bold)
+    }
+    
+    let wantProduct = UILabel().then{
+        $0.text = "신라면 3봉"
+        $0.textColor = .black85
+        $0.font = UIFont.pretendard(family: .Bold)
+    }
+    
+    let exchangeImage = UIImageView().then{
+        $0.image = UIImage(named: "exchange_vertical_silver")
+    }
+    
+    let etcInfoText = UILabel().then{
+        $0.text = "냥냥이 · 불광동"
+        $0.textColor = .black65
+        $0.font = UIFont.pretendard(size: 12)
+    }
+    
+    let heartButton = UIButton().then{
+        $0.setImage(UIImage(named: "heart"), for: .normal)
+        $0.setImage(UIImage(named: "heart_yellow"), for: .selected)
+        $0.addTarget(self, action: #selector(heartButtonTouchUp), for: .touchUpInside)
+    }
+    
+    let productStackView = UIStackView().then{
+        $0.axis = .vertical
+        $0.spacing = 4
+        $0.alignment = .leading
+    }
+    
+    let separatorLine = UIView().then{
+        $0.backgroundColor = .black5
+    }
+    
+    let backView = UIView().then{
+        $0.backgroundColor = .white
+    }
     
     let selectedView = UIView()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,61 +64,39 @@ class ResultTableViewCell: UITableViewCell {
         self.selectedBackgroundView = selectedView
         
         setUpView()
-        setUpValue()
         setUpConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func setUpValue(){
-        
-        productImage.backgroundColor = .black45
-        productImage.layer.cornerRadius = 4
-        
-        myProduct.text = "삼다수 생수 1L"
-        myProduct.textColor = .black85
-        myProduct.font = UIFont.pretendard(family: .Bold)
-        
-        wantProduct.text = "신라면 3봉"
-        wantProduct.textColor = .black85
-        wantProduct.font = UIFont.pretendard(family: .Bold)
-        
-        etcInfoText.text = "냥냥이 · 불광동"
-        etcInfoText.textColor = .black65
-        etcInfoText.font = UIFont.pretendard(size: 12)
-        
-        exchangeImage.image = UIImage(named: "exchange_vertical_silver")
-        
-        productStackView.axis = .vertical
-        productStackView.spacing = 4
-        productStackView.alignment = .leading
-        
-        heartButton.setImage(UIImage(named: "heart"), for: .normal)
-        heartButton.setImage(UIImage(named: "heart_yellow"), for: .selected)
-        heartButton.addTarget(self, action: #selector(heartButtonTouchUp), for: .touchUpInside)
-        
-    }
+
     
     func setUpView(){
         
-        self.contentView.addSubview(productImage)
+        self.contentView.addSubview(backView)
+        
+        self.backView.addSubview(productImage)
         
         self.productStackView.addArrangedSubview(myProduct)
         self.productStackView.addArrangedSubview(exchangeImage)
         self.productStackView.addArrangedSubview(wantProduct)
         
-        self.contentView.addSubview(productStackView)
-        self.contentView.addSubview(etcInfoText)
-        self.contentView.addSubview(heartButton)
+        self.backView.addSubview(productStackView)
+        self.backView.addSubview(etcInfoText)
+        self.backView.addSubview(heartButton)
+        self.backView.addSubview(separatorLine)
     }
     
     func setUpConstraint(){
         
         self.contentView.snp.makeConstraints{ make in
-            make.width.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(138)
+        }
+        
+        self.backView.snp.makeConstraints{ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
         
         self.productImage.snp.makeConstraints{ make in
@@ -108,6 +123,13 @@ class ResultTableViewCell: UITableViewCell {
         self.heartButton.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
+        }
+        
+        self.separatorLine.snp.makeConstraints{ make in
+            make.height.equalTo(1)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview()
         }
     }
 

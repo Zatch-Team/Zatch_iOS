@@ -130,8 +130,8 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.image = UIImage(named: "search_filter")
     }
     
-    let tableView = UITableView().then{
-        $0.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    lazy var tableView = UITableView().then{
+        $0.separatorStyle = .none
         
         $0.register(ResultTableViewCell.self, forCellReuseIdentifier: "ResultTableViewCell")
     }
@@ -140,14 +140,9 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        myZatchTextField.delegate = self
-        wantZatchTextField.delegate = self
-        
         setUpView()
         setUpConstraint()
+        setUpDelegate()
     }
     
     //TextField 입력 끝나거나 취소됐을 경우
@@ -160,6 +155,16 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         wantZatch.isHidden = false
         
         self.view.endEditing(true)
+    }
+    
+    //MARK: - Helper
+    func setUpDelegate(){
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        myZatchTextField.delegate = self
+        wantZatchTextField.delegate = self
     }
     
     //MARK: Action
@@ -242,9 +247,7 @@ extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell else{
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell else{ fatalError() }
         return cell
     }
     
