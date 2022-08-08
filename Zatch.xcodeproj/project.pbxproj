@@ -317,6 +317,8 @@
 		57468A8C289FEEBE00056691 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				576EA921282B7F2D0028046C /* Register */,
+				5767D76F286823DF0075DB28 /* Detail */,
 				57C585052821F2B30078FAFF /* Main */,
 				5780238F281D20D60085457D /* Search */,
 			);
@@ -329,6 +331,20 @@
 				57468A9A28A1098300056691 /* UITextField.swift */,
 			);
 			path = extenstion;
+			sourceTree = "<group>";
+		};
+		57468A9C28A1483800056691 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5767D77428682D120075DB28 /* ImageTableViewCell.swift */,
+				5767D778286882B80075DB28 /* WantElseTableViewCell.swift */,
+				5767D776286832420075DB28 /* FirstWantTableViewCell.swift */,
+				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
+				5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */,
+				5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */,
+				5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		575BF6F027E0CBC6008D5B3C = {
@@ -391,15 +407,9 @@
 		5767D76F286823DF0075DB28 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				57468A9C28A1483800056691 /* Cell */,
 				5767D7722868248E0075DB28 /* DetailViewController.swift */,
-				5767D77428682D120075DB28 /* ImageTableViewCell.swift */,
-				5767D776286832420075DB28 /* FirstWantTableViewCell.swift */,
-				5767D778286882B80075DB28 /* WantElseTableViewCell.swift */,
-				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
 				5767D77C286944FB0075DB28 /* BottomFixView.swift */,
-				5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */,
-				5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */,
-				5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -451,8 +461,6 @@
 		576EA928282B7FDE0028046C /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				5767D76F286823DF0075DB28 /* Detail */,
-				576EA921282B7F2D0028046C /* Register */,
 				57B5D6D428346AB700EA1439 /* UI */,
 			);
 			path = Zatch;
