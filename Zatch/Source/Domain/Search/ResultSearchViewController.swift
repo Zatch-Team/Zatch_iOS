@@ -52,6 +52,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.addPadding()
         $0.tintColor = .black10
+        $0.returnKeyType = .done
         
         $0.layer.cornerRadius = 14
         $0.backgroundColor = .white
@@ -88,6 +89,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.addPadding()
         $0.tintColor = .black10 //cursor 색상
+        $0.returnKeyType = .done
         
         $0.layer.cornerRadius = 14
         $0.backgroundColor = .white
@@ -141,6 +143,9 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         tableView.dataSource = self
         tableView.delegate = self
 
+        myZatchTextField.delegate = self
+        wantZatchTextField.delegate = self
+        
         setUpView()
         setUpConstraint()
     }
@@ -241,5 +246,27 @@ extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         return cell
+    }
+}
+
+extension ResultSearchViewController: UITextFieldDelegate{
+    
+    //return 키 클릭시 호출 메서드
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        myZatchTextField.isHidden = true
+        wantZatchTextField.isHidden = true
+        
+        myZatch.isHidden = false
+        wantZatch.isHidden = false
+        
+        if(textField == myZatchTextField){
+            myZatch.text = myZatchTextField.text
+        }else{
+            wantZatch.text = wantZatchTextField.text
+        }
+        
+        self.view.endEditing(true)
+        return true
     }
 }
