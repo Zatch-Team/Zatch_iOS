@@ -19,7 +19,7 @@
 		57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
 		57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
 		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
-		571AD7132828D9EB00390AAD /* CategoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryButtonView.swift */; };
+		571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -114,7 +114,7 @@
 		57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rixyeoljeongdo_pro_regular.otf; sourceTree = "<group>"; };
 		57067875281C2F3900F48342 /* pretendard_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_bold.ttf; sourceTree = "<group>"; };
 		57067876281C2F3900F48342 /* pretendard_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_regular.ttf; sourceTree = "<group>"; };
-		571AD7122828D9EB00390AAD /* CategoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonView.swift; sourceTree = "<group>"; };
+		571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		571AD7112828D9C900390AAD /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				571AD7122828D9EB00390AAD /* CategoryButtonView.swift */,
+				571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */,
 				57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */,
 			);
 			path = Category;
@@ -273,6 +273,7 @@
 			children = (
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
 				57468A8A289FEB2000056691 /* SheetViewController.swift */,
+				571AD7112828D9C900390AAD /* Category */,
 				57468A8C289FEEBE00056691 /* Domain */,
 				57468A79289D3C0800056691 /* Protocol */,
 			);
@@ -314,7 +315,6 @@
 		57468A8C289FEEBE00056691 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				571AD7112828D9C900390AAD /* Category */,
 				57C585052821F2B30078FAFF /* Main */,
 				5780238F281D20D60085457D /* Search */,
 			);
@@ -806,7 +806,7 @@
 				57B5D6D328346AB100EA1439 /* ProductInputUIView.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
-				571AD7132828D9EB00390AAD /* CategoryButtonView.swift in Sources */,
+				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,

@@ -56,11 +56,21 @@ extension ResultSearchViewController{
             make.bottom.equalTo(exchangeImage)
             make.leading.equalToSuperview().offset(20)
         }
+        
+        self.myZatch.snp.makeConstraints{ make in
+            make.height.equalTo(20)
+            make.leading.trailing.equalToSuperview()
+        }
 
         self.wantStackView.snp.makeConstraints { make in
             make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
             make.bottom.equalTo(exchangeImage)
             make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        self.wantZatch.snp.makeConstraints{ make in
+            make.height.equalTo(20)
+            make.leading.trailing.equalToSuperview()
         }
         
         self.townFrame.snp.makeConstraints{ make in

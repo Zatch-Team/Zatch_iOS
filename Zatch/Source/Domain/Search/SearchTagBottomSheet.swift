@@ -13,7 +13,7 @@ class SearchTagBottomSheet: SheetViewController {
     
     var tagData : [String]!
     
-    var currentTag: Int = -1
+    var currentTag: Int?
     
     var selectCompleteHandelr: ((String, Int) -> ())? //선택한 Tag 데이터 전달
 

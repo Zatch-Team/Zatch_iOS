@@ -126,6 +126,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     @objc
     func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
         let bottomSheet = MyZatchBottomSheet()
+        bottomSheet.currentTag = myZatchIndex
         
         bottomSheet.selectCompleteHandelr = { text, index in
             self.myZatch.text = text
@@ -139,6 +140,8 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     @objc
     func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
         let bottomSheet = WantZatchBottomSheet()
+        bottomSheet.currentTag = wantZatchIndex
+        
         bottomSheet.selectCompleteHandelr = { text, index in
             self.wantZatch.text = text
             self.wantZatchIndex = index
@@ -158,6 +161,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 //        }
         
 //        let bottoSheetVC = MDCBottomSheetController(contentViewController: vc)
+        
         vc.loadViewIfNeeded()
         present(vc, animated: true, completion: nil)
     }

@@ -20,6 +20,7 @@ class MyZatchBottomSheet: SearchTagBottomSheet{
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         collectionView.register(MyTagSearchResultCollectionViewCell.self, forCellWithReuseIdentifier: MyTagSearchResultCollectionViewCell.cellIdentifier)
         
     }
@@ -37,9 +38,11 @@ extension MyZatchBottomSheet : UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyTagSearchResultCollectionViewCell.cellIdentifier, for: indexPath) as? MyTagSearchResultCollectionViewCell else{
             fatalError()
         }
-//        cell.tagBtn.setTitle(tagData[indexPath.row], for: .normal)
+        
         cell.tagBtn.text = tagData[indexPath.row]
-        cell.setTagColorInit()
+        
+        indexPath.row == currentTag ? cell.setTagColorSelect() : cell.setTagColorInit()
+        
         return cell
     }
     

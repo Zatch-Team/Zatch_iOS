@@ -35,6 +35,7 @@ extension WantZatchBottomSheet: UICollectionViewDelegate, UICollectionViewDataSo
         }
         cell.tagBtn.text = tagData[indexPath.row]
         cell.setTagColorInit()
+        indexPath.row == currentTag ? cell.setTagColorSelect() : cell.setTagColorInit()
         
         return cell
     }
