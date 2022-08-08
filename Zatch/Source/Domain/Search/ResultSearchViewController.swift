@@ -42,6 +42,24 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.isUserInteractionEnabled = true
         $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
+        $0.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+    }
+    
+    lazy var myZatchTextField = UITextField().then{
+        $0.isHidden = true
+        $0.textAlignment = .center
+        $0.textColor = .black85
+        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.addPadding()
+        $0.tintColor = .black10
+        
+        $0.layer.cornerRadius = 14
+        $0.backgroundColor = .white
+        $0.layer.shadowRadius = 5.0
+        $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        $0.layer.shadowOffset = CGSize(width: 0, height: 0)
+        $0.layer.shadowOpacity = 1
+        $0.layer.masksToBounds = false
     }
     
     let wantStackView = UIStackView().then{
@@ -60,6 +78,24 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.isUserInteractionEnabled = true
         $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
+        $0.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+    }
+    
+    lazy var wantZatchTextField = UITextField().then{
+        $0.isHidden = true
+        $0.textAlignment = .center
+        $0.textColor = .black85
+        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.addPadding()
+        $0.tintColor = .black10 //cursor 색상
+        
+        $0.layer.cornerRadius = 14
+        $0.backgroundColor = .white
+        $0.layer.shadowRadius = 5.0
+        $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        $0.layer.shadowOffset = CGSize(width: 0, height: 0)
+        $0.layer.shadowOpacity = 1
+        $0.layer.masksToBounds = false
     }
     
     let exchangeImage = UIImageView().then{
@@ -99,22 +135,29 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
+
         setUpView()
         setUpConstraint()
     }
     
-    //MARK: Action
-    
-    @objc
-    func popNavigationVC(){
-        self.navigationController?.popViewController(animated: true)
+    //TextField 입력 끝나거나 취소됐을 경우
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        myZatchTextField.isHidden = true
+        wantZatchTextField.isHidden = true
+        
+        myZatch.isHidden = false
+        wantZatch.isHidden = false
+        
+        self.view.endEditing(true)
     }
+    
+    //MARK: Action
     
     @objc
     func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
@@ -155,6 +198,33 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         
         vc.loadViewIfNeeded()
         present(vc, animated: true, completion: nil)
+    }
+    
+    @objc
+    func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
+        
+        //기존 입력값 초기화
+        myZatchTextField.text = nil
+        wantZatchTextField.text = nil
+        
+        myZatchTextField.placeholder = myZatch.text
+        wantZatchTextField.placeholder = wantZatch.text
+        
+        myZatchTextField.setPlaceholderColor(.black10)
+        wantZatchTextField.setPlaceholderColor(.black10)
+        
+        myZatchTextField.isHidden = false
+        wantZatchTextField.isHidden = false
+        
+        myZatch.isHidden = true
+        wantZatch.isHidden = true
+        
+        //커서 올리기
+        if(recognizer.view == wantZatch){
+            wantZatchTextField.becomeFirstResponder()
+        }else{
+            myZatchTextField.becomeFirstResponder()
+        }
     }
 
 }

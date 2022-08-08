@@ -39,6 +39,7 @@
 		57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */; };
 		57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */; };
 		57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */; };
+		57468A9B28A1098300056691 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9A28A1098300056691 /* UITextField.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
@@ -136,6 +137,7 @@
 		57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		57468A9A28A1098300056691 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUIView.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +323,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		57468A9928A1096600056691 /* extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				57468A9A28A1098300056691 /* UITextField.swift */,
+			);
+			path = extenstion;
+			sourceTree = "<group>";
+		};
 		575BF6F027E0CBC6008D5B3C = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +478,7 @@
 		57802394281D21710085457D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				57468A9928A1096600056691 /* extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* CommonSource */,
 				57067862281C13D500F48342 /* Font */,
 				57067863281C143A00F48342 /* UIColor.swift */,
@@ -793,6 +804,7 @@
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
 				576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */,
 				57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */,
+				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,

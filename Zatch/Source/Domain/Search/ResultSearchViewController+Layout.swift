@@ -23,6 +23,9 @@ extension ResultSearchViewController{
         self.wantStackView.addArrangedSubview(wantCategoryButton)
         self.wantStackView.addArrangedSubview(wantZatch)
         
+        self.topView.addSubview(myZatchTextField)
+        self.topView.addSubview(wantZatchTextField)
+        
         self.topView.addSubview(townFrame)
         townFrame.addArrangedSubview(townSelectedLabel)
         townFrame.addArrangedSubview(townSelectArrow)
@@ -54,6 +57,7 @@ extension ResultSearchViewController{
         self.myStackView.snp.makeConstraints { make in
             make.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
             make.bottom.equalTo(exchangeImage)
+            make.top.equalToSuperview().offset(8)
             make.leading.equalToSuperview().offset(20)
         }
         
@@ -61,8 +65,17 @@ extension ResultSearchViewController{
             make.height.equalTo(20)
             make.leading.trailing.equalToSuperview()
         }
+        
+        self.myZatchTextField.snp.makeConstraints{ make in
+            make.height.equalTo(32)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
+            make.top.equalTo(myCategoryButton.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().offset(-52)
+        }
 
         self.wantStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8)
             make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
             make.bottom.equalTo(exchangeImage)
             make.trailing.equalToSuperview().offset(-20)
@@ -71,6 +84,14 @@ extension ResultSearchViewController{
         self.wantZatch.snp.makeConstraints{ make in
             make.height.equalTo(20)
             make.leading.trailing.equalToSuperview()
+        }
+        
+        self.wantZatchTextField.snp.makeConstraints{ make in
+            make.height.equalTo(32)
+            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
+            make.top.equalTo(wantCategoryButton.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().offset(-52)
         }
         
         self.townFrame.snp.makeConstraints{ make in
