@@ -148,12 +148,14 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         setUpConstraint()
         setUpDelegate()
         
+        
         //api 연동시 위치 변경시키기
-        if(resultData.isEmpty){
-            emptyResultView.isHidden = false
-        }else{
+//        if(resultData.isEmpty){
+//            emptyResultView.isHidden = false
+//        }else{
             emptyResultView.isHidden = true
-        }
+//        }
+         
     }
     
     //TextField 입력 끝나거나 취소됐을 경우
@@ -254,7 +256,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

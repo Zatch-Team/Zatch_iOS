@@ -33,16 +33,16 @@ class ResultEmptyTableViewCell: UIView {
         $0.font = UIFont.pretendard(size: 25, family: .Regular)
     }
     
-    let paragraph2 = UILabel().then{
-        $0.text = " • "
-        $0.font = UIFont.pretendard(size: 25, family: .Regular)
-    }
-    
     let tipLabel1 = UILabel().then{
         $0.text = "교환하고 싶은 재치가 있다면 나의 재치를 ‘ ? ‘ 로 설정하고 검색해서 상대방에게 제안해보세요!"
         $0.numberOfLines = 2
         $0.font = UIFont.pretendard(size: 14, family: .Regular)
         $0.setTextWithLineHeight(lineHeight: 19.6)
+    }
+    
+    let paragraph2 = UILabel().then{
+        $0.text = " • "
+        $0.font = UIFont.pretendard(size: 25, family: .Regular)
     }
     
     let tipLabel2 = UILabel().then{
@@ -53,6 +53,7 @@ class ResultEmptyTableViewCell: UIView {
     }
     
     override init(frame: CGRect){
+        
         super.init(frame: .zero)
         
         setUpView()
@@ -86,8 +87,6 @@ class ResultEmptyTableViewCell: UIView {
         
         self.tipTitle.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(27)
-//            make.top.equalTo(titleLabel.snp.bottom).offset(134)
-//            make.bottom.eq
         }
         
         self.tipFrame.snp.makeConstraints{ make in
@@ -95,11 +94,9 @@ class ResultEmptyTableViewCell: UIView {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(tipTitle.snp.bottom).offset(8)
             make.bottom.equalToSuperview().offset(-80)
-//            make.height.equalTo(112)
         }
         
         self.paragraph1.snp.makeConstraints{ make in
-//            make.top.equalToSuperview().offset(12)
             make.leading.equalToSuperview().offset(12)
             make.firstBaseline.equalTo(tipLabel1).offset(2)
         }
@@ -111,7 +108,6 @@ class ResultEmptyTableViewCell: UIView {
         }
         
         self.paragraph2.snp.makeConstraints{ make in
-//            make.top.equalToSuperview().offset(12)
             make.leading.equalToSuperview().offset(12)
             make.firstBaseline.equalTo(tipLabel2).offset(2)
         }

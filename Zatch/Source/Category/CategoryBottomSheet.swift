@@ -47,7 +47,7 @@ class CategoryBottomSheet: SheetViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()) .then{
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.minimumInteritemSpacing = 0
-            flowLayout.minimumLineSpacing = 10
+            flowLayout.minimumLineSpacing = 16
             
             
             let width = UIScreen.main.bounds.size.width - 40
@@ -84,7 +84,8 @@ class CategoryBottomSheet: SheetViewController {
         
         self.collectionView.snp.makeConstraints{ make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-12)
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }

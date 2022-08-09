@@ -9,12 +9,17 @@ import UIKit
 
 enum BottomSheetSize: CGFloat{
     case SearchTag = 219
-    case Category = 554
+    case Category = 500
+    case TownArea = 442
 }
 
 class SheetViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
+    static let DEVICE_HEIGHT = UIScreen.main.bounds.size.height
+    
     var sheetType: BottomSheetSize!
+    
+    var grabberVisibility: Bool = false
 
     override func viewDidLoad() {
         
@@ -28,11 +33,11 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
         
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue * SheetViewController.DEVICE_HEIGHT / 718)
     
         controller.detents = [detent]
         controller.preferredCornerRadius = 28
-        controller.prefersGrabberVisible = true
+        controller.prefersGrabberVisible = grabberVisibility
         
         return controller
     }
