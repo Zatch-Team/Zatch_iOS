@@ -11,6 +11,7 @@ extension FindSearchViewController{
     
     //뷰 구성요소 세팅
     func setUpView(){
+        
         view.addSubview(titleView)
         
         view.addSubview(exchangeFrame)

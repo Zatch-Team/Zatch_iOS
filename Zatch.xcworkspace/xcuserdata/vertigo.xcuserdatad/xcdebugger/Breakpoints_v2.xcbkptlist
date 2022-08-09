@@ -30,8 +30,8 @@
             filePath = "Zatch/Source/Domain/Search/ResultSearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "wantZatchTextField"
             landmarkType = "24">
          </BreakpointContent>

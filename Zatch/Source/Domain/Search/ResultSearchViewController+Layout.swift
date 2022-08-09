@@ -38,6 +38,7 @@ extension ResultSearchViewController{
         self.view.addSubview(separateRectangle)
         
         self.view.addSubview(tableView)
+        self.view.addSubview(emptyResultView)
     }
     
     func setUpConstraint(){
@@ -127,6 +128,10 @@ extension ResultSearchViewController{
         self.tableView.snp.makeConstraints{ make in
             make.top.equalTo(separateRectangle.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        self.emptyResultView.snp.makeConstraints{ make in
+            make.top.bottom.leading.trailing.equalTo(tableView)
         }
         
     }

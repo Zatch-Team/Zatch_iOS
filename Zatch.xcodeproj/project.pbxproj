@@ -40,6 +40,8 @@
 		57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */; };
 		57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */; };
 		57468A9B28A1098300056691 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9A28A1098300056691 /* UITextField.swift */; };
+		57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */; };
+		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
@@ -138,6 +140,8 @@
 		57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9A28A1098300056691 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUIView.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +296,7 @@
 				57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */,
 				57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */,
 				57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */,
+				57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				57468A9A28A1098300056691 /* UITextField.swift */,
+				57468A9F28A214FD00056691 /* UILabel.swift */,
 			);
 			path = extenstion;
 			sourceTree = "<group>";
@@ -820,6 +826,7 @@
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
 				57B5D6D8283488B200EA1439 /* ImageAddCollectionViewCell.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
+				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
 				57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */,
@@ -836,6 +843,7 @@
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategoryUIView.swift in Sources */,
+				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,

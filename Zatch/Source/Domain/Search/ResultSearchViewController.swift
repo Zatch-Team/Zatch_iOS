@@ -13,6 +13,8 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     var myZatchIndex: Int?
     var wantZatchIndex: Int?
     
+    var resultData: [String] = []
+    
     //MARK: UIComponent
     
     let topView = UIView()
@@ -136,6 +138,8 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.register(ResultTableViewCell.self, forCellReuseIdentifier: "ResultTableViewCell")
     }
     
+    let emptyResultView = ResultEmptyTableViewCell()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -143,6 +147,13 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         setUpView()
         setUpConstraint()
         setUpDelegate()
+        
+        //api 연동시 위치 변경시키기
+        if(resultData.isEmpty){
+            emptyResultView.isHidden = false
+        }else{
+            emptyResultView.isHidden = true
+        }
     }
     
     //TextField 입력 끝나거나 취소됐을 경우
@@ -165,6 +176,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 
         myZatchTextField.delegate = self
         wantZatchTextField.delegate = self
+        
     }
     
     //MARK: Action
@@ -242,7 +254,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
