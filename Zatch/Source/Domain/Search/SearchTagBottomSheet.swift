@@ -18,10 +18,6 @@ class SearchTagBottomSheet: SheetViewController {
     var selectCompleteHandelr: ((String, Int) -> ())? //선택한 Tag 데이터 전달
 
     //MARK: - UI
-    let titleLabel = UILabel().then{
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-    }
     
     var collectionView : UICollectionView!
     
@@ -30,8 +26,6 @@ class SearchTagBottomSheet: SheetViewController {
         super.sheetType = .SearchTag
         
         super.viewDidLoad()
-
-        self.view.backgroundColor = .white
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
             
@@ -50,19 +44,13 @@ class SearchTagBottomSheet: SheetViewController {
     
     //MARK: - Helper
     func setUpView(){
-        self.view.addSubview(titleLabel)
         self.view.addSubview(collectionView)
     }
     
     func setUpConstraint(){
-        titleLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(24)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(20)
-        }
         
         collectionView.snp.makeConstraints{ make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(55)
+            make.top.equalTo(super.titleLabel.snp.bottom).offset(55)
             make.leading.equalToSuperview().offset(33)
             make.trailing.equalToSuperview().offset(-33)
             make.bottom.equalToSuperview().offset(-30)

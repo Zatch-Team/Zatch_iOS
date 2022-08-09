@@ -106,9 +106,10 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         $0.image = UIImage(named: "exchange_vertical")
     }
     
-    let townFrame = UIStackView().then{
+    lazy var townFrame = UIStackView().then{
         $0.spacing = 4
         $0.axis = .horizontal
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
     }
     let townSelectedLabel = UILabel().then{
         $0.text = "홍제동"
@@ -249,6 +250,19 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         }else{
             myZatchTextField.becomeFirstResponder()
         }
+    }
+    
+    @objc
+    func townFrameDidClicked(){
+        let vc = TownSettingBottomSheet()
+        
+        vc.townSelectHandelr = { town in
+            print(town)
+//            (recognizer.view as? SearchCateogryDotButton)?.isSelected = true
+        }
+        
+        vc.loadViewIfNeeded()
+        present(vc, animated: true, completion: nil)
     }
 
 }

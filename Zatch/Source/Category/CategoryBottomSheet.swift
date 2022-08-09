@@ -23,13 +23,7 @@ class CategoryBottomSheet: SheetViewController {
     var currentCategory: Int?
     
     //MARK: - UI
-    
-    let titleLabel = UILabel().then{
-        $0.text = "카테고리"
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-    }
-    
+
     var collectionView : UICollectionView!
     
 
@@ -38,11 +32,9 @@ class CategoryBottomSheet: SheetViewController {
     override func viewDidLoad() {
         
         super.sheetType = .Category
+        super.titleLabel.text = "카테고리"
         
         super.viewDidLoad()
-
-        self.view.backgroundColor = .white
-    
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()) .then{
             let flowLayout = UICollectionViewFlowLayout()
@@ -71,20 +63,13 @@ class CategoryBottomSheet: SheetViewController {
     //MARK: - ViewSetting
     
     func setUpView(){
-        self.view.addSubview(titleLabel)
         self.view.addSubview(collectionView)
     }
     
     func setUpConstraint(){
         
-        self.titleLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(24)
-            make.centerX.equalToSuperview()
-        }
-        
         self.collectionView.snp.makeConstraints{ make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-//            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.top.equalTo(super.titleLabel.snp.bottom).offset(20)
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
