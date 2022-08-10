@@ -10,7 +10,6 @@ import UIKit
 class CategorySelectWithRankTableViewCell: CategorySelectTableViewCell {
     
     let rankLabel = UILabel().then{
-//        $0.text = "1순위"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
 
@@ -21,8 +20,6 @@ class CategorySelectWithRankTableViewCell: CategorySelectTableViewCell {
 
         setUpView()
         setUpConstriant()
-//        setUpValue()
-
     }
     
     required init?(coder: NSCoder) {

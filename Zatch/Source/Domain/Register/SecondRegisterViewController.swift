@@ -9,6 +9,9 @@ import UIKit
 
 class SecondRegisterViewController: BaseViewController {
     
+    //MARK: - Properties
+    var isFieldOpen = [true, false, false]
+    
     //MARK: - UI
     
     let topTitleView = TitleView().then{
@@ -68,6 +71,9 @@ class SecondRegisterViewController: BaseViewController {
         setUpView()
         setUpConstraint()
     }
+    
+    //MARK: - Helper
+
 }
 
 extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSource{
@@ -77,12 +83,11 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(section == 0){
+        if(section == 0 || isFieldOpen[section]){
             return 2
         }else{
             return 1
         }
-        //open 상태일 때는 2 반환하도록
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,6 +98,25 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
         }else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier) as? ProductInputTextFieldTabeViewCell else {fatalError()}
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            let vc = CategoryBottomSheet()
+            vc.categorySelectHandler = { category in
+                print(category)
+                guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
+                if(!self.isFieldOpen[indexPath.section]){
+                    self.isFieldOpen[indexPath.section] = true
+                    self.tableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .automatic)
+                }
+                cell.categoryText.text = category
+                
+            }
+            
+            vc.loadViewIfNeeded()
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }
