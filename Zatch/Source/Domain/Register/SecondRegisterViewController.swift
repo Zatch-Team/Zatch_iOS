@@ -136,7 +136,9 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
                 }
                 
                 self.tableView.reloadData()
-                
+                if(indexPath.section == 2){
+                    self.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
+                }
             }
             
             vc.loadViewIfNeeded()
