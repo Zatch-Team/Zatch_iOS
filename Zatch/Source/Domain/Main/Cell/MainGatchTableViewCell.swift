@@ -33,15 +33,9 @@ class MainGatchTableViewCell: UITableViewCell {
         title.font = UIFont.pretendard(size: 16, family: .Bold)
         moreButton.textColor = .zatchYellow
         moreButton.font = UIFont.pretendard(size: 13, family: .Bold)
+
         
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-
 }
 
 extension MainGatchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{

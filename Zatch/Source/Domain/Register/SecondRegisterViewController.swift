@@ -16,7 +16,6 @@ class SecondRegisterViewController: BaseViewController {
     var currentBtnSelect: ZatchRoundCheck!
     
     //MARK: - UI
-    
     let topTitleView = TitleView().then{
         $0.titleLabel.text = "받고 싶은\n물건이 있나요?"
     }
@@ -96,6 +95,7 @@ class SecondRegisterViewController: BaseViewController {
     }
 }
 
+//MARK: - TableView
 extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {

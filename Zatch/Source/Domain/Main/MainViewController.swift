@@ -42,8 +42,6 @@ class MainViewController: ViewController {
     // MARK: - Navigation
     
     @IBAction func moveSearchVC(_ sender: UIButton){
-        //잠시 detail view controller로 임시 변경
-//        let nextVC = DetailViewController()
         let nextVC = MySearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -80,7 +78,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
     
     
 }

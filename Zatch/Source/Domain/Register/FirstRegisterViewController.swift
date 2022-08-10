@@ -9,6 +9,10 @@ import UIKit
 
 class FirstRegisterViewController: BaseViewController {
     
+    //MARK: - Properties
+    var isOpen = false
+    
+    //MARK: - UI
     let topView = TitleView().then{
         $0.titleLabel.text = "주고 싶은\n물건이 무엇인가요?"
     }
@@ -30,8 +34,6 @@ class FirstRegisterViewController: BaseViewController {
         setUpConstraint()
     }
     
-    //MARK: - Helper
-    
     //MARK: - Action
     @objc
     func nextBtnDidClicked(){
@@ -49,7 +51,11 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 3 : 2
+        if(section == 0){
+            return 3
+        }else{
+            return isOpen ? 2 : 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,6 +78,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
                 cell.categoryText.text = "입력사항 더보기"
+                cell.arrowImage.isSelected = !isOpen
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableViewCell.cellIdentifier, for: indexPath) as? FirstProductInfoTableViewCell else{ fatalError("Cell Casting Error")}
@@ -94,6 +101,12 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             
             vc.loadViewIfNeeded()
             self.present(vc, animated: true, completion: nil)
+        }else if(indexPath == [1,0]){
+            
+            guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else { return}
+            isOpen.toggle()
+            cell.arrowImage.isSelected = isOpen
+            self.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
         }
     }
     
