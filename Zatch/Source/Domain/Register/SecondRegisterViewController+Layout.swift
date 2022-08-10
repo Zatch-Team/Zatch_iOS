@@ -71,7 +71,7 @@ extension SecondRegisterViewController{
             make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(-15)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-48)
-            make.top.equalTo(checkBoxFrame.snp.bottom).offset(68)
+            make.top.equalTo(checkBoxFrame.snp.bottom).offset(68) //68
         }
         
         nextBtn.snp.makeConstraints{ make in

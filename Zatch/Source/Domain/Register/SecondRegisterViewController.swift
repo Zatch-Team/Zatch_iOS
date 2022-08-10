@@ -11,6 +11,7 @@ class SecondRegisterViewController: BaseViewController {
     
     //MARK: - Properties
     var isFieldOpen = [true, false, false]
+    var categoryChoose : [String?] = [nil, nil, nil]
     
     //MARK: - UI
     
@@ -94,6 +95,7 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
         if(indexPath.row == 0){
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier) as? CategorySelectWithRankTableViewCell else {fatalError()}
             cell.rankLabel.text = "\(indexPath.section + 1)순위"
+            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
             return cell
         }else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier) as? ProductInputTextFieldTabeViewCell else {fatalError()}
@@ -105,13 +107,16 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
         if(indexPath.row == 0){
             let vc = CategoryBottomSheet()
             vc.categorySelectHandler = { category in
-                print(category)
+
                 guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
+                
+                self.categoryChoose[indexPath.section] = category
+                
                 if(!self.isFieldOpen[indexPath.section]){
                     self.isFieldOpen[indexPath.section] = true
-                    self.tableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .automatic)
                 }
-                cell.categoryText.text = category
+                
+                self.tableView.reloadData()
                 
             }
             
