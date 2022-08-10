@@ -27,7 +27,6 @@ class CategoryBottomSheet: SheetViewController {
     var collectionView : UICollectionView!
     
 
-    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         

@@ -9,14 +9,20 @@ import UIKit
 
 class CategoryUIView: UITableViewCell {
     
+    static let cellIdentifier = "categoryViewCell"
+    
     let backView = UIView()
     let boundaryLine = UIView()
     let categoryText = UILabel()
     let arrowImage = UIButton()
     
+    let selectedView = UIView()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.selectedBackgroundView = selectedView
 
         setUpView()
         setUpConstriant()

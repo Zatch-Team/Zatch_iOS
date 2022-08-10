@@ -9,6 +9,8 @@ import UIKit
 
 class ProductQuantityUIView: UITableViewCell {
     
+    static let cellIdentifier = "productQuantityCell"
+    
     //MARK: - UIView
     let titleLabel = UILabel().then{
         $0.text = "수량"
@@ -95,6 +97,8 @@ class ProductQuantityUIView: UITableViewCell {
 }
 
 class ProductDateChoiceUIView: UITableViewCell {
+    
+    static let cellIdentifier = "productDateCell"
     
     let backView = UIView()
     
@@ -298,6 +302,8 @@ class ProductDateChoiceUIView: UITableViewCell {
 }
 
 class ProductOpenUIView: UITableViewCell {
+    
+    static let cellIdentifier = "productOpenCell"
     
     let titleLabel = UILabel().then{
         $0.text = "개봉상태"

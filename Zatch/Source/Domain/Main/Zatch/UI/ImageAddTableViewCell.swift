@@ -9,6 +9,8 @@ import UIKit
 
 class ImageAddTableViewCell: UITableViewCell {
     
+    static let cellIdentifier = "imageAddCell"
+    
     let imageCollectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()

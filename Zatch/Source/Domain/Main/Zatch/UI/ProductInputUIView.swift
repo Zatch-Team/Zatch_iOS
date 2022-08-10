@@ -9,6 +9,8 @@ import UIKit
 
 class ProductInputUIView: UITableViewCell {
     
+    static let cellIdentifier = "productInputCell"
+    
     let backView = UIView()
     let boundaryLine = UIView()
     let productName = UITextField()

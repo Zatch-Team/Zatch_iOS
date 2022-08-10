@@ -43,6 +43,7 @@
 		57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */; };
 		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
 		57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingBottomSheet.swift */; };
+		57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA528A376F800056691 /* FirstRegisterViewController+Layout.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
@@ -143,6 +144,7 @@
 		57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		57468AA128A21D1700056691 /* TownSettingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingBottomSheet.swift; sourceTree = "<group>"; };
+		57468AA528A376F800056691 /* FirstRegisterViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstRegisterViewController+Layout.swift"; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUIView.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,23 +423,13 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		5767D784286AD9650075DB28 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
-				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
-				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
-		5767D785286AD96D0075DB28 /* UI */ = {
+		5767D785286AD96D0075DB28 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
 				5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */,
 			);
-			path = UI;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5767D788286C0ACB0075DB28 /* UICheckBox */ = {
@@ -459,8 +451,11 @@
 		576EA921282B7F2D0028046C /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5767D785286AD96D0075DB28 /* UI */,
-				5767D784286AD9650075DB28 /* VC */,
+				5767D785286AD96D0075DB28 /* Cell */,
+				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
+				57468AA528A376F800056691 /* FirstRegisterViewController+Layout.swift */,
+				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
+				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -823,6 +818,7 @@
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
+				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				57B5D6D8283488B200EA1439 /* ImageAddCollectionViewCell.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,

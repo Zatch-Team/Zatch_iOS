@@ -1,0 +1,93 @@
+//
+//  RegisterViewController.swift
+//  Zatch
+//
+//  Created by 박지윤 on 2022/05/11.
+//
+
+import UIKit
+
+class FirstRegisterViewController: BaseViewController {
+    
+    let topView = TitleView().then{
+        $0.titleLabel.text = "주고 싶은\n물건이 무엇인가요?"
+    }
+    
+    var backTableView : UITableView!
+    
+    let nextButton = PurpleButton().then{
+        $0.setTitle("다음 단계로", for: .normal)
+    }
+
+    override func viewDidLoad() {
+        
+        super.navigationTitle.text = "재치 등록하기"
+        super.viewDidLoad()
+
+        setInitView()
+        setUpView()
+        setUpConstraint()
+    }
+    
+    //MARK: - Helper
+
+
+}
+
+extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? 3 : 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.section == 0){
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryUIView.cellIdentifier, for: indexPath) as? CategoryUIView else{ fatalError("Cell Casting Error")}
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputUIView.cellIdentifier, for: indexPath) as? ProductInputUIView else{ fatalError("Cell Casting Error")}
+                return cell
+            case 2:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageAddTableViewCell.cellIdentifier, for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
+                return cell
+            default:
+                fatalError("index error")
+            }
+        }else{
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryUIView.cellIdentifier, for: indexPath) as? CategoryUIView else{ fatalError("Cell Casting Error")}
+                cell.categoryText.text = "입력사항 더보기"
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableViewCell.cellIdentifier, for: indexPath) as? FirstProductInfoTableViewCell else{ fatalError("Cell Casting Error")}
+                return cell
+            default:
+                fatalError("index error")
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath == [0,0]){
+            
+            let vc = CategoryBottomSheet()
+            
+            vc.categorySelectHandler = { category in
+                guard let cell = tableView.cellForRow(at: indexPath) as? CategoryUIView else{ return }
+                cell.categoryText.text = category
+            }
+            
+            vc.loadViewIfNeeded()
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+}
+
