@@ -7,50 +7,46 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
     
-    var navigationView: NavigationView!
-    
-    let backTableView = UITableView().then{
-        $0.separatorStyle = .none
-        $0.allowsSelection = false
-    }
+    var backTableView : UITableView!
     
     let bottomView = BottomFixView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationView = NavigationView(frame: .zero, navigationController: self.navigationController)
-
-        setUpView()
-        setUpConstraint()
-        
-        backTableView.delegate = self
-        backTableView.dataSource = self
-        
-        backTableView.register(DetailImageTableViewCell.self, forCellReuseIdentifier: "imageViewCell")
-        backTableView.register(FirstWantTableViewCell.self, forCellReuseIdentifier: "firstWantCell")
-        backTableView.register(WantElseTableViewCell.self, forCellReuseIdentifier: "wantElseCell")
-        backTableView.register(ProductInfoTableViewCell.self, forCellReuseIdentifier: "productInfoCell")
-        backTableView.register(MoreTextTableViewCell.self, forCellReuseIdentifier: "moreTextCell")
-        backTableView.register(SimilarZatchTableViewCell.self, forCellReuseIdentifier: "similarZatchCell")
-    }
-    
-    func setUpView(){
-        self.view.addSubview(navigationView)
-        self.view.addSubview(backTableView)
-        self.view.addSubview(bottomView)
-    }
-    
-    func setUpConstraint(){
-        
-        navigationView.snp.makeConstraints{ make in
-            make.top.leading.trailing.equalToSuperview()
+        backTableView = UITableView().then{
+            $0.separatorStyle = .none
+            $0.allowsSelection = false
+            $0.contentInset = UIEdgeInsets(top: -48, left: 0, bottom: 0, right: 0);
+            
+            $0.delegate = self
+            $0.dataSource = self
+            
+            $0.register(DetailImageTableViewCell.self, forCellReuseIdentifier: "imageViewCell")
+            $0.register(FirstWantTableViewCell.self, forCellReuseIdentifier: "firstWantCell")
+            $0.register(WantElseTableViewCell.self, forCellReuseIdentifier: "wantElseCell")
+            $0.register(ProductInfoTableViewCell.self, forCellReuseIdentifier: "productInfoCell")
+            $0.register(MoreTextTableViewCell.self, forCellReuseIdentifier: "moreTextCell")
+            $0.register(SimilarZatchTableViewCell.self, forCellReuseIdentifier: "similarZatchCell")
+            
         }
         
+        setUpView()
+        setUpConstraint()
+    }
+    
+    private func setUpView(){
+        self.view.addSubview(backTableView)
+        self.view.addSubview(bottomView)
+        super.view.bringSubviewToFront(super.navigationView)
+    }
+    
+    private func setUpConstraint(){
+        
         backTableView.snp.makeConstraints{make in
-            make.top.equalTo(navigationView.snp.bottom)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(bottomView.snp.top)
         }

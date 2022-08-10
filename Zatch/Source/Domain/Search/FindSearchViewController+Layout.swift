@@ -101,7 +101,7 @@ extension FindSearchViewController{
         }
         
         nextButton.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview().offset(-54)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-54)
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)
             make.height.equalTo(36)

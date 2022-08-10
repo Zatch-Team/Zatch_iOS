@@ -75,14 +75,15 @@ extension MySearchViewController{
         }
         
         self.nextButton.snp.makeConstraints{ make in
-            make.bottom.equalTo(skipButton.snp.top).offset(-12)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-54)
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)
         }
         
         self.skipButton.snp.makeConstraints{ make in
+            make.top.equalTo(nextButton.snp.bottom).offset(12)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-26)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-26)
         }
     }
 }

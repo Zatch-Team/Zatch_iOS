@@ -84,7 +84,6 @@
 		57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */; };
 		57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */; };
 		57ED69C0282A4D8000ACA67D /* CustomTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */; };
-		57EF61B1287D5C000035A2E6 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EF61B0287D5C000035A2E6 /* NavigationView.swift */; };
 		57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
@@ -191,7 +190,6 @@
 		57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchCollectionViewCell.xib; sourceTree = "<group>"; };
 		57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGesture.swift; sourceTree = "<group>"; };
-		57EF61B0287D5C000035A2E6 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCheckBoxView.xib; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -335,6 +333,7 @@
 		57468A9928A1096600056691 /* extenstion */ = {
 			isa = PBXGroup;
 			children = (
+				57067863281C143A00F48342 /* UIColor.swift */,
 				57468A9A28A1098300056691 /* UITextField.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
 			);
@@ -498,7 +497,6 @@
 				57468A9928A1096600056691 /* extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* CommonSource */,
 				57067862281C13D500F48342 /* Font */,
-				57067863281C143A00F48342 /* UIColor.swift */,
 				57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */,
 				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
 				57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */,
@@ -544,7 +542,6 @@
 		57EF61AF287D5BCE0035A2E6 /* CommonSource */ = {
 			isa = PBXGroup;
 			children = (
-				57EF61B0287D5C000035A2E6 /* NavigationView.swift */,
 				57713943281F596C0066DEEB /* TitleView.swift */,
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
@@ -814,7 +811,6 @@
 				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */,
 				57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */,
-				57EF61B1287D5C000035A2E6 /* NavigationView.swift in Sources */,
 				5767752A281CD130000BC7CD /* ViewController.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,

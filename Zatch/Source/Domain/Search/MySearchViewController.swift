@@ -11,7 +11,6 @@ import SnapKit
 class MySearchViewController: BaseViewController{
     
     //MARK: - Properties
-//    var currentSelected: SearchVCCheckBox?
     
     let myZatchData: [String] = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
     
@@ -69,7 +68,6 @@ class MySearchViewController: BaseViewController{
             let layout = LeftAlignCollectionViewFlowLayout()
             layout.minimumLineSpacing = 12
             layout.minimumInteritemSpacing = 8
-//            layout.sectionInset = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
             
             $0.delegate = self
             $0.dataSource = self
@@ -89,7 +87,9 @@ class MySearchViewController: BaseViewController{
     @objc
     func nextButtonClick(_ sender: UIButton){
         let nextVC = FindSearchViewController()
+        
         nextVC.myLabel.text = selectTextField.text
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

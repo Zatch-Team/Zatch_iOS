@@ -9,6 +9,13 @@ import UIKit
 
 extension UIColor{
     
+    static let transparent = UIColor(
+        red: 0/255,
+        green: 0/255,
+        blue: 0/255,
+        alpha: 0
+    )
+    
     static let purple40 = UIColor(
         red: 216/255,
         green: 203/255,
