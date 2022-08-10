@@ -13,6 +13,8 @@ class SecondRegisterViewController: BaseViewController {
     var isFieldOpen = [true, false, false]
     var categoryChoose : [String?] = [nil, nil, nil]
     
+    var currentBtnSelect: ZatchRoundCheck!
+    
     //MARK: - UI
     
     let topTitleView = TitleView().then{
@@ -31,7 +33,11 @@ class SecondRegisterViewController: BaseViewController {
         $0.axis = .horizontal
     }
     
-    let topCheckBoxBtn = ZatchRoundCheck()
+    let topCheckBoxBtn = ZatchRoundCheck().then{
+        $0.tag = 0
+        $0.isSelected = true
+        $0.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
+    }
     
     let topCheckBoxLabel = UILabel().then{
         $0.text = "다른 것도 괜찮아요!"
@@ -43,7 +49,11 @@ class SecondRegisterViewController: BaseViewController {
         $0.axis = .horizontal
     }
     
-    let belowCheckBoxBtn = ZatchRoundCheck()
+    let belowCheckBoxBtn = ZatchRoundCheck().then{
+        $0.tag = 1
+        $0.isSelected = false
+        $0.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
+    }
     
     let belowCheckBoxLabel = UILabel().then{
         $0.text = "이 것만 가능해요!"
@@ -71,10 +81,19 @@ class SecondRegisterViewController: BaseViewController {
         setInitView()
         setUpView()
         setUpConstraint()
+        
+        currentBtnSelect = topCheckBoxBtn
     }
     
-    //MARK: - Helper
-
+    //MARK: - Action
+    @objc
+    func radioBtnDidClicked(_ sender: ZatchRoundCheck){
+        if(sender != currentBtnSelect){
+            sender.isSelected.toggle()
+            currentBtnSelect.isSelected.toggle()
+            currentBtnSelect = sender
+        }
+    }
 }
 
 extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSource{
