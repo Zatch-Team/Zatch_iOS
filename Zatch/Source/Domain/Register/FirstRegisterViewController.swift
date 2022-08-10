@@ -17,6 +17,7 @@ class FirstRegisterViewController: BaseViewController {
     
     let nextButton = PurpleButton().then{
         $0.setTitle("다음 단계로", for: .normal)
+        $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -30,6 +31,13 @@ class FirstRegisterViewController: BaseViewController {
     }
     
     //MARK: - Helper
+    
+    //MARK: - Action
+    @objc
+    func nextBtnDidClicked(){
+        let vc = SecondRegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 
 }
@@ -48,10 +56,10 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
         if(indexPath.section == 0){
             switch indexPath.row {
             case 0:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryUIView.cellIdentifier, for: indexPath) as? CategoryUIView else{ fatalError("Cell Casting Error")}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputUIView.cellIdentifier, for: indexPath) as? ProductInputUIView else{ fatalError("Cell Casting Error")}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier, for: indexPath) as? ProductInputTextFieldTabeViewCell else{ fatalError("Cell Casting Error")}
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageAddTableViewCell.cellIdentifier, for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
@@ -62,7 +70,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
         }else{
             switch indexPath.row {
             case 0:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryUIView.cellIdentifier, for: indexPath) as? CategoryUIView else{ fatalError("Cell Casting Error")}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
                 cell.categoryText.text = "입력사항 더보기"
                 return cell
             case 1:
@@ -80,7 +88,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             let vc = CategoryBottomSheet()
             
             vc.categorySelectHandler = { category in
-                guard let cell = tableView.cellForRow(at: indexPath) as? CategoryUIView else{ return }
+                guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
                 cell.categoryText.text = category
             }
             

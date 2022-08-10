@@ -7,11 +7,13 @@
 
 import UIKit
 
-class CategoryUIView: UITableViewCell {
+class CategorySelectTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "categoryViewCell"
     
     let backView = UIView()
+    
+    let categoryFrame = UIView()
     let boundaryLine = UIView()
     let categoryText = UILabel()
     let arrowImage = UIButton()
@@ -40,17 +42,27 @@ class CategoryUIView: UITableViewCell {
         
         self.contentView.addSubview(backView)
         
-        self.backView.addSubview(boundaryLine)
-        self.backView.addSubview(categoryText)
-        self.backView.addSubview(arrowImage)
+        self.backView.addSubview(categoryFrame)
+        
+        self.categoryFrame.addSubview(boundaryLine)
+        self.categoryFrame.addSubview(categoryText)
+        self.categoryFrame.addSubview(arrowImage)
     }
     
     func setUpConstriant(){
         
-        self.backView.snp.makeConstraints{ make in
-            make.width.equalToSuperview()
+        self.contentView.snp.makeConstraints{ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
             make.height.equalTo(41)
-            make.top.bottom.equalToSuperview()
+        }
+        
+        self.backView.snp.makeConstraints{ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
+        self.categoryFrame.snp.makeConstraints{ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+            make.height.equalTo(41)
         }
         
         boundaryLine.snp.makeConstraints{ make in

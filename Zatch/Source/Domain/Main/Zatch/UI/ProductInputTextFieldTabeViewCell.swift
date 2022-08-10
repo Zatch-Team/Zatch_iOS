@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductInputUIView: UITableViewCell {
+class ProductInputTextFieldTabeViewCell: UITableViewCell {
     
     static let cellIdentifier = "productInputCell"
     
@@ -38,7 +38,6 @@ class ProductInputUIView: UITableViewCell {
     
     func setUpConstraint(){
     
-        
         backView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(12)
             make.leading.trailing.bottom.equalToSuperview()
