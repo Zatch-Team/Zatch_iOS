@@ -74,6 +74,10 @@
 		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
 		57713944281F596C0066DEEB /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57713943281F596C0066DEEB /* TitleView.swift */; };
+		577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */; };
+		577A01B628A496D1004B2575 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B528A496D1004B2575 /* UITextView.swift */; };
+		577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */; };
+		577A01BA28A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B928A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift */; };
 		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
 		579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
@@ -184,6 +188,10 @@
 		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
 		57713943281F596C0066DEEB /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckRegisterViewController+Layout.swift"; sourceTree = "<group>"; };
+		577A01B528A496D1004B2575 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterZatchInfoView.swift; sourceTree = "<group>"; };
+		577A01B928A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckRegisterZatchInfoView+Layout.swift"; sourceTree = "<group>"; };
 		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
 		579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
@@ -345,6 +353,7 @@
 				57067863281C143A00F48342 /* UIColor.swift */,
 				57468A9A28A1098300056691 /* UITextField.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
+				577A01B528A496D1004B2575 /* UITextView.swift */,
 			);
 			path = extenstion;
 			sourceTree = "<group>";
@@ -436,6 +445,8 @@
 				57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */,
 				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
 				5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */,
+				577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */,
+				577A01B928A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -465,6 +476,7 @@
 				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
 				57468AA928A38C8000056691 /* SecondRegisterViewController+Layout.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
+				577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -832,6 +844,7 @@
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				57B5D6D8283488B200EA1439 /* ImageAddCollectionViewCell.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
+				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
@@ -842,6 +855,7 @@
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
+				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
@@ -868,6 +882,7 @@
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
+				577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
 				5706786D281C281700F48342 /* MainGatchCollectionViewCell.swift in Sources */,
@@ -875,6 +890,7 @@
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
+				577A01BA28A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift in Sources */,
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 			);

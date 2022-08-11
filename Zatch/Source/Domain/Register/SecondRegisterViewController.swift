@@ -75,6 +75,8 @@ class SecondRegisterViewController: BaseViewController {
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
+        
+        super.navigationTitle.text = "재치 등록하기"
         super.viewDidLoad()
 
         setInitView()

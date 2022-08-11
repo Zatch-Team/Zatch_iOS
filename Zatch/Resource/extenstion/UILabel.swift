@@ -26,4 +26,5 @@ extension UILabel {
             self.attributedText = attrString
         }
     }
+    
 }

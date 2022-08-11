@@ -45,7 +45,7 @@ extension FirstRegisterViewController{
         backTableView.snp.makeConstraints{ make in
             make.width.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
-            make.bottom.equalTo(nextButton.snp.top).offset(-35)
+            make.bottom.equalTo(nextButton.snp.top).offset(-5)
         }
         
         nextButton.snp.makeConstraints{ make in

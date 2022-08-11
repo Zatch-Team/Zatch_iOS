@@ -21,6 +21,7 @@ class FirstProductInfoTableViewCell: UITableViewCell {
             
             $0.separatorStyle = .none
             $0.isScrollEnabled = true
+            $0.showsVerticalScrollIndicator = false
             
             $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
             
@@ -56,30 +57,25 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row{
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductQuantityUIView.cellIdentifier, for: indexPath) as? ProductQuantityUIView else{
-                fatalError("cell indexing error")
-            }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductQuantityUIView.cellIdentifier, for: indexPath)
+                    as? ProductQuantityUIView else{ fatalError("cell indexing error") }
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDateChoiceUIView.cellIdentifier, for: indexPath) as? ProductDateChoiceUIView else{
-                fatalError("cell indexing error")
-            }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDateChoiceUIView.cellIdentifier, for: indexPath)
+                    as? ProductDateChoiceUIView else{ fatalError("cell indexing error") }
             cell.titleLabel.text = "구매일자"
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDateChoiceUIView.cellIdentifier, for: indexPath) as? ProductDateChoiceUIView else{
-                fatalError("cell indexing error")
-            }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDateChoiceUIView.cellIdentifier, for: indexPath)
+                    as? ProductDateChoiceUIView else{ fatalError("cell indexing error")}
             cell.titleLabel.text = "유통기한"
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductOpenUIView.cellIdentifier, for: indexPath) as? ProductOpenUIView else{
-                fatalError("cell indexing error")
-            }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductOpenUIView.cellIdentifier, for: indexPath)
+                    as? ProductOpenUIView else{ fatalError("cell indexing error")}
             return cell
         default:
             fatalError()
-//            return UITableViewCell()
         }
     }
 
