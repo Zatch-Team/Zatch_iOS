@@ -70,6 +70,7 @@ class SecondRegisterViewController: BaseViewController {
     
     lazy var nextBtn = PurpleButton().then{
         $0.setTitle("다음 단계로", for: .normal)
+        $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
 
     //MARK: - LifeCycle
@@ -94,6 +95,12 @@ class SecondRegisterViewController: BaseViewController {
             currentBtnSelect.isSelected.toggle()
             currentBtnSelect = sender
         }
+    }
+    
+    @objc
+    func nextBtnDidClicked(){
+        let vc = CheckRegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
