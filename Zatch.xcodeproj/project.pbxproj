@@ -77,7 +77,6 @@
 		577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */; };
 		577A01B628A496D1004B2575 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B528A496D1004B2575 /* UITextView.swift */; };
 		577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */; };
-		577A01BA28A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B928A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift */; };
 		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
 		579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
@@ -91,6 +90,8 @@
 		57E31EB227E16A2B002DE500 /* MainZatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */; };
 		57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */; };
 		57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */; };
+		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
+		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
 		57ED69C0282A4D8000ACA67D /* CustomTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */; };
 		57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
@@ -191,7 +192,6 @@
 		577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckRegisterViewController+Layout.swift"; sourceTree = "<group>"; };
 		577A01B528A496D1004B2575 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterZatchInfoView.swift; sourceTree = "<group>"; };
-		577A01B928A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckRegisterZatchInfoView+Layout.swift"; sourceTree = "<group>"; };
 		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
 		579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
@@ -205,6 +205,8 @@
 		57E31EB027E16A2A002DE500 /* MainZatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchTableViewCell.xib; sourceTree = "<group>"; };
 		57E31EBE27E16BC0002DE500 /* MainZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		57E31EBF27E16BC0002DE500 /* MainZatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainZatchCollectionViewCell.xib; sourceTree = "<group>"; };
+		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGesture.swift; sourceTree = "<group>"; };
 		57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCheckBoxView.xib; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -446,7 +448,7 @@
 				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
 				5767D786286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift */,
 				577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */,
-				577A01B928A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift */,
+				57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -562,6 +564,7 @@
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
+				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
 			);
 			path = CommonSource;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
+				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
@@ -890,9 +894,9 @@
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
-				577A01BA28A49E5F004B2575 /* CheckRegisterZatchInfoView+Layout.swift in Sources */,
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
+				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,22 @@ import Foundation
 extension CheckRegisterViewController{
     
     func setInitView(){
+        
         photoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-            let flowLayout = UICollectionViewFlowLayout()
             
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.itemSize = CGSize(width: 84, height: 84)
+            flowLayout.minimumInteritemSpacing = 10
+            flowLayout.scrollDirection = .horizontal
+            
+            $0.delegate = self
+            $0.dataSource = self
             $0.collectionViewLayout = flowLayout
+            $0.showsHorizontalScrollIndicator = false
+            
+            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+            
+            $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
         }
     }
     
@@ -39,6 +51,8 @@ extension CheckRegisterViewController{
         photoFrame.snp.makeConstraints{ make in
             make.top.equalTo(titleView.snp.bottom)
             make.leading.equalToSuperview().offset(36)
+            make.height.equalTo(129)
+            make.trailing.equalToSuperview()
         }
         
         photoTitle.snp.makeConstraints{ make in
@@ -50,8 +64,8 @@ extension CheckRegisterViewController{
         photoCollectionView.snp.makeConstraints{ make in
             make.top.equalTo(photoTitle.snp.bottom).offset(19)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
             make.height.equalTo(84)
+            make.bottom.equalToSuperview()
         }
         
         infoFrame.snp.makeConstraints{ make in
@@ -78,8 +92,5 @@ extension CheckRegisterViewController{
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)
         }
-        
-        photoCollectionView.backgroundColor = .red
-
     }
 }
