@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductQuantityUIView: UITableViewCell {
+class ProductQuantityUIView: BaseTableViewCell {
     
     static let cellIdentifier = "productQuantityCell"
     
@@ -96,7 +96,7 @@ class ProductQuantityUIView: UITableViewCell {
 
 }
 
-class ProductDateChoiceUIView: UITableViewCell {
+class ProductDateChoiceUIView: BaseTableViewCell {
     
     static let cellIdentifier = "productDateCell"
     
@@ -107,8 +107,9 @@ class ProductDateChoiceUIView: UITableViewCell {
         $0.textColor = .black
     }
     
-    let yearTextField = UITextField().then{
-        $0.borderStyle = .none
+    let yearTextField = UILabel().then{
+        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.textColor = .black85
         $0.textAlignment = .center
     }
     
@@ -122,9 +123,12 @@ class ProductDateChoiceUIView: UITableViewCell {
         $0.backgroundColor = .black5
     }
     
-    let monthTextField = UITextField().then{
-        $0.borderStyle = .none
+    let monthTextField = UILabel().then{
+        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.textColor = .black85
+        $0.textAlignment = .center
     }
+    
     let monthLabel = UILabel().then{
         $0.text = "월"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
@@ -134,9 +138,12 @@ class ProductDateChoiceUIView: UITableViewCell {
         $0.backgroundColor = .black5
     }
     
-    let dateTextField = UITextField().then{
-        $0.borderStyle = .none
+    let dateTextField = UILabel().then{
+        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.textColor = .black85
+        $0.textAlignment = .center
     }
+    
     let dateLabel = UILabel().then{
         $0.text = "일"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)

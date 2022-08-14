@@ -38,10 +38,6 @@ class FirstRegisterViewController: BaseViewController {
     @objc
     func nextBtnDidClicked(){
         
-        let vc = DatePicerAlertViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: false, completion: nil)
-        
         /*
         let vc = SecondRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -89,6 +85,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableViewCell.cellIdentifier, for: indexPath) as? FirstProductInfoTableViewCell else{ fatalError("Cell Casting Error")}
+                cell.navigationController = self.navigationController
                 return cell
             default:
                 fatalError("index error")

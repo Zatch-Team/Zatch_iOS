@@ -9,6 +9,8 @@ import UIKit
 
 class BasicAlertViewController: UIViewController {
     
+    //MARK: - UI
+    
     let messageLabel = UILabel().then{
         $0.text = "재치 등록을 완료하시겠습니까?"
         $0.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
@@ -24,6 +26,7 @@ class BasicAlertViewController: UIViewController {
         $0.backgroundColor = .zatchPurple
         $0.layer.cornerRadius = 25/2
         $0.titleEdgeInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
+        $0.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
     }
     
     let containerView = UIView().then{
@@ -46,9 +49,8 @@ class BasicAlertViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-        
+                                        
+        setUpInitSetting()
         setUpView()
         setUpConstraint()
     }
@@ -71,6 +73,15 @@ class BasicAlertViewController: UIViewController {
             self?.containerView.transform = .identity
             self?.containerView.isHidden = true
         }
+    }
+    
+    func setUpInitSetting(){
+        
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlertController))
+        gesture.delegate = self
+        self.view.addGestureRecognizer(gesture)
     }
     
     func setUpView(){
@@ -108,5 +119,28 @@ class BasicAlertViewController: UIViewController {
             make.width.equalTo(okBtn.titleLabel!.snp.width).offset(32)
         }
     }
+    
+    //MARK: - Action
+    
+    @objc
+    func dismissAlertController(){
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    @objc
+    func okBtnDidClicked(){
+        self.dismiss(animated: false, completion: nil)
+    }
 
+}
+
+
+extension BasicAlertViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        guard touch.view?.isDescendant(of: self.containerView) == false else { return false }
+        
+        return true
+    }
 }

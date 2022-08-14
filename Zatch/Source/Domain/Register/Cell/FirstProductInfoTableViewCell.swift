@@ -9,7 +9,13 @@ import UIKit
 
 class FirstProductInfoTableViewCell: UITableViewCell {
     
+    //MARK: - Properties
+    
     static let cellIdentifier = "firstProductCell"
+    
+    var navigationController: UINavigationController!
+    
+    //MARK: - UI
     
     var tableView: UITableView!
     
@@ -76,6 +82,38 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
             return cell
         default:
             fatalError()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row{
+        case 1:
+            let vc = DatePicerAlertViewController()
+            vc.titleLabel.text = "구매일자"
+            vc.datePickerHandler = { array in
+                guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
+                cell.yearTextField.text = String (array[0])
+                cell.monthTextField.text = String (array[1] + 1)
+                cell.dateTextField.text = String (array[2] + 1)
+            }
+            
+            vc.modalPresentationStyle = .overFullScreen
+            self.navigationController.present(vc, animated: false, completion: nil)
+            return
+        case 2:
+            let vc = DatePicerAlertViewController()
+            vc.titleLabel.text = "유통기한"
+            vc.datePickerHandler = { array in
+                guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
+                cell.yearTextField.text = String (array[0])
+                cell.monthTextField.text = String (array[1] + 1)
+                cell.dateTextField.text = String (array[2] + 1)
+            }
+            vc.modalPresentationStyle = .overFullScreen
+            self.navigationController.present(vc, animated: false, completion: nil)
+            return
+        default:
+            return
         }
     }
 

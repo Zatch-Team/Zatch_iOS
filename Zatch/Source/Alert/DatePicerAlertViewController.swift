@@ -11,7 +11,16 @@ class DatePicerAlertViewController: BasicAlertViewController {
     
     //MARK: - Properties
     
-    var todayDateArray : [Int] = [] // [year, month, date]
+    /*
+     index =
+     0: year
+     1: month
+     2: date
+     */
+    var year: Int!
+    var dateArray : [Int] = []
+    
+    var datePickerHandler : (([Int]) -> ())?
     
     //MARK: - UI
     
@@ -31,22 +40,21 @@ class DatePicerAlertViewController: BasicAlertViewController {
         let formatter = DateFormatter()
         
         formatter.dateFormat = "yyyy"
-        let year = Int(formatter.string(from: todayDate))
-        todayDateArray.append(year!)
+        year = Int(formatter.string(from: todayDate))
+        dateArray.append(year!)
         
         formatter.dateFormat = "M"
         let month = Int(formatter.string(from: todayDate))! - 1
-        todayDateArray.append(month)
+        dateArray.append(month)
         
         formatter.dateFormat = "d"
         let date =  Int(formatter.string(from: todayDate))! - 1
-        todayDateArray.append(date)
-        
+        dateArray.append(date)
         
         super.viewDidLoad()
 
         removeSuperView()
-        setUpInitSetting()
+        setPickerInitSetting()
     }
     
     //MARK: - Helper
@@ -85,18 +93,25 @@ class DatePicerAlertViewController: BasicAlertViewController {
         }
     }
     
+    override func okBtnDidClicked() {
+        
+        self.datePickerHandler!(dateArray)
+        
+        super.okBtnDidClicked()
+    }
+    
     func removeSuperView(){
         super.messageLabel.removeFromSuperview()
     }
     
-    func setUpInitSetting(){
+    func setPickerInitSetting(){
         datePicker.delegate = self
         datePicker.dataSource = self
         
         //datepicker 초기값 설정
         datePicker.selectRow(15, inComponent: 0, animated: false)
-        datePicker.selectRow(todayDateArray[1], inComponent: 1, animated: false)
-        datePicker.selectRow(todayDateArray[2], inComponent: 2, animated: false)
+        datePicker.selectRow(dateArray[1], inComponent: 1, animated: false)
+        datePicker.selectRow(dateArray[2], inComponent: 2, animated: false)
     }
 
 }
@@ -141,7 +156,7 @@ extension DatePicerAlertViewController: UIPickerViewDelegate, UIPickerViewDataSo
         
         switch component{
         case 0:
-            let yearValue = row - 15 + todayDateArray[0]
+            let yearValue = row - 15 + dateArray[0]
             title =  "\(yearValue)년"
         case 1:
             title = "\(row+1)월"
@@ -151,14 +166,14 @@ extension DatePicerAlertViewController: UIPickerViewDelegate, UIPickerViewDataSo
             return UIView()
         }
         
-        let label = UILabel().then{ //DatePicker Label 기본 값
+        let label = UILabel().then{ //DatePicker Label 기본 UI 설정
             $0.text = title
             $0.textAlignment = .center
             $0.font = UIFont.pretendard(size: 18, family: .Medium)
             $0.textColor = .black45
         }
         
-        if(todayDateArray[component] == row || (row == 15 && component == 0)){ //DatePicker Label select 값
+        if(dateArray[component] == row || (row == 15 && component == 0)){ //DatePicker Label select UI 설정
             label.font = UIFont.pretendard(size: 18, family: .Bold)
             label.textColor = .black85
         }
@@ -170,6 +185,8 @@ extension DatePicerAlertViewController: UIPickerViewDelegate, UIPickerViewDataSo
         let select = pickerView.view(forRow: row, forComponent: component) as! UILabel
         select.font = UIFont.pretendard(size: 18, family: .Bold)
         select.textColor = .black85
+        
+        dateArray[component] = component == 0 ? row - 15 + year : row
     }
     
 }
