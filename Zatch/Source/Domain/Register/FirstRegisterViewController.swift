@@ -37,8 +37,15 @@ class FirstRegisterViewController: BaseViewController {
     //MARK: - Action
     @objc
     func nextBtnDidClicked(){
+        
+        let vc = CancelOkAlertViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
+        
+        /*
         let vc = SecondRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+         */
     }
 
 
