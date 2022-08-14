@@ -11,20 +11,7 @@ class ImageAddTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "imageAddCell"
     
-    let imageCollectionView: UICollectionView = {
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 84, height: 84)
-        flowLayout.minimumInteritemSpacing = CGFloat(8)
-        
-        let collectionView = UICollectionView(frame: .init(), collectionViewLayout: flowLayout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isScrollEnabled = true
-        
-        return collectionView
-    }()
+    var imageCollectionView: UICollectionView!
     
     let imageCountLabel = UILabel()
     
@@ -39,13 +26,28 @@ class ImageAddTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        imageCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+            
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.itemSize = CGSize(width: 84, height: 84)
+            flowLayout.minimumInteritemSpacing = CGFloat(8)
+            
+            $0.delegate = self
+            $0.dataSource = self
+            
+            $0.collectionViewLayout = flowLayout
+            $0.contentInset = UIEdgeInsets(top: 0, left: 36, bottom: 0, right: 20)
+            $0.showsHorizontalScrollIndicator = false
+            
+            $0.register(ImageAddBtnCollectionViewCell.self, forCellWithReuseIdentifier: ImageAddBtnCollectionViewCell.cellIdentifier)
+            $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
+        }
 
         setUpView()
         setUpConstraint()
         setUpValue()
-
-        imageCollectionView.delegate = self
-        imageCollectionView.dataSource = self
     }
     
     required init?(coder: NSCoder) {
@@ -71,7 +73,7 @@ class ImageAddTableViewCell: UITableViewCell {
         
         imageCollectionView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(28)
-            make.leading.equalToSuperview().offset(36)
+            make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.equalTo(84)
         }
@@ -99,14 +101,10 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if(indexPath.row == 0){
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-            cell.backgroundView = UIImageView.init(image: UIImage(named: "image_add_button"))
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageAddBtnCollectionViewCell.cellIdentifier, for: indexPath)
             return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        //cell 재사용으로 인한 init 작업 진행
-        cell.backgroundView = UIImageView.init()
-        cell.layer.cornerRadius = 4
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath)
         return cell
         
     }
