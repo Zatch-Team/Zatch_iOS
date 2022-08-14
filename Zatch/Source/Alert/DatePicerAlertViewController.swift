@@ -11,7 +11,7 @@ class DatePicerAlertViewController: BasicAlertViewController {
     
     //MARK: - Properties
     
-    var todayDateArray : [Int]! = []
+    var todayDateArray : [Int] = [] // [year, month, date]
     
     //MARK: - UI
     
@@ -35,12 +35,12 @@ class DatePicerAlertViewController: BasicAlertViewController {
         todayDateArray.append(year!)
         
         formatter.dateFormat = "M"
-        let month =  Int(formatter.string(from: todayDate))
-        todayDateArray.append(month!)
+        let month = Int(formatter.string(from: todayDate))! - 1
+        todayDateArray.append(month)
         
         formatter.dateFormat = "d"
-        let date =  Int(formatter.string(from: todayDate))
-        todayDateArray.append(date!)
+        let date =  Int(formatter.string(from: todayDate))! - 1
+        todayDateArray.append(date)
         
         
         super.viewDidLoad()
@@ -48,6 +48,8 @@ class DatePicerAlertViewController: BasicAlertViewController {
         removeSuperView()
         setUpInitSetting()
     }
+    
+    //MARK: - Helper
     
     override func setUpView() {
         
@@ -149,14 +151,14 @@ extension DatePicerAlertViewController: UIPickerViewDelegate, UIPickerViewDataSo
             return UIView()
         }
         
-        let label = UILabel().then{
+        let label = UILabel().then{ //DatePicker Label 기본 값
             $0.text = title
             $0.textAlignment = .center
             $0.font = UIFont.pretendard(size: 18, family: .Medium)
             $0.textColor = .black45
         }
         
-        if(todayDateArray[component] == row || (row == 15 && component == 0)){
+        if(todayDateArray[component] == row || (row == 15 && component == 0)){ //DatePicker Label select 값
             label.font = UIFont.pretendard(size: 18, family: .Bold)
             label.textColor = .black85
         }
