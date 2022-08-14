@@ -38,7 +38,7 @@ class FirstRegisterViewController: BaseViewController {
     @objc
     func nextBtnDidClicked(){
         
-        let vc = CancelOkAlertViewController()
+        let vc = DatePicerAlertViewController()
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false, completion: nil)
         
@@ -108,6 +108,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             
             vc.loadViewIfNeeded()
             self.present(vc, animated: true, completion: nil)
+            
         }else if(indexPath == [1,0]){
             
             guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else { return}

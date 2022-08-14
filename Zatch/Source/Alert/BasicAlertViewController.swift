@@ -16,7 +16,7 @@ class BasicAlertViewController: UIViewController {
         $0.textAlignment = .center
     }
     
-    let okBtn = UIButton().then{
+    lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
