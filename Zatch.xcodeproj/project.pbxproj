@@ -95,6 +95,7 @@
 		57EBCE4028A8906000212D20 /* CancelOkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */; };
 		57EBCE4228A8C67B00212D20 /* DatePicerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4128A8C67B00212D20 /* DatePicerAlertViewController.swift */; };
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
+		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
 		57ED69C0282A4D8000ACA67D /* CustomTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */; };
 		57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
@@ -213,6 +214,7 @@
 		57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOkAlertViewController.swift; sourceTree = "<group>"; };
 		57EBCE4128A8C67B00212D20 /* DatePicerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicerAlertViewController.swift; sourceTree = "<group>"; };
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
 		57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGesture.swift; sourceTree = "<group>"; };
 		57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCheckBoxView.xib; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				57468AA928A38C8000056691 /* SecondRegisterViewController+Layout.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
 				577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */,
+				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,
+				57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */,
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,

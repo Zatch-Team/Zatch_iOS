@@ -28,6 +28,7 @@ class ImageAddTableViewCell: UITableViewCell {
     let imageCountLabel = UILabel().then{
         $0.font = UIFont.pretendard(family: .Medium)
         $0.text = "0 / 10"
+        //TODO: - 현재 이미지 개수 글자 색상 zatchPurple로 변경
     }
     
     let backView = UIView()
@@ -59,9 +60,7 @@ class ImageAddTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        
         fatalError("init(coder:) has not been implemented")
-        
     }
     
     func setUpView(){
@@ -117,11 +116,14 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
             //TODO: - 추가 버튼 클릭시 갤러리 / 사진 촬영 여부 선택 팝업
             //TODO: - image 10개인 경우 개수 제한 팝업 띄우기
             
-            let imageController = UIImagePickerController()
-            imageController.delegate = self
-            imageController.sourceType = .photoLibrary
             
-            self.navigationController.present(imageController, animated: true, completion: nil)
+            let imagePicker = UIImagePickerController().then{
+                $0.delegate = self
+                $0.sourceType = .photoLibrary
+            }
+            
+            self.navigationController.present(imagePicker, animated: true, completion: nil)
+            
         }else{
             
             //TODO: - 클릭시 삭제 팝업 등장
@@ -136,13 +138,24 @@ extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationCo
         
         //TODO: - 상세 페이지 제공 통해 사진 선택 여부 결정
         
-        imageArray.append(info[.originalImage] as! UIImage)
-        imageCollectionView.reloadData()
+        let imgae = info[.originalImage] as! UIImage
         
+        let imageDetailVC = RegisterImageDetailViewController()
+        
+        imageDetailVC.imageView.image = imgae
+        imageDetailVC.imageRegisterHandler = { result in
+            if(result){
+                self.imageArray.append(imgae)
+                self.imageCollectionView.reloadData()
+            }
+        }
+        
+        self.navigationController.pushViewController(imageDetailVC, animated: true)
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         picker.dismiss(animated: true, completion: nil)
+        
     }
 }

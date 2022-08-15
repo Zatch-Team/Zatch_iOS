@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     lazy var backBtn = UIButton().then{
         $0.setImage(UIImage(named: "arrow_left"), for: .normal)
         $0.isUserInteractionEnabled = true
-        $0.addTarget(self, action: #selector(backBtnDidClicked(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
     }
     
     let navigationTitle = UILabel().then{
@@ -54,7 +54,7 @@ class BaseViewController: UIViewController {
     }
     
     @objc
-    func backBtnDidClicked(_ sender: UIButton){
+    func backBtnDidClicked(){
         self.navigationController?.popViewController(animated: true)
     }
 
