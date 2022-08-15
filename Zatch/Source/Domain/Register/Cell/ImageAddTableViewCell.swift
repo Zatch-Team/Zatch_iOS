@@ -9,19 +9,28 @@ import UIKit
 
 class ImageAddTableViewCell: UITableViewCell {
     
+    //MARK: - Properties
+    
     static let cellIdentifier = "imageAddCell"
+    
+    var navigationController: UINavigationController!
+    
+    var imageArray: [UIImage] = [] {
+        didSet{
+            imageCountLabel.text =  "\(imageArray.count) / 10"
+        }
+    }
+    
+    //MARK: - UI
     
     var imageCollectionView: UICollectionView!
     
-    let imageCountLabel = UILabel()
+    let imageCountLabel = UILabel().then{
+        $0.font = UIFont.pretendard(family: .Medium)
+        $0.text = "0 / 10"
+    }
     
     let backView = UIView()
-    
-    var imageCount: Int = 0 {
-        didSet{
-            
-        }
-    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -47,7 +56,6 @@ class ImageAddTableViewCell: UITableViewCell {
 
         setUpView()
         setUpConstraint()
-        setUpValue()
     }
     
     required init?(coder: NSCoder) {
@@ -83,19 +91,12 @@ class ImageAddTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().offset(36)
         }
     }
-    
-    func setUpValue(){
-        
-        imageCountLabel.font = UIFont.pretendard(family: .Medium)
-        imageCountLabel.text = "\(imageCount) / 10"
-    }
-
 }
 
 extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return imageArray.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -103,11 +104,45 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
         if(indexPath.row == 0){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageAddBtnCollectionViewCell.cellIdentifier, for: indexPath)
             return cell
+        }else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath) as? ImageRegisterCollectionViewCell else { fatalError() }
+            cell.imageView.image = imageArray[indexPath.row - 1]
+            return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath)
-        return cell
-        
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            
+            //TODO: - 추가 버튼 클릭시 갤러리 / 사진 촬영 여부 선택 팝업
+            //TODO: - image 10개인 경우 개수 제한 팝업 띄우기
+            
+            let imageController = UIImagePickerController()
+            imageController.delegate = self
+            imageController.sourceType = .photoLibrary
+            
+            self.navigationController.present(imageController, animated: true, completion: nil)
+        }else{
+            
+            //TODO: - 클릭시 삭제 팝업 등장
+        }
+    }
+}
+
+extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
+        
+        //TODO: - 상세 페이지 제공 통해 사진 선택 여부 결정
+        
+        imageArray.append(info[.originalImage] as! UIImage)
+        imageCollectionView.reloadData()
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

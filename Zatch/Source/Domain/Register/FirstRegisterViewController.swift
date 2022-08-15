@@ -69,6 +69,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageAddTableViewCell.cellIdentifier, for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
+                cell.navigationController = self.navigationController
                 return cell
             default:
                 fatalError("index error")

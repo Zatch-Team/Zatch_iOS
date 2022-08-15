@@ -15,6 +15,7 @@ class ImageRegisterCollectionViewCell: UICollectionViewCell {
     
     let imageView = UIImageView().then{
         $0.layer.cornerRadius = 8
+        $0.clipsToBounds = true
         $0.backgroundColor = .black10
     }
     
