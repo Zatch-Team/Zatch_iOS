@@ -113,16 +113,27 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(indexPath.row == 0){
             
-            //TODO: - 추가 버튼 클릭시 갤러리 / 사진 촬영 여부 선택 팝업
+            let alert = UIAlertController(title: nil, message: "이미지를 선택할 방식을 선택해주세요.", preferredStyle: .actionSheet)
+            let cameraBtn = UIAlertAction(title: "카메라 촬영", style: .default, handler: nil)
+            let galleryBtn = UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { _ in
+                
+                let imagePicker = UIImagePickerController().then{
+                    $0.delegate = self
+                    $0.sourceType = .photoLibrary
+                }
+                
+                self.navigationController.present(imagePicker, animated: true, completion: nil)
+            })
+            let cancelBtn = UIAlertAction(title: "취소", style: .cancel)
+            
+            alert.addAction(galleryBtn)
+            alert.addAction(cameraBtn)
+            alert.addAction(cancelBtn)
+            
+            self.navigationController.present(alert, animated: true, completion: nil)
+            
+            
             //TODO: - image 10개인 경우 개수 제한 팝업 띄우기
-            
-            
-            let imagePicker = UIImagePickerController().then{
-                $0.delegate = self
-                $0.sourceType = .photoLibrary
-            }
-            
-            self.navigationController.present(imagePicker, animated: true, completion: nil)
             
         }else{
             
