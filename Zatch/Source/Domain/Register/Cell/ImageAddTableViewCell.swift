@@ -112,29 +112,36 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(indexPath.row == 0){
-            
-            let alert = UIAlertController(title: nil, message: "이미지를 선택할 방식을 선택해주세요.", preferredStyle: .actionSheet)
-            let cameraBtn = UIAlertAction(title: "카메라 촬영", style: .default, handler: nil)
-            let galleryBtn = UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { _ in
+            if(imageArray.count < 10){
                 
-                let imagePicker = UIImagePickerController().then{
-                    $0.delegate = self
-                    $0.sourceType = .photoLibrary
+                let alert = UIAlertController(title: nil, message: "이미지를 선택할 방식을 선택해주세요.", preferredStyle: .actionSheet)
+                let cameraBtn = UIAlertAction(title: "카메라 촬영", style: .default, handler: nil)
+                let galleryBtn = UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { _ in
+                    
+                    let imagePicker = UIImagePickerController().then{
+                        $0.delegate = self
+                        $0.sourceType = .photoLibrary
+                    }
+                    
+                    self.navigationController.present(imagePicker, animated: true, completion: nil)
+                })
+                
+                let cancelBtn = UIAlertAction(title: "취소", style: .cancel)
+                
+                alert.addAction(galleryBtn)
+                alert.addAction(cameraBtn)
+                alert.addAction(cancelBtn)
+                
+                self.navigationController.present(alert, animated: true, completion: nil)
+                
+            }else{
+                //TODO: - image 10개인 경우 개수 제한 팝업 띄우기
+                let alert = BasicAlertViewController().then{
+                    $0.messageLabel.text = "이미지는 최대 10장까지 등록 가능합니다."
                 }
-                
-                self.navigationController.present(imagePicker, animated: true, completion: nil)
-            })
-            let cancelBtn = UIAlertAction(title: "취소", style: .cancel)
-            
-            alert.addAction(galleryBtn)
-            alert.addAction(cameraBtn)
-            alert.addAction(cancelBtn)
-            
-            self.navigationController.present(alert, animated: true, completion: nil)
-            
-            
-            //TODO: - image 10개인 경우 개수 제한 팝업 띄우기
-            
+                alert.modalPresentationStyle = .overFullScreen
+                self.navigationController.present(alert, animated: false, completion: nil)
+            }
         }else{
             
             //TODO: - 클릭시 삭제 팝업 등장
@@ -144,10 +151,8 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
 
 extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        
-        
-        //TODO: - 상세 페이지 제공 통해 사진 선택 여부 결정
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
         let imgae = info[.originalImage] as! UIImage
         
@@ -162,11 +167,11 @@ extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationCo
         }
         
         self.navigationController.pushViewController(imageDetailVC, animated: true)
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         picker.dismiss(animated: true, completion: nil)
-        
     }
 }
