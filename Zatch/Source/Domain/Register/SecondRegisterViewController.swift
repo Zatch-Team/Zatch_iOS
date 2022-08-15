@@ -12,6 +12,7 @@ class SecondRegisterViewController: BaseViewController {
     //MARK: - Properties
     var isFieldOpen = [true, false, false]
     var categoryChoose : [String?] = [nil, nil, nil]
+    var isThirdKeyboardOpen = false
     
     var currentBtnSelect: ZatchRoundCheck!
     
@@ -94,6 +95,11 @@ class SecondRegisterViewController: BaseViewController {
     }
     
     //MARK: - Action
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissKeyboardView()
+    }
+    
     @objc
     func radioBtnDidClicked(_ sender: ZatchRoundCheck){
         if(sender != currentBtnSelect){
@@ -112,6 +118,18 @@ class SecondRegisterViewController: BaseViewController {
     @objc
     func exitBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    //MARK: - Helper
+    func dismissKeyboardView(){
+        if(isThirdKeyboardOpen){
+            UIView.animate(withDuration: 0.3){
+                self.view.window?.frame.origin.y = 0
+            }
+            isThirdKeyboardOpen.toggle()
+        }
+        
+        self.view.endEditing(true)
     }
 }
 
@@ -135,14 +153,22 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier) as? CategorySelectWithRankTableViewCell else {fatalError()}
             cell.rankLabel.text = "\(indexPath.section + 1)순위"
             cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
+        
             return cell
         }else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier) as? ProductInputTextFieldTabeViewCell else {fatalError()}
+            
+            if(indexPath.section == 2){
+                cell.productName.delegate = self
+            }
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        dismissKeyboardView()
+        
         if(indexPath.row == 0){
             let vc = CategoryBottomSheet()
             vc.categorySelectHandler = { category in
@@ -164,5 +190,16 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
             vc.loadViewIfNeeded()
             self.present(vc, animated: true, completion: nil)
         }
+    }
+}
+
+extension SecondRegisterViewController: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.3){
+            self.view.window?.frame.origin.y -= 80
+        }
+        
+        self.isThirdKeyboardOpen.toggle()
     }
 }

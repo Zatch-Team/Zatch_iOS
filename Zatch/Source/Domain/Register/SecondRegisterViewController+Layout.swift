@@ -10,6 +10,7 @@ import Foundation
 extension SecondRegisterViewController{
     
     func setInitView(){
+        
         tableView = UITableView().then{
             $0.delegate = self
             $0.dataSource = self
@@ -20,6 +21,7 @@ extension SecondRegisterViewController{
             $0.register(CategorySelectWithRankTableViewCell.self, forCellReuseIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier)
             $0.register(ProductInputTextFieldTabeViewCell.self, forCellReuseIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier)
         }
+        
     }
     
     func setUpView(){

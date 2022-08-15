@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductInputTextFieldTabeViewCell: UITableViewCell {
+class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
     
     static let cellIdentifier = "productInputCell"
     
@@ -26,6 +26,10 @@ class ProductInputTextFieldTabeViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        self.productName.delegate = nil
     }
     
     func setUpView(){

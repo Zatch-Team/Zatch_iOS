@@ -35,6 +35,12 @@ class FirstRegisterViewController: BaseViewController {
     }
     
     //MARK: - Action
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
     @objc
     func nextBtnDidClicked(){
         let vc = SecondRegisterViewController()
@@ -92,6 +98,9 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.view.endEditing(true)
+        
         if(indexPath == [0,0]){
             
             let vc = CategoryBottomSheet()

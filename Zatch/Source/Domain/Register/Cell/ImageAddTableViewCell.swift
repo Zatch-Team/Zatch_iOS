@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageAddTableViewCell: UITableViewCell {
+class ImageAddTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     
