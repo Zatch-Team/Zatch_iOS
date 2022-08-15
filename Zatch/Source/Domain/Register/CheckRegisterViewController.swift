@@ -9,6 +9,11 @@ import UIKit
 
 class CheckRegisterViewController: BaseViewController {
     
+    lazy var exitBtn = UIButton().then{
+        $0.setImage(UIImage(named: "exit"), for: .normal)
+        $0.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
+    }
+    
     let titleView = TitleView().then{
         $0.titleLabel.text = "이렇게 재치를\n업로드해도 괜찮을까요?"
     }
@@ -51,6 +56,11 @@ class CheckRegisterViewController: BaseViewController {
         setUpView()
         setUpConstraint()
 
+    }
+    
+    @objc
+    func exitBtnDidClicked(){
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
 }

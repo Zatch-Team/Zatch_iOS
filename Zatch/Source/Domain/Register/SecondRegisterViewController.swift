@@ -16,6 +16,12 @@ class SecondRegisterViewController: BaseViewController {
     var currentBtnSelect: ZatchRoundCheck!
     
     //MARK: - UI
+    
+    lazy var exitBtn = UIButton().then{
+        $0.setImage(UIImage(named: "exit"), for: .normal)
+        $0.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
+    }
+    
     let topTitleView = TitleView().then{
         $0.titleLabel.text = "받고 싶은\n물건이 있나요?"
     }
@@ -101,6 +107,11 @@ class SecondRegisterViewController: BaseViewController {
     func nextBtnDidClicked(){
         let vc = CheckRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc
+    func exitBtnDidClicked(){
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

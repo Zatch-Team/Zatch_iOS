@@ -42,7 +42,8 @@ class MainViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func moveSearchVC(_ sender: UIButton){
-        let nextVC = MySearchViewController()
+//        let nextVC = MySearchViewController()
+        let nextVC = FirstRegisterViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 

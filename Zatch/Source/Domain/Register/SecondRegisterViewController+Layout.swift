@@ -24,6 +24,7 @@ extension SecondRegisterViewController{
     
     func setUpView(){
         
+        self.view.addSubview(exitBtn)
         self.view.addSubview(topTitleView)
         self.view.addSubview(tableView)
         self.view.addSubview(checkBoxFrame)
@@ -44,6 +45,11 @@ extension SecondRegisterViewController{
     }
     
     func setUpConstraint(){
+        
+        exitBtn.snp.makeConstraints{ make in
+            make.trailing.equalToSuperview().offset(-16)
+            make.centerY.equalTo(super.backBtn)
+        }
         
         topTitleView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(88)

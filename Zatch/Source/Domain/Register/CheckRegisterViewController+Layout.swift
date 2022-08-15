@@ -30,6 +30,7 @@ extension CheckRegisterViewController{
     }
     
     func setUpView(){
+        self.view.addSubview(exitBtn)
         self.view.addSubview(titleView)
         self.view.addSubview(registerBtn)
         self.view.addSubview(photoFrame)
@@ -43,6 +44,11 @@ extension CheckRegisterViewController{
     }
     
     func setUpConstraint(){
+        
+        exitBtn.snp.makeConstraints{ make in
+            make.trailing.equalToSuperview().offset(-16)
+            make.centerY.equalTo(super.backBtn)
+        }
         
         titleView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(88)
