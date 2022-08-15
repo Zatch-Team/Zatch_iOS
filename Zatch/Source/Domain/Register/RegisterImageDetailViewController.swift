@@ -11,16 +11,16 @@ class RegisterImageDetailViewController: BaseViewController {
     
     //MARK: - Properties
     
-    var imageRegisterHandler: ((Bool) -> ())?
+    var imageDetailHandler: ((Bool) -> ())?
     
     //MARK: - UI
     
-    lazy var registerBtn = UIButton().then{
+    lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)
         $0.titleLabel?.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.setTitleColor(.black85, for: .normal)
         $0.backgroundColor = .white
-        $0.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
     }
     
     let imageView = UIImageView().then{
@@ -31,12 +31,12 @@ class RegisterImageDetailViewController: BaseViewController {
         
         super.viewDidLoad()
         
-        self.view.addSubview(registerBtn)
+        self.view.addSubview(okBtn)
         self.view.addSubview(imageView)
         
-        registerBtn.snp.makeConstraints{ make in
+        okBtn.snp.makeConstraints{ make in
             make.height.equalTo(20)
-            make.width.equalTo(registerBtn.titleLabel!.snp.width)
+            make.width.equalTo(okBtn.titleLabel!.snp.width)
             make.trailing.equalToSuperview().offset(-20)
             make.centerY.equalTo(super.backBtn)
         }
@@ -49,8 +49,8 @@ class RegisterImageDetailViewController: BaseViewController {
     
     //MARK: - Action
     @objc
-    func registerBtnDidClicked(){
-        self.imageRegisterHandler!(true)
+    func okBtnDidClicked(){
+        self.imageDetailHandler!(true)
         self.navigationController?.popViewController(animated: true)
     }
 

@@ -9,6 +9,10 @@ import UIKit
 
 class CancelOkAlertViewController: BasicAlertViewController {
     
+    //MARK: - Properties
+    
+    var alertHandler : ((Bool) -> ())?
+    
     let cancelBtn = UIButton().then{
         $0.backgroundColor = .white
         $0.setTitle("취소", for: .normal)
@@ -18,9 +22,7 @@ class CancelOkAlertViewController: BasicAlertViewController {
     }
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
     }
     
     override func setUpView() {
@@ -29,10 +31,17 @@ class CancelOkAlertViewController: BasicAlertViewController {
     }
     
     override func setUpConstraint() {
+        
         super.setUpConstraint()
+        
         cancelBtn.snp.makeConstraints{ make in
             make.width.height.equalTo(okBtn)
         }
+    }
+    
+    override func okBtnDidClicked() {
+        self.alertHandler!(true)
+        super.okBtnDidClicked()
     }
 
 }

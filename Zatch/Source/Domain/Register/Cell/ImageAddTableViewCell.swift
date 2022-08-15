@@ -135,16 +135,24 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
                 self.navigationController.present(alert, animated: true, completion: nil)
                 
             }else{
-                //TODO: - image 10개인 경우 개수 제한 팝업 띄우기
-                let alert = BasicAlertViewController().then{
-                    $0.messageLabel.text = "이미지는 최대 10장까지 등록 가능합니다."
-                }
+                
+                let alert = BasicAlertViewController(message: "이미지는 최대 10장까지 등록 가능합니다.")
+//                    .then{
+//                    $0.messageLabel.text = "이미지는 최대 10장까지 등록 가능합니다."
+//                }
                 alert.modalPresentationStyle = .overFullScreen
                 self.navigationController.present(alert, animated: false, completion: nil)
             }
         }else{
             
-            //TODO: - 클릭시 삭제 팝업 등장
+            //TODO: - 클릭시 상세페이지 -> 삭제 클릭시 팝업 등장 -> ok 클릭시 삭제 진행
+            let imageDetailVC = DeleteImageDetailViewController()
+            imageDetailVC.imageView.image = imageArray[indexPath.row - 1]
+            imageDetailVC.imageDetailHandler = { result in
+                self.imageArray.remove(at: indexPath.row - 1)
+                self.imageCollectionView.reloadData()
+            }
+            self.navigationController.pushViewController(imageDetailVC, animated: true)
         }
     }
 }
@@ -159,7 +167,7 @@ extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationCo
         let imageDetailVC = RegisterImageDetailViewController()
         
         imageDetailVC.imageView.image = imgae
-        imageDetailVC.imageRegisterHandler = { result in
+        imageDetailVC.imageDetailHandler = { result in
             if(result){
                 self.imageArray.append(imgae)
                 self.imageCollectionView.reloadData()
