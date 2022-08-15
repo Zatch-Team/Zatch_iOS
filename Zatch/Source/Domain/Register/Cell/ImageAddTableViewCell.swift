@@ -102,11 +102,10 @@ class ImageAddTableViewCell: BaseTableViewCell {
     
     func changeCountLabelTextColor(){
         
-        let text = imageCountLabel.text
-        let countText = text?.components(separatedBy: " ")[0]
+        let length = imageArray.count < 10 ? 1 : 2
         
         let mutableText = NSMutableAttributedString(attributedString: imageCountLabel.attributedText!)
-        mutableText.addAttribute(.foregroundColor, value: UIColor.zatchPurple, range: NSRange(location: 0, length: countText!.count))
+        mutableText.addAttribute(.foregroundColor, value: UIColor.zatchPurple, range: NSRange(location: 0, length: length))
         
         imageCountLabel.attributedText = mutableText
     }
