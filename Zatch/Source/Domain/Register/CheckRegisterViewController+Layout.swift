@@ -20,10 +20,10 @@ extension CheckRegisterViewController{
             
             $0.delegate = self
             $0.dataSource = self
+            
             $0.collectionViewLayout = flowLayout
             $0.showsHorizontalScrollIndicator = false
-            
-            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+            $0.contentInset = UIEdgeInsets(top: 0, left: 36, bottom: 0, right: 20)
             
             $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
         }
@@ -50,13 +50,13 @@ extension CheckRegisterViewController{
         
         photoFrame.snp.makeConstraints{ make in
             make.top.equalTo(titleView.snp.bottom)
-            make.leading.equalToSuperview().offset(36)
+            make.leading.equalToSuperview()
             make.height.equalTo(129)
             make.trailing.equalToSuperview()
         }
         
         photoTitle.snp.makeConstraints{ make in
-            make.leading.equalToSuperview()
+            make.leading.equalToSuperview().offset(36)
             make.top.equalToSuperview().offset(9)
             make.height.equalTo(17)
         }

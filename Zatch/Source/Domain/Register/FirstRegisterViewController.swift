@@ -37,11 +37,8 @@ class FirstRegisterViewController: BaseViewController {
     //MARK: - Action
     @objc
     func nextBtnDidClicked(){
-        
-        /*
         let vc = SecondRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
-         */
     }
 
 

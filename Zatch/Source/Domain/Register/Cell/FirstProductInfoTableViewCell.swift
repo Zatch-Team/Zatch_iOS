@@ -86,35 +86,30 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let title: String!
+        
         switch indexPath.row{
         case 1:
-            let vc = DatePicerAlertViewController()
-            vc.titleLabel.text = "구매일자"
-            vc.datePickerHandler = { array in
-                guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
-                cell.yearTextField.text = String (array[0])
-                cell.monthTextField.text = String (array[1] + 1)
-                cell.dateTextField.text = String (array[2] + 1)
-            }
-            
-            vc.modalPresentationStyle = .overFullScreen
-            self.navigationController.present(vc, animated: false, completion: nil)
-            return
+            title = "구매일자"
         case 2:
-            let vc = DatePicerAlertViewController()
-            vc.titleLabel.text = "유통기한"
-            vc.datePickerHandler = { array in
-                guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
-                cell.yearTextField.text = String (array[0])
-                cell.monthTextField.text = String (array[1] + 1)
-                cell.dateTextField.text = String (array[2] + 1)
-            }
-            vc.modalPresentationStyle = .overFullScreen
-            self.navigationController.present(vc, animated: false, completion: nil)
-            return
+            title = "유통기한"
         default:
             return
         }
+        
+        let vc = DatePicerAlertViewController()
+        vc.titleLabel.text = title
+        
+        vc.datePickerHandler = { array in
+            guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
+            cell.yearTextField.text = String (array[0])
+            cell.monthTextField.text = String (array[1] + 1)
+            cell.dateTextField.text = String (array[2] + 1)
+        }
+        
+        vc.modalPresentationStyle = .overFullScreen
+        self.navigationController.present(vc, animated: false, completion: nil)
     }
 
     

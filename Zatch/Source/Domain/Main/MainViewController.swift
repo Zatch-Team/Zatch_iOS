@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: ViewController {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var townText: UILabel!
     @IBOutlet weak var townButton: UIButton!

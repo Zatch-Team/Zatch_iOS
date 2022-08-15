@@ -186,6 +186,7 @@ class ProductDateChoiceUIView: BaseTableViewCell {
     }
     
     var labelArray : [UILabel]!
+    var textFieldArray: [UILabel]!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -195,6 +196,7 @@ class ProductDateChoiceUIView: BaseTableViewCell {
         setUpConstriant()
         
         labelArray = [titleLabel,yearLabel,monthLabel,dateLabel]
+        textFieldArray = [yearTextField,monthTextField,dateTextField]
 
     }
     
@@ -302,6 +304,9 @@ class ProductDateChoiceUIView: BaseTableViewCell {
             sender.isSelected = true
             labelArray.forEach{ label in
                 label.textColor = .black20
+            }
+            textFieldArray.forEach{ label in
+                label.text = ""
             }
         }
     }
