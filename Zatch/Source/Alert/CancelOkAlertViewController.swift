@@ -13,6 +13,8 @@ class CancelOkAlertViewController: BasicAlertViewController {
     
     var alertHandler : ((Bool) -> ())?
     
+    //MARK: - UI
+    
     let cancelBtn = UIButton().then{
         $0.backgroundColor = .white
         $0.setTitle("취소", for: .normal)

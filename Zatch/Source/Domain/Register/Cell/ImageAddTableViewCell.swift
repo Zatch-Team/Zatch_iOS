@@ -28,6 +28,7 @@ class ImageAddTableViewCell: UITableViewCell {
     let imageCountLabel = UILabel().then{
         $0.font = UIFont.pretendard(family: .Medium)
         $0.text = "0 / 10"
+        
         //TODO: - 현재 이미지 개수 글자 색상 zatchPurple로 변경
     }
     
@@ -115,7 +116,14 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
             if(imageArray.count < 10){
                 
                 let alert = UIAlertController(title: nil, message: "이미지를 선택할 방식을 선택해주세요.", preferredStyle: .actionSheet)
-                let cameraBtn = UIAlertAction(title: "카메라 촬영", style: .default, handler: nil)
+                let cameraBtn = UIAlertAction(title: "카메라 촬영", style: .default, handler: { _ in
+                    let cameraPicker = UIImagePickerController().then{
+                        $0.delegate = self
+                        $0.sourceType = .camera
+                    }
+                    self.navigationController.present(cameraPicker, animated: true, completion: nil)
+                })
+                
                 let galleryBtn = UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { _ in
                     
                     let imagePicker = UIImagePickerController().then{
@@ -137,21 +145,20 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
             }else{
                 
                 let alert = BasicAlertViewController(message: "이미지는 최대 10장까지 등록 가능합니다.")
-//                    .then{
-//                    $0.messageLabel.text = "이미지는 최대 10장까지 등록 가능합니다."
-//                }
                 alert.modalPresentationStyle = .overFullScreen
+                
                 self.navigationController.present(alert, animated: false, completion: nil)
             }
         }else{
             
-            //TODO: - 클릭시 상세페이지 -> 삭제 클릭시 팝업 등장 -> ok 클릭시 삭제 진행
             let imageDetailVC = DeleteImageDetailViewController()
+            
             imageDetailVC.imageView.image = imageArray[indexPath.row - 1]
             imageDetailVC.imageDetailHandler = { result in
                 self.imageArray.remove(at: indexPath.row - 1)
                 self.imageCollectionView.reloadData()
             }
+            
             self.navigationController.pushViewController(imageDetailVC, animated: true)
         }
     }
