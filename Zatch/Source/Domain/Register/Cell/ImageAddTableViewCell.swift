@@ -18,6 +18,7 @@ class ImageAddTableViewCell: BaseTableViewCell {
     var imageArray: [UIImage] = [] {
         didSet{
             imageCountLabel.text =  "\(imageArray.count) / 10"
+            changeCountLabelTextColor()
         }
     }
     
@@ -28,8 +29,6 @@ class ImageAddTableViewCell: BaseTableViewCell {
     let imageCountLabel = UILabel().then{
         $0.font = UIFont.pretendard(family: .Medium)
         $0.text = "0 / 10"
-        
-        //TODO: - 현재 이미지 개수 글자 색상 zatchPurple로 변경
     }
     
     let backView = UIView()
@@ -37,6 +36,18 @@ class ImageAddTableViewCell: BaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setInitSetting()
+        setUpView()
+        setUpConstraint()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setInitSetting(){
         
         imageCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
             
@@ -55,14 +66,11 @@ class ImageAddTableViewCell: BaseTableViewCell {
             $0.register(ImageAddBtnCollectionViewCell.self, forCellWithReuseIdentifier: ImageAddBtnCollectionViewCell.cellIdentifier)
             $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
         }
-
-        setUpView()
-        setUpConstraint()
+        
+        changeCountLabelTextColor() //image count 텍스트 색상 커스텀
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    //MARK: - Helper
     
     func setUpView(){
         
@@ -90,6 +98,17 @@ class ImageAddTableViewCell: BaseTableViewCell {
             make.top.equalTo(imageCollectionView.snp.bottom).offset(12)
             make.leading.equalToSuperview().offset(36)
         }
+    }
+    
+    func changeCountLabelTextColor(){
+        
+        let text = imageCountLabel.text
+        let countText = text?.components(separatedBy: " ")[0]
+        
+        let mutableText = NSMutableAttributedString(attributedString: imageCountLabel.attributedText!)
+        mutableText.addAttribute(.foregroundColor, value: UIColor.zatchPurple, range: NSRange(location: 0, length: countText!.count))
+        
+        imageCountLabel.attributedText = mutableText
     }
 }
 
