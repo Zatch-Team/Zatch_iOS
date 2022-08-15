@@ -27,6 +27,20 @@ extension CheckRegisterViewController{
             
             $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
         }
+        
+        addExplainTextView = UITextView().then{
+            $0.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+            $0.layer.borderWidth = 1
+            $0.layer.cornerRadius = 8
+            
+            $0.delegate = self
+            
+            $0.text = placeHolder
+            $0.setTextWithLineHeight(lineHeight: 15.6)
+            $0.textColor = .black20
+            $0.font = UIFont.pretendard(size: 12, family: .Medium)
+            $0.textContainerInset = UIEdgeInsets(top: 23, left: 17, bottom: 23, right: 25)
+        }
     }
     
     func setUpView(){
@@ -90,10 +104,10 @@ extension CheckRegisterViewController{
             make.top.equalTo(addTitle.snp.bottom).offset(11)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview().offset(-157)
         }
         
         registerBtn.snp.makeConstraints{ make in
-            make.top.equalTo(addExplainTextView.snp.bottom).offset(41)
             make.bottom.equalToSuperview().offset(-40)
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)

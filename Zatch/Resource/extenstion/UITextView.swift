@@ -9,22 +9,22 @@ import Foundation
 
 extension UITextView {
     
-//    func setPlaceholderColor(_ placeholderColor: UIColor) {
-//        attributedPlaceholder = NSAttributedString(
-//            string: placeholder ?? "",
-//            attributes: [
-//                .foregroundColor: placeholderColor,
-//                .font: font
-//            ].compactMapValues { $0 }
-//        )
-//    }
-    
-//    func addPadding() {
-//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 6, height: self.frame.height))
-//        self.leftView = paddingView
-//        self.rightView = paddingView
-//        self.leftViewMode = ViewMode.always
-//        self.rightViewMode = ViewMode.always
-//    }
+    func setTextWithLineHeight(lineHeight: CGFloat){
+        if let text = text {
+            let style = NSMutableParagraphStyle()
+            style.maximumLineHeight = lineHeight
+            style.minimumLineHeight = lineHeight
+            style.lineSpacing = lineHeight/4
+            
+            let attributes: [NSAttributedString.Key: Any] = [
+                .paragraphStyle: style,
+            ]
+            
+            let attrString = NSMutableAttributedString(string: text,
+                                      attributes: attributes)
+            
+            self.attributedText = attrString
+        }
+    }
     
 }

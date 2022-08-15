@@ -9,6 +9,12 @@ import UIKit
 
 class CheckRegisterViewController: BaseViewController {
     
+    //MARK: - Properties
+    
+    let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
+    
+    //MARK: - UI
+    
     lazy var exitBtn = UIButton().then{
         $0.setImage(UIImage(named: "exit"), for: .normal)
         $0.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
@@ -33,19 +39,15 @@ class CheckRegisterViewController: BaseViewController {
         $0.text = "추가 설명"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-        //textview -> placeholder uitextview로 직접 만들어야 함
-    let addExplainTextView = UITextView().then{
-        $0.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        $0.layer.borderWidth = 1
-        $0.layer.cornerRadius = 8
-        
-        $0.textContainerInset = UIEdgeInsets(top: 23, left: 17, bottom: 23, right: 25)
-    }
+
+    var addExplainTextView : UITextView!
     
     let registerBtn = PurpleButton().then{
         $0.setTitle("재치 등록", for: .normal)
     }
 
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         
         super.navigationTitle.text = "재치 등록하기"
@@ -58,6 +60,15 @@ class CheckRegisterViewController: BaseViewController {
 
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        UIView.animate(withDuration: 0.3){
+            self.view.window?.frame.origin.y = 0
+        }
+    }
+    
+    //MARK: - Action
+    
     @objc
     func exitBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
@@ -65,6 +76,30 @@ class CheckRegisterViewController: BaseViewController {
 
 }
 
+//MARK: - TextView
+extension CheckRegisterViewController: UITextViewDelegate{
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        UIView.animate(withDuration: 0.3){
+            self.view.window?.frame.origin.y -= 200
+        }
+        
+        if textView.text == self.placeHolder {
+            textView.text = nil
+            textView.textColor = .black85
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            textView.text = placeHolder
+            textView.textColor = .black20
+        }
+    }
+}
+
+//MARK: - CollectionView
 extension CheckRegisterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
