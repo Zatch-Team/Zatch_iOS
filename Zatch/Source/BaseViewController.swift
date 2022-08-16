@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
         
         //
         navigationView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(32)
+            make.top.equalToSuperview().offset(44)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(56)
         }

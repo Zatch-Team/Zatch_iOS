@@ -7,16 +7,22 @@
 
 import UIKit
 
-class ChattingListViewController: UIViewController {
+class ChattingListViewController: BaseTabBarViewController {
     
-    let titleView = TabBarTitleView().then{
-        $0.titleLabel.text = "채팅"
-    }
-
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setInitSetting()
+        setUpView()
+        setUpConstraint()
+    }
+    
+    //MARK: - Action
+    
+    @objc
+    func bellBtnDidClicked(){
+        print("bell btn clicked")
     }
 
 
