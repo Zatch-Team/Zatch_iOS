@@ -15,14 +15,28 @@ class CancelOkAlertViewController: BasicAlertViewController {
     
     //MARK: - UI
     
-    let cancelBtn = UIButton().then{
+    lazy var cancelBtn = UIButton().then{
         $0.backgroundColor = .white
         $0.setTitle("취소", for: .normal)
         $0.setTitleColor(.zatchPurple, for: .normal)
         $0.titleLabel?.textAlignment = .center
         $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.addTarget(self, action: #selector(cancelBtnDidClicked), for: .touchUpInside)
     }
-
+    
+    init(message: String, btnTitle: String? = nil){
+        
+        super.init(message: message)
+        
+        if let btnTitle = btnTitle {
+            okBtn.setTitle(btnTitle, for: .normal)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -44,6 +58,12 @@ class CancelOkAlertViewController: BasicAlertViewController {
     override func okBtnDidClicked() {
         self.alertHandler!(true)
         super.okBtnDidClicked()
+    }
+    
+    @objc
+    func cancelBtnDidClicked(){
+        self.alertHandler!(false)
+        self.dismiss(animated: false, completion: nil)
     }
 
 }

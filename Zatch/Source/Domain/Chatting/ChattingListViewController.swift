@@ -70,6 +70,7 @@ extension ChattingListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ChattingListTableViewCell.cellIdentifier, for: indexPath) as? ChattingListTableViewCell else { fatalError() }
         cell.delegate = self
+        cell.navigationController = self.navigationController
         return cell
     }
 

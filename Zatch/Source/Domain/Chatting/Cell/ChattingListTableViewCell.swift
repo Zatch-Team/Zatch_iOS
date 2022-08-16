@@ -21,6 +21,8 @@ class ChattingListTableViewCell: BaseTableViewCell {
     
     weak var delegate : SelectedTableViewCellDeliver?
     
+    var navigationController: UINavigationController!
+    
     //MARK: - Properties(for swipe)
     
     lazy var leftWidth : CGFloat = 130
@@ -99,7 +101,23 @@ class ChattingListTableViewCell: BaseTableViewCell {
     }
     
     @objc func deleteBtnDidClicked(){
-        print("delete click")
+        let alert = CancelOkAlertViewController(
+            message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
+            btnTitle: "네, 확인했습니다.")
+        
+        alert.alertHandler = { result in
+            if(result){
+                //TODO: - 채팅방 삭제 API 연결 -> VC에서 데이터 삭제 및 테이블 뷰 reload
+                /* 
+                 chattingList.remove(at: indexPath.row)
+                 tableView.reloadData()
+                 */
+            }
+            self.cellWillMoveOriginalPosition()
+        }
+        
+        alert.modalPresentationStyle = .overFullScreen
+        self.navigationController.present(alert, animated: false, completion: nil)
     }
     
 
@@ -226,9 +244,9 @@ extension ChattingListTableViewCell{
         }
     }
         
-        func getCellIndexPath() -> IndexPath?{
-            return (self.superview as? UITableView)?.indexPath(for: self)
-        }
+    func getCellIndexPath() -> IndexPath?{
+        return (self.superview as? UITableView)?.indexPath(for: self)
+    }
     
     func cellWillMoveOriginalPosition(){
         

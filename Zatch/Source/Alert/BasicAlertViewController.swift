@@ -16,6 +16,7 @@ class BasicAlertViewController: UIViewController {
         $0.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
         $0.font = UIFont.pretendard(size: 13, family: .Medium)
         $0.textAlignment = .center
+        $0.numberOfLines = 0
     }
     
     lazy var okBtn = UIButton().then{
