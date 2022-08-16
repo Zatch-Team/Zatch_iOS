@@ -108,7 +108,7 @@ extension CheckRegisterViewController{
         }
         
         registerBtn.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview().offset(-40)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-40)
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)
         }

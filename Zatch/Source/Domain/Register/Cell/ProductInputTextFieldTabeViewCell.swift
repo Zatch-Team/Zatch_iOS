@@ -12,15 +12,21 @@ class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
     static let cellIdentifier = "productInputCell"
     
     let backView = UIView()
-    let boundaryLine = UIView()
-    let productName = UITextField()
+    
+    let boundaryLine = UIView().then{
+        $0.backgroundColor = .black5
+    }
+    
+    let productName = UITextField().then{
+        $0.font = UIFont.pretendard(family: .Medium)
+        $0.placeholder = "상품 이름을 입력해주세요."
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setUpView()
-        setUpValue()
         setUpConstraint()
     }
     
@@ -59,15 +65,6 @@ class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
             make.leading.equalToSuperview().offset(36)
             make.centerY.equalToSuperview()
         }
-    }
-    
-    func setUpValue(){
-    
-        boundaryLine.backgroundColor = .black5
-        
-        productName.font = UIFont.pretendard(family: .Medium)
-        productName.placeholder = "상품 이름을 입력해주세요."
-        
     }
 
 }

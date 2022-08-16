@@ -20,6 +20,8 @@
 		57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
 		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
 		571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */; };
+		571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */; };
+		571C0C6E28AB16A5002293B6 /* TabBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6D28AB16A5002293B6 /* TabBarTitleView.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -97,7 +99,6 @@
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
 		57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */; };
-		57ED69C0282A4D8000ACA67D /* CustomTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */; };
 		57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,8 @@
 		57067875281C2F3900F48342 /* pretendard_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_bold.ttf; sourceTree = "<group>"; };
 		57067876281C2F3900F48342 /* pretendard_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_regular.ttf; sourceTree = "<group>"; };
 		571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewController.swift; sourceTree = "<group>"; };
+		571C0C6D28AB16A5002293B6 /* TabBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTitleView.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -217,7 +220,6 @@
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
-		57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGesture.swift; sourceTree = "<group>"; };
 		57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCheckBoxView.xib; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +293,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		571C0C6A28AB1275002293B6 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
 		57468A6B289CECE900056691 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +317,7 @@
 			children = (
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
 				57468A8A289FEB2000056691 /* SheetViewController.swift */,
+				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
 				571AD7112828D9C900390AAD /* Category */,
 				57468A8C289FEEBE00056691 /* Domain */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
@@ -352,6 +363,7 @@
 		57468A8C289FEEBE00056691 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				571C0C6A28AB1275002293B6 /* Chatting */,
 				576EA921282B7F2D0028046C /* Register */,
 				5767D76F286823DF0075DB28 /* Detail */,
 				57C585052821F2B30078FAFF /* Main */,
@@ -523,7 +535,6 @@
 				57468A9928A1096600056691 /* extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* CommonSource */,
 				57067862281C13D500F48342 /* Font */,
-				57ED69BF282A4D8000ACA67D /* CustomTapGesture.swift */,
 				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
 				57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */,
 				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
@@ -567,8 +578,8 @@
 			isa = PBXGroup;
 			children = (
 				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
-				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
 				57713943281F596C0066DEEB /* TitleView.swift */,
+				571C0C6D28AB16A5002293B6 /* TabBarTitleView.swift */,
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
@@ -833,7 +844,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57ED69C0282A4D8000ACA67D /* CustomTapGesture.swift in Sources */,
 				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */,
 				57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */,
@@ -854,6 +864,7 @@
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
+				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57E31EB127E16A2A002DE500 /* MainZatchTableViewCell.swift in Sources */,
@@ -871,6 +882,7 @@
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePicerAlertViewController.swift in Sources */,
+				571C0C6E28AB16A5002293B6 /* TabBarTitleView.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,

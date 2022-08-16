@@ -9,7 +9,7 @@ import UIKit
 
 enum BottomSheetSize: CGFloat{
     case SearchTag = 219
-    case Category = 500
+    case Category = 460 // 500
     case TownArea = 442
 }
 

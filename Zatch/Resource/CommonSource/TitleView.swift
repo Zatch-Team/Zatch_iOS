@@ -15,10 +15,6 @@ class TitleView: UIView{
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)!
-    }
-    
     override init(frame: CGRect){
         super.init(frame: frame)
         
@@ -31,5 +27,9 @@ class TitleView: UIView{
             make.top.equalToSuperview().offset(16)
             make.leading.equalToSuperview().offset(28)
         }
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)!
     }
 }
