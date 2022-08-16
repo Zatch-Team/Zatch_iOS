@@ -19,11 +19,14 @@ extension ChattingListViewController{
         tableView = UITableView().then{
             
             $0.separatorStyle = .none
+            $0.backgroundColor = .transparent
             
             $0.delegate = self
             $0.dataSource = self
             
             $0.register(ChattingListTableViewCell.self, forCellReuseIdentifier: ChattingListTableViewCell.cellIdentifier)
+            
+            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
         }
     }
 

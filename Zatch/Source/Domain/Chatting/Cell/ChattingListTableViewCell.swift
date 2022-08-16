@@ -7,9 +7,33 @@
 
 import UIKit
 
+enum CurrentHidden{
+    case none
+    case left
+    case right
+}
+
 class ChattingListTableViewCell: BaseTableViewCell {
     
+    //MARK: - Properties
+    
     static let cellIdentifier = "chattingListCell"
+    
+    weak var delegate : SelectedTableViewCellDeliver?
+    
+    //MARK: - Properties(for swipe)
+    
+    lazy var leftWidth : CGFloat = 130
+    lazy var rightWidth : CGFloat = 72
+    
+    //hiddenView addSubView 되었는지 아닌지 확인 용도
+    lazy var isViewAdd : CurrentHidden = .none
+    
+    lazy var originalCenter = CGPoint()
+    
+    lazy var isClamp = false
+    
+    //MARK: - UI
     
     let nameLabel = UILabel().then{
         $0.text = "쑤야"
@@ -46,64 +70,184 @@ class ChattingListTableViewCell: BaseTableViewCell {
     
     let backView = UIView()
     
+    lazy var hiddenLeftView = HiddenZatchInfoView()
+    
+    lazy var hiddenRightView = HiddenDeleteView()
+    
+    lazy var hiddenDeleteBtn = UIButton().then{
+        $0.backgroundColor = .transparent
+        $0.setTitle("나가기", for: .normal)
+        $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.titleLabel?.textAlignment = .center
+        $0.addTarget(self, action: #selector(deleteBtnDidClicked), for: .touchUpInside)
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setUpView()
         setUpConstraint()
+        
+        let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        
+        swipeGesture.delegate = self
+        backView.addGestureRecognizer(swipeGesture)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpView(){
-        
-        self.contentView.addSubview(backView)
-        
-        self.infoStackView.addArrangedSubview(nameLabel)
-        self.infoStackView.addArrangedSubview(recentMessageLabel)
-        
-        self.backView.addSubview(profileImage)
-        self.backView.addSubview(infoStackView)
-        self.backView.addSubview(timeLabel)
-        self.backView.addSubview(borderLine)
-    }
-    
-    func setUpConstraint(){
-        
-        backView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-            make.height.equalTo(80)
-        }
-        
-        profileImage.snp.makeConstraints{ make in
-            make.width.height.equalTo(68)
-            make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
-        }
-        
-        infoStackView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(18)
-            make.bottom.equalToSuperview().offset(-22)
-            make.leading.equalTo(profileImage.snp.trailing).offset(8)
-            make.trailing.equalToSuperview().offset(-80)
-        }
-
-        timeLabel.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-24)
-            make.top.equalToSuperview().offset(16)
-            make.height.equalTo(20)
-        }
-        
-        borderLine.snp.makeConstraints{ make in
-            make.height.equalTo(1)
-            make.bottom.equalToSuperview().offset(-1)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-        }
-        
+    @objc func deleteBtnDidClicked(){
+        print("delete click")
     }
     
 
+}
+
+extension ChattingListTableViewCell{
+    
+    @objc
+    func handlePan(_ recognizer: UIPanGestureRecognizer){
+
+        let translation = recognizer.translation(in: self)
+        let superView = self.superview?.superview
+        
+        if(recognizer.state == .began){
+            originalCenter = center
+            hiddenSettingViewShow()
+        }
+        
+        if (recognizer.state == .changed){
+            
+            center = CGPoint(x: originalCenter.x + translation.x, y: originalCenter.y)
+    
+            if(frame.origin.x > 0){ //왼쪽 view
+                isClamp = frame.origin.x > leftWidth * 1.2 && isViewAdd != .right
+            }else{  //오른쪽 view
+                isClamp = frame.origin.x < -rightWidth * 1.2   && isViewAdd != .left
+            }
+        }
+        if recognizer.state == .ended {
+            if !isClamp {
+                cellWillMoveOriginalPosition()
+            }
+            else{
+                guard let indexPath = getCellIndexPath() else { fatalError("indexPath casting error") }
+                
+                delegate?.cellWillClamp(indexPath)
+                
+                let clampFrame : CGRect!
+                if(frame.origin.x < 0){
+                    clampFrame = CGRect(x: -rightWidth,
+                                        y: frame.origin.y,
+                                        width: bounds.size.width,
+                                        height: bounds.size.height)
+                    superView?.bringSubviewToFront(hiddenDeleteBtn)
+                    UIView.animate(withDuration: 0.32, animations: {self.frame = clampFrame})
+                }else{
+                    let parentX = UIScreen.main.bounds.size.width
+                    clampFrame = CGRect(x: parentX,
+                                        y: frame.origin.y,
+                                        width: bounds.size.width,
+                                        height: bounds.size.height)
+                    
+                    UIView.animate(withDuration: 0.4, animations: {self.frame = clampFrame})
+                }
+                
+            }
+        }
+    }
+
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+
+        if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
+            let translation = panGestureRecognizer.translation(in: superview)
+            isViewAdd = translation.x > 0 ? .left : .right
+            if abs(translation.x) > abs(translation.y) {
+                return true
+            }
+            return false
+        }
+        return false
+    }
+    
+    func moveBackHiddenView(){
+        
+        let superView = self.superview?.superview
+        
+        superView?.sendSubviewToBack(self.hiddenLeftView)
+        superView?.sendSubviewToBack(self.hiddenDeleteBtn)
+        superView?.sendSubviewToBack(self.hiddenRightView)
+    }
+    
+    func removeHiddenViews(){
+
+        hiddenRightView.removeFromSuperview()
+        hiddenLeftView.removeFromSuperview()
+        hiddenDeleteBtn.removeFromSuperview()
+        
+        isViewAdd = .none
+    }
+    
+    func hiddenSettingViewShow(){
+        
+        if(isViewAdd == .left && !isClamp){
+            
+            self.superview?.superview?.addSubview(hiddenLeftView)
+            self.superview?.superview?.sendSubviewToBack(hiddenLeftView)
+            
+            hiddenLeftView.snp.makeConstraints{ make in
+                make.leading.trailing.equalToSuperview()
+                make.top.equalTo(self.contentView)
+                make.bottom.equalTo(self.contentView)
+            }
+            
+        }else if(isViewAdd == .right && !isClamp){
+                        
+            self.superview?.superview?.addSubview(hiddenRightView)
+            self.superview?.superview?.addSubview(hiddenDeleteBtn)
+            
+            self.superview?.superview?.sendSubviewToBack(hiddenDeleteBtn)
+            self.superview?.superview?.sendSubviewToBack(hiddenRightView)
+            
+            hiddenRightView.snp.makeConstraints{ make in
+                make.leading.trailing.equalToSuperview()
+                make.top.equalTo(self.contentView)
+                make.bottom.equalTo(self.contentView)
+            }
+            
+            hiddenDeleteBtn.snp.makeConstraints{ make in
+                make.width.equalTo(72)
+                make.top.equalTo(self.contentView)
+                make.bottom.equalTo(self.contentView)
+                make.trailing.equalToSuperview()
+            }
+        }
+    }
+        
+        func getCellIndexPath() -> IndexPath?{
+            return (self.superview as? UITableView)?.indexPath(for: self)
+        }
+    
+    func cellWillMoveOriginalPosition(){
+        
+        let originalFrame = CGRect(x: 0,
+                                   y: frame.origin.y,
+                                   width: bounds.size.width,
+                                   height: bounds.size.height)
+        
+        moveBackHiddenView()
+        UIView.animate(withDuration: 0.25,
+                       animations: { self.frame = originalFrame },
+                       completion: { _ in
+                self.removeHiddenViews()
+        })
+        
+        isClamp = false
+    }
+}
+
+protocol SelectedTableViewCellDeliver: AnyObject{
+    func cellWillClamp(_ indexPath: IndexPath)
 }

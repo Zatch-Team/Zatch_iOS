@@ -24,6 +24,9 @@
 		571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */; };
 		571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */; };
 		571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */; };
+		571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */; };
+		571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */; };
+		571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -139,6 +142,9 @@
 		571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListViewController+Layout.swift"; sourceTree = "<group>"; };
 		571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTableViewCell.swift; sourceTree = "<group>"; };
+		571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenDeleteView.swift; sourceTree = "<group>"; };
+		571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenZatchInfoView.swift; sourceTree = "<group>"; };
+		571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListTableViewCell+Layout.swift"; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -311,6 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */,
+				571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */,
+				571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */,
+				571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -903,6 +912,7 @@
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
+				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
@@ -917,8 +927,10 @@
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				57E31E9527E15BA3002DE500 /* MainViewController.swift in Sources */,
+				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
+				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
