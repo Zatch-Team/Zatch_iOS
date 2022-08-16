@@ -23,6 +23,7 @@
 		571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */; };
 		571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */; };
 		571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */; };
+		571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -137,6 +138,7 @@
 		571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewController.swift; sourceTree = "<group>"; };
 		571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListViewController+Layout.swift"; sourceTree = "<group>"; };
 		571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTableViewCell.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -298,10 +300,19 @@
 		571C0C6A28AB1275002293B6 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				571C0C7328AB213A002293B6 /* Cell */,
 				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
 				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
 			);
 			path = Chatting;
+			sourceTree = "<group>";
+		};
+		571C0C7328AB213A002293B6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		57468A6B289CECE900056691 /* Cell */ = {
@@ -852,6 +863,7 @@
 				57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,
+				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelOkAlertViewController.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
