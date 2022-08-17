@@ -83,6 +83,9 @@
 		577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */; };
 		577A01B628A496D1004B2575 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B528A496D1004B2575 /* UITextView.swift */; };
 		577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */; };
+		578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */; };
+		578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */; };
+		578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */; };
 		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
 		579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
@@ -209,6 +212,9 @@
 		577A01B328A49386004B2575 /* CheckRegisterViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckRegisterViewController+Layout.swift"; sourceTree = "<group>"; };
 		577A01B528A496D1004B2575 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		577A01B728A49C97004B2575 /* CheckRegisterZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterZatchInfoView.swift; sourceTree = "<group>"; };
+		578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomViewController.swift; sourceTree = "<group>"; };
+		578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingRoomViewController+Layout.swift"; sourceTree = "<group>"; };
+		578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
 		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
 		579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
@@ -309,6 +315,8 @@
 				571C0C7328AB213A002293B6 /* Cell */,
 				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
 				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
+				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
+				578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */,
 				571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */,
 				571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */,
+				578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -883,6 +892,7 @@
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
+				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
@@ -904,6 +914,7 @@
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
+				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePicerAlertViewController.swift in Sources */,
@@ -947,6 +958,7 @@
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,
 				57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */,
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
+				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
 			);

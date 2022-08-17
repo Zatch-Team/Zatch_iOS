@@ -108,15 +108,16 @@ class ChattingListTableViewCell: BaseTableViewCell {
         alert.alertHandler = { result in
             if(result){
                 //TODO: - 채팅방 삭제 API 연결 -> VC에서 데이터 삭제 및 테이블 뷰 reload
-                /* 
+                /*
                  chattingList.remove(at: indexPath.row)
                  tableView.reloadData()
                  */
             }
             self.cellWillMoveOriginalPosition()
         }
-        
+
         alert.modalPresentationStyle = .overFullScreen
+        
         self.navigationController.present(alert, animated: false, completion: nil)
     }
     
@@ -133,13 +134,13 @@ extension ChattingListTableViewCell{
         
         if(recognizer.state == .began){
             originalCenter = center
-            hiddenSettingViewShow()
+            hiddenSettingViewShow(translation)
         }
         
         if (recognizer.state == .changed){
             
             center = CGPoint(x: originalCenter.x + translation.x, y: originalCenter.y)
-    
+
             if(frame.origin.x > 0){ //왼쪽 view
                 isClamp = frame.origin.x > leftWidth * 1.2 && isViewAdd != .right
             }else{  //오른쪽 view
@@ -181,7 +182,7 @@ extension ChattingListTableViewCell{
 
         if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
             let translation = panGestureRecognizer.translation(in: superview)
-            isViewAdd = translation.x > 0 ? .left : .right
+//            isViewAdd = translation.x > 0 ? .left : .right
             if abs(translation.x) > abs(translation.y) {
                 return true
             }
@@ -208,33 +209,35 @@ extension ChattingListTableViewCell{
         isViewAdd = .none
     }
     
-    func hiddenSettingViewShow(){
+    func hiddenSettingViewShow(_ transition: CGPoint){
+        
+        if(isViewAdd == .none && !isClamp){
+            isViewAdd = transition.x > 0 ? .left : .right
+        }
         
         if(isViewAdd == .left && !isClamp){
-            
             self.superview?.superview?.addSubview(hiddenLeftView)
             self.superview?.superview?.sendSubviewToBack(hiddenLeftView)
-            
+
             hiddenLeftView.snp.makeConstraints{ make in
                 make.leading.trailing.equalToSuperview()
                 make.top.equalTo(self.contentView)
                 make.bottom.equalTo(self.contentView)
             }
-            
+
         }else if(isViewAdd == .right && !isClamp){
-                        
             self.superview?.superview?.addSubview(hiddenRightView)
             self.superview?.superview?.addSubview(hiddenDeleteBtn)
-            
+
             self.superview?.superview?.sendSubviewToBack(hiddenDeleteBtn)
             self.superview?.superview?.sendSubviewToBack(hiddenRightView)
-            
+
             hiddenRightView.snp.makeConstraints{ make in
                 make.leading.trailing.equalToSuperview()
                 make.top.equalTo(self.contentView)
                 make.bottom.equalTo(self.contentView)
             }
-            
+
             hiddenDeleteBtn.snp.makeConstraints{ make in
                 make.width.equalTo(72)
                 make.top.equalTo(self.contentView)
@@ -259,9 +262,9 @@ extension ChattingListTableViewCell{
         UIView.animate(withDuration: 0.25,
                        animations: { self.frame = originalFrame },
                        completion: { _ in
+            self.isViewAdd = .none
                 self.removeHiddenViews()
         })
-        
         isClamp = false
     }
 }
