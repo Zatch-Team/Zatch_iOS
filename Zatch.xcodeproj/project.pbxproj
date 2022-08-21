@@ -91,6 +91,7 @@
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
+		57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */; };
 		57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */; };
 		57C585042821F2A70078FAFF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585032821F2A70078FAFF /* ServiceType.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
@@ -221,6 +222,7 @@
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
+		57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMatchBannerView.swift; sourceTree = "<group>"; };
 		57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		571C0C6A28AB1275002293B6 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				57C23CCE28B20632006E7915 /* View */,
 				571C0C7328AB213A002293B6 /* Cell */,
 				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
 				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
@@ -326,12 +329,10 @@
 		571C0C7328AB213A002293B6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */,
 				571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */,
 				571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */,
+				571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */,
 				571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */,
-				578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */,
-				57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -577,6 +578,16 @@
 				57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		57C23CCE28B20632006E7915 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */,
+				57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */,
+				57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		57C585052821F2B30078FAFF /* Main */ = {
@@ -937,6 +948,7 @@
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,
+				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
 				5767D777286832420075DB28 /* FirstWantTableViewCell.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,

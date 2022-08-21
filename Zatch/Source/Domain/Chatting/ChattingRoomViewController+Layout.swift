@@ -27,6 +27,7 @@ extension ChattingRoomViewController{
         super.navigationView.addSubview(etcBtn)
         super.navigationTitle.removeFromSuperview()
         
+        self.view.addSubview(matchBannerView)
         self.view.addSubview(tableView)
         self.view.addSubview(chatBottomFrame)
         
@@ -63,9 +64,14 @@ extension ChattingRoomViewController{
             make.trailing.equalToSuperview().offset(-20)
         }
         
+        matchBannerView.snp.makeConstraints{ make in
+            make.top.equalToSuperview().offset(100)
+            make.leading.trailing.equalToSuperview()
+        }
+        
         tableView.snp.makeConstraints{ make in
             make.bottom.equalTo(chatInputView.snp.top)
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(matchBannerView.snp.bottom)
             make.leading.trailing.equalToSuperview()
         }
         

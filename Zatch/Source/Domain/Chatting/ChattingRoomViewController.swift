@@ -35,6 +35,8 @@ class ChattingRoomViewController: BaseViewController {
         $0.setImage(UIImage(named: "dot"), for: .normal)
     }
     
+    let matchBannerView = ChattingMatchBannerView()
+    
     var tableView: UITableView!
     
     let chatBottomFrame = UIStackView().then{
@@ -48,8 +50,11 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     let chatEtcBtnView = ChatEtcBtnView()
+//        .then{
+//    }
 
-    override func viewDidLoad() {
+    override func viewDidLoad(){
+        
         super.viewDidLoad()
 
         setInitView()
