@@ -14,7 +14,13 @@ class ChatInputView: UIView {
         $0.setImage(UIImage(named: "chat_close"), for: .selected)
     }
     
-    let chatTextField = UITextField()
+    let chatTextField = UITextView().then{
+        $0.font = UIFont.pretendard(size: 14, family: .Regular)
+        $0.layer.cornerRadius = 40/2
+        $0.layer.borderWidth = 1.5
+        $0.layer.borderColor = UIColor.black20.cgColor
+        $0.textContainerInset = UIEdgeInsets(top: 10, left: 16, bottom: 20, right: 24)
+    }
     
     lazy var sendBtn = UIButton().then{
         $0.setImage(UIImage(named: "send"), for: .disabled)
@@ -38,7 +44,8 @@ class ChatInputView: UIView {
         
         self.addSubview(etcBtn)
         self.addSubview(chatTextField)
-        chatTextField.addSubview(sendBtn)
+        
+        self.addSubview(sendBtn)
     }
     
     func setUpConstraint(){
@@ -61,9 +68,9 @@ class ChatInputView: UIView {
         }
         
         sendBtn.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-10)
+            make.trailing.equalTo(chatTextField).offset(-10)
             make.width.height.equalTo(24)
-            make.centerY.equalToSuperview()
+            make.centerY.equalTo(chatTextField)
         }
         
     }

@@ -37,7 +37,17 @@ class ChattingRoomViewController: BaseViewController {
     
     var tableView: UITableView!
     
-    let chatInputView = ChatInputView()
+    let chatBottomFrame = UIStackView().then{
+        $0.axis = .vertical
+        $0.spacing = 0
+        $0.alignment = .leading
+    }
+    
+    let chatInputView = ChatInputView().then{
+        $0.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
+    }
+    
+    let chatEtcBtnView = ChatEtcBtnView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +57,19 @@ class ChattingRoomViewController: BaseViewController {
         setUpConstraint()
         
         tableView.backgroundColor = .red
+    }
+    
+    //MARK: - Action
+    
+    @objc func chatEtcBtnDidClicked(){
+        
+        chatInputView.etcBtn.isSelected.toggle()
+        
+        if(chatInputView.etcBtn.isSelected){
+            chatBottomFrame.addArrangedSubview(chatEtcBtnView)
+        }else{
+            self.chatEtcBtnView.removeFromSuperview()
+        }
     }
 
 }
