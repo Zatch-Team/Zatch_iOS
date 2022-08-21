@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class ChattingRoomViewController: BaseViewController {
 
@@ -31,8 +32,9 @@ class ChattingRoomViewController: BaseViewController {
         $0.clipsToBounds = true
     }
     
-    let etcBtn = UIButton().then{
+    lazy var etcBtn = UIButton().then{
         $0.setImage(UIImage(named: "dot"), for: .normal)
+        $0.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
     }
     
     let matchBannerView = ChattingMatchBannerView()
@@ -53,6 +55,10 @@ class ChattingRoomViewController: BaseViewController {
         $0.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside) 
         $0.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
         $0.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+    }
+    
+    let blurView = UIView().then{
+        $0.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.6)
     }
 
     override func viewDidLoad(){
@@ -103,6 +109,22 @@ class ChattingRoomViewController: BaseViewController {
     @objc func appointmentBtnDidClicked(){
         
     }
+    
+    @objc func sideSheetWillOpen(){
+        
+        let menu = SideMenuNavigationController(rootViewController: ChattingSideSheetViewController())
+        
+        let deviceWidth = UIScreen.main.bounds.size.width
+        menu.menuWidth = 276 / 360 * deviceWidth
+        menu.presentationStyle = .menuSlideIn
+        menu.delegate = self
+        
+        present(menu, animated: true, completion: nil)
+
+    }
+    
+    //MARK: - Helper
+    
 
 }
 
@@ -145,5 +167,23 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+//MARK: - SideMenuDelegate
+extension ChattingRoomViewController: SideMenuNavigationControllerDelegate{
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool){
+        
+        self.view.addSubview(self.blurView)
+        
+        self.blurView.snp.makeConstraints{ make in
+            make.width.height.equalToSuperview()
+        }
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool){
+        self.blurView.removeFromSuperview()
     }
 }

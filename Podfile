@@ -11,6 +11,8 @@ target 'Zatch' do
 
   pod 'Then'
 
+  pod 'SideMenu', '~> 6.0'
+
   target 'ZatchTests' do
     inherit! :search_paths
     # Pods for testing
