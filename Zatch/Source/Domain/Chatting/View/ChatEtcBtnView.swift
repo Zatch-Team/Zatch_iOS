@@ -12,6 +12,7 @@ class ChatEtcBtnView: UIView {
     let etcBtnStackView = UIStackView().then{
         $0.spacing = 20
         $0.axis = .horizontal
+        $0.alignment = .leading
     }
 
     let cameraStackView = UIStackView().then{
@@ -20,7 +21,7 @@ class ChatEtcBtnView: UIView {
         $0.alignment = .center
     }
 
-    let cameraBtn = UIButton().then{
+    lazy var cameraBtn = UIButton().then{
         $0.setImage(UIImage(named: "chat_camera"), for: .normal)
     }
 
@@ -35,7 +36,7 @@ class ChatEtcBtnView: UIView {
         $0.alignment = .center
     }
 
-    let galleryBtn = UIButton().then{
+    lazy var galleryBtn = UIButton().then{
         $0.setImage(UIImage(named: "chat_gallery"), for: .normal)
     }
     
@@ -50,7 +51,7 @@ class ChatEtcBtnView: UIView {
         $0.alignment = .center
     }
 
-    let appointmentBtn = UIButton().then{
+    lazy var appointmentBtn = UIButton().then{
         $0.setImage(UIImage(named: "chat_appointment"), for: .normal)
     }
     
@@ -90,9 +91,14 @@ class ChatEtcBtnView: UIView {
 
     func setUpConstraint(){
         
+        self.snp.makeConstraints{ make in
+            make.height.equalTo(116)
+        }
+        
         etcBtnStackView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(16)
             make.leading.equalToSuperview().offset(44)
+            make.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(-28)
         }
         

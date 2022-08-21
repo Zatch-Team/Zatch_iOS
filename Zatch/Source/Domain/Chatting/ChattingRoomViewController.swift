@@ -49,9 +49,11 @@ class ChattingRoomViewController: BaseViewController {
         $0.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
     }
     
-    let chatEtcBtnView = ChatEtcBtnView()
-//        .then{
-//    }
+    let chatEtcBtnView = ChatEtcBtnView().then{
+        $0.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside) 
+        $0.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
+        $0.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+    }
 
     override func viewDidLoad(){
         
@@ -62,6 +64,7 @@ class ChattingRoomViewController: BaseViewController {
         setUpConstraint()
         
         tableView.backgroundColor = .red
+
     }
     
     //MARK: - Action
@@ -75,6 +78,30 @@ class ChattingRoomViewController: BaseViewController {
         }else{
             self.chatEtcBtnView.removeFromSuperview()
         }
+    }
+    
+    @objc func cameraBtnDidClicked(){
+        
+        let cameraPicker = UIImagePickerController().then{
+            $0.delegate = self
+            $0.sourceType = .camera
+        }
+
+        self.navigationController?.present(cameraPicker, animated: true, completion: nil)
+    }
+    
+    @objc func galleryBtnDidClicked(){
+        
+        let imagePicker = UIImagePickerController().then{
+            $0.delegate = self
+            $0.sourceType = .photoLibrary
+        }
+        
+        self.navigationController?.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc func appointmentBtnDidClicked(){
+        
     }
 
 }
@@ -90,4 +117,33 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     
+}
+
+
+extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
+        let imgae = info[.originalImage] as! UIImage
+        
+        let imageDetailVC = RegisterImageDetailViewController()
+        
+        imageDetailVC.okBtn.setTitle("전송", for: .normal)
+        imageDetailVC.imageView.image = imgae
+        imageDetailVC.imageDetailHandler = { result in
+            if(result){
+//                self.imageArray.append(imgae)
+//                self.imageCollectionView.reloadData()
+            }
+        }
+        
+        self.navigationController?.pushViewController(imageDetailVC, animated: true)
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
