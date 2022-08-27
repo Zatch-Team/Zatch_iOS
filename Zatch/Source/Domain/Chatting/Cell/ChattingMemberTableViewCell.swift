@@ -9,7 +9,11 @@ import UIKit
 
 class ChattingMemberTableViewCell: BaseTableViewCell {
     
+    //MARK: - Properties
+    
     static let cellIdentifier = "chattingMemberCell"
+    
+    //MARK: - UI
     
     let backView = UIView()
     
@@ -17,9 +21,21 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         $0.image = UIImage(named: "zatch_profile")
     }
     
-//    let leaderIcon = UIImageView().then{
-//
-//    }
+    let managerCrownImage = UIImageView().then{
+        $0.image = UIImage(named: "crown")
+    }
+    
+    let isMeTag = UILabel().then{
+        $0.text = "ME"
+        $0.textAlignment = .center
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.layer.cornerRadius = 20/2
+        $0.clipsToBounds = true
+        $0.layer.borderColor = UIColor.zatchPurple.cgColor
+        $0.layer.borderWidth  = 1.5
+        $0.backgroundColor = .white
+        $0.textColor = .zatchPurple
+    }
     
     let nameLabel = UILabel().then{
         $0.text = "쑤야"
@@ -27,13 +43,11 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         $0.textColor = .black85
     }
     
-//    let declarationBtn = UIButton().then{
-//
-//    }
-    
-    let selfTag = UILabel().then{
-        $0.text = "ME"
+    lazy var declarationBtn = UIButton().then{
+        $0.setImage(UIImage(named: "declaration"), for: .normal)
     }
+    
+    //MARK: - LifeCycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -46,6 +60,16 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse(){
+        
+        self.declarationBtn.removeFromSuperview()
+        self.isMeTag.removeFromSuperview()
+        
+        self.nameLabel.text = ""
+    }
+    
+    //MARK: - Helper
+    
     func setUpView(){
         self.contentView.addSubview(backView)
         
@@ -54,6 +78,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     }
     
     func setUpConstraint(){
+        
         backView.snp.makeConstraints{ make in
             make.top.bottom.leading.trailing.equalToSuperview()
             make.height.equalTo(52)
@@ -72,8 +97,45 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         }
     }
     
-    func setByCase(){
+    func setMeTag(){
         
+        self.backView.addSubview(isMeTag)
+        
+        isMeTag.snp.makeConstraints{ make in
+            make.trailing.equalToSuperview().offset(-20)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(20)
+            
+            let label = UILabel().then{
+                $0.text = "ME"
+                $0.font = UIFont.pretendard(size: 12, family: .Medium)
+            }
+            let width = label.intrinsicContentSize.width
+            make.width.equalTo(width + 30)
+        }
+        
+    }
+    
+    func setDeclarationBtn(){
+        
+        self.backView.addSubview(declarationBtn)
+        
+        declarationBtn.snp.makeConstraints{ make in
+            make.trailing.equalToSuperview().offset(-20)
+            make.width.trailing.equalTo(24)
+            make.centerY.equalToSuperview()
+        }
+    }
+    
+    func setCrownImage(){
+        
+        self.backView.addSubview(managerCrownImage)
+        
+        managerCrownImage.snp.makeConstraints{ make in
+            make.width.height.equalTo(12.94)
+            make.bottom.equalTo(profileImage.snp.bottom).offset(-3.88)
+            make.trailing.equalTo(profileImage).offset(-6.47)
+        }
     }
 
 }

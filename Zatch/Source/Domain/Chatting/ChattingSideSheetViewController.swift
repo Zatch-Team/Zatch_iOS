@@ -52,6 +52,7 @@ class ChattingSideSheetViewController: UIViewController {
     }
     
     func setUpView(){
+        
         self.view.addSubview(sheetTitle)
         self.view.addSubview(tableView)
         self.view.addSubview(exitFrame)
@@ -104,6 +105,19 @@ extension ChattingSideSheetViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return ChattingMemberTableViewCell()
+        if(indexPath.row == 0){
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ChattingMemberTableViewCell.cellIdentifier, for: indexPath) as? ChattingMemberTableViewCell else{
+                fatalError()
+            }
+            cell.setMeTag()
+            cell.setCrownImage() // TODO: - 방장 데이터 불러오면 선언 위치 바꾸기
+            return cell
+        }else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ChattingMemberTableViewCell.cellIdentifier, for: indexPath) as? ChattingMemberTableViewCell else{
+                fatalError()
+            }
+            cell.setDeclarationBtn()
+            return cell
+        }
     }
 }
