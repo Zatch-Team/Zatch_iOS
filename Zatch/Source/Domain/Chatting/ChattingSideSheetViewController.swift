@@ -7,7 +7,12 @@
 
 import UIKit
 
-class ChattingSideSheetViewController: UIViewController {
+class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    //MARK: - Properties
+    var declarationHandler: ((IndexPath) -> Void)?
+    
+    //MARK: - UI
 
     let sheetTitle = UILabel().then{
         $0.text = "채팅 참여자"
@@ -31,15 +36,19 @@ class ChattingSideSheetViewController: UIViewController {
         $0.text = "채팅 나가기"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black85
+        $0.isUserInteractionEnabled = true
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
         
         tableView = UITableView().then{
             $0.separatorStyle = .none
+            
+            $0.isScrollEnabled = false
             
             $0.delegate = self
             $0.dataSource = self
@@ -49,6 +58,10 @@ class ChattingSideSheetViewController: UIViewController {
         
         setUpView()
         setUpConstraint()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(exitBtnDidClicked))
+        exitTitle.addGestureRecognizer(tapGesture)
+        print(exitTitle.gestureRecognizers)
     }
     
     func setUpView(){
@@ -96,6 +109,21 @@ class ChattingSideSheetViewController: UIViewController {
             make.centerY.equalToSuperview()
         }
     }
+    
+    @objc func declarationBtnDidClicked(_ sender: UIButton){
+        
+        let cell = sender.superview?.superview?.superview as! ChattingMemberTableViewCell
+
+        let index = self.tableView.indexPath(for: cell)
+
+        self.declarationHandler!(index!)
+        self.dismiss(animated: true)
+    }
+    
+    @objc func exitBtnDidClicked(){
+        self.dismiss(animated: true)
+    }
+    
 }
 
 extension ChattingSideSheetViewController: UITableViewDelegate, UITableViewDataSource{
@@ -117,6 +145,7 @@ extension ChattingSideSheetViewController: UITableViewDelegate, UITableViewDataS
                 fatalError()
             }
             cell.setDeclarationBtn()
+            cell.declarationBtn.addTarget(self, action: #selector(declarationBtnDidClicked), for: .touchUpInside)
             return cell
         }
     }

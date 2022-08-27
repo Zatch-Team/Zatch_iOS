@@ -112,7 +112,12 @@ class ChattingRoomViewController: BaseViewController {
     
     @objc func sideSheetWillOpen(){
         
-        let menu = SideMenuNavigationController(rootViewController: ChattingSideSheetViewController())
+        let sideMenuVC = ChattingSideSheetViewController()
+        sideMenuVC.declarationHandler = { indexPath in
+            print(indexPath)
+        }
+        
+        let menu = SideMenuNavigationController(rootViewController: sideMenuVC)
         
         let deviceWidth = UIScreen.main.bounds.size.width
         

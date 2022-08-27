@@ -71,6 +71,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     //MARK: - Helper
     
     func setUpView(){
+        
         self.contentView.addSubview(backView)
         
         self.backView.addSubview(profileImage)
