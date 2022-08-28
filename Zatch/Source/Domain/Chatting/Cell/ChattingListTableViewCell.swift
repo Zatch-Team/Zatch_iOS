@@ -94,6 +94,8 @@ class ChattingListTableViewCell: BaseTableViewCell {
         
         swipeGesture.delegate = self
         backView.addGestureRecognizer(swipeGesture)
+        
+        self.isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {

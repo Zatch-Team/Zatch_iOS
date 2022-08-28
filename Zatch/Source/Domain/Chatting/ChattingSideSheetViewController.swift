@@ -11,7 +11,6 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
     
     //MARK: - Properties
     var declarationHandler: ((IndexPath) -> Void)?
-    var exitHandler: ((Bool) -> Void)?
     
     //MARK: - UI
 
@@ -59,10 +58,6 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
         
         setUpView()
         setUpConstraint()
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(exitBtnDidClicked))
-        exitTitle.addGestureRecognizer(tapGesture)
-        print(exitTitle.gestureRecognizers)
     }
     
     func setUpView(){
@@ -118,11 +113,6 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
         let index = self.tableView.indexPath(for: cell)
 
         self.declarationHandler!(index!)
-    }
-    
-    @objc func exitBtnDidClicked(){
-        self.exitHandler!(true)
-        self.dismiss(animated: true)
     }
     
 }

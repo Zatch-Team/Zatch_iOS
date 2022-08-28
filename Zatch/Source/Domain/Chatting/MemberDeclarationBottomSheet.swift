@@ -46,13 +46,6 @@ class MemberDeclarationBottomSheet: SheetViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-36)
         }
-        
-        let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(declarationBtnDidClicked))
-        declarationBtn.addGestureRecognizer(declarationGesture)
-    }
-    
-    @objc func declarationBtnDidClicked(){
-        
     }
     
     

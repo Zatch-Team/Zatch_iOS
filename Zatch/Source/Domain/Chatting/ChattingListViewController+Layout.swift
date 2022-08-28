@@ -26,7 +26,7 @@ extension ChattingListViewController{
             
             $0.register(ChattingListTableViewCell.self, forCellReuseIdentifier: ChattingListTableViewCell.cellIdentifier)
             
-            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
+//            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
         }
     }
 

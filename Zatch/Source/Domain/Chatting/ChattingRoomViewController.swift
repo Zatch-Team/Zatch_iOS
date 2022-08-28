@@ -12,9 +12,9 @@ class ChattingRoomViewController: BaseViewController {
 
     //MARK: - Properties
     var memberBlockBottomSheet: MemberDeclarationBottomSheet?
+    var sideMenuViewController : ChattingSideSheetViewController?
     
     //MARK: - UI
-
     let nameLabel = UILabel().then{
         $0.text = "쑤야"
         $0.font = UIFont.pretendard(size: 18, family: .Bold)
@@ -66,6 +66,7 @@ class ChattingRoomViewController: BaseViewController {
         $0.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.6)
     }
 
+    //MARK: - LifeCycle
     override func viewDidLoad(){
         
         super.viewDidLoad()
@@ -80,6 +81,7 @@ class ChattingRoomViewController: BaseViewController {
     
     //MARK: - Action
     
+    //채팅 하단 기타 기능 함수
     @objc func chatEtcBtnDidClicked(){
         
         chatInputView.etcBtn.isSelected.toggle()
@@ -115,40 +117,34 @@ class ChattingRoomViewController: BaseViewController {
         
     }
     
+    //오른쪽 기타 메뉴 함수
     @objc func sideSheetWillOpen(){
         
-        let sideMenuVC = ChattingSideSheetViewController()
+        sideMenuViewController = ChattingSideSheetViewController()
         
-        sideMenuVC.declarationHandler = { indexPath in
+        guard let sideMenu = sideMenuViewController else { return }
+        
+        let exitGesture = UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked))
+        sideMenu.exitTitle.addGestureRecognizer(exitGesture)
+        
+        sideMenu.declarationHandler = { indexPath in
             print(indexPath)
             
-            sideMenuVC.dismiss(animated: true, completion: {
+            sideMenu.dismiss(animated: true, completion: {
                 self.memberBlockBottomSheet = MemberDeclarationBottomSheet()
                 
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
-                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(tapGesture)
+                let blockGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
+                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(blockGesture)
+                
+                let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberDeclarationBtnDidClicked))
+                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(declarationGesture)
                 
                 self.memberBlockBottomSheet!.loadViewIfNeeded()
                 self.present(self.memberBlockBottomSheet!, animated: true, completion: nil)
             })
         }
         
-        sideMenuVC.exitHandler = { isTapped in
-            if(isTapped){
-                sideMenuVC.dismiss(animated: true, completion: {
-                    let alert = CancelOkAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.", btnTitle: "네, 확인했습니다.")
-                    alert.okBtn.setTitle("네, 확인했습니다.", for: .normal)
-                    alert.alertHandler = { isExit in
-                        self.navigationController?.popViewController(animated: true)
-                    }
-                    alert.modalPresentationStyle = .overFullScreen
-                    self.present(alert, animated: false, completion: nil)
-                })
-            }
-            
-        }
-        
-        let menu = SideMenuNavigationController(rootViewController: sideMenuVC)
+        let menu = SideMenuNavigationController(rootViewController: sideMenu)
         
         let deviceWidth = UIScreen.main.bounds.size.width
         
@@ -160,12 +156,26 @@ class ChattingRoomViewController: BaseViewController {
 
     }
     
+    @objc func chattingRoomExitBtnDidClicked(){
+        sideMenuViewController?.dismiss(animated: true, completion: {
+            let alert = CancelOkAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
+                                                    btnTitle: "네, 확인했습니다.")
+            
+            alert.alertHandler = { isExit in
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+            alert.modalPresentationStyle = .overFullScreen
+            self.present(alert, animated: false, completion: nil)
+        })
+    }
     
     @objc func memberBlockBtnDidClicked(){
         
         guard let bottomSheet = memberBlockBottomSheet else { return }
         
-        let alert = CancelOkAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.", btnTitle: "네, 차단합니다.")
+        let alert = CancelOkAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
+                                                btnTitle: "네, 차단합니다.")
         
         alert.alertHandler = { isBlock in
             if(isBlock){
@@ -176,6 +186,10 @@ class ChattingRoomViewController: BaseViewController {
         
         alert.modalPresentationStyle = .overFullScreen
         bottomSheet.present(alert, animated: false, completion: nil)
+    }
+    
+    @objc func memberDeclarationBtnDidClicked(){
+        
     }
     
     //MARK: - Helper
