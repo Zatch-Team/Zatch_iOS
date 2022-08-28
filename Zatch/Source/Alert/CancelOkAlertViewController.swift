@@ -56,14 +56,17 @@ class CancelOkAlertViewController: BasicAlertViewController {
     }
     
     override func okBtnDidClicked() {
-        self.alertHandler!(true)
-        super.okBtnDidClicked()
+        self.dismiss(animated: false, completion: {
+            self.alertHandler!(true)
+        })
     }
+    
     
     @objc
     func cancelBtnDidClicked(){
-        self.alertHandler!(false)
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false, completion: {
+            self.alertHandler!(false)
+        })
     }
 
 }

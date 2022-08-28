@@ -10,6 +10,11 @@ import SideMenu
 
 class ChattingRoomViewController: BaseViewController {
 
+    //MARK: - Properties
+    var memberBlockBottomSheet: MemberDeclarationBottomSheet?
+    
+    //MARK: - UI
+
     let nameLabel = UILabel().then{
         $0.text = "쑤야"
         $0.font = UIFont.pretendard(size: 18, family: .Bold)
@@ -118,9 +123,13 @@ class ChattingRoomViewController: BaseViewController {
             print(indexPath)
             
             sideMenuVC.dismiss(animated: true, completion: {
-                let bottomSheet = MemberDeclarationBottomSheet()
-                bottomSheet.loadViewIfNeeded()
-                self.present(bottomSheet, animated: true, completion: nil)
+                self.memberBlockBottomSheet = MemberDeclarationBottomSheet()
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
+                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(tapGesture)
+                
+                self.memberBlockBottomSheet!.loadViewIfNeeded()
+                self.present(self.memberBlockBottomSheet!, animated: true, completion: nil)
             })
         }
         
@@ -149,6 +158,24 @@ class ChattingRoomViewController: BaseViewController {
         
         present(menu, animated: true, completion: nil)
 
+    }
+    
+    
+    @objc func memberBlockBtnDidClicked(){
+        
+        guard let bottomSheet = memberBlockBottomSheet else { return }
+        
+        let alert = CancelOkAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.", btnTitle: "네, 차단합니다.")
+        
+        alert.alertHandler = { isBlock in
+            if(isBlock){
+                print("차단 완료")
+                bottomSheet.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        alert.modalPresentationStyle = .overFullScreen
+        bottomSheet.present(alert, animated: false, completion: nil)
     }
     
     //MARK: - Helper

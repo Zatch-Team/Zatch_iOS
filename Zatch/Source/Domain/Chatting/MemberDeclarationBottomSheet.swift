@@ -14,6 +14,7 @@ class MemberDeclarationBottomSheet: SheetViewController {
         $0.font = UIFont.pretendard(size: 16, family: .Medium)
         $0.textColor = .black85
         $0.textAlignment = .center
+        $0.isUserInteractionEnabled = true
     }
     
     let declarationBtn = UILabel().then{
@@ -21,6 +22,7 @@ class MemberDeclarationBottomSheet: SheetViewController {
         $0.font = UIFont.pretendard(size: 16, family: .Medium)
         $0.textColor = .black85
         $0.textAlignment = .center
+        $0.isUserInteractionEnabled = true
     }
     
 
@@ -44,6 +46,13 @@ class MemberDeclarationBottomSheet: SheetViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-36)
         }
+        
+        let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(declarationBtnDidClicked))
+        declarationBtn.addGestureRecognizer(declarationGesture)
+    }
+    
+    @objc func declarationBtnDidClicked(){
+        
     }
     
     
