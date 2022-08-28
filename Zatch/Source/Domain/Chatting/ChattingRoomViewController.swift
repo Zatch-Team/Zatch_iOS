@@ -113,8 +113,30 @@ class ChattingRoomViewController: BaseViewController {
     @objc func sideSheetWillOpen(){
         
         let sideMenuVC = ChattingSideSheetViewController()
+        
         sideMenuVC.declarationHandler = { indexPath in
             print(indexPath)
+            
+            sideMenuVC.dismiss(animated: true, completion: {
+                let bottomSheet = MemberDeclarationBottomSheet()
+                bottomSheet.loadViewIfNeeded()
+                self.present(bottomSheet, animated: true, completion: nil)
+            })
+        }
+        
+        sideMenuVC.exitHandler = { isTapped in
+            if(isTapped){
+                sideMenuVC.dismiss(animated: true, completion: {
+                    let alert = CancelOkAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.", btnTitle: "네, 확인했습니다.")
+                    alert.okBtn.setTitle("네, 확인했습니다.", for: .normal)
+                    alert.alertHandler = { isExit in
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    alert.modalPresentationStyle = .overFullScreen
+                    self.present(alert, animated: false, completion: nil)
+                })
+            }
+            
         }
         
         let menu = SideMenuNavigationController(rootViewController: sideMenuVC)

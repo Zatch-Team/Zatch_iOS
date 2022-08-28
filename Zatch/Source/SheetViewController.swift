@@ -11,6 +11,7 @@ enum BottomSheetSize: CGFloat{
     case SearchTag = 219
     case Category = 460 // 500
     case TownArea = 442
+    case Declaration = 128
 }
 
 class SheetViewController: UIViewController, UIViewControllerTransitioningDelegate {
