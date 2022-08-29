@@ -15,6 +15,9 @@ extension ChattingRoomViewController{
             
             $0.delegate = self
             $0.dataSource = self
+            
+            $0.register(ChattingRightTableViewCell.self, forCellReuseIdentifier: ChattingRightTableViewCell.cellIdentifier)
+            $0.register(ChattingLeftTableViewCell.self, forCellReuseIdentifier: ChattingLeftTableViewCell.cellIdentifier)
 
         }
     }

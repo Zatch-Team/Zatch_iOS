@@ -265,7 +265,7 @@ extension ChattingListTableViewCell{
                        animations: { self.frame = originalFrame },
                        completion: { _ in
             self.isViewAdd = .none
-                self.removeHiddenViews()
+            self.removeHiddenViews()
         })
         isClamp = false
     }

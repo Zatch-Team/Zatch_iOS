@@ -27,7 +27,7 @@ class ChattingListViewController: BaseTabBarViewController, SelectedTableViewCel
         setUpView()
         setUpConstraint()
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
+//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
     }
     
     //MARK: - Action
@@ -74,13 +74,12 @@ extension ChattingListViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         print("select") //TODO: view 전체에 gesture로 cellWillMoveToOriginalPosition 설정해놔서 실행X
         let vc = ChattingRoomViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-     */
     
 
     

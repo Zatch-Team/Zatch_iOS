@@ -74,8 +74,6 @@ class ChattingRoomViewController: BaseViewController {
         setInitView()
         setUpView()
         setUpConstraint()
-        
-        tableView.backgroundColor = .red
 
     }
     
@@ -204,7 +202,7 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        ChattingLeftTableViewCell()
     }
     
     
