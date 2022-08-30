@@ -14,6 +14,8 @@ class ChattingRoomViewController: BaseViewController {
     var memberBlockBottomSheet: MemberDeclarationBottomSheet?
     var sideMenuViewController : ChattingSideSheetViewController?
     
+    var chattingData: [String] = []
+    
     //MARK: - UI
     let nameLabel = UILabel().then{
         $0.text = "쑤야"
@@ -155,6 +157,7 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     @objc func chattingRoomExitBtnDidClicked(){
+        
         sideMenuViewController?.dismiss(animated: true, completion: {
             let alert = CancelOkAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
                                                     btnTitle: "네, 확인했습니다.")
@@ -193,6 +196,13 @@ class ChattingRoomViewController: BaseViewController {
     //MARK: - Helper
     
 
+}
+
+extension ChattingRoomViewController: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        chatInputView.sendBtn.isEnabled = textView.text.isEmpty ? false : true
+    }
 }
 
 extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource{

@@ -20,6 +20,8 @@ extension ChattingRoomViewController{
             $0.register(ChattingLeftTableViewCell.self, forCellReuseIdentifier: ChattingLeftTableViewCell.cellIdentifier)
 
         }
+        
+        chatInputView.chatTextField.delegate = self
     }
     
     func setUpView(){
@@ -35,8 +37,6 @@ extension ChattingRoomViewController{
         self.view.addSubview(chatBottomFrame)
         
         chatBottomFrame.addArrangedSubview(chatInputView)
-//        self.view.addSubview(chatInputView)
-//        self.view.addSubview(chatEtcBtnView)
         
     }
     
