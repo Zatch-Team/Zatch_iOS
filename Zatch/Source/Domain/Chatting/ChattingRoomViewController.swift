@@ -16,7 +16,8 @@ enum ChatType{
 }
 
 struct ChatMessage{
-    let message: String
+    let message: String?
+    let image: UIImage?
     let chatType: ChatType
     //TODO: 전송 시간 기준 프론트? 서버?
 }
@@ -100,6 +101,7 @@ class ChattingRoomViewController: BaseViewController {
     
     @objc func chatSendBtnDidClicked(){
         let newMessage = ChatMessage(message: chatInputView.chatTextField.text!,
+                                     image: nil,
                                      chatType: .RightMessage)
         
         self.messageData.append(newMessage)
@@ -248,7 +250,8 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
             return cell
             
         case .RightImage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingImageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingImageTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingImageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingImageTableViewCell else { fatalError()}
+            cell.imageMessageView.image = chatData.image
             return cell
             
         case .LeftMessage:
@@ -258,6 +261,7 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
             
         case .LeftImage:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingImageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingImageTableViewCell else { return UITableViewCell() }
+            cell.imageMessageView.image = chatData.image
             return cell
         }
     }
@@ -271,16 +275,16 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
-        let imgae = info[.originalImage] as! UIImage
+        let image = info[.originalImage] as! UIImage
         
         let imageDetailVC = RegisterImageDetailViewController()
         
         imageDetailVC.okBtn.setTitle("전송", for: .normal)
-        imageDetailVC.imageView.image = imgae
-        imageDetailVC.imageDetailHandler = { result in
+        imageDetailVC.imageView.image = image
+        imageDetailVC.imageDetailHandler = { [self] result in
             if(result){
-//                self.imageArray.append(imgae)
-//                self.imageCollectionView.reloadData()
+                let newChat = ChatMessage(message: nil, image: image, chatType: .RightImage)
+                self.messageData.append(newChat)
             }
         }
         
