@@ -8,13 +8,30 @@
 import UIKit
 import SideMenu
 
+enum ChatType{
+    case RightMessage
+    case RightImage
+    case LeftMessage
+    case LeftImage
+}
+
+struct ChatMessage{
+    let message: String
+    let chatType: ChatType
+    //TODO: 전송 시간 기준 프론트? 서버?
+}
+
 class ChattingRoomViewController: BaseViewController {
 
     //MARK: - Properties
     var memberBlockBottomSheet: MemberDeclarationBottomSheet?
     var sideMenuViewController : ChattingSideSheetViewController?
     
-    var chattingData: [String] = []
+    var messageData: [ChatMessage] = [] {
+        didSet{
+            tableView.reloadData()
+        }
+    }
     
     //MARK: - UI
     let nameLabel = UILabel().then{
@@ -56,6 +73,7 @@ class ChattingRoomViewController: BaseViewController {
     
     let chatInputView = ChatInputView().then{
         $0.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
+        $0.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
     }
     
     let chatEtcBtnView = ChatEtcBtnView().then{
@@ -76,10 +94,18 @@ class ChattingRoomViewController: BaseViewController {
         setInitView()
         setUpView()
         setUpConstraint()
-
     }
     
     //MARK: - Action
+    
+    @objc func chatSendBtnDidClicked(){
+        let newMessage = ChatMessage(message: chatInputView.chatTextField.text!,
+                                     chatType: .RightMessage)
+        
+        self.messageData.append(newMessage)
+        self.chatInputView.sendBtn.isEnabled = false
+        self.chatInputView.chatTextField.text = nil
+    }
     
     //채팅 하단 기타 기능 함수
     @objc func chatEtcBtnDidClicked(){
@@ -192,6 +218,7 @@ class ChattingRoomViewController: BaseViewController {
     @objc func memberDeclarationBtnDidClicked(){
         
     }
+
     
     //MARK: - Helper
     
@@ -208,11 +235,31 @@ extension ChattingRoomViewController: UITextViewDelegate{
 extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        return messageData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        ChattingLeftTableViewCell()
+        let chatData = messageData[indexPath.row]
+        
+        switch chatData.chatType {
+        case .RightMessage:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingMessageTableViewCell else { fatalError() }
+            cell.messageLabel.text = chatData.message
+            return cell
+            
+        case .RightImage:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingImageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingImageTableViewCell else { return UITableViewCell() }
+            return cell
+            
+        case .LeftMessage:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingMessageTableViewCell else { return UITableViewCell() }
+            cell.messageLabel.text = chatData.message
+            return cell
+            
+        case .LeftImage:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingImageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingImageTableViewCell else { return UITableViewCell() }
+            return cell
+        }
     }
     
     

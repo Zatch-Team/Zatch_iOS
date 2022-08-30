@@ -27,9 +27,11 @@
 		571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */; };
 		571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */; };
 		571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */; };
-		5722460228BCBD52009B7C78 /* ChattingRightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460128BCBD52009B7C78 /* ChattingRightTableViewCell.swift */; };
-		5722460428BCBD5C009B7C78 /* ChattingLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460328BCBD5C009B7C78 /* ChattingLeftTableViewCell.swift */; };
+		5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */; };
+		5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */; };
 		5722460628BCCFE8009B7C78 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460528BCCFE8009B7C78 /* Const.swift */; };
+		5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */; };
+		5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -156,9 +158,11 @@
 		571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenDeleteView.swift; sourceTree = "<group>"; };
 		571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenZatchInfoView.swift; sourceTree = "<group>"; };
 		571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListTableViewCell+Layout.swift"; sourceTree = "<group>"; };
-		5722460128BCBD52009B7C78 /* ChattingRightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRightTableViewCell.swift; sourceTree = "<group>"; };
-		5722460328BCBD5C009B7C78 /* ChattingLeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingLeftTableViewCell.swift; sourceTree = "<group>"; };
+		5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
+		5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460528BCCFE8009B7C78 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingImageTableViewCell.swift; sourceTree = "<group>"; };
+		5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingImageTableViewCell.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -348,8 +352,10 @@
 				571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */,
 				571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */,
 				57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */,
-				5722460128BCBD52009B7C78 /* ChattingRightTableViewCell.swift */,
-				5722460328BCBD5C009B7C78 /* ChattingLeftTableViewCell.swift */,
+				5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */,
+				5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */,
+				5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */,
+				5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -920,6 +926,7 @@
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
 				576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */,
 				5795770428BB1AB400237A12 /* MemberDeclarationBottomSheet.swift in Sources */,
+				5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */,
 				57E31EC027E16BC0002DE500 /* MainZatchCollectionViewCell.swift in Sources */,
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
@@ -962,7 +969,7 @@
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
-				5722460228BCBD52009B7C78 /* ChattingRightTableViewCell.swift in Sources */,
+				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
@@ -991,7 +998,8 @@
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
-				5722460428BCBD5C009B7C78 /* ChattingLeftTableViewCell.swift in Sources */,
+				5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */,
+				5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,
 				57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */,

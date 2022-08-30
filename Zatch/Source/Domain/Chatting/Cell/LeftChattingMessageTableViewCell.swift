@@ -1,5 +1,5 @@
 //
-//  ChattingRightTableViewCell.swift
+//  ChattingLeftTableViewCell.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/08/29.
@@ -7,24 +7,35 @@
 
 import UIKit
 
-class ChattingRightTableViewCell: BaseTableViewCell {
+class LeftChattingMessageTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     
-    static let cellIdentifier = "chattingRightCell"
+    static let cellIdentifier = "leftMessageCell"
     
     //MARK: - UI
     
+    let profileImage = UIImageView().then{
+        $0.image = UIImage(named: "zatch_profile")
+    }
+    
+    let userNameLabel = UILabel().then{
+        $0.textColor = .black
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.numberOfLines = 1
+        $0.text = "쑤야"
+    }
+    
     let messageLabel = PaddingLabel(padding: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)).then{
         $0.layer.cornerRadius = 14
-        $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMinYCorner)
-        $0.backgroundColor = .zatchPurple
+        $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner)
+        $0.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
         $0.clipsToBounds = true
-        $0.textColor = .white
+        $0.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
         $0.font = UIFont.pretendard(size: 14, family: .Regular)
         $0.numberOfLines = 0
         
-        $0.text = "가나다라마ㅏ바라ㅏ아사ㅏ가나다라마ㅏ바라ㅏ아사ㅏ가나다라마ㅏ바라ㅏ아사ㅏ가나다라마ㅏ바라ㅏ아"
+        $0.text = "가나다라마ㅏ바라ㅏ아"
     }
     let timeLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 12, family: .Regular)
@@ -53,6 +64,8 @@ class ChattingRightTableViewCell: BaseTableViewCell {
     private func setUpView(){
         self.contentView.addSubview(backView)
         
+        backView.addSubview(profileImage)
+        backView.addSubview(userNameLabel)
         backView.addSubview(timeLabel)
         backView.addSubview(messageLabel)
     }
@@ -69,19 +82,32 @@ class ChattingRightTableViewCell: BaseTableViewCell {
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview().offset(-8)
             make.leading.trailing.equalToSuperview()
+            make.height.equalTo(messageLabel).offset(18)
+        }
+        
+        self.profileImage.snp.makeConstraints{ make in
+            make.width.height.equalTo(32)
+            make.top.leading.equalToSuperview()
+        }
+        
+        self.userNameLabel.snp.makeConstraints{ make in
+            make.top.equalToSuperview()
+            make.leading.equalTo(profileImage.snp.trailing).offset(8)
+        }
+        
+        self.messageLabel.snp.makeConstraints{ make in
+            make.leading.equalTo(profileImage.snp.trailing).offset(8)
+            make.top.equalToSuperview().offset(18)
+            make.bottom.equalToSuperview()
+            
+            let maxWidth = 221 / 360 * Const.deviceWidth
+            make.width.lessThanOrEqualTo(maxWidth)
         }
         
         self.timeLabel.snp.makeConstraints{ make in
             make.bottom.equalToSuperview()
-            make.trailing.equalTo(messageLabel.snp.leading).offset(-4)
-        }
-        
-        self.messageLabel.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview()
-            make.top.bottom.equalToSuperview()
-            
-            let maxWidth = 240 / 360 * Const.deviceWidth
-            make.width.lessThanOrEqualTo(maxWidth)
+            make.leading.equalTo(messageLabel.snp.trailing).offset(4)
         }
     }
+    
 }
