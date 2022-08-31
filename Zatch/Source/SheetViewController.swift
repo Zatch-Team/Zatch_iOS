@@ -7,16 +7,19 @@
 
 import UIKit
 
-enum BottomSheetSize: CGFloat{
-    case SearchTag = 219
-    case Category = 460 // 500
-    case TownArea = 442
-    case Declaration = 128
-}
-
 class SheetViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     //MARK: - Properties
+    
+    //safe area height 하단 -> 34
+    enum BottomSheetSize: CGFloat{
+        case SearchTag = 219
+        case Category = 460 // 500
+        case TownArea = 442
+        case Declaration = 128
+        case MakeMeeting = 342
+        case AddressSearch = 368
+    }
     
     static let DEVICE_HEIGHT = UIScreen.main.bounds.size.height
     

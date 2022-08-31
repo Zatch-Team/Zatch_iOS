@@ -142,7 +142,9 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     @objc func appointmentBtnDidClicked(){
-        
+        let bottomSheet = MakeMeetingSheetViewController()
+        bottomSheet.loadViewIfNeeded()
+        self.present(bottomSheet, animated: true, completion: nil)
     }
     
     //오른쪽 기타 메뉴 함수
