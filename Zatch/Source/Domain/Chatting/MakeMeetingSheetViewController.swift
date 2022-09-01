@@ -82,6 +82,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     let timeInputView = UIStackView().then{
         $0.spacing = 36
         $0.axis = .horizontal
+        $0.isUserInteractionEnabled = true
     }
     
     let dateStackView = UIStackView().then{
@@ -91,9 +92,13 @@ class MakeMeetingSheetViewController: SheetViewController {
     let monthView = UIView()
     let dateView = UIView()
     
-    let timeStackView = UIStackView().then{
+    lazy var timeStackView = UIStackView().then{
         $0.spacing = 13
         $0.axis = .horizontal
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timePickerWillAppear))
+        $0.addGestureRecognizer(tapGesture)
+        $0.isUserInteractionEnabled = true
     }
     
     let hourView = UIView()
@@ -144,22 +149,19 @@ class MakeMeetingSheetViewController: SheetViewController {
         
         super.viewDidLoad()
         
+        self.view.isUserInteractionEnabled = true
         super.sheetType = .MakeMeeting
         super.titleLabel.removeFromSuperview()
         
         setUpView()
         setUpConstraint()
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timePickerWillAppear))
-        timeStackView.addGestureRecognizer(tapGesture)
-        timeStackView.isUserInteractionEnabled = true
     }
     
     @objc func timePickerWillAppear(){
-        print("?")
         let picker = TimePickerAlertViewController(message: nil)
+        picker.modalPresentationStyle = .overFullScreen
         picker.loadViewIfNeeded()
-        self.present(picker, animated: true, completion: nil)
+        self.present(picker, animated: false, completion: nil)
     }
 
 }

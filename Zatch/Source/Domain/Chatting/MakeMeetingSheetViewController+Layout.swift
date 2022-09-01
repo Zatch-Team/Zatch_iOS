@@ -27,8 +27,8 @@ extension MakeMeetingSheetViewController {
         dateStackView.addArrangedSubview(monthView)
         dateStackView.addArrangedSubview(dateView)
         
-        dateStackView.addArrangedSubview(hourView)
-        dateStackView.addArrangedSubview(minuteView)
+        timeStackView.addArrangedSubview(hourView)
+        timeStackView.addArrangedSubview(minuteView)
         
         monthView.addSubview(monthTitle)
         monthView.addSubview(monthLabel)
