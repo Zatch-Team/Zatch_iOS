@@ -82,7 +82,6 @@ class MakeMeetingSheetViewController: SheetViewController {
     let timeInputView = UIStackView().then{
         $0.spacing = 36
         $0.axis = .horizontal
-        $0.isUserInteractionEnabled = true
     }
     
     let dateStackView = UIStackView().then{
@@ -113,7 +112,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     let locationLabel = UILabel()
     
     let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
+        $0.image = UIImage(named: "search_silver")
         $0.tintColor = .black10
     }
     
@@ -159,6 +158,11 @@ class MakeMeetingSheetViewController: SheetViewController {
     
     @objc func timePickerWillAppear(){
         let picker = TimePickerAlertViewController(message: nil)
+        picker.timePickerHandler = { array in
+            self.hourLabel.text = String(array[0])
+            self.minuteLabel.text = String(array[1])
+        }
+        
         picker.modalPresentationStyle = .overFullScreen
         picker.loadViewIfNeeded()
         self.present(picker, animated: false, completion: nil)

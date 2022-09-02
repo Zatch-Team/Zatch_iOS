@@ -59,6 +59,14 @@ extension MakeMeetingSheetViewController {
     
     func setUpConstraint(){
         
+//        timeInputView.backgroundColor = .yellow
+//        monthView.backgroundColor = .red
+//        dateView.backgroundColor = .blue
+//        dateStackView.backgroundColor = .black20
+//        hourView.backgroundColor = .green
+//        timeStackView.backgroundColor = .purple
+//        minuteView.backgroundColor = .purple40
+        
         backStackView.snp.makeConstraints{ make in
             make.top.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
@@ -76,16 +84,19 @@ extension MakeMeetingSheetViewController {
         }
         
         timeInputView.snp.makeConstraints{ make in
-            make.top.equalTo(timeTitle.snp.bottom).offset(3)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(36)
+            make.top.equalTo(timeTitle.snp.bottom).offset(11)
+            make.leading.trailing.equalToSuperview().offset(8)
+            make.bottom.equalToSuperview().offset(-4)
+            make.height.equalTo(24)
+        }
+        
+        dateStackView.snp.makeConstraints{ make in
+            make.top.bottom.equalToSuperview()
         }
         
         monthView.snp.makeConstraints{ make in
             make.width.equalTo(45)
-            make.leading.equalToSuperview().offset(8)
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().offset(-4)
+            make.top.bottom.equalToSuperview()
         }
         
         monthLabel.snp.makeConstraints{ make in
@@ -102,13 +113,12 @@ extension MakeMeetingSheetViewController {
             make.height.equalTo(1.2)
             make.bottom.equalToSuperview()
             make.width.equalTo(monthLabel)
+            make.leading.equalTo(monthLabel)
         }
         
         dateView.snp.makeConstraints{ make in
             make.width.equalTo(45)
-            make.leading.equalTo(monthView.snp.trailing).offset(13)
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().offset(-4)
+            make.top.bottom.equalToSuperview()
         }
         
         dateLabel.snp.makeConstraints{ make in
@@ -128,15 +138,16 @@ extension MakeMeetingSheetViewController {
             make.leading.equalTo(dateLabel)
         }
         
+        timeStackView.snp.makeConstraints{ make in
+            make.top.bottom.equalToSuperview()
+        }
+        
         hourView.snp.makeConstraints{ make in
             make.width.equalTo(45)
-            make.leading.equalTo(dateView.snp.trailing).offset(36)
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().offset(-4)
         }
         
         hourLabel.snp.makeConstraints{ make in
-            make.top.bottom.equalToSuperview()
+            make.top.leading.bottom.equalToSuperview()
             make.width.equalTo(28)
         }
         
@@ -154,9 +165,6 @@ extension MakeMeetingSheetViewController {
         
         minuteView.snp.makeConstraints{ make in
             make.width.equalTo(45)
-            make.leading.equalTo(hourView.snp.trailing).offset(13)
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().offset(-4)
         }
         
         minuteLabel.snp.makeConstraints{ make in

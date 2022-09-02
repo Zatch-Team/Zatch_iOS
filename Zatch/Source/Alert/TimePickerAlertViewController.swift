@@ -9,7 +9,16 @@ import UIKit
 
 class TimePickerAlertViewController: BasicAlertViewController {
     
-    var timeArray : [Int] = []
+    //MARK: - Properties
+    /*
+     0: hour
+     1: minute
+     */
+    var timeArray : [Int] = [0,0]
+    
+    var timePickerHandler : (([Int]) -> ())?
+    
+    //MARK: - UI
     
     let titleLabel = UILabel().then{
         $0.text = "약속시간"
@@ -76,7 +85,6 @@ class TimePickerAlertViewController: BasicAlertViewController {
         }
         
         hourPicker.snp.makeConstraints{ make in
-//            make.height.equalTo(130)
             make.top.bottom.equalToSuperview()
         }
         
@@ -85,18 +93,20 @@ class TimePickerAlertViewController: BasicAlertViewController {
         }
         
         minutePicker.snp.makeConstraints{ make in
-//            make.top.equalToSuperview().offset(44)
-//            make.leading.equalTo(hourPicker.snp.trailing).offset(18)
             make.width.equalTo(hourPicker)
-//            make.trailing.equalToSuperview().offset(-97)
-//            make.height.equalTo(130)
-//            make.bottom.equalTo(super.btnStackView.snp.top).offset(-20)
             make.top.bottom.equalToSuperview()
         }
         
         btnStackView.snp.updateConstraints{ make in
             make.bottom.equalToSuperview().offset(-23)
         }
+    }
+    
+    override func okBtnDidClicked() {
+        
+        self.timePickerHandler!(timeArray)
+        
+        super.okBtnDidClicked()
     }
 
 }
@@ -148,7 +158,8 @@ extension TimePickerAlertViewController : UIPickerViewDelegate, UIPickerViewData
         select.font = UIFont.pretendard(size: 18, family: .Bold)
         select.textColor = .black85
         
-//        dateArray[component] = component == 0 ? row - 15 + year : row
+        let component = pickerView == hourPicker ? 0 : 1
+        timeArray[component] = row
     }
     
 }
