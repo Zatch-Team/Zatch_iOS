@@ -59,14 +59,6 @@ extension MakeMeetingSheetViewController {
     
     func setUpConstraint(){
         
-//        timeInputView.backgroundColor = .yellow
-//        monthView.backgroundColor = .red
-//        dateView.backgroundColor = .blue
-//        dateStackView.backgroundColor = .black20
-//        hourView.backgroundColor = .green
-//        timeStackView.backgroundColor = .purple
-//        minuteView.backgroundColor = .purple40
-        
         backStackView.snp.makeConstraints{ make in
             make.top.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)

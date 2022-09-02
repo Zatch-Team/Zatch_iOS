@@ -148,7 +148,6 @@ class MakeMeetingSheetViewController: SheetViewController {
         
         super.viewDidLoad()
         
-        self.view.isUserInteractionEnabled = true
         super.sheetType = .MakeMeeting
         super.titleLabel.removeFromSuperview()
         

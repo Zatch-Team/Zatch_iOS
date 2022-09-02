@@ -35,6 +35,7 @@
 		5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */; };
 		5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */; };
 		5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */; };
+		5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461328C230B3009B7C78 /* PickerAlertViewController.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -169,6 +170,7 @@
 		5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewController.swift; sourceTree = "<group>"; };
 		5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MakeMeetingSheetViewController+Layout.swift"; sourceTree = "<group>"; };
 		5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerAlertViewController.swift; sourceTree = "<group>"; };
+		5722461328C230B3009B7C78 /* PickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerAlertViewController.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 			children = (
 				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
 				57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */,
+				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
 				57EBCE4128A8C67B00212D20 /* DatePicerAlertViewController.swift */,
 				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
 			);
@@ -974,6 +977,7 @@
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5706786B281C220B00F48342 /* MainGatchTableViewCell.swift in Sources */,
+				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
