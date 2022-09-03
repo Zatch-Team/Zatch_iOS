@@ -86,9 +86,7 @@ class TimePickerAlertViewController: PickerAlertViewController {
     }
     
     override func okBtnDidClicked() {
-        
         self.pickerHandler!(timeArray)
-        
         super.okBtnDidClicked()
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 class BasicAlertViewController: AlertViewController {
     
-    init(message: String?){
+    init(message: String){
         self.messageLabel.text = message
         super.init(nibName: nil, bundle: nil)
     }
@@ -17,7 +17,6 @@ class BasicAlertViewController: AlertViewController {
     //MARK: - UI
     
     let messageLabel = UILabel().then{
-        $0.text = "재치 등록을 완료하시겠습니까?"
         $0.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
         $0.font = UIFont.pretendard(size: 13, family: .Medium)
         $0.textAlignment = .center
@@ -27,9 +26,7 @@ class BasicAlertViewController: AlertViewController {
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-                                        
     }
     
     required init?(coder: NSCoder) {
@@ -37,14 +34,12 @@ class BasicAlertViewController: AlertViewController {
     }
     
     override func setUpView(){
-        
         super.setUpView()
         
         containerView.addSubview(messageLabel)
     }
     
     override func setUpConstraint(){
-        
         super.setUpConstraint()
         
         messageLabel.snp.makeConstraints{ make in
@@ -58,14 +53,3 @@ class BasicAlertViewController: AlertViewController {
         }
     }
 }
-
-
-//extension BasicAlertViewController: UIGestureRecognizerDelegate {
-//
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//
-//        guard touch.view?.isDescendant(of: self.containerView) == false else { return false }
-//
-//        return true
-//    }
-//}

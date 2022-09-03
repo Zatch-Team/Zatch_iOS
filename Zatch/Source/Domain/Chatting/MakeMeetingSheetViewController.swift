@@ -12,72 +12,39 @@ class MakeMeetingSheetViewController: SheetViewController {
     //MARK: - UI
     let timeTitle = UILabel().then{
         $0.text = "약속 시간"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-        $0.textColor = .black85
     }
     
     let monthTitle = UILabel().then{
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.text = "월"
-        $0.textColor = .black
     }
     
     let dateTitle = UILabel().then{
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.text = "일"
-        $0.textColor = .black
     }
     
     let hourTitle = UILabel().then{
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.text = "시"
-        $0.textColor = .black
     }
     
     let minuteTitle = UILabel().then{
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.text = "분"
-        $0.textColor = .black
     }
     
-    let monthLabel = UILabel().then{
-        $0.textColor = .zatchPurple
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textAlignment = .center
-    }
-    let dateLabel = UILabel().then{
-        $0.textColor = .zatchPurple
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textAlignment = .center
-    }
+    let monthLabel = UILabel()
     
-    let hourLabel = UILabel().then{
-        $0.textColor = .zatchPurple
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textAlignment = .center
-    }
+    let dateLabel = UILabel()
     
-    let minuteLabel = UILabel().then{
-        $0.textColor = .zatchPurple
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textAlignment = .center
-    }
+    let hourLabel = UILabel()
     
-    let monthBorderLine = UILabel().then{
-        $0.backgroundColor = .black5
-    }
+    let minuteLabel = UILabel()
     
-    let dateBorderLine = UILabel().then{
-        $0.backgroundColor = .black5
-    }
+    let monthBorderLine = UILabel()
     
-    let hourBorderLine = UILabel().then{
-        $0.backgroundColor = .black5
-    }
+    let dateBorderLine = UILabel()
     
-    let minuteBorderLine = UILabel().then{
-        $0.backgroundColor = .black5
-    }
+    let hourBorderLine = UILabel()
+    
+    let minuteBorderLine = UILabel()
     
     let timeInputView = UIStackView().then{
         $0.spacing = 36
@@ -105,8 +72,6 @@ class MakeMeetingSheetViewController: SheetViewController {
     
     let locationTitle = UILabel().then{
         $0.text = "약속 장소"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-        $0.textColor = .black85
     }
     
     let locationLabel = UILabel()
@@ -124,8 +89,6 @@ class MakeMeetingSheetViewController: SheetViewController {
     
     let alaramTitle = UILabel().then{
         $0.text = "알림 설정"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-        $0.textColor = .black85
     }
     
     let alarmSwitch = UISwitch()
@@ -153,10 +116,43 @@ class MakeMeetingSheetViewController: SheetViewController {
         
         setUpView()
         setUpConstraint()
+        setUpViewProperties()
+    }
+    
+    func setUpViewProperties(){
+        [timeTitle, locationTitle, alaramTitle].forEach { each in
+            each.then{
+                $0.font = UIFont.pretendard(size: 15, family: .Bold)
+                $0.textColor = .black85
+            }
+        }
+        
+        [monthTitle, dateTitle, hourTitle, minuteTitle].forEach { each in
+            each.then{
+                $0.font = UIFont.pretendard(size: 14, family: .Medium)
+                $0.textColor = .black
+            }
+        }
+        
+        [monthLabel, dateLabel, hourLabel, minuteLabel].forEach { each in
+            each.then{
+                $0.textColor = .zatchPurple
+                $0.font = UIFont.pretendard(size: 14, family: .Medium)
+                $0.textAlignment = .center
+            }
+        }
+        
+        [monthBorderLine, dateBorderLine, hourBorderLine, minuteBorderLine].forEach{ each in
+            each.then{
+                $0.backgroundColor = .black5
+            }
+        }
     }
     
     @objc func timePickerWillAppear(){
+        
         let picker = TimePickerAlertViewController()
+        
         picker.pickerHandler = { array in
             self.hourLabel.text = String(array[0])
             self.minuteLabel.text = String(array[1])
