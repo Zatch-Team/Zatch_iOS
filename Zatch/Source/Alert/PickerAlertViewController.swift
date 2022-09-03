@@ -7,23 +7,45 @@
 
 import UIKit
 
-class PickerAlertViewController: UIViewController {
+class PickerAlertViewController: AlertViewController {
+    
+    //MARK: - Properties
+    
+    var pickerHandler : (([Int]) -> ())?
+    
+    //MARK: - UI
+
+    let titleLabel = UILabel().then{
+        $0.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.textColor = .black85
+    }
+    
+    //MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func setUpView() {
+        super.setUpView()
+        super.containerView.addSubview(titleLabel)
     }
-    */
-
+    
+    override func setUpConstraint() {
+        
+        super.setUpConstraint()
+        
+        containerView.snp.updateConstraints{ make in
+            make.leading.equalToSuperview().offset(24)
+        }
+        
+        titleLabel.snp.makeConstraints{ make in
+            make.top.equalToSuperview().offset(14)
+            make.leading.equalToSuperview().offset(16)
+        }
+        
+        btnStackView.snp.updateConstraints{ make in
+            make.bottom.equalToSuperview().offset(-23)
+        }
+    }
 }

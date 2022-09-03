@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DatePicerAlertViewController: BasicAlertViewController {
+class DatePicerAlertViewController: PickerAlertViewController {
     
     //MARK: - Properties
     
@@ -20,15 +20,7 @@ class DatePicerAlertViewController: BasicAlertViewController {
     var year: Int!
     var dateArray : [Int] = []
     
-    var datePickerHandler : (([Int]) -> ())?
-    
     //MARK: - UI
-    
-    let titleLabel = UILabel().then{
-        $0.text = "구매일자"
-        $0.font = UIFont.pretendard(size: 14, family: .Bold)
-        $0.textColor = .black85
-    }
     
     let datePicker = UIPickerView()
 
@@ -53,7 +45,6 @@ class DatePicerAlertViewController: BasicAlertViewController {
         
         super.viewDidLoad()
 
-        removeSuperView()
         setPickerInitSetting()
     }
     
@@ -62,23 +53,13 @@ class DatePicerAlertViewController: BasicAlertViewController {
     override func setUpView() {
         
         super.setUpView()
-        
-        super.containerView.addSubview(titleLabel)
+
         super.containerView.addSubview(datePicker)
     }
     
     override func setUpConstraint() {
         
         super.setUpConstraint()
-        
-        containerView.snp.updateConstraints{ make in
-            make.leading.equalToSuperview().offset(24)
-        }
-        
-        titleLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(14)
-            make.leading.equalToSuperview().offset(16)
-        }
         
         datePicker.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(44)
@@ -87,21 +68,6 @@ class DatePicerAlertViewController: BasicAlertViewController {
             make.height.equalTo(130)
             make.bottom.equalTo(super.btnStackView.snp.top).offset(-20)
         }
-        
-        btnStackView.snp.updateConstraints{ make in
-            make.bottom.equalToSuperview().offset(-23)
-        }
-    }
-    
-    override func okBtnDidClicked() {
-        
-        self.datePickerHandler!(dateArray)
-        
-        super.okBtnDidClicked()
-    }
-    
-    func removeSuperView(){
-        super.messageLabel.removeFromSuperview()
     }
     
     func setPickerInitSetting(){
@@ -112,6 +78,13 @@ class DatePicerAlertViewController: BasicAlertViewController {
         datePicker.selectRow(15, inComponent: 0, animated: false)
         datePicker.selectRow(dateArray[1], inComponent: 1, animated: false)
         datePicker.selectRow(dateArray[2], inComponent: 2, animated: false)
+    }
+    
+    override func okBtnDidClicked() {
+        
+        super.pickerHandler!(dateArray)
+        
+        super.okBtnDidClicked()
     }
 
 }

@@ -98,10 +98,10 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
             return
         }
         
-        let vc = DatePicerAlertViewController(message: nil)
+        let vc = DatePicerAlertViewController()
         vc.titleLabel.text = title
         
-        vc.datePickerHandler = { array in
+        vc.pickerHandler = { array in
             guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
             cell.yearTextField.text = String (array[0])
             cell.monthTextField.text = String (array[1] + 1)

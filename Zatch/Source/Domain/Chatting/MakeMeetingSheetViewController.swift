@@ -156,8 +156,8 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
     
     @objc func timePickerWillAppear(){
-        let picker = TimePickerAlertViewController(message: nil)
-        picker.timePickerHandler = { array in
+        let picker = TimePickerAlertViewController()
+        picker.pickerHandler = { array in
             self.hourLabel.text = String(array[0])
             self.minuteLabel.text = String(array[1])
         }

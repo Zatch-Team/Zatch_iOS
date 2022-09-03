@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimePickerAlertViewController: BasicAlertViewController {
+class TimePickerAlertViewController: PickerAlertViewController {
     
     //MARK: - Properties
     /*
@@ -16,14 +16,11 @@ class TimePickerAlertViewController: BasicAlertViewController {
      */
     var timeArray : [Int] = [0,0]
     
-    var timePickerHandler : (([Int]) -> ())?
-    
     //MARK: - UI
     
-    let titleLabel = UILabel().then{
-        $0.text = "약속시간"
-        $0.font = UIFont.pretendard(size: 14, family: .Bold)
-        $0.textColor = .black85
+    let pickerStackView = UIStackView().then{
+        $0.spacing = 18
+        $0.axis = .horizontal
     }
     
     let hourPicker = UIPickerView()
@@ -34,20 +31,10 @@ class TimePickerAlertViewController: BasicAlertViewController {
         $0.textColor = .black85
         $0.textAlignment = .center
     }
-    
-    let pickerStackView = UIStackView().then{
-        $0.spacing = 18
-        $0.axis = .horizontal
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        hourPicker.delegate = self
-        hourPicker.dataSource = self
-        
-        minutePicker.delegate = self
-        minutePicker.dataSource = self
+        super.titleLabel.text = "약속시간"
     }
     
     override func setUpView() {
@@ -65,10 +52,6 @@ class TimePickerAlertViewController: BasicAlertViewController {
     override func setUpConstraint() {
         
         super.setUpConstraint()
-        
-        containerView.snp.updateConstraints{ make in
-            make.leading.equalToSuperview().offset(24)
-        }
         
         pickerStackView.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(98)
@@ -104,9 +87,17 @@ class TimePickerAlertViewController: BasicAlertViewController {
     
     override func okBtnDidClicked() {
         
-        self.timePickerHandler!(timeArray)
+        self.pickerHandler!(timeArray)
         
         super.okBtnDidClicked()
+    }
+    
+    func setPickerInitSetting(){
+        hourPicker.delegate = self
+        hourPicker.dataSource = self
+        
+        minutePicker.delegate = self
+        minutePicker.dataSource = self
     }
 
 }
