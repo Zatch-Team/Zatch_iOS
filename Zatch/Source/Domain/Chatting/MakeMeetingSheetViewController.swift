@@ -31,19 +31,13 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
     
     let monthLabel = UILabel()
-    
     let dateLabel = UILabel()
-    
     let hourLabel = UILabel()
-    
     let minuteLabel = UILabel()
     
     let monthBorderLine = UILabel()
-    
     let dateBorderLine = UILabel()
-    
     let hourBorderLine = UILabel()
-    
     let minuteBorderLine = UILabel()
     
     let timeInputView = UIStackView().then{
@@ -55,6 +49,7 @@ class MakeMeetingSheetViewController: SheetViewController {
         $0.spacing = 13
         $0.axis = .horizontal
     }
+    
     let monthView = UIView()
     let dateView = UIView()
     
@@ -120,32 +115,25 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
     
     func setUpViewProperties(){
+        
         [timeTitle, locationTitle, alaramTitle].forEach { each in
-            each.then{
-                $0.font = UIFont.pretendard(size: 15, family: .Bold)
-                $0.textColor = .black85
-            }
+            each.font = UIFont.pretendard(size: 15, family: .Bold)
+            each.textColor = .black85
         }
         
         [monthTitle, dateTitle, hourTitle, minuteTitle].forEach { each in
-            each.then{
-                $0.font = UIFont.pretendard(size: 14, family: .Medium)
-                $0.textColor = .black
-            }
+            each.font = UIFont.pretendard(size: 14, family: .Medium)
+            each.textColor = .black
         }
         
         [monthLabel, dateLabel, hourLabel, minuteLabel].forEach { each in
-            each.then{
-                $0.textColor = .zatchPurple
-                $0.font = UIFont.pretendard(size: 14, family: .Medium)
-                $0.textAlignment = .center
-            }
+            each.textColor = .zatchPurple
+            each.font = UIFont.pretendard(size: 14, family: .Medium)
+            each.textAlignment = .center
         }
         
         [monthBorderLine, dateBorderLine, hourBorderLine, minuteBorderLine].forEach{ each in
-            each.then{
-                $0.backgroundColor = .black5
-            }
+            each.backgroundColor = .black5
         }
     }
     
