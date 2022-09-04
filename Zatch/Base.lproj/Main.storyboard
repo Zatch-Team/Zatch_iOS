@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="1949.2753623188407" y="93.75"/>
         </scene>
-        <!--Chatting Room View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="BbO-4x-qEE">
             <objects>
-                <viewController id="1x8-qs-7k3" customClass="ChattingRoomViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1x8-qs-7k3" customClass="DetailViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XUy-vJ-xEE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

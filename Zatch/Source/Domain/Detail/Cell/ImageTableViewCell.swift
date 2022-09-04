@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailImageTableViewCell: UITableViewCell {
+class DetailImageTableViewCell: BaseTableViewCell {
     
     let detailImageView = UIImageView()
 
@@ -17,8 +17,6 @@ class DetailImageTableViewCell: UITableViewCell {
 
         setUpView()
         setUpConstriant()
-        setUpValue()
-
     }
     
     required init?(coder: NSCoder) {
@@ -26,22 +24,18 @@ class DetailImageTableViewCell: UITableViewCell {
     }
     
     func setUpView(){
-        self.contentView.addSubview(detailImageView)
+        baseView.addSubview(detailImageView)
     }
     
     func setUpConstriant(){
-        self.contentView.snp.makeConstraints{ make in
-            make.width.equalToSuperview()
-            make.height.equalTo(self.contentView.snp.width)
+        
+        baseView.snp.makeConstraints{ make in
+            make.height.equalTo(self.baseView.snp.width)
         }
         
         self.detailImageView.snp.makeConstraints{ make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
-    }
-    
-    func setUpValue(){
-        
     }
 
 }

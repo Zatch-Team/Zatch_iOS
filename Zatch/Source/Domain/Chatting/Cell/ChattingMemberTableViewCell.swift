@@ -15,8 +15,6 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     
     //MARK: - UI
     
-    let backView = UIView()
-    
     let profileImage = UIImageView().then{
         $0.image = UIImage(named: "zatch_profile")
     }
@@ -71,17 +69,13 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     //MARK: - Helper
     
     func setUpView(){
-        
-        self.contentView.addSubview(backView)
-        
-        self.backView.addSubview(profileImage)
-        self.backView.addSubview(nameLabel)
+        baseView.addSubview(profileImage)
+        baseView.addSubview(nameLabel)
     }
     
     func setUpConstraint(){
         
-        backView.snp.makeConstraints{ make in
-            make.top.bottom.leading.trailing.equalToSuperview()
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(52)
         }
         
@@ -99,8 +93,8 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     }
     
     func setMeTag(){
-        
-        self.backView.addSubview(isMeTag)
+    
+        baseView.addSubview(isMeTag)
         
         isMeTag.snp.makeConstraints{ make in
             make.trailing.equalToSuperview().offset(-20)
@@ -119,7 +113,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     
     func setDeclarationBtn(){
         
-        self.backView.addSubview(declarationBtn)
+        baseView.addSubview(declarationBtn)
         
         declarationBtn.snp.makeConstraints{ make in
             make.trailing.equalToSuperview().offset(-20)
@@ -130,7 +124,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     
     func setCrownImage(){
         
-        self.backView.addSubview(managerCrownImage)
+        baseView.addSubview(managerCrownImage)
         
         managerCrownImage.snp.makeConstraints{ make in
             make.width.height.equalTo(12.94)

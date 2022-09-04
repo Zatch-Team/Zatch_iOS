@@ -32,8 +32,6 @@ class ProductQuantityUIView: BaseTableViewCell {
         $0.setImage(UIImage(named: "arrow_down"), for: .normal)
     }
     
-    let backView = UIView()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,21 +46,21 @@ class ProductQuantityUIView: BaseTableViewCell {
     }
     
     func setUpView(){
-        self.contentView.addSubview(backView)
-        
-        self.backView.addSubview(titleLabel)
-        self.backView.addSubview(countTextField)
-        self.backView.addSubview(textFieldBorderLine)
-        self.backView.addSubview(unitLabel)
-        self.backView.addSubview(arrowButton)
-
+        baseView.addSubview(titleLabel)
+        baseView.addSubview(countTextField)
+        baseView.addSubview(textFieldBorderLine)
+        baseView.addSubview(unitLabel)
+        baseView.addSubview(arrowButton)
     }
     
     func setUpConstriant(){
-        self.backView.snp.makeConstraints{ make in
-            make.height.equalTo(37)
-            make.leading.trailing.bottom.equalToSuperview()
+        
+        baseView.snp.updateConstraints{ make in
             make.top.equalToSuperview().offset(8)
+        }
+        
+        baseView.snp.makeConstraints{ make in
+            make.height.equalTo(37)
         }
         
         titleLabel.snp.makeConstraints{ make in

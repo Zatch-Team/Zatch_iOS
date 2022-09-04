@@ -30,8 +30,6 @@ class ImageAddTableViewCell: BaseTableViewCell {
         $0.font = UIFont.pretendard(family: .Medium)
         $0.text = "0 / 10"
     }
-    
-    let backView = UIView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -73,18 +71,14 @@ class ImageAddTableViewCell: BaseTableViewCell {
     //MARK: - Helper
     
     func setUpView(){
-        
-        self.contentView.addSubview(backView)
-        
-        self.backView.addSubview(imageCollectionView)
-        self.backView.addSubview(imageCountLabel)
+        baseView.addSubview(imageCollectionView)
+        baseView.addSubview(imageCountLabel)
     }
     
     func setUpConstraint(){
         
-        self.backView.snp.makeConstraints{ make in
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(165)
-            make.top.bottom.leading.trailing.equalToSuperview()
         }
         
         imageCollectionView.snp.makeConstraints{ make in

@@ -10,22 +10,18 @@ import UIKit
 extension ChattingListTableViewCell {
     
     func setUpView(){
+        baseView.addSubview(profileImage)
+        baseView.addSubview(infoStackView)
+        baseView.addSubview(timeLabel)
+        baseView.addSubview(borderLine)
         
-        self.contentView.addSubview(backView)
-        
-        self.infoStackView.addArrangedSubview(nameLabel)
-        self.infoStackView.addArrangedSubview(recentMessageLabel)
-        
-        self.backView.addSubview(profileImage)
-        self.backView.addSubview(infoStackView)
-        self.backView.addSubview(timeLabel)
-        self.backView.addSubview(borderLine)
+        infoStackView.addArrangedSubview(nameLabel)
+        infoStackView.addArrangedSubview(recentMessageLabel)
     }
     
     func setUpConstraint(){
         
-        backView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(80)
         }
         

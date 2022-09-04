@@ -122,7 +122,6 @@
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
 		57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */; };
-		57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -266,7 +265,6 @@
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
-		57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCheckBoxView.xib; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -607,11 +605,10 @@
 				57468A9928A1096600056691 /* extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* CommonSource */,
 				57067862281C13D500F48342 /* Font */,
+				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
-				57F215D5281E1A2F00DD9828 /* SearchCheckBoxView.xib */,
 				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
 				57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */,
-				5722460528BCCFE8009B7C78 /* Const.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -799,7 +796,6 @@
 				57E31EC127E16BC0002DE500 /* MainZatchCollectionViewCell.xib in Resources */,
 				5706785F281C0C4900F48342 /* MainGatchTableViewCell.xib in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
-				57F215D6281E1A2F00DD9828 /* SearchCheckBoxView.xib in Resources */,
 				57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);

@@ -70,8 +70,6 @@ class ChattingListTableViewCell: BaseTableViewCell {
         $0.spacing = 7
     }
     
-    let backView = UIView()
-    
     lazy var hiddenLeftView = HiddenZatchInfoView()
     
     lazy var hiddenRightView = HiddenDeleteView()
@@ -93,7 +91,7 @@ class ChattingListTableViewCell: BaseTableViewCell {
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         
         swipeGesture.delegate = self
-        backView.addGestureRecognizer(swipeGesture)
+        baseView.addGestureRecognizer(swipeGesture)
         
         self.isUserInteractionEnabled = true
     }

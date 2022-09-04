@@ -44,8 +44,6 @@ class LeftChattingMessageTableViewCell: BaseTableViewCell {
         $0.text = "13:42"
     }
     
-    let backView = UIView()
-    
     //MARK: - LifeCycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -62,12 +60,10 @@ class LeftChattingMessageTableViewCell: BaseTableViewCell {
     //MARK: - Helper
     
     private func setUpView(){
-        self.contentView.addSubview(backView)
-        
-        backView.addSubview(profileImage)
-        backView.addSubview(userNameLabel)
-        backView.addSubview(timeLabel)
-        backView.addSubview(messageLabel)
+        baseView.addSubview(profileImage)
+        baseView.addSubview(userNameLabel)
+        baseView.addSubview(timeLabel)
+        baseView.addSubview(messageLabel)
     }
     
     private func setUpConstraint(){
@@ -78,11 +74,9 @@ class LeftChattingMessageTableViewCell: BaseTableViewCell {
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        self.backView.snp.makeConstraints{ make in
+        baseView.snp.updateConstraints{ make in
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview().offset(-8)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(messageLabel).offset(18)
         }
         
         self.profileImage.snp.makeConstraints{ make in

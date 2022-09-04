@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreTextTableViewCell: UITableViewCell {
+class MoreTextTableViewCell: BaseTableViewCell {
     
     let moreText = UILabel().then{
         $0.text = "귀여운 고양이 몰랑이 피규어 12종입니다.캣타워까지 세트예요.2022년 호랑이의 해 기념으로 나온 호랑이 몰랑이랑 교환 구해요."
@@ -34,11 +34,12 @@ class MoreTextTableViewCell: UITableViewCell {
     }
     
     func setUpView(){
-        self.contentView.addSubview(moreText)
-        self.contentView.addSubview(borderLine)
+        baseView.addSubview(moreText)
+        baseView.addSubview(borderLine)
     }
     
     func setUpConstraint(){
+        
         moreText.snp.makeConstraints{ make in
             make.bottom.equalToSuperview().offset(-24)
             make.top.equalToSuperview().offset(24)

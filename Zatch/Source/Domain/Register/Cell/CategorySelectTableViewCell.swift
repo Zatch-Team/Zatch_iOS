@@ -7,60 +7,56 @@
 
 import UIKit
 
-class CategorySelectTableViewCell: UITableViewCell {
+class CategorySelectTableViewCell: BaseTableViewCell {
+    
+    //MARK: - Properties
     
     static let cellIdentifier = "categoryViewCell"
     
-    let backView = UIView()
+    //MARK: - UI
     
     let categoryFrame = UIView()
-    let boundaryLine = UIView()
-    let categoryText = UILabel()
-    let arrowImage = UIButton()
     
-    let selectedView = UIView()
+    let boundaryLine = UIView().then{
+        $0.backgroundColor = .black5
+    }
     
+    let categoryText = UILabel().then{
+        $0.text = "카테고리 선택"
+        $0.font = UIFont.pretendard(family: .Medium)
+    }
+    
+    lazy var arrowImage = UIButton().then{
+        $0.setImage(UIImage(named: "arrow_down"), for: .normal)
+        $0.setImage(UIImage(named: "arrow_up"), for: .selected)
+    }
+
+    
+    //MARK: - LifeCycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.selectedBackgroundView = selectedView
 
         setUpView()
         setUpConstriant()
-        setUpValue()
-
     }
     
     required init?(coder: NSCoder) {
-        
         fatalError("init(coder:) has not been implemented")
-        
     }
     
     func setUpView(){
         
-        self.contentView.addSubview(backView)
+        baseView.addSubview(categoryFrame)
         
-        self.backView.addSubview(categoryFrame)
-        
-        self.categoryFrame.addSubview(boundaryLine)
-        self.categoryFrame.addSubview(categoryText)
-        self.categoryFrame.addSubview(arrowImage)
+        categoryFrame.addSubview(boundaryLine)
+        categoryFrame.addSubview(categoryText)
+        categoryFrame.addSubview(arrowImage)
     }
     
     func setUpConstriant(){
-        
-        self.contentView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-            make.height.equalTo(41)
-        }
-        
-        self.backView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-        self.categoryFrame.snp.makeConstraints{ make in
+
+        categoryFrame.snp.makeConstraints{ make in
             make.leading.trailing.top.bottom.equalToSuperview()
             make.height.equalTo(41)
         }
@@ -83,16 +79,4 @@ class CategorySelectTableViewCell: UITableViewCell {
             make.top.equalToSuperview().offset(12)
         }
     }
-    
-    func setUpValue(){
-        
-        boundaryLine.backgroundColor = .black5
-        
-        categoryText.text = "카테고리 선택"
-        categoryText.font = UIFont.pretendard(family: .Medium)
-        
-        arrowImage.setImage(UIImage(named: "arrow_down"), for: .normal)
-        arrowImage.setImage(UIImage(named: "arrow_up"), for: .selected)
-    }
-
 }

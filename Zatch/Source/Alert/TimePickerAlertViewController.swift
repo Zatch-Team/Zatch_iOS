@@ -10,6 +10,7 @@ import UIKit
 class TimePickerAlertViewController: PickerAlertViewController {
     
     //MARK: - Properties
+    
     /*
      0: hour
      1: minute
@@ -35,12 +36,13 @@ class TimePickerAlertViewController: PickerAlertViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.titleLabel.text = "약속시간"
+        
+        setPickerInitSetting()
     }
     
     override func setUpView() {
         
         super.setUpView()
-        
         super.containerView.addSubview(titleLabel)
         super.containerView.addSubview(pickerStackView)
         
@@ -62,11 +64,6 @@ class TimePickerAlertViewController: PickerAlertViewController {
             make.bottom.equalTo(super.btnStackView.snp.top).offset(-20)
         }
         
-        titleLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(14)
-            make.leading.equalToSuperview().offset(16)
-        }
-        
         hourPicker.snp.makeConstraints{ make in
             make.top.bottom.equalToSuperview()
         }
@@ -78,10 +75,6 @@ class TimePickerAlertViewController: PickerAlertViewController {
         minutePicker.snp.makeConstraints{ make in
             make.width.equalTo(hourPicker)
             make.top.bottom.equalToSuperview()
-        }
-        
-        btnStackView.snp.updateConstraints{ make in
-            make.bottom.equalToSuperview().offset(-23)
         }
     }
     

@@ -247,7 +247,7 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
         
         switch chatData.chatType {
         case .RightMessage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingMessageTableViewCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingMessageTableViewCell else { fatalError() }
             cell.messageLabel.text = chatData.message
             return cell
             
@@ -291,7 +291,7 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
         }
         
         self.navigationController?.pushViewController(imageDetailVC, animated: true)
-        
+
         picker.dismiss(animated: true, completion: nil)
     }
     

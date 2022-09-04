@@ -8,14 +8,39 @@
 import UIKit
 import Then
 
-class FirstWantTableViewCell: UITableViewCell {
+class FirstWantTableViewCell: BaseTableViewCell {
     
-    let myZatchCategory = UILabel()
-    let wantZatchCategory = UILabel()
-    let myZatchLabel = UILabel()
-    let wantZatchLabel = UILabel()
+    let myZatchCategory = UILabel().then{
+        $0.text = "생활용품"
+        $0.textColor = .zatchPurple
+        $0.backgroundColor = .purple40
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+    }
     
-    let exchangeImage = UIImageView()
+    let wantZatchCategory = UILabel().then{
+        $0.text = "생활용품"
+        $0.textColor = .zatchDeepYellow
+        $0.backgroundColor = .yellow40
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+    }
+    
+    let myZatchLabel = UILabel().then{
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.text = "몰랑이 피규어"
+        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+    }
+    
+    let wantZatchLabel = UILabel().then{
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.text = "2022년 호랑이의 해 기념 호랑이 몰랑이 세트"
+        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+    }
+    
+    let exchangeImage = UIImageView().then{
+        $0.image = UIImage(named: "exchange")
+    }
     
     let borderLine = UIView().then{
         $0.backgroundColor = .black5
@@ -24,7 +49,6 @@ class FirstWantTableViewCell: UITableViewCell {
     let firstView = UIView()
     let firstLeftView = UIView()
     let firstRightView = UIView()
-    
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -32,14 +56,6 @@ class FirstWantTableViewCell: UITableViewCell {
         
         setUpView()
         setUpConstriant()
-        setUpValue()
-
-        wantZatchLabel.numberOfLines = 0
-        wantZatchLabel.textAlignment = .center
-        
-        myZatchLabel.numberOfLines = 0
-        myZatchLabel.textAlignment = .center
-
     }
     
     required init?(coder: NSCoder) {
@@ -48,18 +64,18 @@ class FirstWantTableViewCell: UITableViewCell {
     
     func setUpView(){
         
-        self.contentView.addSubview(firstView)
+        baseView.addSubview(firstView)
         
-        self.firstView.addSubview(firstLeftView)
-        self.firstView.addSubview(firstRightView)
-        self.firstView.addSubview(exchangeImage)
-        self.firstView.addSubview(borderLine)
+        firstView.addSubview(firstLeftView)
+        firstView.addSubview(firstRightView)
+        firstView.addSubview(exchangeImage)
+        firstView.addSubview(borderLine)
         
-        self.firstLeftView.addSubview(wantZatchCategory)
-        self.firstLeftView.addSubview(wantZatchLabel)
+        firstLeftView.addSubview(wantZatchCategory)
+        firstLeftView.addSubview(wantZatchLabel)
         
-        self.firstRightView.addSubview(myZatchCategory)
-        self.firstRightView.addSubview(myZatchLabel)
+        firstRightView.addSubview(myZatchCategory)
+        firstRightView.addSubview(myZatchLabel)
         
     }
     
@@ -122,29 +138,6 @@ class FirstWantTableViewCell: UITableViewCell {
             make.height.equalTo(1)
         }
         
-    }
-    
-    func setUpValue(){
-        
-        //임시 text
-        wantZatchCategory.text = "생활용품"
-        myZatchCategory.text = "생활용품"
-        wantZatchLabel.text = "2022년 호랑이의 해 기념 호랑이 몰랑이 세트"
-        myZatchLabel.text = "몰랑이 피규어"
-        
-        wantZatchCategory.textColor = .zatchDeepYellow
-        wantZatchCategory.backgroundColor = .yellow40
-        wantZatchCategory.font = UIFont.pretendard(size: 12, family: .Medium)
-        
-        myZatchCategory.textColor = .zatchPurple
-        myZatchCategory.backgroundColor = .purple40
-        wantZatchCategory.font = UIFont.pretendard(size: 12, family: .Medium)
-        myZatchCategory.font = UIFont.pretendard(size: 12, family: .Medium)
-        
-        wantZatchLabel.font = UIFont.pretendard(size: 16, family: .Bold)
-        myZatchLabel.font = UIFont.pretendard(size: 16, family: .Bold)
-        
-        exchangeImage.image = UIImage(named: "exchange")
     }
 
 }

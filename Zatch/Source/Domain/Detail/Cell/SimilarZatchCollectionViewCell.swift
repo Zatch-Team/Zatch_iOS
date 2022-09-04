@@ -46,11 +46,6 @@ class SimilarZatchCollectionViewCell: UICollectionViewCell {
     
     func setUpConstraint(){
         
-//        self.contentView.snp.makeConstraints{ make in
-//            make.width.equalTo(124)
-//            make.height.equalTo(166)
-//        }
-        
         imageView.snp.makeConstraints{ make in
             make.width.equalTo(124)
             make.height.equalTo(112)

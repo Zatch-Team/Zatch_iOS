@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WantElseTableViewCell: UITableViewCell {
+class WantElseTableViewCell: BaseTableViewCell {
     
     let second = UILabel().then{
         $0.text = "2순위"
@@ -88,8 +88,8 @@ class WantElseTableViewCell: UITableViewCell {
     
     func setUpView(){
         
-        self.contentView.addSubview(stackView)
-        self.contentView.addSubview(borderLine)
+        baseView.addSubview(stackView)
+        baseView.addSubview(borderLine)
         
         self.stackView.addArrangedSubview(secondView)
         self.stackView.addArrangedSubview(thirdView)

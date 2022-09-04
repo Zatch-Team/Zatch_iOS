@@ -9,9 +9,11 @@ import UIKit
 
 class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
     
+    //MARK: - Properties
+    
     static let cellIdentifier = "productInputCell"
     
-    let backView = UIView()
+    //MARK: - UI
     
     let boundaryLine = UIView().then{
         $0.backgroundColor = .black5
@@ -39,19 +41,18 @@ class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
     }
     
     func setUpView(){
-        
-        self.contentView.addSubview(backView)
-        
-        backView.addSubview(boundaryLine)
-        backView.addSubview(productName)
+        baseView.addSubview(boundaryLine)
+        baseView.addSubview(productName)
     }
     
     func setUpConstraint(){
-    
-        backView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(12)
-            make.leading.trailing.bottom.equalToSuperview()
+        
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(41)
+        }
+    
+        baseView.snp.updateConstraints{ make in
+            make.top.equalToSuperview().offset(12)
         }
         
         boundaryLine.snp.makeConstraints{ make in

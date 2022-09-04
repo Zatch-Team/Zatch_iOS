@@ -27,8 +27,6 @@ class RightChattingImageTableViewCell: BaseTableViewCell {
         $0.text = "13:42"
     }
     
-    let backView = UIView()
-    
     //MARK: - LifeCycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,10 +43,8 @@ class RightChattingImageTableViewCell: BaseTableViewCell {
     //MARK: - Helper
     
     private func setUpView(){
-        self.contentView.addSubview(backView)
-        
-        backView.addSubview(timeLabel)
-        backView.addSubview(imageMessageView)
+        baseView.addSubview(timeLabel)
+        baseView.addSubview(imageMessageView)
     }
     
     private func setUpConstraint(){
@@ -59,10 +55,9 @@ class RightChattingImageTableViewCell: BaseTableViewCell {
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        self.backView.snp.makeConstraints{ make in
+        baseView.snp.updateConstraints{ make in
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview().offset(-8)
-            make.leading.trailing.equalToSuperview()
         }
         
         self.timeLabel.snp.makeConstraints{ make in

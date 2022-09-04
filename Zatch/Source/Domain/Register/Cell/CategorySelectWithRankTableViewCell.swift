@@ -31,34 +31,29 @@ class CategorySelectWithRankTableViewCell: CategorySelectTableViewCell {
         
         super.setUpView()
         
-        self.backView.addSubview(rankLabel)
+        baseView.addSubview(rankLabel)
     }
     
     override func setUpConstriant() {
         
         super.setUpConstriant()
         
-        self.contentView.snp.removeConstraints()
-        
-        super.contentView.snp.updateConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(88)
         }
-        
-        super.categoryFrame.snp.removeConstraints()
         
         rankLabel.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview().offset(36)
-            make.height.equalTo(17)
         }
         
-        super.categoryFrame.snp.makeConstraints{ make in
+        super.categoryFrame.snp.removeConstraints()
+        
+        categoryFrame.snp.makeConstraints{ make in
             make.top.equalTo(rankLabel.snp.bottom).offset(10)
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(41)
         }
-        
     }
     
 }

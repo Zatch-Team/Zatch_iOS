@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultTableViewCell: UITableViewCell {
+class ResultTableViewCell: BaseTableViewCell {
     
     let productImage = UIImageView().then{
         $0.backgroundColor = .black45
@@ -52,16 +52,10 @@ class ResultTableViewCell: UITableViewCell {
         $0.backgroundColor = .black5
     }
     
-    let backView = UIView().then{
-        $0.backgroundColor = .white
-    }
-    
     let selectedView = UIView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.selectedBackgroundView = selectedView
         
         setUpView()
         setUpConstraint()
@@ -74,29 +68,21 @@ class ResultTableViewCell: UITableViewCell {
     
     func setUpView(){
         
-        self.contentView.addSubview(backView)
+        baseView.addSubview(productImage)
+        baseView.addSubview(productStackView)
+        baseView.addSubview(etcInfoText)
+        baseView.addSubview(heartButton)
+        baseView.addSubview(separatorLine)
         
-        self.backView.addSubview(productImage)
-        
-        self.productStackView.addArrangedSubview(myProduct)
-        self.productStackView.addArrangedSubview(exchangeImage)
-        self.productStackView.addArrangedSubview(wantProduct)
-        
-        self.backView.addSubview(productStackView)
-        self.backView.addSubview(etcInfoText)
-        self.backView.addSubview(heartButton)
-        self.backView.addSubview(separatorLine)
+        productStackView.addArrangedSubview(myProduct)
+        productStackView.addArrangedSubview(exchangeImage)
+        productStackView.addArrangedSubview(wantProduct)
     }
     
     func setUpConstraint(){
         
-        self.contentView.snp.makeConstraints{ make in
-            make.leading.trailing.equalToSuperview()
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(138)
-        }
-        
-        self.backView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
         }
         
         self.productImage.snp.makeConstraints{ make in

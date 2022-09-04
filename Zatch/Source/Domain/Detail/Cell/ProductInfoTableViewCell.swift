@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductInfoTableViewCell: UITableViewCell {
+class ProductInfoTableViewCell: BaseTableViewCell {
     
     //stack
     let stackView = UIStackView().then{
@@ -88,8 +88,8 @@ class ProductInfoTableViewCell: UITableViewCell {
     
     func setUpView(){
         
-        self.contentView.addSubview(stackView)
-        self.contentView.addSubview(borderLine)
+        baseView.addSubview(stackView)
+        baseView.addSubview(borderLine)
         
         stackView.addArrangedSubview(buyStack)
         stackView.addArrangedSubview(countStack)

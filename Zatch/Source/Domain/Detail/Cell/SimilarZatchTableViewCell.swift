@@ -7,40 +7,38 @@
 
 import UIKit
 
-class SimilarZatchTableViewCell: UITableViewCell {
+class SimilarZatchTableViewCell: BaseTableViewCell {
     
-    let collectionView : UICollectionView = {
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 124, height: 166)
-        flowLayout.minimumInteritemSpacing = 12
-
-        let collectionView = UICollectionView(frame: .init(), collectionViewLayout: flowLayout)
-        collectionView.register(SimilarZatchCollectionViewCell.self, forCellWithReuseIdentifier: "similarCollectionCell")
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isScrollEnabled = true
-
-        return collectionView
-    }()
+    var collectionView: UICollectionView!
     
     let titleLabel = UILabel().then{
         $0.text = "내 재치와 비슷한 재치"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.textColor = .black
     }
-    
-    let backView = UIView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+            
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.itemSize = CGSize(width: 124, height: 166)
+            flowLayout.minimumInteritemSpacing = 12
+
+            $0.collectionViewLayout = flowLayout
+            $0.register(SimilarZatchCollectionViewCell.self, forCellWithReuseIdentifier: "similarCollectionCell")
+            $0.showsHorizontalScrollIndicator = false
+            $0.isScrollEnabled = true
+            
+            $0.delegate = self
+            $0.dataSource = self
+        }
+        
         setUpView()
         setUpConstraint()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     
     required init?(coder: NSCoder) {
@@ -48,19 +46,14 @@ class SimilarZatchTableViewCell: UITableViewCell {
     }
     
     func setUpView(){
-        
-        self.contentView.addSubview(backView)
-        
-        self.backView.addSubview(titleLabel)
-        self.backView.addSubview(collectionView)
-        
+        baseView.addSubview(titleLabel)
+        baseView.addSubview(collectionView)
     }
     
     func setUpConstraint(){
         
-        self.backView.snp.makeConstraints{ make in
+        baseView.snp.makeConstraints{ make in
             make.height.equalTo(246)
-            make.top.bottom.leading.trailing.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints{ make in
