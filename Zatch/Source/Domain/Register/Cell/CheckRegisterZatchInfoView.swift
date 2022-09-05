@@ -319,6 +319,7 @@ class CheckRegisterZatchInfoView: UIView {
     }
     
     func setInitProperty(){
+        
         [secondWantTitle, thirdWantTitle].forEach{ each in
             each.font = UIFont.pretendard(size: 12, family: .Bold)
             each.textColor = .zatchDeepYellow
