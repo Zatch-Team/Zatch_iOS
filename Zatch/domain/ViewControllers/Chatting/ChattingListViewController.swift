@@ -11,7 +11,7 @@ class ChattingListViewController: BaseTabBarViewController, SelectedTableViewCel
     
     //MARK: - Properties
     
-    var chattingList = [1,2,3,4,5]
+    var chattingList = [1,2,3,4,5] //
     
     var clampCell : IndexPath = [0,-1]
     
