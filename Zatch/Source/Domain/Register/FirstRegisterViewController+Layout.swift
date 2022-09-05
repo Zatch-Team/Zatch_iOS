@@ -28,7 +28,6 @@ extension FirstRegisterViewController{
     }
     
     func setUpView(){
-        self.view.addSubview(navigationView)
         self.view.addSubview(topView)
         self.view.addSubview(backTableView)
         self.view.addSubview(nextButton)

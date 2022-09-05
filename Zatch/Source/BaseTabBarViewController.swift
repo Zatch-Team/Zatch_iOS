@@ -9,12 +9,12 @@ import UIKit
 
 class BaseTabBarViewController: UIViewController {
     
+    let titleView = UIView()
+    
     let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 18, family: .Bold)
         $0.textColor = .black85
     }
-    
-    let titleView = UIView()
     
     lazy var etcBtn = UIButton()
 

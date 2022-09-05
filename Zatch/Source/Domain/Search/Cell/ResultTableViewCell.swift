@@ -67,7 +67,6 @@ class ResultTableViewCell: BaseTableViewCell {
 
     
     func setUpView(){
-        
         baseView.addSubview(productImage)
         baseView.addSubview(productStackView)
         baseView.addSubview(etcInfoText)

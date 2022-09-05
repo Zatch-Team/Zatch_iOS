@@ -18,15 +18,10 @@ class CheckRegisterZatchInfoView: UIView {
     
     let secondWantTitle = UILabel().then{
         $0.text = "2순위"
-        $0.font = UIFont.pretendard(size: 12, family: .Bold)
-        $0.textColor = .zatchDeepYellow
-        $0.textAlignment = .center
     }
+    
     let thirdWantTitle = UILabel().then{
         $0.text = "3순위"
-        $0.font = UIFont.pretendard(size: 12, family: .Bold)
-        $0.textColor = .zatchDeepYellow
-        $0.textAlignment = .center
     }
     
     let firstWantCategory = PaddingLabel().then{
@@ -40,36 +35,23 @@ class CheckRegisterZatchInfoView: UIView {
     
     let secondWantCategory = UILabel().then{
         $0.text = "생활용품"
-        $0.textColor = .black20
-        $0.font = UIFont.pretendard(size: 10, family: .Medium)
     }
     let thirdWantCategory = UILabel().then{
         $0.text = "생활용품"
-        $0.textColor = .black20
-        $0.font = UIFont.pretendard(size: 10, family: .Medium)
     }
     
     let firstWantProduct = UILabel().then{
         $0.text = "맥도날드 해피밀 마이멜로디 장난감"
-        $0.numberOfLines = 2
         $0.textAlignment = .center
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     let secondWantProduct = UILabel().then{
         $0.text = "신상 햄스터 말랑이"
-        $0.numberOfLines = 2
         $0.textAlignment = .left
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     let thirdWantProduct = UILabel().then{
         $0.text = "신상 햄스터 고양이 강아지 모양 말랑이"
-        $0.numberOfLines = 2
         $0.textAlignment = .left
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     let secondWantFrame = UIView()
@@ -94,73 +76,42 @@ class CheckRegisterZatchInfoView: UIView {
 
     let myProductLabel = UILabel().then{
         $0.text = "헤드셋"
-        $0.numberOfLines = 2
         $0.textAlignment = .center
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     let myZatchInfoFrame = UIView()
     
-    let endDateFrame = UIStackView().then{
-        $0.spacing = 10
-        $0.axis = .horizontal
-    }
-    let buyDateFrame = UIStackView().then{
-        $0.spacing = 10
-        $0.axis = .horizontal
-    }
-    let countFrame = UIStackView().then{
-        $0.spacing = 10
-        $0.axis = .horizontal
-    }
-    let isOpenFrame = UIStackView().then{
-        $0.spacing = 10
-        $0.axis = .horizontal
-    }
+    let endDateFrame = UIStackView()
+    let buyDateFrame = UIStackView()
+    let countFrame = UIStackView()
+    let isOpenFrame = UIStackView()
     
     let endDateTitle = UILabel().then{
         $0.text = "유통기한"
-        $0.font = UIFont.pretendard(size: 12, family: .Bold)
-        $0.textColor = .black85
     }
     let endDateLabel = UILabel().then{
         $0.text = "2021/01/28"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     let buyDateTitle = UILabel().then{
         $0.text = "구매 일자"
-        $0.font = UIFont.pretendard(size: 12, family: .Bold)
-        $0.textColor = .black85
     }
     let buyDateLabel = UILabel().then{
         $0.text = "2021/01/28"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     let countTitle = UILabel().then{
         $0.text = "수량"
-        $0.font = UIFont.pretendard(size: 12, family: .Bold)
-        $0.textColor = .black85
     }
     let countLabel = UILabel().then{
         $0.text = "2개"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     let isOpenTitle = UILabel().then{
         $0.text = "개봉 상태"
-        $0.font = UIFont.pretendard(size: 12, family: .Bold)
-        $0.textColor = .black85
     }
     let isOpenLabel = UILabel().then{
         $0.text = "개봉"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
     }
     
     
@@ -169,6 +120,7 @@ class CheckRegisterZatchInfoView: UIView {
         
         setUpView()
         setUpConstraint()
+        setInitProperty()
     }
     
     required init?(coder: NSCoder) {
@@ -364,5 +316,39 @@ class CheckRegisterZatchInfoView: UIView {
             make.height.equalTo(17)
         }
         
+    }
+    
+    func setInitProperty(){
+        [secondWantTitle, thirdWantTitle].forEach{ each in
+            each.font = UIFont.pretendard(size: 12, family: .Bold)
+            each.textColor = .zatchDeepYellow
+            each.textAlignment = .center
+        }
+        
+        [secondWantCategory, thirdWantCategory].forEach{ each in
+            each.textColor = .black20
+            each.font = UIFont.pretendard(size: 10, family: .Medium)
+        }
+        
+        [firstWantProduct, secondWantProduct, thirdWantProduct, myProductLabel].forEach { each in
+            each.numberOfLines = 2
+            each.font = UIFont.pretendard(size: 12, family: .Medium)
+            each.textColor = .black85
+        }
+        
+        [endDateFrame, buyDateFrame, countFrame, isOpenFrame].forEach{ each in
+            each.spacing = 10
+            each.axis = .horizontal
+        }
+        
+        [endDateTitle, buyDateTitle, countTitle, isOpenTitle].forEach{ each in
+            each.font = UIFont.pretendard(size: 12, family: .Bold)
+            each.textColor = .black85
+        }
+        
+        [endDateLabel, buyDateLabel, countLabel, isOpenLabel].forEach{ each in
+            each.font = UIFont.pretendard(size: 12, family: .Medium)
+            each.textColor = .black85
+        }
     }
 }
