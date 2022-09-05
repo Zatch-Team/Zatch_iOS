@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
+		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
+		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
 		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
@@ -135,6 +138,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
+		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
+		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -173,7 +179,7 @@
 		57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A86289F575000056691 /* ResultSearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultSearchViewController+Layout.swift"; sourceTree = "<group>"; };
-		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
+		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/global/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
 		57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Zatch-Bridging-Header.h"; path = "Zatch/Resource/Zatch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchBottomSheet.swift; sourceTree = "<group>"; };
@@ -312,6 +318,8 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
+				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
@@ -343,6 +351,7 @@
 				23C9031228C5CE5A00FB6D3D /* Main */,
 				23C9031128C5CE5600FB6D3D /* Detail */,
 				23C9031028C5CE5000FB6D3D /* Chatting */,
+				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -835,10 +844,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */,
 				57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */,
 				575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */,
 				57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */,
 				575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */,
+				23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
 				57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
@@ -1009,6 +1020,7 @@
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
+				23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
@@ -1250,7 +1262,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/gomin/Documents/Zatch_iOS/Zatch/global/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/global/Resource/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1271,7 +1283,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/gomin/Documents/Zatch_iOS/Zatch/global/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/global/Resource/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
