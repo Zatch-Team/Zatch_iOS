@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DatePicerAlertViewController: PickerAlertViewController {
+class DatePickerAlertViewController: PickerAlertViewController {
     
     //MARK: - Properties
     
@@ -89,7 +89,7 @@ class DatePicerAlertViewController: PickerAlertViewController {
 
 }
 
-extension DatePicerAlertViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+extension DatePickerAlertViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 3

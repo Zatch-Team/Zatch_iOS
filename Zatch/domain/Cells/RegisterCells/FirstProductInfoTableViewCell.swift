@@ -98,7 +98,7 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
             return
         }
         
-        let vc = DatePicerAlertViewController()
+        let vc = DatePickerAlertViewController()
         vc.titleLabel.text = title
         
         vc.pickerHandler = { array in
