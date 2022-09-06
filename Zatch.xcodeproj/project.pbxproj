@@ -46,6 +46,7 @@
 		5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */; };
 		5722461F28C71665009B7C78 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461E28C71665009B7C78 /* UIImageView.swift */; };
 		5722462128C71796009B7C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5722462028C71796009B7C78 /* Assets.xcassets */; };
+		5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -184,6 +185,7 @@
 		5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewModel.swift; sourceTree = "<group>"; };
 		5722461E28C71665009B7C78 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		5722462028C71796009B7C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetNavigationViewController.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -628,6 +630,7 @@
 				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
 				57468A8A289FEB2000056691 /* SheetViewController.swift */,
+				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
 				571AD7112828D9C900390AAD /* Category */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
@@ -1096,6 +1099,7 @@
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */,
+				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,

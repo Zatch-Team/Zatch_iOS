@@ -69,7 +69,12 @@ class MakeMeetingSheetViewController: SheetViewController {
         $0.text = "약속 장소"
     }
     
-    let locationLabel = UILabel()
+    lazy var locationLabel = UILabel().then{
+        $0.isUserInteractionEnabled = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(willLocationSearchSheetOpen))
+        $0.addGestureRecognizer(tapGesture)
+    }
     
     let searchImage = UIImageView().then{
         $0.image = UIImage(named: "search")
@@ -150,5 +155,29 @@ class MakeMeetingSheetViewController: SheetViewController {
         picker.loadViewIfNeeded()
         self.present(picker, animated: false, completion: nil)
     }
+    
+    //TODO: -
+    /*
+     1. 주소 필드 클릭시 주소 검색 bottomSheet가 보여야 함
+     2. 즉, makeMeeting -> searchAddress로 push by navigationController가 이뤄져야 함
+     3. 현재 makeMeeting에는 navigationController는 nil
+     */
+    @objc func willLocationSearchSheetOpen(){
+        print("clicked")
+        let vc = SearchAddressBottomSheet()
+        vc.loadViewIfNeeded()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
+
+//class MakeMeetingNavigation: UINavigationController{
+//    
+//    override init(rootViewController: UIViewController) {
+//        super.init(rootViewController: MakeMeetingSheetViewController())
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//}

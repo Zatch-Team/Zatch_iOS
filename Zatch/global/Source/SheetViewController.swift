@@ -39,6 +39,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         transitioningDelegate = self
         
         self.view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = true
         
         self.view.addSubview(titleLabel)
         
