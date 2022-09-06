@@ -10,6 +10,10 @@
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
 		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
+		23A86A5628C72C7700B073CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5528C72C7700B073CB /* MainView.swift */; };
+		23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */; };
+		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
+		23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */; };
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
 		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
@@ -145,6 +149,10 @@
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		23A86A5528C72C7700B073CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerTableViewCell.swift; sourceTree = "<group>"; };
+		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -301,6 +309,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23A86A5428C72C4C00B073CB /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				23A86A5528C72C7700B073CB /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		23A86A5728C731CB00B073CB /* MainCells */ = {
+			isa = PBXGroup;
+			children = (
+				23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */,
+				23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */,
+				23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */,
+			);
+			path = MainCells;
+			sourceTree = "<group>";
+		};
 		23C9030828C5CDE700FB6D3D /* global */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +352,7 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23A86A5428C72C4C00B073CB /* MainView */,
 				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
 				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
@@ -455,6 +482,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				23A86A5728C731CB00B073CB /* MainCells */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
 				23C9031C28C5CF4000FB6D3D /* DetailCells */,
 				23C9031928C5CEDE00FB6D3D /* RegisterCells */,
@@ -1032,6 +1060,7 @@
 				57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */,
 				5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */,
 				57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */,
+				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
@@ -1050,6 +1079,7 @@
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
+				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
@@ -1089,6 +1119,7 @@
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
+				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
 				5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */,
 				5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */,
@@ -1098,6 +1129,7 @@
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
+				23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,

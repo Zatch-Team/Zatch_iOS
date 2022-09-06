@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class MainViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let view = MainView()
+        self.view.addSubview(view)
+        
+        view.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+        }
+    }
+
+}
