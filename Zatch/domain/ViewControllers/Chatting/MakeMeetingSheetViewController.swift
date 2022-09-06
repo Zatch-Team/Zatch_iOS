@@ -72,8 +72,8 @@ class MakeMeetingSheetViewController: SheetViewController {
     let locationLabel = UILabel()
     
     let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search_silver")
-        $0.tintColor = .black10
+        $0.image = UIImage(named: "search")
+        $0.setImageTintColor(.black10)
     }
     
     let locationBorderLine = UIView().then{

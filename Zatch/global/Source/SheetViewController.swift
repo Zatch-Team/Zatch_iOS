@@ -18,10 +18,8 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         case TownArea = 442
         case Declaration = 128
         case MakeMeeting = 342
-        case AddressSearch = 368
+        case AddressSearchResult = 368
     }
-    
-    static let DEVICE_HEIGHT = UIScreen.main.bounds.size.height
     
     var sheetType: BottomSheetSize!
     
@@ -54,7 +52,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
         
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue * SheetViewController.DEVICE_HEIGHT / 718)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue * Const.deviceHeight / 718)
     
         controller.detents = [detent]
         controller.preferredCornerRadius = 28
