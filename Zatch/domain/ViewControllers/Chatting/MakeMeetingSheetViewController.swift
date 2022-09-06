@@ -163,21 +163,8 @@ class MakeMeetingSheetViewController: SheetViewController {
      3. 현재 makeMeeting에는 navigationController는 nil
      */
     @objc func willLocationSearchSheetOpen(){
-        print("clicked")
         let vc = SearchAddressBottomSheet()
-        vc.loadViewIfNeeded()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
-
-//class MakeMeetingNavigation: UINavigationController{
-//    
-//    override init(rootViewController: UIViewController) {
-//        super.init(rootViewController: MakeMeetingSheetViewController())
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}

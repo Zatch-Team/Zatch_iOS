@@ -47,6 +47,10 @@
 		5722461F28C71665009B7C78 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461E28C71665009B7C78 /* UIImageView.swift */; };
 		5722462128C71796009B7C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5722462028C71796009B7C78 /* Assets.xcassets */; };
 		5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */; };
+		5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462628C778E0009B7C78 /* SearchAddressResultView.swift */; };
+		5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */; };
+		5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */; };
+		5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -186,6 +190,10 @@
 		5722461E28C71665009B7C78 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		5722462028C71796009B7C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetNavigationViewController.swift; sourceTree = "<group>"; };
+		5722462628C778E0009B7C78 /* SearchAddressResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResultView.swift; sourceTree = "<group>"; };
+		5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResultBottomSheet.swift; sourceTree = "<group>"; };
+		5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResultTableViewCell.swift; sourceTree = "<group>"; };
+		5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResusltViewModel.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -422,6 +430,7 @@
 				5795770328BB1AB400237A12 /* MemberDeclarationBottomSheet.swift */,
 				5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */,
 				5722461728C6C822009B7C78 /* SearchAddressBottomSheet.swift */,
+				5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -477,6 +486,7 @@
 				57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */,
 				57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */,
 				5722461A28C6C89A009B7C78 /* SearchAddressView.swift */,
+				5722462628C778E0009B7C78 /* SearchAddressResultView.swift */,
 			);
 			path = ChattingView;
 			sourceTree = "<group>";
@@ -505,6 +515,7 @@
 				5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */,
 				5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */,
 				5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */,
+				5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */,
 			);
 			path = ChattingCells;
 			sourceTree = "<group>";
@@ -619,6 +630,7 @@
 			isa = PBXGroup;
 			children = (
 				5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */,
+				5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */,
 			);
 			path = ChattingViewModels;
 			sourceTree = "<group>";
@@ -1032,6 +1044,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
+				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */,
 				57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
@@ -1051,6 +1064,7 @@
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
+				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
@@ -1059,6 +1073,7 @@
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
+				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */,
 				5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */,
@@ -1096,6 +1111,7 @@
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
+				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */,
