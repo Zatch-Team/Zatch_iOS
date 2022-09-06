@@ -8,14 +8,17 @@
 import UIKit
 
 class MainView: UIView {
+    var myLocation = "양재동"
     // Navigation Views
-    let navigationView = UIView().then{
-        $0.backgroundColor = .white
+    let navigationView = UIView()
+    let stackView = UIStackView().then{
+        $0.isUserInteractionEnabled = true
     }
     let locationLabel = UILabel().then{
         $0.text = "양재동" //temp
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
         $0.textColor = UIColor(named: "Zatch-Yellow")
+        $0.isUserInteractionEnabled = true
     }
     let arrowButton = UIButton().then{
         $0.setImage(UIImage(named: "arrow_down"), for: .normal)
@@ -54,13 +57,13 @@ class MainView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     func setUpView() {
         addSubview(navigationView)
         addSubview(mainTableView)
         
-        navigationView.addSubview(locationLabel)
-        navigationView.addSubview(arrowButton)
+        navigationView.addSubview(stackView)
+        stackView.addSubview(locationLabel)
+        stackView.addSubview(arrowButton)
         navigationView.addSubview(notiButton)
         navigationView.addSubview(searchButton)
     }
@@ -77,6 +80,10 @@ class MainView: UIView {
             make.top.equalToSuperview().offset(44)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(56)
+        }
+        stackView.snp.makeConstraints{ make in
+            make.centerY.equalToSuperview()
+            make.leading.top.bottom.equalToSuperview()
         }
         locationLabel.snp.makeConstraints{ make in
             make.width.equalTo(53)

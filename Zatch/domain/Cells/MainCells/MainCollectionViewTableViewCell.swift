@@ -70,7 +70,7 @@ class MainCollectionViewTableViewCell: UITableViewCell {
         }
     }
 }
-// MARK: 메인페이지의 콜렉션뷰를 갖고있는 테이블뷰의 CollectionView delegate
+// MARK: - 메인페이지의 콜렉션뷰를 갖고있는 테이블뷰의 CollectionView delegate
 extension MainCollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7

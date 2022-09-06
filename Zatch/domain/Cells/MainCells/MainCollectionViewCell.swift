@@ -57,9 +57,8 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.setImage(UIImage(named: "heart_silver"), for: .normal)
         $0.setImage(UIImage(named: "filledHeart"), for: .selected)
     }
-    // MARK: - Properties
+    // MARK: Properties
     private let mainViewModel: MainViewModel = MainViewModel()
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -121,7 +120,6 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
     }
 }
-// MARK: - Observable
 extension MainCollectionViewCell {
     // MARK: - Actions
     @objc func heartBtnDidTap(_ sender: UIButton) {
