@@ -57,12 +57,17 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.setImage(UIImage(named: "heart_silver"), for: .normal)
         $0.setImage(UIImage(named: "filledHeart"), for: .selected)
     }
+    // MARK: - Properties
+    private let mainViewModel: MainViewModel = MainViewModel()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
         setUpView()
         setUpConstraint()
+        
+        heart.addTarget(self, action: #selector(heartBtnDidTap), for: .touchUpInside)
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -114,5 +119,26 @@ class MainCollectionViewCell: UICollectionViewCell {
             make.width.height.equalTo(24)
             make.bottom.trailing.top.equalToSuperview()
         }
+    }
+}
+// MARK: - Observable
+extension MainCollectionViewCell {
+    // MARK: - Actions
+    @objc func heartBtnDidTap(_ sender: UIButton) {
+        let state = sender.state
+        mainViewModel.heartButtonDidTap(state)
+    }
+    //MARK: - Methods
+    private func bind() {
+        mainViewModel.heartState.bind { heartState in
+            guard let state = heartState else {return}
+            switch state.rawValue {
+            case 4:
+                self.heart.isSelected = true
+            default:
+                self.heart.isSelected = false
+            }
+        }
+
     }
 }
