@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
 		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
@@ -146,6 +147,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 				571AD7112828D9C900390AAD /* Category */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1044,6 +1047,7 @@
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
+				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,

@@ -9,7 +9,9 @@ import UIKit
 
 class MainView: UIView {
     // Navigation Views
-    let navigationView = UIView()
+    let navigationView = UIView().then{
+        $0.backgroundColor = .white
+    }
     let locationLabel = UILabel().then{
         $0.text = "양재동" //temp
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
