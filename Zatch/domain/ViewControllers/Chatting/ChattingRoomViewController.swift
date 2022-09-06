@@ -142,8 +142,8 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     @objc func appointmentBtnDidClicked(){
-//        let bottomSheet = MakeMeetingSheetViewController()
-        let bottomSheet = SearchAddressBottomSheet()
+        let bottomSheet = SheetNavigationViewController(rootViewController: MakeMeetingSheetViewController())
+        
         bottomSheet.loadViewIfNeeded()
         self.present(bottomSheet, animated: true, completion: nil)
     }
