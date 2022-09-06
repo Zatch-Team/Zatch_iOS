@@ -14,9 +14,9 @@ class TabBarViewController: UITabBarController {
         
        // 인스턴스화
         let mainVC = MainViewController()
-        let zatchVC = MainViewController()
+        let zatchVC = MyZatchViewController()
         let chatVC = ChattingListViewController()
-        let profileVC = ChattingListViewController()
+        let profileVC = ProfileViewController()
         
         mainVC.tabBarItem.image = UIImage.init(named: "Home")
         zatchVC.tabBarItem.image = UIImage.init(named: "ZatchIcon")

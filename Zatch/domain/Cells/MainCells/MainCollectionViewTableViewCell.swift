@@ -64,7 +64,7 @@ class MainCollectionViewTableViewCell: UITableViewCell {
         collectionView.snp.makeConstraints { make in
             make.leading.equalTo(subLabel.snp.leading)
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-12)
+            make.bottom.equalToSuperview()
             make.top.equalTo(subLabel.snp.bottom).offset(16)
         }
     }

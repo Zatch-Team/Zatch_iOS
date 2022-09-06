@@ -89,7 +89,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
         time.snp.makeConstraints { make in
             make.centerY.equalTo(location)
-            make.leading.equalTo(location.snp.trailing)
+            make.leading.equalTo(location.snp.trailing).offset(4)
         }
         stackView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
