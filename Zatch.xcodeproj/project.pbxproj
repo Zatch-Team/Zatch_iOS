@@ -40,6 +40,8 @@
 		5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461728C6C822009B7C78 /* SearchAddressBottomSheet.swift */; };
 		5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461A28C6C89A009B7C78 /* SearchAddressView.swift */; };
 		5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */; };
+		5722461F28C71665009B7C78 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461E28C71665009B7C78 /* UIImageView.swift */; };
+		5722462128C71796009B7C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5722462028C71796009B7C78 /* Assets.xcassets */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
@@ -72,7 +74,6 @@
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
 		575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */; };
 		575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70227E0CBC6008D5B3C /* Main.storyboard */; };
-		575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70527E0CBC8008D5B3C /* Assets.xcassets */; };
 		575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */; };
 		575BF71427E0CBC8008D5B3C /* ZatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71327E0CBC8008D5B3C /* ZatchTests.swift */; };
 		575BF71F27E0CBC8008D5B3C /* ZatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */; };
@@ -173,6 +174,8 @@
 		5722461728C6C822009B7C78 /* SearchAddressBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressBottomSheet.swift; sourceTree = "<group>"; };
 		5722461A28C6C89A009B7C78 /* SearchAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressView.swift; sourceTree = "<group>"; };
 		5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewModel.swift; sourceTree = "<group>"; };
+		5722461E28C71665009B7C78 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		5722462028C71796009B7C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -208,7 +211,6 @@
 		575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		575BF70327E0CBC6008D5B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		575BF70527E0CBC8008D5B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		575BF70827E0CBC8008D5B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		575BF70A27E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575BF70F27E0CBC8008D5B3C /* ZatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -632,6 +634,7 @@
 				57468A9A28A1098300056691 /* UITextField.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
 				577A01B528A496D1004B2575 /* UITextView.swift */,
+				5722461E28C71665009B7C78 /* UIImageView.swift */,
 			);
 			path = extenstion;
 			sourceTree = "<group>";
@@ -664,8 +667,8 @@
 				23C9030F28C5CE3600FB6D3D /* AppDelegate */,
 				23C9030828C5CDE700FB6D3D /* global */,
 				23C9030928C5CDEF00FB6D3D /* domain */,
-				575BF70527E0CBC8008D5B3C /* Assets.xcassets */,
 				575BF70A27E0CBC8008D5B3C /* Info.plist */,
+				5722462028C71796009B7C78 /* Assets.xcassets */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -865,10 +868,10 @@
 				57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */,
 				575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */,
 				57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */,
-				575BF70627E0CBC8008D5B3C /* Assets.xcassets in Resources */,
 				23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
 				57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */,
+				5722462128C71796009B7C78 /* Assets.xcassets in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1079,6 +1082,7 @@
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
+				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
