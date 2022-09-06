@@ -28,10 +28,8 @@ class MainView: UIView {
         $0.isUserInteractionEnabled = true
     }
     // TableView
-//    var mainTableView = UITableView().then{
-//        $0.backgroundColor = .black
-//    }
     var mainTableView : UITableView!
+    
     // MARK: - Functions
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,6 +43,7 @@ class MainView: UIView {
         // autoHeight
         mainTableView.rowHeight = UITableView.automaticDimension
         mainTableView.estimatedRowHeight = UITableView.automaticDimension
+        mainTableView.showsVerticalScrollIndicator = false
         mainTableView.separatorStyle = .none
         
         setUpView()
@@ -67,10 +66,8 @@ class MainView: UIView {
         setNavigationViewConstraint()
         
         mainTableView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
             make.top.equalTo(navigationView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(600)
         }
     }
     func setNavigationViewConstraint() {

@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
         self.view.addSubview(view)
         
         view.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
 
