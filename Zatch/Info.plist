@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Please allow to use camera</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow to use gallery</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>pretendard_bold.ttf</string>
-		<string>pretendard_medium.ttf</string>
-		<string>pretendard_regular.ttf</string>
-		<string>rixyeoljeongdo_pro_regular.otf</string>
-	</array>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -31,8 +18,21 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow to use camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow to use gallery</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>pretendard_bold.ttf</string>
+		<string>pretendard_medium.ttf</string>
+		<string>pretendard_regular.ttf</string>
+		<string>rixyeoljeongdo_pro_regular.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

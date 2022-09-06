@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
 		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
 		23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */; };
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
+		23CB3CF528C7D38500C42858 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* ProfileViewController.swift */; };
+		23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */; };
 		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
@@ -151,6 +154,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		23CB3CF428C7D38500C42858 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchViewController.swift; sourceTree = "<group>"; };
 		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -392,6 +398,8 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				23CB3CEF28C7D35600C42858 /* Profile */,
+				23CB3CEE28C7D34E00C42858 /* MyZatch */,
 				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23C9031428C5CE6400FB6D3D /* Register */,
 				23C9031328C5CE6000FB6D3D /* Search */,
@@ -592,6 +600,22 @@
 			path = SearchCells;
 			sourceTree = "<group>";
 		};
+		23CB3CEE28C7D34E00C42858 /* MyZatch */ = {
+			isa = PBXGroup;
+			children = (
+				23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */,
+			);
+			path = MyZatch;
+			sourceTree = "<group>";
+		};
+		23CB3CEF28C7D35600C42858 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				23CB3CF428C7D38500C42858 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		23CFCBC801D90B1A2F9BB36B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +671,7 @@
 				571AD7112828D9C900390AAD /* Category */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1060,6 +1085,8 @@
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
+				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
+				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
@@ -1090,6 +1117,7 @@
 				5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
+				23CB3CF528C7D38500C42858 /* ProfileViewController.swift in Sources */,
 				23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,

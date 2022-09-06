@@ -23,13 +23,17 @@ class ChattingListViewController: BaseTabBarViewController, SelectedTableViewCel
         
         super.viewDidLoad()
 
+        self.tabBarController?.tabBar.tintColor = .systemOrange
+        
         setInitSetting()
         setUpView()
         setUpConstraint()
         
 //        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.tintColor = .systemOrange
+    }
     //MARK: - Action
     
     @objc
