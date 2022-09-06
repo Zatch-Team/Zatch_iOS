@@ -18,7 +18,6 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         case TownArea = 442
         case Declaration = 128
         case MakeMeeting = 342
-        case AddressSearchResult = 368
     }
     
     var sheetType: BottomSheetSize!
