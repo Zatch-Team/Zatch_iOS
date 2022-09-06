@@ -18,6 +18,8 @@
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
 		23CB3CF528C7D38500C42858 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* ProfileViewController.swift */; };
 		23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */; };
+		23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFA28C7D88900C42858 /* Observable.swift */; };
+		23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */; };
 		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
@@ -165,6 +167,8 @@
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		23CB3CF428C7D38500C42858 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchViewController.swift; sourceTree = "<group>"; };
+		23CB3CFA28C7D88900C42858 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 		23C9030828C5CDE700FB6D3D /* global */ = {
 			isa = PBXGroup;
 			children = (
+				23CB3CF928C7D87D00C42858 /* Observable */,
 				57468A6C289CFB3F00056691 /* Source */,
 				57802394281D21710085457D /* Resource */,
 			);
@@ -390,6 +395,7 @@
 		23C9030C28C5CE2500FB6D3D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				23CB3CF828C7D85500C42858 /* MainViewModels */,
 				5722461928C6C84D009B7C78 /* ChattingViewModels */,
 			);
 			path = ViewModels;
@@ -614,6 +620,22 @@
 				23CB3CF428C7D38500C42858 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		23CB3CF828C7D85500C42858 /* MainViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */,
+			);
+			path = MainViewModels;
+			sourceTree = "<group>";
+		};
+		23CB3CF928C7D87D00C42858 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				23CB3CFA28C7D88900C42858 /* Observable.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 		23CFCBC801D90B1A2F9BB36B /* Pods */ = {
@@ -1144,6 +1166,7 @@
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
+				23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,
@@ -1157,6 +1180,7 @@
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
+				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
