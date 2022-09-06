@@ -10,22 +10,26 @@ import UIKit
 class MainCollectionViewCell: UICollectionViewCell {
     static var identifier = "MainCollectionViewCell"
     
+    // 아이템 이미지
     let image = UIImageView().then{
         $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 8
     }
+    // 아이템 이름
     let title = UILabel().then{
         $0.text = "title"
         $0.font = UIFont.pretendard(size: 13, family: .Bold)
         $0.numberOfLines = 0
         $0.textColor = .black
     }
+    // 위치
     let location = UILabel().then{
         $0.text = "location"
         $0.font = UIFont.pretendard(size: 10, family: .Bold)
         $0.numberOfLines = 0
         $0.textColor = .lightGray
     }
+    // 시간 (몇 시간 전)
     let time = UILabel().then{
         $0.text = "time"
         $0.font = UIFont.pretendard(size: 10, family: .Bold)
@@ -33,21 +37,25 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.textColor = .lightGray
     }
     let stackView = UIStackView()
-    // 교환을 원하는 재치
+    // '교환을 원하는 재치' (라벨)
     let label = UILabel().then{
         $0.text = "교환을 원하는 재치"
         $0.font = UIFont.pretendard(size: 10, family: .Bold)
         $0.numberOfLines = 0
         $0.textColor = .black
     }
+    // 교환을 원하는 아이템
     let zatchItem = UILabel().then{
         $0.text = "Item"
         $0.font = UIFont.pretendard(size: 13, family: .Bold)
         $0.numberOfLines = 0
         $0.textColor = UIColor(named: "Zatch-Purple")
     }
+    // 하트
     let heart = UIButton().then{
+        // state별로 이미지 설정
         $0.setImage(UIImage(named: "heart_silver"), for: .normal)
+        $0.setImage(UIImage(named: "filledHeart"), for: .selected)
     }
     
     override init(frame: CGRect) {
