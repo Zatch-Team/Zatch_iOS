@@ -13,6 +13,9 @@ target 'Zatch' do
 
   pod 'SideMenu', '~> 6.0'
 
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
   target 'ZatchTests' do
     inherit! :search_paths
     # Pods for testing
