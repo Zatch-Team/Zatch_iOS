@@ -45,6 +45,9 @@ class SearchAddressResultTableViewCell: BaseTableViewCell {
 extension SearchAddressResultTableViewCell{
     
     func setUpView(){
+        
+        super.selectedBackgroundView?.backgroundColor = .black20
+        
         self.baseView.addSubview(addressFrame)
         
         self.addressFrame.addArrangedSubview(locationLabel)
@@ -62,7 +65,5 @@ extension SearchAddressResultTableViewCell{
             make.trailing.equalToSuperview().offset(-15)
             make.bottom.equalToSuperview().offset(-12)
         }
-        
-        
     }
 }

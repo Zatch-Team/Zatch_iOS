@@ -70,6 +70,8 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
     
     lazy var locationLabel = UILabel().then{
+        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.textColor = .black
         $0.isUserInteractionEnabled = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(willLocationSearchSheetOpen))
@@ -157,8 +159,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
     
     @objc func willLocationSearchSheetOpen(){
-//        let vc = SearchAddressBottomSheet()
-        let vc = SearchAddressResultBottomSheet()
+        let vc = SearchAddressBottomSheet()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
