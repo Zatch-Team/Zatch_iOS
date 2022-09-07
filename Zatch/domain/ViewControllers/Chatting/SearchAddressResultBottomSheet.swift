@@ -47,7 +47,7 @@ extension SearchAddressResultBottomSheet: UITableViewDelegate, UITableViewDataSo
         
         self.navigationController?.popToRootViewController(animated: true, completion: {
             guard let cell = tableView.cellForRow(at: indexPath) as? SearchAddressResultTableViewCell else { return }
-            root.locationLabel.text = cell.locationLabel.text
+            root.mainView.locationLabel.text = cell.locationLabel.text
         })
     }
     
@@ -71,16 +71,4 @@ extension SearchAddressResultBottomSheet: UITextFieldDelegate{
         vc.mainView.searchTextField.text = location
         self.navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-
-extension UINavigationController{
-    
-    func popToRootViewController(animated: Bool = true, completion: @escaping () -> Void) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
-        popToRootViewController(animated: animated)
-        CATransaction.commit()
-    }
-    
 }
