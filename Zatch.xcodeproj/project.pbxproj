@@ -20,6 +20,7 @@
 		23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */; };
 		23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFA28C7D88900C42858 /* Observable.swift */; };
 		23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */; };
+		23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */; };
 		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
@@ -169,6 +170,7 @@
 		23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchViewController.swift; sourceTree = "<group>"; };
 		23CB3CFA28C7D88900C42858 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationBottomSheet.swift; sourceTree = "<group>"; };
 		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				23A86A5528C72C7700B073CB /* MainView.swift */,
+				23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -1137,6 +1140,7 @@
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */,
+				23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* ProfileViewController.swift in Sources */,
