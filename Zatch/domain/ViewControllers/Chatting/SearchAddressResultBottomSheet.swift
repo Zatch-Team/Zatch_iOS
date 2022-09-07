@@ -8,22 +8,23 @@
 import UIKit
 
 class SearchAddressResultBottomSheet: SheetViewController {
+    
+    let mainView = SearchAddressResultView()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        sheetType = .MakeMeeting
+        titleLabel.text = "주소검색"
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(16)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
