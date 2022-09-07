@@ -47,7 +47,7 @@ extension SearchAddressResultBottomSheet: UITableViewDelegate, UITableViewDataSo
         
         self.navigationController?.popToRootViewController(animated: true, completion: {
             guard let cell = tableView.cellForRow(at: indexPath) as? SearchAddressResultTableViewCell else { return }
-            root.locationLabel.text = cell.locationLabel.text
+            root.mainView.locationLabel.text = cell.locationLabel.text
         })
     }
     
