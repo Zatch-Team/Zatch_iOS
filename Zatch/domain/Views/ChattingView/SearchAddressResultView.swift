@@ -63,24 +63,10 @@ class SearchAddressResultView: UIView {
     
 }
 
-extension SearchAddressResultView: UITableViewDelegate, UITableViewDataSource{
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        return SearchAddressResultTableViewCell()
-    }
-}
-
 extension SearchAddressResultView{
     
     func setInitSetting(){
         tableView = UITableView().then{
-            $0.delegate = self
-            $0.dataSource = self
-            
             $0.separatorStyle = .none
             
             $0.register(SearchAddressResultTableViewCell.self, forCellReuseIdentifier: SearchAddressResultTableViewCell.cellIdentifier)
