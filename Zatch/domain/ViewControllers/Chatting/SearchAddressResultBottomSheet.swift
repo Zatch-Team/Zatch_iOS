@@ -72,15 +72,3 @@ extension SearchAddressResultBottomSheet: UITextFieldDelegate{
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-
-extension UINavigationController{
-    
-    func popToRootViewController(animated: Bool = true, completion: @escaping () -> Void) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
-        popToRootViewController(animated: animated)
-        CATransaction.commit()
-    }
-    
-}
