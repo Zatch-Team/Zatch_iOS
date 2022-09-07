@@ -137,6 +137,5 @@ extension MainCollectionViewCell {
                 self.heart.isSelected = false
             }
         }
-
     }
 }

@@ -8,27 +8,27 @@
 import UIKit
 
 class MainView: UIView {
-    var myLocation = "양재동"
     // Navigation Views
     let navigationView = UIView()
-    let stackView = UIStackView().then{
+    lazy var stackView = UIStackView().then{
         $0.isUserInteractionEnabled = true
+        $0.spacing = 6
+        $0.axis = .horizontal
     }
-    let locationLabel = UILabel().then{
+    lazy var locationLabel = UILabel().then{
         $0.text = "양재동" //temp
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
-        $0.textColor = UIColor(named: "Zatch-Yellow")
+        $0.textColor = .zatchDeepYellow
         $0.isUserInteractionEnabled = true
     }
     let arrowButton = UIButton().then{
         $0.setImage(UIImage(named: "arrow_down"), for: .normal)
-        $0.isUserInteractionEnabled = true
+        $0.setImage(UIImage(named: "arrow_up"), for: .selected)
     }
-    let searchButton = UIButton().then{
+    lazy var searchButton = UIButton().then{
         $0.setImage(UIImage(named: "search"), for: .normal)
-        $0.isUserInteractionEnabled = true
     }
-    let notiButton = UIButton().then{
+    lazy var notiButton = UIButton().then{
         $0.setImage(UIImage(named: "bell"), for: .normal)
         $0.isUserInteractionEnabled = true
     }
@@ -62,8 +62,8 @@ class MainView: UIView {
         addSubview(mainTableView)
         
         navigationView.addSubview(stackView)
-        stackView.addSubview(locationLabel)
-        stackView.addSubview(arrowButton)
+        stackView.addArrangedSubview(locationLabel)
+        stackView.addArrangedSubview(arrowButton)
         navigationView.addSubview(notiButton)
         navigationView.addSubview(searchButton)
     }
@@ -83,18 +83,14 @@ class MainView: UIView {
         }
         stackView.snp.makeConstraints{ make in
             make.centerY.equalToSuperview()
-            make.leading.top.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(24)
+            make.top.bottom.equalToSuperview()
         }
         locationLabel.snp.makeConstraints{ make in
-            make.width.equalTo(53)
             make.height.equalTo(24)
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(24)
         }
         arrowButton.snp.makeConstraints{ make in
             make.width.height.equalTo(24)
-            make.centerY.equalToSuperview()
-            make.leading.equalTo(locationLabel.snp.trailing).offset(6)
         }
         notiButton.snp.makeConstraints{ make in
             make.width.height.equalTo(24)

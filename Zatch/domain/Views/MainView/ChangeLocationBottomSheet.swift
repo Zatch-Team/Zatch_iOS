@@ -63,6 +63,7 @@ extension ChangeLocationBottonSheet: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idx = indexPath.item
         self.viewModel.locationDidTap(locationData[idx])
+        self.mainView.arrowButton.isSelected = false
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -73,11 +74,11 @@ extension ChangeLocationBottonSheet {
         self.viewModel.myLocation.bind { myLocation in
             print("location changed!", myLocation)
             self.myLocation = myLocation
-            if self.myLocation != nil {self.mainView.locationLabel.text = self.myLocation}
+            if self.myLocation != nil {
+                self.mainView.locationLabel.text = self.myLocation
+            }
             else {self.mainView.locationLabel.text = "양재동"}
             self.dismiss(animated: true)
-            self.mainView.arrowButton.setImage(UIImage(named: "arrow_down"), for: .normal)
-            self.locationTableView.reloadData()
         }
     }
 }

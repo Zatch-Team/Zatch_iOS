@@ -11,38 +11,36 @@ class MainViewController: UIViewController {
 
     var locationChangeBottomSheet: ChangeLocationBottonSheet?
     var viewModel: MainViewModel!
-    var mainView: MainView!
+    let mainView: MainView = MainView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
         self.tabBarController?.tabBar.tintColor = .zatchPurple
-        
-        mainView = MainView()
+        self.navigationController?.isNavigationBarHidden = true
+
         self.view.addSubview(mainView)
-        
         mainView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
         
-        viewModel = MainViewModel()
-        
         self.mainView.isUserInteractionEnabled = true
-        self.mainView.arrowButton.addTarget(self, action: #selector(arrowTapped(_:)), for: .touchUpInside)
-        setBottomSheet()    //임시로
+        let tap = UITapGestureRecognizer(target: self, action:  #selector(arrowTapped(_:)))
+        self.mainView.stackView.addGestureRecognizer(tap)
+        self.mainView.arrowButton.addTarget(self, action:  #selector(buttonTapped(_:)), for: .touchUpInside)
+        
+        viewModel = MainViewModel()
     }
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.tintColor = .zatchPurple
     }
     // MARK: - Actions
-    @objc func arrowTapped(_ sender: AnyObject?) {
-        print("location clicked!")
-        setBottomSheet()
-    }
+    @objc func arrowTapped(_ sender: UIButton) {setBottomSheet()}
+    @objc func buttonTapped(_ sender: UIButton) {setBottomSheet()}
     func setBottomSheet() {
         // 화살표 방향 안 바뀜
-        self.mainView.arrowButton.setImage(UIImage(named: ""), for: .normal)
+        self.mainView.arrowButton.isSelected = true
         self.mainView.layoutIfNeeded()
         
         locationChangeBottomSheet = ChangeLocationBottonSheet()
