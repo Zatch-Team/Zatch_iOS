@@ -156,14 +156,9 @@ class MakeMeetingSheetViewController: SheetViewController {
         self.present(picker, animated: false, completion: nil)
     }
     
-    //TODO: -
-    /*
-     1. 주소 필드 클릭시 주소 검색 bottomSheet가 보여야 함
-     2. 즉, makeMeeting -> searchAddress로 push by navigationController가 이뤄져야 함
-     3. 현재 makeMeeting에는 navigationController는 nil
-     */
     @objc func willLocationSearchSheetOpen(){
-        let vc = SearchAddressBottomSheet()
+//        let vc = SearchAddressBottomSheet()
+        let vc = SearchAddressResultBottomSheet()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
