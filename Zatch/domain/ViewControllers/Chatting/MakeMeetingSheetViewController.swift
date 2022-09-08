@@ -17,7 +17,7 @@ class MakeMeetingSheetViewController: SheetViewController {
         
         super.viewDidLoad()
         
-        sheetType = .MakeMeeting
+//        sheetType = .MakeMeeting
         super.titleLabel.removeFromSuperview()
         
         self.view.addSubview(mainView)
