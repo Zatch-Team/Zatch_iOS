@@ -25,10 +25,6 @@
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
-		57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
-		57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
-		57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
-		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
 		571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */; };
 		571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */; };
 		571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */; };
@@ -134,6 +130,10 @@
 		57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */; };
 		57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */; };
 		57C585042821F2A70078FAFF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585032821F2A70078FAFF /* ServiceType.swift */; };
+		57D6D77E28CB5AD200F805B7 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
+		57D6D77F28CB5AD500F805B7 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
+		57D6D78028CB5ADA00F805B7 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
+		57D6D78128CB5ADD00F805B7 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
@@ -259,7 +259,6 @@
 		575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		575BF70327E0CBC6008D5B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575BF70827E0CBC8008D5B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		575BF70A27E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575BF70F27E0CBC8008D5B3C /* ZatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF71327E0CBC8008D5B3C /* ZatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTests.swift; sourceTree = "<group>"; };
 		575BF71527E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -300,6 +299,7 @@
 		57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMemberTableViewCell.swift; sourceTree = "<group>"; };
 		57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		57DD37F328CB40E500F4B9A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zatch/Info.plist; sourceTree = SOURCE_ROOT; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -784,8 +784,8 @@
 				23C9030F28C5CE3600FB6D3D /* AppDelegate */,
 				23C9030828C5CDE700FB6D3D /* global */,
 				23C9030928C5CDEF00FB6D3D /* domain */,
-				575BF70A27E0CBC8008D5B3C /* Info.plist */,
 				5722462028C71796009B7C78 /* Assets.xcassets */,
+				57DD37F328CB40E500F4B9A0 /* Info.plist */,
 				5722464428CB0F80009B7C78 /* AppKey.xcconfig */,
 			);
 			path = Zatch;
@@ -983,14 +983,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D6D78028CB5ADA00F805B7 /* pretendard_regular.ttf in Resources */,
 				23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */,
-				57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */,
 				575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */,
-				57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */,
+				57D6D78128CB5ADD00F805B7 /* rixyeoljeongdo_pro_regular.otf in Resources */,
 				23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */,
-				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
-				57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */,
 				5722462128C71796009B7C78 /* Assets.xcassets in Resources */,
+				57D6D77E28CB5AD200F805B7 /* pretendard_bold.ttf in Resources */,
+				57D6D77F28CB5AD500F805B7 /* pretendard_medium.ttf in Resources */,
 				575BF70427E0CBC6008D5B3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1480,7 +1480,7 @@
 		};
 		575BF72827E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5722464428CB0F80009B7C78 /* AppKey.xcconfig */;
+			baseConfigurationReference = E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
