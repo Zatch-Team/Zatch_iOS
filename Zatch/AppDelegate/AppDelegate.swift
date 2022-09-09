@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = DetailViewController()
         window?.makeKeyAndVisible()
+        
+        let apiKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_KEY") as! String
+//        else { return }
+        
+        print("?",apiKey)
+        KakaoSDK.initSDK(appKey: "${\(apiKey)}")
+        
         return true
     }
 

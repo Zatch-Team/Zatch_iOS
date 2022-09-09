@@ -222,6 +222,7 @@
 		5722463C28C8A493009B7C78 /* ModifyMeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetView.swift; sourceTree = "<group>"; };
 		5722463E28C8ECB4009B7C78 /* UINavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerViewController.swift; sourceTree = "<group>"; };
 		5722464028C9B65A009B7C78 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
+		5722464428CB0F80009B7C78 /* AppKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -314,8 +315,8 @@
 		9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.release.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -785,6 +786,7 @@
 				23C9030928C5CDEF00FB6D3D /* domain */,
 				575BF70A27E0CBC8008D5B3C /* Info.plist */,
 				5722462028C71796009B7C78 /* Assets.xcassets */,
+				5722464428CB0F80009B7C78 /* AppKey.xcconfig */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -1413,7 +1415,7 @@
 		};
 		575BF72427E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */;
+			baseConfigurationReference = 5722464428CB0F80009B7C78 /* AppKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1434,7 +1436,7 @@
 		};
 		575BF72527E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */;
+			baseConfigurationReference = 5722464428CB0F80009B7C78 /* AppKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1478,7 +1480,7 @@
 		};
 		575BF72827E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */;
+			baseConfigurationReference = 5722464428CB0F80009B7C78 /* AppKey.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
