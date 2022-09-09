@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let apiKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_KEY") as! String
-//        else { return }
         
         print("?",apiKey)
         KakaoSDK.initSDK(appKey: "${\(apiKey)}")
