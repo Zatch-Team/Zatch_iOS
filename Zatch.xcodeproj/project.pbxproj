@@ -1457,7 +1457,7 @@
 		};
 		575BF72727E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */;
+			baseConfigurationReference = D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
