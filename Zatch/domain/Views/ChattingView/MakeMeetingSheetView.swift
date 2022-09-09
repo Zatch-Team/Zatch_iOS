@@ -50,7 +50,7 @@ class MakeMeetingSheetView: MeetingSheetView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        self.makeMeetingBtn.setTitle("약속잡기", for: .normal)
+        self.registerBtn.setTitle("약속잡기", for: .normal)
         
         setUpView()
         setUpConstraint()
