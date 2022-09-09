@@ -65,7 +65,8 @@ extension SearchAddressBottomSheet: UITextFieldDelegate{
     
     func moveSearchAddressResultSheet(_ location: String){
         let vc = SearchAddressResultBottomSheet()
-        vc.mainView.searchTextField.text = location
+        vc.requestSearchResult(query: location)
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

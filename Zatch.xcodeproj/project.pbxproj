@@ -134,6 +134,8 @@
 		57D6D77F28CB5AD500F805B7 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
 		57D6D78028CB5ADA00F805B7 /* pretendard_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067876281C2F3900F48342 /* pretendard_regular.ttf */; };
 		57D6D78128CB5ADD00F805B7 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
+		57D6D78528CB95C000F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78428CB95C000F805B7 /* KakaoLocalDataManager.swift */; };
+		57D6D78728CB966C00F805B7 /* KakaoLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78628CB966C00F805B7 /* KakaoLocalModel.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
@@ -299,6 +301,8 @@
 		57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMemberTableViewCell.swift; sourceTree = "<group>"; };
 		57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		57D6D78428CB95C000F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
+		57D6D78628CB966C00F805B7 /* KakaoLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalModel.swift; sourceTree = "<group>"; };
 		57DD37F328CB40E500F4B9A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zatch/Info.plist; sourceTree = SOURCE_ROOT; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 		23C9030E28C5CE2E00FB6D3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57D6D78228CB959500F805B7 /* Chatting */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -786,7 +791,6 @@
 				23C9030928C5CDEF00FB6D3D /* domain */,
 				5722462028C71796009B7C78 /* Assets.xcassets */,
 				57DD37F328CB40E500F4B9A0 /* Info.plist */,
-				5722464428CB0F80009B7C78 /* AppKey.xcconfig */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -828,6 +832,7 @@
 		57802394281D21710085457D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5722464428CB0F80009B7C78 /* AppKey.xcconfig */,
 				57468A9928A1096600056691 /* extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* CommonSource */,
 				57067862281C13D500F48342 /* Font */,
@@ -837,6 +842,23 @@
 				57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		57D6D78228CB959500F805B7 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D78328CB959C00F805B7 /* KakaoLocalDataManager */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		57D6D78328CB959C00F805B7 /* KakaoLocalDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D78428CB95C000F805B7 /* KakaoLocalDataManager.swift */,
+				57D6D78628CB966C00F805B7 /* KakaoLocalModel.swift */,
+			);
+			path = KakaoLocalDataManager;
 			sourceTree = "<group>";
 		};
 		57EBCE3C28A88E5000212D20 /* Alert */ = {
@@ -1210,6 +1232,7 @@
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
+				57D6D78528CB95C000F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				5722463B28C8A485009B7C78 /* MakeMeetingSheetView.swift in Sources */,
@@ -1231,6 +1254,7 @@
 				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
 				5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */,
+				57D6D78728CB966C00F805B7 /* KakaoLocalModel.swift in Sources */,
 				5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,

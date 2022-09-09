@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchAddressResultBottomSheet: SheetViewController {
     
@@ -28,6 +29,11 @@ class SearchAddressResultBottomSheet: SheetViewController {
         mainView.searchTextField.delegate = self
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+    }
+    
+    func requestSearchResult(query: String){
+        self.mainView.searchTextField.text = query
+        KakaoLocalDataManager().gets(query: query)
     }
 
 }
