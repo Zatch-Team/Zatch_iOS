@@ -34,9 +34,10 @@ class ModifyMeetingSheetView: MeetingSheetView {
     }
     
     override init(frame: CGRect) {
+        
         super.init(frame: .zero)
         
-        self.makeMeetingBtn.setTitle("수정하기", for: .normal)
+        self.registerBtn.setTitle("수정하기", for: .normal)
         
         setUpView()
         setUpConstraint()

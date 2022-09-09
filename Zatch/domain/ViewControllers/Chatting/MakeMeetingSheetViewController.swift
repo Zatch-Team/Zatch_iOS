@@ -11,13 +11,14 @@ import RxSwift
 
 class MakeMeetingSheetViewController: SheetViewController {
     
-    let mainView = MakeMeetingSheetView()
+    let mainView = MakeMeetingSheetView().then{
+        $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-//        sheetType = .MakeMeeting
         super.titleLabel.removeFromSuperview()
         
         self.view.addSubview(mainView)
@@ -51,6 +52,10 @@ class MakeMeetingSheetViewController: SheetViewController {
     @objc func willLocationSearchSheetOpen(){
         let vc = SearchAddressBottomSheet()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func registerBtnDidClicked(){
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

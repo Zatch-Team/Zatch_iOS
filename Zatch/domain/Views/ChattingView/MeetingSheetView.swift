@@ -38,7 +38,7 @@ class MeetingSheetView: UIView {
     
     let alarmSwitch = UISwitch()
     
-    lazy var makeMeetingBtn = PurpleButton()
+    lazy var registerBtn = PurpleButton()
     
     let backStackView = UIStackView().then{
         $0.axis = .vertical
@@ -65,7 +65,7 @@ class MeetingSheetView: UIView {
         backStackView.addArrangedSubview(timeFrame)
         backStackView.addArrangedSubview(locationFrame)
         backStackView.addArrangedSubview(alarmFrame)
-        backStackView.addArrangedSubview(makeMeetingBtn)
+        backStackView.addArrangedSubview(registerBtn)
         
         timeFrame.addArrangedSubview(timeTitle)
         timeFrame.addArrangedSubview(timeInputView)
@@ -128,7 +128,7 @@ class MeetingSheetView: UIView {
             make.centerY.equalToSuperview()
         }
         
-        makeMeetingBtn.snp.makeConstraints{ make in
+        registerBtn.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(54)
             make.trailing.equalToSuperview().offset(-54)
         }

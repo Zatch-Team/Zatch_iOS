@@ -69,6 +69,7 @@ class AlertViewController: UIViewController {
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlertController))
         gesture.delegate = self
+        
         self.view.addGestureRecognizer(gesture)
     }
     

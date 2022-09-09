@@ -9,13 +9,13 @@ import UIKit
 
 class ModifyMeetingSheetViewController: SheetViewController {
 
-    let mainView = ModifyMeetingSheetView()
+    let mainView = ModifyMeetingSheetView().then{
+        $0.registerBtn.addTarget(self, action: #selector(modifyBtnDidClicked), for: .touchUpInside)
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-//        sheetType = .MakeMeeting
         super.titleLabel.removeFromSuperview()
         
         self.view.addSubview(mainView)
@@ -24,5 +24,10 @@ class ModifyMeetingSheetViewController: SheetViewController {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-23)
         }
+    }
+    
+    @objc func modifyBtnDidClicked(){
+        let vc = MakeMeetingSheetViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

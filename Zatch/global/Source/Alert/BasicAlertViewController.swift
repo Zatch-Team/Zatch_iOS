@@ -34,12 +34,14 @@ class BasicAlertViewController: AlertViewController {
     }
     
     override func setUpView(){
+        
         super.setUpView()
         
         containerView.addSubview(messageLabel)
     }
     
     override func setUpConstraint(){
+        
         super.setUpConstraint()
         
         messageLabel.snp.makeConstraints{ make in
