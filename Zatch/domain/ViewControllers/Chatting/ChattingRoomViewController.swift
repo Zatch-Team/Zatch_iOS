@@ -100,6 +100,7 @@ class ChattingRoomViewController: BaseViewController {
     //MARK: - Action
     
     @objc func chatSendBtnDidClicked(){
+        
         let newMessage = ChatMessage(message: chatInputView.chatTextField.text!,
                                      image: nil,
                                      chatType: .RightMessage)
@@ -107,6 +108,7 @@ class ChattingRoomViewController: BaseViewController {
         self.messageData.append(newMessage)
         self.chatInputView.sendBtn.isEnabled = false
         self.chatInputView.chatTextField.text = nil
+
     }
     
     //채팅 하단 기타 기능 함수
@@ -191,7 +193,7 @@ class ChattingRoomViewController: BaseViewController {
     @objc func chattingRoomExitBtnDidClicked(){
         
         sideMenuViewController?.dismiss(animated: true, completion: {
-            let alert = CancelOkAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
+            let alert = CancelAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
                                                     btnTitle: "네, 확인했습니다.")
             
             alert.alertHandler = { isExit in
@@ -207,7 +209,7 @@ class ChattingRoomViewController: BaseViewController {
         
         guard let bottomSheet = memberBlockBottomSheet else { return }
         
-        let alert = CancelOkAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
+        let alert = CancelAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
                                                 btnTitle: "네, 차단합니다.")
         
         alert.alertHandler = { isBlock in

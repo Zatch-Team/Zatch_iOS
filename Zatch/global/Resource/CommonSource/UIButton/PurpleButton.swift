@@ -27,11 +27,11 @@ class PurpleButton: UIButton{
         }
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)!
-    }
-    
     override init(frame: CGRect){
         super.init(frame: frame)
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)!
     }
 }
