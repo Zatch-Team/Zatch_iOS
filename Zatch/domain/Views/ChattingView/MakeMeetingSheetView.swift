@@ -34,7 +34,7 @@ class MakeMeetingSheetView: MeetingSheetView {
     
     let locationLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textColor = .black
+        $0.textColor = .zatchPurple
         $0.isUserInteractionEnabled = true
     }
     

@@ -101,7 +101,7 @@ class ChattingListTableViewCell: BaseTableViewCell {
     }
     
     @objc func deleteBtnDidClicked(){
-        let alert = CancelOkAlertViewController(
+        let alert = CancelAlertViewController(
             message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
             btnTitle: "네, 확인했습니다.")
         

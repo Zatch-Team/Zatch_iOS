@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CancelOkAlertViewController: BasicAlertViewController {
+class CancelAlertViewController: MessageAlertViewController {
     
     //MARK: - Properties
     
@@ -31,6 +31,8 @@ class CancelOkAlertViewController: BasicAlertViewController {
         if let btnTitle = btnTitle {
             okBtn.setTitle(btnTitle, for: .normal)
         }
+        
+        settingOkBtnPurpleBackground()
     }
     
     required init?(coder: NSCoder) {
@@ -52,6 +54,12 @@ class CancelOkAlertViewController: BasicAlertViewController {
         
         cancelBtn.snp.makeConstraints{ make in
             make.width.height.equalTo(okBtn)
+        }
+        
+        btnStackView.snp.makeConstraints{ make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(messageLabel.snp.bottom).offset(10)
+            make.bottom.equalToSuperview().offset(-16)
         }
     }
     
