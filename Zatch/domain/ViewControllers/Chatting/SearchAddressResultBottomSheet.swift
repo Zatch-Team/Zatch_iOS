@@ -10,6 +10,13 @@ import Alamofire
 
 class SearchAddressResultBottomSheet: SheetViewController {
     
+    //MARK: - Properties
+    var addressResult: [LocalResult] = []{
+        didSet{
+            self.mainView.tableView.reloadData()
+        }
+    }
+    
     let mainView = SearchAddressResultView()
 
     override func viewDidLoad() {
@@ -33,18 +40,30 @@ class SearchAddressResultBottomSheet: SheetViewController {
     
     func requestSearchResult(query: String){
         self.mainView.searchTextField.text = query
-        KakaoLocalDataManager().gets(query: query)
+        KakaoLocalDataManager().gets(query: query, viewController: self)
+    }
+    
+    //MARK: - API
+    func successSearchAddressResult(result: [LocalResult]){
+        addressResult = result
     }
 
 }
 extension SearchAddressResultBottomSheet: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return addressResult.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        return SearchAddressResultTableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchAddressResultTableViewCell.cellIdentifier, for: indexPath) as? SearchAddressResultTableViewCell else { fatalError() }
+        
+        let data = addressResult[indexPath.row]
+        cell.locationLabel.text = data.place_name
+        cell.addressLabel.text = data.address_name
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
