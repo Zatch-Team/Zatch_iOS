@@ -17,14 +17,12 @@ class SearchAddressResultTableViewCell: BaseTableViewCell {
     }
 
     let locationLabel = UILabel().then{
-        $0.text = "홍은두산위브아파트"
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
         $0.textColor = .black85
         $0.numberOfLines = 1
     }
     
     let addressLabel = UILabel().then{
-        $0.text = "서울 서대문구 모래내로 309 홍은두산위브아파트"
         $0.font = UIFont.pretendard(size: 12, family: .Medium)
         $0.textColor = .black85
         $0.numberOfLines = 1
@@ -40,13 +38,16 @@ class SearchAddressResultTableViewCell: BaseTableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        locationLabel.text = nil
+        addressLabel.text = nil
+    }
 }
 
 extension SearchAddressResultTableViewCell{
     
     func setUpView(){
-        
-        super.selectedBackgroundView?.backgroundColor = .black20
         
         self.baseView.addSubview(addressFrame)
         
