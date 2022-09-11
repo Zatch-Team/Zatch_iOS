@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = DetailViewController()
         window?.makeKeyAndVisible()
+        
+        KakaoSDK.initSDK(appKey: Const.KakaoAPI.KAKAO_NATIVE_KEY)
+        
         return true
     }
 
