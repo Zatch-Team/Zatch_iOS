@@ -398,13 +398,13 @@
 			isa = PBXGroup;
 			children = (
 				23A86A5428C72C4C00B073CB /* MainView */,
+				23C9031F28C5CFA700FB6D3D /* SearchView */,
+				23C9031B28C5CF3100FB6D3D /* DetailView */,
+				23C9031528C5CE9300FB6D3D /* ChattingView */,
 				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
 				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
-				23C9031F28C5CFA700FB6D3D /* SearchView */,
-				23C9031B28C5CF3100FB6D3D /* DetailView */,
-				23C9031528C5CE9300FB6D3D /* ChattingView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
