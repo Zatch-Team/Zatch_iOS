@@ -1,23 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Frame 34020.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Frame 34020 (2).png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Frame 34020 (1).png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Frame 34020.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

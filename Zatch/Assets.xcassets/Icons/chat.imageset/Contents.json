@@ -1,23 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Chat_alt_2.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Chat_alt_2 (1).png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Chat_alt_2 (2).png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Chat_alt_2.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }
