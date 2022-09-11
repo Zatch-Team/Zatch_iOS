@@ -132,6 +132,8 @@
 		57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */; };
 		57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79628CDBC4F00F805B7 /* MakeMeetingSheetView.swift */; };
 		57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */; };
+		57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */; };
+		57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
@@ -296,6 +298,8 @@
 		57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingSheetView.swift; sourceTree = "<group>"; };
 		57D6D79628CDBC4F00F805B7 /* MakeMeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetView.swift; sourceTree = "<group>"; };
 		57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetView.swift; sourceTree = "<group>"; };
+		57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewModel.swift; sourceTree = "<group>"; };
+		57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewModel.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -696,6 +700,8 @@
 			children = (
 				5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */,
 				5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */,
+				57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */,
+				57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */,
 			);
 			path = ChattingViewModels;
 			sourceTree = "<group>";
@@ -1132,6 +1138,7 @@
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
+				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
@@ -1154,6 +1161,7 @@
 				57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
+				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
