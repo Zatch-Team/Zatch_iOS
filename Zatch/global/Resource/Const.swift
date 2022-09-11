@@ -10,4 +10,10 @@ import Foundation
 class Const{
     static let deviceWidth = UIScreen.main.bounds.size.width
     static let deviceHeight = UIScreen.main.bounds.size.height
+    
+    class KakaoAPI{
+        static let KAKAO_NATIVE_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_KEY") as! String
+        
+        static let KAKAO_REST_API_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_REST_API_KEY") as! String
+    }
 }

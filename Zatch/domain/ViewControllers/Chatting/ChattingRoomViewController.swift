@@ -78,7 +78,7 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     let chatEtcBtnView = ChatEtcBtnView().then{
-        $0.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside) 
+        $0.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
         $0.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
         $0.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
     }
@@ -100,6 +100,7 @@ class ChattingRoomViewController: BaseViewController {
     //MARK: - Action
     
     @objc func chatSendBtnDidClicked(){
+        
         let newMessage = ChatMessage(message: chatInputView.chatTextField.text!,
                                      image: nil,
                                      chatType: .RightMessage)
@@ -107,6 +108,7 @@ class ChattingRoomViewController: BaseViewController {
         self.messageData.append(newMessage)
         self.chatInputView.sendBtn.isEnabled = false
         self.chatInputView.chatTextField.text = nil
+
     }
     
     //채팅 하단 기타 기능 함수
@@ -143,6 +145,7 @@ class ChattingRoomViewController: BaseViewController {
     
     @objc func appointmentBtnDidClicked(){
         let bottomSheet = SheetNavigationViewController(rootViewController: MakeMeetingSheetViewController())
+        
         bottomSheet.loadViewIfNeeded()
         
         self.present(bottomSheet, animated: true, completion: nil)

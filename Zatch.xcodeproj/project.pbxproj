@@ -43,7 +43,6 @@
 		5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */; };
 		5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */; };
 		5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */; };
-		5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */; };
 		5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */; };
 		5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461328C230B3009B7C78 /* PickerAlertViewController.swift */; };
 		5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461528C2F827009B7C78 /* AlertViewController.swift */; };
@@ -134,6 +133,9 @@
 		57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */; };
 		57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */; };
 		57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */; };
+		57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */; };
+		57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */; };
+		57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
@@ -200,7 +202,6 @@
 		5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingImageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingImageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewController.swift; sourceTree = "<group>"; };
-		5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MakeMeetingSheetViewController+Layout.swift"; sourceTree = "<group>"; };
 		5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerAlertViewController.swift; sourceTree = "<group>"; };
 		5722461328C230B3009B7C78 /* PickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerAlertViewController.swift; sourceTree = "<group>"; };
 		5722461528C2F827009B7C78 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +301,9 @@
 		57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetView.swift; sourceTree = "<group>"; };
 		57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewModel.swift; sourceTree = "<group>"; };
 		57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewModel.swift; sourceTree = "<group>"; };
+		57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewController.swift; sourceTree = "<group>"; };
+		57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalModel.swift; sourceTree = "<group>"; };
+		57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 		23C9030B28C5CE2100FB6D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,9 +429,9 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23CB3CEF28C7D35600C42858 /* Profile */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
-				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23C9031428C5CE6400FB6D3D /* Register */,
 				23C9031328C5CE6000FB6D3D /* Search */,
 				23C9031228C5CE5A00FB6D3D /* Main */,
@@ -439,6 +444,7 @@
 		23C9030E28C5CE2E00FB6D3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57D6D7A428CDC33800F805B7 /* ChattingServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -459,12 +465,12 @@
 				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
 				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
 				578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */,
-				5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */,
 				57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */,
 				5795770328BB1AB400237A12 /* MemberDeclarationBottomSheet.swift */,
-				5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */,
 				5722461728C6C822009B7C78 /* SearchAddressBottomSheet.swift */,
 				5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */,
+				5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */,
+				57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -838,6 +844,22 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */,
+			);
+			path = ChattingModels;
+			sourceTree = "<group>";
+		};
+		57D6D7A428CDC33800F805B7 /* ChattingServices */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */,
+			);
+			path = ChattingServices;
+			sourceTree = "<group>";
+		};
 		57EBCE3C28A88E5000212D20 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,7 +1191,6 @@
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
-				5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
@@ -1186,6 +1207,7 @@
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
+				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
@@ -1220,12 +1242,14 @@
 				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
+				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
+				57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
