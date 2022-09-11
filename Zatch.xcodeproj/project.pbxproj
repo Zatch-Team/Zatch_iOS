@@ -222,7 +222,6 @@
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A86289F575000056691 /* ResultSearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultSearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/global/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
-		57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Zatch-Bridging-Header.h"; path = "Zatch/Resource/Zatch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagBottomSheet.swift; sourceTree = "<group>"; };
@@ -290,6 +289,7 @@
 		57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
 		57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		57D6D79128CDB96900F805B7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zatch-Bridging-Header.h"; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -817,7 +817,7 @@
 				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
 				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
-				57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */,
+				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
 				57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */,
 			);
 			path = Resource;
