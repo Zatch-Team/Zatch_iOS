@@ -9,14 +9,19 @@ import UIKit
 
 class AlertViewController: UIViewController {
     
+    /*
+     구조
+     1. Alert(okBtn, 기본 layout)
+     2. Message(messageLabel 공통) / Picker
+     3. Basic, Info, Cancel (버튼 위치, 속성 각각 조절)/ Date, Time
+     
+     3의 경우 버튼 위치 및 특성은 각각 조절
+     */
+    
     lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
         $0.titleLabel?.textAlignment = .center
-        $0.backgroundColor = .zatchPurple
-        $0.layer.cornerRadius = 25/2
-        $0.titleEdgeInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
         $0.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
     }
     
@@ -54,6 +59,7 @@ class AlertViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        
         super.viewWillDisappear(animated)
 
         // curveEaseIn: 시작은 빠르게, 끝날 땐 천천히
@@ -69,6 +75,7 @@ class AlertViewController: UIViewController {
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlertController))
         gesture.delegate = self
+        
         self.view.addGestureRecognizer(gesture)
     }
     
@@ -89,14 +96,29 @@ class AlertViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-24)
         }
         
-        btnStackView.snp.makeConstraints{ make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-16)
-        }
+    }
+    
+    func settingOkBtnPurpleBackground(){
+        
+        okBtn.setTitleColor(.white, for: .normal)
+        okBtn.backgroundColor = .zatchPurple
+        okBtn.layer.cornerRadius = 25/2
+        okBtn.titleEdgeInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
         
         okBtn.snp.makeConstraints{ make in
             make.height.equalTo(25)
             make.width.equalTo(okBtn.titleLabel!.snp.width).offset(32)
+        }
+    }
+    
+    func settingOkBtnWhiteBackground(){
+        
+        okBtn.setTitleColor(.zatchPurple, for: .normal)
+        okBtn.backgroundColor = .white
+        
+        okBtn.snp.makeConstraints{ make in
+            make.height.equalTo(okBtn.titleLabel!.snp.height)
+            make.width.equalTo(okBtn.titleLabel!.snp.width)
         }
     }
     

@@ -126,12 +126,14 @@
 		57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */; };
 		57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */; };
 		57C585042821F2A70078FAFF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585032821F2A70078FAFF /* ServiceType.swift */; };
+		57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */; };
+		57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
 		57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */; };
 		57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */; };
-		57EBCE4028A8906000212D20 /* CancelOkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */; };
+		57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */; };
 		57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */; };
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
@@ -283,12 +285,14 @@
 		57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMemberTableViewCell.swift; sourceTree = "<group>"; };
 		57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlertViewController.swift; sourceTree = "<group>"; };
+		57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddBtnCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAlertViewController.swift; sourceTree = "<group>"; };
-		57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOkAlertViewController.swift; sourceTree = "<group>"; };
+		57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
 		57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerAlertViewController.swift; sourceTree = "<group>"; };
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
@@ -693,10 +697,10 @@
 				57468A8A289FEB2000056691 /* SheetViewController.swift */,
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 				571AD7112828D9C900390AAD /* Category */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
-				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -818,8 +822,10 @@
 			isa = PBXGroup;
 			children = (
 				5722461528C2F827009B7C78 /* AlertViewController.swift */,
+				57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */,
 				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
-				57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */,
+				57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */,
+				57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */,
 				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
 				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
 				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
@@ -1100,7 +1106,7 @@
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
-				57EBCE4028A8906000212D20 /* CancelOkAlertViewController.swift in Sources */,
+				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
@@ -1114,6 +1120,7 @@
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
+				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
@@ -1180,6 +1187,7 @@
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */,
+				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
