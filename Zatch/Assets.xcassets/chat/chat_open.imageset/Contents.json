@@ -1,23 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Add_round.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Add_round (1).png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Add_round (2).png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Add_round.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

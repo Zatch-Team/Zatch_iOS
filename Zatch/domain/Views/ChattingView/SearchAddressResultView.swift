@@ -22,7 +22,8 @@ class SearchAddressResultView: UIView {
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
         $0.font = UIFont.pretendard(size: 15, family: .Medium)
-        $0.addPadding(left: 40, right: 6)
+        $0.textColor = .black85
+        $0.addPadding(left: 12, right: 40)
     }
     
     let myLocationFrame = UIStackView().then{
@@ -67,6 +68,8 @@ extension SearchAddressResultView{
     func setInitSetting(){
         tableView = UITableView().then{
             $0.separatorStyle = .none
+            
+            $0.register(SearchAddressResultTableViewCell.self, forCellReuseIdentifier: SearchAddressResultTableViewCell.cellIdentifier)
         }
     }
     
@@ -119,8 +122,7 @@ extension SearchAddressResultView{
         tableView.snp.makeConstraints{
             $0.leading.trailing.bottom.equalToSuperview()
             $0.top.equalTo(borderLine.snp.bottom)
+            $0.bottom.equalToSuperview()
         }
-        
-        tableView.backgroundColor = .red
     }
 }

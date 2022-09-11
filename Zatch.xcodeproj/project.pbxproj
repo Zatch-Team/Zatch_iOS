@@ -43,7 +43,6 @@
 		5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */; };
 		5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */; };
 		5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */; };
-		5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */; };
 		5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */; };
 		5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461328C230B3009B7C78 /* PickerAlertViewController.swift */; };
 		5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722461528C2F827009B7C78 /* AlertViewController.swift */; };
@@ -126,12 +125,23 @@
 		57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */; };
 		57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */; };
 		57C585042821F2A70078FAFF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585032821F2A70078FAFF /* ServiceType.swift */; };
+		57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */; };
+		57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */; };
+		57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79128CDB96900F805B7 /* UINavigationController.swift */; };
+		57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */; };
+		57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79628CDBC4F00F805B7 /* MakeMeetingSheetView.swift */; };
+		57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */; };
+		57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */; };
+		57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */; };
+		57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */; };
+		57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */; };
+		57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
 		57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */; };
 		57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */; };
-		57EBCE4028A8906000212D20 /* CancelOkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */; };
+		57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */; };
 		57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */; };
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
@@ -192,7 +202,6 @@
 		5722460728BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingImageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingImageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewController.swift; sourceTree = "<group>"; };
-		5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MakeMeetingSheetViewController+Layout.swift"; sourceTree = "<group>"; };
 		5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerAlertViewController.swift; sourceTree = "<group>"; };
 		5722461328C230B3009B7C78 /* PickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerAlertViewController.swift; sourceTree = "<group>"; };
 		5722461528C2F827009B7C78 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +228,6 @@
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A86289F575000056691 /* ResultSearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultSearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/global/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
-		57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Zatch-Bridging-Header.h"; path = "Zatch/Resource/Zatch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagBottomSheet.swift; sourceTree = "<group>"; };
@@ -283,12 +291,25 @@
 		57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMemberTableViewCell.swift; sourceTree = "<group>"; };
 		57C585012821F0A10078FAFF /* MyZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlertViewController.swift; sourceTree = "<group>"; };
+		57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
+		57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
+		57D6D79128CDB96900F805B7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zatch-Bridging-Header.h"; sourceTree = "<group>"; };
+		57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingSheetView.swift; sourceTree = "<group>"; };
+		57D6D79628CDBC4F00F805B7 /* MakeMeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetView.swift; sourceTree = "<group>"; };
+		57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetView.swift; sourceTree = "<group>"; };
+		57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewModel.swift; sourceTree = "<group>"; };
+		57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewModel.swift; sourceTree = "<group>"; };
+		57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewController.swift; sourceTree = "<group>"; };
+		57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalModel.swift; sourceTree = "<group>"; };
+		57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddBtnCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAlertViewController.swift; sourceTree = "<group>"; };
-		57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOkAlertViewController.swift; sourceTree = "<group>"; };
+		57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
 		57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerAlertViewController.swift; sourceTree = "<group>"; };
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
@@ -377,13 +398,13 @@
 			isa = PBXGroup;
 			children = (
 				23A86A5428C72C4C00B073CB /* MainView */,
+				23C9031F28C5CFA700FB6D3D /* SearchView */,
+				23C9031B28C5CF3100FB6D3D /* DetailView */,
+				23C9031528C5CE9300FB6D3D /* ChattingView */,
 				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
 				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
-				23C9031F28C5CFA700FB6D3D /* SearchView */,
-				23C9031B28C5CF3100FB6D3D /* DetailView */,
-				23C9031528C5CE9300FB6D3D /* ChattingView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +412,7 @@
 		23C9030B28C5CE2100FB6D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,9 +429,9 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23CB3CEF28C7D35600C42858 /* Profile */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
-				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23C9031428C5CE6400FB6D3D /* Register */,
 				23C9031328C5CE6000FB6D3D /* Search */,
 				23C9031228C5CE5A00FB6D3D /* Main */,
@@ -422,6 +444,7 @@
 		23C9030E28C5CE2E00FB6D3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57D6D7A428CDC33800F805B7 /* ChattingServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -442,12 +465,12 @@
 				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
 				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
 				578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */,
-				5722460D28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift */,
 				57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */,
 				5795770328BB1AB400237A12 /* MemberDeclarationBottomSheet.swift */,
-				5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */,
 				5722461728C6C822009B7C78 /* SearchAddressBottomSheet.swift */,
 				5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */,
+				5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */,
+				57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -504,6 +527,9 @@
 				57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */,
 				5722461A28C6C89A009B7C78 /* SearchAddressView.swift */,
 				5722462628C778E0009B7C78 /* SearchAddressResultView.swift */,
+				57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */,
+				57D6D79628CDBC4F00F805B7 /* MakeMeetingSheetView.swift */,
+				57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */,
 			);
 			path = ChattingView;
 			sourceTree = "<group>";
@@ -680,6 +706,8 @@
 			children = (
 				5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */,
 				5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */,
+				57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */,
+				57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */,
 			);
 			path = ChattingViewModels;
 			sourceTree = "<group>";
@@ -693,10 +721,10 @@
 				57468A8A289FEB2000056691 /* SheetViewController.swift */,
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 				571AD7112828D9C900390AAD /* Category */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
-				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -728,6 +756,7 @@
 				57468A9F28A214FD00056691 /* UILabel.swift */,
 				577A01B528A496D1004B2575 /* UITextView.swift */,
 				5722461E28C71665009B7C78 /* UIImageView.swift */,
+				57D6D79128CDB96900F805B7 /* UINavigationController.swift */,
 			);
 			path = extenstion;
 			sourceTree = "<group>";
@@ -809,17 +838,36 @@
 				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
 				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
-				57468A89289FEA5700056691 /* Zatch-Bridging-Header.h */,
+				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
+				57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */,
+			);
+			path = ChattingModels;
+			sourceTree = "<group>";
+		};
+		57D6D7A428CDC33800F805B7 /* ChattingServices */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */,
+			);
+			path = ChattingServices;
 			sourceTree = "<group>";
 		};
 		57EBCE3C28A88E5000212D20 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
 				5722461528C2F827009B7C78 /* AlertViewController.swift */,
+				57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */,
 				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
-				57EBCE3F28A8906000212D20 /* CancelOkAlertViewController.swift */,
+				57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */,
+				57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */,
 				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
 				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
 				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
@@ -1100,7 +1148,7 @@
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
-				57EBCE4028A8906000212D20 /* CancelOkAlertViewController.swift in Sources */,
+				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
@@ -1112,8 +1160,10 @@
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
+				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
+				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
@@ -1122,6 +1172,7 @@
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
+				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
@@ -1132,6 +1183,7 @@
 				57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
+				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
@@ -1139,7 +1191,6 @@
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
-				5722460E28C0745C009B7C78 /* MakeMeetingSheetViewController+Layout.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
@@ -1149,12 +1200,14 @@
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
+				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
+				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
@@ -1175,11 +1228,13 @@
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
+				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* FirstWantTableViewCell.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */,
+				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
@@ -1187,11 +1242,14 @@
 				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
+				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
+				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
+				57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
@@ -1381,7 +1439,7 @@
 		};
 		575BF72427E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */;
+			baseConfigurationReference = 57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

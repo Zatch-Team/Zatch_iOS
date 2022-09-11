@@ -1,23 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Arrow (3).png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Arrow (4).png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Arrow (5).png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Arrow (2).svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }
