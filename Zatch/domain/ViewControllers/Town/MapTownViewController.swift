@@ -8,11 +8,20 @@
 import UIKit
 
 class MapTownViewController: UIViewController {
+    
+    let mainView = MapTownView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = true
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
+        }
     }
 
 }

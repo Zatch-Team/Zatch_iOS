@@ -31,7 +31,7 @@ class SplashTownView: UIView {
         $0.textAlignment = .center
     }
     
-    let moveSettingBtn = PurpleButton(height: 52, fontSize: 18).then{
+    lazy var moveSettingBtn = PurpleButton(height: 52, fontSize: 18).then{
         $0.setTitle("내 위치 설정하기", for: .normal)
     }
 

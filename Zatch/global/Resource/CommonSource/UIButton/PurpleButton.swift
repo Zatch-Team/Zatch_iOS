@@ -20,7 +20,7 @@ class PurpleButton: UIButton{
         
         self.layer.cornerRadius = height/2
         
-        self.titleEdgeInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
+//        self.titleEdgeInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
         
         self.snp.makeConstraints{ make in
             make.height.equalTo(height)
