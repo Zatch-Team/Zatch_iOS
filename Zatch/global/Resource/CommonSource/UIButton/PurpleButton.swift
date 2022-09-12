@@ -9,21 +9,21 @@ import UIKit
 
 class PurpleButton: UIButton{
     
-    init(){
+    init(height: CGFloat = 36, fontSize: CGFloat = 14){
         
         super.init(frame: CGRect.zero)
         
         self.backgroundColor = .zatchPurple
         
         self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = UIFont.pretendard(family: .Bold)
+        self.titleLabel?.font = UIFont.pretendard(size: fontSize, family: .Bold)
         
-        self.layer.cornerRadius = 36/2
+        self.layer.cornerRadius = height/2
         
         self.titleEdgeInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
         
         self.snp.makeConstraints{ make in
-            make.height.equalTo(36)
+            make.height.equalTo(height)
         }
     }
     
@@ -31,7 +31,7 @@ class PurpleButton: UIButton{
         super.init(coder: coder)!
     }
     
-    override init(frame: CGRect){
-        super.init(frame: frame)
-    }
+//    override init(frame: CGRect){
+//        super.init(frame: frame)
+//    }
 }
