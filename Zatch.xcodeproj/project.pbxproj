@@ -166,6 +166,7 @@
 		57A28CDC28CF05D800263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
 		57A28CDD28CF05D800263079 /* DaumMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */; };
+		57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
@@ -401,6 +402,7 @@
 		57A28CBE28CF05D300263079 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		57A28CBF28CF05D300263079 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTextField.swift; sourceTree = "<group>"; };
+		57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTownTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
@@ -687,6 +689,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				57A28CE028CF23E000263079 /* TownCells */,
 				23B7FBAA28CEBFBC0018642E /* MypageCells */,
 				23A86A5728C731CB00B073CB /* MainCells */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
@@ -1082,6 +1085,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		57A28CE028CF23E000263079 /* TownCells */ = {
+			isa = PBXGroup;
+			children = (
+				57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */,
+			);
+			path = TownCells;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1473,6 +1484,7 @@
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
+				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */,
