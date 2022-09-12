@@ -123,6 +123,12 @@
 		5795770428BB1AB400237A12 /* MemberDeclarationBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5795770328BB1AB400237A12 /* MemberDeclarationBottomSheet.swift */; };
 		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
 		579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */; };
+		57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */; };
+		57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3C28CED93700263079 /* MapTownViewController.swift */; };
+		57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3E28CED94B00263079 /* SearchTownViewController.swift */; };
+		57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B4128CED9DD00263079 /* SearchTownView.swift */; };
+		57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B4328CED9ED00263079 /* MapTownView.swift */; };
+		57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B4528CED9F600263079 /* SplashTownView.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
@@ -295,6 +301,12 @@
 		5795770328BB1AB400237A12 /* MemberDeclarationBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDeclarationBottomSheet.swift; sourceTree = "<group>"; };
 		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
 		579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
+		57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTownViewController.swift; sourceTree = "<group>"; };
+		57A28B3C28CED93700263079 /* MapTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTownViewController.swift; sourceTree = "<group>"; };
+		57A28B3E28CED94B00263079 /* SearchTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTownViewController.swift; sourceTree = "<group>"; };
+		57A28B4128CED9DD00263079 /* SearchTownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTownView.swift; sourceTree = "<group>"; };
+		57A28B4328CED9ED00263079 /* MapTownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTownView.swift; sourceTree = "<group>"; };
+		57A28B4528CED9F600263079 /* SplashTownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTownView.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
@@ -434,6 +446,7 @@
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
 				23C9031B28C5CF3100FB6D3D /* DetailView */,
 				23C9031528C5CE9300FB6D3D /* ChattingView */,
+				57A28B4028CED9BC00263079 /* TownView */,
 				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
 				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
@@ -470,6 +483,7 @@
 				23C9031228C5CE5A00FB6D3D /* Main */,
 				23C9031128C5CE5600FB6D3D /* Detail */,
 				23C9031028C5CE5000FB6D3D /* Chatting */,
+				57A28B3928CED84500263079 /* Town */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -878,6 +892,26 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		57A28B3928CED84500263079 /* Town */ = {
+			isa = PBXGroup;
+			children = (
+				57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */,
+				57A28B3E28CED94B00263079 /* SearchTownViewController.swift */,
+				57A28B3C28CED93700263079 /* MapTownViewController.swift */,
+			);
+			path = Town;
+			sourceTree = "<group>";
+		};
+		57A28B4028CED9BC00263079 /* TownView */ = {
+			isa = PBXGroup;
+			children = (
+				57A28B4528CED9F600263079 /* SplashTownView.swift */,
+				57A28B4128CED9DD00263079 /* SearchTownView.swift */,
+				57A28B4328CED9ED00263079 /* MapTownView.swift */,
+			);
+			path = TownView;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1190,6 +1224,7 @@
 				5795770428BB1AB400237A12 /* MemberDeclarationBottomSheet.swift in Sources */,
 				5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */,
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
+				57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
@@ -1197,6 +1232,7 @@
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
+				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
@@ -1219,6 +1255,7 @@
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
+				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
@@ -1229,6 +1266,7 @@
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
+				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
@@ -1243,6 +1281,7 @@
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
+				57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
@@ -1260,6 +1299,7 @@
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */,
+				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
