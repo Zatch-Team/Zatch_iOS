@@ -15,9 +15,7 @@ class SearchTownView: UIView {
         $0.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
     }
     
-    let searchTextField = UITextField().then{
-        $0.placeholder = "이름(동,면,읍)으로 검색"
-    }
+    let searchTextField = LocationSearchTextField()
     
     let myTownTitle = UILabel().then{
         $0.text = "우리 동네"
@@ -58,6 +56,7 @@ class SearchTownView: UIView {
     }
     
     func setUpConstriant(){
+        
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(251)
             $0.leading.equalToSuperview().offset(20)
