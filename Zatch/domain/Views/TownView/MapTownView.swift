@@ -18,8 +18,12 @@ class MapTownView: UIView {
         $0.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
-    let backBtn = UIButton().then{
+    lazy var backBtn = UIButton().then{
         $0.setImage(UIImage(named: "town_arrow"), for: .normal)
+    }
+    
+    let mapView = MTMapView().then{
+        $0.baseMapType = .standard
     }
     
     let townSettingBtn = PurpleButton(height: 52, fontSize: 18).then{
@@ -42,8 +46,11 @@ class MapTownView: UIView {
     }
 
     func setUpView(){
-        self.addSubview(backBtnView)
-        self.addSubview(townSettingBtn)
+        
+        self.addSubview(mapView)
+        
+        mapView.addSubview(backBtnView)
+        mapView.addSubview(townSettingBtn)
         
         backBtnView.addSubview(backBtn)
         
@@ -60,6 +67,10 @@ class MapTownView: UIView {
         backBtn.snp.makeConstraints{
             $0.width.height.equalTo(16)
             $0.centerX.centerY.equalToSuperview()
+        }
+        
+        mapView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
         }
         
         townSettingBtn.snp.makeConstraints{
