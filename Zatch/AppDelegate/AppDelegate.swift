@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = DetailViewController()
         window?.makeKeyAndVisible()
         
-        KakaoSDK.initSDK(appKey: Const.KakaoAPI.KAKAO_NATIVE_KEY)
+        KakaoSDK.initSDK(appKey: Const.KakaoAPI.KAKAO_APP_KEY)
         
         return true
     }
