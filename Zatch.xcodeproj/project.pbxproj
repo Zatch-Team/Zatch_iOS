@@ -165,6 +165,7 @@
 		57A28CDB28CF05D300263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
 		57A28CDC28CF05D800263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
 		57A28CDD28CF05D800263079 /* DaumMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
@@ -399,6 +400,7 @@
 		57A28CBD28CF05D300263079 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		57A28CBE28CF05D300263079 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		57A28CBF28CF05D300263079 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTextField.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
@@ -1116,6 +1118,7 @@
 			children = (
 				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
 				57713943281F596C0066DEEB /* TitleView.swift */,
+				57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */,
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
@@ -1510,6 +1513,7 @@
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* FirstWantTableViewCell.swift in Sources */,
+				57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
