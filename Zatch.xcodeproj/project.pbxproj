@@ -15,8 +15,14 @@
 		23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */; };
 		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
 		23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */; };
+		23B7FBA928CEB9430018642E /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBA828CEB9430018642E /* MypageView.swift */; };
+		23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */; };
+		23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */; };
+		23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */; };
+		23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */; };
+		23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */; };
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
-		23CB3CF528C7D38500C42858 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* ProfileViewController.swift */; };
+		23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* MypageViewController.swift */; };
 		23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */; };
 		23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFA28C7D88900C42858 /* Observable.swift */; };
 		23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */; };
@@ -175,8 +181,14 @@
 		23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		23B7FBA828CEB9430018642E /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationBannerTableViewCell.swift; sourceTree = "<group>"; };
+		23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchStatisticTableViewCell.swift; sourceTree = "<group>"; };
+		23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingTableViewCell.swift; sourceTree = "<group>"; };
+		23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageSettingTableViewCell.swift; sourceTree = "<group>"; };
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		23CB3CF428C7D38500C42858 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		23CB3CF428C7D38500C42858 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchViewController.swift; sourceTree = "<group>"; };
 		23CB3CFA28C7D88900C42858 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -371,6 +383,26 @@
 			path = MainCells;
 			sourceTree = "<group>";
 		};
+		23B7FBA728CEB8E80018642E /* MypageView */ = {
+			isa = PBXGroup;
+			children = (
+				23B7FBA828CEB9430018642E /* MypageView.swift */,
+			);
+			path = MypageView;
+			sourceTree = "<group>";
+		};
+		23B7FBAA28CEBFBC0018642E /* MypageCells */ = {
+			isa = PBXGroup;
+			children = (
+				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
+				23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */,
+				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
+				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
+				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
+			);
+			path = MypageCells;
+			sourceTree = "<group>";
+		};
 		23C9030828C5CDE700FB6D3D /* global */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +429,7 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23B7FBA728CEB8E80018642E /* MypageView */,
 				23A86A5428C72C4C00B073CB /* MainView */,
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
 				23C9031B28C5CF3100FB6D3D /* DetailView */,
@@ -430,7 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				23711BDB28C5E38700B7E840 /* ViewController.swift */,
-				23CB3CEF28C7D35600C42858 /* Profile */,
+				23CB3CEF28C7D35600C42858 /* Mypage */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
 				23C9031428C5CE6400FB6D3D /* Register */,
 				23C9031328C5CE6000FB6D3D /* Search */,
@@ -537,6 +570,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				23B7FBAA28CEBFBC0018642E /* MypageCells */,
 				23A86A5728C731CB00B073CB /* MainCells */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
 				23C9031C28C5CF4000FB6D3D /* DetailCells */,
@@ -643,12 +677,12 @@
 			path = MyZatch;
 			sourceTree = "<group>";
 		};
-		23CB3CEF28C7D35600C42858 /* Profile */ = {
+		23CB3CEF28C7D35600C42858 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CF428C7D38500C42858 /* ProfileViewController.swift */,
+				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
 			);
-			path = Profile;
+			path = Mypage;
 			sourceTree = "<group>";
 		};
 		23CB3CF828C7D85500C42858 /* MainViewModels */ = {
@@ -1161,6 +1195,7 @@
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
+				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
@@ -1182,6 +1217,7 @@
 				5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */,
 				57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
+				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
@@ -1194,7 +1230,8 @@
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
-				23CB3CF528C7D38500C42858 /* ProfileViewController.swift in Sources */,
+				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
+				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
@@ -1213,6 +1250,7 @@
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
+				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
@@ -1233,6 +1271,7 @@
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
+				23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */,
 				57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */,
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
@@ -1266,6 +1305,7 @@
 				23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
+				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

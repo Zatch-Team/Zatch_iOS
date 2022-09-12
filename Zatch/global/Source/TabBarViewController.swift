@@ -16,7 +16,7 @@ class TabBarViewController: UITabBarController {
         let mainVC = MainViewController()
         let zatchVC = MyZatchViewController()
         let chatVC = ChattingListViewController()
-        let profileVC = ProfileViewController()
+        let profileVC = MypageViewController()
         
         mainVC.tabBarItem.image = UIImage.init(named: "Home")
         zatchVC.tabBarItem.image = UIImage.init(named: "ZatchIcon")
