@@ -8,22 +8,20 @@
 import UIKit
 
 class MapTownViewController: UIViewController {
+    
+    let mainView = MapTownView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = true
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
