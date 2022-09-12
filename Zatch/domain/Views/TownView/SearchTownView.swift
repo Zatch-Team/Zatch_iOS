@@ -42,8 +42,16 @@ class SearchTownView: UIView {
     
     func setInitSetting(){
         myTownCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+            
             let flowLayout = LeftAlignCollectionViewFlowLayout()
+            flowLayout.minimumInteritemSpacing = 8
+            flowLayout.minimumLineSpacing = 16
+            
             $0.collectionViewLayout = flowLayout
+            $0.showsVerticalScrollIndicator = false
+            $0.isScrollEnabled = false
+    
+            $0.register(MyTownTagCollectionViewCell.self, forCellWithReuseIdentifier: MyTownTagCollectionViewCell.cellIdentifier)
         }
     }
     
@@ -77,6 +85,7 @@ class SearchTownView: UIView {
             $0.top.equalTo(myTownTitle.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-40)
+            $0.bottom.equalToSuperview().offset(-150)
         }
         
         moveSettingBtn.snp.makeConstraints{
