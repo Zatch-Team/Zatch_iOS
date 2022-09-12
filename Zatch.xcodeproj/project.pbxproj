@@ -77,7 +77,6 @@
 		57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8A289FEB2000056691 /* SheetViewController.swift */; };
 		57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */; };
 		57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */; };
-		57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A91289FFFE300056691 /* SearchCateogryDotButton.swift */; };
 		57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */; };
 		57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */; };
 		57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */; };
@@ -166,6 +165,8 @@
 		57A28CDB28CF05D300263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
 		57A28CDC28CF05D800263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
 		57A28CDD28CF05D800263079 /* DaumMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */; };
+		57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
@@ -300,7 +301,6 @@
 		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagBottomSheet.swift; sourceTree = "<group>"; };
-		57468A91289FFFE300056691 /* SearchCateogryDotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCateogryDotButton.swift; sourceTree = "<group>"; };
 		57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -401,6 +401,8 @@
 		57A28CBD28CF05D300263079 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		57A28CBE28CF05D300263079 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		57A28CBF28CF05D300263079 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTextField.swift; sourceTree = "<group>"; };
+		57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTownTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
@@ -687,6 +689,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				57A28CE028CF23E000263079 /* TownCells */,
 				23B7FBAA28CEBFBC0018642E /* MypageCells */,
 				23A86A5728C731CB00B073CB /* MainCells */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
@@ -883,9 +886,7 @@
 		57468A72289D070400056691 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				57468A73289D071100056691 /* UIButton.swift */,
 				57468A75289D077200056691 /* PurpleButton.swift */,
-				57468A91289FFFE300056691 /* SearchCateogryDotButton.swift */,
 				57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */,
 			);
 			path = UIButton;
@@ -904,6 +905,7 @@
 			children = (
 				57067863281C143A00F48342 /* UIColor.swift */,
 				57468A9A28A1098300056691 /* UITextField.swift */,
+				57468A73289D071100056691 /* UIButton.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
 				577A01B528A496D1004B2575 /* UITextView.swift */,
 				5722461E28C71665009B7C78 /* UIImageView.swift */,
@@ -1083,6 +1085,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		57A28CE028CF23E000263079 /* TownCells */ = {
+			isa = PBXGroup;
+			children = (
+				57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */,
+			);
+			path = TownCells;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1119,6 +1129,7 @@
 			children = (
 				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
 				57713943281F596C0066DEEB /* TitleView.swift */,
+				57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */,
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
@@ -1418,7 +1429,6 @@
 				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */,
-				57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
@@ -1474,6 +1484,7 @@
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
+				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */,
@@ -1514,6 +1525,7 @@
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* FirstWantTableViewCell.swift in Sources */,
+				57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,

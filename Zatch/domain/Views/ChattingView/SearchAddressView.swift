@@ -9,19 +9,7 @@ import UIKit
 
 class SearchAddressView: UIView {
     
-    let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
-        $0.setImageTintColor(.black20)
-    }
-    
-    let searchTextField = UITextField().then{
-        $0.placeholder = "이름(동,면,읍)으로 검색"
-        $0.backgroundColor = .black5
-        $0.layer.cornerRadius = 8
-        $0.clipsToBounds = true
-        $0.font = UIFont.pretendard(size: 15, family: .Medium)
-        $0.addPadding(left: 40, right: 6)
-    }
+    let searchTextField = LocationSearchTextField()
     
     let myLocationFrame = UIStackView().then{
         $0.spacing = 4
@@ -102,11 +90,10 @@ extension SearchAddressView{
     }
     
     func setUpView(){
+        
         self.addSubview(searchTextField)
         self.addSubview(myLocationFrame)
         self.addSubview(searchTipView)
-        
-        searchTextField.addSubview(searchImage)
         
         myLocationFrame.addArrangedSubview(myLocationImage)
         myLocationFrame.addArrangedSubview(myLocationLabel)
@@ -121,17 +108,10 @@ extension SearchAddressView{
     
     func setUpConstraint(){
         
-        searchImage.snp.makeConstraints{ make in
-            make.width.height.equalTo(20)
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(12)
-        }
-        
         searchTextField.snp.makeConstraints{ make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.height.equalTo(44)
         }
         
         myLocationFrame.snp.makeConstraints{ make in

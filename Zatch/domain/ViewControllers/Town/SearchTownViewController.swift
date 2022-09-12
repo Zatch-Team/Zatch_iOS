@@ -8,11 +8,18 @@
 import UIKit
 
 class SearchTownViewController: UIViewController {
+    
+    let mainView = SearchTownView()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
+        }
     }
 
 }

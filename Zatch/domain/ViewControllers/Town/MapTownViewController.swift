@@ -14,7 +14,6 @@ class MapTownViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
         
         self.view.addSubview(mainView)
@@ -22,6 +21,11 @@ class MapTownViewController: UIViewController {
         mainView.snp.makeConstraints{
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
+        
+        mainView.mapView.delegate = self
     }
+}
 
+extension MapTownViewController: MTMapViewDelegate{
+    
 }

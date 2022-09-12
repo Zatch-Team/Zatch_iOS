@@ -38,7 +38,7 @@ class MeetingSheetView: UIView {
     
     let alarmSwitch = UISwitch()
     
-    lazy var registerBtn = PurpleButton()
+    lazy var registerBtn = Purple36Button()
     
     let backStackView = UIStackView().then{
         $0.axis = .vertical

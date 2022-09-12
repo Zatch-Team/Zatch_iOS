@@ -31,10 +31,7 @@ class SplashTownView: UIView {
         $0.textAlignment = .center
     }
     
-    lazy var moveSettingBtn = PurpleButton(height: 52, fontSize: 18).then{
-        $0.setTitle("내 위치 설정하기", for: .normal)
-    }
-
+    lazy var moveSettingBtn = Purple52Button(title: "내 위치 설정하기")
     override init(frame: CGRect) {
         
         super.init(frame: .zero)

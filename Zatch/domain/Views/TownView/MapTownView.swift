@@ -18,12 +18,15 @@ class MapTownView: UIView {
         $0.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
-    let backBtn = UIButton().then{
+    lazy var backBtn = UIButton().then{
         $0.setImage(UIImage(named: "town_arrow"), for: .normal)
     }
     
-    let townSettingBtn = PurpleButton(height: 52, fontSize: 18).then{
-        $0.setTitle("재치 시작하기", for: .normal)
+    let mapView = MTMapView().then{
+        $0.baseMapType = .standard
+    }
+    
+    let townSettingBtn = Purple52Button(title: "재치 시작하기").then{
         $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
         $0.layer.shadowOpacity = 1
         $0.layer.shadowRadius = 8
@@ -42,8 +45,11 @@ class MapTownView: UIView {
     }
 
     func setUpView(){
-        self.addSubview(backBtnView)
-        self.addSubview(townSettingBtn)
+        
+        self.addSubview(mapView)
+        
+        mapView.addSubview(backBtnView)
+        mapView.addSubview(townSettingBtn)
         
         backBtnView.addSubview(backBtn)
         
@@ -60,6 +66,10 @@ class MapTownView: UIView {
         backBtn.snp.makeConstraints{
             $0.width.height.equalTo(16)
             $0.centerX.centerY.equalToSuperview()
+        }
+        
+        mapView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
         }
         
         townSettingBtn.snp.makeConstraints{
