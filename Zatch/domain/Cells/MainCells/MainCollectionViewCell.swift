@@ -49,7 +49,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.text = "Item"
         $0.font = UIFont.pretendard(size: 13, family: .Bold)
         $0.numberOfLines = 0
-        $0.textColor = UIColor(named: "Zatch-Purple")
+        $0.textColor = .zatchPurple
     }
     // 하트
     let heart = UIButton().then{
