@@ -44,8 +44,7 @@ class MySearchViewController: BaseViewController{
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
     }
     
-    let nextButton = PurpleButton().then{
-        $0.setTitle("다음으로", for: .normal)
+    let nextButton = Purple36Button(title: "다음으로").then{
         $0.addTarget(self, action: #selector(nextButtonClick(_:)), for: .touchUpInside)
     }
     

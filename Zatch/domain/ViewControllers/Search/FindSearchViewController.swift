@@ -87,8 +87,7 @@ class FindSearchViewController: BaseViewController {
         $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
     }
     
-    let nextButton = PurpleButton().then{
-        $0.setTitle("검색하기", for: .normal)
+    let nextButton = Purple36Button(title: "검색하기").then{
         $0.addTarget(self, action: #selector(moveToResultVC(_:)), for: .touchUpInside)
     }
 

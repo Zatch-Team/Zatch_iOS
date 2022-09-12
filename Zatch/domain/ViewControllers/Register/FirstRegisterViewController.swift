@@ -19,8 +19,7 @@ class FirstRegisterViewController: BaseViewController {
     
     var backTableView : UITableView!
     
-    let nextButton = PurpleButton().then{
-        $0.setTitle("다음 단계로", for: .normal)
+    let nextButton = Purple36Button(title: "다음 단계로").then{
         $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
 

@@ -26,8 +26,7 @@ class MapTownView: UIView {
         $0.baseMapType = .standard
     }
     
-    let townSettingBtn = PurpleButton(height: 52, fontSize: 18).then{
-        $0.setTitle("재치 시작하기", for: .normal)
+    let townSettingBtn = Purple52Button(title: "재치 시작하기").then{
         $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
         $0.layer.shadowOpacity = 1
         $0.layer.shadowRadius = 8

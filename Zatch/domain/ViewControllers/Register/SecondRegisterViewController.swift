@@ -76,8 +76,7 @@ class SecondRegisterViewController: BaseViewController {
         $0.setTitle("나눔", for: .normal)
     }
     
-    lazy var nextBtn = PurpleButton().then{
-        $0.setTitle("다음 단계로", for: .normal)
+    lazy var nextBtn = Purple36Button(title: "다음 단계로").then{
         $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
 

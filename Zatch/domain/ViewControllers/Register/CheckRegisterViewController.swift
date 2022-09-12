@@ -42,7 +42,7 @@ class CheckRegisterViewController: BaseViewController {
 
     var addExplainTextView : UITextView!
     
-    let registerBtn = PurpleButton().then{
+    let registerBtn = Purple36Button(title: "재치 등록").then{
         $0.setTitle("재치 등록", for: .normal)
     }
 

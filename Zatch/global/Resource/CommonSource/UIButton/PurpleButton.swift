@@ -9,18 +9,17 @@ import UIKit
 
 class PurpleButton: UIButton{
     
-    init(height: CGFloat = 36, fontSize: CGFloat = 14){
+    init(title: String, height: CGFloat, fontSize: CGFloat){
         
         super.init(frame: CGRect.zero)
         
         self.backgroundColor = .zatchPurple
         
+        self.setTitle(title, for: .normal)
         self.setTitleColor(.white, for: .normal)
         self.titleLabel?.font = UIFont.pretendard(size: fontSize, family: .Bold)
         
         self.layer.cornerRadius = height/2
-        
-//        self.titleEdgeInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
         
         self.snp.makeConstraints{ make in
             make.height.equalTo(height)
@@ -30,8 +29,30 @@ class PurpleButton: UIButton{
     required init(coder: NSCoder) {
         super.init(coder: coder)!
     }
+}
+
+class Purple36Button: PurpleButton{
     
-//    override init(frame: CGRect){
-//        super.init(frame: frame)
-//    }
+    init(){
+        super.init(title: "", height: 36, fontSize: 14)
+    }
+    
+    init(title: String){
+        super.init(title: title, height: 36, fontSize: 14)
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class Purple52Button: PurpleButton{
+    
+    init(title: String){
+        super.init(title: title, height: 52, fontSize: 18)
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

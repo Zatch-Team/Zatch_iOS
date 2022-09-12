@@ -77,7 +77,6 @@
 		57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8A289FEB2000056691 /* SheetViewController.swift */; };
 		57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */; };
 		57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */; };
-		57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A91289FFFE300056691 /* SearchCateogryDotButton.swift */; };
 		57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */; };
 		57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */; };
 		57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */; };
@@ -300,7 +299,6 @@
 		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagBottomSheet.swift; sourceTree = "<group>"; };
-		57468A91289FFFE300056691 /* SearchCateogryDotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCateogryDotButton.swift; sourceTree = "<group>"; };
 		57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -883,9 +881,7 @@
 		57468A72289D070400056691 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				57468A73289D071100056691 /* UIButton.swift */,
 				57468A75289D077200056691 /* PurpleButton.swift */,
-				57468A91289FFFE300056691 /* SearchCateogryDotButton.swift */,
 				57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */,
 			);
 			path = UIButton;
@@ -904,6 +900,7 @@
 			children = (
 				57067863281C143A00F48342 /* UIColor.swift */,
 				57468A9A28A1098300056691 /* UITextField.swift */,
+				57468A73289D071100056691 /* UIButton.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
 				577A01B528A496D1004B2575 /* UITextView.swift */,
 				5722461E28C71665009B7C78 /* UIImageView.swift */,
@@ -1418,7 +1415,6 @@
 				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableViewCell.swift in Sources */,
-				57468A92289FFFE300056691 /* SearchCateogryDotButton.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
