@@ -40,7 +40,6 @@ class CategoryBottomSheet: SheetViewController {
             flowLayout.minimumInteritemSpacing = 0
             flowLayout.minimumLineSpacing = 16
             
-            
             let width = UIScreen.main.bounds.size.width - 40
             flowLayout.itemSize = CGSize(width: width/4, height: (width/4)/80*96)
             
