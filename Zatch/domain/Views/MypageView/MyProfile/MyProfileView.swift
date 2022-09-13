@@ -14,10 +14,6 @@ class MyProfileView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-//        setUpTableView()
-//        setUpView()
-//        setUpConstraint()
         
     }
     required init?(coder: NSCoder) {
