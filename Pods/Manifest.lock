@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.1)
+  - Cosmos (23.0.0)
   - KakaoSDKAuth (2.11.1):
     - KakaoSDKCommon (= 2.11.1)
   - KakaoSDKCommon (2.11.1):
@@ -22,6 +23,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
+  - Cosmos (~> 23.0)
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
@@ -34,6 +36,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
@@ -46,6 +49,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   KakaoSDKAuth: bb2dfa7be30daa8403c9cfc8001aa6fde7a5b779
   KakaoSDKCommon: 555e1bb46595b842ded01cf7888cc17bbae4e113
   KakaoSDKUser: 08c0a4f40bebdebdf948a9e3d0e44ed5c2754f99
@@ -56,6 +60,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 344595a3529879839895b18f20921428b8143ea1
+PODFILE CHECKSUM: 8dea433b34291d4ba17aa7e934c543c876f3a932
 
 COCOAPODS: 1.11.3
