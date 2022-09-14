@@ -659,7 +659,7 @@
 		23C9030E28C5CE2E00FB6D3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				57D6D7A428CDC33800F805B7 /* ChattingServices */,
+				57A28D5328D19D3700263079 /* KakaoDataManager */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1158,20 +1158,20 @@
 			path = TownCells;
 			sourceTree = "<group>";
 		};
+		57A28D5328D19D3700263079 /* KakaoDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */,
+			);
+			path = KakaoDataManager;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
 				57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */,
 			);
 			path = ChattingModels;
-			sourceTree = "<group>";
-		};
-		57D6D7A428CDC33800F805B7 /* ChattingServices */ = {
-			isa = PBXGroup;
-			children = (
-				57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */,
-			);
-			path = ChattingServices;
 			sourceTree = "<group>";
 		};
 		57EBCE3C28A88E5000212D20 /* Alert */ = {

@@ -92,6 +92,8 @@
 	<string>$(KAKAO_NATIVE_KEY)</string>
 	<key>KAKAO_REST_API_KEY</key>
 	<string>$(KAKAO_REST_API_KEY)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>동네 인증을 위해 사용자 위치 정보가 필요함.</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<string>kakaokompassauth</string>
 </dict>
