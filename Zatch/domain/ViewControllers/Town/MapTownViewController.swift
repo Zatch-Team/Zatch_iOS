@@ -33,8 +33,11 @@ class MapTownViewController: UIViewController{
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        
         let userTown = locationManager.location?.coordinate
-        print("현재 위치",userTown!.latitude, userTown?.longitude)
+        print("현재 위치", String(userTown!.latitude), String(userTown!.longitude))
+        
+        KakaoLocalDataManager().getsLocationAddress(x: String(userTown!.latitude), y: String(userTown!.longitude), viewController: self)
     }
     
     func setUpView(){
@@ -99,6 +102,12 @@ class MapTownViewController: UIViewController{
         self.present(alert, animated: false, completion: nil)
         
         
+    }
+    
+    //MARK: - API
+    
+    func successGetLocationAddress(result: KakaoLocationAddressModel){
+        print("현재 위치 주소",result)
     }
 }
 
