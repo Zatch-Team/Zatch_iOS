@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MapTownViewController: UIViewController{
     
@@ -23,9 +24,20 @@ class MapTownViewController: UIViewController{
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         self.navigationController?.isNavigationBarHidden = true
         
+        setUpView()
+        
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        let userTown = locationManager.location?.coordinate
+        print("현재 위치",userTown!.latitude, userTown?.longitude)
+    }
+    
+    func setUpView(){
         self.view.addSubview(mainView)
         
         mainView.snp.makeConstraints{
@@ -33,6 +45,9 @@ class MapTownViewController: UIViewController{
         }
         
         mainView.mapView.delegate = self
+//        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
+        mainView.mapView.setZoomLevel(0, animated: true)
+        
     }
     
     @objc func willCertificationUserTown(){
@@ -41,7 +56,7 @@ class MapTownViewController: UIViewController{
             print("map point value is nil")
             return
         }
-        
+
         //좌표 -> 주소 변환 메서드
         MTMapReverseGeoCoder.executeFindingAddress(for: mapPoint, openAPIKey: Const.KakaoAPI.KAKAO_APP_KEY, completionHandler: {isSuccess, address, error in
             if(isSuccess){
@@ -78,6 +93,8 @@ class MapTownViewController: UIViewController{
         }
         
         let alert = MapAlertViewController()
+        alert.townName = townInfo
+        
         alert.modalPresentationStyle = .overFullScreen
         self.present(alert, animated: false, completion: nil)
         
@@ -92,7 +109,9 @@ extension MapTownViewController: MTMapViewDelegate{
      //2. 선택한 위치에 마커 표시 -> addPOIItem (1개만 표시되도록 설정)
      
      //3. 카카오 로컬 api 통해 좌표로 주소 변환하기 or MTMapReverseGeoCoder 사용
-     4. 재치 시작하기 버튼 클릭시, 마커 위치 정보 통해 '동' 정보 추출하기
+     //4. 재치 시작하기 버튼 클릭시, 마커 위치 정보 통해 '동' 정보 추출하기
+     
+     5. 현재 위치와 비교하는 방식으로 동네 인증 기능 구현
      
      추가. customDirectionImageAnchorPointOffset로 마커 중심 변경하기
      */
@@ -118,4 +137,8 @@ extension MapTownViewController: MTMapViewDelegate{
         mapView.addPOIItems([self.mapMarker])
     }
     
+}
+
+extension MapTownViewController: CLLocationManagerDelegate{
+
 }
