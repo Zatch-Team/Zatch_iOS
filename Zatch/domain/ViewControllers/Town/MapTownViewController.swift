@@ -69,9 +69,17 @@ class MapTownViewController: UIViewController{
         
         if(endCharacter == "동" || endCharacter == "면" || endCharacter == "읍" || endCharacter == "가"){
             print("2번 인덱스")
+            self.townInfo = tokenString[2]
         }else if(tokenString[3].returnEndCharacter() == "동"){
             print("3번 인덱스")
+            self.townInfo = tokenString[3]
+        }else{
+            
         }
+        
+        let alert = MapAlertViewController()
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: false, completion: nil)
         
         
     }
