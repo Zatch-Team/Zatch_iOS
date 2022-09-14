@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
+		235613F328D0974A00D44E97 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F228D0974A00D44E97 /* MyProfileViewController.swift */; };
+		235613F728D0976500D44E97 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F628D0976500D44E97 /* MyProfileView.swift */; };
+		235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */; };
+		235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
 		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
@@ -234,6 +238,10 @@
 
 /* Begin PBXFileReference section */
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		235613F228D0974A00D44E97 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		235613F628D0976500D44E97 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTableViewCell.swift; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +493,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		235613F028D0972D00D44E97 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		235613F128D0973900D44E97 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				235613F228D0974A00D44E97 /* MyProfileViewController.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		235613F428D0975300D44E97 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				23B7FBA828CEB9430018642E /* MypageView.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		235613F528D0975A00D44E97 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				235613F628D0976500D44E97 /* MyProfileView.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		235613F828D09A0500D44E97 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
+				23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */,
+				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
+				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
+				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		235613F928D09A0E00D44E97 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */,
+				235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
 		23A86A5428C72C4C00B073CB /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,7 +568,8 @@
 		23B7FBA728CEB8E80018642E /* MypageView */ = {
 			isa = PBXGroup;
 			children = (
-				23B7FBA828CEB9430018642E /* MypageView.swift */,
+				235613F528D0975A00D44E97 /* MyProfile */,
+				235613F428D0975300D44E97 /* Mypage */,
 			);
 			path = MypageView;
 			sourceTree = "<group>";
@@ -515,11 +577,8 @@
 		23B7FBAA28CEBFBC0018642E /* MypageCells */ = {
 			isa = PBXGroup;
 			children = (
-				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
-				23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */,
-				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
-				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
-				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
+				235613F928D09A0E00D44E97 /* MyProfile */,
+				235613F828D09A0500D44E97 /* MyPage */,
 			);
 			path = MypageCells;
 			sourceTree = "<group>";
@@ -804,7 +863,8 @@
 		23CB3CEF28C7D35600C42858 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
+				235613F128D0973900D44E97 /* MyProfile */,
+				235613F028D0972D00D44E97 /* Mypage */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -1460,8 +1520,10 @@
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
+				235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
+				235613F328D0974A00D44E97 /* MyProfileViewController.swift in Sources */,
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
@@ -1488,6 +1550,7 @@
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
+				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
@@ -1499,6 +1562,7 @@
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
+				235613F728D0976500D44E97 /* MyProfileView.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
