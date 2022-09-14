@@ -12,7 +12,7 @@ class KakaoLocalDataManager{
     
     let headers : HTTPHeaders = [.authorization("KakaoAK \(Const.KakaoAPI.KAKAO_REST_API_KEY)")]
     
-    func gets(query: String, viewController: SearchAddressResultBottomSheet){
+    func getsSearchPlace(query: String, viewController: SearchAddressResultBottomSheet){
 
         AF.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: ["query":query], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalModel.self) { response in
             switch response.result {
@@ -23,6 +23,9 @@ class KakaoLocalDataManager{
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func getsLocationAddress(){
         
     }
 }
