@@ -41,7 +41,7 @@ class SearchAddressResultBottomSheet: SheetViewController {
     //MARK: - API
     func requestSearchResult(query: String){
         self.mainView.searchTextField.text = query
-        KakaoLocalDataManager().getsSearchPlace(query: query, viewController: self)
+        KakaoLocalDataManager().getPlaceSearch(query: query, viewController: self)
     }
     
     func successSearchAddressResult(result: [LocalResult]){

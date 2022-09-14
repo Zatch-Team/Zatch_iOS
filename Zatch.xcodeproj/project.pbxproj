@@ -173,6 +173,7 @@
 		57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */; };
 		57A28D0E28D03FAE00263079 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0D28D03FAE00263079 /* String.swift */; };
 		57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0F28D041F800263079 /* MapAlertViewController.swift */; };
+		57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
@@ -415,6 +416,7 @@
 		57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTownTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57A28D0D28D03FAE00263079 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		57A28D0F28D041F800263079 /* MapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAlertViewController.swift; sourceTree = "<group>"; };
+		57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAddressModel.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInputTextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 		23C9030B28C5CE2100FB6D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				57A28D5428D1A07000263079 /* TownModels */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
 			);
 			path = Models;
@@ -1166,6 +1169,14 @@
 			path = KakaoDataManager;
 			sourceTree = "<group>";
 		};
+		57A28D5428D1A07000263079 /* TownModels */ = {
+			isa = PBXGroup;
+			children = (
+				57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */,
+			);
+			path = TownModels;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1521,6 +1532,7 @@
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */,
+				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
 				235613F328D0974A00D44E97 /* MyProfileViewController.swift in Sources */,
