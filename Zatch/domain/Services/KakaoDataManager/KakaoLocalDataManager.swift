@@ -25,11 +25,12 @@ class KakaoLocalDataManager{
         }
     }
     
-    func getsLocationAddress(x: String, y: String, viewController: MapTownViewController){
-        print("호출 조")
-        AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": x, "y": y], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
+    func getsLocationAddress(coordinate: KakaoLocationAddressInput, viewController: MapTownViewController){
+        
+        AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": coordinate.x, "y": coordinate.y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
             switch response.result {
             case .success(let result):
+                print("성공?")
                 viewController.successGetLocationAddress(result: result)
                 print(result)
             case .failure(let error):
@@ -37,4 +38,10 @@ class KakaoLocalDataManager{
             }
         }
     }
+    
+}
+
+struct KakaoLocationAddressInput: Encodable{
+    var x: String
+    var y: String
 }

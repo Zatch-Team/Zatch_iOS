@@ -25,7 +25,7 @@ class SheetNavigationViewController: UINavigationController, UIViewControllerTra
 
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
 
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: 342 * Const.deviceHeight / 718)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: 324 * Const.deviceHeight / 810)
 
         controller.detents = [detent]
         controller.preferredCornerRadius = 28

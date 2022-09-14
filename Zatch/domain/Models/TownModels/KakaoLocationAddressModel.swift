@@ -8,6 +8,10 @@
 import Foundation
 
 struct KakaoLocationAddressModel: Decodable{
+    let documents:[KakaoLocationAddressResult]
+}
+
+struct KakaoLocationAddressResult: Decodable{
     let address_name: String
     let region_1depth_name: String
     let region_2depth_name: String

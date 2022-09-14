@@ -18,6 +18,7 @@ class MapTownViewController: UIViewController{
     //MARK: - UI
     
     let mainView = MapTownView().then{
+        $0.backBtn.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
         $0.townSettingBtn.addTarget(self, action: #selector(willCertificationUserTown), for: .touchUpInside)
     }
 
@@ -27,6 +28,7 @@ class MapTownViewController: UIViewController{
         self.navigationController?.isNavigationBarHidden = true
         
         setUpView()
+
         
         let locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -37,7 +39,10 @@ class MapTownViewController: UIViewController{
         let userTown = locationManager.location?.coordinate
         print("현재 위치", String(userTown!.latitude), String(userTown!.longitude))
         
-        KakaoLocalDataManager().getsLocationAddress(x: String(userTown!.latitude), y: String(userTown!.longitude), viewController: self)
+        let coordinate = KakaoLocationAddressInput(x: String(userTown!.longitude), y: String(userTown!.latitude))
+        
+        KakaoLocalDataManager().getsLocationAddress(coordinate: coordinate, viewController: self)
+         
     }
     
     func setUpView(){
@@ -48,9 +53,12 @@ class MapTownViewController: UIViewController{
         }
         
         mainView.mapView.delegate = self
-//        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
+        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
         mainView.mapView.setZoomLevel(0, animated: true)
         
+    }
+    
+    @objc func backBtnDidClicked(){
     }
     
     @objc func willCertificationUserTown(){

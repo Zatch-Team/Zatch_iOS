@@ -17,7 +17,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         case Category = 460 // 500
         case TownArea = 442
         case Declaration = 128
-        case MakeMeeting = 342
+        case MakeMeeting = 324
         case LocationChange = 216
     }
     
@@ -53,7 +53,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
         
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue * Const.deviceHeight / 718)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue * Const.deviceHeight / 810)
     
         controller.detents = [detent]
         controller.preferredCornerRadius = 28

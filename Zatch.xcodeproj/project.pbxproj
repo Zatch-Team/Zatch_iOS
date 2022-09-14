@@ -168,7 +168,6 @@
 		57A28CDA28CF05D300263079 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A28CBE28CF05D300263079 /* map_pin_shadow.png */; };
 		57A28CDB28CF05D300263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
 		57A28CDC28CF05D800263079 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; };
-		57A28CDD28CF05D800263079 /* DaumMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28CBF28CF05D300263079 /* DaumMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */; };
 		57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */; };
 		57A28D0E28D03FAE00263079 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0D28D03FAE00263079 /* String.swift */; };
@@ -222,20 +221,6 @@
 			remoteInfo = Zatch;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		57A28BE228CEFD9900263079 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				57A28CDD28CF05D800263079 /* DaumMap.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -1243,7 +1228,6 @@
 				575BF6F627E0CBC6008D5B3C /* Frameworks */,
 				575BF6F727E0CBC6008D5B3C /* Resources */,
 				687AD479EB57C1A10288F9EF /* [CP] Embed Pods Frameworks */,
-				57A28BE228CEFD9900263079 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

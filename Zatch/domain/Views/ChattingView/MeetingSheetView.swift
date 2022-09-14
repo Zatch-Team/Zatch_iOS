@@ -117,7 +117,7 @@ class MeetingSheetView: UIView {
             make.height.equalTo(24)
             make.leading.trailing.equalToSuperview()
         }
-        
+
         alaramTitle.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(8)
             make.top.equalToSuperview().offset(3)
