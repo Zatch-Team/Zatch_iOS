@@ -100,6 +100,9 @@
 		575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */; };
 		575BF71427E0CBC8008D5B3C /* ZatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71327E0CBC8008D5B3C /* ZatchTests.swift */; };
 		575BF71F27E0CBC8008D5B3C /* ZatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */; };
+		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
+		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
+		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
 		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
 		5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* DetailViewController.swift */; };
 		5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* ImageTableViewCell.swift */; };
@@ -322,6 +325,9 @@
 		575BF71A27E0CBC8008D5B3C /* ZatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchUITests.swift; sourceTree = "<group>"; };
 		575BF72027E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
+		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
+		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
 		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
 		5767D7722868248E0075DB28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5767D77428682D120075DB28 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -484,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
+				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -500,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				23B7FBA828CEB9430018642E /* MypageView.swift */,
+				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -520,6 +528,7 @@
 				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
 				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
 				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
+				576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -1563,9 +1572,11 @@
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
+				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
+				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
@@ -1613,6 +1624,7 @@
 				577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
+				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
