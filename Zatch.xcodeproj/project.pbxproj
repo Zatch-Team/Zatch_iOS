@@ -103,6 +103,8 @@
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
+		576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */; };
+		576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */; };
 		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
 		5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* DetailViewController.swift */; };
 		5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* ImageTableViewCell.swift */; };
@@ -328,6 +330,8 @@
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
+		576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLeftTitleViewController.swift; sourceTree = "<group>"; };
+		576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCenterTitleViewController.swift; sourceTree = "<group>"; };
 		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
 		5767D7722868248E0075DB28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5767D77428682D120075DB28 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -933,6 +937,8 @@
 				57C585032821F2A70078FAFF /* ServiceType.swift */,
 				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
+				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
+				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
 				57468A8A289FEB2000056691 /* SheetViewController.swift */,
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
@@ -1611,8 +1617,10 @@
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
+				576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */,
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
+				576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
 				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,

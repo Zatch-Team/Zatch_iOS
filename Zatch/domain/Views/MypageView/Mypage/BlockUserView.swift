@@ -16,8 +16,8 @@ class BlockUserView: UIView {
         super.init(frame: .zero)
         
         tableView = UITableView().then{
-            $0.separatorStyle = .none
             $0.showsVerticalScrollIndicator = false
+            $0.separatorStyle = .none
             
             $0.register(BlockUserTableViewCell.self, forCellReuseIdentifier: BlockUserTableViewCell.cellIdentifier)
         }

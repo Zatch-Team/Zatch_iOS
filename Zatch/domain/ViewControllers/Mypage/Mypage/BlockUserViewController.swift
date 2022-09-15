@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BlockUserViewController: BaseViewController {
+class BlockUserViewController: BaseCenterTitleViewController {
     
     let mainView = BlockUserView()
 
