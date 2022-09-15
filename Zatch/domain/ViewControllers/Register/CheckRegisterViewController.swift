@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CheckRegisterViewController: BaseViewController {
+class CheckRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - Properties
     

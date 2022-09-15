@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
         $0.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
     }
     
-    let navigationTitle = UILabel().then{
+    lazy var navigationTitle = UILabel().then{
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
 
@@ -28,13 +28,12 @@ class BaseViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
         
-        //
+        //setUpView
         self.view.addSubview(navigationView)
         
         navigationView.addSubview(backBtn)
-        navigationView.addSubview(navigationTitle)
         
-        //
+        //setUpConstraint
         navigationView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(44)
             make.leading.trailing.equalToSuperview()
@@ -45,11 +44,6 @@ class BaseViewController: UIViewController {
             make.width.height.equalTo(24)
             make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
-        }
-        
-        navigationTitle.snp.makeConstraints{ make in
-            make.centerY.equalToSuperview()
-            make.leading.equalTo(backBtn.snp.trailing).offset(4)
         }
     }
     

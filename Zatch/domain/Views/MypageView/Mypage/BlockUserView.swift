@@ -8,13 +8,29 @@
 import UIKit
 
 class BlockUserView: UIView {
+    
+    var tableView: UITableView!
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        
+        super.init(frame: .zero)
+        
+        tableView = UITableView().then{
+            $0.showsVerticalScrollIndicator = false
+            $0.separatorStyle = .none
+            
+            $0.register(BlockUserTableViewCell.self, forCellReuseIdentifier: BlockUserTableViewCell.cellIdentifier)
+        }
+        
+        self.addSubview(tableView)
+        
+        tableView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
+        }
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

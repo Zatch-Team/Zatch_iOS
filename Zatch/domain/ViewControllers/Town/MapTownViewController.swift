@@ -59,6 +59,7 @@ class MapTownViewController: UIViewController{
     }
     
     @objc func backBtnDidClicked(){
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func willCertificationUserTown(){

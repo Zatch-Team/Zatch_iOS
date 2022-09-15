@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstRegisterViewController: BaseViewController {
+class FirstRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - Properties
     var isOpen = false
