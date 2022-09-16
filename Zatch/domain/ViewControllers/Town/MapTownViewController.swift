@@ -53,7 +53,7 @@ class MapTownViewController: UIViewController{
         }
         
         mainView.mapView.delegate = self
-        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
+//        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
         mainView.mapView.setZoomLevel(0, animated: true)
         
     }
@@ -104,7 +104,7 @@ class MapTownViewController: UIViewController{
             
         }
         
-        let alert = MapAlertViewController()
+        let alert = TownMapAlertViewController()
         alert.townName = townInfo
         
         alert.modalPresentationStyle = .overFullScreen

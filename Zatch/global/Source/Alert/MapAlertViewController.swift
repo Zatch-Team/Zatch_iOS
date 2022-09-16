@@ -9,13 +9,6 @@ import UIKit
 
 class MapAlertViewController: AlertViewController {
     
-    //MARK: - Properties
-    var townName: String! {
-        didSet{
-            self.messageLabel.text = "우리 동네가 ‘\(self.townName!)’이 맞나요?"
-        }
-    }
-    
     //MARK: - UI
     
     let characterImage = UIImageView().then{
@@ -26,7 +19,7 @@ class MapAlertViewController: AlertViewController {
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
         $0.textAlignment = .center
-        $0.numberOfLines = 1
+        $0.numberOfLines = 0
     }
     
     let cancelBtn = UIButton().then{
@@ -88,12 +81,6 @@ class MapAlertViewController: AlertViewController {
             $0.top.equalTo(messageLabel.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
         }
-    }
-    
-    override func okBtnDidClicked() {
-        
-        
-        super.okBtnDidClicked()
     }
     
     @objc func cancelBtnDidClicked(){
