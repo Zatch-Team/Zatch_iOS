@@ -105,6 +105,8 @@
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
 		576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */; };
 		576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */; };
+		576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */; };
+		576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */; };
 		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
 		5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* DetailViewController.swift */; };
 		5767D77528682D120075DB28 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* ImageTableViewCell.swift */; };
@@ -332,6 +334,8 @@
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
 		576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLeftTitleViewController.swift; sourceTree = "<group>"; };
 		576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCenterTitleViewController.swift; sourceTree = "<group>"; };
+		576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownMapAlertViewController.swift; sourceTree = "<group>"; };
+		576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMapAlertViewController.swift; sourceTree = "<group>"; };
 		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
 		5767D7722868248E0075DB28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5767D77428682D120075DB28 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -1197,6 +1201,8 @@
 				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
 				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
 				57A28D0F28D041F800263079 /* MapAlertViewController.swift */,
+				576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */,
+				576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1518,6 +1524,7 @@
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
+				576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
@@ -1632,6 +1639,7 @@
 				577A01B828A49C97004B2575 /* CheckRegisterZatchInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
+				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */,
