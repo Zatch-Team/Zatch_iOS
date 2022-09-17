@@ -12,6 +12,7 @@ struct KakaoLocationAddressModel: Decodable{
 }
 
 struct KakaoLocationAddressResult: Decodable{
+    let region_type: String
     let address_name: String
     let region_1depth_name: String
     let region_2depth_name: String

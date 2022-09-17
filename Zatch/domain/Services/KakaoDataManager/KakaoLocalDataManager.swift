@@ -17,7 +17,6 @@ class KakaoLocalDataManager{
         AF.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: ["query":query], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalModel.self) { response in
             switch response.result {
             case .success(let result):
-                print(result.documents)
                 viewController.successSearchAddressResult(result: result.documents ?? [])
             case .failure(let error):
                 print(error.localizedDescription)
@@ -25,14 +24,26 @@ class KakaoLocalDataManager{
         }
     }
     
-    func getsLocationAddress(coordinate: KakaoLocationAddressInput, viewController: MapTownViewController){
+//    func getsLocationAddress(coordinate: KakaoLocationAddressInput, viewController: MapTownViewController){
+//
+//        AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": coordinate.x, "y": coordinate.y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
+//            switch response.result {
+//            case .success(let result):
+//                print("성공?")
+//                viewController.successGetLocationAddress(result: result)
+//                print(result)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+    
+    func getsLocationAddress(x: String, y: String, viewController: MapTownViewController){
         
-        AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": coordinate.x, "y": coordinate.y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
+        AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
             switch response.result {
             case .success(let result):
-                print("성공?")
                 viewController.successGetLocationAddress(result: result)
-                print(result)
             case .failure(let error):
                 print(error.localizedDescription)
             }
