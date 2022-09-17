@@ -15,6 +15,7 @@ class MapTownViewController: UIViewController{
     
     var currentLoactionTown: String!
     var townInfo: String! //user의 동네 정보 담는 변수
+    var locationManager: CLLocationManager!
     
     //MARK: - UI
     
@@ -32,10 +33,12 @@ class MapTownViewController: UIViewController{
         
         //TODO: - Authorization Status에 따라 권한 요청 진행하기 (CLAuthorizationStatus)
 
-        let locationManager = CLLocationManager()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
         
         switch (locationManager.authorizationStatus){
         case .authorizedAlways, .authorizedWhenInUse:
+            print("이미 허용됨?")
             //따로 안내할 내용 없으니까 건너뛰어도 될 듯
             locationManager.startUpdatingLocation()
             let userTown = locationManager.location?.coordinate
@@ -45,19 +48,38 @@ class MapTownViewController: UIViewController{
                                                         viewController: self)
             break
         case .notDetermined:
+            print("아직 결정안됨?")
             locationManager.requestWhenInUseAuthorization()
+//            locationManagerDidChangeAuthorization(locationManager)
             break
-        case .denied, .restricted:
-            //위치 권한을 허용하셔야 동네 인증이 가능합니다. 팝업 띄우기
+//        case .denied, .restricted:
+//            print("이미 거부됨?")
+//            //위치 권한을 허용하셔야 동네 인증이 가능합니다. 팝업 띄우기
+//            let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
+//            alert.handler = {
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//            alert.modalPresentationStyle = .overFullScreen
+//            self.present(alert, animated: false, completion: nil)
+//            break
+        default:
+            print("이외?")
+        }
+         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(true)
+        
+        if(locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .denied ){
             let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
             alert.handler = {
                 self.navigationController?.popViewController(animated: true)
             }
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false, completion: nil)
-            break
         }
-         
     }
     
     func setUpView(){
@@ -162,6 +184,38 @@ extension MapTownViewController: MTMapViewDelegate{
     
 }
 
-//extension MapTownViewController: CLLocationManagerDelegate{
-//
-//}
+extension MapTownViewController: CLLocationManagerDelegate{
+    
+    /*
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager){
+        print("새로운 권한", manager.authorizationStatus, manager.authorizationStatus.rawValue)
+        switch (manager.authorizationStatus){
+        case .authorizedAlways, .authorizedWhenInUse:
+            //따로 안내할 내용 없으니까 건너뛰어도 될 듯
+            print("새로 허용됨")
+            manager.startUpdatingLocation()
+            let userTown = manager.location?.coordinate
+            
+            KakaoLocalDataManager().getsLocationAddress(x: String(userTown!.longitude),
+                                                        y: String(userTown!.latitude),
+                                                        viewController: self)
+            break
+            
+        case .denied, .restricted:
+            print("새로 접근 허용 물었는데 거부됨?")
+            //위치 권한을 허용하셔야 동네 인증이 가능합니다. 팝업 띄우기
+            let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
+            alert.handler = {
+                self.navigationController?.popViewController(animated: true)
+            }
+            alert.modalPresentationStyle = .overFullScreen
+            self.present(alert, animated: false, completion: nil)
+            break
+            
+        default:
+            print("이외 케이스??")
+            return
+        }
+    }
+     */
+}
