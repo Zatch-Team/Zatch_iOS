@@ -50,6 +50,9 @@ class MapTownViewController: UIViewController{
         case .denied, .restricted:
             //위치 권한을 허용하셔야 동네 인증이 가능합니다. 팝업 띄우기
             let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
+            alert.handler = {
+                self.navigationController?.popViewController(animated: true)
+            }
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false, completion: nil)
             break
