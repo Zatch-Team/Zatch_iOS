@@ -9,6 +9,8 @@ import UIKit
 
 class MapAlertViewController: AlertViewController {
     
+    var registerHandler : (() -> ())?
+    
     //MARK: - UI
     
     let characterImage = UIImageView().then{
@@ -81,6 +83,11 @@ class MapAlertViewController: AlertViewController {
             $0.top.equalTo(messageLabel.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
         }
+    }
+    
+    override func okBtnDidClicked(){
+        registerHandler!()
+        super.okBtnDidClicked()
     }
     
     @objc func cancelBtnDidClicked(){

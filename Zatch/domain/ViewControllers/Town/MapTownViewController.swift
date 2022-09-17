@@ -13,13 +13,14 @@ class MapTownViewController: UIViewController{
     //MARK: - Properties
     var mapMarker = CustomMapMarker()
     
+    var currentLoactionTown: String!
     var townInfo: String! //user의 동네 정보 담는 변수
     
     //MARK: - UI
     
     let mainView = MapTownView().then{
         $0.backBtn.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
-        $0.townSettingBtn.addTarget(self, action: #selector(willCertificationUserTown), for: .touchUpInside)
+        $0.townSettingBtn.addTarget(self, action: #selector(ceritificationBtnDidClicked), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -28,20 +29,31 @@ class MapTownViewController: UIViewController{
         self.navigationController?.isNavigationBarHidden = true
         
         setUpView()
+        
+        //TODO: - Authorization Status에 따라 권한 요청 진행하기 (CLAuthorizationStatus)
 
-        
         let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         
-        
-        let userTown = locationManager.location?.coordinate
-        print("현재 위치", String(userTown!.latitude), String(userTown!.longitude))
-        
-        let coordinate = KakaoLocationAddressInput(x: String(userTown!.longitude), y: String(userTown!.latitude))
-        
-        KakaoLocalDataManager().getsLocationAddress(coordinate: coordinate, viewController: self)
+        switch (locationManager.authorizationStatus){
+        case .authorizedAlways, .authorizedWhenInUse:
+            //따로 안내할 내용 없으니까 건너뛰어도 될 듯
+            locationManager.startUpdatingLocation()
+            let userTown = locationManager.location?.coordinate
+            
+            KakaoLocalDataManager().getsLocationAddress(x: String(userTown!.longitude),
+                                                        y: String(userTown!.latitude),
+                                                        viewController: self)
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .denied, .restricted:
+            //위치 권한을 허용하셔야 동네 인증이 가능합니다. 팝업 띄우기
+            let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
+            alert.modalPresentationStyle = .overFullScreen
+            self.present(alert, animated: false, completion: nil)
+            break
+        }
          
     }
     
@@ -53,7 +65,7 @@ class MapTownViewController: UIViewController{
         }
         
         mainView.mapView.delegate = self
-//        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
+        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
         mainView.mapView.setZoomLevel(0, animated: true)
         
     }
@@ -62,61 +74,51 @@ class MapTownViewController: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func willCertificationUserTown(){
+    @objc func ceritificationBtnDidClicked(){
 
         guard let mapPoint = self.mapMarker.mapPoint else{
             print("map point value is nil")
             return
         }
-
-        //좌표 -> 주소 변환 메서드
-        MTMapReverseGeoCoder.executeFindingAddress(for: mapPoint, openAPIKey: Const.KakaoAPI.KAKAO_APP_KEY, completionHandler: {isSuccess, address, error in
-            if(isSuccess){
-                if let address = address {
-                    self.addressProcessing(address: address)
-                }
-            }
-        })
+        
+        KakaoLocalDataManager().getsLocationAddress(x: String( mapPoint.mapPointGeo().longitude),
+                                                    y: String(mapPoint.mapPointGeo().latitude),
+                                                    viewController: self)
     }
     
-    func addressProcessing(address: String){
+    func willCertificationUserTown(selectTown: String){
         
-        /* 동네 정보 전체 주소 케이스 5가지(동,면,읍,가)
-         3: 경기 성남시 분당구 정자동 112
-         2: 서울 성북구 안암동5가 1-2
-         2: 서울 동대문구 전농동 130-14
-         2: 경기 화성시 정남면 발산리 455-1
-         2: 충남 아산시 배방읍 회룡리 산 16
-         */
-        
-        print(address)
-        
-        let tokenString = address.components(separatedBy: " ")
-        let endCharacter = tokenString[2].returnEndCharacter()
-        
-        if(endCharacter == "동" || endCharacter == "면" || endCharacter == "읍" || endCharacter == "가"){
-            print("2번 인덱스")
-            self.townInfo = tokenString[2]
-        }else if(tokenString[3].returnEndCharacter() == "동"){
-            print("3번 인덱스")
-            self.townInfo = tokenString[3]
-        }else{
+        if(currentLoactionTown == selectTown){
+            let alert = TownMapAlertViewController()
+            alert.townName = self.currentLoactionTown
+            alert.registerHandler = {
+                print("ok 눌림")
+                self.navigationController?.pushViewController(MainViewController(), animated: true)
+            }
+            alert.modalPresentationStyle = .overFullScreen
             
+            self.present(alert, animated: false, completion: nil)
+        }else{
+            let alert = InfoAlertViewController(message: "현 위치와 선택하신 동네가 다릅니다.")
+            alert.modalPresentationStyle = .overFullScreen
+            
+            self.present(alert, animated: false, completion: nil)
         }
-        
-        let alert = TownMapAlertViewController()
-        alert.townName = townInfo
-        
-        alert.modalPresentationStyle = .overFullScreen
-        self.present(alert, animated: false, completion: nil)
-        
-        
     }
     
     //MARK: - API
     
     func successGetLocationAddress(result: KakaoLocationAddressModel){
+        
         print("현재 위치 주소",result)
+        
+        let selectTown = result.documents[1].region_3depth_name
+        
+        if (currentLoactionTown == nil){
+            currentLoactionTown = selectTown
+        }else{
+            willCertificationUserTown(selectTown: selectTown)
+        }
     }
 }
 
@@ -129,7 +131,7 @@ extension MapTownViewController: MTMapViewDelegate{
      //3. 카카오 로컬 api 통해 좌표로 주소 변환하기 or MTMapReverseGeoCoder 사용
      //4. 재치 시작하기 버튼 클릭시, 마커 위치 정보 통해 '동' 정보 추출하기
      
-     5. 현재 위치와 비교하는 방식으로 동네 인증 기능 구현
+     5. 현재 위치와 비교하는 방식으로 동네 인증 기능 구현 -> 법정동 기준으로 진행 => 사용자가 선택한 위치에 대해서도 카카오 로컬 API 호출해야 함
      
      추가. customDirectionImageAnchorPointOffset로 마커 중심 변경하기
      */
@@ -157,6 +159,6 @@ extension MapTownViewController: MTMapViewDelegate{
     
 }
 
-extension MapTownViewController: CLLocationManagerDelegate{
-
-}
+//extension MapTownViewController: CLLocationManagerDelegate{
+//
+//}
