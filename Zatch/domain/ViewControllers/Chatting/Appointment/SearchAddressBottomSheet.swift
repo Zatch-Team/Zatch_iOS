@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchAddressBottomSheet: SheetViewController {
+class SearchAddressSheetViewController: SheetViewController {
     
     let mainView = SearchAddressView()
     let viewModel = SearchAddressViewModel()
@@ -51,7 +51,7 @@ class SearchAddressBottomSheet: SheetViewController {
     }
 }
 
-extension SearchAddressBottomSheet: UITextFieldDelegate{
+extension SearchAddressSheetViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -64,7 +64,7 @@ extension SearchAddressBottomSheet: UITextFieldDelegate{
     }
     
     func moveSearchAddressResultSheet(_ location: String){
-        let vc = SearchAddressResultBottomSheet()
+        let vc = SearchAddressResultSheetViewController()
         vc.requestSearchResult(query: location)
         
         self.navigationController?.pushViewController(vc, animated: true)

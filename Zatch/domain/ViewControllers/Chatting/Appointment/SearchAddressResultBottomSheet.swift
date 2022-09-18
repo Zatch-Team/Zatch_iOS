@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class SearchAddressResultBottomSheet: SheetViewController {
+class SearchAddressResultSheetViewController: SheetViewController {
     
     //MARK: - Properties
     var addressResult: [LocalResult] = []{
@@ -49,7 +49,7 @@ class SearchAddressResultBottomSheet: SheetViewController {
     }
 
 }
-extension SearchAddressResultBottomSheet: UITableViewDelegate, UITableViewDataSource {
+extension SearchAddressResultSheetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return addressResult.count
@@ -92,7 +92,7 @@ extension SearchAddressResultBottomSheet: UITableViewDelegate, UITableViewDataSo
 }
 
 
-extension SearchAddressResultBottomSheet: UITextFieldDelegate{
+extension SearchAddressResultSheetViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
@@ -105,7 +105,7 @@ extension SearchAddressResultBottomSheet: UITextFieldDelegate{
     }
     
     func moveSearchAddressResultSheet(_ location: String){
-        let vc = SearchAddressResultBottomSheet()
+        let vc = SearchAddressResultSheetViewController()
         vc.mainView.searchTextField.text = location
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -9,6 +9,8 @@ import UIKit
 
 class InfoAlertViewController: MessageAlertViewController {
     
+    var handler: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,11 @@ class InfoAlertViewController: MessageAlertViewController {
             make.top.equalTo(messageLabel.snp.bottom).offset(10)
             make.bottom.equalToSuperview().offset(-10)
         }
+    }
+    
+    override func okBtnDidClicked() {
+        handler!()
+        super.okBtnDidClicked()
     }
 
 }
