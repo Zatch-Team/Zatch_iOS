@@ -10,6 +10,7 @@ import UIKit
 class MapMeetingViewController: KakaoMapViewController{
     
     //MARK: - Properties
+    var navigation: UINavigationController!
 
     //TODO: - 약속 장소 설정
     /*
@@ -36,23 +37,26 @@ class MapMeetingViewController: KakaoMapViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
-    func willDetermineMeetingLocation(){
-        
-//        let alert = TownMapAlertViewController()
-//        alert.townName = self.currentLoactionTown
-//        alert.registerHandler = {
-//            print("ok 눌림")
-//            self.navigationController?.pushViewController(MainViewController(), animated: true)
-//        }
-//        alert.modalPresentationStyle = .overFullScreen
-//
-//        self.present(alert, animated: false, completion: nil)
-    }
-    
     //MARK: - API
     
-    func successGetLocationAddress(result: KakaoLocalMeetingModel){
-        print("현재 위치 주소",result.documents[0].road_address.building_name, result.documents[0].road_address.address_name)
-    
+    func successGetLocationAddress(result: MeetingRoadAddressResult){
+        
+        //TODO: - alert ok 클릭시 선택한 장소 makemeetingsheetVC로 데이터 옮겨야
+        let alert = MeetingMapAlertViewController()
+        alert.addressName = result.building_name
+        alert.registerHandler = {
+            print("ok 눌림")
+
+            let popViewController = self.navigation.viewControllers[0] as! MakeMeetingSheetViewController
+            print(self.navigation?.viewControllers)
+            self.dismiss(animated: false, completion: {
+                //navigation 저장해놓고 특정 vc로 pop?
+                self.navigation.popToViewController(viewController: popViewController, completion:{ popViewController.mainView.locationLabel.text = result.building_name
+                })
+            })
+        }
+        alert.modalPresentationStyle = .overFullScreen
+
+        self.present(alert, animated: false, completion: nil)
     }
 }

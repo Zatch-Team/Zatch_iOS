@@ -23,7 +23,7 @@ class MeetingMapAlertViewController: MapAlertViewController {
     }
     
     override func okBtnDidClicked(){
-        
+        self.registerHandler!()
         super.okBtnDidClicked()
     }
 }

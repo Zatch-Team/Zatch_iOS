@@ -55,6 +55,7 @@ class SearchAddressSheetViewController: SheetViewController {
     
     @objc func willMoveMapViewController(){
         let vc = MapMeetingViewController()
+        vc.navigation = self.navigationController
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
