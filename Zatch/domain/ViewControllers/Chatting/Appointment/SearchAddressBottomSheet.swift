@@ -28,6 +28,9 @@ class SearchAddressSheetViewController: SheetViewController {
         sheetType = .MakeMeeting
         titleLabel.text = "주소검색"
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(willMoveMapViewController))
+        mainView.myLocationFrame.addGestureRecognizer(tapGesture)
+        
         self.view.addSubview(mainView)
         
         mainView.snp.makeConstraints{ make in
@@ -48,6 +51,12 @@ class SearchAddressSheetViewController: SheetViewController {
             }
 //            .disposed(by: bag)
       */
+    }
+    
+    @objc func willMoveMapViewController(){
+        let vc = MapMeetingViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

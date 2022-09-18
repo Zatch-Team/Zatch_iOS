@@ -17,7 +17,7 @@ class KakaoMapViewController: UIViewController {
     
     let mainView = MapTownView().then{
         $0.backBtn.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
-        $0.settingBtn.addTarget(self, action: #selector(ceritificationBtnDidClicked), for: .touchUpInside)
+        $0.settingBtn.addTarget(self, action: #selector(settingBtnDidClicked), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ class KakaoMapViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func ceritificationBtnDidClicked(){
+    @objc func settingBtnDidClicked(){
     }
     
     func settingAuthorizedState(){

@@ -11,7 +11,7 @@ import Alamofire
 class SearchAddressResultSheetViewController: SheetViewController {
     
     //MARK: - Properties
-    var addressResult: [LocalResult] = []{
+    var addressResult: [LocalTownResult] = []{
         didSet{
             self.mainView.tableView.reloadData()
         }
@@ -44,7 +44,7 @@ class SearchAddressResultSheetViewController: SheetViewController {
         KakaoLocalDataManager().getPlaceSearch(query: query, viewController: self)
     }
     
-    func successSearchAddressResult(result: [LocalResult]){
+    func successSearchAddressResult(result: [LocalTownResult]){
         addressResult = result
     }
 

@@ -23,19 +23,19 @@ class MapTownViewController: KakaoMapViewController{
         
         let userTown = locationManager.location?.coordinate
         
-        KakaoLocalDataManager().getsLocationAddress(x: String(userTown!.longitude),
+        KakaoLocalDataManager().getsTownLocation(x: String(userTown!.longitude),
                                                     y: String(userTown!.latitude),
                                                     viewController: self)
     }
 
-    override func ceritificationBtnDidClicked(){
+    override func settingBtnDidClicked(){
 
         guard let mapPoint = self.mapMarker.mapPoint else{
             print("map point value is nil")
             return
         }
         
-        KakaoLocalDataManager().getsLocationAddress(x: String( mapPoint.mapPointGeo().longitude),
+        KakaoLocalDataManager().getsTownLocation(x: String( mapPoint.mapPointGeo().longitude),
                                                     y: String(mapPoint.mapPointGeo().latitude),
                                                     viewController: self)
     }
