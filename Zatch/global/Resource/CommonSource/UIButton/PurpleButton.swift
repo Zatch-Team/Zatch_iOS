@@ -47,6 +47,10 @@ class Purple36Button: PurpleButton{
 }
 
 class Purple52Button: PurpleButton{
+
+    init(){
+        super.init(title: "", height: 52, fontSize: 18)
+    }
     
     init(title: String){
         super.init(title: title, height: 52, fontSize: 18)

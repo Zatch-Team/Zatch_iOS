@@ -7,14 +7,22 @@
 
 import UIKit
 
-class MapMeetingView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class MapMeetingView: KakaoMapView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        
+        initSetting()
+        setUpView()
+        setUpConstriant()
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func initSetting(){
+        self.settingBtn.setTitle("약속 잡기", for: .normal)
+    }
 
 }
