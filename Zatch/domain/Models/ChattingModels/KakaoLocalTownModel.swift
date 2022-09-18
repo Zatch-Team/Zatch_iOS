@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct KakaoLocalModel: Decodable{
-    let documents: [LocalResult]?
+struct KakaoLocalTownModel: Decodable{
+    let documents: [LocalTownResult]?
 }
 
-struct LocalResult: Decodable{
+struct LocalTownResult: Decodable{
     let place_name: String
     let address_name: String
     let road_address_name: String
