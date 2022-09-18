@@ -37,6 +37,7 @@ class MapTownViewController: UIViewController{
         locationManager.delegate = self
         
         switch (locationManager.authorizationStatus){
+            
         case .authorizedAlways, .authorizedWhenInUse:
             print("이미 허용됨?")
             //따로 안내할 내용 없으니까 건너뛰어도 될 듯
@@ -50,18 +51,7 @@ class MapTownViewController: UIViewController{
         case .notDetermined:
             print("아직 결정안됨?")
             locationManager.requestWhenInUseAuthorization()
-//            locationManagerDidChangeAuthorization(locationManager)
             break
-//        case .denied, .restricted:
-//            print("이미 거부됨?")
-//            //위치 권한을 허용하셔야 동네 인증이 가능합니다. 팝업 띄우기
-//            let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
-//            alert.handler = {
-//                self.navigationController?.popViewController(animated: true)
-//            }
-//            alert.modalPresentationStyle = .overFullScreen
-//            self.present(alert, animated: false, completion: nil)
-//            break
         default:
             print("이외?")
         }

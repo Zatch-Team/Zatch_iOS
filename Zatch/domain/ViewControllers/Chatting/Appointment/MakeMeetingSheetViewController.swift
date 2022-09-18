@@ -50,7 +50,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
     
     @objc func willLocationSearchSheetOpen(){
-        let vc = SearchAddressBottomSheet()
+        let vc = SearchAddressSheetViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
