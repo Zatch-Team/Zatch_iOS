@@ -124,6 +124,7 @@
 		576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */; };
 		576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375128D6D7E600EF36E6 /* MapMeetingView.swift */; };
 		576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */; };
+		576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */; };
 		576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* FirstRegisterViewController.swift */; };
 		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
@@ -201,7 +202,7 @@
 		57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */; };
 		57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */; };
 		57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */; };
-		57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */; };
+		57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */; };
 		57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
@@ -357,6 +358,7 @@
 		576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapView.swift; sourceTree = "<group>"; };
 		576B375128D6D7E600EF36E6 /* MapMeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingView.swift; sourceTree = "<group>"; };
 		576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingViewController.swift; sourceTree = "<group>"; };
+		576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalMeetingModel.swift; sourceTree = "<group>"; };
 		576EA922282B7F840028046C /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
@@ -443,7 +445,7 @@
 		57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewModel.swift; sourceTree = "<group>"; };
 		57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewModel.swift; sourceTree = "<group>"; };
 		57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewController.swift; sourceTree = "<group>"; };
-		57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalModel.swift; sourceTree = "<group>"; };
+		57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalTownModel.swift; sourceTree = "<group>"; };
 		57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -1220,7 +1222,8 @@
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
-				57D6D7A228CDC32200F805B7 /* KakaoLocalModel.swift */,
+				57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */,
+				576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */,
 			);
 			path = ChattingModels;
 			sourceTree = "<group>";
@@ -1567,6 +1570,7 @@
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
+				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
@@ -1681,7 +1685,7 @@
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
-				57D6D7A328CDC32200F805B7 /* KakaoLocalModel.swift in Sources */,
+				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,

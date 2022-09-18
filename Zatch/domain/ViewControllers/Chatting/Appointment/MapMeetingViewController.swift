@@ -7,14 +7,52 @@
 
 import UIKit
 
-class MapMeetingViewController: UIView {
+class MapMeetingViewController: KakaoMapViewController{
+    
+    //MARK: - Properties
 
+    //TODO: - 약속 장소 설정
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+     
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
-    */
 
+    override func settingBtnDidClicked(){
+
+        guard let mapPoint = self.mapMarker.mapPoint else{
+            print("map point value is nil")
+            return
+        }
+        
+        KakaoLocalDataManager().getsMeetingLocation(x: String( mapPoint.mapPointGeo().longitude),
+                                                    y: String(mapPoint.mapPointGeo().latitude),
+                                                    viewController: self)
+    }
+    
+    override func backBtnDidClicked() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func willDetermineMeetingLocation(){
+        
+//        let alert = TownMapAlertViewController()
+//        alert.townName = self.currentLoactionTown
+//        alert.registerHandler = {
+//            print("ok 눌림")
+//            self.navigationController?.pushViewController(MainViewController(), animated: true)
+//        }
+//        alert.modalPresentationStyle = .overFullScreen
+//
+//        self.present(alert, animated: false, completion: nil)
+    }
+    
+    //MARK: - API
+    
+    func successGetLocationAddress(result: KakaoLocalMeetingModel){
+        print("현재 위치 주소",result.documents[0].road_address.building_name, result.documents[0].road_address.address_name)
+    
+    }
 }

@@ -14,7 +14,7 @@ class KakaoLocalDataManager{
     
     func getPlaceSearch(query: String, viewController: SearchAddressResultSheetViewController){
 
-        AF.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: ["query":query], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalModel.self) { response in
+        AF.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: ["query":query], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalTownModel.self) { response in
             switch response.result {
             case .success(let result):
                 viewController.successSearchAddressResult(result: result.documents ?? [])
@@ -24,7 +24,7 @@ class KakaoLocalDataManager{
         }
     }
     
-    func getsLocationAddress(x: String, y: String, viewController: MapTownViewController){
+    func getsTownLocation(x: String, y: String, viewController: MapTownViewController){
         
         AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
             switch response.result {
@@ -36,4 +36,15 @@ class KakaoLocalDataManager{
         }
     }
     
+    func getsMeetingLocation(x: String, y: String, viewController: MapMeetingViewController){
+        
+        AF.request("https://dapi.kakao.com/v2/local/geo/coord2address.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalMeetingModel.self) { response in
+            switch response.result {
+            case .success(let result):
+                viewController.successGetLocationAddress(result: result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
