@@ -41,17 +41,30 @@ class MapMeetingViewController: KakaoMapViewController{
     
     func successGetLocationAddress(result: MeetingRoadAddressResult){
         
-        //TODO: - alert ok 클릭시 선택한 장소 makemeetingsheetVC로 데이터 옮겨야
         let alert = MeetingMapAlertViewController()
-        alert.addressName = result.building_name
+        
+        let locationString: String!
+        let labelString: String!
+        
+        if(result.building_name != ""){
+            locationString = "'\(result.building_name)'"
+            labelString = result.building_name
+        }else{
+            locationString = "\n'\(result.address_name)'"
+            labelString = result.address_name
+        }
+        
+        alert.addressName = locationString
+
         alert.registerHandler = {
             print("ok 눌림")
 
             let popViewController = self.navigation.viewControllers[0] as! MakeMeetingSheetViewController
             print(self.navigation?.viewControllers)
+            
             self.dismiss(animated: false, completion: {
-                //navigation 저장해놓고 특정 vc로 pop?
-                self.navigation.popToViewController(viewController: popViewController, completion:{ popViewController.mainView.locationLabel.text = result.building_name
+                self.navigation.popToViewController(viewController: popViewController, completion:{
+                    popViewController.mainView.locationLabel.text = labelString
                 })
             })
         }
