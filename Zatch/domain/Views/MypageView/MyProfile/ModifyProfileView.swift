@@ -16,6 +16,12 @@ class ModifyProfileView: UIView {
     }
     let cameraButton = UIButton().then{
         $0.setImage(UIImage(named: "cameraButton"), for: .normal)
+        // shadow
+        $0.layer.shadowColor = UIColor.black.cgColor
+        $0.layer.masksToBounds = false
+        $0.layer.shadowOffset = CGSize(width: 0, height: 4)
+        $0.layer.shadowRadius = 5
+        $0.layer.shadowOpacity = 0.1
     }
     let modifyTextfield = UITextField().then {
         $0.borderStyle = .none
@@ -34,6 +40,11 @@ class ModifyProfileView: UIView {
         $0.numberOfLines = 0
         
         $0.asColor(targetString: "30일 동안 추가 변경 불가", color: .red)
+    }
+    let latestChangeLabel = UILabel().then{
+        $0.text = "최근 변경일: "
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.numberOfLines = 0
     }
     
     // MARK: - Life Cycles
@@ -60,6 +71,7 @@ class ModifyProfileView: UIView {
         modifyTextfield.addSubview(textfieldUnderline)
         
         addSubview(message)
+        addSubview(latestChangeLabel)
     }
     func setUpConstraint() {
         userImage.snp.makeConstraints { make in
@@ -87,6 +99,10 @@ class ModifyProfileView: UIView {
         message.snp.makeConstraints { make in
             make.top.equalTo(modifyTextfield.snp.bottom).offset(4)
             make.leading.trailing.equalTo(modifyTextfield).inset(20)
+        }
+        latestChangeLabel.snp.makeConstraints { make in
+            make.top.equalTo(message.snp.bottom).offset(4)
+            make.leading.equalTo(message)
         }
     }
 }
