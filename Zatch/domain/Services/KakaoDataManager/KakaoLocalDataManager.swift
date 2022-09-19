@@ -41,7 +41,7 @@ class KakaoLocalDataManager{
         AF.request("https://dapi.kakao.com/v2/local/geo/coord2address.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalMeetingModel.self) { response in
             switch response.result {
             case .success(let result):
-                viewController.successGetLocationAddress(result: result)
+                viewController.successGetLocationAddress(result: result.documents[0].road_address)
             case .failure(let error):
                 print(error.localizedDescription)
             }

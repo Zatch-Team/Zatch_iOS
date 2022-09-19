@@ -10,6 +10,7 @@ import UIKit
 class MapMeetingViewController: KakaoMapViewController{
     
     //MARK: - Properties
+    var navigation: UINavigationController!
 
     //TODO: - 약속 장소 설정
     /*
@@ -36,23 +37,39 @@ class MapMeetingViewController: KakaoMapViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
-    func willDetermineMeetingLocation(){
-        
-//        let alert = TownMapAlertViewController()
-//        alert.townName = self.currentLoactionTown
-//        alert.registerHandler = {
-//            print("ok 눌림")
-//            self.navigationController?.pushViewController(MainViewController(), animated: true)
-//        }
-//        alert.modalPresentationStyle = .overFullScreen
-//
-//        self.present(alert, animated: false, completion: nil)
-    }
-    
     //MARK: - API
     
-    func successGetLocationAddress(result: KakaoLocalMeetingModel){
-        print("현재 위치 주소",result.documents[0].road_address.building_name, result.documents[0].road_address.address_name)
-    
+    func successGetLocationAddress(result: MeetingRoadAddressResult){
+        
+        let alert = MeetingMapAlertViewController()
+        
+        let locationString: String!
+        let labelString: String!
+        
+        if(result.building_name != ""){
+            locationString = "'\(result.building_name)'"
+            labelString = result.building_name
+        }else{
+            locationString = "\n'\(result.address_name)'"
+            labelString = result.address_name
+        }
+        
+        alert.addressName = locationString
+
+        alert.registerHandler = {
+            print("ok 눌림")
+
+            let popViewController = self.navigation.viewControllers[0] as! MakeMeetingSheetViewController
+            print(self.navigation?.viewControllers)
+            
+            self.dismiss(animated: false, completion: {
+                self.navigation.popToViewController(viewController: popViewController, completion:{
+                    popViewController.mainView.locationLabel.text = labelString
+                })
+            })
+        }
+        alert.modalPresentationStyle = .overFullScreen
+
+        self.present(alert, animated: false, completion: nil)
     }
 }

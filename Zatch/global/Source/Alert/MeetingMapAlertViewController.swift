@@ -10,9 +10,10 @@ import UIKit
 class MeetingMapAlertViewController: MapAlertViewController {
     
     //MARK: - Properties
+    
     var addressName: String! {
         didSet{
-            self.messageLabel.text = "약속 장소가\n‘\(self.addressName!)’인가요?"
+            self.messageLabel.text = "약속 장소가 \(self.addressName!) 인가요?"
         }
     }
     
@@ -23,7 +24,7 @@ class MeetingMapAlertViewController: MapAlertViewController {
     }
     
     override func okBtnDidClicked(){
-        
+        self.registerHandler!()
         super.okBtnDidClicked()
     }
 }
