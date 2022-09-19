@@ -17,6 +17,7 @@ class SettingView: UIView {
         $0.register(AlarmSettingTableViewCell.self, forCellReuseIdentifier: AlarmSettingTableViewCell.cellIdentifier)
         $0.register(DefaultSettingTableViewCell.self, forCellReuseIdentifier: DefaultSettingTableViewCell.cellIdentifier)
         $0.register(SettingTitleTableViewCell.self, forCellReuseIdentifier: SettingTitleTableViewCell.cellIdentifier)
+        $0.register(SettingBorderLineTableViewCell.self, forCellReuseIdentifier: SettingBorderLineTableViewCell.cellIdentifier)
     }
     
     override init(frame: CGRect) {

@@ -28,6 +28,7 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
     let alarmSwitch = UISwitch()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.baseView.addSubview(titleLabel)
