@@ -9,14 +9,14 @@ import UIKit
 
 class SettingView: UIView {
 
-    var tableView : UITableView = UITableView().then{
-        
-        $0.separatorStyle = .none
+    let tableView = UITableView().then{
+        $0.showsVerticalScrollIndicator = false
         $0.isScrollEnabled = false
         
         $0.register(AlarmSettingTableViewCell.self, forCellReuseIdentifier: AlarmSettingTableViewCell.cellIdentifier)
         $0.register(DefaultSettingTableViewCell.self, forCellReuseIdentifier: DefaultSettingTableViewCell.cellIdentifier)
         $0.register(SettingTitleTableViewCell.self, forCellReuseIdentifier: SettingTitleTableViewCell.cellIdentifier)
+        $0.register(SettingBorderLineTableViewCell.self, forCellReuseIdentifier: SettingBorderLineTableViewCell.cellIdentifier)
     }
     
     override init(frame: CGRect) {
@@ -26,8 +26,7 @@ class SettingView: UIView {
         self.addSubview(tableView)
         
         tableView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
     }
     
