@@ -125,6 +125,13 @@
 		576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375128D6D7E600EF36E6 /* MapMeetingView.swift */; };
 		576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */; };
 		576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */; };
+		576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375A28D82E9A00EF36E6 /* SettingViewController.swift */; };
+		576B375D28D82EAF00EF36E6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375C28D82EAF00EF36E6 /* SettingView.swift */; };
+		576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */; };
+		576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376028D82F7300EF36E6 /* UserLeaveView.swift */; };
+		576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376328D8303D00EF36E6 /* SettingTitleTableViewCell.swift */; };
+		576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376528D8305200EF36E6 /* AlarmSettingTableViewCell.swift */; };
+		576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */; };
 		576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* FirstRegisterViewController.swift */; };
 		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
@@ -359,6 +366,13 @@
 		576B375128D6D7E600EF36E6 /* MapMeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingView.swift; sourceTree = "<group>"; };
 		576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingViewController.swift; sourceTree = "<group>"; };
 		576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalMeetingModel.swift; sourceTree = "<group>"; };
+		576B375A28D82E9A00EF36E6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		576B375C28D82EAF00EF36E6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLeaveViewController.swift; sourceTree = "<group>"; };
+		576B376028D82F7300EF36E6 /* UserLeaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLeaveView.swift; sourceTree = "<group>"; };
+		576B376328D8303D00EF36E6 /* SettingTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleTableViewCell.swift; sourceTree = "<group>"; };
+		576B376528D8305200EF36E6 /* AlarmSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingTableViewCell.swift; sourceTree = "<group>"; };
+		576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingTableViewCell.swift; sourceTree = "<group>"; };
 		576EA922282B7F840028046C /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
@@ -509,6 +523,8 @@
 			children = (
 				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
 				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
+				576B375A28D82E9A00EF36E6 /* SettingViewController.swift */,
+				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -526,6 +542,8 @@
 			children = (
 				23B7FBA828CEB9430018642E /* MypageView.swift */,
 				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
+				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
+				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -591,6 +609,7 @@
 		23B7FBAA28CEBFBC0018642E /* MypageCells */ = {
 			isa = PBXGroup;
 			children = (
+				576B376228D82FFD00EF36E6 /* Setting */,
 				235613F928D09A0E00D44E97 /* MyProfile */,
 				235613F828D09A0500D44E97 /* MyPage */,
 			);
@@ -1093,6 +1112,16 @@
 			path = AppointmentView;
 			sourceTree = "<group>";
 		};
+		576B376228D82FFD00EF36E6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				576B376328D8303D00EF36E6 /* SettingTitleTableViewCell.swift */,
+				576B376528D8305200EF36E6 /* AlarmSettingTableViewCell.swift */,
+				576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		57802394281D21710085457D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1571,10 +1600,12 @@
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
+				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
+				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
@@ -1588,7 +1619,9 @@
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
+				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
+				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
 				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
@@ -1619,7 +1652,9 @@
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
+				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
+				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				235613F728D0976500D44E97 /* MyProfileView.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
@@ -1647,6 +1682,7 @@
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */,
+				576B375D28D82EAF00EF36E6 /* SettingView.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */,
