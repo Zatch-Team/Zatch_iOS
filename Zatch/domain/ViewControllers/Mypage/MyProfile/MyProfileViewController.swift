@@ -28,6 +28,7 @@ class MyProfileViewController: BaseTabBarViewController {
             
             $0.configuration = config
         }
+        super.etcBtn.addTarget(self, action: #selector(modifyProfileButtonDidTap), for: .touchUpInside)
         
         profileView = MyProfileView()
         self.view.addSubview(profileView)
@@ -42,6 +43,11 @@ class MyProfileViewController: BaseTabBarViewController {
         }
     }
 
+    @objc func modifyProfileButtonDidTap() {
+        let modifyVC = ModifyProfileViewController()
+        modifyVC.modalPresentationStyle = .fullScreen
+        self.present(modifyVC, animated: true, completion: nil)
+    }
 }
 // MARK: - TableView delegate
 extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -77,6 +83,13 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let tag = indexPath.row
+//        switch tag {
+//        case 0:
+//            tableView.deselectRow(at: indexPath, animated: true)
+//        default:
+//            tableView.deselectRow(at: indexPath, animated: true)
+//        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
