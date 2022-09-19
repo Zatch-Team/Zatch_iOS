@@ -7,14 +7,31 @@
 
 import UIKit
 
-class SettingTitleTableViewCell: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class SettingTitleTableViewCell: BaseTableViewCell {
+    
+    let titleLabel = UILabel().then{
+        $0.text = "알림 설정"
+        $0.font = UIFont.pretendard(size: 13, family: .Bold)
+        $0.textColor = .black85
     }
-    */
-
+    
+    static let cellIdentifier = "SettingTitleTableViewCell"
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.baseView.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(17)
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

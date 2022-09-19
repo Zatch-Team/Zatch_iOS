@@ -134,6 +134,7 @@
 		576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376328D8303D00EF36E6 /* SettingTitleTableViewCell.swift */; };
 		576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376528D8305200EF36E6 /* AlarmSettingTableViewCell.swift */; };
 		576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */; };
+		576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */; };
 		576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* FirstRegisterViewController.swift */; };
 		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
@@ -377,6 +378,7 @@
 		576B376328D8303D00EF36E6 /* SettingTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleTableViewCell.swift; sourceTree = "<group>"; };
 		576B376528D8305200EF36E6 /* AlarmSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingTableViewCell.swift; sourceTree = "<group>"; };
 		576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingTableViewCell.swift; sourceTree = "<group>"; };
+		576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBorderLineTableViewCell.swift; sourceTree = "<group>"; };
 		576EA922282B7F840028046C /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
@@ -1124,6 +1126,7 @@
 				576B376328D8303D00EF36E6 /* SettingTitleTableViewCell.swift */,
 				576B376528D8305200EF36E6 /* AlarmSettingTableViewCell.swift */,
 				576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */,
+				576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1664,6 +1667,7 @@
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				235613F728D0976500D44E97 /* MyProfileView.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
+				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
