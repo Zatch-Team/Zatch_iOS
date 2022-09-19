@@ -26,5 +26,12 @@ extension UILabel {
             self.attributedText = attrString
         }
     }
-    
+    // MARK: 특정 문자열의 색깔만 변경
+    func asColor(targetString: String, color: UIColor) {
+        let fullText = text ?? ""
+        let attributedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: targetString)
+        attributedString.addAttribute(.foregroundColor, value: color, range: range)
+        attributedText = attributedString
+    }
 }
