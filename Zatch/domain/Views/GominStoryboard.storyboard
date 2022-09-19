@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Main View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="MainViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,16 +18,16 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hXd-Cs-IG5"/>
                     <navigationItem key="navigationItem" id="87F-W3-4Me"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865.217391304348" y="83.705357142857139"/>
+            <point key="canvasLocation" x="2775.36231884058" y="83.705357142857139"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="m41-ba-hlY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CxF-nU-tyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="TabBarVC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z8A-no-qiv" customClass="TabBarViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZsG-b1-X8i">
@@ -38,10 +38,9 @@
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="1ir-94-gjt"/>
+                        <segue destination="aYm-j7-fHm" kind="relationship" relationship="viewControllers" id="1ir-94-gjt"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CxF-nU-tyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893" y="84"/>
         </scene>
@@ -59,6 +58,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfS-gN-jCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="752"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="CZc-eV-XiG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEI-zE-zev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aYm-j7-fHm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hXd-Cs-IG5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vk6-vM-uJj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="DaR-FS-qfE"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1867" y="84"/>
         </scene>
     </scenes>
     <resources>
