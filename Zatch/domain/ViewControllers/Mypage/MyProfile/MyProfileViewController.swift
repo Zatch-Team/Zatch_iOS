@@ -44,9 +44,8 @@ class MyProfileViewController: BaseTabBarViewController {
     }
 
     @objc func modifyProfileButtonDidTap() {
-        let modifyVC = ModifyProfileViewController()
-        modifyVC.modalPresentationStyle = .fullScreen
-        self.present(modifyVC, animated: true, completion: nil)
+        let vc = ModifyProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - TableView delegate
