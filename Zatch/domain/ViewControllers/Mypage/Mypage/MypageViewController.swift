@@ -92,9 +92,8 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let myProfileViewController = MyProfileViewController()
-            myProfileViewController.modalPresentationStyle = .fullScreen
-            self.present(myProfileViewController, animated: true, completion: nil)
+            let vc = MyProfileViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

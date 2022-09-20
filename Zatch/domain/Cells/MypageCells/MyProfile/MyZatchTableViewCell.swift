@@ -11,20 +11,6 @@ class MyZatchTableViewCell: UITableViewCell {
     let backView = UIView().then{
         $0.backgroundColor = .white
     }
-    let titleLabel = UILabel().then{
-        $0.text = "나의 재치 현황"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-    }
-    let moreButton = UIButton().then{
-        var config = UIButton.Configuration.plain()
-        var attText = AttributedString.init("더보기")
-        
-        attText.font = UIFont.pretendard(size: 12, family: .Medium)
-        attText.foregroundColor = UIColor.black20
-        config.attributedTitle = attText
-        
-        $0.configuration = config
-    }
     // 나의 재치 내용
     let zatchImage = UIImageView().then{
         $0.backgroundColor = .systemGray6
@@ -41,11 +27,23 @@ class MyZatchTableViewCell: UITableViewCell {
         $0.text = "신라면 3봉"
         $0.font = UIFont.pretendard(size: 14, family: .Bold)
     }
-    let locationLabel = UILabel().then{
-        $0.text = "냥냥이 . 불광동"
+    let horizontalStackWith2 = UIStackView().then{
+        $0.axis = .horizontal
+        $0.spacing = 2
+    }
+    let peopleLabel = UILabel().then{
+        $0.text = "냥냥이"
         $0.font = UIFont.pretendard(size: 12, family: .Regular)
     }
-    let horizontalStack = UIStackView().then{
+    let label = UILabel().then{
+        $0.text = "."
+        $0.font = UIFont.pretendard(size: 12, family: .Regular)
+    }
+    let locationLabel = UILabel().then{
+        $0.text = "불광동"
+        $0.font = UIFont.pretendard(size: 12, family: .Regular)
+    }
+    let horizontalStackWith8 = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 8
     }
@@ -67,36 +65,30 @@ class MyZatchTableViewCell: UITableViewCell {
         contentView.backgroundColor = .systemGray5
         contentView.addSubview(backView)
         
-        backView.addSubview(titleLabel)
-        backView.addSubview(moreButton)
-        
         backView.addSubview(zatchImage)
         backView.addSubview(myZatchName)
         backView.addSubview(tradeImg)
         backView.addSubview(otherZatchName)
         
-        backView.addSubview(locationLabel)
-        backView.addSubview(horizontalStack)
+        backView.addSubview(horizontalStackWith2)
+        horizontalStackWith2.addArrangedSubview(peopleLabel)
+        horizontalStackWith2.addArrangedSubview(label)
+        horizontalStackWith2.addArrangedSubview(locationLabel)
         
-        horizontalStack.addArrangedSubview(setProfileStack("profile_emptyHeart", 15))
-        horizontalStack.addArrangedSubview(setProfileStack("profile_chat", 2))
+        backView.addSubview(horizontalStackWith8)
+        
+        horizontalStackWith8.addArrangedSubview(setProfileStack("profile_emptyHeart", 15))
+        horizontalStackWith8.addArrangedSubview(setProfileStack("profile_chat", 2))
     }
     func setUpConstraint() {
         backView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        titleLabel.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().offset(20)
-        }
-        moreButton.snp.makeConstraints { make in
-            make.centerY.equalTo(titleLabel)
-            make.trailing.equalToSuperview().offset(-20)
-        }
         zatchImage.snp.makeConstraints { make in
             make.width.height.equalTo(100)
             make.leading.equalToSuperview().offset(20)
-            make.top.equalTo(titleLabel.snp.bottom).offset(28)
+            make.top.equalToSuperview().offset(20)
         }
         myZatchName.snp.makeConstraints { make in
             make.top.equalTo(zatchImage)
@@ -112,11 +104,11 @@ class MyZatchTableViewCell: UITableViewCell {
             make.top.equalTo(tradeImg.snp.bottom).offset(4)
             make.leading.equalTo(myZatchName)
         }
-        locationLabel.snp.makeConstraints { make in
+        horizontalStackWith2.snp.makeConstraints { make in
             make.leading.equalTo(myZatchName)
             make.bottom.equalTo(zatchImage)
         }
-        horizontalStack.snp.makeConstraints { make in
+        horizontalStackWith8.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
             make.centerY.equalTo(locationLabel)
         }

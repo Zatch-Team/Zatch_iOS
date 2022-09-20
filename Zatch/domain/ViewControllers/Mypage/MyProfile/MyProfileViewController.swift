@@ -44,15 +44,14 @@ class MyProfileViewController: BaseTabBarViewController {
     }
 
     @objc func modifyProfileButtonDidTap() {
-        let modifyVC = ModifyProfileViewController()
-        modifyVC.modalPresentationStyle = .fullScreen
-        self.present(modifyVC, animated: true, completion: nil)
+        let vc = ModifyProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - TableView delegate
 extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tag = indexPath.row
@@ -62,6 +61,11 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         case 1:
+            let cell = UITableViewCell()
+            setUpCell(cell)
+            cell.selectionStyle = .none
+            return cell
+        case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchTableViewCell", for: indexPath) as? MyZatchTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
             return cell
@@ -77,6 +81,8 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 285 + 8
         case 1:
+            return 46
+        case 2:
             return 46 + 138
         default:
             return 50
@@ -93,4 +99,32 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
+extension MyProfileViewController {
+    func setUpCell(_ cell: UITableViewCell) {
+        let titleLabel = UILabel().then{
+            $0.text = "나의 재치 현황"
+            $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        }
+        let moreButton = UIButton().then{
+            var config = UIButton.Configuration.plain()
+            var attText = AttributedString.init("더보기")
+            
+            attText.font = UIFont.pretendard(size: 12, family: .Medium)
+            attText.foregroundColor = UIColor.black20
+            config.attributedTitle = attText
+            
+            $0.configuration = config
+        }
+        
+        cell.contentView.addSubview(titleLabel)
+        cell.contentView.addSubview(moreButton)
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().offset(20)
+        }
+        moreButton.snp.makeConstraints { make in
+            make.centerY.equalTo(titleLabel)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+    }
+}

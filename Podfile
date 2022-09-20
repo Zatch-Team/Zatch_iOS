@@ -28,6 +28,8 @@ target 'Zatch' do
 
   pod 'Cosmos', '~> 23.0' # 별점
 
+  pod 'Tabman', '~> 2.12'
+
   target 'ZatchTests' do
     inherit! :search_paths
     # Pods for testing
