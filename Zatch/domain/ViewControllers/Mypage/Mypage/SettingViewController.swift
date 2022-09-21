@@ -62,11 +62,13 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: AlarmSettingTableViewCell.cellIdentifier, for: indexPath) as? AlarmSettingTableViewCell else { fatalError() }
                 cell.titleLabel.text = "채팅 알림"
                 cell.explainLabel.text = "누군가 나에게 채팅을 보낼 경우에 알림을 받습니다."
+                cell.delegate = self
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: AlarmSettingTableViewCell.cellIdentifier, for: indexPath) as? AlarmSettingTableViewCell else { fatalError() }
                 cell.titleLabel.text = "가치 알림"
                 cell.explainLabel.text = "내가 올린 가치에 참여자가 생기거나, 내가 참여한 가치의 참여자가 모두 모였을 경우에 알림을 받습니다."
+                cell.delegate = self
                 return cell
             case 3:
                 return SettingBorderLineTableViewCell()
@@ -128,5 +130,11 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
         default:
             return
         }
+    }
+}
+
+extension SettingViewController: SwitchDelegate{
+    func willSwitchValueChange(value: Bool) {
+        print(value)
     }
 }

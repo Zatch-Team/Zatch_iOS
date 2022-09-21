@@ -8,8 +8,14 @@
 import UIKit
 
 class AlarmSettingTableViewCell: BaseTableViewCell {
+    
+    //MARK: - Properties
 
     static let cellIdentifier = "AlarmSettingTableViewCell"
+    
+    var delegate: SwitchDelegate!
+    
+    //MARK: - UI
     
     let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 15, family: .Medium)
@@ -25,7 +31,12 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
         
     }
     
-    let alarmSwitch = UISwitch()
+    let alarmSwitch = UISwitch().then{
+        $0.onTintColor = .zatchYellow
+        $0.addTarget(self, action: #selector(willSwitchValueChange), for: .valueChanged)
+    }
+    
+    //MARK: - LifeCycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -58,4 +69,8 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func willSwitchValueChange(){
+        print("change?")
+        delegate.willSwitchValueChange(value: self.alarmSwitch.isOn)
+    }
 }
