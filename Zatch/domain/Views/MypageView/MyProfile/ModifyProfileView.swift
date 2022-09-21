@@ -12,9 +12,10 @@ class ModifyProfileView: UIView {
     // MARK: - Views
     let userImage = UIImageView().then{
         $0.backgroundColor = .systemGray4
+        $0.clipsToBounds = true
         $0.layer.cornerRadius = 50
     }
-    let cameraButton = UIButton().then{
+    lazy var cameraButton = UIButton().then{
         $0.setImage(UIImage(named: "cameraButton"), for: .normal)
         // shadow
         $0.layer.shadowColor = UIColor.black.cgColor
@@ -65,7 +66,7 @@ class ModifyProfileView: UIView {
     }
     func setUpView() {
         addSubview(userImage)
-        userImage.addSubview(cameraButton)
+        addSubview(cameraButton)
         
         addSubview(modifyTextfield)
         modifyTextfield.addSubview(textfieldUnderline)

@@ -65,5 +65,6 @@ extension ZatchViewController {
             make.width.height.equalTo(24)
             make.trailing.top.equalToSuperview().inset(16)
         }
+        heartButton.isSelected = true
     }
 }
