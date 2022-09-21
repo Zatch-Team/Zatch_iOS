@@ -33,7 +33,10 @@
 		23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFA28C7D88900C42858 /* Observable.swift */; };
 		23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */; };
 		23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */; };
-		23EEA44428D8704900C4C67E /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44328D8704900C4C67E /* WatchListViewController.swift */; };
+		23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44828D874C200C4C67E /* ZatchViewController.swift */; };
+		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
+		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
+		23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */; };
 		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
 		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
@@ -274,7 +277,10 @@
 		23CB3CFA28C7D88900C42858 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationBottomSheet.swift; sourceTree = "<group>"; };
-		23EEA44328D8704900C4C67E /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
+		23EEA44828D874C200C4C67E /* ZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchViewController.swift; sourceTree = "<group>"; };
+		23EEA44A28D874CC00C4C67E /* GatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchViewController.swift; sourceTree = "<group>"; };
+		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
+		23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListTabmanViewController.swift; sourceTree = "<group>"; };
 		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -656,7 +662,6 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				23EEA44528D8705700C4C67E /* WatchListView */,
 				23B7FBA728CEB8E80018642E /* MypageView */,
 				23A86A5428C72C4C00B073CB /* MainView */,
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
@@ -692,7 +697,7 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				23EEA44228D8703400C4C67E /* WatchList */,
+				23EEA44228D8703400C4C67E /* HeartList */,
 				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23CB3CEF28C7D35600C42858 /* Mypage */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
@@ -941,19 +946,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		23EEA44228D8703400C4C67E /* WatchList */ = {
+		23EEA44228D8703400C4C67E /* HeartList */ = {
 			isa = PBXGroup;
 			children = (
-				23EEA44328D8704900C4C67E /* WatchListViewController.swift */,
+				23EEA44828D874C200C4C67E /* ZatchViewController.swift */,
+				23EEA44A28D874CC00C4C67E /* GatchViewController.swift */,
+				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
+				23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */,
 			);
-			path = WatchList;
-			sourceTree = "<group>";
-		};
-		23EEA44528D8705700C4C67E /* WatchListView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WatchListView;
+			path = HeartList;
 			sourceTree = "<group>";
 		};
 		57067862281C13D500F48342 /* Font */ = {
@@ -1643,6 +1644,7 @@
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
+				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */,
@@ -1681,6 +1683,7 @@
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				577A01B428A49386004B2575 /* CheckRegisterViewController+Layout.swift in Sources */,
+				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
@@ -1689,7 +1692,6 @@
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagBottomSheet.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
-				23EEA44428D8704900C4C67E /* WatchListViewController.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
@@ -1728,6 +1730,7 @@
 				23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
+				23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchBottomSheet.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
@@ -1750,6 +1753,7 @@
 				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,
+				23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
 				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,

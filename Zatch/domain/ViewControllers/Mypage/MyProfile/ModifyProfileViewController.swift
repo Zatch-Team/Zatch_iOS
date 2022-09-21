@@ -10,10 +10,16 @@ import UIKit
 class ModifyProfileViewController: BaseCenterTitleViewController {
     var modifyProfileView: ModifyProfileView!
     var saveButton: UIButton!
+    // Image Properties
+    let imagePickerController = UIImagePickerController()
+    var selectedPhoto: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // imagePicker delegate
+        imagePickerController.delegate = self
+        
         setNavigationView()
         setModifyProfileView()
     }
@@ -39,6 +45,7 @@ extension ModifyProfileViewController {
             make.trailing.equalToSuperview().inset(18)
             make.centerY.equalToSuperview()
         }
+        saveButton.addTarget(self, action: #selector(alertDiaolog), for: .touchUpInside)
     }
     func setModifyProfileView() {
         modifyProfileView = ModifyProfileView()
@@ -49,7 +56,11 @@ extension ModifyProfileViewController {
             make.top.equalTo(self.navigationView.snp.bottom)
         }
         
-        saveButton.addTarget(self, action: #selector(alertDiaolog), for: .touchUpInside)
+        modifyProfileView.cameraButton.addTarget(self, action: #selector(goAlbumButtonDidTap), for: .touchUpInside)
+    }
+    @objc func goAlbumButtonDidTap() {
+        self.imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     @objc func alertDiaolog() {
         let alert = CancelAlertViewController(message: "닉네임을 변경하시면 30일 동안 추가 변경이 불가능합니다. 변경하시겠습니까?", btnTitle: "확인")
@@ -60,5 +71,16 @@ extension ModifyProfileViewController {
             }
         }
         self.present(alert, animated: false, completion: nil)
+    }
+}
+// MARK: - ImagePicker Delegate
+extension ModifyProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.selectedPhoto = UIImage()
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.selectedPhoto = image
+            self.modifyProfileView.userImage.image = image
+        }
+        self.dismiss(animated: true, completion: nil)
     }
 }
