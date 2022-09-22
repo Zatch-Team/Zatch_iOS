@@ -230,6 +230,9 @@
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
 		57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */; };
+		57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */; };
+		57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */; };
+		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -489,6 +492,9 @@
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
+		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
+		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
+		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -662,6 +668,7 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57FFEDBD28DD27DE0041719B /* RegisterView */,
 				23B7FBA728CEB8E80018642E /* MypageView */,
 				23A86A5428C72C4C00B073CB /* MainView */,
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
@@ -1323,6 +1330,16 @@
 			path = CommonSource;
 			sourceTree = "<group>";
 		};
+		57FFEDBD28DD27DE0041719B /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */,
+				57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */,
+				57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1654,6 +1671,7 @@
 				235613F328D0974A00D44E97 /* MyProfileViewController.swift in Sources */,
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
+				57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */,
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
@@ -1699,6 +1717,7 @@
 				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				57468A7F289E3F1D00056691 /* FindSearchViewController+Layout.swift in Sources */,
+				57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */,
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
@@ -1717,6 +1736,7 @@
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
+				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */,
