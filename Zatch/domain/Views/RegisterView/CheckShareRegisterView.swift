@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CheckShareRegisterView: UIView {
+class CheckShareRegisterView: CheckRegisterInfoView {
 
     /*
     // Only override draw() if you perform custom drawing.

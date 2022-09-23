@@ -7,14 +7,13 @@
 
 import UIKit
 
-class CheckExchangeRegisterViewController: UIViewController {
-    
-    let mainView = CheckExchangeRegisterView()
+class CheckExchangeRegisterViewController: CheckRegisterViewController {
 
     override func viewDidLoad() {
+        
+        super.mainView.infoFrame = CheckRegisterInfoView()
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
 }

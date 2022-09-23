@@ -11,7 +11,7 @@ class CheckRegisterView: UIView {
 
     //MARK: - Properties
 
-    let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
+    static let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
 
     //MARK: - UI
 
@@ -44,7 +44,12 @@ class CheckRegisterView: UIView {
         $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
     }
 
-    let infoFrame = CheckRegisterZatchInfoView()
+    var infoFrame : UIView!{
+        didSet{
+            setUpView()
+            setUpConstraint()
+        }
+    }
 
     let addTitle = UILabel().then{
         $0.text = "추가 설명"
@@ -56,7 +61,7 @@ class CheckRegisterView: UIView {
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 8
 
-//        $0.text = placeHolder
+        $0.text = CheckRegisterView.placeHolder
         $0.setTextWithLineHeight(lineHeight: 15.6)
         $0.textColor = .black20
         $0.font = UIFont.pretendard(size: 12, family: .Medium)
@@ -68,11 +73,7 @@ class CheckRegisterView: UIView {
     }
     
     override init(frame: CGRect) {
-        
         super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -145,7 +146,6 @@ class CheckRegisterView: UIView {
         }
 
         registerBtn.snp.makeConstraints{ make in
-//            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-40)
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)

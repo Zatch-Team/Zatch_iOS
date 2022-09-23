@@ -54,24 +54,24 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
 //MARK: - TextView
 extension CheckRegisterViewController: UITextViewDelegate{
     
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//
-//        UIView.animate(withDuration: 0.3){
-//            self.view.window?.frame.origin.y -= 200
-//        }
-//
-//        if textView.text == self.placeHolder {
-//            textView.text = nil
-//            textView.textColor = .black85
-//        }
-//    }
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-//            textView.text = placeHolder
-//            textView.textColor = .black20
-//        }
-//    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        UIView.animate(withDuration: 0.3){
+            self.view.window?.frame.origin.y -= 200
+        }
+
+        if textView.text == CheckRegisterView.placeHolder {
+            textView.text = nil
+            textView.textColor = .black85
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            textView.text = CheckRegisterView.placeHolder
+            textView.textColor = .black20
+        }
+    }
 }
 
 //MARK: - CollectionView
