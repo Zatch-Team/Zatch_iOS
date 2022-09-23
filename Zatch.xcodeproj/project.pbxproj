@@ -232,6 +232,8 @@
 		57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */; };
 		57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */; };
 		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
+		57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */; };
+		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -493,6 +495,8 @@
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
+		57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterViewController.swift; sourceTree = "<group>"; };
+		57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterViewController.swift; sourceTree = "<group>"; };
 		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -784,6 +788,8 @@
 				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
 				57468AA928A38C8000056691 /* SecondRegisterViewController+Layout.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
+				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
+				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
 				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
 				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
 			);
@@ -1720,6 +1726,7 @@
 				5767D779286882B80075DB28 /* WantElseTableViewCell.swift in Sources */,
 				57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
+				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
@@ -1767,6 +1774,7 @@
 				576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
 				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
+				57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */,
 				57468A87289F575000056691 /* ResultSearchViewController+Layout.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,
 				23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */,

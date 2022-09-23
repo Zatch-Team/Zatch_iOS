@@ -32,6 +32,7 @@ class SplashTownView: UIView {
     }
     
     lazy var moveSettingBtn = Purple52Button(title: "내 위치 설정하기")
+    
     override init(frame: CGRect) {
         
         super.init(frame: .zero)
