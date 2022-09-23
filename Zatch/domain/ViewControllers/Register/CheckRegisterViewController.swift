@@ -8,6 +8,32 @@
 import UIKit
 
 class CheckRegisterViewController: BaseLeftTitleViewController {
+    
+    let mainView = CheckRegisterView().then{
+        $0.exitBtn.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
+    }
+    
+    //MARK: - LifeCycle
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        self.navigationTitle.text = "재치 등록하기"
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+//            $0.top.equalToSuperview().offset(88)
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-38)
+        }
+        
+        mainView.photoCollectionView.delegate = self
+        mainView.photoCollectionView.dataSource = self
+        
+        mainView.addExplainTextView.delegate = self
+
+    }
 
     //MARK: - Action
     
@@ -49,14 +75,14 @@ extension CheckRegisterViewController: UITextViewDelegate{
 }
 
 //MARK: - CollectionView
-//extension CheckRegisterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension CheckRegisterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-//        return 5
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath)
-//        return cell
-//    }
-//}
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath)
+        return cell
+    }
+}
