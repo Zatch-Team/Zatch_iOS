@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CheckRegisterZatchInfoView: UIView {
+class CheckRegisterInfoView: UIView {
     
     let exchangeImage = UIImageView().then{
         $0.image = UIImage(named: "exchange")
