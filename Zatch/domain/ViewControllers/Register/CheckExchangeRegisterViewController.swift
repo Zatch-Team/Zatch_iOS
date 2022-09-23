@@ -11,8 +11,9 @@ class CheckExchangeRegisterViewController: CheckRegisterViewController {
 
     override func viewDidLoad() {
         
-        super.mainView.infoFrame = CheckRegisterInfoView()
         super.viewDidLoad()
+        
+        mainView.infoFrame = CheckExchangeRegisterView()
 
     }
 

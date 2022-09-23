@@ -8,8 +8,6 @@
 import UIKit
 
 class CheckShareRegisterViewController: UIViewController {
-    
-    let mainView = CheckShareRegisterView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
