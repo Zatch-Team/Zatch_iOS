@@ -68,7 +68,7 @@ class CheckRegisterView: UIView {
         $0.textContainerInset = UIEdgeInsets(top: 23, left: 17, bottom: 23, right: 25)
     }
 
-    let registerBtn = Purple36Button(title: "재치 등록").then{
+    lazy var registerBtn = Purple36Button(title: "재치 등록").then{
         $0.setTitle("재치 등록", for: .normal)
     }
     

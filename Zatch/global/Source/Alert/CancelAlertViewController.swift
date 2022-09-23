@@ -11,7 +11,7 @@ class CancelAlertViewController: MessageAlertViewController {
     
     //MARK: - Properties
     
-    var alertHandler : ((Bool) -> ())?
+    var alertHandler : ((Bool) -> ())!
     
     //MARK: - UI
     
@@ -65,7 +65,7 @@ class CancelAlertViewController: MessageAlertViewController {
     
     override func okBtnDidClicked() {
         self.dismiss(animated: false, completion: {
-            self.alertHandler!(true)
+            self.alertHandler?(true)
         })
     }
     
@@ -73,7 +73,7 @@ class CancelAlertViewController: MessageAlertViewController {
     @objc
     func cancelBtnDidClicked(){
         self.dismiss(animated: false, completion: {
-            self.alertHandler!(false)
+            self.alertHandler?(false)
         })
     }
 
