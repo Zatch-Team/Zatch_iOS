@@ -10,6 +10,7 @@ import UIKit
 class CheckRegisterViewController: BaseLeftTitleViewController {
     
     let mainView = CheckRegisterView().then{
+        $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
         $0.exitBtn.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
     }
     
@@ -37,8 +38,18 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
 
     //MARK: - Action
     
-    @objc
-    func exitBtnDidClicked(){
+    @objc func registerBtnDidClicked(){
+        let alert = CancelAlertViewController(message: "재치 등록을 완료하시겠습니까?", btnTitle: "등록 완료")
+        alert.alertHandler = {
+            if($0){
+                print("등록 완료 버튼 눌림")
+            }
+        }
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: false, completion: nil)
+    }
+    
+    @objc func exitBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
     }
     
