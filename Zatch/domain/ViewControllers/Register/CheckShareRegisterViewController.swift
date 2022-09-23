@@ -7,12 +7,13 @@
 
 import UIKit
 
-class CheckShareRegisterViewController: UIViewController {
-
+class CheckShareRegisterViewController: CheckRegisterViewController {
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mainView.infoFrame = CheckShareRegisterView()
     }
 
 }

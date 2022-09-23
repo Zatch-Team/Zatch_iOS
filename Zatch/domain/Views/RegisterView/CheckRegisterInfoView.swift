@@ -9,6 +9,15 @@ import UIKit
 
 class CheckRegisterInfoView: UIView {
     
+    let wantCategory = PaddingLabel().then{
+        $0.text = "생활용품"
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.textColor = .zatchDeepYellow
+        $0.backgroundColor = .yellow40
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 20/2
+    }
+    
     let myCategory = PaddingLabel().then{
         $0.text = "생활용품"
         $0.font = UIFont.pretendard(size: 12, family: .Medium)
@@ -77,6 +86,11 @@ class CheckRegisterInfoView: UIView {
             make.height.equalTo(20)
         }
         
+        wantCategory.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(16)
+            $0.height.equalTo(20)
+        }
+        
         myProductLabel.snp.makeConstraints{ make in
             make.top.equalTo(myCategory.snp.bottom).offset(5)
             make.height.equalTo(32)
@@ -84,7 +98,6 @@ class CheckRegisterInfoView: UIView {
         
         
         myZatchInfoFrame.snp.makeConstraints{ make in
-            make.leading.trailing.equalToSuperview()
             make.top.equalTo(myProductLabel.snp.bottom).offset(7)
             make.bottom.equalToSuperview()
         }

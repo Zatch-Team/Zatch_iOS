@@ -17,15 +17,6 @@ class CheckExchangeRegisterView: CheckRegisterInfoView {
     let myFrame = UIView()
     let wantFrame = UIView()
     
-    let firstWantCategory = PaddingLabel().then{
-        $0.text = "생활용품"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .zatchDeepYellow
-        $0.backgroundColor = .yellow40
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 20/2
-    }
-    
     let firstWantProduct = UILabel().then{
         $0.text = "맥도날드 해피밀 마이멜로디 장난감"
         $0.font = UIFont.pretendard(size: 12, family: .Medium)
@@ -72,7 +63,7 @@ class CheckExchangeRegisterView: CheckRegisterInfoView {
         self.addSubview(exchangeImage)
         self.addSubview(myFrame)
         
-        wantFrame.addSubview(firstWantCategory)
+        wantFrame.addSubview(wantCategory)
         wantFrame.addSubview(firstWantProduct)
         wantFrame.addSubview(secondThirdStackView)
         
@@ -100,14 +91,12 @@ class CheckExchangeRegisterView: CheckRegisterInfoView {
             make.trailing.equalTo(exchangeImage.snp.leading)
         }
         
-        firstWantCategory.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(16)
+        wantCategory.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(20)
         }
         
         firstWantProduct.snp.makeConstraints{ make in
-            make.top.equalTo(firstWantCategory.snp.bottom).offset(5)
+            make.top.equalTo(wantCategory.snp.bottom).offset(5)
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(32)
@@ -121,21 +110,22 @@ class CheckExchangeRegisterView: CheckRegisterInfoView {
         
         //
         myFrame.snp.makeConstraints{ make in
+            make.top.bottom.equalToSuperview()
             make.trailing.equalToSuperview().offset(-24)
             make.leading.equalTo(exchangeImage.snp.trailing).offset(20)
         }
         
         myCategory.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(16)
             make.centerX.equalTo(myProductLabel)
-            make.height.equalTo(20)
         }
         
         myProductLabel.snp.makeConstraints{ make in
-            make.top.equalTo(myCategory.snp.bottom).offset(5)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview().offset(-11)
-            make.height.equalTo(32)
+        }
+        
+        myZatchInfoFrame.snp.makeConstraints{ make in
+            make.leading.trailing.equalToSuperview()
         }
         
     }
