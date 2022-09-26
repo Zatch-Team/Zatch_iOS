@@ -81,10 +81,8 @@ class DatePickerAlertViewController: PickerAlertViewController {
     }
     
     override func okBtnDidClicked() {
-        
-        super.pickerHandler!(dateArray)
-        
-        super.okBtnDidClicked()
+        self.pickerHandler!(dateArray)
+        self.dismiss(animated: false, completion: nil)
     }
 
 }

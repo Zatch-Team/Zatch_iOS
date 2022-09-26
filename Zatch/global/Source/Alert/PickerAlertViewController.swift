@@ -9,8 +9,8 @@ import UIKit
 
 class PickerAlertViewController: AlertViewController {
     
-    //MARK: - Properties
-    
+//    //MARK: - Properties
+//
     var pickerHandler : (([Int]) -> ())?
     
     //MARK: - UI

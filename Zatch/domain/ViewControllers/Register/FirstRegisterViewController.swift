@@ -42,8 +42,9 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     
     @objc
     func nextBtnDidClicked(){
-        let vc = SecondRegisterViewController()
+        let vc  = SecondRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+
     }
 
 

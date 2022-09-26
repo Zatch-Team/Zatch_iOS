@@ -8,11 +8,7 @@
 import UIKit
 
 class CancelAlertViewController: MessageAlertViewController {
-    
-    //MARK: - Properties
-    
-    var alertHandler : ((Bool) -> ())!
-    
+
     //MARK: - UI
     
     lazy var cancelBtn = UIButton().then{
@@ -63,18 +59,10 @@ class CancelAlertViewController: MessageAlertViewController {
         }
     }
     
-    override func okBtnDidClicked() {
-        self.dismiss(animated: false, completion: {
-            self.alertHandler?(true)
-        })
-    }
-    
     
     @objc
     func cancelBtnDidClicked(){
-        self.dismiss(animated: false, completion: {
-            self.alertHandler?(false)
-        })
+        self.dismiss(animated: false, completion: nil)
     }
 
 }

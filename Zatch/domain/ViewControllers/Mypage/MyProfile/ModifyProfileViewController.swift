@@ -65,10 +65,8 @@ extension ModifyProfileViewController {
     @objc func alertDiaolog() {
         let alert = CancelAlertViewController(message: "닉네임을 변경하시면 30일 동안 추가 변경이 불가능합니다. 변경하시겠습니까?", btnTitle: "확인")
         alert.modalPresentationStyle = .overFullScreen
-        alert.alertHandler = { isUnblock in
-            if(isUnblock){
-                print("ok")
-            }
+        alert.confirmHandler = {
+            print("ok")
         }
         self.present(alert, animated: false, completion: nil)
     }

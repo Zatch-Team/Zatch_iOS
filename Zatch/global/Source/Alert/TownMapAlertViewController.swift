@@ -22,10 +22,10 @@ class TownMapAlertViewController: MapAlertViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func okBtnDidClicked(){
-        
-        super.okBtnDidClicked()
-    }
+//    override func okBtnDidClicked(){
+//
+//        super.okBtnDidClicked()
+//    }
 
     
     

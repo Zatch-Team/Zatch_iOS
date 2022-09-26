@@ -18,6 +18,8 @@ class AlertViewController: UIViewController {
      3의 경우 버튼 위치 및 특성은 각각 조절
      */
     
+    var confirmHandler : (() -> ())?
+    
     lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)
         $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
@@ -129,6 +131,7 @@ class AlertViewController: UIViewController {
     }
     
     @objc func okBtnDidClicked(){
+        self.confirmHandler?()
         self.dismiss(animated: false, completion: nil)
     }
 
