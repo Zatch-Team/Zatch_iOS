@@ -13,12 +13,16 @@ class PurpleButton: UIButton{
         
         super.init(frame: CGRect.zero)
         
-        self.backgroundColor = .zatchPurple
+//        self.backgroundColor = .zatchPurple
+        self.setBackgroundColor(.zatchPurple, for: .normal)
+        self.setBackgroundColor(.black5, for: .disabled)
+        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(.black45, for: .disabled)
         
         self.setTitle(title, for: .normal)
-        self.setTitleColor(.white, for: .normal)
         self.titleLabel?.font = UIFont.pretendard(size: fontSize, family: .Bold)
         
+        self.clipsToBounds = true
         self.layer.cornerRadius = height/2
         
         self.snp.makeConstraints{ make in
