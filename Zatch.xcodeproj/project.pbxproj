@@ -10,7 +10,7 @@
 		234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */; };
 		234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */; };
 		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
-		235613F328D0974A00D44E97 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F228D0974A00D44E97 /* MyProfileViewController.swift */; };
+		235613F328D0974A00D44E97 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F228D0974A00D44E97 /* ProfileViewController.swift */; };
 		235613F728D0976500D44E97 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F628D0976500D44E97 /* MyProfileView.swift */; };
 		235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */; };
 		235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */; };
@@ -258,7 +258,7 @@
 		234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
 		234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		235613F228D0974A00D44E97 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		235613F228D0974A00D44E97 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		235613F628D0976500D44E97 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTableViewCell.swift; sourceTree = "<group>"; };
@@ -558,7 +558,7 @@
 		235613F128D0973900D44E97 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
-				235613F228D0974A00D44E97 /* MyProfileViewController.swift */,
+				235613F228D0974A00D44E97 /* ProfileViewController.swift */,
 				234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */,
 			);
 			path = MyProfile;
@@ -1671,7 +1671,7 @@
 				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
-				235613F328D0974A00D44E97 /* MyProfileViewController.swift in Sources */,
+				235613F328D0974A00D44E97 /* ProfileViewController.swift in Sources */,
 				57468AA628A376F800056691 /* FirstRegisterViewController+Layout.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
 				57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */,

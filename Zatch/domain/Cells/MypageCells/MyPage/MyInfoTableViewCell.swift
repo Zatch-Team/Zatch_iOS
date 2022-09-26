@@ -19,7 +19,7 @@ class MyInfoTableViewCell: UITableViewCell {
         $0.text = "userName"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    let goProfileButton = WhitePurpleButton().then{
+    lazy var goProfileButton = WhitePurpleButton().then{
         $0.setTitle("프로필 보기", for: .normal)
     }
 
