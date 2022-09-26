@@ -15,9 +15,9 @@ class CheckRegisterView: UIView {
 
     //MARK: - UI
 
-    lazy var exitBtn = UIButton().then{
-        $0.setImage(UIImage(named: "exit"), for: .normal)
-    }
+//    lazy var exitBtn = UIButton().then{
+//        $0.setImage(UIImage(named: "exit"), for: .normal)
+//    }
 
     let titleView = TitleView().then{
         $0.titleLabel.text = "이렇게 재치를\n업로드해도 괜찮을까요?"
@@ -82,7 +82,7 @@ class CheckRegisterView: UIView {
 
     func setUpView(){
         
-        self.addSubview(exitBtn)
+//        self.addSubview(exitBtn)
         self.addSubview(titleView)
         self.addSubview(registerBtn)
         self.addSubview(photoFrame)
@@ -97,10 +97,10 @@ class CheckRegisterView: UIView {
 
     func setUpConstraint(){
 
-        exitBtn.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-16)
-            make.top.equalToSuperview().offset(60)
-        }
+//        exitBtn.snp.makeConstraints{ make in
+//            make.trailing.equalToSuperview().offset(-16)
+//            make.top.equalToSuperview().offset(60)
+//        }
 
         titleView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(88)

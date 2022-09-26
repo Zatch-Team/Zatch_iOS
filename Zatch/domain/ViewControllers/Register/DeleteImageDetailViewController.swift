@@ -21,10 +21,8 @@ class DeleteImageDetailViewController: RegisterImageDetailViewController {
         let alert = CancelAlertViewController(message: "해당 이미지를 삭제하시겠습니까?")
         
         alert.modalPresentationStyle = .overFullScreen
-        alert.alertHandler = { result in
-            if(result){
-                super.okBtnDidClicked()
-            }
+        alert.confirmHandler = {
+            super.okBtnDidClicked()
         }
         
         self.navigationController?.present(alert, animated: false, completion: nil)

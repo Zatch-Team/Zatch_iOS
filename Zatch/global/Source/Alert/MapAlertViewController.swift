@@ -9,7 +9,7 @@ import UIKit
 
 class MapAlertViewController: AlertViewController {
     
-    var registerHandler : (() -> ())?
+//    var registerHandler : (() -> ())?
     
     //MARK: - UI
     
@@ -84,11 +84,11 @@ class MapAlertViewController: AlertViewController {
             $0.centerX.equalToSuperview()
         }
     }
-    
-    override func okBtnDidClicked(){
-        registerHandler!()
-        super.okBtnDidClicked()
-    }
+//
+//    override func okBtnDidClicked(){
+//        registerHandler!()
+//        super.okBtnDidClicked()
+//    }
     
     @objc func cancelBtnDidClicked(){
         self.dismiss(animated: false)
