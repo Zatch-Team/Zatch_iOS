@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyProfileViewController: BaseTabBarViewController {
+class MyProfileViewController: BaseCenterTitleViewController {
     var profileView: MyProfileView!
 
     override func viewDidLoad() {
@@ -17,18 +17,7 @@ class MyProfileViewController: BaseTabBarViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
-        super.titleLabel.text = "내 프로필"
-        super.etcBtn.then{
-            var config = UIButton.Configuration.plain()
-            var attText = AttributedString.init("수정")
-            
-            attText.font = UIFont.pretendard(size: 16, family: .Bold)
-            attText.foregroundColor = .black85
-            config.attributedTitle = attText
-            
-            $0.configuration = config
-        }
-        super.etcBtn.addTarget(self, action: #selector(modifyProfileButtonDidTap), for: .touchUpInside)
+        super.navigationTitle.text = "내 프로필"
         
         profileView = MyProfileView()
         self.view.addSubview(profileView)
@@ -39,12 +28,12 @@ class MyProfileViewController: BaseTabBarViewController {
         
         profileView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(super.titleView.snp.bottom)
+            make.top.equalTo(super.navigationView.snp.bottom)
         }
     }
 
-    @objc func modifyProfileButtonDidTap() {
-        let vc = ModifyProfileViewController()
+    override func rightPositionBtnDidClicked() {
+        let vc = ModifyProfileViewController(title: "저장")
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
