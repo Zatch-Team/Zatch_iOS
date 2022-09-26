@@ -29,6 +29,8 @@
 		23B051C328E206B7005D08EA /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C228E206B7005D08EA /* QuestionsViewController.swift */; };
 		23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C428E206C5005D08EA /* MyQuestionsViewController.swift */; };
 		23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */; };
+		23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */; };
+		23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */; };
 		23B7FBA928CEB9430018642E /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBA828CEB9430018642E /* MypageView.swift */; };
 		23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */; };
 		23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */; };
@@ -285,6 +287,8 @@
 		23B051C228E206B7005D08EA /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		23B051C428E206C5005D08EA /* MyQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionsViewController.swift; sourceTree = "<group>"; };
 		23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentTableViewCell.swift; sourceTree = "<group>"; };
+		23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBA828CEB9430018642E /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
 		23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationBannerTableViewCell.swift; sourceTree = "<group>"; };
@@ -680,6 +684,8 @@
 			isa = PBXGroup;
 			children = (
 				23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */,
+				23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */,
+				23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */,
 			);
 			path = QnACells;
 			sourceTree = "<group>";
@@ -1714,6 +1720,7 @@
 				57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */,
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */,
+				23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */,
 				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
@@ -1732,6 +1739,7 @@
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */,
+				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
 				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
 				57067864281C143A00F48342 /* UIColor.swift in Sources */,
