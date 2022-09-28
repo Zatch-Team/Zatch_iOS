@@ -25,7 +25,7 @@ class DetailViewController: BaseViewController {
             $0.dataSource = self
             
             $0.register(DetailImageTableViewCell.self, forCellReuseIdentifier: "imageViewCell")
-            $0.register(FirstWantTableViewCell.self, forCellReuseIdentifier: "firstWantCell")
+            $0.register(ExchangeDetailTableViewCell.self, forCellReuseIdentifier: "firstWantCell")
             $0.register(WantElseTableViewCell.self, forCellReuseIdentifier: "wantElseCell")
             $0.register(ProductInfoTableViewCell.self, forCellReuseIdentifier: "productInfoCell")
             $0.register(MoreTextTableViewCell.self, forCellReuseIdentifier: "moreTextCell")
@@ -62,7 +62,7 @@ class DetailViewController: BaseViewController {
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,26 +79,26 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
             cell.detailImageView.backgroundColor = .gray
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "firstWantCell", for: indexPath) as? FirstWantTableViewCell else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "firstWantCell", for: indexPath) as? ExchangeDetailTableViewCell else{
                 fatalError("Cell Casting Error")
             }
             return cell
+//        case 2:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "wantElseCell", for: indexPath) as? WantElseTableViewCell else{
+//                fatalError("Cell Casting Error")
+//            }
+//            return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "wantElseCell", for: indexPath) as? WantElseTableViewCell else{
-                fatalError("Cell Casting Error")
-            }
-            return cell
-        case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "productInfoCell", for: indexPath) as? ProductInfoTableViewCell else{
                 fatalError("Cell Casting Error")
             }
             return cell
-        case 4:
+        case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "moreTextCell", for: indexPath) as? MoreTextTableViewCell else{
                 fatalError("Cell Casting Error")
             }
             return cell
-        case 5:
+        case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "similarZatchCell", for: indexPath) as? SimilarZatchTableViewCell else{
                 fatalError("Cell Casting Error")
             }
