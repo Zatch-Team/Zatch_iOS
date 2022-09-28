@@ -68,7 +68,7 @@ class CategoryBottomSheet: SheetViewController {
         
         self.collectionView.snp.makeConstraints{ make in
             make.top.equalTo(super.titleLabel.snp.bottom).offset(20)
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
