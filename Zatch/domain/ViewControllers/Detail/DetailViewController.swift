@@ -16,14 +16,13 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
         
         self.view.addSubview(mainView)
+        self.view.bringSubviewToFront(super.navigationView)
         
         mainView.snp.makeConstraints{
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
         
         mainView.tableView.settingCustomTableView(self)
-        
-        self.view.bringSubviewToFront(super.navigationView)
     }
 
 }
@@ -45,12 +44,12 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
             return cell
         case 1:
             
-            //exchange
+            //1. exchange
 //            guard let cell = tableView.dequeueReusableCell(withIdentifier: "firstWantCell", for: indexPath) as? ExchangeDetailTableViewCell else{
 //                fatalError("Cell Casting Error")
 //            }
             
-            //share
+            //2. share
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ShareDetailTableViewCell.cellIdentifier, for: indexPath) as? ShareDetailTableViewCell else{
                 fatalError("Cell Casting Error")
             }

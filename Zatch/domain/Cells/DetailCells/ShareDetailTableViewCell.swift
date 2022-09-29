@@ -31,10 +31,20 @@ class ShareDetailTableViewCell: BaseTableViewCell {
     }
     
     let productLabel = UILabel().then{
-        $0.numberOfLines = 0
+        $0.numberOfLines = 1
         $0.textAlignment = .center
         $0.text = "몰랑이 피규어"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
+    }
+    
+    let productStackView = UIStackView().then{
+        $0.axis = .vertical
+        $0.spacing = 4
+        $0.alignment = .center
+    }
+    
+    let borderLine = UIView().then{
+        $0.backgroundColor = .black5
     }
     
     //MARK: - LifeCycle
@@ -53,15 +63,36 @@ class ShareDetailTableViewCell: BaseTableViewCell {
     
     func setUpView(){
         
-        self.baseView.snp.makeConstraints{
-            $0.height.equalTo(100)
-        }
+        self.baseView.addSubview(productStackView)
+        self.baseView.addSubview(shareTag)
+        self.baseView.addSubview(borderLine)
         
-        baseView.backgroundColor = .red
-        
+        self.productStackView.addArrangedSubview(categoryTag)
+        self.productStackView.addArrangedSubview(productLabel)
     }
     
     func setUpConstriant(){
         
+        productStackView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(20)
+            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        shareTag.snp.makeConstraints{
+            $0.trailing.equalTo(categoryTag.snp.leading).offset(-6)
+            $0.centerY.equalTo(categoryTag)
+            $0.height.equalTo(20)
+        }
+        
+        categoryTag.snp.makeConstraints{
+            $0.height.equalTo(20)
+        }
+        
+        borderLine.snp.makeConstraints{
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(productStackView.snp.bottom).offset(16)
+            $0.height.equalTo(1)
+        }
     }
 }
