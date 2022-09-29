@@ -17,103 +17,33 @@ class FindSearchViewController: BaseViewController {
     
     var currentSelect: SearchTagCollectionViewCell?
     
-    //MARK: - UI
-    
-    let titleView = TitleView().then{
-        $0.titleLabel.text = "무엇을 찾고 있나요?"
-        $0.titleLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+    let mainView = FindSearchView().then{
+        $0.nextButton.addTarget(self, action: #selector(moveToResultVC(_:)), for: .touchUpInside)
     }
     
-    //
-    let exchangeFrame = UIView()
-    
-    let myLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.textColor = .black85
-        $0.numberOfLines = 1
-        $0.textAlignment = .center
-    }
-    
-    let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange_vertical")
-    }
-    
-    let wantTextField = UITextField().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.textColor = .black85
-        $0.textAlignment = .center
-    }
-    
-    let textFieldBorderLine = UIView().then{
-        $0.backgroundColor = .black85
-    }
-    
-    let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
-    }
-    
-    //
-    let subTitle1 = UILabel().then{
-        $0.text = "가장 인기있는 재치"
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-    }
-    
-    let firstCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-        
-        let flexLayout = UICollectionViewFlowLayout()
-        flexLayout.scrollDirection = .horizontal
-        flexLayout.minimumInteritemSpacing = 8
-        
-        $0.collectionViewLayout = flexLayout
-        
-        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
-    }
-    
-    let subTitle2 = UILabel().then{
-        $0.text = "내가 찾는 재치"
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-    }
-    
-    let secondCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-        
-        let flexLayout = UICollectionViewFlowLayout()
-        flexLayout.scrollDirection = .horizontal
-        flexLayout.minimumInteritemSpacing = 8
-        
-        $0.collectionViewLayout = flexLayout
-        
-        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
-    }
-    
-    let nextButton = Purple36Button(title: "검색하기").then{
-        $0.addTarget(self, action: #selector(moveToResultVC(_:)), for: .touchUpInside)
-    }
+    //MARK: - LifeCycle
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        setUpView()
-        setConstraints()
         
-        firstCollectionView.delegate = self
-        firstCollectionView.dataSource = self
+        mainView.firstCollectionView.delegate = self
+        mainView.firstCollectionView.dataSource = self
         
-        secondCollectionView.delegate = self
-        secondCollectionView.dataSource = self
+        mainView.secondCollectionView.delegate = self
+        mainView.secondCollectionView.dataSource = self
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
+        }
     }
     
     
     //MARK: Action
-    @objc
-    func popToSearchVC(_ sender: UIButton){
-        self.navigationController?.popViewController(animated: true)
-    }
     
-    @objc
-    func moveToResultVC(_ sender: UIButton){
+    @objc func moveToResultVC(_ sender: UIButton){
         let nextVC = ResultSearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -126,13 +56,13 @@ extension FindSearchViewController: CellCalledViewController{
         if(currentSelect == cell){
             currentSelect?.setBtnInitState()
             currentSelect = nil
-            wantTextField.text = ""
+            mainView.wantTextField.text = ""
         }else{
             if let newCell = cell as? FindSearchTagCollectionViewCell {
                 
                 newCell.setBtnSelectedState()
                 
-                wantTextField.text = newCell.selectBtn.title(for: .normal)
+                mainView.wantTextField.text = newCell.selectBtn.title(for: .normal)
                 
                 currentSelect?.setBtnInitState()
                 currentSelect = newCell
@@ -146,14 +76,14 @@ extension FindSearchViewController: CellCalledViewController{
 extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == firstCollectionView ? popularData.count : findData.count
+        return collectionView == mainView.firstCollectionView ? popularData.count : findData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier,
                                                             for: indexPath) as? FindSearchTagCollectionViewCell else { fatalError()}
         
-        let title = collectionView == firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
+        let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
         
         cell.delegate = self
         cell.selectBtn.setTitle(title, for: .normal)
@@ -164,7 +94,7 @@ extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let title = collectionView == firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
+        let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
         
         let tmpLabel = UILabel().then{
             $0.text = title
