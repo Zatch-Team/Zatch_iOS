@@ -18,6 +18,7 @@ class MySearchViewController: BaseViewController{
     
     let mainView = MySearchView().then{
         $0.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
+        $0.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
     }
     
     //MARK: - LifeCycle
@@ -40,13 +41,29 @@ class MySearchViewController: BaseViewController{
     //MARK: Action
     
     @objc
-    func nextButtonClick(_ sender: UIButton){
+    func nextButtonClick(){
         
-        let nextVC = FindSearchViewController()
+        let product = mainView.selectTextField.text
         
-        nextVC.myLabel.text = mainView.selectTextField.text
+        if(product == "" || product == nil){
+            skipBtnDidClicked()
+        }else{
+            let vc = FindSearchViewController()
+            vc.myLabel.text = product
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc func skipBtnDidClicked(){
         
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        let vc = FindSearchViewController()
+        
+        vc.myLabel.text = "???"
+        vc.myLabel.textColor = .zatchYellow
+        vc.nextButton.setTitle("유연한 탐색", for: .normal)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
