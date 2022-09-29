@@ -14,7 +14,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     //safe area height 하단 -> 34
     enum BottomSheetSize: CGFloat{
         case SearchTag = 219
-        case Category = 460 // 500
+        case Category = 524 // 460
         case TownArea = 442
         case Declaration = 128
         case MakeMeeting = 324
