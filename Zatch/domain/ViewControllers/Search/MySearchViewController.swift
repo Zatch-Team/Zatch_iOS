@@ -49,7 +49,7 @@ class MySearchViewController: BaseViewController{
             skipBtnDidClicked()
         }else{
             let vc = FindSearchViewController()
-            vc.myLabel.text = product
+            vc.mainView.myLabel.text = product
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -58,9 +58,9 @@ class MySearchViewController: BaseViewController{
         
         let vc = FindSearchViewController()
         
-        vc.myLabel.text = "???"
-        vc.myLabel.textColor = .zatchYellow
-        vc.nextButton.setTitle("유연한 탐색", for: .normal)
+        vc.mainView.myLabel.text = "???"
+        vc.mainView.myLabel.textColor = .zatchYellow
+        vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
         
         self.navigationController?.pushViewController(vc, animated: true)
         
