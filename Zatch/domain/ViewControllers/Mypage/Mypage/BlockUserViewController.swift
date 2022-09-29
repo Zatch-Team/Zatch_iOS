@@ -9,6 +9,12 @@ import UIKit
 
 class BlockUserViewController: BaseCenterTitleViewController {
     
+    var blockData : [String] = ["1"] {
+        didSet{
+            mainView.tableView.reloadData()
+        }
+    }
+    
     let mainView = BlockUserView()
 
     override func viewDidLoad() {
@@ -17,8 +23,7 @@ class BlockUserViewController: BaseCenterTitleViewController {
 
         self.navigationTitle.text = "차단된 사용자"
         
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+        mainView.tableView.settingCustomTableView(self)
         
         self.view.addSubview(mainView)
         
@@ -43,7 +48,15 @@ class BlockUserViewController: BaseCenterTitleViewController {
 extension BlockUserViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        
+        if(blockData.isEmpty){
+            mainView.emptyView.isHidden = false
+        }else{
+            mainView.emptyView.isHidden = true
+        }
+        
+        mainView.emptyView.isHidden = blockData.isEmpty ? false : true
+        return blockData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
