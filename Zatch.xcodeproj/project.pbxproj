@@ -83,7 +83,6 @@
 		5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */; };
 		5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
-		57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A70289D044700056691 /* MySearchViewController+Layout.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
 		57468A76289D077200056691 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A75289D077200056691 /* PurpleButton.swift */; };
 		57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */; };
@@ -344,7 +343,6 @@
 		5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResultTableViewCell.swift; sourceTree = "<group>"; };
 		5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResusltViewModel.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
-		57468A70289D044700056691 /* MySearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57468A75289D077200056691 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -847,7 +845,6 @@
 			isa = PBXGroup;
 			children = (
 				5767752B281CDA4B000BC7CD /* MySearchViewController.swift */,
-				57468A70289D044700056691 /* MySearchViewController+Layout.swift */,
 				579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */,
 				57468A7E289E3F1D00056691 /* FindSearchViewController+Layout.swift */,
 				579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */,
@@ -1733,7 +1730,6 @@
 				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */,
 				23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */,
-				57468A71289D044700056691 /* MySearchViewController+Layout.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,

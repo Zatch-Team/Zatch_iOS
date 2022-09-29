@@ -16,68 +16,24 @@ class MySearchViewController: BaseViewController{
     
     var currentSelect: Int = -1
     
-    //MARK: UIComponent
-    
-    let topView = TitleView().then{
-        $0.titleLabel.text = "내가 교환할 재치를\n입력해주세요."
+    let mainView = MySearchView().then{
+        $0.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
     }
-    
-    //selectFrame
-    let selectFrame = UIView()
-    
-    let selectTextField = UILabel().then{
-        $0.textAlignment = .center
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-    }
-    
-    let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
-    }
-    
-    let underLine = UIView().then{
-        $0.backgroundColor = .black85
-    }
-    
-    //
-    let subTitle = UILabel().then{
-        $0.text = "나의 재치"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
-    }
-    
-    let nextButton = Purple36Button(title: "다음으로").then{
-        $0.addTarget(self, action: #selector(nextButtonClick(_:)), for: .touchUpInside)
-    }
-    
-    let skipButton = UIButton().then{
-        $0.setTitle("건너뛰기", for: .normal)
-        $0.setTitleColor(.black45, for: .normal)
-        $0.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
-    }
-    
-    var collectionView : UICollectionView!
     
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+    
+        mainView.collectionView.delegate = self
+        mainView.collectionView.dataSource = self
         
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-            
-            let layout = LeftAlignCollectionViewFlowLayout()
-            layout.minimumLineSpacing = 12
-            layout.minimumInteritemSpacing = 8
-            
-            $0.delegate = self
-            $0.dataSource = self
-            
-            $0.collectionViewLayout = layout
-            
-            $0.register(MySearchTagCollectionViewCell.self, forCellWithReuseIdentifier: MySearchTagCollectionViewCell.cellIdentifier)
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
-        
-        setUpView()
-        setUpConstraints()
         
     }
     
@@ -85,9 +41,10 @@ class MySearchViewController: BaseViewController{
     
     @objc
     func nextButtonClick(_ sender: UIButton){
+        
         let nextVC = FindSearchViewController()
         
-        nextVC.myLabel.text = selectTextField.text
+        nextVC.myLabel.text = mainView.selectTextField.text
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -96,17 +53,17 @@ class MySearchViewController: BaseViewController{
 extension MySearchViewController: CellCalledViewController{
     
     func newCellIsSelected(_ indexPath: IndexPath){
-        if let currentTag = collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
+        if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
             currentTag.setBtnInitState()
         }
         
         if(currentSelect == indexPath.row){
             currentSelect = -1
-            selectTextField.text = ""
+            mainView.selectTextField.text = ""
         }else{
-            if let newTag = collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
+            if let newTag = mainView.collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
                 newTag.setBtnSelectedState()
-                selectTextField.text = myZatchData[indexPath.row]
+                mainView.selectTextField.text = myZatchData[indexPath.row]
                 currentSelect = indexPath.row
             }
         }
@@ -116,7 +73,6 @@ extension MySearchViewController: CellCalledViewController{
 }
 
 extension MySearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myZatchData.count
