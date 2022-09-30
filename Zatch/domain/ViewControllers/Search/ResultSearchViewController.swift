@@ -16,13 +16,13 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     var resultData: [String] = []
     
     lazy var mainView = ResultSearchView().then{
-        $0.myCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        $0.myZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
-        $0.myZatch.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+        $0.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+        $0.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
+        $0.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
         
-        $0.wantCategoryButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        $0.wantZatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
-        $0.wantZatch.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+        $0.wantZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+        $0.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
+        $0.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
         
         $0.townFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
     }
@@ -52,12 +52,12 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     //TextField 입력 끝나거나 취소됐을 경우
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        mainView.myZatchFrame.productTextField.isHidden = true
+        mainView.wantZatchFrame.productTextField.isHidden = true
         
-        mainView.myZatchTextField.isHidden = true
-        mainView.wantZatchTextField.isHidden = true
-        
-        mainView.myZatch.isHidden = false
-        mainView.wantZatch.isHidden = false
+        mainView.myZatchFrame.productLabel.isHidden = false
+        mainView.wantZatchFrame.productLabel.isHidden = false
         
         self.view.endEditing(true)
     }
@@ -68,8 +68,8 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
 
-        mainView.myZatchTextField.delegate = self
-        mainView.wantZatchTextField.delegate = self
+        mainView.myZatchFrame.productTextField.delegate = self
+        mainView.wantZatchFrame.productTextField.delegate = self
         
     }
     
@@ -81,7 +81,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         bottomSheet.currentTag = myZatchIndex
         
         bottomSheet.selectCompleteHandelr = { text, index in
-            self.mainView.myZatch.text = text
+            self.mainView.myZatchFrame.productLabel.text = text
             self.myZatchIndex = index
         }
         
@@ -95,7 +95,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         bottomSheet.currentTag = wantZatchIndex
         
         bottomSheet.selectCompleteHandelr = { text, index in
-            self.mainView.wantZatch.text = text
+            self.mainView.wantZatchFrame.productLabel.text = text
             self.wantZatchIndex = index
         }
         bottomSheet.loadViewIfNeeded()
@@ -118,28 +118,29 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     @objc
     func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
-        
+
         //기존 입력값 초기화
-        mainView.myZatchTextField.text = nil
-        mainView.wantZatchTextField.text = nil
         
-        mainView.myZatchTextField.placeholder = mainView.myZatch.text
-        mainView.wantZatchTextField.placeholder = mainView.wantZatch.text
-        
-        mainView.myZatchTextField.setPlaceholderColor(.black10)
-        mainView.wantZatchTextField.setPlaceholderColor(.black10)
-        
-        mainView.myZatchTextField.isHidden = false
-        mainView.wantZatchTextField.isHidden = false
-        
-        mainView.myZatch.isHidden = true
-        mainView.wantZatch.isHidden = true
-        
+        mainView.myZatchFrame.productTextField.text = nil
+        mainView.wantZatchFrame.productTextField.text = nil
+
+        mainView.myZatchFrame.productTextField.placeholder = mainView.myZatchFrame.productLabel.text
+        mainView.wantZatchFrame.productTextField.placeholder = mainView.wantZatchFrame.productLabel.text
+
+        mainView.myZatchFrame.productTextField.setPlaceholderColor(.black10)
+        mainView.wantZatchFrame.productTextField.setPlaceholderColor(.black10)
+
+        mainView.myZatchFrame.productTextField.isHidden = false
+        mainView.wantZatchFrame.productTextField.isHidden = false
+
+        mainView.myZatchFrame.productLabel.isHidden = true
+        mainView.wantZatchFrame.productLabel.isHidden = true
+
         //커서 올리기
-        if(recognizer.view == mainView.wantZatch){
-            mainView.wantZatchTextField.becomeFirstResponder()
+        if(recognizer.view == mainView.wantZatchFrame.productLabel){
+            mainView.wantZatchFrame.productTextField.becomeFirstResponder()
         }else{
-            mainView.myZatchTextField.becomeFirstResponder()
+            mainView.myZatchFrame.productTextField.becomeFirstResponder()
         }
     }
     
@@ -181,16 +182,16 @@ extension ResultSearchViewController: UITextFieldDelegate{
     //return 키 클릭시 호출 메서드
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        mainView.myZatchTextField.isHidden = true
-        mainView.wantZatchTextField.isHidden = true
+        mainView.myZatchFrame.productTextField.isHidden = true
+        mainView.wantZatchFrame.productTextField.isHidden = true
         
-        mainView.myZatch.isHidden = false
-        mainView.wantZatch.isHidden = false
+        mainView.myZatchFrame.productLabel.isHidden = false
+        mainView.wantZatchFrame.productLabel.isHidden = false
         
-        if(textField == mainView.myZatchTextField){
-            mainView.myZatch.text = mainView.myZatchTextField.text
+        if(textField == mainView.myZatchFrame.productTextField){
+            mainView.myZatchFrame.productLabel.text = mainView.myZatchFrame.productTextField.text
         }else{
-            mainView.wantZatch.text = mainView.wantZatchTextField.text
+            mainView.wantZatchFrame.productLabel.text = mainView.wantZatchFrame.productTextField.text
         }
         
         self.view.endEditing(true)

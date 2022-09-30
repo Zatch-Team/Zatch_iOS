@@ -19,75 +19,12 @@ class ResultSearchView: UIView {
         $0.backgroundColor = .black5
     }
     
-    let myStackView = UIStackView().then{
-        $0.axis = .vertical
-        $0.alignment = .trailing
-        $0.spacing = 14
-    }
+    let myZatchFrame = SearchFieldFrame(alignment: .trailing)
     
-    lazy var myCategoryButton = SearchCateogryDotButton()
-    
-    lazy var myZatch = UILabel().then{
-        $0.numberOfLines = 1
-        $0.textAlignment = .right
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.isUserInteractionEnabled = true
-    }
-    
-    lazy var myZatchTextField = UITextField().then{
-        $0.isHidden = true
-        $0.textAlignment = .center
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.addPadding()
-        $0.tintColor = .black10
-        $0.returnKeyType = .done
-        
-        $0.layer.cornerRadius = 14
-        $0.backgroundColor = .white
-        $0.layer.shadowRadius = 5.0
-        $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        $0.layer.shadowOffset = CGSize(width: 0, height: 0)
-        $0.layer.shadowOpacity = 1
-        $0.layer.masksToBounds = false
-    }
-    
-    let wantStackView = UIStackView().then{
-        $0.axis = .vertical
-        $0.alignment = .leading
-        $0.spacing = 14
-    }
-    
-    lazy var wantCategoryButton = SearchCateogryDotButton()
-    
-    lazy var wantZatch = UILabel().then{
-        $0.numberOfLines = 1
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.isUserInteractionEnabled = true
-    }
-    
-    lazy var wantZatchTextField = UITextField().then{
-        $0.isHidden = true
-        $0.textAlignment = .center
-        $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.addPadding()
-        $0.tintColor = .black10 //cursor 색상
-        $0.returnKeyType = .done
-        
-        $0.layer.cornerRadius = 14
-        $0.backgroundColor = .white
-        $0.layer.shadowRadius = 5.0
-        $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        $0.layer.shadowOffset = CGSize(width: 0, height: 0)
-        $0.layer.shadowOpacity = 1
-        $0.layer.masksToBounds = false
-    }
+    let wantZatchFrame = SearchFieldFrame(alignment: .leading)
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange_vertical")
+        $0.image = UIImage(named: "exchange")
     }
     
     lazy var townFrame = UIStackView().then{
@@ -139,18 +76,10 @@ class ResultSearchView: UIView {
 
         self.addSubview(topView)
         
-        self.topView.addSubview(myStackView)
         self.topView.addSubview(exchangeImage)
-        self.topView.addSubview(wantStackView)
         
-        self.myStackView.addArrangedSubview(myCategoryButton)
-        self.myStackView.addArrangedSubview(myZatch)
-    
-        self.wantStackView.addArrangedSubview(wantCategoryButton)
-        self.wantStackView.addArrangedSubview(wantZatch)
-        
-        self.topView.addSubview(myZatchTextField)
-        self.topView.addSubview(wantZatchTextField)
+        self.topView.addSubview(myZatchFrame)
+        self.topView.addSubview(wantZatchFrame)
         
         self.topView.addSubview(townFrame)
         townFrame.addArrangedSubview(townSelectedLabel)
@@ -179,46 +108,23 @@ class ResultSearchView: UIView {
             make.width.height.equalTo(24)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(36)
+            
+            make.centerY.equalTo(myZatchFrame.productLabel)
+            make.centerY.equalTo(wantZatchFrame.productLabel)
+            make.centerY.equalTo(myZatchFrame.productTextField)
+            make.centerY.equalTo(wantZatchFrame.productTextField)
         }
         
-        self.myStackView.snp.makeConstraints { make in
-            make.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
-            make.bottom.equalTo(exchangeImage)
-            make.top.equalToSuperview().offset(8)
-            make.leading.equalToSuperview().offset(20)
+        myZatchFrame.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
         }
         
-        self.myZatch.snp.makeConstraints{ make in
-            make.height.equalTo(20)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        self.myZatchTextField.snp.makeConstraints{ make in
-            make.height.equalTo(32)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
-            make.top.equalTo(myCategoryButton.snp.bottom).offset(8)
-            make.bottom.equalToSuperview().offset(-52)
-        }
-
-        self.wantStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
-            make.bottom.equalTo(exchangeImage)
-            make.trailing.equalToSuperview().offset(-20)
-        }
-        
-        self.wantZatch.snp.makeConstraints{ make in
-            make.height.equalTo(20)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        self.wantZatchTextField.snp.makeConstraints{ make in
-            make.height.equalTo(32)
-            make.trailing.equalToSuperview().offset(-20)
-            make.leading.equalTo(exchangeImage.snp.trailing).offset(12)
-            make.top.equalTo(wantCategoryButton.snp.bottom).offset(8)
-            make.bottom.equalToSuperview().offset(-52)
+        wantZatchFrame.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.equalTo(exchangeImage.snp.trailing).offset(12)
         }
         
         self.townFrame.snp.makeConstraints{ make in
@@ -281,4 +187,72 @@ extension ResultSearchView{
         }
         
     }
+    
+    class SearchFieldFrame: UIView{
+        
+        let categortBtn = SearchCateogryDotButton()
+        
+        let productLabel = UILabel().then{
+            $0.text = "생수"
+            $0.numberOfLines = 1
+            $0.textAlignment = .right
+            $0.textColor = .black85
+            $0.font = UIFont.pretendard(size: 16, family: .Bold)
+            $0.isUserInteractionEnabled = true
+        }
+        let stackView = UIStackView().then{
+            $0.spacing = 14
+            $0.axis = .vertical
+        }
+        
+        let productTextField = UITextField().then{
+            $0.isHidden = true
+            $0.textAlignment = .center
+            $0.textColor = .black85
+            $0.font = UIFont.pretendard(size: 16, family: .Bold)
+            $0.addPadding()
+            $0.tintColor = .black10
+            $0.returnKeyType = .done
+            
+            $0.layer.cornerRadius = 14
+            $0.backgroundColor = .white
+            $0.layer.shadowRadius = 5.0
+            $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+            $0.layer.shadowOffset = CGSize(width: 0, height: 0)
+            $0.layer.shadowOpacity = 1
+            $0.layer.masksToBounds = false
+        }
+        
+        init(alignment: UIStackView.Alignment){
+            
+            super.init(frame: .zero)
+            
+            stackView.alignment = alignment
+            
+            self.addSubview(stackView)
+            self.addSubview(productTextField)
+            
+            stackView.addArrangedSubview(categortBtn)
+            stackView.addArrangedSubview(productLabel)
+            
+            stackView.snp.makeConstraints{
+                $0.top.equalToSuperview().offset(8)
+                $0.leading.trailing.equalToSuperview()
+            }
+            
+            productTextField.snp.makeConstraints{
+                $0.top.equalTo(categortBtn.snp.bottom).offset(8)
+                $0.leading.trailing.equalToSuperview()
+                $0.height.equalTo(32)
+                $0.bottom.equalToSuperview()
+            }
+
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+    }
 }
+
