@@ -67,6 +67,7 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchStatisticTableViewCell", for: indexPath) as? MyZatchStatisticTableViewCell else { return UITableViewCell() }
+            cell.preVC = self
             cell.selectionStyle = .none
             return cell
         case 3:
@@ -110,12 +111,6 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
             vc.isMyProfile = true
             vc.profileUserName = "나"
             self.navigationController?.pushViewController(vc, animated: true)
-            // MARK: 다른 사용자의 프로필 
-//            let vc = ProfileViewController(btnImage: UIImage(named: "chat")!)
-//            vc.navigationTitle.text = nil
-//            vc.isMyProfile = false
-//            vc.staticCellTitle = "긍정적인 수달"
-//            self.navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
