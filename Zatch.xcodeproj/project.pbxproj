@@ -26,7 +26,7 @@
 		23B051BC28E1FE8B005D08EA /* NotiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051BB28E1FE8B005D08EA /* NotiTableViewCell.swift */; };
 		23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051BE28E20622005D08EA /* QnAViewController.swift */; };
 		23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C028E2064C005D08EA /* QnATabmanViewController.swift */; };
-		23B051C328E206B7005D08EA /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C228E206B7005D08EA /* QuestionsViewController.swift */; };
+		23B051C328E206B7005D08EA /* RegisterQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C228E206B7005D08EA /* RegisterQuestionViewController.swift */; };
 		23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C428E206C5005D08EA /* MyQuestionsViewController.swift */; };
 		23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */; };
 		23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */; };
@@ -285,7 +285,7 @@
 		23B051BB28E1FE8B005D08EA /* NotiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTableViewCell.swift; sourceTree = "<group>"; };
 		23B051BE28E20622005D08EA /* QnAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAViewController.swift; sourceTree = "<group>"; };
 		23B051C028E2064C005D08EA /* QnATabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnATabmanViewController.swift; sourceTree = "<group>"; };
-		23B051C228E206B7005D08EA /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		23B051C228E206B7005D08EA /* RegisterQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterQuestionViewController.swift; sourceTree = "<group>"; };
 		23B051C428E206C5005D08EA /* MyQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionsViewController.swift; sourceTree = "<group>"; };
 		23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentTableViewCell.swift; sourceTree = "<group>"; };
 		23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -676,7 +676,7 @@
 			children = (
 				23B051BE28E20622005D08EA /* QnAViewController.swift */,
 				23B051C028E2064C005D08EA /* QnATabmanViewController.swift */,
-				23B051C228E206B7005D08EA /* QuestionsViewController.swift */,
+				23B051C228E206B7005D08EA /* RegisterQuestionViewController.swift */,
 				23B051C428E206C5005D08EA /* MyQuestionsViewController.swift */,
 			);
 			path = QnAViewController;
@@ -1765,7 +1765,7 @@
 				57B5D6D328346AB100EA1439 /* ProductInputTextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
-				23B051C328E206B7005D08EA /* QuestionsViewController.swift in Sources */,
+				23B051C328E206B7005D08EA /* RegisterQuestionViewController.swift in Sources */,
 				23B051BC28E1FE8B005D08EA /* NotiTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
 				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,

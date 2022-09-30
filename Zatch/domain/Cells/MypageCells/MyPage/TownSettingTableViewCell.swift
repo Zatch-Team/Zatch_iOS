@@ -15,6 +15,10 @@ class TownSettingTableViewCell: UITableViewCell {
         $0.text = "내 동네 관리"
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
     }
+    let stack = UIStackView().then{
+        $0.axis = .horizontal
+        $0.spacing = 8
+    }
     let settingIcon = UIImageView().then{
         $0.image = UIImage(named: "pin")
     }
@@ -40,8 +44,10 @@ class TownSettingTableViewCell: UITableViewCell {
         contentView.addSubview(backView)
         
         backView.addSubview(titleLabel)
-        backView.addSubview(settingIcon)
-        backView.addSubview(setTownLabel)
+        backView.addSubview(stack)
+        
+        stack.addArrangedSubview(settingIcon)
+        stack.addArrangedSubview(setTownLabel)
     }
     func setUpConstraint() {
         backView.snp.makeConstraints { make in
@@ -51,14 +57,12 @@ class TownSettingTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.leading.top.equalToSuperview().offset(20)
         }
-        settingIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+        stack.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
             make.top.equalTo(titleLabel.snp.bottom).offset(22)
         }
-        setTownLabel.snp.makeConstraints { make in
-            make.leading.equalTo(settingIcon.snp.trailing).offset(8)
-            make.centerY.equalTo(settingIcon)
+        settingIcon.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
         }
     }
 }

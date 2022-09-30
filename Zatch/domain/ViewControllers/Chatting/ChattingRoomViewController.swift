@@ -35,10 +35,11 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     //MARK: - UI
-    let nameLabel = UILabel().then{
+    var nameLabel = UILabel().then{
         $0.text = "쑤야"
         $0.font = UIFont.pretendard(size: 18, family: .Bold)
         $0.textColor = .black85
+        $0.isUserInteractionEnabled = true
     }
     
     let townLabel = UILabel().then{
@@ -95,6 +96,9 @@ class ChattingRoomViewController: BaseViewController {
         setInitView()
         setUpView()
         setUpConstraint()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goOthersProfile(sender:)))
+        nameLabel.addGestureRecognizer(tapGesture)
     }
     
     //MARK: - Action
@@ -225,6 +229,13 @@ class ChattingRoomViewController: BaseViewController {
         
     }
 
+    @objc func goOthersProfile(sender: UITapGestureRecognizer) {
+        let vc = ProfileViewController(btnImage: UIImage(named: "chat")!)
+        vc.navigationTitle.text = nil
+        vc.isMyProfile = false
+        vc.profileUserName = nameLabel.text
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     //MARK: - Helper
     

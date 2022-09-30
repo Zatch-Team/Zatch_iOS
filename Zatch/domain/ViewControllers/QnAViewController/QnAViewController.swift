@@ -15,6 +15,7 @@ class QnAViewController: BaseCenterTitleViewController {
         super.viewDidLoad()
 
         self.navigationTitle.text = "1:1 문의"
+        self.backBtn.addTarget(self, action: #selector(goBackButtonDidTap), for: .touchUpInside)
         
         let qnaVC = QnATabmanViewController()
         self.addChild(qnaVC)
@@ -25,5 +26,8 @@ class QnAViewController: BaseCenterTitleViewController {
         }
         self.view.addConstraints(qnaVC.view.constraints)
         qnaVC.didMove(toParent: self)
+    }
+    @objc func goBackButtonDidTap() {
+        self.dismiss(animated: true)
     }
 }
