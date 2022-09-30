@@ -24,7 +24,7 @@ class ResultSearchView: UIView {
     let wantZatchFrame = SearchFieldFrame(alignment: .leading)
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange_vertical")
+        $0.image = UIImage(named: "exchange")
     }
     
     lazy var townFrame = UIStackView().then{
@@ -255,3 +255,4 @@ extension ResultSearchView{
         
     }
 }
+
