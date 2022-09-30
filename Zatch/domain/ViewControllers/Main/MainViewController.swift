@@ -19,7 +19,17 @@ class MainViewController: UIViewController {
         self.view.backgroundColor = .white
         self.tabBarController?.tabBar.tintColor = .zatchPurple
         self.navigationController?.isNavigationBarHidden = true
-
+        
+        setMainView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.tintColor = .zatchPurple
+    }
+    // MARK: - Actions
+    @objc func arrowTapped(_ sender: UIButton) {setBottomSheet()}
+    @objc func buttonTapped(_ sender: UIButton) {setBottomSheet()}
+    // MARK: - Functions
+    func setMainView() {
         self.view.addSubview(mainView)
         mainView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
@@ -32,14 +42,7 @@ class MainViewController: UIViewController {
         
         viewModel = MainViewModel()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.tintColor = .zatchPurple
-    }
-    // MARK: - Actions
-    @objc func arrowTapped(_ sender: UIButton) {setBottomSheet()}
-    @objc func buttonTapped(_ sender: UIButton) {setBottomSheet()}
     func setBottomSheet() {
-        // 화살표 방향 안 바뀜
         self.mainView.arrowButton.isSelected = true
         self.mainView.layoutIfNeeded()
         

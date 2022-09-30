@@ -54,6 +54,12 @@ extension ChangeLocationBottonSheet: UITableViewDelegate, UITableViewDataSource 
             $0.text = locationData[itemIdx]
             $0.font = UIFont.pretendard(size: 16, family: .Medium)
             $0.textAlignment = .center
+            // 현재 location인 Label만 노란색으로 글씨색 설정
+            if let myLocation = self.myLocation {
+                if myLocation == locationData[itemIdx] {$0.textColor = .zatchDeepYellow}
+            } else {
+                if itemIdx == 0 {$0.textColor = .zatchDeepYellow}
+            }
         }
         return cell
     }
