@@ -10,7 +10,7 @@ import UIKit
 class ProfileViewController: BaseCenterTitleViewController {
     var profileView: MyProfileView!
     var isMyProfile: Bool!
-    var staticCellTitle: String!
+    var profileUserName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +54,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
+            cell.userNameLabel.text = self.profileUserName
             return cell
         case 1:
             let cell = UITableViewCell()
-            setUpCell(cell, self.staticCellTitle)
+            setUpCell(cell, self.profileUserName)
             cell.selectionStyle = .none
             return cell
         case 2:

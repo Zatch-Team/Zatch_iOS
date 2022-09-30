@@ -11,6 +11,7 @@ class MypageSettingTableViewCell: UITableViewCell {
 
     // MARK: - LifeCycles
     var mypageSettingTableView: UITableView!
+    var preVC : MypageViewController!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -55,7 +56,7 @@ extension MypageSettingTableViewCell: UITableViewDelegate, UITableViewDataSource
         case 1:
             cell.textLabel?.text = "고객센터"
         case 2:
-            cell.textLabel?.text = "고객센터"
+            cell.textLabel?.text = "1:1문의"
         case 3:
             cell.textLabel?.text = "고객센터"
         default:
@@ -68,6 +69,15 @@ extension MypageSettingTableViewCell: UITableViewDelegate, UITableViewDataSource
         return 44
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tag = indexPath.row
+        switch tag {
+        case 2:
+            let vc = QnAViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.preVC.present(vc, animated: true, completion: nil)
+        default:
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

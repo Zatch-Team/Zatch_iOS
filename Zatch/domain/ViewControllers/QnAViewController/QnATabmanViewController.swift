@@ -16,7 +16,7 @@ class QnATabmanViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let questionVC = QuestionsViewController()
+        let questionVC = RegisterQuestionViewController()
         let myQuestionVC = MyQuestionsViewController()
         viewControllers.append(questionVC)
         viewControllers.append(myQuestionVC)

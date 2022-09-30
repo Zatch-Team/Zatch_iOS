@@ -21,9 +21,14 @@ class MyZatchStatisticTableViewCell: UITableViewCell {
     }
 
     // MARK: - LifeCycles
+    var preVC: MypageViewController!
+    var zatchTapGesture: UITapGestureRecognizer!
+    var heartTapGesture: UITapGestureRecognizer!
+    var tradeTapGesture: UITapGestureRecognizer!
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        setTapGestures()
         setUpView()
         setUpConstraint()
     }
@@ -31,8 +36,27 @@ class MyZatchStatisticTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    // MARK: - Actions
+    @objc func myZatchDidTap(sender: UITapGestureRecognizer) {
+        let vc = MyZatchViewController()
+        self.preVC.navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func myHeartDidTap(sender: UITapGestureRecognizer) {
+        let vc = HeartListViewController()
+        self.preVC.navigationController?.pushViewController(vc, animated: true)
+    }
+    // 임시
+    @objc func myTradeDidTap(sender: UITapGestureRecognizer) {
+        let vc = MyZatchViewController()
+        self.preVC.navigationController?.pushViewController(vc, animated: true)
+    }
 
     // MARK: - Functions
+    func setTapGestures() {
+        zatchTapGesture = UITapGestureRecognizer(target: self, action: #selector(myZatchDidTap(sender:)))
+        heartTapGesture = UITapGestureRecognizer(target: self, action: #selector(myHeartDidTap(sender:)))
+        tradeTapGesture = UITapGestureRecognizer(target: self, action: #selector(myTradeDidTap(sender:)))
+    }
     func setUpView() {
         contentView.backgroundColor = .systemGray5
         contentView.addSubview(backView)
@@ -40,9 +64,17 @@ class MyZatchStatisticTableViewCell: UITableViewCell {
         backView.addSubview(titleLabel)
         backView.addSubview(myZatchStack)
         
-        setMyZatch(setMyZatchCount(7, "나의 재치"))
-        setMyZatch(setMyZatchCount(0, "관심 목록"))
-        setMyZatch(setMyZatchCount(20, "교환 완료"))
+        let countStack = setMyZatchCount(7, "나의 재치")
+        let heartStack = setMyZatchCount(0, "관심 목록")
+        let tradeStack = setMyZatchCount(20, "교환 완료")
+        
+        countStack.addGestureRecognizer(zatchTapGesture)
+        heartStack.addGestureRecognizer(heartTapGesture)
+        tradeStack.addGestureRecognizer(tradeTapGesture)
+        
+        setMyZatch(countStack)
+        setMyZatch(heartStack)
+        setMyZatch(tradeStack)
     }
     func setUpConstraint() {
         backView.snp.makeConstraints { make in

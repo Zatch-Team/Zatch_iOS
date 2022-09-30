@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuestionsViewController: UIViewController {
+class RegisterQuestionViewController: UIViewController {
     // MARK: - Views
     var questionTableView: UITableView!
     let completeButton = Purple36Button(title: "문의 등록하기")
@@ -92,10 +92,11 @@ class QuestionsViewController: UIViewController {
     }
     @objc func dialogCompleteButtonDidTap() {
         print("등록 clicked!")
+        self.dismiss(animated: true)
     }
 }
 // MARK: - TableView delegate
-extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource{
+extension RegisterQuestionViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -139,7 +140,7 @@ extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 // MARK: - TextView delegate
-extension QuestionsViewController : UITextViewDelegate {
+extension RegisterQuestionViewController : UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {
             textView.text = nil

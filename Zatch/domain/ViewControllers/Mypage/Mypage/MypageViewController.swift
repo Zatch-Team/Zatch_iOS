@@ -19,6 +19,7 @@ class MypageViewController: BaseTabBarViewController {
         self.navigationController?.isNavigationBarHidden = true
         super.titleLabel.text = "내 정보"
         super.etcBtn.setImage(UIImage(named: "setting"), for: .normal)
+        super.etcBtn.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
         
         mypageView = MypageView()
         self.view.addSubview(mypageView)
@@ -37,7 +38,16 @@ class MypageViewController: BaseTabBarViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.tintColor = .zatchPurple
     }
-
+    // MARK: - Actions
+    @objc func goSettingButtonDidTap() {
+        let vc = SettingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func setTownButtonDidTap(sender: UITapGestureRecognizer) {
+        let vc = SearchTownViewController()
+        vc.view.backgroundColor = .white
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 // MARK: - TableView delegate
 extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -57,14 +67,18 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchStatisticTableViewCell", for: indexPath) as? MyZatchStatisticTableViewCell else { return UITableViewCell() }
+            cell.preVC = self
             cell.selectionStyle = .none
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TownSettingTableViewCell", for: indexPath) as? TownSettingTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(setTownButtonDidTap(sender:)))
+            cell.stack.addGestureRecognizer(tapGesture)
             return cell
         case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MypageSettingTableViewCell", for: indexPath) as? MypageSettingTableViewCell else { return UITableViewCell() }
+            cell.preVC = self
             cell.selectionStyle = .none
             return cell
         default:
@@ -95,14 +109,8 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
             // MARK: 내 프로필
             let vc = ProfileViewController(title: "수정")
             vc.isMyProfile = true
-            vc.staticCellTitle = "나"
+            vc.profileUserName = "나"
             self.navigationController?.pushViewController(vc, animated: true)
-            // MARK: 다른 사용자의 프로필 
-//            let vc = ProfileViewController(btnImage: UIImage(named: "chat")!)
-//            vc.navigationTitle.text = nil
-//            vc.isMyProfile = false
-//            vc.staticCellTitle = "긍정적인 수달"
-//            self.navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

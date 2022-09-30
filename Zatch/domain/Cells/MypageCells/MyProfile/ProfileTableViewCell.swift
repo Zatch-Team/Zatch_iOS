@@ -16,7 +16,7 @@ class ProfileTableViewCell: UITableViewCell {
         $0.backgroundColor = .systemGray4
         $0.layer.cornerRadius = 50
     }
-    let userName = UILabel().then{
+    var userNameLabel = UILabel().then{
         $0.text = "userName"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
@@ -51,11 +51,13 @@ class ProfileTableViewCell: UITableViewCell {
     }
 
     // MARK: - LifeCycles
+    var userName: String!
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setUpView()
         setUpConstraint()
+        userNameLabel.text = self.userName
     }
     
     required init?(coder: NSCoder) {
@@ -68,7 +70,7 @@ class ProfileTableViewCell: UITableViewCell {
         contentView.addSubview(backView)
         
         backView.addSubview(userImage)
-        backView.addSubview(userName)
+        backView.addSubview(userNameLabel)
         backView.addSubview(starView)
         backView.addSubview(titleLabel)
         backView.addSubview(moreButton)
@@ -84,7 +86,7 @@ class ProfileTableViewCell: UITableViewCell {
             make.top.equalToSuperview().offset(20)
             make.centerX.equalToSuperview()
         }
-        userName.snp.makeConstraints { make in
+        userNameLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(userImage.snp.bottom).offset(12)
         }
@@ -92,7 +94,7 @@ class ProfileTableViewCell: UITableViewCell {
             make.width.equalTo(120)
             make.height.equalTo(24)
             make.centerX.equalToSuperview()
-            make.top.equalTo(userName.snp.bottom).offset(12)
+            make.top.equalTo(userNameLabel.snp.bottom).offset(12)
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(starView.snp.bottom).offset(24)
