@@ -28,6 +28,7 @@ class MainCollectionViewTableViewCell: UITableViewCell {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.minimumInteritemSpacing = 0
             flowLayout.minimumLineSpacing = 20
+            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             
             flowLayout.itemSize = CGSize(width: 124, height: 210)
             flowLayout.scrollDirection = .horizontal
@@ -63,9 +64,8 @@ class MainCollectionViewTableViewCell: UITableViewCell {
             make.top.equalTo(label.snp.bottom).offset(4)
         }
         collectionView.snp.makeConstraints { make in
-            make.leading.equalTo(subLabel.snp.leading)
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.leading.equalTo(subLabel)
+            make.bottom.trailing.equalToSuperview()
             make.top.equalTo(subLabel.snp.bottom).offset(16)
         }
     }

@@ -140,13 +140,11 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
         let tag = indexPath.row
         switch tag {
         case 0:
-            return 153
-        case 1:
-            return 318
+            return 160
+        case 1, 3:
+            return 300
         case 2:
             return 150
-        case 3:
-            return 318
         default:
             return 50
         }

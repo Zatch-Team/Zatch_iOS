@@ -19,7 +19,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     let title = UILabel().then{
         $0.text = "title"
         $0.font = UIFont.pretendard(size: 13, family: .Bold)
-        $0.numberOfLines = 0
+        $0.numberOfLines = 1
         $0.textColor = .black
     }
     // 위치
@@ -36,7 +36,10 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.numberOfLines = 0
         $0.textColor = .lightGray
     }
-    let stackView = UIStackView()
+    let stackView = UIStackView().then{
+        $0.axis = .vertical
+        $0.spacing = 0
+    }
     // '교환을 원하는 재치' (라벨)
     let label = UILabel().then{
         $0.text = "교환을 원하는 재치"
@@ -80,9 +83,9 @@ class MainCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(time)
         contentView.addSubview(stackView)
         
-        stackView.addSubview(label)
-        stackView.addSubview(zatchItem)
-        stackView.addSubview(heart)
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(zatchItem)
+        contentView.addSubview(heart)
     }
     func setUpConstraint() {
         image.snp.makeConstraints { make in
@@ -105,18 +108,12 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
         stackView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.trailing.bottom.equalToSuperview().offset(-6)
-        }
-        label.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview()
-        }
-        zatchItem.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalTo(label.snp.bottom)
+            make.bottom.equalToSuperview().offset(-18)
         }
         heart.snp.makeConstraints { make in
             make.width.height.equalTo(24)
-            make.bottom.trailing.top.equalToSuperview()
+            make.top.equalTo(stackView)
+            make.trailing.equalToSuperview()
         }
     }
 }
