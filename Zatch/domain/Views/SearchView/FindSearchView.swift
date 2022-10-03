@@ -114,7 +114,7 @@ class FindSearchView: UIView {
     func setUpConstraint(){
         
         titleView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(88)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
         }
         
