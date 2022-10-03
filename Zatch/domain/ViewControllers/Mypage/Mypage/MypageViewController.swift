@@ -36,6 +36,7 @@ class MypageViewController: BaseTabBarViewController {
         self.tabBarController?.tabBar.tintColor = .zatchPurple
     }
     override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         self.tabBarController?.tabBar.tintColor = .zatchPurple
     }
     // MARK: - Actions

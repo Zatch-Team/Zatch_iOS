@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */; };
+		2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */; };
 		234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */; };
 		234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */; };
 		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
@@ -43,6 +45,12 @@
 		23CB3CFB28C7D88900C42858 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFA28C7D88900C42858 /* Observable.swift */; };
 		23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */; };
 		23CB3CFF28C7EB4200C42858 /* ChangeLocationBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */; };
+		23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */; };
+		23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */; };
+		23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CF28E9EF7A002F234C /* PolicyViewController.swift */; };
+		23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D128E9EF80002F234C /* AccountViewController.swift */; };
+		23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D328E9EF89002F234C /* TradeViewController.swift */; };
+		23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D528E9EF92002F234C /* EtcViewController.swift */; };
 		23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44828D874C200C4C67E /* ZatchViewController.swift */; };
 		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
@@ -266,6 +274,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
 		234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +312,12 @@
 		23CB3CFA28C7D88900C42858 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		23CB3CFE28C7EB4200C42858 /* ChangeLocationBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationBottomSheet.swift; sourceTree = "<group>"; };
+		23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
+		23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterTabmanViewController.swift; sourceTree = "<group>"; };
+		23E764CF28E9EF7A002F234C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		23E764D128E9EF80002F234C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		23E764D328E9EF89002F234C /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		23E764D528E9EF92002F234C /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
 		23EEA44828D874C200C4C67E /* ZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44A28D874CC00C4C67E /* GatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
@@ -566,6 +582,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2342271C28EA9C2D004D6F99 /* FAQCells */ = {
+			isa = PBXGroup;
+			children = (
+				2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */,
+				2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */,
+			);
+			path = FAQCells;
+			sourceTree = "<group>";
+		};
 		235613F028D0972D00D44E97 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +799,7 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				23E764CA28E9EDFE002F234C /* ServiceCenter */,
 				23B051BD28E2060A005D08EA /* QnAViewController */,
 				23B051B428E1FD70005D08EA /* Notification */,
 				23EEA44228D8703400C4C67E /* HeartList */,
@@ -877,6 +903,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2342271C28EA9C2D004D6F99 /* FAQCells */,
 				23B051C628E20BC2005D08EA /* QnACells */,
 				23B051BA28E1FE77005D08EA /* NotificationCells */,
 				57A28CE028CF23E000263079 /* TownCells */,
@@ -1026,6 +1053,19 @@
 				E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		23E764CA28E9EDFE002F234C /* ServiceCenter */ = {
+			isa = PBXGroup;
+			children = (
+				23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */,
+				23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */,
+				23E764CF28E9EF7A002F234C /* PolicyViewController.swift */,
+				23E764D128E9EF80002F234C /* AccountViewController.swift */,
+				23E764D328E9EF89002F234C /* TradeViewController.swift */,
+				23E764D528E9EF92002F234C /* EtcViewController.swift */,
+			);
+			path = ServiceCenter;
 			sourceTree = "<group>";
 		};
 		23EEA44228D8703400C4C67E /* HeartList */ = {
@@ -1753,6 +1793,7 @@
 				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
+				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
@@ -1773,6 +1814,7 @@
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
+				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
@@ -1814,6 +1856,7 @@
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
+				2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
@@ -1868,7 +1911,10 @@
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
+				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
+				2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
+				23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */,
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
@@ -1891,8 +1937,10 @@
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
+				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
+				23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

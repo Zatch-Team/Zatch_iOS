@@ -34,4 +34,13 @@ extension UILabel {
         attributedString.addAttribute(.foregroundColor, value: color, range: range)
         attributedText = attributedString
     }
+    // MARK: 특정 문자열의 색깔, 폰트 변경
+    func asColorAndFont(targetString: String, color: UIColor, font: UIFont) {
+        let fullText = text ?? ""
+        let attributedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: targetString)
+        attributedString.addAttribute(.foregroundColor, value: color, range: range)
+        attributedString.addAttribute(.font, value: font, range: range)
+        attributedText = attributedString
+    }
 }
