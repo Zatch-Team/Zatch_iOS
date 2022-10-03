@@ -1,15 +1,24 @@
 //
-//  MyZatchTableViewCell.swift
+//  NanumTableViewCell.swift
 //  Zatch
 //
-//  Created by gomin on 2022/09/13.
+//  Created by gomin on 2022/10/04.
 //
 
 import UIKit
 
-class MyZatchTableViewCell: UITableViewCell {
+class NanumTableViewCell: UITableViewCell {
     let backView = UIView().then{
         $0.backgroundColor = .white
+    }
+    // 나눔인 경우
+    let nanumTag = PaddingLabel().then{
+        $0.text = "나눔"
+        $0.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.textColor = .zatchDeepYellow
+        $0.backgroundColor = .yellow40
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
     }
     // 나의 재치 내용
     let zatchImage = UIImageView().then{
@@ -18,13 +27,6 @@ class MyZatchTableViewCell: UITableViewCell {
     }
     let myZatchName = UILabel().then{
         $0.text = "삼다수 생수 1L"
-        $0.font = UIFont.pretendard(size: 14, family: .Bold)
-    }
-    let tradeImg = UIImageView().then{
-        $0.image = UIImage(named: "trade_vertical")
-    }
-    let otherZatchName = UILabel().then{
-        $0.text = "신라면 3봉"
         $0.font = UIFont.pretendard(size: 14, family: .Bold)
     }
     let horizontalStackWith2 = UIStackView().then{
@@ -49,7 +51,7 @@ class MyZatchTableViewCell: UITableViewCell {
     }
     // heart
     lazy var heartButton = UIButton().then{
-        $0.setImage(UIImage(named: "heart_purple"), for: .selected)
+        $0.setImage(UIImage(named: "heart_yellow"), for: .selected)
         $0.setImage(UIImage(named: "heart_silver"), for: .normal)
     }
     // MARK: - LifeCycles
@@ -59,7 +61,6 @@ class MyZatchTableViewCell: UITableViewCell {
         setUpView()
         setUpConstraint()
         
-        heartButton.isHidden = true
         heartButton.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
     }
     
@@ -79,8 +80,7 @@ class MyZatchTableViewCell: UITableViewCell {
         
         backView.addSubview(zatchImage)
         backView.addSubview(myZatchName)
-        backView.addSubview(tradeImg)
-        backView.addSubview(otherZatchName)
+        backView.addSubview(nanumTag)
         
         backView.addSubview(horizontalStackWith2)
         horizontalStackWith2.addArrangedSubview(peopleLabel)
@@ -103,21 +103,15 @@ class MyZatchTableViewCell: UITableViewCell {
             make.width.height.equalTo(100)
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(20)
-            make.bottom.equalToSuperview().offset(-18)
+        }
+        nanumTag.snp.makeConstraints { make in
+            make.leading.equalTo(myZatchName)
+            make.top.equalTo(zatchImage)
         }
         myZatchName.snp.makeConstraints { make in
-            make.top.equalTo(zatchImage)
+            make.top.equalTo(nanumTag.snp.bottom).offset(10)
             make.leading.equalTo(zatchImage.snp.trailing).offset(16)
             make.trailing.equalToSuperview().inset(20)
-        }
-        tradeImg.snp.makeConstraints { make in
-            make.width.height.equalTo(20)
-            make.top.equalTo(myZatchName.snp.bottom).offset(4)
-            make.leading.equalTo(myZatchName)
-        }
-        otherZatchName.snp.makeConstraints { make in
-            make.top.equalTo(tradeImg.snp.bottom).offset(4)
-            make.leading.equalTo(myZatchName)
         }
         horizontalStackWith2.snp.makeConstraints { make in
             make.leading.equalTo(myZatchName)
@@ -125,7 +119,7 @@ class MyZatchTableViewCell: UITableViewCell {
         }
         horizontalStackWith8.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
-            make.centerY.equalTo(horizontalStackWith2)
+            make.centerY.equalTo(locationLabel)
         }
         heartButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
@@ -149,12 +143,5 @@ class MyZatchTableViewCell: UITableViewCell {
         stack.addArrangedSubview(countLabel)
         
         return stack
-    }
-    // Heart
-    func addHeartToCell(color: String) {
-        if color == "purple" {heartButton.setImage(UIImage(named: "heart_purple"), for: .selected)}
-        else {heartButton.setImage(UIImage(named: "heart_yellow"), for: .selected)}
-        
-        heartButton.isHidden = false
     }
 }

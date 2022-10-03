@@ -54,9 +54,9 @@ class ResultSearchView: UIView {
     }
     
     lazy var tableView = UITableView().then{
-        $0.separatorStyle = .none
+//        $0.separatorStyle = .none
         
-        $0.register(ResultTableViewCell.self, forCellReuseIdentifier: "ResultTableViewCell")
+        $0.register(MyZatchTableViewCell.self, forCellReuseIdentifier: "MyZatchTableViewCell")
     }
     
     let emptyResultView = ResultEmptyTableViewCell()

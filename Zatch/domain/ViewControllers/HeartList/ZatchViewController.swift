@@ -9,6 +9,7 @@ import UIKit
 
 class ZatchViewController: UIViewController {
     var heartZatchTableView: UITableView!
+    var heartButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +43,7 @@ extension ZatchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchTableViewCell", for: indexPath) as? MyZatchTableViewCell else { return UITableViewCell() }
-        
-        addHeartToCell(cell)
+        cell.addHeartToCell(color: "purple")
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,19 +52,5 @@ extension ZatchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-extension ZatchViewController {
-    func addHeartToCell(_ cell: MyZatchTableViewCell) {
-        let heartButton = UIButton().then{
-            $0.setImage(UIImage(named: "filledHeart"), for: .selected)
-            $0.setImage(UIImage(named: "heart_silver"), for: .normal)
-        }
-        cell.contentView.addSubview(heartButton)
-        heartButton.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-            make.trailing.top.equalToSuperview().inset(16)
-        }
-        heartButton.isSelected = true
     }
 }
