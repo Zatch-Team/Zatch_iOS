@@ -63,7 +63,7 @@ class AnswerTableViewCell: UITableViewCell {
         answerBackView.addSubview(answerContentLabel)
         
         questionBackView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         answerBackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
