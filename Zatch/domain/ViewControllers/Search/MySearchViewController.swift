@@ -33,7 +33,8 @@ class MySearchViewController: BaseViewController{
         self.view.addSubview(mainView)
         
         mainView.snp.makeConstraints{
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalToSuperview().offset(88)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         
     }

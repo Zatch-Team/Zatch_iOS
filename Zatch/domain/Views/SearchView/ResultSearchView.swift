@@ -99,7 +99,7 @@ class ResultSearchView: UIView {
     func setUpConstraint(){
      
         self.topView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(88)
+            make.top.equalToSuperview()
             make.height.equalTo(116)
             make.width.equalToSuperview()
         }

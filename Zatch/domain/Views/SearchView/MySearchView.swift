@@ -85,8 +85,8 @@ class MySearchView: UIView {
     func setUpConstraints(){
         
         self.topView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(88)
-            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.top.leading.trailing.equalToSuperview()
         }
         
         //selectFrame
