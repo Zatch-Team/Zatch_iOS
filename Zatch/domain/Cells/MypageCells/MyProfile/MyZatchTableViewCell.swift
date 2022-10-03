@@ -103,6 +103,7 @@ class MyZatchTableViewCell: UITableViewCell {
             make.width.height.equalTo(100)
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-18)
         }
         myZatchName.snp.makeConstraints { make in
             make.top.equalTo(zatchImage)
@@ -124,7 +125,7 @@ class MyZatchTableViewCell: UITableViewCell {
         }
         horizontalStackWith8.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
-            make.centerY.equalTo(locationLabel)
+            make.centerY.equalTo(horizontalStackWith2)
         }
         heartButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
