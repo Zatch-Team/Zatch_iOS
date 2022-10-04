@@ -33,7 +33,9 @@ class ProfileViewController: BaseCenterTitleViewController {
             make.top.equalTo(super.navigationView.snp.bottom)
         }
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func rightPositionBtnDidClicked() {
         if isMyProfile {
             let vc = ModifyProfileViewController(title: "저장")
@@ -85,13 +87,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let tag = indexPath.row
-//        switch tag {
-//        case 0:
-//            tableView.deselectRow(at: indexPath, animated: true)
-//        default:
-//            tableView.deselectRow(at: indexPath, animated: true)
-//        }
+        let tag = indexPath.row
+        switch tag {
+        case 0:
+            let vc = ReviewViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
