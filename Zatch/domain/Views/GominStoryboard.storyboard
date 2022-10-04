@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="893" y="84"/>
         </scene>
-        <!--Service Center View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="QaS-j4-nMW">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vW6-sD-0It" customClass="ServiceCenterViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="vW6-sD-0It" customClass="ReviewViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ymI-EL-DjV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */; };
+		232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */; };
+		232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */; };
+		232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */; };
 		233DDF6028EB7D2C008E32B4 /* NanumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */; };
 		2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */; };
 		2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */; };
@@ -275,6 +279,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProfileTableViewCell.swift; sourceTree = "<group>"; };
+		232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherReviewTableViewCell.swift; sourceTree = "<group>"; };
 		233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanumTableViewCell.swift; sourceTree = "<group>"; };
 		2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnswerTableViewCell.swift; sourceTree = "<group>"; };
@@ -584,6 +592,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		232DD0A428ECDBA400BC6E91 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		232DD0A728ECDC6C00BC6E91 /* ReviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */,
+				232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */,
+				232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */,
+			);
+			path = ReviewCells;
+			sourceTree = "<group>";
+		};
 		2342271C28EA9C2D004D6F99 /* FAQCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +931,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				232DD0A728ECDC6C00BC6E91 /* ReviewCells */,
 				2342271C28EA9C2D004D6F99 /* FAQCells */,
 				23B051C628E20BC2005D08EA /* QnACells */,
 				23B051BA28E1FE77005D08EA /* NotificationCells */,
@@ -1023,6 +1050,7 @@
 		23CB3CEF28C7D35600C42858 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				232DD0A428ECDBA400BC6E91 /* Review */,
 				235613F128D0973900D44E97 /* MyProfile */,
 				235613F028D0972D00D44E97 /* Mypage */,
 			);
@@ -1780,6 +1808,7 @@
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* DetailView.swift in Sources */,
+				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
 				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
@@ -1800,6 +1829,7 @@
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
+				232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
 				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
@@ -1893,6 +1923,7 @@
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */,
 				57468A7B289D3C2300056691 /* CellCalledViewController.swift in Sources */,
+				232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */,
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
@@ -1908,6 +1939,7 @@
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
 				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
+				232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				57E75ECB28E5482900AC24B2 /* ResultSearchView.swift in Sources */,
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
