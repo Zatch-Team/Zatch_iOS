@@ -73,6 +73,11 @@ extension MyZatchTabmanViewController {
             make.trailing.equalToSuperview().offset(-32)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-13)
         }
+        floatingButton.addTarget(self, action: #selector(addZatchButtonDidTap), for: .touchUpInside)
+    }
+    @objc func addZatchButtonDidTap() {
+        let vc = FirstRegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - TabMan delegate
