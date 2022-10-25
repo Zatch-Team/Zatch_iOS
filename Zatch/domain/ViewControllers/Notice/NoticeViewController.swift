@@ -39,7 +39,7 @@ class NoticeViewController: BaseCenterTitleViewController {
         }
     }
 }
-// MARK: - Main TableView delegate
+// MARK: - TableView delegate
 extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -49,10 +49,10 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 44
-//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = NoticeDetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
