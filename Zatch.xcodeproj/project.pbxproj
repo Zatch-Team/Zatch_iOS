@@ -26,6 +26,9 @@
 		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
 		23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */; };
 		23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */; };
+		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
+		23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */; };
+		23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F529085258003E46AB /* NoticeTableViewCell.swift */; };
 		23A86A5628C72C7700B073CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5528C72C7700B073CB /* MainView.swift */; };
 		23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */; };
 		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
@@ -301,6 +304,9 @@
 		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabmanViewController.swift; sourceTree = "<group>"; };
 		23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchChildViewController.swift; sourceTree = "<group>"; };
+		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
+		23A767F529085258003E46AB /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5528C72C7700B073CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -687,6 +693,23 @@
 			path = MyProfile;
 			sourceTree = "<group>";
 		};
+		23A767EF2908518B003E46AB /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				23A767F0290851A3003E46AB /* NoticeViewController.swift */,
+				23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		23A767F429085244003E46AB /* NoticeCells */ = {
+			isa = PBXGroup;
+			children = (
+				23A767F529085258003E46AB /* NoticeTableViewCell.swift */,
+			);
+			path = NoticeCells;
+			sourceTree = "<group>";
+		};
 		23A86A5428C72C4C00B073CB /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +856,7 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				23A767EF2908518B003E46AB /* Notice */,
 				23E764CA28E9EDFE002F234C /* ServiceCenter */,
 				23B051BD28E2060A005D08EA /* QnAViewController */,
 				23B051B428E1FD70005D08EA /* Notification */,
@@ -938,6 +962,7 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				23A767F429085244003E46AB /* NoticeCells */,
 				232DD0A728ECDC6C00BC6E91 /* ReviewCells */,
 				2342271C28EA9C2D004D6F99 /* FAQCells */,
 				23B051C628E20BC2005D08EA /* QnACells */,
@@ -1858,6 +1883,7 @@
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
 				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
+				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
 				5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
@@ -1897,6 +1923,7 @@
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
+				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
@@ -1967,6 +1994,7 @@
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchBottomSheet.swift in Sources */,
+				23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
 				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
