@@ -40,7 +40,6 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "imageViewCell", for: indexPath) as? DetailImageTableViewCell else{
                 fatalError("Cell Casting Error")
             }
-            cell.detailImageView.backgroundColor = .gray
             return cell
         case 1:
             
