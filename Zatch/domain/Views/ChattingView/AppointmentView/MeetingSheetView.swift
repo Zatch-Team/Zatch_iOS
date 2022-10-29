@@ -32,11 +32,14 @@ class MeetingSheetView: UIView {
     let locationInputView = UIView()
     
     let alarmFrame = UIView()
+    
     let alaramTitle = UILabel().then{
         $0.text = "알림 설정"
     }
     
-    let alarmSwitch = UISwitch()
+    let alarmSwitch = UISwitch().then{
+        $0.onTintColor = .zatchPurple
+    }
     
     lazy var registerBtn = Purple36Button()
     

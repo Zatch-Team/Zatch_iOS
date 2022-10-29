@@ -215,6 +215,7 @@ class ChattingRoomViewController: BaseViewController {
         
         guard let bottomSheet = memberBlockBottomSheet else { return }
         
+        //TODO: - 차단 대상 닉네임으로 팝업 메시지 수정
         let alert = CancelAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
                                               btnTitle: "네, 차단합니다.")
         
