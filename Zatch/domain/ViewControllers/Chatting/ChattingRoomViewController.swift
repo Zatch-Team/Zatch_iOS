@@ -175,7 +175,7 @@ class ChattingRoomViewController: BaseViewController {
                 self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(blockGesture)
                 
                 let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberDeclarationBtnDidClicked))
-                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(declarationGesture)
+                self.memberBlockBottomSheet!.declarationBtn.addGestureRecognizer(declarationGesture)
                 
                 self.memberBlockBottomSheet!.loadViewIfNeeded()
                 self.present(self.memberBlockBottomSheet!, animated: true, completion: nil)
@@ -198,7 +198,7 @@ class ChattingRoomViewController: BaseViewController {
         
         sideMenuViewController?.dismiss(animated: true, completion: {
             let alert = CancelAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
-                                                    btnTitle: "네, 확인했습니다.")
+                                                  btnTitle: "네, 확인했습니다.")
             
             alert.confirmHandler = {
                 self.navigationController?.popViewController(animated: true)
@@ -211,14 +211,18 @@ class ChattingRoomViewController: BaseViewController {
     
     @objc func memberBlockBtnDidClicked(){
         
+        print("block button click")
+        
         guard let bottomSheet = memberBlockBottomSheet else { return }
         
         let alert = CancelAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
-                                                btnTitle: "네, 차단합니다.")
+                                              btnTitle: "네, 차단합니다.")
         
         alert.confirmHandler = {
                 print("차단 완료")
+            alert.dismiss(animated: false) {
                 bottomSheet.dismiss(animated: true, completion: nil)
+            }
         }
         
         alert.modalPresentationStyle = .overFullScreen
@@ -227,6 +231,21 @@ class ChattingRoomViewController: BaseViewController {
     
     @objc func memberDeclarationBtnDidClicked(){
         
+        print("declaration button click")
+        
+        guard let bottomSheet = memberBlockBottomSheet else { return }
+        
+        //TODO: 신고 팝업 UI 디자인 요청 후, UI 추가 작업 진행
+        
+//        let alert = CancelAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
+//                                              btnTitle: "네, 차단합니다.")
+//
+//        alert.confirmHandler = {
+//                print("신고 완료")
+//                bottomSheet.dismiss(animated: false, completion: nil)
+//        }
+//        alert.modalPresentationStyle = .overFullScreen
+//        bottomSheet.present(alert, animated: false, completion: nil)
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {
