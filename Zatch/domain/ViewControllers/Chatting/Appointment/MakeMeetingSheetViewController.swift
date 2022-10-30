@@ -13,6 +13,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     
     let mainView = MakeMeetingSheetView().then{
         $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
+        $0.alarmSwitch.addTarget(self, action: #selector(alarmSwitchWillChange), for: .valueChanged)
     }
 
     override func viewDidLoad() {
@@ -58,4 +59,12 @@ class MakeMeetingSheetViewController: SheetViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @objc func alarmSwitchWillChange(_ sender: UISwitch){
+    
+        if(sender.isOn){
+            let alert = InfoAlertViewController(message: "약속시간 30분 전에 자동으로 알림이 울립니다.")
+            alert.modalPresentationStyle = .overFullScreen
+            self.present(alert, animated: false, completion: nil)
+        }
+    }
 }
