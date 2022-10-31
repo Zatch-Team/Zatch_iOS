@@ -1179,6 +1179,26 @@
 			path = ChattingViewModels;
 			sourceTree = "<group>";
 		};
+		5724EB59290FC08A00DC529B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				57A28D0F28D041F800263079 /* MapAlertViewController.swift */,
+				576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */,
+				576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5724EB5A290FC0A800DC529B /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
+				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
+				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 		57468A6C289CFB3F00056691 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,12 +1510,8 @@
 				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
 				57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */,
 				57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */,
-				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
-				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
-				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
-				57A28D0F28D041F800263079 /* MapAlertViewController.swift */,
-				576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */,
-				576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */,
+				5724EB5A290FC0A800DC529B /* Picker */,
+				5724EB59290FC08A00DC529B /* Map */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
