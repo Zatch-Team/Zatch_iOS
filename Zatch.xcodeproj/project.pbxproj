@@ -102,6 +102,9 @@
 		5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */; };
 		5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */; };
 		5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */; };
+		5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB5C290FC17700DC529B /* MeetingAlertController.swift */; };
+		5724EB5F290FC18500DC529B /* MakeMeetingAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB5E290FC18500DC529B /* MakeMeetingAlertController.swift */; };
+		5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB60290FC1BB00DC529B /* ModifyMeetingAlertController.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
 		57468A76289D077200056691 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A75289D077200056691 /* PurpleButton.swift */; };
@@ -380,6 +383,9 @@
 		5722462828C77D64009B7C78 /* SearchAddressResultBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResultBottomSheet.swift; sourceTree = "<group>"; };
 		5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResultTableViewCell.swift; sourceTree = "<group>"; };
 		5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressResusltViewModel.swift; sourceTree = "<group>"; };
+		5724EB5C290FC17700DC529B /* MeetingAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertController.swift; sourceTree = "<group>"; };
+		5724EB5E290FC18500DC529B /* MakeMeetingAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingAlertController.swift; sourceTree = "<group>"; };
+		5724EB60290FC1BB00DC529B /* ModifyMeetingAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingAlertController.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57468A75289D077200056691 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
@@ -1179,6 +1185,36 @@
 			path = ChattingViewModels;
 			sourceTree = "<group>";
 		};
+		5724EB59290FC08A00DC529B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				57A28D0F28D041F800263079 /* MapAlertViewController.swift */,
+				576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */,
+				576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5724EB5A290FC0A800DC529B /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
+				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
+				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		5724EB5B290FC11100DC529B /* Meeting */ = {
+			isa = PBXGroup;
+			children = (
+				5724EB5C290FC17700DC529B /* MeetingAlertController.swift */,
+				5724EB5E290FC18500DC529B /* MakeMeetingAlertController.swift */,
+				5724EB60290FC1BB00DC529B /* ModifyMeetingAlertController.swift */,
+			);
+			path = Meeting;
+			sourceTree = "<group>";
+		};
 		57468A6C289CFB3F00056691 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,12 +1526,9 @@
 				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
 				57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */,
 				57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */,
-				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
-				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
-				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
-				57A28D0F28D041F800263079 /* MapAlertViewController.swift */,
-				576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */,
-				576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */,
+				5724EB5A290FC0A800DC529B /* Picker */,
+				5724EB59290FC08A00DC529B /* Map */,
+				5724EB5B290FC11100DC529B /* Meeting */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1879,6 +1912,7 @@
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
 				23B051C328E206B7005D08EA /* RegisterQuestionViewController.swift in Sources */,
+				5724EB5F290FC18500DC529B /* MakeMeetingAlertController.swift in Sources */,
 				23B051BC28E1FE8B005D08EA /* NotiTableViewCell.swift in Sources */,
 				5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */,
 				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,
@@ -1936,6 +1970,7 @@
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
+				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
@@ -2016,6 +2051,7 @@
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
+				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
