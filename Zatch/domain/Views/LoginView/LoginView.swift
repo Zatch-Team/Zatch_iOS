@@ -7,14 +7,78 @@
 
 import UIKit
 
-class LoginView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class LoginView: BaseView {
+    
+    //MARK: - UI
+    let logoImage = UIImageView().then{
+        $0.image = UIImage(named: "login_character")
     }
-    */
+    
+    lazy var kakaoBtn = UIButton().then{
+        $0.layer.cornerRadius = 52/2
+        $0.backgroundColor = UIColor(red: 250/255, green: 225/255, blue: 0, alpha: 1)
+    }
+    
+    let kakaoStackView = UIStackView().then{
+        $0.axis = .horizontal
+        $0.spacing = 12.5
+    }
+    
+    let kakaoLogo = UIImageView().then{
+        $0.image = UIImage(named: "kakao_logo")
+    }
+    
+    let kakaoLabel = UILabel().then{
+        $0.text = "카카오톡 간편로그인"
+        $0.textColor = UIColor(red: 57/255, green: 32/255, blue: 32/255, alpha: 1)
+        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+    }
+    
+    //MARK: - LifeCycle
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Override
+    
+    override func hierarchy() {
+        
+        self.addSubview(logoImage)
+        self.addSubview(kakaoBtn)
+        
+        kakaoBtn.addSubview(kakaoStackView)
+        
+        kakaoStackView.addArrangedSubview(kakaoLogo)
+        kakaoStackView.addArrangedSubview(kakaoLabel)
+    }
+    
+    override func layout() {
+        
+        logoImage.snp.makeConstraints{
+            $0.width.equalTo(169)
+            $0.top.equalToSuperview().offset(229)
+            $0.leading.equalToSuperview().offset(96)
+            $0.centerX.equalToSuperview()
+        }
+        
+        kakaoBtn.snp.makeConstraints{
+            $0.bottom.equalToSuperview().offset(-120)
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(logoImage.snp.bottom).offset(149)
+            $0.height.equalTo(52)
+        }
+        
+        kakaoStackView.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
+        }
+        
+        
+    }
 }
