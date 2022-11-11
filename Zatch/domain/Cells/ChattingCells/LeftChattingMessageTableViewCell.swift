@@ -94,7 +94,7 @@ class LeftChattingMessageTableViewCell: BaseTableViewCell {
             make.top.equalToSuperview().offset(18)
             make.bottom.equalToSuperview()
             
-            let maxWidth = 221 / 360 * Const.deviceWidth
+            let maxWidth = 221 / 360 * Const.Device.DEVICE_WIDTH
             make.width.lessThanOrEqualTo(maxWidth)
         }
         

@@ -75,7 +75,7 @@ class RightChattingMessageTableViewCell: BaseTableViewCell {
             make.trailing.equalToSuperview()
             make.top.bottom.equalToSuperview()
             
-            let maxWidth = 240 / 360 * Const.deviceWidth
+            let maxWidth = 240 / 360 * Const.Device.DEVICE_WIDTH
             make.width.lessThanOrEqualTo(maxWidth)
         }
     }

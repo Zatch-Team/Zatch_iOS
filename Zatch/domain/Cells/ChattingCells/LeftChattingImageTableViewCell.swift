@@ -88,7 +88,7 @@ class LeftChattingImageTableViewCell: BaseTableViewCell {
             make.top.equalToSuperview().offset(18)
             make.bottom.equalToSuperview()
             
-            make.width.height.lessThanOrEqualTo(200 / 360 * Const.deviceWidth)
+            make.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
         }
         
         self.timeLabel.snp.makeConstraints{ make in
