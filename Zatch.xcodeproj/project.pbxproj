@@ -399,7 +399,7 @@
 		57468A80289E3FB600056691 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/global/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
+		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
 		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchBottomSheet.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagBottomSheet.swift; sourceTree = "<group>"; };
@@ -812,10 +812,6 @@
 				23CB3CF928C7D87D00C42858 /* Observable */,
 				57468A6C289CFB3F00056691 /* Source */,
 				57802394281D21710085457D /* Resource */,
-				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
-				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
-				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
-				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
 			);
 			path = global;
 			sourceTree = "<group>";
@@ -1166,7 +1162,6 @@
 				57067873281C2F3900F48342 /* pretendard_medium.ttf */,
 				57067876281C2F3900F48342 /* pretendard_regular.ttf */,
 				57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */,
-				57067865281C167100F48342 /* UIFont.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1240,14 +1235,16 @@
 		57468A6C289CFB3F00056691 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57C585032821F2A70078FAFF /* ServiceType.swift */,
 				57B32C27291E8FB80018C0CB /* Base */,
 				57B32C28291E8FF60018C0CB /* Sheet */,
-				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 				571AD7112828D9C900390AAD /* Category */,
 				576B374C28D6D6EF00EF36E6 /* Map */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
+				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1281,6 +1278,7 @@
 				57D6D79128CDB96900F805B7 /* UINavigationController.swift */,
 				57A28D0D28D03FAE00263079 /* String.swift */,
 				576B376B28D85F8B00EF36E6 /* UITableView.swift */,
+				57067865281C167100F48342 /* UIFont.swift */,
 			);
 			path = extenstion;
 			sourceTree = "<group>";
@@ -1314,8 +1312,8 @@
 				23C9030F28C5CE3600FB6D3D /* AppDelegate */,
 				23C9030828C5CDE700FB6D3D /* global */,
 				23C9030928C5CDEF00FB6D3D /* domain */,
-				575BF70A27E0CBC8008D5B3C /* Info.plist */,
-				5722462028C71796009B7C78 /* Assets.xcassets */,
+				57B32C2A291E93220018C0CB /* Resource */,
+				57B32C29291E92EF0018C0CB /* Support */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -1403,13 +1401,7 @@
 			isa = PBXGroup;
 			children = (
 				57468A9928A1096600056691 /* extenstion */,
-				57EF61AF287D5BCE0035A2E6 /* CommonSource */,
-				57067862281C13D500F48342 /* Font */,
-				5722460528BCCFE8009B7C78 /* Const.swift */,
-				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
-				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
-				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
-				57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */,
+				57EF61AF287D5BCE0035A2E6 /* Common */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1547,6 +1539,30 @@
 			path = Sheet;
 			sourceTree = "<group>";
 		};
+		57B32C29291E92EF0018C0CB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				575BF70A27E0CBC8008D5B3C /* Info.plist */,
+				57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		57B32C2A291E93220018C0CB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				57067862281C13D500F48342 /* Font */,
+				5722462028C71796009B7C78 /* Assets.xcassets */,
+				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
+				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
+				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
+				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
+				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
+				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1571,7 +1587,7 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		57EF61AF287D5BCE0035A2E6 /* CommonSource */ = {
+		57EF61AF287D5BCE0035A2E6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
@@ -1581,7 +1597,7 @@
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
 			);
-			path = CommonSource;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		57FFEDBD28DD27DE0041719B /* RegisterView */ = {
@@ -2291,14 +2307,14 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 					"$(PROJECT_DIR)/FrameWorkFiles/DaumMap.embeddedframework",
 				);
-				INFOPLIST_FILE = Zatch/Info.plist;
+				INFOPLIST_FILE = Zatch/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/global/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
@@ -2329,14 +2345,14 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 					"$(PROJECT_DIR)/FrameWorkFiles/DaumMap.embeddedframework",
 				);
-				INFOPLIST_FILE = Zatch/Info.plist;
+				INFOPLIST_FILE = Zatch/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/global/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
