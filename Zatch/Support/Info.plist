@@ -29,12 +29,22 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>KAKAO_ADMIN_KEY</key>
+	<string>$(KAKAO_ADMIN_KEY)</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>$(KAKAO_NATIVE_KEY)</string>
+	<key>KAKAO_REST_API_KEY</key>
+	<string>$(KAKAO_REST_API_KEY)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<string>kakaokompassauth</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow to use camera</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>동네 인증을 위해 사용자 위치 정보가 필요함.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Please allow to use gallery</string>
 	<key>UIAppFonts</key>
@@ -86,15 +96,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>KAKAO_ADMIN_KEY</key>
-	<string>$(KAKAO_ADMIN_KEY)</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>$(KAKAO_NATIVE_KEY)</string>
-	<key>KAKAO_REST_API_KEY</key>
-	<string>$(KAKAO_REST_API_KEY)</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>동네 인증을 위해 사용자 위치 정보가 필요함.</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<string>kakaokompassauth</string>
 </dict>
 </plist>

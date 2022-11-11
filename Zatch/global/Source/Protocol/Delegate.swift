@@ -10,3 +10,9 @@ import Foundation
 protocol SwitchDelegate{
     func willSwitchValueChange(value: Bool)
 }
+
+protocol CellDelegate{
+    func cellDidSelected(_ indexPath: IndexPath)
+    func cellDidSelected(_ cell: UICollectionViewCell)
+}
+

@@ -68,9 +68,9 @@ class MySearchViewController: BaseViewController{
     }
 }
 
-extension MySearchViewController: CellCalledViewController{
+extension MySearchViewController: CellDelegate{
     
-    func newCellIsSelected(_ indexPath: IndexPath){
+    func cellDidSelected(_ indexPath: IndexPath){
         if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
             currentTag.setBtnInitState()
         }
@@ -87,7 +87,7 @@ extension MySearchViewController: CellCalledViewController{
         }
     }
     
-    func newCellIsSelected(_ cell: UICollectionViewCell) { }
+    func cellDidSelected(_ cell: UICollectionViewCell) { }
 }
 
 extension MySearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

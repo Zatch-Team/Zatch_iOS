@@ -51,9 +51,9 @@ class FindSearchViewController: BaseViewController {
 
 }
 
-extension FindSearchViewController: CellCalledViewController{
+extension FindSearchViewController: CellDelegate{
     
-    func newCellIsSelected(_ cell: UICollectionViewCell){
+    func cellDidSelected(_ cell: UICollectionViewCell){
         if(currentSelect == cell){
             currentSelect?.setBtnInitState()
             currentSelect = nil
@@ -71,7 +71,7 @@ extension FindSearchViewController: CellCalledViewController{
         }
     }
     
-    func newCellIsSelected(_ indexPath: IndexPath) { }
+    func cellDidSelected(_ indexPath: IndexPath) { }
 }
 
 extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{

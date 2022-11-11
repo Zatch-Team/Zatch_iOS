@@ -13,7 +13,7 @@ class SearchTagCollectionViewCell: UICollectionViewCell{
     
     static let cellIdentifier = "selectionCell"
     
-    var delegate: CellCalledViewController?
+    var delegate: CellDelegate?
     
     //MARK: - UI
     

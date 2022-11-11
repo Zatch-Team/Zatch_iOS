@@ -18,6 +18,6 @@ class FindSearchTagCollectionViewCell: SearchTagCollectionViewCell{
     
     //MARK: - Action
     override func selectBtnIsTapped(){
-        delegate?.newCellIsSelected(self)
+        delegate?.cellDidSelected(self)
     }
 }
