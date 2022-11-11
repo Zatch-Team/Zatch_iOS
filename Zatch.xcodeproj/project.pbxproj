@@ -2262,7 +2262,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B974XY47GZ;
+				DEVELOPMENT_TEAM = DS2AD6Q7T4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2284,7 +2284,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch;
+				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/global/Resource/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2300,7 +2300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B974XY47GZ;
+				DEVELOPMENT_TEAM = DS2AD6Q7T4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2322,7 +2322,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch;
+				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/global/Resource/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
