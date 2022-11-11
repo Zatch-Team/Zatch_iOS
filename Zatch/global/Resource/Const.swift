@@ -7,13 +7,16 @@
 
 import Foundation
 
-class Const{
-    static let deviceWidth = UIScreen.main.bounds.size.width
-    static let deviceHeight = UIScreen.main.bounds.size.height
+struct Const{
     
-    class KakaoAPI{
+    struct Device{
+        static let DEVICE_WIDTH = UIScreen.main.bounds.size.width
+        static let DEVICE_HEIGHT = UIScreen.main.bounds.size.height
+    }
+    
+    struct KakaoAPI{
         static let KAKAO_APP_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as! String
-        
         static let KAKAO_REST_API_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_REST_API_KEY") as! String
     }
+    
 }
