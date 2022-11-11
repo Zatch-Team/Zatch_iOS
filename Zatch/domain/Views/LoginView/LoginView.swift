@@ -22,6 +22,7 @@ class LoginView: BaseView {
     let kakaoStackView = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 12.5
+        $0.isUserInteractionEnabled = false
     }
     
     let kakaoLogo = UIImageView().then{
