@@ -21,7 +21,7 @@ class MySearchTagCollectionViewCell: SearchTagCollectionViewCell {
     override func selectBtnIsTapped(){
         if let collectionView = self.superview as? UICollectionView {
             if let indexPath = collectionView.indexPath(for: self) {
-                delegate?.newCellIsSelected(indexPath)
+                delegate?.cellDidSelected(indexPath)
             }
         }
     }

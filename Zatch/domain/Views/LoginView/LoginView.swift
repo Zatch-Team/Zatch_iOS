@@ -60,23 +60,23 @@ class LoginView: BaseView {
     override func layout() {
         
         logoImage.snp.makeConstraints{
-            $0.width.equalTo(169)
-            $0.top.equalToSuperview().offset(229)
-            $0.leading.equalToSuperview().offset(96)
-            $0.centerX.equalToSuperview()
+            $0.width.equalTo(166)
+            $0.top.equalToSuperview().offset(294)
+            $0.leading.equalToSuperview().offset(110)
+            $0.trailing.equalToSuperview().offset(-114)
         }
         
         kakaoBtn.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-120)
+            $0.bottom.equalToSuperview().offset(-86)
             $0.leading.equalToSuperview().offset(16)
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(logoImage.snp.bottom).offset(149)
+            $0.top.equalTo(logoImage.snp.bottom).offset(169)
             $0.height.equalTo(52)
         }
         
         kakaoStackView.snp.makeConstraints{
             $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview()
+            $0.centerX.equalToSuperview().offset(2)
         }
         
         
