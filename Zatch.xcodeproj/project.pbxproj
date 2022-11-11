@@ -107,6 +107,7 @@
 		5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB60290FC1BB00DC529B /* ModifyMeetingAlertController.swift */; };
 		5724EC8C291E0E7A00DC529B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EC8B291E0E7A00DC529B /* LoginViewController.swift */; };
 		5724EC8F291E0E9B00DC529B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EC8E291E0E9B00DC529B /* LoginView.swift */; };
+		5724EC91291E122F00DC529B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EC90291E122F00DC529B /* BaseView.swift */; };
 		57468A6E289CFFB700056691 /* CategoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
 		57468A76289D077200056691 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A75289D077200056691 /* PurpleButton.swift */; };
@@ -390,6 +391,7 @@
 		5724EB60290FC1BB00DC529B /* ModifyMeetingAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingAlertController.swift; sourceTree = "<group>"; };
 		5724EC8B291E0E7A00DC529B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5724EC8E291E0E9B00DC529B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5724EC90291E122F00DC529B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBottomSheet.swift; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57468A75289D077200056691 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
@@ -1249,6 +1251,7 @@
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
 				234E5DBB28C762810079640F /* TabBarViewController.swift */,
+				5724EC90291E122F00DC529B /* BaseView.swift */,
 				571AD7112828D9C900390AAD /* Category */,
 				576B374C28D6D6EF00EF36E6 /* Map */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
@@ -1899,6 +1902,7 @@
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
+				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* DetailView.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
