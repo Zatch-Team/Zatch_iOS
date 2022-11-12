@@ -39,22 +39,20 @@ class CancelAlertViewController: MessageAlertViewController {
         super.viewDidLoad()
     }
     
-    override func setUpView() {
+    override func hierarchy() {
         super.btnStackView.addArrangedSubview(cancelBtn)
-        super.setUpView()
+        super.hierarchy()
     }
     
-    override func setUpConstraint() {
+    override func layout() {
         
-        super.setUpConstraint()
+        super.layout()
         
         cancelBtn.snp.makeConstraints{ make in
             make.width.height.equalTo(okBtn)
         }
         
         btnStackView.snp.makeConstraints{ make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(messageLabel.snp.bottom).offset(10)
             make.bottom.equalToSuperview().offset(-16)
         }
     }

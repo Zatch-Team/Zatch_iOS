@@ -40,9 +40,9 @@ class TimePickerAlertViewController: PickerAlertViewController {
         setPickerInitSetting()
     }
     
-    override func setUpView() {
+    override func hierarchy() {
         
-        super.setUpView()
+        super.hierarchy()
         super.containerView.addSubview(titleLabel)
         super.containerView.addSubview(pickerStackView)
         
@@ -51,9 +51,9 @@ class TimePickerAlertViewController: PickerAlertViewController {
         pickerStackView.addArrangedSubview(minutePicker)
     }
     
-    override func setUpConstraint() {
+    override func layout() {
         
-        super.setUpConstraint()
+        super.layout()
         
         pickerStackView.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(98)
@@ -61,7 +61,7 @@ class TimePickerAlertViewController: PickerAlertViewController {
             make.top.equalToSuperview().offset(44)
             make.bottom.equalToSuperview().offset(-68)
             make.height.equalTo(130)
-            make.bottom.equalTo(super.btnStackView.snp.top).offset(-20)
+            make.bottom.equalTo(self.btnStackView.snp.top).offset(-20)
         }
         
         hourPicker.snp.makeConstraints{ make in

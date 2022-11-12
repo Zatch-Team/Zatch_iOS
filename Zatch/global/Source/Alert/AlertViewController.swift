@@ -44,9 +44,9 @@ class AlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpInitSetting()
-        setUpView()
-        setUpConstraint()
+        setting()
+        hierarchy()
+        layout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +71,7 @@ class AlertViewController: UIViewController {
         }
     }
     
-    func setUpInitSetting(){
+    func setting(){
         
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         
@@ -81,7 +81,7 @@ class AlertViewController: UIViewController {
         self.view.addGestureRecognizer(gesture)
     }
     
-    func setUpView(){
+    func hierarchy(){
         
         self.view.addSubview(containerView)
         
@@ -90,12 +90,16 @@ class AlertViewController: UIViewController {
         btnStackView.addArrangedSubview(okBtn)
     }
     
-    func setUpConstraint(){
+    func layout(){
         
         containerView.snp.makeConstraints{ make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-24)
+        }
+        
+        btnStackView.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
         }
         
     }

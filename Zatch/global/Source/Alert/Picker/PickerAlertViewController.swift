@@ -9,8 +9,8 @@ import UIKit
 
 class PickerAlertViewController: AlertViewController {
     
-//    //MARK: - Properties
-//
+    //MARK: - Properties
+
     var pickerHandler : (([Int]) -> ())?
     
     //MARK: - UI
@@ -24,16 +24,17 @@ class PickerAlertViewController: AlertViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingOkBtnPurpleBackground()
     }
     
-    override func setUpView() {
-        super.setUpView()
-        super.containerView.addSubview(titleLabel)
+    override func hierarchy() {
+        super.hierarchy()
+        self.containerView.addSubview(titleLabel)
     }
     
-    override func setUpConstraint() {
+    override func layout() {
         
-        super.setUpConstraint()
+        super.layout()
         
         containerView.snp.updateConstraints{ make in
             make.leading.equalToSuperview().offset(24)
@@ -44,7 +45,7 @@ class PickerAlertViewController: AlertViewController {
             make.leading.equalToSuperview().offset(16)
         }
         
-        btnStackView.snp.updateConstraints{ make in
+        btnStackView.snp.makeConstraints{ make in
             make.bottom.equalToSuperview().offset(-23)
         }
     }

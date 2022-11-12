@@ -1203,8 +1203,8 @@
 		5724EB5A290FC0A800DC529B /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
 				5722461328C230B3009B7C78 /* PickerAlertViewController.swift */,
+				57EBCE4128A8C67B00212D20 /* DatePickerAlertViewController.swift */,
 				5722460F28C074AE009B7C78 /* TimePickerAlertViewController.swift */,
 			);
 			path = Picker;
