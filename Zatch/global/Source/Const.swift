@@ -19,4 +19,8 @@ struct Const{
         static let KAKAO_REST_API_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_REST_API_KEY") as! String
     }
     
+    struct Offset{
+        static let TOP_OFFSET = 88 //navigationView 고려한 top offset
+    }
+    
 }
