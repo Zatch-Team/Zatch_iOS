@@ -47,8 +47,8 @@ class MyZatchChildViewController: UIViewController {
             $0.setTitleColor(.black85, for: .normal)
             $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 4)
             
-            $0.setImage(UIImage(named: "arrow_down"), for: .normal)
-            $0.setImage(UIImage(named: "arrow_up"), for: .selected)
+            $0.setImage(Image.arrowDown, for: .normal)
+            $0.setImage(Image.arrowUp, for: .selected)
         }
         self.view.addSubview(filterBar)
         filterBar.addSubview(filterButton)

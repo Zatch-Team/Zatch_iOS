@@ -15,7 +15,7 @@ class LeftChattingImageTableViewCell: BaseTableViewCell {
     //MARK: - UI
     
     let profileImage = UIImageView().then{
-        $0.image = UIImage(named: "zatch_profile")
+        $0.image = Image.zatchProfile
     }
     
     let userNameLabel = UILabel().then{

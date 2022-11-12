@@ -29,7 +29,7 @@ class ProductQuantityUIView: BaseTableViewCell {
     }
     
     let arrowButton = UIButton().then{
-        $0.setImage(UIImage(named: "arrow_down"), for: .normal)
+        $0.setImage(Image.arrowDown, for: .normal)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

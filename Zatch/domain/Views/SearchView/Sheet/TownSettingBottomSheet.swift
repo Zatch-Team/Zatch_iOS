@@ -35,7 +35,7 @@ class TownSettingBottomSheet: SheetViewController {
         
         super.viewDidLoad()
         
-        townImage.image = UIImage(named: "town_setting_1")
+        townImage.image = Image.townSetting1
         
         setUpView()
         setUpConstraint()
@@ -73,13 +73,13 @@ class TownSettingBottomSheet: SheetViewController {
         
         switch value{
         case 0:
-            image = UIImage(named: "town_setting_1")
+            image = Image.townSetting1
             break
         case 1:
-            image = UIImage(named: "town_setting_2")
+            image = Image.townSetting2
             break
         case 2:
-            image = UIImage(named: "town_setting_3")
+            image = Image.townSetting3
             break
         default:
             return

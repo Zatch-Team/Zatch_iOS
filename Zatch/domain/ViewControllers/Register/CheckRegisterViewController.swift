@@ -26,7 +26,7 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
         super.style()
         
         self.navigationTitle.text = "재치 등록하기"
-        self.addRightTopBtn(image: UIImage(named: "exit")!)
+        self.addRightTopBtn(image: Image.exit)
     }
     
     override func initialize(){

@@ -111,7 +111,7 @@ extension KakaoMapViewController: MTMapViewDelegate{
             
             self.showAnimationType = .springFromGround
             self.markerType = .customImage
-            self.customImage = UIImage(named: "map_marker")
+            self.customImage = Image.mapMarker
         }
         
     }

@@ -20,7 +20,7 @@ class TownSettingTableViewCell: UITableViewCell {
         $0.spacing = 8
     }
     let settingIcon = UIImageView().then{
-        $0.image = UIImage(named: "pin")
+        $0.image = Image.pin
     }
     let setTownLabel = UILabel().then{
         $0.text = "내 동네 설정"

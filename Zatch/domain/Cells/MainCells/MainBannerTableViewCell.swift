@@ -11,7 +11,7 @@ class MainBannerTableViewCell: UITableViewCell {
 
     // Main Banner
     let banner = UIImageView().then{
-        $0.image = UIImage(named: "MainBanner")
+        $0.image = Image.MainBanner
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

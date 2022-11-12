@@ -59,7 +59,7 @@ class ChattingRoomViewController: BaseViewController {
     }
     
     lazy var etcBtn = UIButton().then{
-        $0.setImage(UIImage(named: "dot"), for: .normal)
+        $0.setImage(Image.dot, for: .normal)
         $0.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
     }
     
@@ -250,7 +250,7 @@ class ChattingRoomViewController: BaseViewController {
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {
-        let vc = ProfileViewController(btnImage: UIImage(named: "chat")!)
+        let vc = ProfileViewController(btnImage: Image.chat)
         vc.navigationTitle.text = nil
         vc.isMyProfile = false
         vc.profileUserName = nameLabel.text

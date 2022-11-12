@@ -13,7 +13,7 @@ extension ChattingListViewController{
         
         super.titleLabel.text = "채팅"
         
-        super.etcBtn.setImage(UIImage(named: "bell"), for: .normal)
+        super.etcBtn.setImage(Image.bell, for: .normal)
         super.etcBtn.addTarget(self, action: #selector(bellBtnDidClicked), for: .touchUpInside)
         
         tableView = UITableView().then{

@@ -22,7 +22,7 @@ class ChatEtcBtnView: UIView {
     }
 
     lazy var cameraBtn = UIButton().then{
-        $0.setImage(UIImage(named: "chat_camera"), for: .normal)
+        $0.setImage(Image.chatCamera, for: .normal)
     }
 
     let cameraLabel = UILabel().then{
@@ -37,7 +37,7 @@ class ChatEtcBtnView: UIView {
     }
 
     lazy var galleryBtn = UIButton().then{
-        $0.setImage(UIImage(named: "chat_gallery"), for: .normal)
+        $0.setImage(Image.chatGallery, for: .normal)
     }
     
     let galleryLabel = UILabel().then{
@@ -52,7 +52,7 @@ class ChatEtcBtnView: UIView {
     }
 
     lazy var appointmentBtn = UIButton().then{
-        $0.setImage(UIImage(named: "chat_appointment"), for: .normal)
+        $0.setImage(Image.chatAppintment, for: .normal)
     }
     
     let appointmentLabel = UILabel().then{

@@ -10,7 +10,7 @@ import UIKit
 class SearchAddressResultView: UIView {
     
     let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
+        $0.image = Image.search
         $0.setImageTintColor(.zatchPurple)
     }
     
@@ -33,7 +33,7 @@ class SearchAddressResultView: UIView {
     }
     
     let myLocationImage = UIImageView().then{
-        $0.image = UIImage(named: "my_spot")
+        $0.image = Image.mySpot
     }
     
     let myLocationLabel = UILabel().then{

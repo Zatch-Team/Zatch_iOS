@@ -10,7 +10,7 @@ import UIKit
 class BottomFixView: UIView {
     
     let likeImage = UIImageView().then{
-        $0.image = UIImage(named: "heart")
+        $0.image = Image.heart
         $0.tintColor = .black85
     }
     
@@ -29,7 +29,7 @@ class BottomFixView: UIView {
     }
     
     let chatImage = UIImageView().then{
-        $0.image = UIImage(named: "chat")
+        $0.image = Image.chat
     }
     
     let chatLabel = UILabel().then{

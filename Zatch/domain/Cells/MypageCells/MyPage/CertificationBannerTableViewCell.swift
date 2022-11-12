@@ -14,7 +14,7 @@ class CertificationBannerTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let banner = UIImageView().then{
-            $0.image = UIImage(named: "certificationBanner")
+            $0.image = Image.certificationBanner
         }
         contentView.addSubview(banner)
         banner.snp.makeConstraints { make in

@@ -27,8 +27,8 @@ class CategorySelectTableViewCell: BaseTableViewCell {
     }
     
     lazy var arrowImage = UIButton().then{
-        $0.setImage(UIImage(named: "arrow_down"), for: .normal)
-        $0.setImage(UIImage(named: "arrow_up"), for: .selected)
+        $0.setImage(Image.arrowDown, for: .normal)
+        $0.setImage(Image.arrowUp, for: .selected)
     }
 
     

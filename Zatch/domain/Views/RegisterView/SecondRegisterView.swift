@@ -12,7 +12,7 @@ class SecondRegisterView: BaseView {
     //MARK: - UI
     
     lazy var exitBtn = UIButton().then{
-        $0.setImage(UIImage(named: "exit"), for: .normal)
+        $0.setImage(Image.exit, for: .normal)
     }
     
     let topTitleView = TitleView().then{

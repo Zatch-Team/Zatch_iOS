@@ -24,7 +24,7 @@ class ResultSearchView: UIView {
     let wantZatchFrame = SearchFieldFrame(alignment: .leading)
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange")
+        $0.image = Image.exchange
     }
     
     lazy var townFrame = UIStackView().then{
@@ -37,7 +37,7 @@ class ResultSearchView: UIView {
         $0.textColor = .black85
     }
     let townSelectArrow = UIImageView().then{
-        $0.image = UIImage(named: "arrow_down")
+        $0.image = Image.arrowDown
     }
     
     let searchFrame = UIStackView().then{
@@ -50,7 +50,7 @@ class ResultSearchView: UIView {
         $0.textColor = .black85
     }
     let searchFilterImage = UIImageView().then{
-        $0.image = UIImage(named: "search_filter")
+        $0.image = Image.searchFilter
     }
     
     lazy var tableView = UITableView().then{
@@ -178,8 +178,8 @@ extension ResultSearchView{
         override init(frame: CGRect) {
             super.init(frame: .zero)
             
-            self.setImage(UIImage(named: "search_dot"), for: .normal)
-            self.setImage(UIImage(named: "search_dot_checked"), for: .selected)
+            self.setImage(Image.searchDot, for: .normal)
+            self.setImage(Image.searchDotChecked, for: .selected)
         }
         
         required init?(coder: NSCoder) {

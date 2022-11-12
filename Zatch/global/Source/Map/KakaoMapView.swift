@@ -19,7 +19,7 @@ class KakaoMapView: UIView {
     }
     
     lazy var backBtn = UIButton().then{
-        $0.setImage(UIImage(named: "town_arrow"), for: .normal)
+        $0.setImage(Image.townArrow, for: .normal)
     }
     
     let mapView = MTMapView().then{

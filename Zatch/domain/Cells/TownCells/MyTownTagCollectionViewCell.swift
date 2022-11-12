@@ -22,7 +22,7 @@ class MyTownTagCollectionViewCell: UICollectionViewCell {
     }
     
     lazy var deleteBtn = UIButton().then{
-        $0.setImage(UIImage(named: "exit")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        $0.setImage(Image.exit.withRenderingMode(.alwaysTemplate), for: .normal)
         $0.tintColor = .zatchDeepYellow
     }
     

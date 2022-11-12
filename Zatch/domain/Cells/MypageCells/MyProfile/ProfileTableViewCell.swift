@@ -27,8 +27,8 @@ class ProfileTableViewCell: UITableViewCell {
         $0.settings.fillMode = .full
         $0.settings.starSize = 24
         $0.settings.starMargin = 0
-        $0.settings.filledImage = UIImage(named: "filledStar")
-        $0.settings.emptyImage = UIImage(named: "emptyStar")
+        $0.settings.filledImage = Image.filledStar
+        $0.settings.emptyImage = Image.emptyStar
     }
     // 한 줄 후기
     let titleLabel = UILabel().then{

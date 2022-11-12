@@ -51,8 +51,8 @@ class NanumTableViewCell: UITableViewCell {
     }
     // heart
     lazy var heartButton = UIButton().then{
-        $0.setImage(UIImage(named: "heart_yellow"), for: .selected)
-        $0.setImage(UIImage(named: "heart_silver"), for: .normal)
+        $0.setImage(Image.heartYellow, for: .selected)
+        $0.setImage(Image.heartSilver, for: .normal)
     }
     // MARK: - LifeCycles
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

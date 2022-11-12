@@ -18,7 +18,7 @@ class SearchAddressView: UIView {
     }
     
     let myLocationImage = UIImageView().then{
-        $0.image = UIImage(named: "my_spot")
+        $0.image = Image.mySpot
     }
     
     let myLocationLabel = UILabel().then{
