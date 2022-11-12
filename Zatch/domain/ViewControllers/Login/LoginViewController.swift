@@ -11,7 +11,6 @@ import KakaoSDKUser
 class LoginViewController: UIViewController {
     
     let loginView = LoginView().then{
-        //TODO: StackView touch -> kakaoBtnDidClicked 클릭 동일하게 적용
         $0.kakaoBtn.addTarget(self, action: #selector(kakaoBtnDidClicked), for: .touchUpInside)
     }
 
