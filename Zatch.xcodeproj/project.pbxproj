@@ -126,7 +126,6 @@
 		57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */; };
 		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
 		57468AA228A21D1700056691 /* TownSettingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingBottomSheet.swift */; };
-		57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA928A38C8000056691 /* SecondRegisterViewController+Layout.swift */; };
 		57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */; };
 		57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */; };
@@ -412,7 +411,6 @@
 		57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		57468AA128A21D1700056691 /* TownSettingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingBottomSheet.swift; sourceTree = "<group>"; };
-		57468AA928A38C8000056691 /* SecondRegisterViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondRegisterViewController+Layout.swift"; sourceTree = "<group>"; };
 		57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePurpleButton.swift; sourceTree = "<group>"; };
 		57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWithRankTableViewCell.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -953,7 +951,6 @@
 			children = (
 				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
 				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
-				57468AA928A38C8000056691 /* SecondRegisterViewController+Layout.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
 				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
 				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
@@ -1943,7 +1940,6 @@
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
-				57468AAA28A38C8000056691 /* SecondRegisterViewController+Layout.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
