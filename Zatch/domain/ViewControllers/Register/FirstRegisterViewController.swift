@@ -145,8 +145,10 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 cell.arrowImage.isSelected = !isOpen
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableViewCell.cellIdentifier, for: indexPath) as? FirstProductInfoTableViewCell else{ fatalError("Cell Casting Error")}
-                cell.navigationController = self.navigationController
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableView.cellIdentifier, for: indexPath) as? FirstProductInfoTableView else{ fatalError("Cell Casting Error")}
+                
+                cell.viewController = self
+                
                 return cell
             default:
                 fatalError("index error")

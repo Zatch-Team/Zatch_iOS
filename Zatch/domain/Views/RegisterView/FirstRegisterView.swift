@@ -21,7 +21,7 @@ class FirstRegisterView: BaseView {
         $0.register(CategorySelectTableViewCell.self, forCellReuseIdentifier: CategorySelectTableViewCell.cellIdentifier)
         $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
         $0.register(ImageAddTableViewCell.self, forCellReuseIdentifier: ImageAddTableViewCell.cellIdentifier)
-        $0.register(FirstProductInfoTableViewCell.self, forCellReuseIdentifier: FirstProductInfoTableViewCell.cellIdentifier)
+        $0.register(FirstProductInfoTableView.self, forCellReuseIdentifier: FirstProductInfoTableView.cellIdentifier)
     }
     
     lazy var nextButton = Purple36Button(title: "다음 단계로")
