@@ -59,6 +59,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         style()
+        initialize()
         layout()
     }
     
@@ -66,6 +67,8 @@ class BaseViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
     }
+    
+    func initialize() {}
     
     func layout() {
         
