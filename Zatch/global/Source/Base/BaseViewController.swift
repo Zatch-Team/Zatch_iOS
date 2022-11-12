@@ -48,7 +48,7 @@ class BaseViewController: UIViewController {
     
     lazy var rightPositionBtn: EtcButton? = nil{
         didSet{
-            setRightPositionBtn()
+            settingRightPostionBtn()
         }
     }
     
@@ -102,7 +102,15 @@ class BaseViewController: UIViewController {
     
     //MARK: - Method
     
-    func setRightPositionBtn(){
+    func addRightTopBtn(title: String){
+        self.rightPositionBtn = EtcButton(title: title)
+    }
+    
+    func addRightTopBtn(image: UIImage){
+        self.rightPositionBtn = EtcButton(image: image)
+    }
+    
+    func settingRightPostionBtn(){
         
         guard let rightPositionBtn = rightPositionBtn else {
             return
