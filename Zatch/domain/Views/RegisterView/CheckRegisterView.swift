@@ -14,11 +14,7 @@ class CheckRegisterView: UIView {
     static let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
 
     //MARK: - UI
-
-//    lazy var exitBtn = UIButton().then{
-//        $0.setImage(UIImage(named: "exit"), for: .normal)
-//    }
-
+    
     let titleView = TitleView().then{
         $0.titleLabel.text = "이렇게 재치를\n업로드해도 괜찮을까요?"
     }
@@ -82,7 +78,6 @@ class CheckRegisterView: UIView {
 
     func setUpView(){
         
-//        self.addSubview(exitBtn)
         self.addSubview(titleView)
         self.addSubview(registerBtn)
         self.addSubview(photoFrame)
@@ -97,13 +92,8 @@ class CheckRegisterView: UIView {
 
     func setUpConstraint(){
 
-//        exitBtn.snp.makeConstraints{ make in
-//            make.trailing.equalToSuperview().offset(-16)
-//            make.top.equalToSuperview().offset(60)
-//        }
-
         titleView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(88)
+            make.top.equalToSuperview()
         }
 
         photoFrame.snp.makeConstraints{ make in
@@ -146,7 +136,7 @@ class CheckRegisterView: UIView {
         }
 
         registerBtn.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-38)
             make.leading.equalToSuperview().offset(74)
             make.trailing.equalToSuperview().offset(-74)
         }
