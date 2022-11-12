@@ -10,8 +10,8 @@ import UIKit
 class ChatInputView: UIView {
     
     lazy var etcBtn = UIButton().then{
-        $0.setImage(UIImage(named: "chat_open"), for: .normal)
-        $0.setImage(UIImage(named: "chat_close"), for: .selected)
+        $0.setImage(Image.chatOpen, for: .normal)
+        $0.setImage(Image.chatClose, for: .selected)
     }
     
     let chatTextField = UITextView().then{
@@ -23,8 +23,8 @@ class ChatInputView: UIView {
     }
     
     lazy var sendBtn = UIButton().then{
-        $0.setImage(UIImage(named: "send"), for: .disabled)
-        $0.setImage(UIImage(named: "send_activate"), for: .normal)
+        $0.setImage(Image.send, for: .disabled)
+        $0.setImage(Image.sendActivate, for: .normal)
         $0.isEnabled = false 
     }
 

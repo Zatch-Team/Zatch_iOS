@@ -30,7 +30,7 @@ class BlockUserTableViewCell: BaseTableViewCell {
     }
     
     lazy var unblockBtn = UIButton().then{
-        $0.setImage(UIImage(named: "exit"), for: .normal)
+        $0.setImage(Image.exit, for: .normal)
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

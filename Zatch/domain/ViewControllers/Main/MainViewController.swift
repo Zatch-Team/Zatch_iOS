@@ -89,7 +89,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainBannerTableViewCell", for: indexPath) as? MainBannerTableViewCell else { return UITableViewCell() }
-            cell.banner.image = UIImage(named: "addZatchBanner")
+            cell.banner.image = Image.addZatchBanner
             cell.selectionStyle = .none
             return cell
         case 3:

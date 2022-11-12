@@ -16,7 +16,7 @@ class ModifyProfileView: UIView {
         $0.layer.cornerRadius = 50
     }
     lazy var cameraButton = UIButton().then{
-        $0.setImage(UIImage(named: "cameraButton"), for: .normal)
+        $0.setImage(Image.cameraButton, for: .normal)
         // shadow
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.masksToBounds = false
@@ -30,7 +30,7 @@ class ModifyProfileView: UIView {
         $0.addPadding(left: 28, right: 28)
         $0.placeholder = "닉네임"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.setClearButton(with: UIImage(named: "cancel")!, mode: .whileEditing)
+        $0.setClearButton(with: Image.cancel, mode: .whileEditing)
     }
     let textfieldUnderline = UIView().then{
         $0.backgroundColor = .black5

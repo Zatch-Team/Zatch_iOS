@@ -10,7 +10,7 @@ import UIKit
 class SplashTownView: UIView {
     
     let splashImage = UIImageView().then{
-        $0.image = UIImage(named: "town_splash")
+        $0.image = Image.townSplash
         $0.contentMode = .scaleAspectFit
     }
     

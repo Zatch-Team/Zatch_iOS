@@ -59,7 +59,7 @@ extension MyZatchTabmanViewController {
             $0.clipsToBounds = true
             $0.layer.cornerRadius = 28
             
-            $0.setImage(UIImage(named: "floating_plus"), for: .normal)
+            $0.setImage(Image.floatingPlus, for: .normal)
             // shadow
             $0.layer.shadowColor = UIColor.black.cgColor
             $0.layer.masksToBounds = false

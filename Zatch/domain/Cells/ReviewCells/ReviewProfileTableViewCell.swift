@@ -25,8 +25,8 @@ class ReviewProfileTableViewCell: UITableViewCell {
         $0.settings.fillMode = .full
         $0.settings.starSize = 24
         $0.settings.starMargin = 0
-        $0.settings.filledImage = UIImage(named: "filledStar")
-        $0.settings.emptyImage = UIImage(named: "emptyStar")
+        $0.settings.filledImage = Image.filledStar
+        $0.settings.emptyImage = Image.emptyStar
     }
     // 거래는 어떠셨나요?
     let myMessageLabel = PaddingLabel(padding: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)).then{

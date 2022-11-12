@@ -38,7 +38,7 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
         super.style()
         
         self.navigationTitle.text = "재치 등록하기"
-        self.addRightTopBtn(image: UIImage(named: "exit") ?? UIImage.init())
+        self.addRightTopBtn(image: Image.exit)
     
     }
     

@@ -14,7 +14,7 @@ class MapAlertViewController: AlertViewController {
     //MARK: - UI
     
     let characterImage = UIImageView().then{
-        $0.image = UIImage(named: "town_alert")
+        $0.image = Image.townAlert
     }
     
     let messageLabel = UILabel().then{

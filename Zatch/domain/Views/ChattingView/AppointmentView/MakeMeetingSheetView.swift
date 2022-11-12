@@ -39,7 +39,7 @@ class MakeMeetingSheetView: MeetingSheetView {
     }
     
     let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
+        $0.image = Image.search
         $0.setImageTintColor(.black10)
     }
     

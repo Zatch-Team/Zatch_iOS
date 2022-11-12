@@ -231,6 +231,7 @@
 		57B32C2C291F49CF0018C0CB /* FirstRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2B291F49CF0018C0CB /* FirstRegisterView.swift */; };
 		57B32C2E291F49DC0018C0CB /* SecondRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */; };
 		57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */; };
+		57B32C34291FB58F0018C0CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C33291FB58F0018C0CB /* Image.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductNameTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9F70B28D94B7800ACEC94 /* Delegate.swift */; };
@@ -529,6 +530,7 @@
 		57B32C2B291F49CF0018C0CB /* FirstRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterView.swift; sourceTree = "<group>"; };
 		57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterView.swift; sourceTree = "<group>"; };
 		57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterModel.swift; sourceTree = "<group>"; };
+		57B32C33291FB58F0018C0CB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57B9F70B28D94B7800ACEC94 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
@@ -1401,6 +1403,7 @@
 		57802394281D21710085457D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				57B32C32291FB3D90018C0CB /* Namespace */,
 				57468A9928A1096600056691 /* extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* Common */,
 			);
@@ -1570,6 +1573,14 @@
 				57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */,
 			);
 			path = RegisterModels;
+			sourceTree = "<group>";
+		};
+		57B32C32291FB3D90018C0CB /* Namespace */ = {
+			isa = PBXGroup;
+			children = (
+				57B32C33291FB58F0018C0CB /* Image.swift */,
+			);
+			path = Namespace;
 			sourceTree = "<group>";
 		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
@@ -1911,6 +1922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
+				57B32C34291FB58F0018C0CB /* Image.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableView.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,

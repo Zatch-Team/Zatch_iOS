@@ -23,7 +23,7 @@ class ServiceCenterViewController: BaseCenterTitleViewController {
         $0.addPadding(left: 8, right: 0)
     }
     let searchButton = UIButton().then{
-        $0.setImage(UIImage(named: "search"), for: .normal)
+        $0.setImage(Image.search, for: .normal)
     }
     let textfieldUnderline = UIView().then{
         $0.backgroundColor = .black

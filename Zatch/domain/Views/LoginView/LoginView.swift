@@ -11,7 +11,7 @@ class LoginView: BaseView {
     
     //MARK: - UI
     let logoImage = UIImageView().then{
-        $0.image = UIImage(named: "login_character")
+        $0.image = Image.loginCharacter
     }
     
     lazy var kakaoBtn = UIButton().then{
@@ -26,7 +26,7 @@ class LoginView: BaseView {
     }
     
     let kakaoLogo = UIImageView().then{
-        $0.image = UIImage(named: "kakao_logo")
+        $0.image = Image.kakaoLogo
     }
     
     let kakaoLabel = UILabel().then{

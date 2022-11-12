@@ -24,7 +24,7 @@ class MySearchView: UIView {
     }
     
     let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
+        $0.image = Image.search
     }
     
     let underLine = UIView().then{

@@ -22,14 +22,14 @@ class MainView: UIView {
         $0.isUserInteractionEnabled = true
     }
     let arrowButton = UIButton().then{
-        $0.setImage(UIImage(named: "arrow_down"), for: .normal)
-        $0.setImage(UIImage(named: "arrow_up"), for: .selected)
+        $0.setImage(Image.arrowDown, for: .normal)
+        $0.setImage(Image.arrowUp, for: .selected)
     }
     lazy var searchButton = UIButton().then{
-        $0.setImage(UIImage(named: "search"), for: .normal)
+        $0.setImage(Image.search, for: .normal)
     }
     lazy var notiButton = UIButton().then{
-        $0.setImage(UIImage(named: "bell"), for: .normal)
+        $0.setImage(Image.bell, for: .normal)
         $0.isUserInteractionEnabled = true
     }
     // TableView

@@ -18,7 +18,7 @@ class MypageViewController: BaseTabBarViewController {
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
         super.titleLabel.text = "내 정보"
-        super.etcBtn.setImage(UIImage(named: "setting"), for: .normal)
+        super.etcBtn.setImage(Image.setting, for: .normal)
         super.etcBtn.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
         
         mypageView = MypageView()

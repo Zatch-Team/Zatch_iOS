@@ -10,7 +10,7 @@ import Cosmos
 
 class OtherReviewTableViewCell: UITableViewCell {
     let profileImage = UIImageView().then{
-        $0.image = UIImage(named: "gatch_profile")
+        $0.image = Image.gatchProfile
     }
     let userNameLabel = UILabel().then{
         $0.textColor = .black
@@ -38,8 +38,8 @@ class OtherReviewTableViewCell: UITableViewCell {
         $0.settings.fillMode = .full
         $0.settings.starSize = 16
         $0.settings.starMargin = 0
-        $0.settings.filledImage = UIImage(named: "filledStar")
-        $0.settings.emptyImage = UIImage(named: "emptyStar")
+        $0.settings.filledImage = Image.filledStar
+        $0.settings.emptyImage = Image.emptyStar
     }
     // MARK: - LifeCycles
     var reviewDate: String!

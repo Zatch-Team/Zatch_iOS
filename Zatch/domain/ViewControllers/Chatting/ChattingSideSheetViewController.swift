@@ -29,7 +29,7 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
     let exitFrame = UIView()
     
     let exitImage = UIImageView().then{
-        $0.image = UIImage(named: "chat_exit")
+        $0.image = Image.chatExit
     }
     
     let exitTitle = UILabel().then{

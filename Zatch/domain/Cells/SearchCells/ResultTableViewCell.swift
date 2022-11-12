@@ -27,7 +27,7 @@ class ResultTableViewCell: BaseTableViewCell {
     }
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange_vertical_silver")
+        $0.image = Image.exchangeVerticalSilver
     }
     
     let etcInfoText = UILabel().then{
@@ -37,8 +37,8 @@ class ResultTableViewCell: BaseTableViewCell {
     }
     
     let heartButton = UIButton().then{
-        $0.setImage(UIImage(named: "heart"), for: .normal)
-        $0.setImage(UIImage(named: "heart_yellow"), for: .selected)
+        $0.setImage(Image.heart, for: .normal)
+        $0.setImage(Image.heartYellow, for: .selected)
         $0.addTarget(self, action: #selector(heartButtonTouchUp), for: .touchUpInside)
     }
     

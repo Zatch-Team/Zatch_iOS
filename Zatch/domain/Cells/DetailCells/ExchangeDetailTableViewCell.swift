@@ -43,7 +43,7 @@ class ExchangeDetailTableViewCell: BaseTableViewCell {
     }
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange")
+        $0.image = Image.exchange
     }
     
     let firstBorderLine = UIView().then{

@@ -37,7 +37,7 @@ class BaseViewController: UIViewController {
     let navigationView = UIView()
     
     lazy var backBtn = UIButton().then{
-        $0.setImage(UIImage(named: "arrow_left"), for: .normal)
+        $0.setImage(Image.arrowLeft, for: .normal)
         $0.isUserInteractionEnabled = true
         $0.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
     }

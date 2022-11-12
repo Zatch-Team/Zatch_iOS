@@ -19,7 +19,7 @@ class ImageAddBtnCollectionViewCell: UICollectionViewCell {
     
     let addBtnImage = UIImageView().then{
         $0.layer.cornerRadius = 8
-        $0.image = UIImage(named: "image_add_button")
+        $0.image = Image.imageAddButton
     }
     
     override init(frame: CGRect) {

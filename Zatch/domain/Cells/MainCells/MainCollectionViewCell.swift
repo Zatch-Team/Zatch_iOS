@@ -57,8 +57,8 @@ class MainCollectionViewCell: UICollectionViewCell {
     // 하트
     let heart = UIButton().then{
         // state별로 이미지 설정
-        $0.setImage(UIImage(named: "heart_silver"), for: .normal)
-        $0.setImage(UIImage(named: "filledHeart"), for: .selected)
+        $0.setImage(Image.heartSilver, for: .normal)
+        $0.setImage(Image.heartPurple, for: .selected)
     }
     // MARK: Properties
     private let mainViewModel: MainViewModel = MainViewModel()

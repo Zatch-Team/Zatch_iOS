@@ -26,7 +26,7 @@ class FindSearchView: UIView {
     }
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange_vertical")
+        $0.image = Image.exchangeVertical
     }
     
     let wantTextField = UITextField().then{
@@ -40,7 +40,7 @@ class FindSearchView: UIView {
     }
     
     let searchImage = UIImageView().then{
-        $0.image = UIImage(named: "search")
+        $0.image = Image.search
     }
     
     //

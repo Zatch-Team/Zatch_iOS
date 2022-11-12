@@ -16,11 +16,11 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     //MARK: - UI
     
     let profileImage = UIImageView().then{
-        $0.image = UIImage(named: "zatch_profile")
+        $0.image = Image.zatchProfile
     }
     
     let managerCrownImage = UIImageView().then{
-        $0.image = UIImage(named: "crown")
+        $0.image = Image.chatCrown
     }
     
     let isMeTag = UILabel().then{
@@ -42,7 +42,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     }
     
     lazy var declarationBtn = UIButton().then{
-        $0.setImage(UIImage(named: "declaration"), for: .normal)
+        $0.setImage(Image.chatDeclaration, for: .normal)
     }
     
     //MARK: - LifeCycle

@@ -25,7 +25,7 @@ class ChattingMatchBannerView: UIView {
     }
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange")
+        $0.image = Image.exchange
     }
     
     let myZatch = UILabel().then{

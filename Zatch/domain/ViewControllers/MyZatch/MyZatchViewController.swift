@@ -14,10 +14,10 @@ class MyZatchViewController: UIViewController {
         $0.font = UIFont.pretendard(size: 18, family: .Bold)
     }
     lazy var searchButton = UIButton().then{
-        $0.setImage(UIImage(named: "search"), for: .normal)
+        $0.setImage(Image.search, for: .normal)
     }
     lazy var notiButton = UIButton().then{
-        $0.setImage(UIImage(named: "bell"), for: .normal)
+        $0.setImage(Image.bell, for: .normal)
     }
 
     override func viewDidLoad() {

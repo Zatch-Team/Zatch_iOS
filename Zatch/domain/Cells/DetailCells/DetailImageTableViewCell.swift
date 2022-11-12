@@ -11,9 +11,9 @@ class DetailImageTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     var images : [UIImage?] = [
-        UIImage(named: "chat_camera"),
-        UIImage(named: "chat_close"),
-        UIImage(named: "chat_gallery")
+        Image.chatCamera,
+        Image.chatClose,
+        Image.chatGallery
     ]
     
     var imageViews = [UIImageView]()

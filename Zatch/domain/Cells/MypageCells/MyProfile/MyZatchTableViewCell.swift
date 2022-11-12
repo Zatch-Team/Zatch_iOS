@@ -21,7 +21,7 @@ class MyZatchTableViewCell: UITableViewCell {
         $0.font = UIFont.pretendard(size: 14, family: .Bold)
     }
     let tradeImg = UIImageView().then{
-        $0.image = UIImage(named: "trade_vertical")
+        $0.image = Image.exchangeVerticalSilver
     }
     let otherZatchName = UILabel().then{
         $0.text = "신라면 3봉"
@@ -49,8 +49,8 @@ class MyZatchTableViewCell: UITableViewCell {
     }
     // heart
     lazy var heartButton = UIButton().then{
-        $0.setImage(UIImage(named: "heart_purple"), for: .selected)
-        $0.setImage(UIImage(named: "heart_silver"), for: .normal)
+        $0.setImage(UIImage(named: "heartFilled"), for: .selected)
+        $0.setImage(Image.heartSilver, for: .normal)
     }
     // MARK: - LifeCycles
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -152,8 +152,8 @@ class MyZatchTableViewCell: UITableViewCell {
     }
     // Heart
     func addHeartToCell(color: String) {
-        if color == "purple" {heartButton.setImage(UIImage(named: "heart_purple"), for: .selected)}
-        else {heartButton.setImage(UIImage(named: "heart_yellow"), for: .selected)}
+        if color == "purple" {heartButton.setImage(Image.heartPurple, for: .selected)}
+        else {heartButton.setImage(Image.heartYellow, for: .selected)}
         
         heartButton.isHidden = false
     }

@@ -10,7 +10,7 @@ import UIKit
 class CheckExchangeRegisterView: CheckRegisterInfoView {
     
     let exchangeImage = UIImageView().then{
-        $0.image = UIImage(named: "exchange")
+        $0.image = Image.exchange
     }
     
     //want
