@@ -10,27 +10,41 @@ import UIKit
 class FirstRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - Properties
+    
     var isOpen = false
     
-    //MARK: - UI
-    let topView = TitleView().then{
-        $0.titleLabel.text = "주고 싶은\n물건이 무엇인가요?"
+    let registerView = FirstRegisterView().then{
+        $0.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
     
-    var backTableView : UITableView!
+    //MARK: - LifeCycle
     
-    let nextButton = Purple36Button(title: "다음 단계로").then{
-        $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
-    }
-
     override func viewDidLoad() {
-        
-        super.navigationTitle.text = "재치 등록하기"
         super.viewDidLoad()
-
-        setInitView()
-        setUpView()
-        setUpConstraint()
+    }
+    
+    //MARK: - Override
+    
+    override func style() {
+        
+        super.style()
+        
+        self.navigationTitle.text = "재치 등록하기"
+        
+        registerView.backTableView.settingCustomTableView(self)
+    }
+    
+    override func layout() {
+        
+        super.layout()
+        
+        self.view.addSubview(registerView)
+        
+        registerView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(88)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
     
     //MARK: - Action
@@ -39,12 +53,10 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         self.view.endEditing(true)
     }
     
-    
     @objc
     func nextBtnDidClicked(){
         let vc  = SecondRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
-
     }
 
 
@@ -118,7 +130,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else { return}
             isOpen.toggle()
             cell.arrowImage.isSelected = isOpen
-            self.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
+            self.registerView.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
         }
     }
     
