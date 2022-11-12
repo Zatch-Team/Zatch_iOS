@@ -11,7 +11,17 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - Properties
     
+    struct ZatchFirstInput{ //상품 정보 유효성 검사 위한 데이터 저장 구조체(서버 통신용 Model 아님)
+        var category: String?
+        var productName: String?
+        var imageCount: Int?
+        var buyDate: String?
+        var endDate: String?
+    }
+    
     var isOpen = false
+    
+    var productInfo = ZatchFirstInput()
     
     let registerView = FirstRegisterView().then{
         $0.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
@@ -47,18 +57,40 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         }
     }
     
-    //MARK: - Action
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    @objc
-    func nextBtnDidClicked(){
-        let vc  = SecondRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    //MARK: - Action
+    
+    @objc func nextBtnDidClicked(){
+        
+        let alertType: FirstRegisterViewController.InvalidationMessage!
+        
+        if(productInfo.category == nil){
+            alertType = .category
+        }else if(productInfo.productName == nil){
+            alertType = .productName
+        }else if(productInfo.imageCount == 0){
+            alertType = .image
+        }else if(productInfo.category == nil && productInfo.buyDate == nil){
+            alertType = .buyDate
+        }else if(productInfo.category == nil && productInfo.endDate == nil){
+            alertType = .endDate
+        }else{ //input 데이터 모두 유효할 경우, Second로 이동
+            let vc  = SecondRegisterViewController()
+            //TODO: Data 담아서 넘기기
+            self.navigationController?.pushViewController(vc, animated: true)
+            return
+        }
+        
+        let alert = BasicAlertViewController(message: alertType.rawValue)
+        alert.modalPresentationStyle = .overFullScreen
+        
+        self.present(alert, animated: false, completion: nil)
+        
+        
     }
-
 
 }
 
@@ -120,6 +152,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             vc.categorySelectHandler = { category in
                 guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
                 cell.categoryText.text = category
+                self.productInfo.category = category
             }
             
             vc.loadViewIfNeeded()
@@ -134,5 +167,15 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+}
+
+extension FirstRegisterViewController{
+    enum InvalidationMessage: String{
+        case category = "카테고리를 입력해주세요."
+        case productName = "상품 이름을 입력해주세요."
+        case image = "이미지를 최소 1장 이상 첨부해주세요."
+        case buyDate = "구매일자를 입력해주세요."
+        case endDate = "유통기한을 입력해주세요."
+    }
 }
 
