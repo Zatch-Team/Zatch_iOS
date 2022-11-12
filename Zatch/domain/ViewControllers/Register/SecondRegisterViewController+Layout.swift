@@ -19,7 +19,7 @@ extension SecondRegisterViewController{
             $0.separatorStyle = .none
             
             $0.register(CategorySelectWithRankTableViewCell.self, forCellReuseIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier)
-            $0.register(ProductInputTextFieldTabeViewCell.self, forCellReuseIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier)
+            $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
         }
         
     }

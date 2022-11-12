@@ -19,7 +19,7 @@ class FirstRegisterView: BaseView {
         $0.isScrollEnabled = false
         
         $0.register(CategorySelectTableViewCell.self, forCellReuseIdentifier: CategorySelectTableViewCell.cellIdentifier)
-        $0.register(ProductInputTextFieldTabeViewCell.self, forCellReuseIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier)
+        $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
         $0.register(ImageAddTableViewCell.self, forCellReuseIdentifier: ImageAddTableViewCell.cellIdentifier)
         $0.register(FirstProductInfoTableViewCell.self, forCellReuseIdentifier: FirstProductInfoTableViewCell.cellIdentifier)
     }

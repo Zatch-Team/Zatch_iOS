@@ -66,5 +66,83 @@
             endingLineNumber = "94">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23E1892D-8582-4C0F-93B2-0CAF262DA253"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zatch/domain/Cells/RegisterCells/ProductInputTextFieldTabeViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "boundaryLine"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "23E1892D-8582-4C0F-93B2-0CAF262DA253 - b6eb08c81be66301"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIView) -&gt; () in variable initialization expression of Zatch.ProductInputTextFieldTabeViewCell.boundaryLine : __C.UIView"
+                  moduleName = "Zatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vertigo/Desktop/XCODE/Zatch/Zatch_iOS/Zatch/domain/Cells/RegisterCells/ProductInputTextFieldTabeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "23E1892D-8582-4C0F-93B2-0CAF262DA253 - 3bf533ce6c2f2c73"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zatch.ProductInputTextFieldTabeViewCell.boundaryLine.getter : __C.UIView"
+                  moduleName = "Zatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vertigo/Desktop/XCODE/Zatch/Zatch_iOS/Zatch/domain/Cells/RegisterCells/ProductInputTextFieldTabeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  uuid = "23E1892D-8582-4C0F-93B2-0CAF262DA253 - 4714666031add216"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zatch.ProductInputTextFieldTabeViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Zatch.ProductInputTextFieldTabeViewCell"
+                  moduleName = "Zatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vertigo/Desktop/XCODE/Zatch/Zatch_iOS/Zatch/domain/Cells/RegisterCells/ProductInputTextFieldTabeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  uuid = "23E1892D-8582-4C0F-93B2-0CAF262DA253 - 6186130905655ea7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zatch.ProductInputTextFieldTabeViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Zatch.ProductInputTextFieldTabeViewCell&gt;"
+                  moduleName = "Zatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vertigo/Desktop/XCODE/Zatch/Zatch_iOS/Zatch/domain/Cells/RegisterCells/ProductInputTextFieldTabeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

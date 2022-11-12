@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
+class ProductNameTabeViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     

@@ -159,8 +159,8 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
             
         }else{
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier)
-                    as? ProductInputTextFieldTabeViewCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier)
+                    as? ProductNameTabeViewCell else { fatalError() }
             
             cell.productNameTextField.delegate = self
             cell.productNameTextField.tag = indexPath.section

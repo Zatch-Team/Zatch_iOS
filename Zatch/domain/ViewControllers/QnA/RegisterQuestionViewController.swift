@@ -30,7 +30,7 @@ class RegisterQuestionViewController: UIViewController {
             $0.delegate = self
             $0.dataSource = self
             $0.register(CategorySelectTableViewCell.self, forCellReuseIdentifier: CategorySelectTableViewCell.cellIdentifier)
-            $0.register(ProductInputTextFieldTabeViewCell.self, forCellReuseIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier)
+            $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
             $0.register(QuestionContentTableViewCell.self, forCellReuseIdentifier: QuestionContentTableViewCell.cellIdentifier)
             
             // autoHeight
@@ -107,7 +107,7 @@ extension RegisterQuestionViewController: UITableViewDelegate, UITableViewDataSo
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier, for: indexPath) as? ProductInputTextFieldTabeViewCell else{ fatalError("Cell Casting Error")}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier, for: indexPath) as? ProductNameTabeViewCell else{ fatalError("Cell Casting Error")}
             cell.productNameTextField.placeholder = "제목을 입력해주세요."
             cell.productNameTextField.addTarget(self, action: #selector(titleTextFieldEditingChanged), for: .editingChanged)
             cell.selectionStyle = .none

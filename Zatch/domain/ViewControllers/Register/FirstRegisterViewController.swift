@@ -14,7 +14,7 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     struct ZatchFirstInput{ //상품 정보 유효성 검사 위한 데이터 저장 구조체(서버 통신용 Model 아님)
         var category: String = ""
         var productName: String = ""
-        var imageCount: Int = 0
+        var images = [UIImage]()
         var buyDate: String = ""
         var endDate: String = ""
     }
@@ -73,13 +73,17 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     
     @objc func nextBtnDidClicked(){
         
+        //cell에서 등록한 이미지 데이터 가져오기
+        guard let imageCell = registerView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
+        productInfo.images = imageCell.imageArray
+        
         let alertType: FirstRegisterViewController.InvalidationMessage!
         
         if(productInfo.category.isEmpty){
             alertType = .category
         }else if(productInfo.productName.isEmpty){
             alertType = .productName
-        }else if(productInfo.imageCount == 0){
+        }else if(productInfo.images.count == 0){
             alertType = .image
         }else if(productInfo.category == "음식|조리" && productInfo.buyDate.isEmpty){
             alertType = .buyDate
@@ -123,7 +127,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier, for: indexPath) as? ProductInputTextFieldTabeViewCell else{ fatalError("Cell Casting Error")}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier, for: indexPath) as? ProductNameTabeViewCell else{ fatalError("Cell Casting Error")}
                 cell.productNameTextField.delegate = self
                 return cell
             case 2:
