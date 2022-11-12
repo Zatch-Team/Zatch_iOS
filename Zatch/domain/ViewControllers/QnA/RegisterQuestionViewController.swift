@@ -108,8 +108,8 @@ extension RegisterQuestionViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier, for: indexPath) as? ProductInputTextFieldTabeViewCell else{ fatalError("Cell Casting Error")}
-            cell.productName.placeholder = "제목을 입력해주세요."
-            cell.productName.addTarget(self, action: #selector(titleTextFieldEditingChanged), for: .editingChanged)
+            cell.productNameTextField.placeholder = "제목을 입력해주세요."
+            cell.productNameTextField.addTarget(self, action: #selector(titleTextFieldEditingChanged), for: .editingChanged)
             cell.selectionStyle = .none
             return cell
         case 2:

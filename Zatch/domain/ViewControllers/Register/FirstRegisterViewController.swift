@@ -12,11 +12,19 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     //MARK: - Properties
     
     struct ZatchFirstInput{ //상품 정보 유효성 검사 위한 데이터 저장 구조체(서버 통신용 Model 아님)
-        var category: String?
-        var productName: String?
-        var imageCount: Int?
-        var buyDate: String?
-        var endDate: String?
+        var category: String = ""
+        var productName: String = ""
+        var imageCount: Int = 0
+        var buyDate: String = ""
+        var endDate: String = ""
+    }
+    
+    enum InvalidationMessage: String{
+        case category = "카테고리를 입력해주세요."
+        case productName = "상품 이름을 입력해주세요."
+        case image = "이미지를 최소 1장 이상 첨부해주세요."
+        case buyDate = "구매일자를 입력해주세요."
+        case endDate = "유통기한을 입력해주세요."
     }
     
     var isOpen = false
@@ -67,15 +75,15 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         
         let alertType: FirstRegisterViewController.InvalidationMessage!
         
-        if(productInfo.category == nil){
+        if(productInfo.category.isEmpty){
             alertType = .category
-        }else if(productInfo.productName == nil){
+        }else if(productInfo.productName.isEmpty){
             alertType = .productName
         }else if(productInfo.imageCount == 0){
             alertType = .image
-        }else if(productInfo.category == nil && productInfo.buyDate == nil){
+        }else if(productInfo.category == "음식|조리" && productInfo.buyDate.isEmpty){
             alertType = .buyDate
-        }else if(productInfo.category == nil && productInfo.endDate == nil){
+        }else if(productInfo.category == "음식|조리" && productInfo.endDate.isEmpty){
             alertType = .endDate
         }else{ //input 데이터 모두 유효할 경우, Second로 이동
             let vc  = SecondRegisterViewController()
@@ -116,6 +124,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier, for: indexPath) as? ProductInputTextFieldTabeViewCell else{ fatalError("Cell Casting Error")}
+                cell.productNameTextField.delegate = self
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageAddTableViewCell.cellIdentifier, for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
@@ -169,13 +178,9 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
     
 }
 
-extension FirstRegisterViewController{
-    enum InvalidationMessage: String{
-        case category = "카테고리를 입력해주세요."
-        case productName = "상품 이름을 입력해주세요."
-        case image = "이미지를 최소 1장 이상 첨부해주세요."
-        case buyDate = "구매일자를 입력해주세요."
-        case endDate = "유통기한을 입력해주세요."
+extension FirstRegisterViewController: UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.productInfo.productName = textField.text ?? ""
     }
 }
 
