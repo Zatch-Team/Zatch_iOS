@@ -15,21 +15,20 @@ class InfoAlertViewController: MessageAlertViewController {
         // Do any additional setup after loading the view.
         settingOkBtnWhiteBackground()
         
-        setUpView()
-        setUpConstraint()
+        hierarchy()
+        layout()
     }
     
-    override func setUpConstraint(){
+    override func layout(){
         
-        super.setUpConstraint()
+        super.layout()
         
         messageLabel.snp.updateConstraints{
             $0.top.equalToSuperview().offset(22)
         }
         
-        btnStackView.snp.makeConstraints{ make in
+        btnStackView.snp.remakeConstraints{ make in
             make.trailing.equalToSuperview().offset(-30)
-            make.top.equalTo(messageLabel.snp.bottom).offset(10)
             make.bottom.equalToSuperview().offset(-10)
         }
     }

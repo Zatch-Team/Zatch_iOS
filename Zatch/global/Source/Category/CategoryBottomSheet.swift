@@ -11,6 +11,8 @@ import SnapKit
 
 class CategoryBottomSheet: SheetViewController {
     
+    //TODO: 재치 -> 음식 / 가치 -> 음식|조리, 음식|비조리
+    
     //MARK: - Properties
     
     static let categoryTitle = ["음식|조리","음식|비조리","생활용품","가구/인테리어","디지털기기","잡화","의류","뷰티/미용","도서/문구류",

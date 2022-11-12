@@ -7,13 +7,13 @@
 
 import UIKit
 
-class FirstProductInfoTableViewCell: UITableViewCell {
+class FirstProductInfoTableView: UITableViewCell {
     
     //MARK: - Properties
     
     static let cellIdentifier = "firstProductCell"
     
-    var navigationController: UINavigationController!
+    var viewController: FirstRegisterViewController!
     
     //MARK: - UI
     
@@ -54,7 +54,7 @@ class FirstProductInfoTableViewCell: UITableViewCell {
     
 }
 
-extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSource{
+extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -102,14 +102,23 @@ extension FirstProductInfoTableViewCell: UITableViewDelegate, UITableViewDataSou
         vc.titleLabel.text = title
         
         vc.pickerHandler = { array in
+            
             guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
+            
             cell.yearTextField.text = String (array[0])
             cell.monthTextField.text = String (array[1] + 1)
             cell.dateTextField.text = String (array[2] + 1)
+            
+            if(indexPath.row == 1){
+                self.viewController.productInfo.buyDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
+            }else{
+                self.viewController.productInfo.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
+            }
         }
         
         vc.modalPresentationStyle = .overFullScreen
-        self.navigationController.present(vc, animated: false, completion: nil)
+        
+        self.viewController.navigationController?.present(vc, animated: false, completion: nil)
     }
 
     

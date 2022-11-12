@@ -15,7 +15,7 @@ class ImageAddTableViewCell: BaseTableViewCell {
     
     var navigationController: UINavigationController!
     
-    var imageArray: [UIImage] = [] {
+    var imageArray = [UIImage](){
         didSet{
             imageCountLabel.text =  "\(imageArray.count) / 10"
             changeCountLabelTextColor()

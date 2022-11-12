@@ -17,81 +17,47 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     
     var currentBtnSelect: ZatchRoundCheck!
     
-    //MARK: - UI
-    
-    lazy var exitBtn = UIButton().then{
-        $0.setImage(UIImage(named: "exit"), for: .normal)
-        $0.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
+    let registerView = SecondRegisterView().then{
+        $0.exitBtn.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
+        $0.topCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
+        $0.belowCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
+        $0.shareBtn.addTarget(self, action: #selector(shareBtnDidClicked), for: .touchUpInside)
+        $0.nextBtn.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
+        
     }
     
-    let topTitleView = TitleView().then{
-        $0.titleLabel.text = "받고 싶은\n물건이 있나요?"
-    }
-    
-    var tableView : UITableView!
-    
-    let checkBoxFrame = UIStackView().then{
-        $0.spacing = 16
-        $0.axis = .vertical
-    }
-    
-    let topCheckBoxFrame = UIStackView().then{
-        $0.spacing = 8
-        $0.axis = .horizontal
-    }
-    
-    let topCheckBoxBtn = ZatchRoundCheck().then{
-        $0.tag = 0
-        $0.isSelected = true
-        $0.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
-    }
-    
-    let topCheckBoxLabel = UILabel().then{
-        $0.text = "다른 것도 괜찮아요!"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-    }
-    
-    let belowCheckBoxFrame = UIStackView().then{
-        $0.spacing = 8
-        $0.axis = .horizontal
-    }
-    
-    let belowCheckBoxBtn = ZatchRoundCheck().then{
-        $0.tag = 1
-        $0.isSelected = false
-        $0.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
-    }
-    
-    let belowCheckBoxLabel = UILabel().then{
-        $0.text = "이 것만 가능해요!"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-    }
-    
-    let btnFrame = UIStackView().then{
-        $0.spacing = 10
-        $0.axis = .horizontal
-    }
-    
-    lazy var shareBtn = WhitePurpleButton().then{
-        $0.setTitle("나눔", for: .normal)
-    }
-    
-    lazy var nextBtn = Purple36Button(title: "다음 단계로").then{
-        $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
-    }
-
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
-        
-        super.navigationTitle.text = "재치 등록하기"
         super.viewDidLoad()
-
-        setInitView()
-        setUpView()
-        setUpConstraint()
+    }
+    
+    //MARK: - Override
+    override func style() {
         
-        currentBtnSelect = topCheckBoxBtn
+        super.style()
+        
+        self.navigationTitle.text = "재치 등록하기"
+        self.addRightTopBtn(image: UIImage(named: "exit") ?? UIImage.init())
+    
+    }
+    
+    override func initialize() {
+        currentBtnSelect = registerView.topCheckBoxBtn
+        registerView.tableView.settingCustomTableView(self)
+    }
+    
+    override func layout() {
+        
+        super.layout()
+        
+        self.view.addSubview(registerView)
+        
+        registerView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
     
     //MARK: - Action
@@ -100,8 +66,7 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
         dismissKeyboardView()
     }
     
-    @objc
-    func radioBtnDidClicked(_ sender: ZatchRoundCheck){
+    @objc func radioBtnDidClicked(_ sender: ZatchRoundCheck){
         if(sender != currentBtnSelect){
             sender.isSelected.toggle()
             currentBtnSelect.isSelected.toggle()
@@ -109,14 +74,17 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
         }
     }
     
-    @objc
-    func nextBtnDidClicked(){
-        let vc = CheckRegisterViewController()
+    @objc func shareBtnDidClicked(){
+        let vc = CheckShareRegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc
-    func exitBtnDidClicked(){
+    @objc func nextBtnDidClicked(){
+        let vc = CheckExchangeRegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func exitBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -159,11 +127,11 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
             
         }else{
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier)
-                    as? ProductInputTextFieldTabeViewCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier)
+                    as? ProductNameTabeViewCell else { fatalError() }
             
-            cell.productName.delegate = self
-            cell.productName.tag = indexPath.section
+            cell.productNameTextField.delegate = self
+            cell.productNameTextField.tag = indexPath.section
 
             return cell
         }
@@ -186,10 +154,10 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
                         self.isFieldOpen[indexPath.section] = true
                     }
                     
-                    self.tableView.reloadData()
+                    self.registerView.tableView.reloadData()
                     
                     if(indexPath.section == 2){
-                        self.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
+                        self.registerView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
                     }
                 }
                 

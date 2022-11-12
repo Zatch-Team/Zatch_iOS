@@ -37,24 +37,24 @@ class MapAlertViewController: AlertViewController {
         
         super.viewDidLoad()
         
-        setUpView()
-        setUpConstraint()
+        hierarchy()
+        layout()
         
         self.settingOkBtnWhiteBackground()
     }
     
-    override func setUpView() {
+    override func hierarchy() {
         
         super.btnStackView.addArrangedSubview(cancelBtn)
-        super.setUpView()
+        super.hierarchy()
         
         self.containerView.addSubview(characterImage)
         self.containerView.addSubview(messageLabel)
     }
     
-    override func setUpConstraint() {
+    override func layout() {
         
-        super.setUpConstraint()
+        super.layout()
         
         characterImage.snp.makeConstraints{
             $0.top.equalToSuperview().offset(22.5)

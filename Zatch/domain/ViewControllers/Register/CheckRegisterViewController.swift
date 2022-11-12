@@ -11,28 +11,45 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
     
     let mainView = CheckRegisterView().then{
         $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
-//        $0.exitBtn.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
     }
     
     //MARK: - LifeCycle
 
     override func viewDidLoad() {
-
         super.viewDidLoad()
+    }
+    
+    //MARK: - Override
+    
+    override func style(){
+        
+        super.style()
+        
         self.navigationTitle.text = "재치 등록하기"
+        self.addRightTopBtn(image: UIImage(named: "exit")!)
+    }
+    
+    override func initialize(){
         
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-//            $0.top.equalToSuperview().offset(88)
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-38)
-        }
+        super.initialize()
         
         mainView.photoCollectionView.delegate = self
         mainView.photoCollectionView.dataSource = self
         
         mainView.addExplainTextView.delegate = self
+    }
+    
+    override func layout(){
+        
+        super.layout()
+        
+        self.view.addSubview(mainView)
+        
+        mainView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
 
     }
 
@@ -47,12 +64,14 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
         self.present(alert, animated: false, completion: nil)
     }
     
-    @objc func exitBtnDidClicked(){
+    override func rightPositionBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         self.view.endEditing(true)
+        
         UIView.animate(withDuration: 0.3){
             self.view.window?.frame.origin.y = 0
         }

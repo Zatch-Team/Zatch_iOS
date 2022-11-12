@@ -16,17 +16,27 @@ class BaseTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.selectedBackgroundView = UIView()
-        
-        self.contentView.addSubview(baseView)
-        
-        baseView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
+        setting()
+        hierarchy()
+        layout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setting() {
+        self.selectedBackgroundView = UIView()
+    }
+    
+    func hierarchy() {
+        self.contentView.addSubview(baseView)
+    }
+    
+    func layout() {
+        baseView.snp.makeConstraints{ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
     }
     
 }

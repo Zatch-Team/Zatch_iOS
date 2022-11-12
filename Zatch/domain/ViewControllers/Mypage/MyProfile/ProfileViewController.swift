@@ -19,7 +19,7 @@ class ProfileViewController: BaseCenterTitleViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
-        super.navigationTitle.text = "내 프로필"
+        self.navigationTitle.text = "내 프로필"
         
         profileView = MyProfileView()
         self.view.addSubview(profileView)

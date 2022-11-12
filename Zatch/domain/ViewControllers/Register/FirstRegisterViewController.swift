@@ -10,43 +10,99 @@ import UIKit
 class FirstRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - Properties
+    
+    struct ZatchFirstInput{ //상품 정보 유효성 검사 위한 데이터 저장 구조체(서버 통신용 Model 아님)
+        var category: String = ""
+        var productName: String = ""
+        var images = [UIImage]()
+        var buyDate: String = ""
+        var endDate: String = ""
+    }
+    
+    enum InvalidationMessage: String{
+        case category = "카테고리를 입력해주세요."
+        case productName = "상품 이름을 입력해주세요."
+        case image = "이미지를 최소 1장 이상 첨부해주세요."
+        case buyDate = "구매일자를 입력해주세요."
+        case endDate = "유통기한을 입력해주세요."
+    }
+    
     var isOpen = false
     
-    //MARK: - UI
-    let topView = TitleView().then{
-        $0.titleLabel.text = "주고 싶은\n물건이 무엇인가요?"
+    var productInfo = ZatchFirstInput()
+    
+    let registerView = FirstRegisterView().then{
+        $0.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
     
-    var backTableView : UITableView!
+    //MARK: - LifeCycle
     
-    let nextButton = Purple36Button(title: "다음 단계로").then{
-        $0.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
-    }
-
     override func viewDidLoad() {
-        
-        super.navigationTitle.text = "재치 등록하기"
         super.viewDidLoad()
-
-        setInitView()
-        setUpView()
-        setUpConstraint()
     }
     
-    //MARK: - Action
+    //MARK: - Override
+    
+    override func style() {
+        
+        super.style()
+        
+        self.navigationTitle.text = "재치 등록하기"
+        
+        registerView.backTableView.settingCustomTableView(self)
+    }
+    
+    override func layout() {
+        
+        super.layout()
+        
+        self.view.addSubview(registerView)
+        
+        registerView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(88)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    //MARK: - Action
     
-    @objc
-    func nextBtnDidClicked(){
-        let vc  = SecondRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-
+    @objc func nextBtnDidClicked(){
+        
+        //cell에서 등록한 이미지 데이터 가져오기
+        guard let imageCell = registerView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
+        productInfo.images = imageCell.imageArray
+        
+        let alertType: FirstRegisterViewController.InvalidationMessage!
+        
+        if(productInfo.category.isEmpty){
+            alertType = .category
+        }else if(productInfo.productName.isEmpty){
+            alertType = .productName
+        }else if(productInfo.images.count == 0){
+            alertType = .image
+        }else if(productInfo.category == "음식|조리" && productInfo.buyDate.isEmpty){
+            alertType = .buyDate
+        }else if(productInfo.category == "음식|조리" && productInfo.endDate.isEmpty){
+            alertType = .endDate
+        }else{ //input 데이터 모두 유효할 경우, Second로 이동
+            let vc  = SecondRegisterViewController()
+            //TODO: Data 담아서 넘기기
+            self.navigationController?.pushViewController(vc, animated: true)
+            return
+        }
+        
+        let alert = BasicAlertViewController(message: alertType.rawValue)
+        alert.modalPresentationStyle = .overFullScreen
+        
+        self.present(alert, animated: false, completion: nil)
+        
+        
     }
-
 
 }
 
@@ -71,7 +127,8 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductInputTextFieldTabeViewCell.cellIdentifier, for: indexPath) as? ProductInputTextFieldTabeViewCell else{ fatalError("Cell Casting Error")}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier, for: indexPath) as? ProductNameTabeViewCell else{ fatalError("Cell Casting Error")}
+                cell.productNameTextField.delegate = self
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageAddTableViewCell.cellIdentifier, for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
@@ -88,8 +145,10 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
                 cell.arrowImage.isSelected = !isOpen
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableViewCell.cellIdentifier, for: indexPath) as? FirstProductInfoTableViewCell else{ fatalError("Cell Casting Error")}
-                cell.navigationController = self.navigationController
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableView.cellIdentifier, for: indexPath) as? FirstProductInfoTableView else{ fatalError("Cell Casting Error")}
+                
+                cell.viewController = self
+                
                 return cell
             default:
                 fatalError("index error")
@@ -108,6 +167,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             vc.categorySelectHandler = { category in
                 guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
                 cell.categoryText.text = category
+                self.productInfo.category = category
             }
             
             vc.loadViewIfNeeded()
@@ -118,9 +178,15 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else { return}
             isOpen.toggle()
             cell.arrowImage.isSelected = isOpen
-            self.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
+            self.registerView.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
         }
     }
     
+}
+
+extension FirstRegisterViewController: UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.productInfo.productName = textField.text ?? ""
+    }
 }
 

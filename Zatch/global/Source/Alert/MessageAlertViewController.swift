@@ -31,25 +31,29 @@ class MessageAlertViewController: AlertViewController {
         
         super.viewDidLoad()
         
-        setUpView()
-        setUpConstraint()
+        hierarchy()
+        layout()
     }
     
-    override func setUpView(){
+    override func hierarchy(){
         
-        super.setUpView()
+        super.hierarchy()
         
         containerView.addSubview(messageLabel)
     }
     
-    override func setUpConstraint(){
+    override func layout(){
         
-        super.setUpConstraint()
+        super.layout()
         
         messageLabel.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(16)
             make.leading.equalToSuperview().offset(4)
             make.trailing.equalToSuperview().offset(-4)
+        }
+        
+        btnStackView.snp.makeConstraints{
+            $0.top.equalTo(messageLabel.snp.bottom).offset(10)
         }
     }
 }

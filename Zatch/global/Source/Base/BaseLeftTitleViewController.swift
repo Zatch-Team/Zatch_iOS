@@ -10,8 +10,12 @@ import UIKit
 class BaseLeftTitleViewController: BaseViewController {
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+
+    override func layout() {
+        
+        super.layout()
         
         navigationView.addSubview(navigationTitle)
         
@@ -20,6 +24,5 @@ class BaseLeftTitleViewController: BaseViewController {
             $0.leading.equalTo(backBtn.snp.trailing).offset(4)
         }
     }
-    
     
 }

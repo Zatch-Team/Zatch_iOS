@@ -9,6 +9,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    //MARK: - Generator
+    
     init(){
         super.init(nibName: nil, bundle: nil)
         self.viewDidLoad()
@@ -30,6 +32,8 @@ class BaseViewController: UIViewController {
         super.init(coder: coder)
     }
     
+    //MARK: - Properties
+    
     let navigationView = UIView()
     
     lazy var backBtn = UIButton().then{
@@ -44,23 +48,34 @@ class BaseViewController: UIViewController {
     
     lazy var rightPositionBtn: EtcButton? = nil{
         didSet{
-            setRightPositionBtn()
+            settingRightPostionBtn()
         }
     }
+    
+    //MARK: - LifeCycle
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
+        style()
+        initialize()
+        layout()
+    }
+    
+    func style() {
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
+    }
+    
+    func initialize() {}
+    
+    func layout() {
         
-        //setUpView
         self.view.addSubview(navigationView)
         
         navigationView.addSubview(backBtn)
         
-        //setUpConstraint
         navigationView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(44)
             make.leading.trailing.equalToSuperview()
@@ -75,6 +90,8 @@ class BaseViewController: UIViewController {
         }
     }
     
+    //MARK: - Action
+    
     @objc func backBtnDidClicked(){
         self.navigationController?.popViewController(animated: true)
     }
@@ -83,7 +100,17 @@ class BaseViewController: UIViewController {
         print("right position btn did clicked")
     }
     
-    func setRightPositionBtn(){
+    //MARK: - Method
+    
+    func addRightTopBtn(title: String){
+        self.rightPositionBtn = EtcButton(title: title)
+    }
+    
+    func addRightTopBtn(image: UIImage){
+        self.rightPositionBtn = EtcButton(image: image)
+    }
+    
+    func settingRightPostionBtn(){
         
         guard let rightPositionBtn = rightPositionBtn else {
             return

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
+class ProductNameTabeViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     
@@ -19,7 +19,7 @@ class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
         $0.backgroundColor = .black5
     }
     
-    let productName = UITextField().then{
+    let productNameTextField = UITextField().then{
         $0.font = UIFont.pretendard(family: .Medium)
         $0.placeholder = "상품 이름을 입력해주세요."
     }
@@ -37,12 +37,12 @@ class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
     }
     
     override func prepareForReuse() {
-        self.productName.delegate = nil
+        self.productNameTextField.delegate = nil
     }
     
     func setUpView(){
         baseView.addSubview(boundaryLine)
-        baseView.addSubview(productName)
+        baseView.addSubview(productNameTextField)
     }
     
     func setUpConstraint(){
@@ -62,7 +62,7 @@ class ProductInputTextFieldTabeViewCell: BaseTableViewCell {
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        productName.snp.makeConstraints{ make in
+        productNameTextField.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(36)
             make.centerY.equalToSuperview()
         }

@@ -50,23 +50,23 @@ class DatePickerAlertViewController: PickerAlertViewController {
     
     //MARK: - Helper
     
-    override func setUpView() {
+    override func hierarchy() {
         
-        super.setUpView()
+        super.hierarchy()
 
         super.containerView.addSubview(datePicker)
     }
     
-    override func setUpConstraint() {
+    override func layout() {
         
-        super.setUpConstraint()
+        super.layout()
         
         datePicker.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(44)
             make.leading.equalToSuperview().offset(36)
             make.trailing.equalToSuperview().offset(-36)
             make.height.equalTo(130)
-            make.bottom.equalTo(super.btnStackView.snp.top).offset(-20)
+            make.bottom.equalTo(self.btnStackView.snp.top).offset(-20)
         }
     }
     

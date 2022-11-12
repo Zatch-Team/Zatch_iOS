@@ -19,13 +19,11 @@ class BasicAlertViewController: MessageAlertViewController {
         
     }
 
-    override func setUpConstraint(){
+    override func layout(){
         
-        super.setUpConstraint()
+        super.layout()
         
         btnStackView.snp.makeConstraints{ make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(messageLabel.snp.bottom).offset(10)
             make.bottom.equalToSuperview().offset(-16)
         }
     }

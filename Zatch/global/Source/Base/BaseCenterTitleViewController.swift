@@ -10,8 +10,12 @@ import UIKit
 class BaseCenterTitleViewController: BaseViewController{
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+    
+    override func layout() {
+        
+        super.layout()
         
         navigationView.addSubview(navigationTitle)
         
