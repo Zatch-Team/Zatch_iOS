@@ -59,7 +59,6 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         style()
-        hierarchy()
         layout()
     }
     
@@ -68,14 +67,11 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    func hierarchy() {
+    func layout() {
         
         self.view.addSubview(navigationView)
         
         navigationView.addSubview(backBtn)
-    }
-    
-    func layout() {
         
         navigationView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(44)

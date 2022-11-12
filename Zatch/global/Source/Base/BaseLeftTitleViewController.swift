@@ -12,17 +12,12 @@ class BaseLeftTitleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func hierarchy() {
-        
-        super.hierarchy()
-        
-        navigationView.addSubview(navigationTitle)
-    }
-    
+
     override func layout() {
         
         super.layout()
+        
+        navigationView.addSubview(navigationTitle)
         
         navigationTitle.snp.makeConstraints{
             $0.centerY.equalToSuperview()
