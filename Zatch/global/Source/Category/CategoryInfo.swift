@@ -7,19 +7,14 @@
 
 import Foundation
 
-enum CategoryType{
-    case Zatch
-    case Gatch
-}
-
 struct CategoryInfo{
     let title: String
     let image: UIImage
 }
 
-extension CategoryType{
+extension ServiceType{
     
-    var categoryInfoList: [CategoryInfo]{
+    var categories: [CategoryInfo]{
         switch self{
         case .Zatch:    return [CategoryInfo(title: "음식", image: Image.category0)] + defaultCategories
         case .Gatch:    return [CategoryInfo(title: "음식|조리", image: Image.category0),
@@ -27,8 +22,8 @@ extension CategoryType{
         }
     }
     
-    func getInfo(at: Int) -> CategoryInfo{
-        return self.categoryInfoList[at]
+    func getCategoryFromCategories(at: Int) -> CategoryInfo{
+        return self.categories[at]
     }
 }
 

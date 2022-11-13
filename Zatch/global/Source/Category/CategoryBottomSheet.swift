@@ -19,12 +19,12 @@ class CategoryBottomSheet: SheetViewController {
 
     var collectionView : UICollectionView!
     
-    var categoryType: CategoryType!
+    var service: ServiceType!
     
     //MARK: - LifeCycle
     
-    init(type: CategoryType){
-        self.categoryType = type
+    init(service: ServiceType){
+        self.service = service
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -84,7 +84,7 @@ class CategoryBottomSheet: SheetViewController {
 extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryType == .Zatch ? 15 : 16
+        return service == .Zatch ? 15 : 16
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -93,19 +93,16 @@ extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSou
             fatalError()
         }
         
-        let info = self.categoryType.getInfo(at: indexPath.row)
+        let category = self.service.getCategoryFromCategories(at: indexPath.row)
         
-        cell.categoryText.text = info.title
-        cell.categoryImage.image = info.image
+        cell.categoryText.text = category.title
+        cell.categoryImage.image = category.image
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         self.dismiss(animated: true, completion: nil)
-        categorySelectHandler(self.categoryType.getInfo(at: indexPath.row).title)
+        categorySelectHandler(self.service.getCategoryFromCategories(at: indexPath.row).title)
     }
-    
-    
 }

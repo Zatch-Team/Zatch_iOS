@@ -162,7 +162,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
         
         if(indexPath == [0,0]){
             
-            let vc = CategoryBottomSheet(type: .Zatch)
+            let vc = CategoryBottomSheet(service: .Zatch)
             
             vc.categorySelectHandler = { category in
                 guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
