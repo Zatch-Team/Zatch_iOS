@@ -106,7 +106,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     @objc
     func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
         
-        let vc = CategoryBottomSheet(type: .Zatch)
+        let vc = CategoryBottomSheet(service: .Zatch)
         
         vc.categorySelectHandler = { category in
             print(category)
