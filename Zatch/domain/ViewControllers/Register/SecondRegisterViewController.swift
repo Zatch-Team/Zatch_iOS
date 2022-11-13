@@ -143,7 +143,7 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
             dismissKeyboardView()
         }else{
             if(indexPath.row == 0){
-                let vc = CategoryBottomSheet()
+                let vc = CategoryBottomSheet(type: .Zatch)
                 vc.categorySelectHandler = { category in
                     
                     guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }

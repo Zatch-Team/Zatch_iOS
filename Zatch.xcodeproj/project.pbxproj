@@ -232,6 +232,7 @@
 		57B32C2E291F49DC0018C0CB /* SecondRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */; };
 		57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */; };
 		57B32C34291FB58F0018C0CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C33291FB58F0018C0CB /* Image.swift */; };
+		57B32C362920C5320018C0CB /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C352920C5320018C0CB /* CategoryType.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductNameTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9F70B28D94B7800ACEC94 /* Delegate.swift */; };
@@ -531,6 +532,7 @@
 		57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterView.swift; sourceTree = "<group>"; };
 		57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterModel.swift; sourceTree = "<group>"; };
 		57B32C33291FB58F0018C0CB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		57B32C352920C5320018C0CB /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57B9F70B28D94B7800ACEC94 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
@@ -1172,6 +1174,7 @@
 		571AD7112828D9C900390AAD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				57B32C352920C5320018C0CB /* CategoryType.swift */,
 				571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */,
 				57468A6D289CFFB700056691 /* CategoryBottomSheet.swift */,
 			);
@@ -1955,6 +1958,7 @@
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
+				57B32C362920C5320018C0CB /* CategoryType.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* DetailView.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
