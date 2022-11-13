@@ -126,15 +126,18 @@ extension RegisterQuestionViewController: UITableViewDelegate, UITableViewDataSo
         self.view.endEditing(true)
         
         if indexPath.row == 0 {
-            let vc = CategoryBottomSheet()
-            vc.categorySelectHandler = { category in
-                guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
-                cell.categoryText.text = category
-                self.isCategorySelected = true
-            }
             
-            vc.loadViewIfNeeded()
-            self.present(vc, animated: true, completion: nil)
+            //TODO: 문의 카테고리는 따로인데 재치/가치 상품 카테고리로 적용된 듯???
+            
+//            let vc = CategoryBottomSheet()
+//            vc.categorySelectHandler = { category in
+//                guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
+//                cell.categoryText.text = category
+//                self.isCategorySelected = true
+//            }
+//
+//            vc.loadViewIfNeeded()
+//            self.present(vc, animated: true, completion: nil)
         }
     }
 }
