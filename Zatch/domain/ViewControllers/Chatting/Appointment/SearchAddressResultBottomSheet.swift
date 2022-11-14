@@ -20,11 +20,31 @@ class SearchAddressResultSheetViewController: SheetViewController {
     let mainView = SearchAddressResultView()
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+    
+    //MARK: - Override
+    
+    override func style(){
         
-        sheetType = .MakeMeeting
-        titleLabel.text = "주소검색"
+        super.style()
+        
+        self.setBottomSheetStyle(type: .MakeMeeting)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
+        
+        mainView.searchTextField.delegate = self
+        
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+    }
+    
+    override func layout() {
+        
+        super.layout()
         
         self.view.addSubview(mainView)
         
@@ -32,10 +52,6 @@ class SearchAddressResultSheetViewController: SheetViewController {
             $0.top.equalTo(titleLabel.snp.bottom).offset(16)
             $0.leading.trailing.bottom.equalToSuperview()
         }
-        
-        mainView.searchTextField.delegate = self
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
     }
     
     //MARK: - API

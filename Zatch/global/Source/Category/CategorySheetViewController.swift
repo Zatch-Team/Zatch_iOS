@@ -1,5 +1,5 @@
 //
-//  CategoryBottomSheet.swift
+//  CategorySheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/05/09.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class CategoryBottomSheet: SheetViewController {
+class CategorySheetViewController: SheetViewController {
     
     //MARK: - Properties
     
@@ -17,7 +17,21 @@ class CategoryBottomSheet: SheetViewController {
     
     var currentCategory: Int?
 
-    var collectionView : UICollectionView!
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 16
+        
+        let width = UIScreen.main.bounds.size.width - 40
+        flowLayout.itemSize = CGSize(width: width/4, height: (width/4)/80*96)
+        
+        $0.collectionViewLayout = flowLayout
+        $0.showsVerticalScrollIndicator = false
+        $0.isScrollEnabled = false
+        
+        $0.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.cellIdentifier)
+    }
     
     var service: ServiceType!
     
@@ -33,55 +47,42 @@ class CategoryBottomSheet: SheetViewController {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.sheetType = .Category
-        
-        self.titleLabel.text = "카테고리"
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()) .then{
-            let flowLayout = UICollectionViewFlowLayout()
-            flowLayout.minimumInteritemSpacing = 0
-            flowLayout.minimumLineSpacing = 16
-            
-            let width = UIScreen.main.bounds.size.width - 40
-            flowLayout.itemSize = CGSize(width: width/4, height: (width/4)/80*96)
-            
-            $0.collectionViewLayout = flowLayout
-            $0.dataSource = self
-            $0.delegate = self
-            $0.showsVerticalScrollIndicator = false
-            $0.isScrollEnabled = false
-            
-            $0.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.cellIdentifier)
-            
-        }
-
-        setUpView()
-        setUpConstraint()
-        
     }
     
-    //MARK: - ViewSetting
+    //MARK: - Override
     
-    func setUpView(){
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .Category)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+    override func layout() {
+        
+        super.layout()
+        
         self.view.addSubview(collectionView)
-    }
-    
-    func setUpConstraint(){
         
-        self.collectionView.snp.makeConstraints{ make in
+        collectionView.snp.makeConstraints{ make in
             make.top.equalTo(super.titleLabel.snp.bottom).offset(20)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
-
     }
 }
 
-extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSource{
+extension CategorySheetViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return service == .Zatch ? 15 : 16
@@ -89,9 +90,8 @@ extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellIdentifier, for: indexPath) as? CategoryCollectionViewCell else{
-            fatalError()
-        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellIdentifier,
+                                                            for: indexPath) as? CategoryCollectionViewCell else { fatalError() }
         
         let category = self.service.getCategoryFromCategories(at: indexPath.row)
         
@@ -102,7 +102,7 @@ extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.dismiss(animated: true, completion: nil)
         categorySelectHandler(self.service.getCategoryFromCategories(at: indexPath.row).title)
+        self.dismiss(animated: true, completion: nil)
     }
 }

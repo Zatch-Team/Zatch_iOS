@@ -1,5 +1,5 @@
 //
-//  SearchAddressBottomSheet.swift
+//  SearchAddressSheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/09/06.
@@ -15,21 +15,31 @@ class SearchAddressSheetViewController: SheetViewController {
     let viewModel = SearchAddressViewModel()
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
-        setInitSetting()
-        bind()
     }
     
-    func setInitSetting(){
+    //MARK: - Override
+    
+    override func style(){
         
-        //sheetVC 기본 UI 설정
-        sheetType = .MakeMeeting
-        titleLabel.text = "주소검색"
+        super.style()
+        
+        self.setBottomSheetStyle(type: .MakeMeeting)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(willMoveMapViewController))
         mainView.myLocationFrame.addGestureRecognizer(tapGesture)
+        
+        mainView.searchTextField.delegate = self
+    }
+    
+    override func layout() {
+        
+        super.layout()
         
         self.view.addSubview(mainView)
         
@@ -38,19 +48,6 @@ class SearchAddressSheetViewController: SheetViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-36)
         }
-        
-        mainView.searchTextField.delegate = self
-    }
-    
-    func bind(){
-     /*
-        self.mainView.searchTextField.rx.controlEvent(.editingDidEndOnExit)
-            .asObservable()
-            .subscribe{ text in
-                print(text)
-            }
-//            .disposed(by: bag)
-      */
     }
     
     @objc func willMoveMapViewController(){

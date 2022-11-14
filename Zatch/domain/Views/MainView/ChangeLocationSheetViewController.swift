@@ -1,5 +1,5 @@
 //
-//  ChangeLocationBottomSheet.swift
+//  ChangeLocationSheetViewController.swift
 //  Zatch
 //
 //  Created by gomin on 2022/09/07.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ChangeLocationBottonSheet: SheetViewController {
+class ChangeLocationSheetViewController: SheetViewController {
 
     var locationTableView: UITableView!
     var viewModel: MainViewModel!
@@ -19,30 +19,43 @@ class ChangeLocationBottonSheet: SheetViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        super.sheetType = .LocationChange
-        super.titleLabel.text = "내 동네 변경하기"
-
-        locationTableView = UITableView()
-        locationTableView.delegate = self
-        locationTableView.dataSource = self
-        locationTableView.separatorStyle = .none
         
-        setUpView()
         if let viewModel = self.viewModel {
             bind()
         }
     }
-    func setUpView() {
+    
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .LocationChange)
+    }
+    
+    override func initialize() {
+        super.initialize()
+        
+        locationTableView = UITableView()
+        locationTableView.delegate = self
+        locationTableView.dataSource = self
+        locationTableView.separatorStyle = .none
+    }
+    
+    override func layout() {
+        
+        super.layout()
+        
         self.view.addSubview(locationTableView)
+        
         locationTableView.snp.makeConstraints{ make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(30)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
+    
 }
 // MARK: - 동네 변경 TableView delegate
-extension ChangeLocationBottonSheet: UITableViewDelegate, UITableViewDataSource {
+extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = locationData.count ?? 0
         return count
@@ -74,7 +87,7 @@ extension ChangeLocationBottonSheet: UITableViewDelegate, UITableViewDataSource 
     }
 }
 // MARK: - Observable
-extension ChangeLocationBottonSheet {
+extension ChangeLocationSheetViewController {
     //MARK: Methods
     private func bind() {
         self.viewModel.myLocation.bind { myLocation in

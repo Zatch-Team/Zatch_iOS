@@ -1,5 +1,5 @@
 //
-//  MemberDeclarationBottomSheet.swift
+//  MemberDeclarationSheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/08/28.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberDeclarationBottomSheet: SheetViewController {
+class MemberDeclarationSheetViewController: SheetViewController {
     
     let blockBtn = UILabel().then{
         $0.text = "차단하기"
@@ -27,11 +27,17 @@ class MemberDeclarationBottomSheet: SheetViewController {
     
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+    
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .Declaration)
+    }
 
-        super.sheetType = .Declaration
-        super.titleLabel.removeFromSuperview()
+    override func layout() {
         
         self.view.addSubview(blockBtn)
         self.view.addSubview(declarationBtn)
@@ -47,6 +53,5 @@ class MemberDeclarationBottomSheet: SheetViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-36)
         }
     }
-    
     
 }

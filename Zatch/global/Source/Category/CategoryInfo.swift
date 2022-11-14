@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CategoryInfo{
     let title: String
@@ -28,16 +29,16 @@ extension ServiceType{
 }
 
 private let defaultCategories = [CategoryInfo(title: "생활용품", image: Image.category2),
-                         CategoryInfo(title: "가구/인테리어", image: Image.category3),
-                         CategoryInfo(title: "디지털기기", image: Image.category4),
-                         CategoryInfo(title: "잡화", image: Image.category5),
-                         CategoryInfo(title: "의류", image: Image.category6),
-                         CategoryInfo(title: "뷰티/미용", image: Image.category7),
-                         CategoryInfo(title: "도서/문구류", image: Image.category8),
-                         CategoryInfo(title: "문화생활", image: Image.category9),
-                         CategoryInfo(title: "게임/취미", image: Image.category10),
-                         CategoryInfo(title: "스포츠/레저", image: Image.category11),
-                         CategoryInfo(title: "반려동물", image: Image.category12),
-                         CategoryInfo(title: "식물/원예", image: Image.category13),
-                         CategoryInfo(title: "차량용품", image: Image.category14),
-                         CategoryInfo(title: "기타물품", image: Image.category15)]
+                                 CategoryInfo(title: "가구/인테리어", image: Image.category3),
+                                 CategoryInfo(title: "디지털기기", image: Image.category4),
+                                 CategoryInfo(title: "잡화", image: Image.category5),
+                                 CategoryInfo(title: "의류", image: Image.category6),
+                                 CategoryInfo(title: "뷰티/미용", image: Image.category7),
+                                 CategoryInfo(title: "도서/문구류", image: Image.category8),
+                                 CategoryInfo(title: "문화생활", image: Image.category9),
+                                 CategoryInfo(title: "게임/취미", image: Image.category10),
+                                 CategoryInfo(title: "스포츠/레저", image: Image.category11),
+                                 CategoryInfo(title: "반려동물", image: Image.category12),
+                                 CategoryInfo(title: "식물/원예", image: Image.category13),
+                                 CategoryInfo(title: "차량용품", image: Image.category14),
+                                 CategoryInfo(title: "기타물품", image: Image.category15)]

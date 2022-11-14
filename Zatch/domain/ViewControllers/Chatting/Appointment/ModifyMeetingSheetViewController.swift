@@ -14,9 +14,21 @@ class ModifyMeetingSheetViewController: SheetViewController {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        super.titleLabel.removeFromSuperview()
+    }
+    
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .MakeMeeting)
+    }
+    
+    override func initialize() {
+        super.initialize()
+    }
+    
+    override func layout() {
         
         self.view.addSubview(mainView)
         

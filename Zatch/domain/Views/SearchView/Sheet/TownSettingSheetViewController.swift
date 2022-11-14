@@ -1,5 +1,5 @@
 //
-//  TownSettingBottom.swift
+//  TownSettingSheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/08/09.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TownSettingBottomSheet: SheetViewController {
+class TownSettingSheetViewController: SheetViewController {
     
     //MARK: - Properties
     
@@ -17,7 +17,6 @@ class TownSettingBottomSheet: SheetViewController {
     
     let townImage = UIImageView().then{
         $0.contentMode = .scaleAspectFit
-//        $0.backgroundColor = .blue
     }
 
     let slider = TownSlider().then{
@@ -29,25 +28,31 @@ class TownSettingBottomSheet: SheetViewController {
     }
 
     override func viewDidLoad() {
-        
-        super.sheetType = .TownArea
-        super.titleLabel.text = "동네 범위 설정"
-        
         super.viewDidLoad()
+    }
+    
+    //MARK: - Override
+    
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .TownArea)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
         
         townImage.image = Image.townSetting1
-        
-        setUpView()
-        setUpConstraint()
-        
     }
     
-    private func setUpView(){
+    override func layout() {
+        
+        super.layout()
+        
         self.view.addSubview(townImage)
         self.view.addSubview(slider)
-    }
-    
-    private func setUpConstraint(){
         
         self.townImage.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(138)
@@ -63,7 +68,7 @@ class TownSettingBottomSheet: SheetViewController {
             make.height.equalTo(40)
         }
     }
-    
+
     @objc
     func sliderValueChanged(_ slider : UISlider){
         
