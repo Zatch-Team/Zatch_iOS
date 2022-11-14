@@ -30,7 +30,7 @@ class TownSettingBottomSheet: SheetViewController {
 
     override func viewDidLoad() {
         
-        super.sheetSize = .TownArea
+        super.bottomSheetType = .TownArea
         super.titleLabel.text = "동네 범위 설정"
         
         super.viewDidLoad()

@@ -36,7 +36,7 @@ class CategoryBottomSheet: SheetViewController {
         
         super.viewDidLoad()
         
-        self.sheetSize = .Category
+        self.bottomSheetType = .Category
         
         self.titleLabel.text = "카테고리"
         

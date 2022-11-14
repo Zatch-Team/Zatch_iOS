@@ -25,7 +25,7 @@ class SearchAddressSheetViewController: SheetViewController {
     func setInitSetting(){
         
         //sheetVC 기본 UI 설정
-        sheetSize = .MakeMeeting
+        bottomSheetType = .MakeMeeting
         titleLabel.text = "주소검색"
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(willMoveMapViewController))

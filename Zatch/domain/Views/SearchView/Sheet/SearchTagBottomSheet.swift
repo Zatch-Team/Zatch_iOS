@@ -23,7 +23,7 @@ class SearchTagBottomSheet: SheetViewController {
     
     override func viewDidLoad() {
         
-        super.sheetSize = .SearchTag
+        super.bottomSheetType = .SearchTag
         
         super.viewDidLoad()
         
