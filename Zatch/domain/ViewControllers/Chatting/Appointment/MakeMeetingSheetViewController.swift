@@ -17,10 +17,31 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+    
+    //MARK: - Override
+    
+    override func style(){
         
-        super.titleLabel.removeFromSuperview()
+        super.style()
+        
+        //TODO: - Type 지정이 바꿔야 할 듯?
+        self.setBottomSheetStyle(type: .MakeMeeting)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
+        
+        let locationTap = UITapGestureRecognizer(target: self, action: #selector(willLocationSearchSheetOpen))
+        mainView.locationLabel.addGestureRecognizer(locationTap)
+
+        let timeTap = UITapGestureRecognizer(target: self, action: #selector(timePickerWillAppear))
+        mainView.timeStackView.addGestureRecognizer(timeTap)
+    }
+    
+    override func layout() {
         
         self.view.addSubview(mainView)
         
@@ -28,12 +49,6 @@ class MakeMeetingSheetViewController: SheetViewController {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-23)
         }
-        
-        let locationTap = UITapGestureRecognizer(target: self, action: #selector(willLocationSearchSheetOpen))
-        mainView.locationLabel.addGestureRecognizer(locationTap)
-
-        let timeTap = UITapGestureRecognizer(target: self, action: #selector(timePickerWillAppear))
-        mainView.timeStackView.addGestureRecognizer(timeTap)
     }
     
     @objc func timePickerWillAppear(){
