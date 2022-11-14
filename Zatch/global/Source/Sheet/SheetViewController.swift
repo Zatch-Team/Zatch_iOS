@@ -98,11 +98,6 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
      super.initialize()
  }
  
- override func hierarchy() {
-     super.hierarchy()
-     
- }
- 
  override func layout() {
      super.layout()
  }
