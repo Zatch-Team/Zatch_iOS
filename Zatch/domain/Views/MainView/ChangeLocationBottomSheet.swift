@@ -20,7 +20,7 @@ class ChangeLocationBottonSheet: SheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.sheetType = .LocationChange
+        super.sheetSize = .LocationChange
         super.titleLabel.text = "내 동네 변경하기"
 
         locationTableView = UITableView()

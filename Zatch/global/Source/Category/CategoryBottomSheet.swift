@@ -36,7 +36,7 @@ class CategoryBottomSheet: SheetViewController {
         
         super.viewDidLoad()
         
-        self.sheetType = .Category
+        self.sheetSize = .Category
         
         self.titleLabel.text = "카테고리"
         
@@ -89,9 +89,8 @@ extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellIdentifier, for: indexPath) as? CategoryCollectionViewCell else{
-            fatalError()
-        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellIdentifier,
+                                                            for: indexPath) as? CategoryCollectionViewCell else { fatalError() }
         
         let category = self.service.getCategoryFromCategories(at: indexPath.row)
         
@@ -102,7 +101,7 @@ extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.dismiss(animated: true, completion: nil)
         categorySelectHandler(self.service.getCategoryFromCategories(at: indexPath.row).title)
+        self.dismiss(animated: true, completion: nil)
     }
 }

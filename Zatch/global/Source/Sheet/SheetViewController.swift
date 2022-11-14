@@ -11,6 +11,8 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     
     //MARK: - Properties
     
+    //TODO: - SheetSize, Title 동시 관리 자료형 설계
+    
     //safe area height 하단 -> 34
     enum BottomSheetSize: CGFloat{
         case SearchTag = 219
@@ -21,7 +23,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         case LocationChange = 216
     }
     
-    var sheetType: BottomSheetSize!
+    var sheetSize: BottomSheetSize!
     
     var grabberVisibility: Bool = false
     
@@ -34,26 +36,17 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        modalPresentationStyle = .custom
-        transitioningDelegate = self
         
-        self.view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = true
-        
-        self.view.addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(24)
-            make.centerX.equalToSuperview()
-        }
+        initialize()
+        hierarchy()
+        layout()
     }
 
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
         
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Test1", constant: sheetType.rawValue * Const.Device.DEVICE_HEIGHT / 810)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Detent1", constant: sheetSize.rawValue * Const.Device.DEVICE_HEIGHT / 810)
     
         controller.detents = [detent]
         controller.preferredCornerRadius = 28
@@ -61,5 +54,27 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         
         return controller
     }
+    
+    func style(){
+        self.view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    func initialize() {
+        modalPresentationStyle = .custom
+        transitioningDelegate = self
+    }
+    
+    func hierarchy() {
+        self.view.addSubview(titleLabel)
+    }
+    
+    func layout() {
+        titleLabel.snp.makeConstraints{ make in
+            make.top.equalToSuperview().offset(24)
+            make.centerX.equalToSuperview()
+        }
+    }
 
 }
+

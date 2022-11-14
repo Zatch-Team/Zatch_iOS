@@ -30,7 +30,7 @@ class MemberDeclarationBottomSheet: SheetViewController {
         
         super.viewDidLoad()
 
-        super.sheetType = .Declaration
+        super.sheetSize = .Declaration
         super.titleLabel.removeFromSuperview()
         
         self.view.addSubview(blockBtn)

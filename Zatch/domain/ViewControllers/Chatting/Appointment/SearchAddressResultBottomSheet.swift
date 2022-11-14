@@ -23,7 +23,7 @@ class SearchAddressResultSheetViewController: SheetViewController {
         
         super.viewDidLoad()
         
-        sheetType = .MakeMeeting
+        sheetSize = .MakeMeeting
         titleLabel.text = "주소검색"
         
         self.view.addSubview(mainView)
