@@ -40,18 +40,12 @@ class SearchTagBottomSheet: SheetViewController {
     override func initialize() {
         super.initialize()
     }
-    
-    override func hierarchy() {
-        
-        super.hierarchy()
-        
-        self.view.addSubview(collectionView)
-        
-    }
-    
+
     override func layout() {
         
         super.layout()
+        
+        self.view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints{ make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(55)

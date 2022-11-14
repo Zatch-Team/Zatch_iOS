@@ -67,16 +67,11 @@ class CategoryBottomSheet: SheetViewController {
         collectionView.delegate = self
     }
     
-    override func hierarchy() {
-        
-        super.hierarchy()
-        
-        self.view.addSubview(collectionView)
-    }
-    
     override func layout() {
         
         super.layout()
+        
+        self.view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints{ make in
             make.top.equalTo(super.titleLabel.snp.bottom).offset(20)

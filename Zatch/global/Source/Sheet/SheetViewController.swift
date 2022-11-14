@@ -44,7 +44,6 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         
         style()
         initialize()
-        hierarchy()
         layout()
     }
 
@@ -71,11 +70,10 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         transitioningDelegate = self
     }
     
-    func hierarchy() {
-        self.view.addSubview(titleLabel)
-    }
-    
     func layout() {
+        
+        self.view.addSubview(titleLabel)
+        
         titleLabel.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(24)
             make.centerX.equalToSuperview()
