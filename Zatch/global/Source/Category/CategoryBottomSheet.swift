@@ -17,7 +17,21 @@ class CategoryBottomSheet: SheetViewController {
     
     var currentCategory: Int?
 
-    var collectionView : UICollectionView!
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 16
+        
+        let width = UIScreen.main.bounds.size.width - 40
+        flowLayout.itemSize = CGSize(width: width/4, height: (width/4)/80*96)
+        
+        $0.collectionViewLayout = flowLayout
+        $0.showsVerticalScrollIndicator = false
+        $0.isScrollEnabled = false
+        
+        $0.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.cellIdentifier)
+    }
     
     var service: ServiceType!
     
@@ -33,51 +47,43 @@ class CategoryBottomSheet: SheetViewController {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.bottomSheetType = .Category
-        
-        self.titleLabel.text = "카테고리"
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()) .then{
-            let flowLayout = UICollectionViewFlowLayout()
-            flowLayout.minimumInteritemSpacing = 0
-            flowLayout.minimumLineSpacing = 16
-            
-            let width = UIScreen.main.bounds.size.width - 40
-            flowLayout.itemSize = CGSize(width: width/4, height: (width/4)/80*96)
-            
-            $0.collectionViewLayout = flowLayout
-            $0.dataSource = self
-            $0.delegate = self
-            $0.showsVerticalScrollIndicator = false
-            $0.isScrollEnabled = false
-            
-            $0.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.cellIdentifier)
-            
-        }
-
-        setUpView()
-        setUpConstraint()
-        
     }
     
-    //MARK: - ViewSetting
+    //MARK: - Override
     
-    func setUpView(){
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .Category)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+    override func hierarchy() {
+        
+        super.hierarchy()
+        
         self.view.addSubview(collectionView)
     }
     
-    func setUpConstraint(){
+    override func layout() {
         
-        self.collectionView.snp.makeConstraints{ make in
+        super.layout()
+        
+        collectionView.snp.makeConstraints{ make in
             make.top.equalTo(super.titleLabel.snp.bottom).offset(20)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
-
     }
 }
 
