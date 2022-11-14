@@ -27,7 +27,11 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     
     //MARK: - Properties
     
-    var bottomSheetType: BottomSheetType!
+    var bottomSheetType: BottomSheetType!{
+        didSet{
+            self.titleLabel.text = bottomSheetType.title
+        }
+    }
     
     let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
@@ -38,6 +42,7 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         
         super.viewDidLoad()
         
+        style()
         initialize()
         hierarchy()
         layout()
@@ -59,8 +64,6 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     func style(){
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
-        
-        self.titleLabel.text = bottomSheetType.title
     }
     
     func initialize() {
@@ -84,6 +87,28 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     }
 
 }
+
+/*
+ override func style(){
+     
+     super.style()
+     
+     self.setBottomSheetStyle(type: .SearchMyTag)
+ }
+ 
+ override func initialize() {
+     super.initialize()
+ }
+ 
+ override func hierarchy() {
+     super.hierarchy()
+     
+ }
+ 
+ override func layout() {
+     super.layout()
+ }
+ */
 
 extension BottomSheetType{
     

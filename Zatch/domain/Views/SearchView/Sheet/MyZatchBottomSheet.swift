@@ -14,17 +14,25 @@ class MyZatchBottomSheet: SearchTagBottomSheet{
         
         super.viewDidLoad()
         
-        super.titleLabel.text = "내가 등록한 재치"
-        
-        super.tagData = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        collectionView.register(MyTagSearchResultCollectionViewCell.self, forCellWithReuseIdentifier: MyTagSearchResultCollectionViewCell.cellIdentifier)
-        
+        self.tagData = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
     }
     
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .SearchMyTag)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        self.collectionView.register(MyTagSearchResultCollectionViewCell.self, forCellWithReuseIdentifier: MyTagSearchResultCollectionViewCell.cellIdentifier)
+    }
 }
 
 extension MyZatchBottomSheet : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

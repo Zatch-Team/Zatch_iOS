@@ -11,14 +11,25 @@ class WantZatchBottomSheet: SearchTagBottomSheet {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        super.titleLabel.text = "내가 찾는 재치"
         
-        super.tagData = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
+        self.tagData = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
+    }
+    
+    override func style(){
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(WantTagSearchResultCollectionViewCell.self, forCellWithReuseIdentifier: WantTagSearchResultCollectionViewCell.cellIdentifier)
+        super.style()
+        
+        self.setBottomSheetStyle(type: .SearchWantTag)
+    }
+    
+    override func initialize() {
+        
+        super.initialize()
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        self.collectionView.register(WantTagSearchResultCollectionViewCell.self, forCellWithReuseIdentifier: WantTagSearchResultCollectionViewCell.cellIdentifier)
     }
 
 }

@@ -19,38 +19,42 @@ class SearchTagBottomSheet: SheetViewController {
 
     //MARK: - UI
     
-    var collectionView : UICollectionView!
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+        
+        let flexLayout = LeftAlignCollectionViewFlowLayout()
+        flexLayout.minimumLineSpacing = 16
+        flexLayout.minimumInteritemSpacing = 8
+        
+        $0.collectionViewLayout = flexLayout
+    }
     
     override func viewDidLoad() {
         
-        super.bottomSheetType = .SearchTag
+//        super.bottomSheetType = .SearchTag
         
         super.viewDidLoad()
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-            
-            let flexLayout = LeftAlignCollectionViewFlowLayout()
-            flexLayout.minimumLineSpacing = 16
-            flexLayout.minimumInteritemSpacing = 8
-            
-            $0.collectionViewLayout = flexLayout
+    }
 
-        }
-        
-        setUpView()
-        setUpConstraint()
-
+    //MARK: - Override
+    
+    override func initialize() {
+        super.initialize()
     }
     
-    //MARK: - Helper
-    func setUpView(){
+    override func hierarchy() {
+        
+        super.hierarchy()
+        
         self.view.addSubview(collectionView)
+        
     }
     
-    func setUpConstraint(){
+    override func layout() {
+        
+        super.layout()
         
         collectionView.snp.makeConstraints{ make in
-            make.top.equalTo(super.titleLabel.snp.bottom).offset(55)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(55)
             make.leading.equalToSuperview().offset(33)
             make.trailing.equalToSuperview().offset(-33)
             make.bottom.equalToSuperview().offset(-30)
