@@ -27,11 +27,17 @@ class MemberDeclarationBottomSheet: SheetViewController {
     
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+    
+    override func style(){
+        
+        super.style()
+        
+        self.setBottomSheetStyle(type: .Declaration)
+    }
 
-        super.bottomSheetType = .Declaration
-        super.titleLabel.removeFromSuperview()
+    override func layout() {
         
         self.view.addSubview(blockBtn)
         self.view.addSubview(declarationBtn)
@@ -47,6 +53,5 @@ class MemberDeclarationBottomSheet: SheetViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-36)
         }
     }
-    
     
 }
