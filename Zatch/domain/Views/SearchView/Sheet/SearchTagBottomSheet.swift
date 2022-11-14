@@ -29,9 +29,6 @@ class SearchTagBottomSheet: SheetViewController {
     }
     
     override func viewDidLoad() {
-        
-//        super.bottomSheetType = .SearchTag
-        
         super.viewDidLoad()
     }
 
