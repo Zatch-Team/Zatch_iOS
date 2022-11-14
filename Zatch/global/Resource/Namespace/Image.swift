@@ -63,7 +63,7 @@ enum Image{
     public static let heartYellow = UIImage(named: "heart_yellow")!
     public static let heart = UIImage(named: "heart")!
     public static let imageAddButton = UIImage(named: "image_add_button")!
-    public static let mySpot = UIImage(named: "mySpot")!
+    public static let mySpot = UIImage(named: "my_spot")!
     public static let pin = UIImage(named: "pin")!
     public static let profileChat = UIImage(named: "profile_chat")!
     public static let profileEmptyHeart = UIImage(named: "profile_emptyHeart")!
