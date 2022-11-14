@@ -25,7 +25,7 @@ struct ChatMessage{
 class ChattingRoomViewController: BaseViewController {
 
     //MARK: - Properties
-    var memberBlockBottomSheet: MemberDeclarationBottomSheet?
+    var memberBlockBottomSheet: MemberDeclarationSheetViewController?
     var sideMenuViewController : ChattingSideSheetViewController?
     
     var messageData: [ChatMessage] = [] {
@@ -169,7 +169,7 @@ class ChattingRoomViewController: BaseViewController {
             print(indexPath)
             
             sideMenu.dismiss(animated: true, completion: {
-                self.memberBlockBottomSheet = MemberDeclarationBottomSheet()
+                self.memberBlockBottomSheet = MemberDeclarationSheetViewController()
                 
                 let blockGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
                 self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(blockGesture)

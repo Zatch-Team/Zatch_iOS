@@ -8,7 +8,7 @@
 import Foundation
 
 class MainViewController: UIViewController {
-    var locationChangeBottomSheet: ChangeLocationBottonSheet?
+    var locationChangeBottomSheet: ChangeLocationSheetViewController?
     var viewModel: MainViewModel!
     let mainView: MainView = MainView()
     
@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
         self.mainView.arrowButton.isSelected = true
         self.mainView.layoutIfNeeded()
         
-        locationChangeBottomSheet = ChangeLocationBottonSheet()
+        locationChangeBottomSheet = ChangeLocationSheetViewController()
         locationChangeBottomSheet?.mainView = self.mainView
         locationChangeBottomSheet?.viewModel = self.viewModel
         let currentLocation = mainView.locationLabel.text!

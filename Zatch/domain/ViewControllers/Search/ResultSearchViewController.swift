@@ -78,7 +78,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     @objc
     func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottomSheet = MyZatchBottomSheet()
+        let bottomSheet = MyZatchSheetViewController()
         bottomSheet.currentTag = myZatchIndex
         
         bottomSheet.selectCompleteHandelr = { text, index in
@@ -92,7 +92,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     @objc
     func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottomSheet = WantZatchBottomSheet()
+        let bottomSheet = WantZatchSheetViewController()
         bottomSheet.currentTag = wantZatchIndex
         
         bottomSheet.selectCompleteHandelr = { text, index in
@@ -106,7 +106,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     @objc
     func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
         
-        let vc = CategoryBottomSheet(service: .Zatch)
+        let vc = CategorySheetViewController(service: .Zatch)
         
         vc.categorySelectHandler = { category in
             print(category)
@@ -147,7 +147,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     @objc
     func townFrameDidClicked(){
-        let vc = TownSettingBottomSheet()
+        let vc = TownSettingSheetViewController()
         
         vc.townSelectHandelr = { town in
             print(town)

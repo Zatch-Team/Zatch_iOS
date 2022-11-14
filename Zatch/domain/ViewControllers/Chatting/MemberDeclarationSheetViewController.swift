@@ -1,5 +1,5 @@
 //
-//  MemberDeclarationBottomSheet.swift
+//  MemberDeclarationSheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/08/28.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberDeclarationBottomSheet: SheetViewController {
+class MemberDeclarationSheetViewController: SheetViewController {
     
     let blockBtn = UILabel().then{
         $0.text = "차단하기"

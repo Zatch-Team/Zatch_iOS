@@ -1,5 +1,5 @@
 //
-//  ChangeLocationBottomSheet.swift
+//  ChangeLocationSheetViewController.swift
 //  Zatch
 //
 //  Created by gomin on 2022/09/07.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ChangeLocationBottonSheet: SheetViewController {
+class ChangeLocationSheetViewController: SheetViewController {
 
     var locationTableView: UITableView!
     var viewModel: MainViewModel!
@@ -55,7 +55,7 @@ class ChangeLocationBottonSheet: SheetViewController {
     
 }
 // MARK: - 동네 변경 TableView delegate
-extension ChangeLocationBottonSheet: UITableViewDelegate, UITableViewDataSource {
+extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = locationData.count ?? 0
         return count
@@ -87,7 +87,7 @@ extension ChangeLocationBottonSheet: UITableViewDelegate, UITableViewDataSource 
     }
 }
 // MARK: - Observable
-extension ChangeLocationBottonSheet {
+extension ChangeLocationSheetViewController {
     //MARK: Methods
     private func bind() {
         self.viewModel.myLocation.bind { myLocation in

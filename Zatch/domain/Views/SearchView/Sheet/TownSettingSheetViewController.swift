@@ -1,5 +1,5 @@
 //
-//  TownSettingBottom.swift
+//  TownSettingSheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/08/09.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TownSettingBottomSheet: SheetViewController {
+class TownSettingSheetViewController: SheetViewController {
     
     //MARK: - Properties
     

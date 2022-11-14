@@ -1,5 +1,5 @@
 //
-//  MyZatchBottomSheet.swift
+//  MyZatchSheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/05/04.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MyZatchBottomSheet: SearchTagBottomSheet{
+class MyZatchSheetViewController: SearchTagSheetViewController{
     
     override func viewDidLoad() {
         
@@ -35,7 +35,7 @@ class MyZatchBottomSheet: SearchTagBottomSheet{
     }
 }
 
-extension MyZatchBottomSheet : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension MyZatchSheetViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

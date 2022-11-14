@@ -1,5 +1,5 @@
 //
-//  CategoryBottomSheet.swift
+//  CategorySheetViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/05/09.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class CategoryBottomSheet: SheetViewController {
+class CategorySheetViewController: SheetViewController {
     
     //MARK: - Properties
     
@@ -82,7 +82,7 @@ class CategoryBottomSheet: SheetViewController {
     }
 }
 
-extension CategoryBottomSheet: UICollectionViewDelegate, UICollectionViewDataSource{
+extension CategorySheetViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return service == .Zatch ? 15 : 16
