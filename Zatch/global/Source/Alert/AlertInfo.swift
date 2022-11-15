@@ -12,6 +12,11 @@ enum Alert{
     case ImageMax
     case Register
     case ImageDelete
+    case RegisterCategory
+    case ProductName
+    case ImageMin
+    case BuyDate
+    case EndDate
     
     //Map
     case LocationAuthority
@@ -52,6 +57,17 @@ extension Alert{
             
         case .ImageDelete:
             return CancelAlertViewController(message: "해당 이미지를 삭제하시겠습니까?")
+            
+        case .RegisterCategory:
+            return BasicAlertViewController(message: "카테고리를 입력해주세요.")
+        case .ProductName:
+            return BasicAlertViewController(message: "상품 이름을 입력해주세요.")
+        case .ImageMin:
+            return BasicAlertViewController(message: "이미지를 최소 1장 이상 첨부해주세요.")
+        case .BuyDate:
+            return BasicAlertViewController(message: "구매일자를 입력해주세요.")
+        case .EndDate:
+            return BasicAlertViewController(message: "유통기한을 입력해주세요.")
             
         case .LocationAuthority: return InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
             
