@@ -135,8 +135,9 @@ class AlertViewController: UIViewController {
     }
     
     @objc func okBtnDidClicked(){
-        self.confirmHandler?()
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false, completion: {
+            self.confirmHandler?()
+        })
     }
 
 }

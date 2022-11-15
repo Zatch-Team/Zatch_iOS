@@ -221,9 +221,7 @@ class ChattingRoomViewController: BaseViewController {
         
         alert.confirmHandler = {
                 print("차단 완료")
-            alert.dismiss(animated: false) {
-                bottomSheet.dismiss(animated: true, completion: nil)
-            }
+            bottomSheet.dismiss(animated: true, completion: nil)
         }
         
         alert.modalPresentationStyle = .overFullScreen

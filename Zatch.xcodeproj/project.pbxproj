@@ -234,6 +234,7 @@
 		57B32C34291FB58F0018C0CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C33291FB58F0018C0CB /* Image.swift */; };
 		57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C352920C5320018C0CB /* CategoryInfo.swift */; };
 		57B32C3829220EA10018C0CB /* BottomSheetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C3729220EA10018C0CB /* BottomSheetInfo.swift */; };
+		57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C39292261D30018C0CB /* AlertInfo.swift */; };
 		57B5D6D328346AB100EA1439 /* ProductNameTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9F70B28D94B7800ACEC94 /* Delegate.swift */; };
@@ -535,6 +536,7 @@
 		57B32C33291FB58F0018C0CB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		57B32C352920C5320018C0CB /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
 		57B32C3729220EA10018C0CB /* BottomSheetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetInfo.swift; sourceTree = "<group>"; };
+		57B32C39292261D30018C0CB /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57B9F70B28D94B7800ACEC94 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
@@ -1601,6 +1603,7 @@
 		57EBCE3C28A88E5000212D20 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				57B32C39292261D30018C0CB /* AlertInfo.swift */,
 				5722461528C2F827009B7C78 /* AlertViewController.swift */,
 				57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */,
 				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
@@ -2007,6 +2010,7 @@
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
 				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
+				57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */,
 				5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
