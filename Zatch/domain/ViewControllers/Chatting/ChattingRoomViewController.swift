@@ -197,15 +197,12 @@ class ChattingRoomViewController: BaseViewController {
     @objc func chattingRoomExitBtnDidClicked(){
         
         sideMenuViewController?.dismiss(animated: true, completion: {
-            let alert = CancelAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
-                                                  btnTitle: "네, 확인했습니다.")
+
+            let alert = Alert.ChattingRoomExit.generateAlert().show(in: self)
             
             alert.confirmHandler = {
                 self.navigationController?.popViewController(animated: true)
             }
-            
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
         })
     }
     
@@ -215,19 +212,12 @@ class ChattingRoomViewController: BaseViewController {
         
         guard let bottomSheet = memberBlockBottomSheet else { return }
         
-        //TODO: - 차단 대상 닉네임으로 팝업 메시지 수정
-        let alert = CancelAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
-                                              btnTitle: "네, 차단합니다.")
+        let alert = Alert.Block(user: "쑤야").generateAlert().show(in: bottomSheet)
         
         alert.confirmHandler = {
-                print("차단 완료")
-            alert.dismiss(animated: false) {
-                bottomSheet.dismiss(animated: true, completion: nil)
-            }
+            print("차단 완료")
+            bottomSheet.dismiss(animated: true, completion: nil)
         }
-        
-        alert.modalPresentationStyle = .overFullScreen
-        bottomSheet.present(alert, animated: false, completion: nil)
     }
     
     @objc func memberDeclarationBtnDidClicked(){
@@ -236,17 +226,8 @@ class ChattingRoomViewController: BaseViewController {
         
         guard let bottomSheet = memberBlockBottomSheet else { return }
         
-        //TODO: 신고 팝업 UI 디자인 요청 후, UI 추가 작업 진행
-        
-//        let alert = CancelAlertViewController(message: "한민지님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.",
-//                                              btnTitle: "네, 차단합니다.")
-//
-//        alert.confirmHandler = {
-//                print("신고 완료")
-//                bottomSheet.dismiss(animated: false, completion: nil)
-//        }
-//        alert.modalPresentationStyle = .overFullScreen
-//        bottomSheet.present(alert, animated: false, completion: nil)
+        //TODO: 신고 팝업 UI 추가 작업 필요
+
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {

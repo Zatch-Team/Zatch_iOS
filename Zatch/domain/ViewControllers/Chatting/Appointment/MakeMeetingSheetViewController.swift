@@ -77,9 +77,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     @objc func alarmSwitchWillChange(_ sender: UISwitch){
     
         if(sender.isOn){
-            let alert = InfoAlertViewController(message: "약속시간 30분 전에 자동으로 알림이 울립니다.")
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
+            _ = Alert.AlarmInfo.generateAlert().show(in: self)
         }
     }
 }

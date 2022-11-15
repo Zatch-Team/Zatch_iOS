@@ -62,38 +62,28 @@ class RegisterQuestionViewController: UIViewController {
         // 예외처리
         // 카테고리 선택 안 했을 때
         if !isCategorySelected {
-            let alert = InfoAlertViewController(message: "카테고리를 선택해주세요.")
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
+            _ = Alert.QuestionCategory.generateAlert().show(in: self)
         }
         // 제목을 입력하지 않았을 때
         if self.questionTitle == nil {
-            let alert = InfoAlertViewController(message: "제목을 입력해주세요.")
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
+            _ = Alert.QuestionTitle.generateAlert().show(in: self)
         }
         // 내용을 입력하지 않았을 때
         if self.questionContent == nil {
-            let alert = InfoAlertViewController(message: "내용을 입력해주세요.")
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
+            _ = Alert.QuestionContent.generateAlert().show(in: self)
         }
         if isCategorySelected && self.questionTitle != nil && self.questionContent != nil {
-            let alert = CancelAlertViewController(message: "1:1 문의를 정말 등록하시겠습니까?", btnTitle: "등록")
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
-            
-            alert.okBtn.addTarget(self, action: #selector(dialogCompleteButtonDidTap), for: .touchUpInside)
+            let alert = Alert.QuestionRegister.generateAlert().show(in: self)
+            alert.confirmHandler = {
+                print("등록 clicked!")
+            }
         }
     }
     @objc func titleTextFieldEditingChanged(_ sender: UITextField) {
         let text = sender.text ?? ""
         self.questionTitle = text
     }
-    @objc func dialogCompleteButtonDidTap() {
-        print("등록 clicked!")
-        self.dismiss(animated: true)
-    }
+
 }
 // MARK: - TableView delegate
 extension RegisterQuestionViewController: UITableViewDelegate, UITableViewDataSource{

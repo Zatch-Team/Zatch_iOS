@@ -155,11 +155,7 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
                 self.navigationController.present(alert, animated: true, completion: nil)
                 
             }else{
-                
-                let alert = BasicAlertViewController(message: "이미지는 최대 10장까지 등록 가능합니다.")
-                alert.modalPresentationStyle = .overFullScreen
-                
-                self.navigationController.present(alert, animated: false, completion: nil)
+                _ = Alert.ImageMax.generateAlert().show(in: self.navigationController)
             }
         }else{
             

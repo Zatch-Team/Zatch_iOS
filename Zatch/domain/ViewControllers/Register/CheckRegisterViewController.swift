@@ -56,12 +56,11 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
     //MARK: - Action
     
     @objc func registerBtnDidClicked(){
-        let alert = CancelAlertViewController(message: "재치 등록을 완료하시겠습니까?", btnTitle: "등록 완료")
+        let alert = Alert.Register.generateAlert().show(in: self)
+        
         alert.confirmHandler = {
             print("등록 완료 버튼 눌림")
         }
-        alert.modalPresentationStyle = .overFullScreen
-        self.present(alert, animated: false, completion: nil)
     }
     
     override func rightPositionBtnDidClicked(){

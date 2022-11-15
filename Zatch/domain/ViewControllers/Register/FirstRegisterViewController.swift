@@ -19,14 +19,6 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         var endDate: String = ""
     }
     
-    enum InvalidationMessage: String{
-        case category = "카테고리를 입력해주세요."
-        case productName = "상품 이름을 입력해주세요."
-        case image = "이미지를 최소 1장 이상 첨부해주세요."
-        case buyDate = "구매일자를 입력해주세요."
-        case endDate = "유통기한을 입력해주세요."
-    }
-    
     var isOpen = false
     
     var productInfo = ZatchFirstInput()
@@ -77,18 +69,18 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         guard let imageCell = registerView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
         productInfo.images = imageCell.imageArray
         
-        let alertType: FirstRegisterViewController.InvalidationMessage!
+        let alert: Alert
         
         if(productInfo.category.isEmpty){
-            alertType = .category
+            alert = .RegisterCategory
         }else if(productInfo.productName.isEmpty){
-            alertType = .productName
+            alert = .ProductName
         }else if(productInfo.images.count == 0){
-            alertType = .image
+            alert = .ImageMin
         }else if(productInfo.category == "음식|조리" && productInfo.buyDate.isEmpty){
-            alertType = .buyDate
+            alert = .BuyDate
         }else if(productInfo.category == "음식|조리" && productInfo.endDate.isEmpty){
-            alertType = .endDate
+            alert = .EndDate
         }else{ //input 데이터 모두 유효할 경우, Second로 이동
             let vc  = SecondRegisterViewController()
             //TODO: Data 담아서 넘기기
@@ -96,11 +88,7 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
             return
         }
         
-        let alert = BasicAlertViewController(message: alertType.rawValue)
-        alert.modalPresentationStyle = .overFullScreen
-        
-        self.present(alert, animated: false, completion: nil)
-        
+        _ = alert.generateAlert().show(in: self)
         
     }
 
