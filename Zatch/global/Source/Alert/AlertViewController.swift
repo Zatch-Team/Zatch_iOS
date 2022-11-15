@@ -128,6 +128,12 @@ class AlertViewController: UIViewController {
         }
     }
     
+    func show(in viewController: UIViewController) -> AlertViewController{
+        self.modalPresentationStyle = .overFullScreen
+        viewController.present(self, animated: false, completion: nil)
+        return self
+    }
+    
     //MARK: - Action
     
     @objc func dismissAlertController(){

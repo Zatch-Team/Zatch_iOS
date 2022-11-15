@@ -197,6 +197,7 @@ class ChattingRoomViewController: BaseViewController {
     @objc func chattingRoomExitBtnDidClicked(){
         
         sideMenuViewController?.dismiss(animated: true, completion: {
+            /*
             let alert = CancelAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
                                                   btnTitle: "네, 확인했습니다.")
             
@@ -206,6 +207,12 @@ class ChattingRoomViewController: BaseViewController {
             
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false, completion: nil)
+             */
+            let alert = Alert.ChattingRoomExit.generateAlert().show(in: self)
+            
+            alert.confirmHandler = {
+                self.navigationController?.popViewController(animated: true)
+            }
         })
     }
     
