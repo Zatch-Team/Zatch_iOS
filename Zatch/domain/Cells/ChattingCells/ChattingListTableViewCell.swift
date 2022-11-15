@@ -101,9 +101,8 @@ class ChattingListTableViewCell: BaseTableViewCell {
     }
     
     @objc func deleteBtnDidClicked(){
-        let alert = CancelAlertViewController(
-            message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.",
-            btnTitle: "네, 확인했습니다.")
+        
+        let alert = Alert.ChattingRoomExit.generateAlert().show(in: self.navigationController)
         
         alert.confirmHandler = {
                 //TODO: - 채팅방 삭제 API 연결 -> VC에서 데이터 삭제 및 테이블 뷰 reload
@@ -113,10 +112,6 @@ class ChattingListTableViewCell: BaseTableViewCell {
                  */
             self.cellWillMoveOriginalPosition()
         }
-
-        alert.modalPresentationStyle = .overFullScreen
-        
-        self.navigationController.present(alert, animated: false, completion: nil)
     }
     
 
