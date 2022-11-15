@@ -10,6 +10,7 @@ import Foundation
 enum Alert{
     //Register
     case ImageMax
+    case Register
     
     //Map
     case LocationAuthority
@@ -43,6 +44,10 @@ extension Alert{
         switch self{
         case .ImageMax:
             return BasicAlertViewController(message: "이미지는 최대 10장까지 등록 가능합니다.")
+            
+        case .Register:
+            return CancelAlertViewController(message: "재치 등록을 완료하시겠습니까?", btnTitle: "등록 완료")
+            
         case .LocationAuthority: return InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
             
         case .TownCertification:
