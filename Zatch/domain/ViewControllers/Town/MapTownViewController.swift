@@ -53,10 +53,7 @@ class MapTownViewController: KakaoMapViewController{
             
             self.present(alert, animated: false, completion: nil)
         }else{
-            let alert = InfoAlertViewController(message: "현 위치와 선택하신 동네가 다릅니다.")
-            alert.modalPresentationStyle = .overFullScreen
-            
-            self.present(alert, animated: false, completion: nil)
+            _ = Alert.TownCertification.generateAlert().show(in: self)
         }
     }
     
