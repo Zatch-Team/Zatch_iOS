@@ -55,12 +55,11 @@ class KakaoMapViewController: UIViewController {
         super.viewDidAppear(true)
         
         if(locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .denied ){
-            let alert = InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
+            
+            let alert = Alert.LocationAuthority.generateAlert().show(in: self)
             alert.confirmHandler = {
                 self.navigationController?.popViewController(animated: true)
             }
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
         }
     }
     
