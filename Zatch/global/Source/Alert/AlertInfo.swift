@@ -11,6 +11,7 @@ enum Alert{
     //Register
     case ImageMax
     case Register
+    case ImageDelete
     
     //Map
     case LocationAuthority
@@ -47,6 +48,9 @@ extension Alert{
             
         case .Register:
             return CancelAlertViewController(message: "재치 등록을 완료하시겠습니까?", btnTitle: "등록 완료")
+            
+        case .ImageDelete:
+            return CancelAlertViewController(message: "해당 이미지를 삭제하시겠습니까?")
             
         case .LocationAuthority: return InfoAlertViewController(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
             

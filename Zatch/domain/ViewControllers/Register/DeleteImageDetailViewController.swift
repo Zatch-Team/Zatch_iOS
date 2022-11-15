@@ -18,13 +18,10 @@ class DeleteImageDetailViewController: RegisterImageDetailViewController {
     
     override func okBtnDidClicked(){
         
-        let alert = CancelAlertViewController(message: "해당 이미지를 삭제하시겠습니까?")
+        let alert = Alert.ImageDelete.generateAlert().show(in: self)
         
-        alert.modalPresentationStyle = .overFullScreen
         alert.confirmHandler = {
             super.okBtnDidClicked()
         }
-        
-        self.navigationController?.present(alert, animated: false, completion: nil)
     }
 }
