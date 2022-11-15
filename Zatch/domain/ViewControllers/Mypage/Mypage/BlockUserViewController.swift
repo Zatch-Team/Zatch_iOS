@@ -35,12 +35,10 @@ class BlockUserViewController: BaseCenterTitleViewController {
     }
     
     @objc func unblockBtnDidClicked(){
-        let alert = CancelAlertViewController(message: "해당 사용자를 차단 해제하시겠습니까?", btnTitle: "해제")
-        alert.modalPresentationStyle = .overFullScreen
+        let alert = Alert.UnBlock.generateAlert().show(in: self)
         alert.confirmHandler = {
-            print("ok")
+            print("block 해제")
         }
-        self.present(alert, animated: false, completion: nil)
     }
 
 }

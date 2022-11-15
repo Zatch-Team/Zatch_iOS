@@ -18,6 +18,7 @@ enum Alert{
     //ChattingRoom
     case ChattingRoomExit
     case Block(user: String)
+    case UnBlock
     
     //Question
     case QuestionCategory
@@ -48,6 +49,8 @@ extension Alert{
             
         case .ChattingRoomExit: return CancelAlertViewController(message: "채팅방을 나가시겠습니까?\n채팅방을 나가면 채팅 내역은 복구되지 않습니다.", btnTitle: "네, 확인했습니다.")
         case .Block(let user):  return CancelAlertViewController(message: "\(user)님을 차단하시겠습니까?\n더 이상의 대화가 불가합니다.", btnTitle: "네, 차단합니다.")
+        case .UnBlock:
+            return CancelAlertViewController(message: "해당 사용자를 차단 해제하시겠습니까?", btnTitle: "해제")
         
         case .QuestionCategory:
             return InfoAlertViewController(message: "카테고리를 선택해주세요.")
