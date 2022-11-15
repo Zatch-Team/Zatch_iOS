@@ -20,12 +20,12 @@ class CancelAlertViewController: MessageAlertViewController {
         $0.addTarget(self, action: #selector(cancelBtnDidClicked), for: .touchUpInside)
     }
     
-    init(message: String, btnTitle: String? = nil){
+    init(message: String, confirmTitle: String?, cancelTitle: String?){
         
         super.init(message: message)
         
-        if let btnTitle = btnTitle {
-            okBtn.setTitle(btnTitle, for: .normal)
+        if let confirmTitle = confirmTitle {
+            okBtn.setTitle(confirmTitle, for: .normal)
         }
         
         settingOkBtnPurpleBackground()

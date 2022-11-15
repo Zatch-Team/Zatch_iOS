@@ -47,21 +47,18 @@ extension BlockUserViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        if(blockData.isEmpty){
-            mainView.emptyView.isHidden = false
-        }else{
-            mainView.emptyView.isHidden = true
-        }
-        
         mainView.emptyView.isHidden = blockData.isEmpty ? false : true
+        
         return blockData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BlockUserTableViewCell.cellIdentifier, for: indexPath) as? BlockUserTableViewCell else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BlockUserTableViewCell.cellIdentifier, for: indexPath)
+                as? BlockUserTableViewCell else { fatalError() }
         
         cell.unblockBtn.addTarget(self, action: #selector(unblockBtnDidClicked), for: .touchUpInside)
+        
         return cell
     }
 

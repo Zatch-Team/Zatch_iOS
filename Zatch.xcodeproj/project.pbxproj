@@ -1591,6 +1591,17 @@
 			path = Namespace;
 			sourceTree = "<group>";
 		};
+		57B32C3B292338DC0018C0CB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */,
+				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
+				57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */,
+				57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1605,10 +1616,7 @@
 			children = (
 				57B32C39292261D30018C0CB /* AlertInfo.swift */,
 				5722461528C2F827009B7C78 /* AlertViewController.swift */,
-				57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */,
-				57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */,
-				57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */,
-				57EBCE3F28A8906000212D20 /* CancelAlertViewController.swift */,
+				57B32C3B292338DC0018C0CB /* Message */,
 				5724EB5A290FC0A800DC529B /* Picker */,
 				5724EB59290FC08A00DC529B /* Map */,
 				5724EB5B290FC11100DC529B /* Meeting */,
