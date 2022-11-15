@@ -24,6 +24,9 @@ enum Alert{
     case QuestionTitle
     case QuestionContent
     case QuestionRegister
+    
+    //Profile
+    case ChangeNickname
 }
 
 struct AlertDescription{
@@ -54,6 +57,10 @@ extension Alert{
             return InfoAlertViewController(message: "내용을 입력해주세요.")
         case .QuestionRegister:
             return CancelAlertViewController(message: "1:1 문의를 정말 등록하시겠습니까?", btnTitle: "등록")
+            
+            
+        case .ChangeNickname:
+            return CancelAlertViewController(message: "닉네임을 변경하시면 30일 동안 추가 변경이 불가능합니다. 변경하시겠습니까?", btnTitle: "확인")
         }
     }
 }
