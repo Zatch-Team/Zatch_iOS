@@ -26,8 +26,9 @@ enum Alert{
     case QuestionContent
     case QuestionRegister
     
-    //Profile
+    //User
     case ChangeNickname
+    case Logout
 }
 
 struct AlertDescription{
@@ -64,6 +65,8 @@ extension Alert{
             
         case .ChangeNickname:
             return CancelAlertViewController(message: "닉네임을 변경하시면 30일 동안 추가 변경이 불가능합니다. 변경하시겠습니까?", btnTitle: "확인")
+        case .Logout:
+            return CancelAlertViewController(message: "로그아웃 하시겠습니까?", btnTitle: "로그아웃")
         }
     }
 }

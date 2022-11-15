@@ -119,12 +119,11 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
             let blockVC = BlockUserViewController()
             self.navigationController?.pushViewController(blockVC, animated: true)
         case [2,2]:
-            let alert = CancelAlertViewController(message: "로그아웃 하시겠습니까?", btnTitle: "로그아웃")
+            let alert = Alert.Logout.generateAlert().show(in: self)
+            
             alert.confirmHandler = {
                 print("로그아웃 버튼 클릭")
             }
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: false, completion: nil)
         default:
             return
         }
