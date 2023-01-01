@@ -9,29 +9,6 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    //MARK: - Generator
-    
-    init(){
-        super.init(nibName: nil, bundle: nil)
-        self.viewDidLoad()
-    }
-    
-    init(title: String){
-        super.init(nibName: nil, bundle: nil)
-        self.viewDidLoad()
-        self.rightPositionBtn = EtcButton(title: title)
-    }
-    
-    init(btnImage: UIImage){
-        super.init(nibName: nil, bundle: nil)
-        self.viewDidLoad()
-        self.rightPositionBtn = EtcButton(image: btnImage)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     //MARK: - Properties
     
     let navigationView = UIView()
@@ -46,10 +23,30 @@ class BaseViewController: UIViewController {
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
     
-    lazy var rightPositionBtn: EtcButton? = nil{
+    lazy var rightPositionButton: EtcButton? = nil{
         didSet{
             settingRightPostionBtn()
         }
+    }
+    
+    //MARK: - Generator
+    
+    init(){
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(rightButton: String){
+        super.init(nibName: nil, bundle: nil)
+        self.rightPositionButton = EtcButton(title: rightButton)
+    }
+    
+    init(rightButton: UIImage){
+        super.init(nibName: nil, bundle: nil)
+        self.rightPositionButton = EtcButton(image: rightButton)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     //MARK: - LifeCycle
@@ -59,16 +56,14 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         style()
-        initialize()
         layout()
+        initialize()
     }
     
     func style() {
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
     }
-    
-    func initialize() {}
     
     func layout() {
         
@@ -90,6 +85,8 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func initialize() {}
+    
     //MARK: - Action
     
     @objc func backBtnDidClicked(){
@@ -102,19 +99,9 @@ class BaseViewController: UIViewController {
     
     //MARK: - Method
     
-    func addRightTopBtn(title: String){
-        self.rightPositionBtn = EtcButton(title: title)
-    }
-    
-    func addRightTopBtn(image: UIImage){
-        self.rightPositionBtn = EtcButton(image: image)
-    }
-    
-    func settingRightPostionBtn(){
+    private final func settingRightPostionBtn(){
         
-        guard let rightPositionBtn = rightPositionBtn else {
-            return
-        }
+        guard let rightPositionBtn = rightPositionButton else { return }
         
         navigationView.addSubview(rightPositionBtn)
         

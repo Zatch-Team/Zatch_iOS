@@ -12,7 +12,15 @@ class ModifyProfileViewController: BaseCenterTitleViewController {
     // Image Properties
     let imagePickerController = UIImagePickerController()
     var selectedPhoto: UIImage!
-
+    
+    override init(){
+        super.init(rightButton: "저장")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

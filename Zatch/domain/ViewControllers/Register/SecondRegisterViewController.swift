@@ -28,18 +28,18 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - LifeCycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(){
+        super.init(rightButton: Image.exit)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Override
     override func style() {
-        
         super.style()
-        
         self.navigationTitle.text = "재치 등록하기"
-        self.addRightTopBtn(image: Image.exit)
-    
     }
     
     override func initialize() {
