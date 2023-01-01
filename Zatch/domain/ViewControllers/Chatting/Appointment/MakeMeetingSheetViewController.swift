@@ -16,19 +16,15 @@ class MakeMeetingSheetViewController: SheetViewController {
         $0.alarmSwitch.addTarget(self, action: #selector(alarmSwitchWillChange), for: .valueChanged)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init(){
+        super.init(type: .MakeMeeting)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Override
-    
-    override func style(){
-        
-        super.style()
-        
-        //TODO: - Type 지정이 바꿔야 할 듯?
-        self.setBottomSheetStyle(type: .MakeMeeting)
-    }
     
     override func initialize() {
         

@@ -17,11 +17,12 @@ class MyZatchSheetViewController: SearchTagSheetViewController{
         self.tagData = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
     }
     
-    override func style(){
-        
-        super.style()
-        
-        self.setBottomSheetStyle(type: .SearchMyTag)
+    init(){
+        super.init(type: .SearchMyTag)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func initialize() {

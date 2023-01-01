@@ -19,18 +19,15 @@ class SearchAddressResultSheetViewController: SheetViewController {
     
     let mainView = SearchAddressResultView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init(){
+        super.init(type: .MakeMeeting)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Override
-    
-    override func style(){
-        
-        super.style()
-        
-        self.setBottomSheetStyle(type: .MakeMeeting)
-    }
     
     override func initialize() {
         

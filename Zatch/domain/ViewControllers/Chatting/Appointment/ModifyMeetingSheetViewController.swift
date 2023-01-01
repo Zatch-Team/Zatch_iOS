@@ -13,19 +13,12 @@ class ModifyMeetingSheetViewController: SheetViewController {
         $0.registerBtn.addTarget(self, action: #selector(modifyBtnDidClicked), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init(){
+        super.init(type: .MakeMeeting)
     }
     
-    override func style(){
-        
-        super.style()
-        
-        self.setBottomSheetStyle(type: .MakeMeeting)
-    }
-    
-    override func initialize() {
-        super.initialize()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layout() {
