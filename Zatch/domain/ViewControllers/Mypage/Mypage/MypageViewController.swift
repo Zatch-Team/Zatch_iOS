@@ -108,7 +108,7 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             // MARK: 내 프로필
-            let vc = ProfileViewController(title: "수정")
+            let vc = ProfileViewController(rightButton: "수정")
             vc.isMyProfile = true
             vc.profileUserName = "나"
             self.navigationController?.pushViewController(vc, animated: true)

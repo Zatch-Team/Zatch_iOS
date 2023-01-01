@@ -11,17 +11,22 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     
     //MARK: - Properties
     
-    var bottomSheetType: BottomSheetType!{
-        didSet{
-            self.titleLabel.text = bottomSheetType.title
-        }
-    }
+    private final let bottomSheetType: BottomSheetType!
     
     let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
         $0.textColor = .black85
     }
-
+    
+    init(type: BottomSheetType){
+        self.bottomSheetType = type
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -47,6 +52,8 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
     func style(){
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
+        
+        self.titleLabel.text = bottomSheetType.title
     }
     
     func initialize() {
@@ -64,9 +71,9 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
         }
     }
     
-    func setBottomSheetStyle(type: BottomSheetType){
-        self.bottomSheetType = type
-    }
+//    func setBottomSheetStyle(type: BottomSheetType){
+//        self.bottomSheetType = type
+//    }
 
 }
 

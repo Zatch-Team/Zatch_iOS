@@ -38,7 +38,7 @@ class ProfileViewController: BaseCenterTitleViewController {
     }
     override func rightPositionBtnDidClicked() {
         if isMyProfile {
-            let vc = ModifyProfileViewController(title: "저장")
+            let vc = ModifyProfileViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
             // TODO: Chat Icon 클릭 이벤트 연결

@@ -231,7 +231,7 @@ class ChattingRoomViewController: BaseViewController {
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {
-        let vc = ProfileViewController(btnImage: Image.chat)
+        let vc = ProfileViewController(rightButton: Image.chat)
         vc.navigationTitle.text = nil
         vc.isMyProfile = false
         vc.profileUserName = nameLabel.text

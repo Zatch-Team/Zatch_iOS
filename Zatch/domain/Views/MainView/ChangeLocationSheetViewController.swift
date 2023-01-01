@@ -17,19 +17,20 @@ class ChangeLocationSheetViewController: SheetViewController {
     var locationData = ["양재동", "서교동", "돈암동"]
     var myLocation: String!
     
+    init(){
+        super.init(type: .LocationChange)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let viewModel = self.viewModel {
             bind()
         }
-    }
-    
-    override func style(){
-        
-        super.style()
-        
-        self.setBottomSheetStyle(type: .LocationChange)
     }
     
     override func initialize() {
