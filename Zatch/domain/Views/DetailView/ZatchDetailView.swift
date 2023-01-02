@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailView: UIView {
+class ZatchDetailView: UIView {
     
     var tableView = UITableView().then{
         $0.contentInset = UIEdgeInsets(top: -48, left: 0, bottom: 0, right: 0);

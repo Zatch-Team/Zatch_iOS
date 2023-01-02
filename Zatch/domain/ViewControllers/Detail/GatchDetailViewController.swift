@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  GatchDetailViewController.swift
 //  Zatch
 //
-//  Created by gomin on 2022/09/05.
+//  Created by 박지윤 on 2023/01/02.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class GatchDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

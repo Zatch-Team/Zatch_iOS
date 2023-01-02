@@ -7,9 +7,9 @@
 
 import UIKit
 
-class DetailViewController: BaseViewController {
+class ZatchDetailViewController: BaseViewController {
     
-    let mainView = DetailView()
+    let mainView = ZatchDetailView()
 
     override func viewDidLoad() {
         
@@ -27,7 +27,7 @@ class DetailViewController: BaseViewController {
 
 }
 
-extension DetailViewController : UITableViewDelegate, UITableViewDataSource{
+extension ZatchDetailViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
