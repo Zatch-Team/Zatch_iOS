@@ -53,6 +53,7 @@ enum Image{
     
     //MARK: - Icon
     public static let bell = UIImage(named: "bell")!
+    public static let timer = UIImage(named: "timer")!
     public static let exit = UIImage(named: "exit")!
     public static let dot = UIImage(named: "dot")!
     public static let cameraButton = UIImage(named: "cameraButton")!
@@ -60,6 +61,7 @@ enum Image{
     public static let floatingPlus = UIImage(named: "floating_plus")!
     public static let heartPurple = UIImage(named: "heart_purple")!
     public static let heartSilver = UIImage(named: "heart_silver")!
+    public static let heartSilverFill = UIImage(named: "heart_silver_fill")!
     public static let heartYellow = UIImage(named: "heart_yellow")!
     public static let heart = UIImage(named: "heart")!
     public static let imageAddButton = UIImage(named: "image_add_button")!

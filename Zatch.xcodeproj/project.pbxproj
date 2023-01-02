@@ -23,7 +23,6 @@
 		235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
-		23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711BDB28C5E38700B7E840 /* ViewController.swift */; };
 		23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */; };
 		23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */; };
 		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
@@ -136,6 +135,11 @@
 		575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */; };
 		575BF71427E0CBC8008D5B3C /* ZatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71327E0CBC8008D5B3C /* ZatchTests.swift */; };
 		575BF71F27E0CBC8008D5B3C /* ZatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */; };
+		57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C082963076E00A7F27B /* GatchDetailViewController.swift */; };
+		57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0C296307E000A7F27B /* GatchDetailView.swift */; };
+		57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */; };
+		57600C112963081400A7F27B /* GatchDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C102963081400A7F27B /* GatchDetailImageTableViewCell.swift */; };
+		57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */; };
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
@@ -144,7 +148,7 @@
 		576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */; };
 		576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */; };
 		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
-		5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* DetailViewController.swift */; };
+		5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */; };
 		5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */; };
 		5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */; };
 		5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */; };
@@ -256,7 +260,7 @@
 		57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */; };
 		57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */; };
 		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
-		57E75EBF28E3C32800AC24B2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EBE28E3C32800AC24B2 /* DetailView.swift */; };
+		57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */; };
 		57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */; };
 		57E75EC728E5480A00AC24B2 /* MySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC628E5480900AC24B2 /* MySearchView.swift */; };
 		57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC828E5481900AC24B2 /* FindSearchView.swift */; };
@@ -312,7 +316,6 @@
 		235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTableViewCell.swift; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
-		23711BDB28C5E38700B7E840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabmanViewController.swift; sourceTree = "<group>"; };
 		23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchChildViewController.swift; sourceTree = "<group>"; };
 		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
@@ -431,6 +434,11 @@
 		575BF71A27E0CBC8008D5B3C /* ZatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchUITests.swift; sourceTree = "<group>"; };
 		575BF72027E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57600C082963076E00A7F27B /* GatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailViewController.swift; sourceTree = "<group>"; };
+		57600C0C296307E000A7F27B /* GatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailView.swift; sourceTree = "<group>"; };
+		57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailBottomFixView.swift; sourceTree = "<group>"; };
+		57600C102963081400A7F27B /* GatchDetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailImageTableViewCell.swift; sourceTree = "<group>"; };
+		57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailInfomationTableViewCell.swift; sourceTree = "<group>"; };
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -439,7 +447,7 @@
 		576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownMapAlertViewController.swift; sourceTree = "<group>"; };
 		576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMapAlertViewController.swift; sourceTree = "<group>"; };
 		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
-		5767D7722868248E0075DB28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailViewController.swift; sourceTree = "<group>"; };
 		5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -560,7 +568,7 @@
 		57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalTownModel.swift; sourceTree = "<group>"; };
 		57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
 		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
-		57E75EBE28E3C32800AC24B2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailView.swift; sourceTree = "<group>"; };
 		57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailTableViewCell.swift; sourceTree = "<group>"; };
 		57E75EC628E5480900AC24B2 /* MySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchView.swift; sourceTree = "<group>"; };
 		57E75EC828E5481900AC24B2 /* FindSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchView.swift; sourceTree = "<group>"; };
@@ -883,7 +891,6 @@
 				23B051BD28E2060A005D08EA /* QnA */,
 				23B051B428E1FD70005D08EA /* Notification */,
 				23EEA44228D8703400C4C67E /* HeartList */,
-				23711BDB28C5E38700B7E840 /* ViewController.swift */,
 				23CB3CEF28C7D35600C42858 /* Mypage */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
 				23C9031428C5CE6400FB6D3D /* Register */,
@@ -931,7 +938,8 @@
 		23C9031128C5CE5600FB6D3D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				5767D7722868248E0075DB28 /* DetailViewController.swift */,
+				5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */,
+				57600C082963076E00A7F27B /* GatchDetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -957,13 +965,7 @@
 		23C9031428C5CE6400FB6D3D /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
-				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
-				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
-				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
-				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
-				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
-				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
+				57600C072963073900A7F27B /* Zatch */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1033,8 +1035,10 @@
 		23C9031B28C5CF3100FB6D3D /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				57E75EBE28E3C32800AC24B2 /* DetailView.swift */,
+				57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */,
 				5767D77C286944FB0075DB28 /* BottomFixView.swift */,
+				57600C0C296307E000A7F27B /* GatchDetailView.swift */,
+				57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -1042,13 +1046,8 @@
 		23C9031C28C5CF4000FB6D3D /* DetailCells */ = {
 			isa = PBXGroup;
 			children = (
-				5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */,
-				5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */,
-				57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */,
-				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
-				5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */,
-				5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */,
-				5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */,
+				57600C0A2963077F00A7F27B /* Zatch */,
+				57600C0B2963078B00A7F27B /* Gatch */,
 			);
 			path = DetailCells;
 			sourceTree = "<group>";
@@ -1276,7 +1275,7 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		57468A9928A1096600056691 /* extenstion */ = {
+		57468A9928A1096600056691 /* Extenstion */ = {
 			isa = PBXGroup;
 			children = (
 				57067863281C143A00F48342 /* UIColor.swift */,
@@ -1290,7 +1289,7 @@
 				576B376B28D85F8B00EF36E6 /* UITableView.swift */,
 				57067865281C167100F48342 /* UIFont.swift */,
 			);
-			path = extenstion;
+			path = Extenstion;
 			sourceTree = "<group>";
 		};
 		575BF6F027E0CBC6008D5B3C = {
@@ -1344,6 +1343,43 @@
 				575BF72027E0CBC8008D5B3C /* Info.plist */,
 			);
 			path = ZatchUITests;
+			sourceTree = "<group>";
+		};
+		57600C072963073900A7F27B /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
+				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
+				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
+				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
+				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
+				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
+				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		57600C0A2963077F00A7F27B /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */,
+				5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */,
+				57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */,
+				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
+				5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */,
+				5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */,
+				5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		57600C0B2963078B00A7F27B /* Gatch */ = {
+			isa = PBXGroup;
+			children = (
+				57600C102963081400A7F27B /* GatchDetailImageTableViewCell.swift */,
+				57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */,
+			);
+			path = Gatch;
 			sourceTree = "<group>";
 		};
 		5767D788286C0ACB0075DB28 /* UICheckBox */ = {
@@ -1411,7 +1447,7 @@
 			isa = PBXGroup;
 			children = (
 				57B32C32291FB3D90018C0CB /* Namespace */,
-				57468A9928A1096600056691 /* extenstion */,
+				57468A9928A1096600056691 /* Extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* Common */,
 			);
 			path = Resource;
@@ -1968,16 +2004,17 @@
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */,
+				57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */,
-				57E75EBF28E3C32800AC24B2 /* DetailView.swift in Sources */,
+				57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
-				5767D7732868248E0075DB28 /* DetailViewController.swift in Sources */,
+				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */,
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
@@ -2014,6 +2051,7 @@
 				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
 				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
@@ -2028,11 +2066,11 @@
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
+				57600C112963081400A7F27B /* GatchDetailImageTableViewCell.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */,
-				23711BDC28C5E38700B7E840 /* ViewController.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
@@ -2071,6 +2109,7 @@
 				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
+				57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */,
 				233DDF6028EB7D2C008E32B4 /* NanumTableViewCell.swift in Sources */,
@@ -2144,6 +2183,7 @@
 				57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */,
 				57B32C3829220EA10018C0CB /* BottomSheetInfo.swift in Sources */,
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
+				57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */,
 				57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,

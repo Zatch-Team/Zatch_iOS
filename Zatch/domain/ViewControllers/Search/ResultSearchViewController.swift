@@ -174,7 +174,7 @@ extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailViewController()
+        let vc = ZatchDetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
