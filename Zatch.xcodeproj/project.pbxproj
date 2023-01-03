@@ -127,6 +127,8 @@
 		57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */; };
 		57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */; };
 		57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */; };
+		574E1CA9296400E6005D2048 /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CA8296400E6005D2048 /* BaseProtocol.swift */; };
+		574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
@@ -138,7 +140,6 @@
 		57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C082963076E00A7F27B /* GatchDetailViewController.swift */; };
 		57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0C296307E000A7F27B /* GatchDetailView.swift */; };
 		57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */; };
-		57600C112963081400A7F27B /* GatchDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C102963081400A7F27B /* GatchDetailImageTableViewCell.swift */; };
 		57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */; };
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
@@ -420,6 +421,8 @@
 		57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingSheetViewController.swift; sourceTree = "<group>"; };
 		57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePurpleButton.swift; sourceTree = "<group>"; };
 		57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWithRankTableViewCell.swift; sourceTree = "<group>"; };
+		574E1CA8296400E6005D2048 /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoDesignSystem.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectTableViewCell.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,7 +440,6 @@
 		57600C082963076E00A7F27B /* GatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailViewController.swift; sourceTree = "<group>"; };
 		57600C0C296307E000A7F27B /* GatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailView.swift; sourceTree = "<group>"; };
 		57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailBottomFixView.swift; sourceTree = "<group>"; };
-		57600C102963081400A7F27B /* GatchDetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailInfomationTableViewCell.swift; sourceTree = "<group>"; };
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
@@ -1046,6 +1048,7 @@
 		23C9031C28C5CF4000FB6D3D /* DetailCells */ = {
 			isa = PBXGroup;
 			children = (
+				5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */,
 				57600C0A2963077F00A7F27B /* Zatch */,
 				57600C0B2963078B00A7F27B /* Gatch */,
 			);
@@ -1270,6 +1273,7 @@
 		57468A79289D3C0800056691 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				574E1CA8296400E6005D2048 /* BaseProtocol.swift */,
 				57B9F70B28D94B7800ACEC94 /* Delegate.swift */,
 			);
 			path = Protocol;
@@ -1290,6 +1294,14 @@
 				57067865281C167100F48342 /* UIFont.swift */,
 			);
 			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		574E1CAA2964010E005D2048 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		575BF6F027E0CBC6008D5B3C = {
@@ -1362,7 +1374,6 @@
 		57600C0A2963077F00A7F27B /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */,
 				5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */,
 				57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */,
 				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
@@ -1376,7 +1387,6 @@
 		57600C0B2963078B00A7F27B /* Gatch */ = {
 			isa = PBXGroup;
 			children = (
-				57600C102963081400A7F27B /* GatchDetailImageTableViewCell.swift */,
 				57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */,
 			);
 			path = Gatch;
@@ -1446,6 +1456,7 @@
 		57802394281D21710085457D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				574E1CAA2964010E005D2048 /* DesignSystem */,
 				57B32C32291FB3D90018C0CB /* Namespace */,
 				57468A9928A1096600056691 /* Extenstion */,
 				57EF61AF287D5BCE0035A2E6 /* Common */,
@@ -1984,6 +1995,7 @@
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
+				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
@@ -2064,9 +2076,9 @@
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
+				574E1CA9296400E6005D2048 /* BaseProtocol.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
-				57600C112963081400A7F27B /* GatchDetailImageTableViewCell.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
