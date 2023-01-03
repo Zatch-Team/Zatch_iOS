@@ -7,7 +7,9 @@
 
 import UIKit
 
-class DetailImageTableViewCell: BaseTableViewCell {
+class DetailImageTableViewCell: BaseTableViewCell, BaseCellProtocol {
+    
+    static let cellIdentifier = "DetailImageTableViewCell"
     
     //MARK: - Properties
     var images : [UIImage?] = [
@@ -22,39 +24,40 @@ class DetailImageTableViewCell: BaseTableViewCell {
     let scrollView = UIScrollView().then{
         $0.isScrollEnabled = true
         $0.isPagingEnabled = true
+        $0.showsHorizontalScrollIndicator = false
     }
     
-    let pageControl = UIPageControl()
+    let pageControl = UIPageControl().then{
+        $0.currentPageIndicatorTintColor = UIColor(red: 255/255, green: 171/255, blue: 66/255, alpha: 0.6)
+        $0.pageIndicatorTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.4)
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        scrollView.delegate = self
-        
-        setUpView()
-        setUpConstriant()
-        addContentScrollView()
-        setPageControl()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func setUpView(){
+
+    override func hierarchy() {
+        super.hierarchy()
         baseView.addSubview(scrollView)
         baseView.addSubview(pageControl)
     }
     
-    func setUpConstriant(){
+    override func layout(){
+        super.layout()
         
-        baseView.snp.makeConstraints{ make in
-            make.height.equalTo(self.baseView.snp.width)
+        baseView.snp.makeConstraints{
+            $0.height.equalTo(self.baseView.snp.width)
         }
         
-        self.scrollView.snp.makeConstraints{ make in
-            make.top.bottom.leading.trailing.equalToSuperview()
+        self.scrollView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalToSuperview()
         }
         
         pageControl.snp.makeConstraints{
@@ -62,18 +65,23 @@ class DetailImageTableViewCell: BaseTableViewCell {
             $0.bottom.equalToSuperview().offset(-16)
         }
     }
+    
+    private func initialize(){
+        scrollView.delegate = self
+        addImageContentToScrollView()
+        setPageControl()
+    }
 
 }
 
 extension DetailImageTableViewCell: UIScrollViewDelegate{
     
-    private func addContentScrollView() {
+    private func addImageContentToScrollView() {
         
         for i in 0..<images.count {
             let imageView = UIImageView().then{
                 $0.backgroundColor = .black45
             }
-            print("here?",scrollView.frame.width)
             let xPos = Const.Device.DEVICE_WIDTH * CGFloat(i)
             imageView.frame = CGRect(x: xPos, y: 0, width: Const.Device.DEVICE_WIDTH, height: Const.Device.DEVICE_WIDTH)
 //            imageView.image = images[i]
