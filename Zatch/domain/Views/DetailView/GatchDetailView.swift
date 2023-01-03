@@ -10,6 +10,8 @@ import UIKit
 class GatchDetailView: BaseView {
     
     let infoTableView = UITableView().then{
+        $0.contentInsetAdjustmentBehavior = .never
+        
         $0.register(GatchDetailInfomationTableViewCell.self,
                     forCellReuseIdentifier: GatchDetailInfomationTableViewCell.cellIdentifier)
         $0.register(DetailImageTableViewCell.self, forCellReuseIdentifier: DetailImageTableViewCell.cellIdentifier)
@@ -26,3 +28,4 @@ class GatchDetailView: BaseView {
         }
     }
 }
+

@@ -13,6 +13,8 @@ enum Image{
     public static let arrowDown = UIImage(named: "arrow_down")!
     public static let arrowLeft = UIImage(named: "arrow_left")!
     public static let arrowUp = UIImage(named: "arrow_up")!
+    public static let arrowChangeRight = UIImage(named: "arrow_change_right")!
+    
     
     //MARK: - category
     public static let category0 = UIImage(named: "Image-0")!
