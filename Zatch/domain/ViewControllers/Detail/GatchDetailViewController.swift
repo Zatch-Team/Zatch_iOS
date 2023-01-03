@@ -10,13 +10,15 @@ import UIKit
 class GatchDetailViewController: BaseViewController {
     
     let mainView = GatchDetailView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override init() {
+        print("?")
+        super.init(rightButton: Image.dot)
     }
     
-    override func style() {
-        super.style()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+//        fatalError("init(coder:) has not been implemented")
     }
     
     override func layout() {
