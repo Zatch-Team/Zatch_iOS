@@ -28,6 +28,7 @@ class DetailImageTableViewCell: BaseTableViewCell, BaseCellProtocol {
     }
     
     let pageControl = UIPageControl().then{
+        //TODO: 서비스 타입에 따른 색상 변경
         $0.currentPageIndicatorTintColor = UIColor(red: 255/255, green: 171/255, blue: 66/255, alpha: 0.6)
         $0.pageIndicatorTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.4)
     }
