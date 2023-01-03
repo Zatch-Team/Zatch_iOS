@@ -20,7 +20,7 @@ struct Const{
     }
     
     struct Offset{
-        static let TOP_OFFSET = 88 //navigationView 고려한 top offset
+        static let TOP_OFFSET = 107 //navigationView 고려한 top offset
     }
     
 }

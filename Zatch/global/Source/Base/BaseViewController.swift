@@ -74,13 +74,13 @@ class BaseViewController: UIViewController {
         navigationView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(44)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(56)
+            make.height.equalTo(60)
         }
         
         backBtn.snp.makeConstraints{ make in
             make.width.equalTo(backBtn.snp.height)
             make.leading.equalToSuperview().offset(20)
-            make.top.equalToSuperview().offset(16)
+            make.top.equalToSuperview().offset(14)
             make.centerY.equalToSuperview()
         }
     }
@@ -107,10 +107,11 @@ class BaseViewController: UIViewController {
         
         rightPositionBtn.snp.makeConstraints{
             $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalToSuperview().offset(14)
             $0.centerY.equalToSuperview()
             $0.width.equalTo(rightPositionBtn.snp.height)
         }
-        
+
         rightPositionBtn.addTarget(self, action: #selector(rightPositionBtnDidClicked), for: .touchUpInside)
     }
 }
