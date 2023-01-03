@@ -7,14 +7,22 @@
 
 import UIKit
 
-class GatchDetailView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class GatchDetailView: BaseView {
+    
+    let infoTableView = UITableView().then{
+        $0.register(GatchDetailInfomationTableViewCell.self,
+                    forCellReuseIdentifier: GatchDetailInfomationTableViewCell.cellIdentifier)
+        $0.register(DetailImageTableViewCell.self, forCellReuseIdentifier: DetailImageTableViewCell.cellIdentifier)
     }
-    */
-
+    
+    override func hierarchy() {
+        self.addSubview(infoTableView)
+    }
+    
+    override func layout() {
+        infoTableView.snp.makeConstraints{
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+    }
 }
