@@ -205,29 +205,13 @@ class GatchDetailInfomationTableViewCell: BaseTableViewCell, BaseCellProtocol {
             $0.height.equalTo(28)
             
         }
-        
-        productName.snp.makeConstraints{
-            $0.top.leading.bottom.equalToSuperview()
-        }
-        
-        purchaseTag.snp.makeConstraints{
-            $0.trailing.height.equalToSuperview()
-        }
+        setTitleStackViewLayout()
         
         titleUnderDetailStackView.snp.makeConstraints{
             $0.top.equalTo(titleStackView.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(20)
         }
-        
-        timerImageView.snp.makeConstraints{
-            $0.height.equalToSuperview()
-            $0.width.equalTo(timerImageView.snp.height)
-        }
-        
-        heartImageView.snp.makeConstraints{
-            $0.height.equalToSuperview()
-            $0.width.equalTo(heartImageView.snp.height)
-        }
+        setTitleUnderDetailStackView()
         
         profileAndWithMemberView.snp.makeConstraints{
             $0.top.equalTo(titleUnderDetailStackView.snp.bottom).offset(20)
@@ -235,22 +219,7 @@ class GatchDetailInfomationTableViewCell: BaseTableViewCell, BaseCellProtocol {
             $0.trailing.equalToSuperview().offset(-24)
             $0.height.equalTo(40)
         }
-        
-        profileImageView.snp.makeConstraints{
-            $0.leading.height.equalToSuperview()
-            $0.width.equalTo(profileImageView.snp.height)
-        }
-        
-        userInfoStackView.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.leading.equalTo(profileImageView.snp.trailing).offset(8)
-        }
-        
-        withMemberImageStackView.snp.makeConstraints{
-            $0.trailing.equalToSuperview()
-            $0.top.equalToSuperview().offset(4)
-            $0.centerY.equalToSuperview()
-        }
+        setProfileAndWithMemeberViewLayout()
         
         borderLine.snp.makeConstraints{
             $0.top.equalTo(profileAndWithMemberView.snp.bottom).offset(20)
@@ -275,10 +244,47 @@ class GatchDetailInfomationTableViewCell: BaseTableViewCell, BaseCellProtocol {
             $0.top.equalTo(handleRemainPersonnelView.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-120)
-            $0.bottom.equalToSuperview().offset(-24)
+            $0.bottom.equalToSuperview()
         }
         
     }
+    
+    private func setTitleStackViewLayout(){
+        productName.snp.makeConstraints{
+            $0.top.leading.bottom.equalToSuperview()
+        }
+        purchaseTag.snp.makeConstraints{
+            $0.trailing.height.equalToSuperview()
+        }
+    }
+    
+    private func setTitleUnderDetailStackView(){
+        timerImageView.snp.makeConstraints{
+            $0.height.equalToSuperview()
+            $0.width.equalTo(timerImageView.snp.height)
+        }
+        heartImageView.snp.makeConstraints{
+            $0.height.equalToSuperview()
+            $0.width.equalTo(heartImageView.snp.height)
+        }
+    }
+    
+    private func setProfileAndWithMemeberViewLayout(){
+        profileImageView.snp.makeConstraints{
+            $0.leading.height.equalToSuperview()
+            $0.width.equalTo(profileImageView.snp.height)
+        }
+        userInfoStackView.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(profileImageView.snp.trailing).offset(8)
+        }
+        withMemberImageStackView.snp.makeConstraints{
+            $0.trailing.equalToSuperview()
+            $0.top.equalToSuperview().offset(4)
+            $0.centerY.equalToSuperview()
+        }
+    }
+    
     
     private func setProductInfoStackViewLayout(){
         priceArrowImageView.snp.makeConstraints{

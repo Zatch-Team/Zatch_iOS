@@ -12,7 +12,6 @@ class GatchDetailViewController: BaseViewController {
     let mainView = GatchDetailView()
     
     override init() {
-        print("?")
         super.init(rightButton: Image.dot)
     }
     
@@ -27,7 +26,8 @@ class GatchDetailViewController: BaseViewController {
         self.view.addSubview(mainView)
         self.view.bringSubviewToFront(self.navigationView)
         mainView.snp.makeConstraints{
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
     
