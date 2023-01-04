@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class CategorySheetViewController: SheetViewController {
+class CategorySheetViewController: BaseBottomSheetViewController {
     
     //MARK: - Properties
     

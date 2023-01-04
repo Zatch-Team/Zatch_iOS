@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TownSettingSheetViewController: SheetViewController {
+class TownSettingSheetViewController: BaseBottomSheetViewController {
     
     //MARK: - Properties
     

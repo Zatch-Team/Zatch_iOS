@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchTagSheetViewController: SheetViewController {
+class SearchTagSheetViewController: BaseBottomSheetViewController {
     
     //MARK: - Properties
     

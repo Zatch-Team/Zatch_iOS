@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SheetViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     //MARK: - Properties
     
@@ -70,11 +70,6 @@ class SheetViewController: UIViewController, UIViewControllerTransitioningDelega
             make.centerX.equalToSuperview()
         }
     }
-    
-//    func setBottomSheetStyle(type: BottomSheetType){
-//        self.bottomSheetType = type
-//    }
-
 }
 
 /*

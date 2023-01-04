@@ -115,7 +115,7 @@
 		57468A81289E3FB600056691 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A80289E3FB600056691 /* BaseViewController.swift */; };
 		57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */; };
 		57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */; };
-		57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8A289FEB2000056691 /* SheetViewController.swift */; };
+		57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */; };
 		57468A8E289FEF1800056691 /* WantZatchSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */; };
 		57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */; };
 		57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */; };
@@ -275,6 +275,7 @@
 		57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */; };
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
 		57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */; };
+		57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */; };
 		57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */; };
 		57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */; };
 		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
@@ -409,7 +410,7 @@
 		57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
-		57468A8A289FEB2000056691 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagSheetViewController.swift; sourceTree = "<group>"; };
 		57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -584,6 +585,7 @@
 		57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
+		57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
@@ -940,6 +942,7 @@
 		23C9031128C5CE5600FB6D3D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */,
 				5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */,
 				57600C082963076E00A7F27B /* GatchDetailViewController.swift */,
 			);
@@ -1250,7 +1253,7 @@
 				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57C585032821F2A70078FAFF /* ServiceType.swift */,
 				57B32C27291E8FB80018C0CB /* Base */,
-				57B32C28291E8FF60018C0CB /* Sheet */,
+				57B32C28291E8FF60018C0CB /* BottomSheet */,
 				571AD7112828D9C900390AAD /* Category */,
 				576B374C28D6D6EF00EF36E6 /* Map */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
@@ -1588,14 +1591,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		57B32C28291E8FF60018C0CB /* Sheet */ = {
+		57B32C28291E8FF60018C0CB /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
 				57B32C3729220EA10018C0CB /* BottomSheetInfo.swift */,
-				57468A8A289FEB2000056691 /* SheetViewController.swift */,
+				57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */,
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 			);
-			path = Sheet;
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		57B32C29291E92EF0018C0CB /* Support */ = {
@@ -2116,6 +2119,7 @@
 				2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
+				57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
 				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
@@ -2172,7 +2176,7 @@
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
 				577A01B828A49C97004B2575 /* CheckRegisterInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
-				57468A8B289FEB2000056691 /* SheetViewController.swift in Sources */,
+				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
 				2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */,

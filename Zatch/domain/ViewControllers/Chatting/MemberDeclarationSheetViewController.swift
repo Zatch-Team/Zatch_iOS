@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberDeclarationSheetViewController: SheetViewController {
+class MemberDeclarationSheetViewController: BaseBottomSheetViewController {
     
     let blockBtn = UILabel().then{
         $0.text = "차단하기"

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ChangeLocationSheetViewController: SheetViewController {
+class ChangeLocationSheetViewController: BaseBottomSheetViewController {
 
     var locationTableView: UITableView!
     var viewModel: MainViewModel!

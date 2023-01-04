@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class SearchAddressResultSheetViewController: SheetViewController {
+class SearchAddressResultSheetViewController: BaseBottomSheetViewController {
     
     //MARK: - Properties
     var addressResult: [LocalTownResult] = []{
