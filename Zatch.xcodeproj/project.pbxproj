@@ -276,6 +276,7 @@
 		57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */; };
 		57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */; };
 		57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */; };
+		57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */; };
 		57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */; };
 		57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */; };
 		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
@@ -586,6 +587,7 @@
 		57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailViewController.swift; sourceTree = "<group>"; };
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
 		57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetViewController.swift; sourceTree = "<group>"; };
+		57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetView.swift; sourceTree = "<group>"; };
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
@@ -1040,6 +1042,7 @@
 		23C9031B28C5CF3100FB6D3D /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */,
 				57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */,
 				5767D77C286944FB0075DB28 /* BottomFixView.swift */,
 				57600C0C296307E000A7F27B /* GatchDetailView.swift */,
@@ -2185,6 +2188,7 @@
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
+				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchSheetViewController.swift in Sources */,
 				23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,

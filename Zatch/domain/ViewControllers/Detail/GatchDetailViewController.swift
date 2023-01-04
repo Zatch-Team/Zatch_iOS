@@ -21,6 +21,7 @@ class GatchDetailViewController: BaseViewController {
     }
     
     override func layout() {
+        
         super.layout()
         
         self.view.addSubview(mainView)
@@ -35,6 +36,14 @@ class GatchDetailViewController: BaseViewController {
         mainView.infoTableView.separatorStyle = .none
         mainView.infoTableView.delegate = self
         mainView.infoTableView.dataSource = self
+        
+        self.rightPositionButton?.addTarget(self, action: #selector(detailEtcBottomSheetWillShow), for: .touchUpInside)
+    }
+    
+    @objc private func detailEtcBottomSheetWillShow() {
+        let sheet = DetailEtcBottomSheetViewController()
+        sheet.loadViewIfNeeded()
+        self.present(sheet, animated: true)
     }
 
 }

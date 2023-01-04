@@ -7,16 +7,24 @@
 
 import UIKit
 
-
-
 class DetailEtcBottomSheetViewController: BaseBottomSheetViewController {
+    
+    let mainView = DetailEtcBottomSheetView()
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    init(){
+        super.init(type: .detailEtc)
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layout() {
+        self.view.addSubview(mainView)
+        mainView.snp.makeConstraints{
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
+    }
+    
 }
