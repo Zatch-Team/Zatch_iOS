@@ -18,7 +18,7 @@ class MyZatchSheetViewController: SearchTagSheetViewController{
     }
     
     init(){
-        super.init(type: .SearchMyTag)
+        super.init(type: .searchMyTag)
     }
     
     required init?(coder: NSCoder) {

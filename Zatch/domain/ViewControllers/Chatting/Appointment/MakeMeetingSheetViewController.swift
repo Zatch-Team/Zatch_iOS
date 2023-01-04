@@ -17,7 +17,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
 
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {

@@ -15,7 +15,7 @@ class SearchAddressSheetViewController: SheetViewController {
     let viewModel = SearchAddressViewModel()
 
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {

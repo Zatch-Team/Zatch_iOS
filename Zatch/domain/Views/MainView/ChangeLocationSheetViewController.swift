@@ -18,7 +18,7 @@ class ChangeLocationSheetViewController: SheetViewController {
     var myLocation: String!
     
     init(){
-        super.init(type: .LocationChange)
+        super.init(type: .locationChange)
     }
     
     required init?(coder: NSCoder) {

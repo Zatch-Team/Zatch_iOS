@@ -28,7 +28,7 @@ class TownSettingSheetViewController: SheetViewController {
     }
 
     init(){
-        super.init(type: .TownArea)
+        super.init(type: .townArea)
     }
     
     required init?(coder: NSCoder) {

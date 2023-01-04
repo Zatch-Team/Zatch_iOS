@@ -27,7 +27,7 @@ class MemberDeclarationSheetViewController: SheetViewController {
     
 
     init(){
-        super.init(type: .Declaration)
+        super.init(type: .declaration)
     }
     
     required init?(coder: NSCoder) {

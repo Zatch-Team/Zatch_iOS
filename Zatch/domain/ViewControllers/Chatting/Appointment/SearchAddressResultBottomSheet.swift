@@ -20,7 +20,7 @@ class SearchAddressResultSheetViewController: SheetViewController {
     let mainView = SearchAddressResultView()
 
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {
