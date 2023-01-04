@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A330348901EFDB29A9063C /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B45FEA4F195407269C19923 /* Pods_Zatch_ZatchUITests.framework */; };
 		232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */; };
 		232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */; };
 		232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */; };
@@ -21,6 +22,7 @@
 		235613F728D0976500D44E97 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F628D0976500D44E97 /* MyProfileView.swift */; };
 		235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */; };
 		235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */; };
+		236E52FC29653E10002A4551 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 236E52FB29653E10002A4551 /* AppKey.xcconfig */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
 		23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */; };
@@ -66,8 +68,6 @@
 		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
 		23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */; };
-		3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */; };
-		4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB3557798038E512E204D3 /* Pods_Zatch.framework */; };
 		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
 		57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
@@ -282,7 +282,8 @@
 		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
 		57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */; };
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
-		93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */; };
+		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
+		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -317,6 +318,7 @@
 		235613F628D0976500D44E97 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTableViewCell.swift; sourceTree = "<group>"; };
+		236E52FB29653E10002A4551 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
 		23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabmanViewController.swift; sourceTree = "<group>"; };
@@ -362,7 +364,11 @@
 		23EEA44A28D874CC00C4C67E /* GatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
 		23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListTabmanViewController.swift; sourceTree = "<group>"; };
-		46AB3557798038E512E204D3 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B45FEA4F195407269C19923 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.release.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		537DC8121E89810426FB0D7A /* Pods-Zatch-ZatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		57067873281C2F3900F48342 /* pretendard_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_medium.ttf; sourceTree = "<group>"; };
@@ -542,6 +548,7 @@
 		57A28D0D28D03FAE00263079 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		57A28D0F28D041F800263079 /* MapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAlertViewController.swift; sourceTree = "<group>"; };
 		57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAddressModel.swift; sourceTree = "<group>"; };
+		57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		57B32C2B291F49CF0018C0CB /* FirstRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterView.swift; sourceTree = "<group>"; };
 		57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterView.swift; sourceTree = "<group>"; };
 		57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterModel.swift; sourceTree = "<group>"; };
@@ -560,7 +567,6 @@
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlertViewController.swift; sourceTree = "<group>"; };
 		57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
-		57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		57D6D79128CDB96900F805B7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zatch-Bridging-Header.h"; sourceTree = "<group>"; };
 		57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingSheetView.swift; sourceTree = "<group>"; };
@@ -593,14 +599,9 @@
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterViewController.swift; sourceTree = "<group>"; };
 		57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterViewController.swift; sourceTree = "<group>"; };
-		629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
-		9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
-		E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.release.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -615,9 +616,9 @@
 				57A28B8D28CEF62700263079 /* CoreLocation.framework in Frameworks */,
 				57A28B9328CEF64500263079 /* libxml2.tbd in Frameworks */,
 				57A28CDC28CF05D800263079 /* DaumMap.framework in Frameworks */,
-				4DECCA739452166E9700E7DF /* Pods_Zatch.framework in Frameworks */,
 				57A28CDB28CF05D300263079 /* DaumMap.framework in Frameworks */,
 				57A28B8B28CEF5E000263079 /* OpenGLES.framework in Frameworks */,
+				6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +626,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D9EB8C114A5A52688F9B18 /* Pods_ZatchTests.framework in Frameworks */,
+				D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +634,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB8761C6CBF83F152E5CA8B /* Pods_Zatch_ZatchUITests.framework in Frameworks */,
+				01A330348901EFDB29A9063C /* Pods_Zatch_ZatchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1138,12 +1139,12 @@
 		23CFCBC801D90B1A2F9BB36B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1ECF3FCD93713F954667AE0 /* Pods-Zatch.debug.xcconfig */,
-				6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */,
-				A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */,
-				629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */,
-				D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */,
-				E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */,
+				E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */,
+				57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */,
+				537DC8121E89810426FB0D7A /* Pods-Zatch-ZatchUITests.debug.xcconfig */,
+				6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */,
+				41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */,
+				531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1607,8 +1608,8 @@
 		57B32C29291E92EF0018C0CB /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				236E52FB29653E10002A4551 /* AppKey.xcconfig */,
 				575BF70A27E0CBC8008D5B3C /* Info.plist */,
-				57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1713,9 +1714,9 @@
 				57A28B8E28CEF62E00263079 /* QuartzCore.framework */,
 				57A28B8C28CEF62700263079 /* CoreLocation.framework */,
 				57A28B8A28CEF5E000263079 /* OpenGLES.framework */,
-				46AB3557798038E512E204D3 /* Pods_Zatch.framework */,
-				9A618A1CC97F19CCF971A7A9 /* Pods_Zatch_ZatchUITests.framework */,
-				BD3EFAC7D96376BAC0314ADC /* Pods_ZatchTests.framework */,
+				99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */,
+				4B45FEA4F195407269C19923 /* Pods_Zatch_ZatchUITests.framework */,
+				2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1727,11 +1728,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 575BF72327E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "Zatch" */;
 			buildPhases = (
-				B2155CE5E1D4DABD971BD97E /* [CP] Check Pods Manifest.lock */,
+				647831061BF8E28871AE39DC /* [CP] Check Pods Manifest.lock */,
 				575BF6F527E0CBC6008D5B3C /* Sources */,
 				575BF6F627E0CBC6008D5B3C /* Frameworks */,
 				575BF6F727E0CBC6008D5B3C /* Resources */,
-				687AD479EB57C1A10288F9EF /* [CP] Embed Pods Frameworks */,
+				97933850D9895751D8948843 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1746,7 +1747,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 575BF72627E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "ZatchTests" */;
 			buildPhases = (
-				2C053A9D88A0449AF30A6042 /* [CP] Check Pods Manifest.lock */,
+				3F08DEBB9CEB024325C5B1AE /* [CP] Check Pods Manifest.lock */,
 				575BF70B27E0CBC8008D5B3C /* Sources */,
 				575BF70C27E0CBC8008D5B3C /* Frameworks */,
 				575BF70D27E0CBC8008D5B3C /* Resources */,
@@ -1765,11 +1766,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 575BF72927E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "ZatchUITests" */;
 			buildPhases = (
-				951ABCB4FA1D5FB59BF0B290 /* [CP] Check Pods Manifest.lock */,
+				25707E9521FA65FC01E3A473 /* [CP] Check Pods Manifest.lock */,
 				575BF71627E0CBC8008D5B3C /* Sources */,
 				575BF71727E0CBC8008D5B3C /* Frameworks */,
 				575BF71827E0CBC8008D5B3C /* Resources */,
-				F0452AE72637ACF0CFA360E6 /* [CP] Embed Pods Frameworks */,
+				5235F24B85A1E72628FA4C84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1849,6 +1850,7 @@
 				57A28CC628CF05D300263079 /* map_pinup@3x.png in Resources */,
 				57A28CC128CF05D300263079 /* map_pin_custom.png in Resources */,
 				23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */,
+				236E52FC29653E10002A4551 /* AppKey.xcconfig in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
 				57A28CC728CF05D300263079 /* map_pin_shadow@3x.png in Resources */,
 				57A28CD928CF05D300263079 /* daum_th_line.png in Resources */,
@@ -1884,46 +1886,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C053A9D88A0449AF30A6042 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZatchTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		687AD479EB57C1A10288F9EF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		951ABCB4FA1D5FB59BF0B290 /* [CP] Check Pods Manifest.lock */ = {
+		25707E9521FA65FC01E3A473 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1945,7 +1908,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2155CE5E1D4DABD971BD97E /* [CP] Check Pods Manifest.lock */ = {
+		3F08DEBB9CEB024325C5B1AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZatchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5235F24B85A1E72628FA4C84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		647831061BF8E28871AE39DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1967,21 +1969,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F0452AE72637ACF0CFA360E6 /* [CP] Embed Pods Frameworks */ = {
+		97933850D9895751D8948843 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zatch/Pods-Zatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2389,7 +2391,7 @@
 		};
 		575BF72427E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57D6D79028CDB8A100F805B7 /* AppKey.xcconfig */;
+			baseConfigurationReference = E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2427,7 +2429,7 @@
 		};
 		575BF72527E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BFC1216960D9D4323F7BC5B /* Pods-Zatch.release.xcconfig */;
+			baseConfigurationReference = 57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2465,7 +2467,7 @@
 		};
 		575BF72727E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D5204E418FF36093189736 /* Pods-ZatchTests.debug.xcconfig */;
+			baseConfigurationReference = 41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2488,7 +2490,7 @@
 		};
 		575BF72827E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E705AC3AD84492ACE0D42AB4 /* Pods-ZatchTests.release.xcconfig */;
+			baseConfigurationReference = 531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2511,7 +2513,7 @@
 		};
 		575BF72A27E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A12BFFF99102B09A432C319C /* Pods-Zatch-ZatchUITests.debug.xcconfig */;
+			baseConfigurationReference = 537DC8121E89810426FB0D7A /* Pods-Zatch-ZatchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2532,7 +2534,7 @@
 		};
 		575BF72B27E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 629573387A4542584E8E9DBB /* Pods-Zatch-ZatchUITests.release.xcconfig */;
+			baseConfigurationReference = 6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
