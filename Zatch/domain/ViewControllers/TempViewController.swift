@@ -11,6 +11,7 @@ class TempViewController: UIViewController, CustomMenuBarDelegate{
         return collectionView
     }()
     var customMenuBar = CustomMenuBar()
+    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()

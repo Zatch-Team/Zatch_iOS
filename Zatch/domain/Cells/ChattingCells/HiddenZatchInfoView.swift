@@ -74,7 +74,6 @@ class HiddenZatchInfoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .zatchPurple
         
         self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         self.layer.cornerRadius = 80/2
@@ -133,6 +132,9 @@ class HiddenZatchInfoView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    func setIfZatch(_ isZatch: Bool) {
+        if isZatch {self.backgroundColor = .zatchPurple}
+        else {self.backgroundColor = .zatchYellow}
+    }
     
 }

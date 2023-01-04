@@ -9,7 +9,10 @@ import UIKit
 
 extension ChattingListTableViewCell {
     
-    func setUpView(){
+    func setUpView(_ isZatch: Bool){
+        if isZatch {profileImage.image = Image.zatchProfile}
+        else {profileImage.image = Image.gatchProfile}
+        
         baseView.addSubview(profileImage)
         baseView.addSubview(infoStackView)
         baseView.addSubview(timeLabel)

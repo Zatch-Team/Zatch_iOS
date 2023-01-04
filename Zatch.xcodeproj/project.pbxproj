@@ -25,6 +25,9 @@
 		236E52FC29653E10002A4551 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 236E52FB29653E10002A4551 /* AppKey.xcconfig */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
+		23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */; };
+		23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */; };
+		23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */; };
 		23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */; };
 		23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */; };
 		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
@@ -321,6 +324,9 @@
 		236E52FB29653E10002A4551 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
+		23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchChattingListViewController.swift; sourceTree = "<group>"; };
+		23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTabManViewController.swift; sourceTree = "<group>"; };
+		23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchChattingListViewController.swift; sourceTree = "<group>"; };
 		23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabmanViewController.swift; sourceTree = "<group>"; };
 		23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchChildViewController.swift; sourceTree = "<group>"; };
 		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
@@ -730,6 +736,18 @@
 			path = MyProfile;
 			sourceTree = "<group>";
 		};
+		23A5791C296546A2004F08DE /* ChattingList */ = {
+			isa = PBXGroup;
+			children = (
+				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
+				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
+				23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */,
+				23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */,
+				23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */,
+			);
+			path = ChattingList;
+			sourceTree = "<group>";
+		};
 		23A767EF2908518B003E46AB /* Notice */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,9 +949,8 @@
 		23C9031028C5CE5000FB6D3D /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				23A5791C296546A2004F08DE /* ChattingList */,
 				576B374F28D6D77700EF36E6 /* Appointment */,
-				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
-				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
 				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
 				578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */,
 				57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */,
@@ -2007,6 +2024,7 @@
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
+				23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */,
 				576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */,
 				5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */,
 				5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */,
@@ -2031,6 +2049,7 @@
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */,
+				23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
@@ -2049,6 +2068,7 @@
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */,
 				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
+				23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */,

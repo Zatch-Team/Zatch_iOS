@@ -85,7 +85,26 @@ class ChattingListTableViewCell: BaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setUpView()
+//        setUpView()
+//        setUpConstraint()
+//
+//        let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+//
+//        swipeGesture.delegate = self
+//        baseView.addGestureRecognizer(swipeGesture)
+//
+//        self.isUserInteractionEnabled = true
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setIfZatch(_ isZatch: Bool) {
+        hiddenLeftView.setIfZatch(isZatch)
+        
+        setUpView(isZatch)
         setUpConstraint()
         
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
@@ -94,10 +113,6 @@ class ChattingListTableViewCell: BaseTableViewCell {
         baseView.addGestureRecognizer(swipeGesture)
         
         self.isUserInteractionEnabled = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func deleteBtnDidClicked(){

@@ -1,46 +1,29 @@
 //
-//  ChattingListViewController.swift
+//  ZatchChattingListViewController.swift
 //  Zatch
 //
-//  Created by 박지윤 on 2022/08/16.
+//  Created by gomin on 2023/01/04.
 //
 
 import UIKit
 
-class ChattingListViewController: BaseTabBarViewController, SelectedTableViewCellDeliver {
-    
+class ZatchChattingListViewController: UIViewController, SelectedTableViewCellDeliver {
     //MARK: - Properties
+    var tableView : UITableView!
     
     var chattingList = [1,2,3,4,5] //
     
     var clampCell : IndexPath = [0,-1]
-    
-    //MARK: - UI
-    
-    var tableView : UITableView!
-    
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
-        self.tabBarController?.tabBar.tintColor = .systemOrange
-        
         setInitSetting()
         setUpView()
         setUpConstraint()
-        
-//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.tintColor = .systemOrange
-    }
-    //MARK: - Action
-    
-    @objc
-    func bellBtnDidClicked(){
-        print("bell btn clicked")
     }
     
+
     @objc
     func cellWillClamp(_ indexPath: IndexPath){
         
@@ -62,10 +45,34 @@ class ChattingListViewController: BaseTabBarViewController, SelectedTableViewCel
         guard let cell = tableView.cellForRow(at: clampCell) as? ChattingListTableViewCell else { return }
         cell.cellWillMoveOriginalPosition()
     }
+    func setInitSetting(){
+        tableView = UITableView().then{
+            
+            $0.separatorStyle = .none
+            $0.backgroundColor = .transparent
+            
+            $0.delegate = self
+            $0.dataSource = self
+            
+            $0.register(ChattingListTableViewCell.self, forCellReuseIdentifier: ChattingListTableViewCell.cellIdentifier)
+            
+//            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
+        }
+    }
 
+    func setUpView(){
+        self.view.addSubview(tableView)
+    }
+    
+    func setUpConstraint(){
+        
+        self.tableView.snp.makeConstraints{ make in
+            make.top.equalToSuperview().offset(16)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+    }
 }
-
-extension ChattingListViewController: UITableViewDelegate, UITableViewDataSource{
+extension ZatchChattingListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chattingList.count
@@ -73,6 +80,7 @@ extension ChattingListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ChattingListTableViewCell.cellIdentifier, for: indexPath) as? ChattingListTableViewCell else { fatalError() }
+        cell.setIfZatch(true)
         cell.delegate = self
         cell.navigationController = self.navigationController
         return cell
@@ -84,7 +92,5 @@ extension ChattingListViewController: UITableViewDelegate, UITableViewDataSource
         let vc = ChattingRoomViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-
     
 }
