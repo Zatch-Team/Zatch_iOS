@@ -9,13 +9,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchAddressSheetViewController: SheetViewController {
+class SearchAddressSheetViewController: BaseBottomSheetViewController {
     
     let mainView = SearchAddressView()
     let viewModel = SearchAddressViewModel()
 
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {

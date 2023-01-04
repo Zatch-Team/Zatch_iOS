@@ -9,7 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class MakeMeetingSheetViewController: SheetViewController {
+class MakeMeetingSheetViewController: BaseBottomSheetViewController {
     
     let mainView = MakeMeetingSheetView().then{
         $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
@@ -17,7 +17,7 @@ class MakeMeetingSheetViewController: SheetViewController {
     }
 
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {

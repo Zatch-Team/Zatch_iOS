@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class CategorySheetViewController: SheetViewController {
+class CategorySheetViewController: BaseBottomSheetViewController {
     
     //MARK: - Properties
     
@@ -39,7 +39,7 @@ class CategorySheetViewController: SheetViewController {
     
     init(service: ServiceType){
         self.service = service
-        super.init(type: .Category)
+        super.init(type: .category)
     }
     
     required init?(coder: NSCoder) {

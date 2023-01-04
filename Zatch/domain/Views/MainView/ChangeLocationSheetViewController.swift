@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ChangeLocationSheetViewController: SheetViewController {
+class ChangeLocationSheetViewController: BaseBottomSheetViewController {
 
     var locationTableView: UITableView!
     var viewModel: MainViewModel!
@@ -18,7 +18,7 @@ class ChangeLocationSheetViewController: SheetViewController {
     var myLocation: String!
     
     init(){
-        super.init(type: .LocationChange)
+        super.init(type: .locationChange)
     }
     
     required init?(coder: NSCoder) {

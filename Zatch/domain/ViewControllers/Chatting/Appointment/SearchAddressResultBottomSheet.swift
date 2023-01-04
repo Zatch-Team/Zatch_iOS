@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class SearchAddressResultSheetViewController: SheetViewController {
+class SearchAddressResultSheetViewController: BaseBottomSheetViewController {
     
     //MARK: - Properties
     var addressResult: [LocalTownResult] = []{
@@ -20,7 +20,7 @@ class SearchAddressResultSheetViewController: SheetViewController {
     let mainView = SearchAddressResultView()
 
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {

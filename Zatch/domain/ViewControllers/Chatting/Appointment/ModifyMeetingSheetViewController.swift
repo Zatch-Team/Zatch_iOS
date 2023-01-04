@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ModifyMeetingSheetViewController: SheetViewController {
+class ModifyMeetingSheetViewController: BaseBottomSheetViewController {
 
     let mainView = ModifyMeetingSheetView().then{
         $0.registerBtn.addTarget(self, action: #selector(modifyBtnDidClicked), for: .touchUpInside)
     }
     
     init(){
-        super.init(type: .MakeMeeting)
+        super.init(type: .makeMeeting)
     }
     
     required init?(coder: NSCoder) {
