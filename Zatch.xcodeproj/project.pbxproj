@@ -113,6 +113,7 @@
 		57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FC8296FBD7C0088B5F4 /* GatchSearchViewController.swift */; };
 		57397FCD296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FCC296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift */; };
 		57397FD0296FBDFE0088B5F4 /* GatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FCF296FBDFE0088B5F4 /* GatchSearchView.swift */; };
+		57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */; };
 		57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategorySheetViewController.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
 		57468A76289D077200056691 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A75289D077200056691 /* PurpleButton.swift */; };
@@ -420,6 +421,7 @@
 		57397FC8296FBD7C0088B5F4 /* GatchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchSearchViewController.swift; sourceTree = "<group>"; };
 		57397FCC296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchSearchFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57397FCF296FBDFE0088B5F4 /* GatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchSearchView.swift; sourceTree = "<group>"; };
+		57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategorySheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewController.swift; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57468A75289D077200056691 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
@@ -1661,6 +1663,7 @@
 			children = (
 				5724EC90291E122F00DC529B /* BaseView.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
+				57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */,
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
 				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
 				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
@@ -2078,6 +2081,7 @@
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
+				57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
