@@ -110,6 +110,10 @@
 		5724EC8C291E0E7A00DC529B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EC8B291E0E7A00DC529B /* LoginViewController.swift */; };
 		5724EC8F291E0E9B00DC529B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EC8E291E0E9B00DC529B /* LoginView.swift */; };
 		5724EC91291E122F00DC529B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724EC90291E122F00DC529B /* BaseView.swift */; };
+		57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FC8296FBD7C0088B5F4 /* GatchSearchViewController.swift */; };
+		57397FCD296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FCC296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift */; };
+		57397FD0296FBDFE0088B5F4 /* GatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FCF296FBDFE0088B5F4 /* GatchSearchView.swift */; };
+		57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */; };
 		57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A6D289CFFB700056691 /* CategorySheetViewController.swift */; };
 		57468A74289D071100056691 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A73289D071100056691 /* UIButton.swift */; };
 		57468A76289D077200056691 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A75289D077200056691 /* PurpleButton.swift */; };
@@ -414,6 +418,10 @@
 		5724EC8B291E0E7A00DC529B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5724EC8E291E0E9B00DC529B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5724EC90291E122F00DC529B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		57397FC8296FBD7C0088B5F4 /* GatchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchSearchViewController.swift; sourceTree = "<group>"; };
+		57397FCC296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchSearchFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		57397FCF296FBDFE0088B5F4 /* GatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchSearchView.swift; sourceTree = "<group>"; };
+		57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A6D289CFFB700056691 /* CategorySheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewController.swift; sourceTree = "<group>"; };
 		57468A73289D071100056691 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57468A75289D077200056691 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
@@ -980,9 +988,8 @@
 		23C9031328C5CE6000FB6D3D /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				5767752B281CDA4B000BC7CD /* MySearchViewController.swift */,
-				579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */,
-				579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */,
+				57397FC6296FBD040088B5F4 /* Zatch */,
+				57397FC7296FBD5C0088B5F4 /* Gatch */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1083,9 +1090,8 @@
 			isa = PBXGroup;
 			children = (
 				23C9032028C5CFAB00FB6D3D /* Sheet */,
-				57E75EC628E5480900AC24B2 /* MySearchView.swift */,
-				57E75EC828E5481900AC24B2 /* FindSearchView.swift */,
-				57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */,
+				57397FC5296FBCE90088B5F4 /* Zatch */,
+				57397FCE296FBDE60088B5F4 /* Gatch */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -1104,15 +1110,8 @@
 		23C9032128C5CFDD00FB6D3D /* SearchCells */ = {
 			isa = PBXGroup;
 			children = (
-				57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */,
-				57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */,
-				57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */,
-				5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */,
-				57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */,
-				57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */,
-				57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */,
-				57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */,
-				233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */,
+				57397FCA296FBD900088B5F4 /* Zatch */,
+				57397FCB296FBD990088B5F4 /* Gatch */,
 			);
 			path = SearchCells;
 			sourceTree = "<group>";
@@ -1266,6 +1265,66 @@
 				5724EC8E291E0E9B00DC529B /* LoginView.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		57397FC5296FBCE90088B5F4 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				57E75EC628E5480900AC24B2 /* MySearchView.swift */,
+				57E75EC828E5481900AC24B2 /* FindSearchView.swift */,
+				57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		57397FC6296FBD040088B5F4 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				5767752B281CDA4B000BC7CD /* MySearchViewController.swift */,
+				579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */,
+				579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		57397FC7296FBD5C0088B5F4 /* Gatch */ = {
+			isa = PBXGroup;
+			children = (
+				57397FC8296FBD7C0088B5F4 /* GatchSearchViewController.swift */,
+			);
+			path = Gatch;
+			sourceTree = "<group>";
+		};
+		57397FCA296FBD900088B5F4 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */,
+				57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */,
+				57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */,
+				5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */,
+				57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */,
+				57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */,
+				57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */,
+				57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */,
+				233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		57397FCB296FBD990088B5F4 /* Gatch */ = {
+			isa = PBXGroup;
+			children = (
+				57397FCC296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift */,
+			);
+			path = Gatch;
+			sourceTree = "<group>";
+		};
+		57397FCE296FBDE60088B5F4 /* Gatch */ = {
+			isa = PBXGroup;
+			children = (
+				57397FCF296FBDFE0088B5F4 /* GatchSearchView.swift */,
+			);
+			path = Gatch;
 			sourceTree = "<group>";
 		};
 		57468A6C289CFB3F00056691 /* Source */ = {
@@ -1604,6 +1663,7 @@
 			children = (
 				5724EC90291E122F00DC529B /* BaseView.swift */,
 				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
+				57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */,
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
 				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
 				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
@@ -2021,6 +2081,7 @@
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
+				57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
@@ -2158,6 +2219,7 @@
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
+				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				576B375D28D82EAF00EF36E6 /* SettingView.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
@@ -2171,6 +2233,7 @@
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */,
 				576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */,
+				57397FCD296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift in Sources */,
 				57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */,
 				23B051B628E1FD7F005D08EA /* NotificationViewController.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
@@ -2192,6 +2255,7 @@
 				57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,
 				23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */,
+				57397FD0296FBDFE0088B5F4 /* GatchSearchView.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
 				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,

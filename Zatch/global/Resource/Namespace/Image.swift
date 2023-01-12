@@ -54,6 +54,8 @@ enum Image{
     public static let exchange = UIImage(named: "exchange")!
     
     //MARK: - Icon
+    public static let checked = UIImage(named: "checked")!
+    public static let unchecked = UIImage(named: "unchecked")!
     public static let bell = UIImage(named: "bell")!
     public static let timer = UIImage(named: "timer")!
     public static let exit = UIImage(named: "exit")!
