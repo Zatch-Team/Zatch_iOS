@@ -12,19 +12,15 @@ class GatchDetailBottomFixView: BaseView {
     let borderLine = UIView().then{
         $0.backgroundColor = .black5
     }
-
     let buttonStackView = UIStackView().then{
         $0.spacing = 14
         $0.axis = .horizontal
         $0.distribution = .fillEqually
     }
     lazy var recruitFinishButton = UIButton().then{
-        $0.setTitle("마감하기", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.textAlignment = .center
         $0.titleLabel?.setTypoStyleWithSingleLine(typoStyle: .bold16)
         $0.layer.cornerRadius = 47/2
-        $0.backgroundColor = .zatchDeepYellow
     }
     lazy var chattingButton = UIButton().then{
         $0.setTitle("채팅", for: .normal)
@@ -37,8 +33,11 @@ class GatchDetailBottomFixView: BaseView {
         $0.layer.borderColor = UIColor.black10.cgColor
     }
     
+    //MARK: - Override
+    
     override func style() {
         self.backgroundColor = .white
+        setRecruitFinishButtonActivationStatus()
     }
 
     override func hierarchy() {
@@ -65,14 +64,55 @@ class GatchDetailBottomFixView: BaseView {
             $0.leading.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().offset(-24)
             $0.bottom.equalToSuperview().offset(-21)
-        }
-        
-        recruitFinishButton.snp.makeConstraints{
             $0.height.equalTo(47)
         }
         
+        recruitFinishButton.snp.makeConstraints{
+            $0.top.leading.bottom.equalToSuperview()
+        }
+        
         chattingButton.snp.makeConstraints{
-            $0.width.height.equalTo(recruitFinishButton)
+            $0.top.bottom.trailing.equalToSuperview()
+        }
+    }
+    
+    //MARK: - Helper
+    
+    func setRecruitFinishButtonActivationStatus(){
+        
+        _ = recruitFinishButton.then{
+            $0.isEnabled = true
+            $0.setTitle("마감하기", for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.backgroundColor = .zatchDeepYellow
+        }
+
+        buttonStackView.distribution = .fillEqually
+        recruitFinishButton.snp.makeConstraints{
+            $0.width.equalTo(164)
+        }
+        chattingButton.snp.makeConstraints{
+            $0.width.equalTo(164)
+        }
+    }
+    
+    func setRecruitFinishButtonDeactivationStatus(){
+        
+        _ = recruitFinishButton.then{
+            $0.isEnabled = false
+            $0.setTitle("마감완료", for: .normal)
+            $0.setTitleColor(.black20, for: .normal)
+            $0.backgroundColor = .black5
+            $0.layer.borderWidth = 1
+            $0.layer.borderColor = UIColor.black20.cgColor
+        }
+        
+        buttonStackView.distribution = .fillProportionally
+        recruitFinishButton.snp.updateConstraints{
+            $0.width.equalTo(240)
+        }
+        chattingButton.snp.updateConstraints{
+            $0.width.equalTo(88)
         }
     }
 

@@ -9,7 +9,9 @@ import UIKit
 
 class GatchDetailViewController: BaseViewController {
     
-    let mainView = GatchDetailView()
+    let mainView = GatchDetailView().then{
+        $0.bottomFixView.recruitFinishButton.addTarget(self, action: #selector(recruitFinishButtonDidClicked), for: .touchUpInside)
+    }
     
     override init() {
         super.init(rightButton: Image.dot)
@@ -44,6 +46,10 @@ class GatchDetailViewController: BaseViewController {
         let sheet = DetailEtcBottomSheetViewController()
         sheet.loadViewIfNeeded()
         self.present(sheet, animated: true)
+    }
+    
+    @objc private func recruitFinishButtonDidClicked(){
+        mainView.bottomFixView.setRecruitFinishButtonDeactivationStatus()
     }
 
 }
