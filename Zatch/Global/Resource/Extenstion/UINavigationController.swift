@@ -8,7 +8,6 @@
 import Foundation
 
 extension UINavigationController{
-    
     func popToRootViewController(animated: Bool = true, completion: @escaping () -> Void) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)

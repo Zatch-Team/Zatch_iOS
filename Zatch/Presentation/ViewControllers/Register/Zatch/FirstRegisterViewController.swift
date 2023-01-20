@@ -61,6 +61,7 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         self.view.endEditing(true)
     }
     
+    
     //MARK: - Action
     
     @objc func nextBtnDidClicked(){

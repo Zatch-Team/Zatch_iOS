@@ -17,8 +17,6 @@ class SettingViewController: BaseCenterTitleViewController {
     
         navigationTitle.text = "설정"
         
-        mainView.tableView.settingCustomTableView(self)
-        
         self.view.addSubview(mainView)
         
         mainView.snp.makeConstraints{
@@ -26,6 +24,12 @@ class SettingViewController: BaseCenterTitleViewController {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
+    }
+    
+    override func initialize(){
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
     }
 
 }

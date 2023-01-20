@@ -8,7 +8,6 @@
 import Foundation
 
 extension String{
-    
     func returnEndCharacter() -> Character{
         return self[self.index(before: self.endIndex)]
     }
