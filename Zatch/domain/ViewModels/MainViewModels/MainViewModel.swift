@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 class MainViewModel {
     
     var heartState: Observable<UIControl.State?> = Observable(nil)
@@ -39,3 +40,4 @@ class MainViewModel {
         myLocation.value = location
     }
 }
+*/

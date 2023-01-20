@@ -9,7 +9,7 @@ import Foundation
 
 class MainViewController: UIViewController {
     var locationChangeBottomSheet: ChangeLocationSheetViewController?
-    var viewModel: MainViewModel!
+//    var viewModel: MainViewModel!
     let mainView: MainView = MainView()
     
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
         self.mainView.searchButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         self.mainView.notiButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
         
-        viewModel = MainViewModel()
+//        viewModel = MainViewModel()
     }
     func setBottomSheet() {
         self.mainView.arrowButton.isSelected = true
@@ -59,7 +59,7 @@ class MainViewController: UIViewController {
         
         locationChangeBottomSheet = ChangeLocationSheetViewController()
         locationChangeBottomSheet?.mainView = self.mainView
-        locationChangeBottomSheet?.viewModel = self.viewModel
+//        locationChangeBottomSheet?.viewModel = self.viewModel
         let currentLocation = mainView.locationLabel.text!
         locationChangeBottomSheet?.myLocation = currentLocation
         locationChangeBottomSheet!.loadViewIfNeeded()

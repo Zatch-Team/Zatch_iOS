@@ -11,7 +11,7 @@ import UIKit
 class ChangeLocationSheetViewController: BaseBottomSheetViewController {
 
     var locationTableView: UITableView!
-    var viewModel: MainViewModel!
+//    var viewModel: MainViewModel!
     var mainView: MainView!
     
     var locationData = ["양재동", "서교동", "돈암동"]
@@ -28,9 +28,9 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let viewModel = self.viewModel {
-            bind()
-        }
+//        if let viewModel = self.viewModel {
+//            bind()
+//        }
     }
     
     override func initialize() {
@@ -82,7 +82,7 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idx = indexPath.item
-        self.viewModel.locationDidTap(locationData[idx])
+//        self.viewModel.locationDidTap(locationData[idx])
         self.mainView.arrowButton.isSelected = false
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -90,15 +90,15 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
 // MARK: - Observable
 extension ChangeLocationSheetViewController {
     //MARK: Methods
-    private func bind() {
-        self.viewModel.myLocation.bind { myLocation in
-            print("location changed!", myLocation)
-            self.myLocation = myLocation
-            if self.myLocation != nil {
-                self.mainView.locationLabel.text = self.myLocation
-            }
-            else {self.mainView.locationLabel.text = "양재동"}
-            self.dismiss(animated: true)
-        }
-    }
+//    private func bind() {
+//        self.viewModel.myLocation.bind { myLocation in
+//            print("location changed!", myLocation)
+//            self.myLocation = myLocation
+//            if self.myLocation != nil {
+//                self.mainView.locationLabel.text = self.myLocation
+//            }
+//            else {self.mainView.locationLabel.text = "양재동"}
+//            self.dismiss(animated: true)
+//        }
+//    }
 }
