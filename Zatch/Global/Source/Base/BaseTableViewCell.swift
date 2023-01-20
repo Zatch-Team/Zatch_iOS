@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseTableViewCell: UITableViewCell {
+class BaseTableViewCell: UITableViewCell, CellReuse {
     
     let baseView = UIView().then{
         $0.backgroundColor = .white

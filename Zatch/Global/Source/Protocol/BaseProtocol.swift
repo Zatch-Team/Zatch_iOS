@@ -7,6 +7,12 @@
 
 import Foundation
 
-protocol BaseCellProtocol{
+protocol CellReuse{
     static var cellIdentifier: String { get }
+}
+
+extension CellReuse{
+    static var cellIdentifier: String{
+        return String(describing: self)
+    }
 }

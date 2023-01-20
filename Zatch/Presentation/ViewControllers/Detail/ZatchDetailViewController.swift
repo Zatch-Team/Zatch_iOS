@@ -21,8 +21,12 @@ class ZatchDetailViewController: BaseViewController {
         mainView.snp.makeConstraints{
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
-        
-        mainView.tableView.settingCustomTableView(self)
+    }
+    
+    override func initialize(){
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
     }
 
 }

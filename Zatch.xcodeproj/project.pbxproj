@@ -283,6 +283,7 @@
 		57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */; };
 		57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */; };
 		57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */; };
+		57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */; };
 		57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */; };
 		57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */; };
 		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
@@ -606,6 +607,7 @@
 		57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetView.swift; sourceTree = "<group>"; };
 		57FEFA8A297A5E48008A78B0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
+		57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
@@ -1362,6 +1364,7 @@
 				57D6D79128CDB96900F805B7 /* UINavigationController.swift */,
 				57A28D0D28D03FAE00263079 /* String.swift */,
 				576B376B28D85F8B00EF36E6 /* UITableView.swift */,
+				57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */,
 				57067865281C167100F48342 /* UIFont.swift */,
 			);
 			path = Extenstion;
@@ -2309,6 +2312,7 @@
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
 				5724EC8C291E0E7A00DC529B /* LoginViewController.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
+				57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */,
 				576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
 				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,

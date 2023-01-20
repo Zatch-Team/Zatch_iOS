@@ -40,8 +40,6 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         super.style()
         
         self.navigationTitle.text = "재치 등록하기"
-        
-        registerView.backTableView.settingCustomTableView(self)
     }
     
     override func layout() {
@@ -57,9 +55,16 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         }
     }
     
+    override func initialize(){
+        registerView.backTableView.dataSource = self
+        registerView.backTableView.delegate = self
+        registerView.backTableView.separatorStyle = .none
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     
     //MARK: - Action
     
