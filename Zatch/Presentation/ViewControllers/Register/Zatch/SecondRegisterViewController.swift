@@ -44,7 +44,9 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     
     override func initialize() {
         currentBtnSelect = registerView.topCheckBoxBtn
-        registerView.tableView.settingCustomTableView(self)
+        registerView.tableView.dataSource = self
+        registerView.tableView.delegate = self
+        registerView.tableView.separatorStyle = .none
     }
     
     override func layout() {

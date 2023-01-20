@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailImageTableViewCell: BaseTableViewCell, BaseCellProtocol {
+class DetailImageTableViewCell: BaseTableViewCell {
     
     static let cellIdentifier = "DetailImageTableViewCell"
     

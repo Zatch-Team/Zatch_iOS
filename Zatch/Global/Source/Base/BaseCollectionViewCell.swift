@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseCollectionViewCell: UICollectionViewCell {
+class BaseCollectionViewCell: UICollectionViewCell, CellReuse {
     
     let baseView = UIView().then{
         $0.backgroundColor = .white

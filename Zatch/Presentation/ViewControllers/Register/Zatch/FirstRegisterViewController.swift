@@ -40,8 +40,6 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         super.style()
         
         self.navigationTitle.text = "재치 등록하기"
-        
-        registerView.backTableView.settingCustomTableView(self)
     }
     
     override func layout() {
@@ -55,6 +53,12 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
+    }
+    
+    override func initialize(){
+        registerView.backTableView.dataSource = self
+        registerView.backTableView.delegate = self
+        registerView.backTableView.separatorStyle = .none
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GatchDetailInfomationTableViewCell: BaseTableViewCell, BaseCellProtocol {
+class GatchDetailInfomationTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     static let cellIdentifier: String = "GatchDetailInfomationTableViewCell"
