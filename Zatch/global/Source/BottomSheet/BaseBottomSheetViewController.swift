@@ -62,29 +62,10 @@ class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitio
     }
     
     func layout() {
-        
         self.view.addSubview(titleLabel)
-        
         titleLabel.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(24)
             make.centerX.equalToSuperview()
         }
     }
 }
-
-/*
- override func style(){
-     
-     super.style()
-     
-     self.setBottomSheetStyle(type: .SearchMyTag)
- }
- 
- override func initialize() {
-     super.initialize()
- }
- 
- override func layout() {
-     super.layout()
- }
- */

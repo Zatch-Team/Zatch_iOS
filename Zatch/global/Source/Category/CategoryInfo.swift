@@ -15,7 +15,7 @@ struct CategoryInfo{
 
 extension ServiceType{
     
-    var categories: [CategoryInfo]{
+    private var categories: [CategoryInfo]{
         switch self{
         case .Zatch:    return [CategoryInfo(title: "음식", image: Image.category0)] + defaultCategories
         case .Gatch:    return [CategoryInfo(title: "음식|조리", image: Image.category0),

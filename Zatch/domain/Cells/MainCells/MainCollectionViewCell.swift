@@ -61,15 +61,15 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.setImage(Image.heartPurple, for: .selected)
     }
     // MARK: Properties
-    private let mainViewModel: MainViewModel = MainViewModel()
+//    private let mainViewModel: MainViewModel = MainViewModel()
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
         setUpView()
         setUpConstraint()
         
-        heart.addTarget(self, action: #selector(heartBtnDidTap), for: .touchUpInside)
-        bind()
+//        heart.addTarget(self, action: #selector(heartBtnDidTap), for: .touchUpInside)
+//        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -117,6 +117,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+/*
 extension MainCollectionViewCell {
     // MARK: - Actions
     @objc func heartBtnDidTap(_ sender: UIButton) {
@@ -136,3 +137,4 @@ extension MainCollectionViewCell {
         }
     }
 }
+*/
