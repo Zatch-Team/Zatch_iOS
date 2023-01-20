@@ -428,7 +428,6 @@
 		57468A80289E3FB600056691 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/Resource/New Group/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
 		57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagSheetViewController.swift; sourceTree = "<group>"; };
@@ -606,6 +605,7 @@
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
 		57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetView.swift; sourceTree = "<group>"; };
+		57FEFA8A297A5E48008A78B0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
@@ -915,6 +915,7 @@
 			isa = PBXGroup;
 			children = (
 				234E5DBB28C762810079640F /* TabBarViewController.swift */,
+				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
 				5724EC8A291E0CB400DC529B /* Login */,
 				23A767EF2908518B003E46AB /* Notice */,
 				23E764CA28E9EDFE002F234C /* ServiceCenter */,
@@ -929,7 +930,6 @@
 				23C9031128C5CE5600FB6D3D /* Detail */,
 				23C9031028C5CE5000FB6D3D /* Chatting */,
 				57A28B3928CED84500263079 /* Town */,
-				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1757,7 +1757,7 @@
 		57FEFA7F297A5B2D008A78B0 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
+				57FEFA8A297A5E48008A78B0 /* UISheetPresentationControllerDetent+Private.h */,
 				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
 			);
 			path = BottomSheet;
@@ -2564,7 +2564,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/BottomSheet/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
@@ -2602,7 +2602,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/BottomSheet/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
