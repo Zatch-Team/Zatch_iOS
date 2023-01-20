@@ -428,7 +428,6 @@
 		57468A80289E3FB600056691 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UISheetPresentationControllerDetent+Private.h"; path = "Zatch/Resource/UISheetPresentationControllerDetent+Private.h"; sourceTree = SOURCE_ROOT; };
 		57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagSheetViewController.swift; sourceTree = "<group>"; };
@@ -606,6 +605,7 @@
 		57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageDetailViewController.swift; sourceTree = "<group>"; };
 		57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEtcBottomSheetView.swift; sourceTree = "<group>"; };
+		57FEFA8A297A5E48008A78B0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
 		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
@@ -855,26 +855,25 @@
 			path = MypageCells;
 			sourceTree = "<group>";
 		};
-		23C9030828C5CDE700FB6D3D /* global */ = {
+		23C9030828C5CDE700FB6D3D /* Global */ = {
 			isa = PBXGroup;
 			children = (
 				57468A6C289CFB3F00056691 /* Source */,
 				57802394281D21710085457D /* Resource */,
 			);
-			path = global;
+			path = Global;
 			sourceTree = "<group>";
 		};
-		23C9030928C5CDEF00FB6D3D /* domain */ = {
+		23C9030928C5CDEF00FB6D3D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				23C9030B28C5CE2100FB6D3D /* Models */,
+				57FEFA88297A5C50008A78B0 /* Utils */,
 				23C9030A28C5CE1C00FB6D3D /* Views */,
 				23C9030C28C5CE2500FB6D3D /* ViewModels */,
 				23C9030D28C5CE2A00FB6D3D /* ViewControllers */,
-				23C9030E28C5CE2E00FB6D3D /* Services */,
 				23C9031728C5CEC100FB6D3D /* Cells */,
 			);
-			path = domain;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
@@ -915,6 +914,8 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
+				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
 				5724EC8A291E0CB400DC529B /* Login */,
 				23A767EF2908518B003E46AB /* Notice */,
 				23E764CA28E9EDFE002F234C /* ServiceCenter */,
@@ -929,7 +930,6 @@
 				23C9031128C5CE5600FB6D3D /* Detail */,
 				23C9031028C5CE5000FB6D3D /* Chatting */,
 				57A28B3928CED84500263079 /* Town */,
-				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1327,8 +1327,7 @@
 				576B374C28D6D6EF00EF36E6 /* Map */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
-				234E5DBB28C762810079640F /* TabBarViewController.swift */,
-				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
+				57FEFA89297A5CED008A78B0 /* Utils */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1403,8 +1402,10 @@
 			isa = PBXGroup;
 			children = (
 				23C9030F28C5CE3600FB6D3D /* AppDelegate */,
-				23C9030828C5CDE700FB6D3D /* global */,
-				23C9030928C5CDEF00FB6D3D /* domain */,
+				23C9030828C5CDE700FB6D3D /* Global */,
+				23C9030928C5CDEF00FB6D3D /* Presentation */,
+				57FEFA83297A5B6B008A78B0 /* Domain */,
+				57FEFA84297A5B6E008A78B0 /* Data */,
 				57B32C2A291E93220018C0CB /* Resource */,
 				57B32C29291E92EF0018C0CB /* Support */,
 			);
@@ -1531,7 +1532,7 @@
 				574E1CAA2964010E005D2048 /* DesignSystem */,
 				57B32C32291FB3D90018C0CB /* Namespace */,
 				57468A9928A1096600056691 /* Extenstion */,
-				57EF61AF287D5BCE0035A2E6 /* Common */,
+				57EF61AF287D5BCE0035A2E6 /* ZatchComponent */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1684,13 +1685,9 @@
 			isa = PBXGroup;
 			children = (
 				57067862281C13D500F48342 /* Font */,
+				57FEFA7F297A5B2D008A78B0 /* BottomSheet */,
+				57FEFA80297A5B41008A78B0 /* Storyboard */,
 				5722462028C71796009B7C78 /* Assets.xcassets */,
-				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
-				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
-				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
-				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
-				57468A88289FEA1200056691 /* UISheetPresentationControllerDetent+Private.h */,
-				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1744,7 +1741,7 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		57EF61AF287D5BCE0035A2E6 /* Common */ = {
+		57EF61AF287D5BCE0035A2E6 /* ZatchComponent */ = {
 			isa = PBXGroup;
 			children = (
 				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
@@ -1754,7 +1751,82 @@
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
 			);
-			path = Common;
+			path = ZatchComponent;
+			sourceTree = "<group>";
+		};
+		57FEFA7F297A5B2D008A78B0 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				57FEFA8A297A5E48008A78B0 /* UISheetPresentationControllerDetent+Private.h */,
+				57D6D79328CDBADA00F805B7 /* Zatch-Bridging-Header.h */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		57FEFA80297A5B41008A78B0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
+				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
+				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
+				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		57FEFA83297A5B6B008A78B0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				57FEFA87297A5C38008A78B0 /* Entity */,
+				57FEFA86297A5C32008A78B0 /* UseCase */,
+				57FEFA85297A5C30008A78B0 /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		57FEFA84297A5B6E008A78B0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				23C9030B28C5CE2100FB6D3D /* Models */,
+				23C9030E28C5CE2E00FB6D3D /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		57FEFA85297A5C30008A78B0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		57FEFA86297A5C32008A78B0 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		57FEFA87297A5C38008A78B0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		57FEFA88297A5C50008A78B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		57FEFA89297A5CED008A78B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		57FFEDBD28DD27DE0041719B /* RegisterView */ = {
@@ -2492,7 +2564,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/BottomSheet/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
@@ -2530,7 +2602,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/Zatch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/BottomSheet/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
