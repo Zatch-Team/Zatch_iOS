@@ -87,6 +87,7 @@
 		571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */; };
 		571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */; };
 		571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */; };
+		571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */; };
 		5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */; };
 		5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */; };
 		5722460628BCCFE8009B7C78 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460528BCCFE8009B7C78 /* Const.swift */; };
@@ -398,6 +399,7 @@
 		571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderView.swift; sourceTree = "<group>"; };
 		571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderView.swift; sourceTree = "<group>"; };
 		571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderProtocol.swift; sourceTree = "<group>"; };
+		571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProtocol.swift; sourceTree = "<group>"; };
 		5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460528BCCFE8009B7C78 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -1365,6 +1367,7 @@
 				574E1CA8296400E6005D2048 /* CellReuse.swift */,
 				57B9F70B28D94B7800ACEC94 /* Delegate.swift */,
 				571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */,
+				571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2251,6 +2254,7 @@
 				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
+				571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,

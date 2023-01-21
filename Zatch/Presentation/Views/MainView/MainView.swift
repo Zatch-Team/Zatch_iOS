@@ -7,9 +7,8 @@
 
 import UIKit
 
-class MainView: UIView {
-    // Navigation Views
-    let navigationView = UIView()
+class MainHeaderView: BaseHeaderView, SecondEtcButtonProtocol{
+    
     lazy var stackView = UIStackView().then{
         $0.isUserInteractionEnabled = true
         $0.spacing = 6
@@ -19,88 +18,66 @@ class MainView: UIView {
         $0.text = "양재동" //temp
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
         $0.textColor = .zatchDeepYellow
-        $0.isUserInteractionEnabled = true
+        $0.isUserInteractionEnabled = false
     }
     let arrowButton = UIButton().then{
+        $0.isUserInteractionEnabled = false
         $0.setImage(Image.arrowDown, for: .normal)
         $0.setImage(Image.arrowUp, for: .selected)
     }
-    lazy var searchButton = UIButton().then{
-        $0.setImage(Image.search, for: .normal)
-    }
-    lazy var notiButton = UIButton().then{
-        $0.setImage(Image.bell, for: .normal)
-        $0.isUserInteractionEnabled = true
-    }
-    // TableView
-    var mainTableView : UITableView!
-    
-    // MARK: - Functions
-    override init(frame: CGRect) {
-        super.init(frame: frame)
 
+    lazy var secondEtcButton = EtcButton(image: Image.search)
+    
+    init(){
+        super.init(image: Image.bell)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func setUpTableView(dataSouceDelegate: UITableViewDelegate & UITableViewDataSource) {
-        mainTableView = UITableView().then {
-            $0.delegate = dataSouceDelegate
-            $0.dataSource = dataSouceDelegate
-            $0.register(MainBannerTableViewCell.self, forCellReuseIdentifier: "MainBannerTableViewCell")
-            $0.register(MainCollectionViewTableViewCell.self, forCellReuseIdentifier: "MainCollectionViewTableViewCell")
-            
-            // autoHeight
-            $0.rowHeight = UITableView.automaticDimension
-            $0.estimatedRowHeight = UITableView.automaticDimension
-            $0.showsVerticalScrollIndicator = false
-            $0.separatorStyle = .none
-        }
-    }
-    func setUpView() {
-        addSubview(navigationView)
-        addSubview(mainTableView)
-        
-        navigationView.addSubview(stackView)
+
+    override func hierarchy() {
+        super.hierarchy()
+        self.addSubview(stackView)
         stackView.addArrangedSubview(locationLabel)
         stackView.addArrangedSubview(arrowButton)
-        navigationView.addSubview(notiButton)
-        navigationView.addSubview(searchButton)
     }
-    func setUpConstraint() {
-        setNavigationViewConstraint()
+    
+    override func layout() {
         
-        mainTableView.snp.makeConstraints { make in
-            make.top.equalTo(navigationView.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
+        super.layout()
+        
+        stackView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(24)
+            $0.centerY.equalToSuperview()
         }
-    }
-    func setNavigationViewConstraint() {
-        navigationView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(44)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(56)
-        }
-        stackView.snp.makeConstraints{ make in
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(24)
-            make.top.bottom.equalToSuperview()
-        }
-        locationLabel.snp.makeConstraints{ make in
-            make.height.equalTo(24)
-        }
+
         arrowButton.snp.makeConstraints{ make in
             make.width.height.equalTo(24)
         }
-        notiButton.snp.makeConstraints{ make in
-            make.width.height.equalTo(24)
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(16)
-        }
-        searchButton.snp.makeConstraints{ make in
-            make.width.height.equalTo(24)
-            make.centerY.equalToSuperview()
-            make.trailing.equalTo(notiButton.snp.leading).offset(-12)
+        setSecondEtcButtonLayout()
+    }
+}
+
+class MainView: BaseView {
+
+    let mainTableView = UITableView().then {
+        $0.register(MainBannerTableViewCell.self, forCellReuseIdentifier: "MainBannerTableViewCell")
+        $0.register(MainCollectionViewTableViewCell.self, forCellReuseIdentifier: "MainCollectionViewTableViewCell")
+        
+        $0.rowHeight = UITableView.automaticDimension
+        $0.estimatedRowHeight = UITableView.automaticDimension
+        $0.showsVerticalScrollIndicator = false
+    }
+    
+    override func hierarchy() {
+        self.addSubview(mainTableView)
+    }
+
+    override func layout() {
+        mainTableView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

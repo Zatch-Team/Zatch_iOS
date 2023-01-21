@@ -9,9 +9,9 @@ import UIKit
 
 class BaseTabBarViewController: UIViewController {
 
-    let headerView: TabBarHeaderView
+    let headerView: BaseHeaderView
     
-    init(headerView: TabBarHeaderView){
+    init(headerView: BaseHeaderView){
         self.headerView = headerView
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,13 +29,13 @@ class BaseTabBarViewController: UIViewController {
         initialize()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func style(){
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     func layout(){

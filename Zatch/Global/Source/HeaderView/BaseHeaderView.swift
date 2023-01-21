@@ -11,6 +11,8 @@ class BaseHeaderView: BaseView{
     
     let etcButton: EtcButton
     
+    //MARK: - Generator
+    
     init(title: String){
         self.etcButton = EtcButton(title: title)
         super.init(frame: .zero)
@@ -25,6 +27,8 @@ class BaseHeaderView: BaseView{
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Override
+    
     override func hierarchy() {
         self.addSubview(etcButton)
     }
@@ -34,7 +38,7 @@ class BaseHeaderView: BaseView{
             $0.height.equalTo(60)
         }
         etcButton.snp.makeConstraints{
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.trailing.equalToSuperview().offset(-20)
             $0.top.equalToSuperview().offset(16)
             $0.centerY.equalToSuperview()
             $0.width.equalTo(etcButton.snp.height)

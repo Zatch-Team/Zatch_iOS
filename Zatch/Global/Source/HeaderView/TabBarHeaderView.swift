@@ -16,6 +16,7 @@ class TabBarHeaderView: BaseHeaderView, TabBarHeaderProtocol{
     }
     
     //MARK: - Generator
+    
     init(title: String, etcButton: UIImage){
         self.title = title
         super.init(image: etcButton)
@@ -31,6 +32,7 @@ class TabBarHeaderView: BaseHeaderView, TabBarHeaderProtocol{
     }
     
     //MARK: - Override
+    
     override func style() {
         self.tabBarTitleLabel.text = title
     }
