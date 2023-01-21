@@ -32,6 +32,9 @@ class BaseTabBarViewController: UIViewController {
     func style(){
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
     
