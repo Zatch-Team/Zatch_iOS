@@ -8,18 +8,22 @@
 import UIKit
 
 class BaseTabBarViewController: UIViewController {
-    
-    let titleView = UIView()
-    let titleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 18, family: .Bold)
-        $0.textColor = .black85
-    }
-    lazy var etcBtn = UIButton()
 
+    let headerView: TabBarHeaderView
+    
+    init(headerView: TabBarHeaderView){
+        self.headerView = headerView
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Override
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         style()
         layout()
         initialize()
@@ -32,27 +36,10 @@ class BaseTabBarViewController: UIViewController {
     }
     
     func layout(){
-        self.view.addSubview(titleView)
-        
-        titleView.addSubview(titleLabel)
-        titleView.addSubview(etcBtn)
-        
-        titleView.snp.makeConstraints{ make in
-            make.height.equalTo(56)
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        titleLabel.snp.makeConstraints{ make in
-            make.leading.equalToSuperview().offset(25)
-            make.centerY.equalToSuperview()
-            make.height.equalTo(24)
-        }
-        
-        etcBtn.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-16)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(24)
+        self.view.addSubview(headerView)
+        headerView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.headerTop)
+            $0.leading.trailing.equalToSuperview()
         }
     }
     

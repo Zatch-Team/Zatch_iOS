@@ -116,7 +116,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-extension BaseViewController{
+//extension BaseViewController{
     
     class EtcButton: UIButton{
         
@@ -139,4 +139,4 @@ extension BaseViewController{
             fatalError("init(coder:) has not been implemented")
         }
     }
-}
+//}

@@ -9,14 +9,6 @@ import UIKit
 
 extension ChattingListViewController{
     
-    func setInitSetting(){
-        
-        super.titleLabel.text = "채팅"
-        
-        super.etcBtn.setImage(Image.bell, for: .normal)
-        super.etcBtn.addTarget(self, action: #selector(bellBtnDidClicked), for: .touchUpInside)
-        
-    }
     func setUpChildVC() {
         let vc = ChattingListTabManViewController()
         self.addChild(vc)
