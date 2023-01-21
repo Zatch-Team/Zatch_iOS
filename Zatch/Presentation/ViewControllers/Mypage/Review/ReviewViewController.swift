@@ -23,9 +23,7 @@ class ReviewViewController: BaseCenterTitleViewController {
             make.bottom.equalToSuperview()
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
-    }
+    
     // MARK: - Functions
     func setUpTableView(dataSourceDelegate: UITableViewDelegate & UITableViewDataSource) {
         reviewTableView = UITableView()

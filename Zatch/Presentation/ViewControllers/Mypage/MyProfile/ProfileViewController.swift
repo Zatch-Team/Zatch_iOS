@@ -14,10 +14,6 @@ class ProfileViewController: BaseCenterTitleViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
         
         self.navigationTitle.text = "내 프로필"
         
@@ -33,9 +29,7 @@ class ProfileViewController: BaseCenterTitleViewController {
             make.top.equalTo(super.navigationView.snp.bottom)
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-    }
+
     override func rightPositionBtnDidClicked() {
         if isMyProfile {
             let vc = ModifyProfileViewController()

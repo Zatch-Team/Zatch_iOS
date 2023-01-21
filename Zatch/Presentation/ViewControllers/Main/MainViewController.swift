@@ -21,9 +21,14 @@ class MainViewController: UIViewController {
         
         setMainView()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.tintColor = .zatchPurple
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.tabBarController?.tabBar.tintColor = .zatchPurple
+//    }
     // MARK: - Actions
     @objc func arrowTapped(_ sender: UIButton) {setBottomSheet()}
     @objc func buttonTapped(_ sender: UIButton) {setBottomSheet()}

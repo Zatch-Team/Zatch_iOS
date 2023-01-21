@@ -36,16 +36,12 @@ class ServiceCenterViewController: BaseCenterTitleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.navigationTitle.text = "고객센터"
-        super.tabBarController?.tabBar.isHidden = true
         
         setUpView()
         setUpConstraint()
         
         self.searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
         self.goQnAButton.addTarget(self, action: #selector(goQnAButtonDidTap), for: .touchUpInside)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.tabBarController?.tabBar.isHidden = true
     }
 
     // MARK: - Actions

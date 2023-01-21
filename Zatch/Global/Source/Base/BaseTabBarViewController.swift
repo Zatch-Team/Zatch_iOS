@@ -10,21 +10,28 @@ import UIKit
 class BaseTabBarViewController: UIViewController {
     
     let titleView = UIView()
-    
     let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 18, family: .Bold)
         $0.textColor = .black85
     }
-    
     lazy var etcBtn = UIButton()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        style()
+        layout()
+        initialize()
+    }
+    
+    func style(){
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
-
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func layout(){
         self.view.addSubview(titleView)
         
         titleView.addSubview(titleLabel)
@@ -48,5 +55,6 @@ class BaseTabBarViewController: UIViewController {
             make.width.height.equalTo(24)
         }
     }
-
+    
+    func initialize(){ }
 }

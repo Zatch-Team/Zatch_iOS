@@ -33,9 +33,7 @@ class MyZatchViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = .zatchDeepYellow
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-        self.tabBarController?.tabBar.tintColor = .zatchDeepYellow
-        self.tabBarController?.tabBar.backgroundColor = .white    }
+        self.tabBarController?.tabBar.tintColor = .zatchDeepYellow }
 
     // MARK: - Functions
     func setUpView() {

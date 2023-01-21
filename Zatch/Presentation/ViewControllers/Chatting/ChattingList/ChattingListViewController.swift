@@ -27,6 +27,9 @@ class ChattingListViewController: BaseTabBarViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.tintColor = .systemOrange
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     //MARK: - Action
     
     @objc
