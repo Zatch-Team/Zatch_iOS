@@ -83,7 +83,7 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idx = indexPath.item
 //        self.viewModel.locationDidTap(locationData[idx])
-        self.mainView.arrowButton.isSelected = false
+//        self.mainView.arrowButton.isSelected = false
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

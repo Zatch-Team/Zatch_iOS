@@ -84,6 +84,10 @@
 		571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */; };
 		571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */; };
 		571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */; };
+		571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */; };
+		571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */; };
+		571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */; };
+		571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */; };
 		5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */; };
 		5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */; };
 		5722460628BCCFE8009B7C78 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460528BCCFE8009B7C78 /* Const.swift */; };
@@ -133,7 +137,7 @@
 		57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */; };
 		57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */; };
 		57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */; };
-		574E1CA9296400E6005D2048 /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CA8296400E6005D2048 /* BaseProtocol.swift */; };
+		574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CA8296400E6005D2048 /* CellReuse.swift */; };
 		574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */; };
 		574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
@@ -392,6 +396,10 @@
 		571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenDeleteView.swift; sourceTree = "<group>"; };
 		571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenZatchInfoView.swift; sourceTree = "<group>"; };
 		571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListTableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderView.swift; sourceTree = "<group>"; };
+		571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderView.swift; sourceTree = "<group>"; };
+		571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderProtocol.swift; sourceTree = "<group>"; };
+		571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProtocol.swift; sourceTree = "<group>"; };
 		5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460528BCCFE8009B7C78 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -441,7 +449,7 @@
 		57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingSheetViewController.swift; sourceTree = "<group>"; };
 		57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePurpleButton.swift; sourceTree = "<group>"; };
 		57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWithRankTableViewCell.swift; sourceTree = "<group>"; };
-		574E1CA8296400E6005D2048 /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		574E1CA8296400E6005D2048 /* CellReuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuse.swift; sourceTree = "<group>"; };
 		574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoDesignSystem.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectTableViewCell.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -1201,6 +1209,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		571DADC5297BADDE0079CCD3 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */,
+				571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		5722461928C6C84D009B7C78 /* ChattingViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1324,6 +1341,7 @@
 				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57C585032821F2A70078FAFF /* ServiceType.swift */,
 				57B32C27291E8FB80018C0CB /* Base */,
+				571DADC5297BADDE0079CCD3 /* HeaderView */,
 				57B32C28291E8FF60018C0CB /* BottomSheet */,
 				571AD7112828D9C900390AAD /* Category */,
 				576B374C28D6D6EF00EF36E6 /* Map */,
@@ -1346,8 +1364,10 @@
 		57468A79289D3C0800056691 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				574E1CA8296400E6005D2048 /* BaseProtocol.swift */,
+				574E1CA8296400E6005D2048 /* CellReuse.swift */,
 				57B9F70B28D94B7800ACEC94 /* Delegate.swift */,
+				571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */,
+				571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2229,15 +2249,17 @@
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
-				574E1CA9296400E6005D2048 /* BaseProtocol.swift in Sources */,
+				574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
+				571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
+				571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
@@ -2250,6 +2272,7 @@
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */,
 				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
+				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
 				57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */,
@@ -2361,6 +2384,7 @@
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
+				571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,

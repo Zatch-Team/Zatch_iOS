@@ -24,7 +24,4 @@ class HeartListViewController: BaseCenterTitleViewController {
         self.view.addConstraints(heartVC.view.constraints)
         heartVC.didMove(toParent: self)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
-    }
 }

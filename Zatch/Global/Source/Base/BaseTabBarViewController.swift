@@ -8,45 +8,43 @@
 import UIKit
 
 class BaseTabBarViewController: UIViewController {
+
+    let headerView: BaseHeaderView
     
-    let titleView = UIView()
-    
-    let titleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 18, family: .Bold)
-        $0.textColor = .black85
+    init(headerView: BaseHeaderView){
+        self.headerView = headerView
+        super.init(nibName: nil, bundle: nil)
     }
     
-    lazy var etcBtn = UIButton()
-
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Override
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
+        style()
+        layout()
+        initialize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func style(){
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
-
-        self.view.addSubview(titleView)
-        
-        titleView.addSubview(titleLabel)
-        titleView.addSubview(etcBtn)
-        
-        titleView.snp.makeConstraints{ make in
-            make.height.equalTo(56)
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        titleLabel.snp.makeConstraints{ make in
-            make.leading.equalToSuperview().offset(25)
-            make.centerY.equalToSuperview()
-            make.height.equalTo(24)
-        }
-        
-        etcBtn.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-16)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(24)
+    }
+    
+    func layout(){
+        self.view.addSubview(headerView)
+        headerView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.headerTop)
+            $0.leading.trailing.equalToSuperview()
         }
     }
-
+    
+    func initialize(){ }
 }

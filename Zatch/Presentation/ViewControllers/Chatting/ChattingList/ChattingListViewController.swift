@@ -11,26 +11,36 @@ class ChattingListViewController: BaseTabBarViewController {
     
     //MARK: - Properties
     
-    //MARK: - UI
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-
-        self.tabBarController?.tabBar.tintColor = .systemOrange
-        
-        setInitSetting()
-        setUpChildVC()
-        
-//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)))
+    init(){
+        super.init(headerView: TabBarHeaderView(title: "채팅",
+                                                etcButton: Image.bell))
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.tintColor = .systemOrange
     }
+    
+    override func style() {
+        super.style()
+        self.tabBarController?.tabBar.tintColor = .systemOrange
+    }
+    
+    override func layout() {
+        super.layout()
+        setUpChildVC()
+    }
+    
+    override func initialize() {
+        headerView.etcButton.addTarget(self, action: #selector(bellButtonDidClicked), for: .touchUpInside)
+        //        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellWillMoveToOriginalPosition)
+    }
     //MARK: - Action
     
-    @objc
-    func bellBtnDidClicked(){
+    @objc func bellButtonDidClicked(){
         print("bell btn clicked")
     }
 

@@ -61,14 +61,14 @@ class BaseViewController: UIViewController {
     }
     
     func style() {
-        self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func layout() {
         
         self.view.addSubview(navigationView)
-        
         navigationView.addSubview(backBtn)
         
         navigationView.snp.makeConstraints{ make in
@@ -76,7 +76,6 @@ class BaseViewController: UIViewController {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(60)
         }
-        
         backBtn.snp.makeConstraints{ make in
             make.width.equalTo(backBtn.snp.height)
             make.leading.equalToSuperview().offset(20)
@@ -93,6 +92,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    //TODO: 제거
     @objc func rightPositionBtnDidClicked(){
         print("right position btn did clicked")
     }
@@ -116,7 +116,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-extension BaseViewController{
+//extension BaseViewController{
     
     class EtcButton: UIButton{
         
@@ -139,4 +139,4 @@ extension BaseViewController{
             fatalError("init(coder:) has not been implemented")
         }
     }
-}
+//}

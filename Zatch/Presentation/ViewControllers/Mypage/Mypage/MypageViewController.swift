@@ -15,8 +15,7 @@ class MypageViewController: BaseTabBarViewController {
         super.viewDidLoad()
         isCertified = false     // 임시로 false 처리
 
-        self.view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = true
+        /*
         super.titleLabel.text = "내 정보"
         super.etcBtn.setImage(Image.setting, for: .normal)
         super.etcBtn.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
@@ -32,13 +31,11 @@ class MypageViewController: BaseTabBarViewController {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(super.titleView.snp.bottom)
         }
+         */
         
         self.tabBarController?.tabBar.tintColor = .zatchPurple
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-        self.tabBarController?.tabBar.tintColor = .zatchPurple
-    }
+
     // MARK: - Actions
     @objc func goSettingButtonDidTap() {
         let vc = SettingViewController()

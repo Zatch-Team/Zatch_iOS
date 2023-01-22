@@ -10,13 +10,15 @@ import UIKit
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        self.tabBar.backgroundColor = .white
        // 인스턴스화
         let mainVC = MainViewController()
         let zatchVC = MyZatchViewController()
         let chatVC = ChattingListViewController()
-        let profileVC = MypageViewController()
+        let profileVC = MypageViewController(headerView: TabBarHeaderView(title: "내 정보" ,etcButton: Image.setting))
         
         mainVC.tabBarItem.image = UIImage.init(named: "Home")
         zatchVC.tabBarItem.image = UIImage.init(named: "ZatchIcon")

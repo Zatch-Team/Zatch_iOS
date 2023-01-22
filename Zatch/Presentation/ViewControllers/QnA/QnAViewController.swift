@@ -14,7 +14,6 @@ class QnAViewController: BaseCenterTitleViewController {
 
         super.viewDidLoad()
         super.navigationTitle.text = "1:1 문의"
-        super.tabBarController?.tabBar.isHidden = true
         
         let qnaVC = QnATabmanViewController()
         self.addChild(qnaVC)
@@ -25,8 +24,5 @@ class QnAViewController: BaseCenterTitleViewController {
         }
         self.view.addConstraints(qnaVC.view.constraints)
         qnaVC.didMove(toParent: self)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.tabBarController?.tabBar.isHidden = true
     }
 }
