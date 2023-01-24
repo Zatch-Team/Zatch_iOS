@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
-class BaseTabBarViewController<T: BaseHeaderView>: UIViewController {
+class BaseTabBarViewController<T: BaseHeaderView>: UIViewController, DefaultObservable {
 
     let headerView: T
+    final let disposeBag = DisposeBag()
     
     init(headerView: T){
         self.headerView = headerView
@@ -27,6 +29,7 @@ class BaseTabBarViewController<T: BaseHeaderView>: UIViewController {
         style()
         layout()
         initialize()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,4 +50,6 @@ class BaseTabBarViewController<T: BaseHeaderView>: UIViewController {
     }
     
     func initialize(){ }
+    
+    func bind() { }
 }

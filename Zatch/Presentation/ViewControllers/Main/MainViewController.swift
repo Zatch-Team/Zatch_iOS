@@ -9,8 +9,6 @@ import Foundation
 
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
-    //    var viewModel: MainViewModel!
-
     let mainView = MainView()
     
     init(){
@@ -28,7 +26,6 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
             $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
             $0.leading.trailing.bottom.equalToSuperview()
         }
-//        viewModel = MainViewModel()
     }
     
     override func initialize() {
@@ -41,6 +38,10 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
+    }
+    
+    override func bind(){
+        
     }
     
     // MARK: - Actions
