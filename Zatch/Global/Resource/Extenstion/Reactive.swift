@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 extension Reactive where Base: UIControl {
   public var isSelected: Observable<Bool> {

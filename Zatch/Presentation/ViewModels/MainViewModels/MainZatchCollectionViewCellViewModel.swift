@@ -9,7 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class MainZatchCollectionViewCellViewModel: DefaultViewModel{
+class MainZatchCollectionViewCellViewModel: BaseViewModel{
     
     struct Input{
         let heartTap: ControlEvent<Void>

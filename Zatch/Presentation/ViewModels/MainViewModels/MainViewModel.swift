@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class MainViewModel: BaseViewModel{
+    
+    struct Input{
+        
+    }
+    
+    struct Output{
+        
+    }
+    
+    func transform(input: Input) -> Output {
+        return Output()
+    }
+}

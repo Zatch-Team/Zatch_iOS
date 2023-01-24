@@ -12,9 +12,3 @@ protocol DefaultObservable{
     var disposeBag: DisposeBag { get }
     func bind()
 }
-
-protocol DefaultViewModel{
-    associatedtype Input
-    associatedtype Output
-    func transform(input: Input) -> Output
-}
