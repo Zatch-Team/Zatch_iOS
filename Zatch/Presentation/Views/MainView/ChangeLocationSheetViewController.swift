@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ChangeLocationSheetViewController: BaseBottomSheetViewController {
+class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
 
     var locationTableView: UITableView!
 //    var viewModel: MainViewModel!
@@ -23,14 +23,6 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        if let viewModel = self.viewModel {
-//            bind()
-//        }
     }
     
     override func initialize() {

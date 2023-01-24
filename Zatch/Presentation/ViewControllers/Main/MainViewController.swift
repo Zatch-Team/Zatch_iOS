@@ -43,23 +43,21 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     override func bind(){
-        let input = MainViewModel.Input()
+        let input = MainViewModel.Input(bottomSheetWillAppear: townSelectBottomSheet.rx.viewWillAppear.map{ _ in },
+                                        bottomSheetWillDisappear: townSelectBottomSheet.rx.viewDidDisappear.map{ _ in })
     }
     
     // MARK: - Actions
     @objc func townBottomSheetWillShow() {
         
         headerView.arrowButton.isSelected = true
-        headerView.layoutIfNeeded()
-        
-        let sheet = ChangeLocationSheetViewController()
+//        headerView.layoutIfNeeded()
+
+        let sheet = ChangeLocationSheetViewController().show(in: self)
         
         //        locationChangeBottomSheet?.viewModel = self.viewModel
         //        let currentLocation = mainView.locationLabel.text!
         //        locationChangeBottomSheet?.myLocation = currentLocation
-        
-        sheet.loadViewIfNeeded()
-        self.present(sheet, animated: true, completion: nil)
     }
     
     @objc func goSearchButtonDidTap() {

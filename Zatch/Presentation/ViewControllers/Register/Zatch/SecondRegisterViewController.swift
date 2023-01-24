@@ -145,8 +145,8 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
             dismissKeyboardView()
         }else{
             if(indexPath.row == 0){
-                let vc = CategorySheetViewController(service: .Zatch)
-                vc.categorySelectHandler = { category in
+                let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
+                sheet.completion = { category in
                     
                     guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
                     
@@ -162,9 +162,6 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
                         self.registerView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
                     }
                 }
-                
-                vc.loadViewIfNeeded()
-                self.present(vc, animated: true, completion: nil)
             }
         }
     }

@@ -157,7 +157,7 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             
             let vc = CategorySheetViewController(service: .Zatch)
             
-            vc.categorySelectHandler = { category in
+            vc.completion = { category in
                 guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
                 cell.categoryText.text = category
                 self.productInfo.category = category

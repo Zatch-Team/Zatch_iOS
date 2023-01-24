@@ -43,9 +43,7 @@ class GatchDetailViewController: BaseViewController {
     }
     
     @objc private func detailEtcBottomSheetWillShow() {
-        let sheet = DetailEtcBottomSheetViewController()
-        sheet.loadViewIfNeeded()
-        self.present(sheet, animated: true)
+        let sheet = DetailEtcBottomSheetViewController().show(in: self)
     }
     
     @objc private func recruitFinishButtonDidClicked(){

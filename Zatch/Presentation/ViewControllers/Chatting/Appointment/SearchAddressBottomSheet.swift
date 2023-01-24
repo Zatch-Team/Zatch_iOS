@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchAddressSheetViewController: BaseBottomSheetViewController {
+class SearchAddressSheetViewController: BaseBottomSheetViewController<Void> {
     
     let mainView = SearchAddressView()
     let viewModel = SearchAddressViewModel()
