@@ -68,7 +68,7 @@
 		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
 		23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */; };
-		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
+		57067864281C143A00F48342 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* Color.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
 		57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
 		57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
@@ -298,8 +298,9 @@
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
 		EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */; };
 		EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */; };
-		EEB13B8D297FC68B001A8DD9 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* Reactive.swift */; };
+		EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */; };
 		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
+		EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -385,7 +386,7 @@
 		4B45FEA4F195407269C19923 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.release.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		537DC8121E89810426FB0D7A /* Pods-Zatch-ZatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		57067863281C143A00F48342 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		57067873281C2F3900F48342 /* pretendard_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_medium.ttf; sourceTree = "<group>"; };
 		57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rixyeoljeongdo_pro_regular.otf; sourceTree = "<group>"; };
@@ -632,8 +633,9 @@
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservablel.swift; sourceTree = "<group>"; };
-		EEB13B8C297FC68B001A8DD9 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeCycle+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1387,7 +1389,7 @@
 		57468A9928A1096600056691 /* Extenstion */ = {
 			isa = PBXGroup;
 			children = (
-				57067863281C143A00F48342 /* UIColor.swift */,
+				EEB13B92297FCCEE001A8DD9 /* RxSwift */,
 				57468A9A28A1098300056691 /* UITextField.swift */,
 				57468A73289D071100056691 /* UIButton.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
@@ -1398,7 +1400,6 @@
 				576B376B28D85F8B00EF36E6 /* UITableView.swift */,
 				57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */,
 				57067865281C167100F48342 /* UIFont.swift */,
-				EEB13B8C297FC68B001A8DD9 /* Reactive.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -1406,6 +1407,7 @@
 		574E1CAA2964010E005D2048 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				57067863281C143A00F48342 /* Color.swift */,
 				574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */,
 			);
 			path = DesignSystem;
@@ -1904,6 +1906,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		EEB13B92297FCCEE001A8DD9 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */,
+				EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2243,7 +2254,7 @@
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
 				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
-				57067864281C143A00F48342 /* UIColor.swift in Sources */,
+				57067864281C143A00F48342 /* Color.swift in Sources */,
 				235613F328D0974A00D44E97 /* ProfileViewController.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
 				57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */,
@@ -2302,6 +2313,7 @@
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
+				EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				57B32C2C291F49CF0018C0CB /* FirstRegisterView.swift in Sources */,
@@ -2429,7 +2441,7 @@
 				571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
-				EEB13B8D297FC68B001A8DD9 /* Reactive.swift in Sources */,
+				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,

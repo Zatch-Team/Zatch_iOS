@@ -9,7 +9,9 @@ import Foundation
 
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
-    let mainView = MainView()
+    private let mainView = MainView()
+    private let viewModel = MainViewModel()
+    private let townSelectBottomSheet = ChangeLocationSheetViewController()
     
     init(){
         super.init(headerView: MainHeaderView())
@@ -41,7 +43,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     override func bind(){
-        
+        let input = MainViewModel.Input()
     }
     
     // MARK: - Actions

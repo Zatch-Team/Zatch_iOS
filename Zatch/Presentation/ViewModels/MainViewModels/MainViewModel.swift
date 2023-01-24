@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
 class MainViewModel: BaseViewModel{
     
     struct Input{
-        
+        let bottomSheetWillAppear: Observable<Void>
+        let bottomSheetWillDisappear: Observable<Void>
     }
     
     struct Output{
