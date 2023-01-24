@@ -44,21 +44,26 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     override func bind(){
-        let input = MainViewModel.Input(bottomSheetWillAppear: townSelectBottomSheet.rx.viewWillAppear.map{ _ in },
-                                        bottomSheetWillDisappear: townSelectBottomSheet.rx.viewWillDisappear.map{ _ in })
         
+        /*
+        let input = MainViewModel.Input()
         let output = viewModel.transform(input)
+         */
         
-        output.townArrowWillUp
-            .drive(onNext: {
-                self.headerView.arrowButton.isSelected = $0
+        townSelectBottomSheet.rx.viewWillAppear
+            .map{ _ in }
+            .bind(onNext: {
+                self.headerView.arrowButton.isSelected = true
             }).disposed(by: disposeBag)
         
-        output.townArrowWillDown
-            .drive(onNext: {
-                self.headerView.arrowButton.isSelected = !$0
+        townSelectBottomSheet.rx.viewWillDisappear
+            .map{ _ in }
+            .bind(onNext: {
+                self.headerView.arrowButton.isSelected = false
             }).disposed(by: disposeBag)
     }
+    
+    
     
     // MARK: - Actions
     @objc func townBottomSheetWillShow() {
