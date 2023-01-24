@@ -36,7 +36,8 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.separatorStyle = .none
         
-        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(townBottomSheetWillShow)))
+        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                         action: #selector(townBottomSheetWillShow)))
         
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
@@ -44,20 +45,31 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func bind(){
         let input = MainViewModel.Input(bottomSheetWillAppear: townSelectBottomSheet.rx.viewWillAppear.map{ _ in },
-                                        bottomSheetWillDisappear: townSelectBottomSheet.rx.viewDidDisappear.map{ _ in })
+                                        bottomSheetWillDisappear: townSelectBottomSheet.rx.viewWillDisappear.map{ _ in })
+        
+        let output = viewModel.transform(input)
+        
+        output.townArrowIsUp
+            .drive(onNext: {
+                self.headerView.arrowButton.isSelected = $0
+            }).disposed(by: disposeBag)
+        
+        output.townArrowIsDown
+            .drive(onNext: {
+                self.headerView.arrowButton.isSelected = $0
+            }).disposed(by: disposeBag)
     }
     
     // MARK: - Actions
     @objc func townBottomSheetWillShow() {
-        
-        headerView.arrowButton.isSelected = true
-//        headerView.layoutIfNeeded()
 
-        let sheet = ChangeLocationSheetViewController().show(in: self)
+        _ = townSelectBottomSheet.show(in: self)
         
-        //        locationChangeBottomSheet?.viewModel = self.viewModel
-        //        let currentLocation = mainView.locationLabel.text!
-        //        locationChangeBottomSheet?.myLocation = currentLocation
+        let currentLocation = headerView.locationLabel.text
+        townSelectBottomSheet.myLocation = currentLocation
+        townSelectBottomSheet.completion = { town in
+            self.headerView.locationLabel.text = town
+        }
     }
     
     @objc func goSearchButtonDidTap() {
@@ -87,7 +99,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            cell.then{
+            _ = cell.then{
                 $0.setUpCollectionView(self)
                 $0.setUpView()
                 $0.setUpConstraint()
@@ -101,7 +113,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            cell.then{
+            _ = cell.then{
                 $0.label.text = "지금 인기있는 재치"
                 $0.subLabel.text = "재치 있는 자취인이 되는 법"
                 

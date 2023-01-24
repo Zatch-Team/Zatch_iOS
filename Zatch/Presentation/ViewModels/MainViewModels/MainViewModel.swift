@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class MainViewModel: BaseViewModel{
     
@@ -16,10 +17,22 @@ class MainViewModel: BaseViewModel{
     }
     
     struct Output{
-        
+        let townArrowIsUp: Driver<Bool>
+        let townArrowIsDown: Driver<Bool>
     }
     
-    func transform(input: Input) -> Output {
-        return Output()
+    func transform(_ input: Input) -> Output {
+        
+        var townArrowIsUp = input.bottomSheetWillAppear
+            .map{ true }
+            .asDriver(onErrorJustReturn: false)
+        
+        var townArrowIsDown = input.bottomSheetWillDisappear
+            .map{ false }
+            .asDriver(onErrorJustReturn: false)
+        
+        return Output(townArrowIsUp: townArrowIsUp,
+                      townArrowIsDown: townArrowIsDown
+        )
     }
 }

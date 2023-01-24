@@ -127,7 +127,7 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
         let input = MainZatchCollectionViewCellViewModel.Input(heartTap: heart.rx.tap,
                                                                heartState: heart.rx.isSelected)
         
-        let output = viewModel.transform(input: input)
+        let output = viewModel.transform(input)
         output.isHeartSelected
             .drive(onNext: { state in
                 self.heart.isSelected = state

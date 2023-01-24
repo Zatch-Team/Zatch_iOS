@@ -9,13 +9,11 @@ import Foundation
 import UIKit
 
 class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
-
-    var locationTableView: UITableView!
-//    var viewModel: MainViewModel!
-    var mainView: MainView!
     
     var locationData = ["양재동", "서교동", "돈암동"]
     var myLocation: String!
+    
+    let locationTableView = UITableView()
     
     init(){
         super.init(type: .locationChange)
@@ -26,9 +24,9 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
     }
     
     override func initialize() {
+        
         super.initialize()
         
-        locationTableView = UITableView()
         locationTableView.delegate = self
         locationTableView.dataSource = self
         locationTableView.separatorStyle = .none
@@ -78,19 +76,4 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
 //        self.mainView.arrowButton.isSelected = false
         tableView.deselectRow(at: indexPath, animated: true)
     }
-}
-// MARK: - Observable
-extension ChangeLocationSheetViewController {
-    //MARK: Methods
-//    private func bind() {
-//        self.viewModel.myLocation.bind { myLocation in
-//            print("location changed!", myLocation)
-//            self.myLocation = myLocation
-//            if self.myLocation != nil {
-//                self.mainView.locationLabel.text = self.myLocation
-//            }
-//            else {self.mainView.locationLabel.text = "양재동"}
-//            self.dismiss(animated: true)
-//        }
-//    }
 }

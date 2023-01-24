@@ -21,7 +21,7 @@ class MainZatchCollectionViewCellViewModel: BaseViewModel{
     }
     
     
-    func transform(input: Input) -> Output{
+    func transform(_ input: Input) -> Output{
         
         let heartObservable = Observable.zip(input.heartTap,
                                              input.heartState)
