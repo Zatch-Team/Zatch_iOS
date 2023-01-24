@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MypageViewController: BaseTabBarViewController {
+class MypageViewController: BaseTabBarViewController<TabBarHeaderView> {
     var mypageView: MypageView!
     var isCertified: Bool!      // 인증 전 후
 

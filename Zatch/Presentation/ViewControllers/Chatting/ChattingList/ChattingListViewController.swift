@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChattingListViewController: BaseTabBarViewController {
+class ChattingListViewController: BaseTabBarViewController<TabBarHeaderView> {
     
     //MARK: - Properties
     

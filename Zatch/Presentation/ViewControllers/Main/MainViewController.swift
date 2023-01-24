@@ -7,9 +7,10 @@
 
 import Foundation
 
-class MainViewController: BaseTabBarViewController{
+class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     //    var viewModel: MainViewModel!
+
     let mainView = MainView()
     
     init(){
@@ -36,7 +37,7 @@ class MainViewController: BaseTabBarViewController{
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.separatorStyle = .none
         
-        guard let headerView = headerView as? MainHeaderView else { return }
+//        guard let headerView = headerView as? MainHeaderView else { return }
         
         let tap = UITapGestureRecognizer(target: self, action:  #selector(arrowTapped(_:)))
         headerView.stackView.addGestureRecognizer(tap)
@@ -62,7 +63,7 @@ class MainViewController: BaseTabBarViewController{
     
     func setBottomSheet() {
         
-        guard let headerView = headerView as? MainHeaderView else { return }
+//        guard let headerView = headerView as? MainHeaderView else { return }
         
         headerView.arrowButton.isSelected = true
         headerView.layoutIfNeeded()

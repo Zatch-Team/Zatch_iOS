@@ -7,11 +7,11 @@
 
 import UIKit
 
-class BaseTabBarViewController: UIViewController {
+class BaseTabBarViewController<T: BaseHeaderView>: UIViewController {
 
-    let headerView: BaseHeaderView
+    let headerView: T
     
-    init(headerView: BaseHeaderView){
+    init(headerView: T){
         self.headerView = headerView
         super.init(nibName: nil, bundle: nil)
     }
