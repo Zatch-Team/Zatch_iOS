@@ -298,6 +298,7 @@
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
 		EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */; };
 		EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */; };
+		EEB13B8D297FC68B001A8DD9 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* Reactive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -630,6 +631,7 @@
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservablel.swift; sourceTree = "<group>"; };
+		EEB13B8C297FC68B001A8DD9 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1394,6 +1396,7 @@
 				576B376B28D85F8B00EF36E6 /* UITableView.swift */,
 				57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */,
 				57067865281C167100F48342 /* UIFont.swift */,
+				EEB13B8C297FC68B001A8DD9 /* Reactive.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -2406,6 +2409,7 @@
 				571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
+				EEB13B8D297FC68B001A8DD9 /* Reactive.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,

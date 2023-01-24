@@ -90,6 +90,7 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     }
 
     override func layout() {
+        
         super.layout()
         
         image.snp.makeConstraints { make in
@@ -133,14 +134,4 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
             }).disposed(by: disposeBag)
         
     }
-}
-
-extension Reactive where Base: UIControl {
-  public var isSelected: Observable<Bool> {
-    self.base.rx.methodInvoked(#selector(setter: self.base.isSelected))
-      .compactMap { $0.first as? Bool }
-      .startWith(self.base.isSelected)
-      .distinctUntilChanged()
-      .share()
-  }
 }
