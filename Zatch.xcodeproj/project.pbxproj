@@ -22,7 +22,6 @@
 		235613F728D0976500D44E97 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F628D0976500D44E97 /* MyProfileView.swift */; };
 		235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */; };
 		235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */; };
-		236E52FC29653E10002A4551 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 236E52FB29653E10002A4551 /* AppKey.xcconfig */; };
 		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
 		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
 		23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */; };
@@ -295,6 +294,8 @@
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
+		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
+		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,7 +330,6 @@
 		235613F628D0976500D44E97 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTableViewCell.swift; sourceTree = "<group>"; };
-		236E52FB29653E10002A4551 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
 		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
 		23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchChattingListViewController.swift; sourceTree = "<group>"; };
@@ -624,6 +624,8 @@
 		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
+		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -924,7 +926,6 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
 				5724EC8A291E0CB400DC529B /* Login */,
 				23A767EF2908518B003E46AB /* Notice */,
@@ -1343,6 +1344,7 @@
 				57B32C27291E8FB80018C0CB /* Base */,
 				571DADC5297BADDE0079CCD3 /* HeaderView */,
 				57B32C28291E8FF60018C0CB /* BottomSheet */,
+				EEB13B70297F99F0001A8DD9 /* TabBar */,
 				571AD7112828D9C900390AAD /* Category */,
 				576B374C28D6D6EF00EF36E6 /* Map */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
@@ -1698,7 +1700,7 @@
 		57B32C29291E92EF0018C0CB /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				236E52FB29653E10002A4551 /* AppKey.xcconfig */,
+				EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */,
 				575BF70A27E0CBC8008D5B3C /* Info.plist */,
 			);
 			path = Support;
@@ -1865,6 +1867,15 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
+		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */,
+				234E5DBB28C762810079640F /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2011,7 +2022,7 @@
 				57A28CC628CF05D300263079 /* map_pinup@3x.png in Resources */,
 				57A28CC128CF05D300263079 /* map_pin_custom.png in Resources */,
 				23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */,
-				236E52FC29653E10002A4551 /* AppKey.xcconfig in Resources */,
+				EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
 				57A28CC728CF05D300263079 /* map_pin_shadow@3x.png in Resources */,
 				57A28CD928CF05D300263079 /* daum_th_line.png in Resources */,
@@ -2298,6 +2309,7 @@
 				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
+				EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */,
 				57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */,
@@ -2592,9 +2604,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/BottomSheet/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
@@ -2630,9 +2645,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Zatch/Resource/BottomSheet/Zatch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
