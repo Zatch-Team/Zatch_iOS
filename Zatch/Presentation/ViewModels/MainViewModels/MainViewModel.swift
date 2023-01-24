@@ -17,22 +17,22 @@ class MainViewModel: BaseViewModel{
     }
     
     struct Output{
-        let townArrowIsUp: Driver<Bool>
-        let townArrowIsDown: Driver<Bool>
+        let townArrowWillUp: Driver<Bool>
+        let townArrowWillDown: Driver<Bool>
     }
     
     func transform(_ input: Input) -> Output {
         
-        var townArrowIsUp = input.bottomSheetWillAppear
+        let townArrowWillUp = input.bottomSheetWillAppear
             .map{ true }
             .asDriver(onErrorJustReturn: false)
         
-        var townArrowIsDown = input.bottomSheetWillDisappear
-            .map{ false }
+        let townArrowWillDown = input.bottomSheetWillDisappear
+            .map{ true }
             .asDriver(onErrorJustReturn: false)
         
-        return Output(townArrowIsUp: townArrowIsUp,
-                      townArrowIsDown: townArrowIsDown
+        return Output(townArrowWillUp: townArrowWillUp,
+                      townArrowWillDown: townArrowWillDown
         )
     }
 }

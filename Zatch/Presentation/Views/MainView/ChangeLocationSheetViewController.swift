@@ -37,7 +37,6 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
         super.layout()
         
         self.view.addSubview(locationTableView)
-        
         locationTableView.snp.makeConstraints{ make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(30)
             make.leading.trailing.bottom.equalToSuperview()
@@ -72,8 +71,7 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idx = indexPath.item
-//        self.viewModel.locationDidTap(locationData[idx])
-//        self.mainView.arrowButton.isSelected = false
-        tableView.deselectRow(at: indexPath, animated: true)
+        completion(locationData[idx])
+        self.dismiss(animated: true)
     }
 }

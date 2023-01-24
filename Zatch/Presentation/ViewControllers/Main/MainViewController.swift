@@ -49,14 +49,14 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         
         let output = viewModel.transform(input)
         
-        output.townArrowIsUp
+        output.townArrowWillUp
             .drive(onNext: {
                 self.headerView.arrowButton.isSelected = $0
             }).disposed(by: disposeBag)
         
-        output.townArrowIsDown
+        output.townArrowWillDown
             .drive(onNext: {
-                self.headerView.arrowButton.isSelected = $0
+                self.headerView.arrowButton.isSelected = !$0
             }).disposed(by: disposeBag)
     }
     
