@@ -299,6 +299,7 @@
 		EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */; };
 		EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */; };
 		EEB13B8D297FC68B001A8DD9 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* Reactive.swift */; };
+		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -632,6 +633,7 @@
 		EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservablel.swift; sourceTree = "<group>"; };
 		EEB13B8C297FC68B001A8DD9 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1686,12 +1688,9 @@
 			isa = PBXGroup;
 			children = (
 				5724EC90291E122F00DC529B /* BaseView.swift */,
-				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
-				57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */,
-				57468A80289E3FB600056691 /* BaseViewController.swift */,
-				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
-				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
-				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
+				EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */,
+				EEB13B8F297FC793001A8DD9 /* Cell */,
+				EEB13B8E297FC785001A8DD9 /* ViewController */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1883,6 +1882,26 @@
 				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EEB13B8E297FC785001A8DD9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57468A80289E3FB600056691 /* BaseViewController.swift */,
+				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
+				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
+				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EEB13B8F297FC793001A8DD9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
+				57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
@@ -2307,6 +2326,7 @@
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
+				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
 				2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */,
