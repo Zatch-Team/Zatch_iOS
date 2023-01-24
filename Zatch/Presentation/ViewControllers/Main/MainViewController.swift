@@ -37,46 +37,36 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.separatorStyle = .none
         
-//        guard let headerView = headerView as? MainHeaderView else { return }
+        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(townBottomSheetWillShow)))
         
-        let tap = UITapGestureRecognizer(target: self, action:  #selector(arrowTapped(_:)))
-        headerView.stackView.addGestureRecognizer(tap)
-//        headerView.arrowButton.addTarget(self, action:  #selector(buttonTapped(_:)), for: .touchUpInside)
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - Actions
-    @objc func arrowTapped(_ sender: UIButton) {
-        setBottomSheet()
-    }
-    
-    @objc func goSearchButtonDidTap() {
-        let vc = MySearchViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func goNotiButtonDidTap() {
-        let vc = NotificationViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func setBottomSheet() {
-        
-//        guard let headerView = headerView as? MainHeaderView else { return }
+    @objc func townBottomSheetWillShow() {
         
         headerView.arrowButton.isSelected = true
         headerView.layoutIfNeeded()
         
         let sheet = ChangeLocationSheetViewController()
-
-//        locationChangeBottomSheet?.viewModel = self.viewModel
-//        let currentLocation = mainView.locationLabel.text!
-//        locationChangeBottomSheet?.myLocation = currentLocation
+        
+        //        locationChangeBottomSheet?.viewModel = self.viewModel
+        //        let currentLocation = mainView.locationLabel.text!
+        //        locationChangeBottomSheet?.myLocation = currentLocation
         
         sheet.loadViewIfNeeded()
         self.present(sheet, animated: true, completion: nil)
-         
+    }
+    
+    @objc func goSearchButtonDidTap() {
+        self.navigationController?.pushViewController(MySearchViewController(),
+                                                      animated: true)
+    }
+    
+    @objc func goNotiButtonDidTap() {
+        self.navigationController?.pushViewController(NotificationViewController(),
+                                                      animated: true)
     }
 }
 
@@ -162,9 +152,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return 7
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainZatchCollectionViewCell.cellIdentifier,
                                                             for: indexPath)
-                as? MainCollectionViewCell else{ fatalError() }
+                as? MainZatchCollectionViewCell else{ fatalError() }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

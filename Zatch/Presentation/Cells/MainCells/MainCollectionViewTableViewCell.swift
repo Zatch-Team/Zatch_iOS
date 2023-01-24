@@ -7,7 +7,8 @@
 
 import UIKit
 
-class MainCollectionViewTableViewCell: UITableViewCell {
+class MainCollectionViewTableViewCell: BaseTableViewCell {
+    
     let label = UILabel().then{
         $0.text = "내 주변 재치"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
@@ -20,15 +21,6 @@ class MainCollectionViewTableViewCell: UITableViewCell {
     }
     
     var collectionView : UICollectionView!
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     func setUpCollectionView(_ dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate & UICollectionViewDelegateFlowLayout) {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()) .then{
@@ -45,13 +37,13 @@ class MainCollectionViewTableViewCell: UITableViewCell {
             $0.delegate = dataSourceDelegate
             $0.showsHorizontalScrollIndicator = false
             
-            $0.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
+            $0.register(MainZatchCollectionViewCell.self, forCellWithReuseIdentifier: MainZatchCollectionViewCell.cellIdentifier)
         }
     }
     func setUpView() {
-        contentView.addSubview(label)
-        contentView.addSubview(subLabel)
-        contentView.addSubview(collectionView)
+        baseView.addSubview(label)
+        baseView.addSubview(subLabel)
+        baseView.addSubview(collectionView)
     }
     func setUpConstraint() {
         label.snp.makeConstraints { make in

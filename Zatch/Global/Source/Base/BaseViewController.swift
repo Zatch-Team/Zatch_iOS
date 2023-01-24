@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import RxSwift
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, DefaultObservable {
     
     //MARK: - Properties
     
@@ -28,6 +29,8 @@ class BaseViewController: UIViewController {
             settingRightPostionBtn()
         }
     }
+    
+    final var disposeBag = DisposeBag()
     
     //MARK: - Generator
     
@@ -58,6 +61,7 @@ class BaseViewController: UIViewController {
         style()
         layout()
         initialize()
+        bind()
     }
     
     func style() {
@@ -85,6 +89,8 @@ class BaseViewController: UIViewController {
     }
     
     func initialize() {}
+    
+    func bind() { }
     
     //MARK: - Action
     
