@@ -106,15 +106,12 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     @objc
     func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
         
-        let vc = CategorySheetViewController(service: .Zatch)
+        let vc = CategorySheetViewController(service: .Zatch).show(in: self)
         
-        vc.categorySelectHandler = { category in
+        vc.completion = { category in
             print(category)
             (recognizer.view as? ResultSearchView.SearchCateogryDotButton)?.isSelected = true
         }
-        
-        vc.loadViewIfNeeded()
-        present(vc, animated: true, completion: nil)
     }
     
     @objc
@@ -147,15 +144,11 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     @objc
     func townFrameDidClicked(){
-        let vc = TownSettingSheetViewController()
-        
-        vc.townSelectHandelr = { town in
+        let vc = TownSettingSheetViewController().show(in: self)
+        vc.completion = { town in
             print(town)
 //            (recognizer.view as? SearchCateogryDotButton)?.isSelected = true
         }
-        
-        vc.loadViewIfNeeded()
-        present(vc, animated: true, completion: nil)
     }
 
 }

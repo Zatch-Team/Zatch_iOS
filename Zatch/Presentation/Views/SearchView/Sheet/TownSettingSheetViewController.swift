@@ -7,12 +7,8 @@
 
 import UIKit
 
-class TownSettingSheetViewController: BaseBottomSheetViewController {
-    
-    //MARK: - Properties
-    
-    var townSelectHandelr : ((_ select: Int) -> Void)?
-    
+class TownSettingSheetViewController: BaseBottomSheetViewController<Int> {
+
     //MARK: - UI
     
     let townImage = UIImageView().then{

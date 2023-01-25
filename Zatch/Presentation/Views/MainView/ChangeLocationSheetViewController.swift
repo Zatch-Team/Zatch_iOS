@@ -8,14 +8,12 @@
 import Foundation
 import UIKit
 
-class ChangeLocationSheetViewController: BaseBottomSheetViewController {
-
-    var locationTableView: UITableView!
-//    var viewModel: MainViewModel!
-    var mainView: MainView!
+class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
     
     var locationData = ["양재동", "서교동", "돈암동"]
     var myLocation: String!
+    
+    let locationTableView = UITableView()
     
     init(){
         super.init(type: .locationChange)
@@ -25,18 +23,10 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        if let viewModel = self.viewModel {
-//            bind()
-//        }
-    }
-    
     override func initialize() {
+        
         super.initialize()
         
-        locationTableView = UITableView()
         locationTableView.delegate = self
         locationTableView.dataSource = self
         locationTableView.separatorStyle = .none
@@ -47,7 +37,6 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController {
         super.layout()
         
         self.view.addSubview(locationTableView)
-        
         locationTableView.snp.makeConstraints{ make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(30)
             make.leading.trailing.bottom.equalToSuperview()
@@ -82,23 +71,7 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let idx = indexPath.item
-//        self.viewModel.locationDidTap(locationData[idx])
-//        self.mainView.arrowButton.isSelected = false
-        tableView.deselectRow(at: indexPath, animated: true)
+        completion(locationData[idx])
+        self.dismiss(animated: true)
     }
-}
-// MARK: - Observable
-extension ChangeLocationSheetViewController {
-    //MARK: Methods
-//    private func bind() {
-//        self.viewModel.myLocation.bind { myLocation in
-//            print("location changed!", myLocation)
-//            self.myLocation = myLocation
-//            if self.myLocation != nil {
-//                self.mainView.locationLabel.text = self.myLocation
-//            }
-//            else {self.mainView.locationLabel.text = "양재동"}
-//            self.dismiss(animated: true)
-//        }
-//    }
 }

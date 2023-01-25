@@ -7,10 +7,11 @@
 
 import Foundation
 
-class MainViewController: BaseTabBarViewController{
+class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
-    //    var viewModel: MainViewModel!
-    let mainView = MainView()
+    private let mainView = MainView()
+    private let viewModel = MainViewModel()
+    private let townSelectBottomSheet = ChangeLocationSheetViewController()
     
     init(){
         super.init(headerView: MainHeaderView())
@@ -27,7 +28,6 @@ class MainViewController: BaseTabBarViewController{
             $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
             $0.leading.trailing.bottom.equalToSuperview()
         }
-//        viewModel = MainViewModel()
     }
     
     override func initialize() {
@@ -36,46 +36,55 @@ class MainViewController: BaseTabBarViewController{
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.separatorStyle = .none
         
-        guard let headerView = headerView as? MainHeaderView else { return }
+        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                         action: #selector(townBottomSheetWillShow)))
         
-        let tap = UITapGestureRecognizer(target: self, action:  #selector(arrowTapped(_:)))
-        headerView.stackView.addGestureRecognizer(tap)
-//        headerView.arrowButton.addTarget(self, action:  #selector(buttonTapped(_:)), for: .touchUpInside)
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
     }
     
+    override func bind(){
+        
+        /*
+        let input = MainViewModel.Input()
+        let output = viewModel.transform(input)
+         */
+        
+        townSelectBottomSheet.rx.viewWillAppear
+            .map{ _ in }
+            .bind(onNext: {
+                self.headerView.arrowButton.isSelected = true
+            }).disposed(by: disposeBag)
+        
+        townSelectBottomSheet.rx.viewWillDisappear
+            .map{ _ in }
+            .bind(onNext: {
+                self.headerView.arrowButton.isSelected = false
+            }).disposed(by: disposeBag)
+    }
+    
+    
+    
     // MARK: - Actions
-    @objc func arrowTapped(_ sender: UIButton) {
-        setBottomSheet()
+    @objc func townBottomSheetWillShow() {
+
+        _ = townSelectBottomSheet.show(in: self)
+        
+        let currentLocation = headerView.locationLabel.text
+        townSelectBottomSheet.myLocation = currentLocation
+        townSelectBottomSheet.completion = { town in
+            self.headerView.locationLabel.text = town
+        }
     }
     
     @objc func goSearchButtonDidTap() {
-        let vc = MySearchViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(MySearchViewController(),
+                                                      animated: true)
     }
     
     @objc func goNotiButtonDidTap() {
-        let vc = NotificationViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func setBottomSheet() {
-        
-        guard let headerView = headerView as? MainHeaderView else { return }
-        
-        headerView.arrowButton.isSelected = true
-        headerView.layoutIfNeeded()
-        
-        let sheet = ChangeLocationSheetViewController()
-
-//        locationChangeBottomSheet?.viewModel = self.viewModel
-//        let currentLocation = mainView.locationLabel.text!
-//        locationChangeBottomSheet?.myLocation = currentLocation
-        
-        sheet.loadViewIfNeeded()
-        self.present(sheet, animated: true, completion: nil)
-         
+        self.navigationController?.pushViewController(NotificationViewController(),
+                                                      animated: true)
     }
 }
 
@@ -95,7 +104,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            cell.then{
+            _ = cell.then{
                 $0.setUpCollectionView(self)
                 $0.setUpView()
                 $0.setUpConstraint()
@@ -109,7 +118,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            cell.then{
+            _ = cell.then{
                 $0.label.text = "지금 인기있는 재치"
                 $0.subLabel.text = "재치 있는 자취인이 되는 법"
                 
@@ -161,9 +170,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return 7
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainZatchCollectionViewCell.cellIdentifier,
                                                             for: indexPath)
-                as? MainCollectionViewCell else{ fatalError() }
+                as? MainZatchCollectionViewCell else{ fatalError() }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

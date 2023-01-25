@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchTagSheetViewController: BaseBottomSheetViewController {
+class SearchTagSheetViewController: BaseBottomSheetViewController<String> {
     
     //MARK: - Properties
     
@@ -26,16 +26,6 @@ class SearchTagSheetViewController: BaseBottomSheetViewController {
         flexLayout.minimumInteritemSpacing = 8
         
         $0.collectionViewLayout = flexLayout
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    //MARK: - Override
-    
-    override func initialize() {
-        super.initialize()
     }
 
     override func layout() {

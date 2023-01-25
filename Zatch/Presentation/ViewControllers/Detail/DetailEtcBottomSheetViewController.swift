@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailEtcBottomSheetViewController: BaseBottomSheetViewController {
+class DetailEtcBottomSheetViewController: BaseBottomSheetViewController<Void> {
     
     let mainView = DetailEtcBottomSheetView()
 

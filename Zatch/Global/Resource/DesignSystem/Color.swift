@@ -1,5 +1,5 @@
 //
-//  UIColor.swift
+//  Color.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/04/29.

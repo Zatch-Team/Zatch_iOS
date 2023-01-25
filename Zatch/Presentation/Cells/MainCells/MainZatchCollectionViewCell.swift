@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
-class MainCollectionViewCell: UICollectionViewCell {
-    static var identifier = "MainCollectionViewCell"
+class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
+    
+    //MARK: - Properties
     
     // 아이템 이미지
     let image = UIImageView().then{
@@ -60,34 +62,37 @@ class MainCollectionViewCell: UICollectionViewCell {
         $0.setImage(Image.heartSilver, for: .normal)
         $0.setImage(Image.heartPurple, for: .selected)
     }
-    // MARK: Properties
-//    private let mainViewModel: MainViewModel = MainViewModel()
+    
+    let disposeBag = DisposeBag()
+    let viewModel = MainZatchCollectionViewCellViewModel()
+    
     override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstraint()
-        
-//        heart.addTarget(self, action: #selector(heartBtnDidTap), for: .touchUpInside)
-//        bind()
+        super.init(frame: frame)
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpView() {
-        contentView.addSubview(image)
-        contentView.addSubview(title)
-        contentView.addSubview(location)
-        contentView.addSubview(time)
-        contentView.addSubview(stackView)
+    override func hierarchy() {
+        super.hierarchy()
+        
+        baseView.addSubview(image)
+        baseView.addSubview(title)
+        baseView.addSubview(location)
+        baseView.addSubview(time)
+        baseView.addSubview(stackView)
         
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(zatchItem)
-        contentView.addSubview(heart)
+        baseView.addSubview(heart)
     }
-    func setUpConstraint() {
+
+    override func layout() {
+        
+        super.layout()
+        
         image.snp.makeConstraints { make in
             make.width.equalTo(124)
             make.height.equalTo(120)
@@ -116,25 +121,17 @@ class MainCollectionViewCell: UICollectionViewCell {
             make.trailing.equalToSuperview()
         }
     }
-}
-/*
-extension MainCollectionViewCell {
-    // MARK: - Actions
-    @objc func heartBtnDidTap(_ sender: UIButton) {
-        let state = sender.state
-        mainViewModel.heartButtonDidTap(state)
-    }
-    //MARK: - Methods
-    private func bind() {
-        mainViewModel.heartState.bind { heartState in
-            guard let state = heartState else {return}
-            switch state.rawValue {
-            case 4:
-                self.heart.isSelected = true
-            default:
-                self.heart.isSelected = false
-            }
-        }
+    
+    func bind() {
+        
+        let input = MainZatchCollectionViewCellViewModel.Input(heartTap: heart.rx.tap,
+                                                               heartState: heart.rx.isSelected)
+        
+        let output = viewModel.transform(input)
+        output.isHeartSelected
+            .drive(onNext: { state in
+                self.heart.isSelected = state
+            }).disposed(by: disposeBag)
+        
     }
 }
-*/
