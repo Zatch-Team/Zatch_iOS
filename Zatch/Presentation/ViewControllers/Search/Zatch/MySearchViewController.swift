@@ -16,10 +16,10 @@ class MySearchViewController: BaseViewController{
     
     var currentSelect: Int = -1
     
-    let mainView = MySearchView().then{
-        $0.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
-        $0.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
-    }
+//    let mainView = MySearchView().then{
+//        $0.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
+//        $0.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
+//    }
     
     //MARK: - LifeCycle
     
@@ -27,8 +27,8 @@ class MySearchViewController: BaseViewController{
         
         super.viewDidLoad()
     
-        mainView.collectionView.delegate = self
-        mainView.collectionView.dataSource = self
+//        mainView.collectionView.delegate = self
+//        mainView.collectionView.dataSource = self
         
         self.view.addSubview(mainView)
         
@@ -44,26 +44,26 @@ class MySearchViewController: BaseViewController{
     @objc
     func nextButtonClick(){
         
-        let product = mainView.selectTextField.text
+//        let product = mainView.selectTextField.text
         
-        if(product == "" || product == nil){
-            skipBtnDidClicked()
-        }else{
-            let vc = FindSearchViewController()
-            vc.mainView.myLabel.text = product
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+//        if(product == "" || product == nil){
+//            skipBtnDidClicked()
+//        }else{
+//            let vc = FindSearchViewController()
+//            vc.mainView.myLabel.text = product
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
     
     @objc func skipBtnDidClicked(){
         
-        let vc = FindSearchViewController()
+//        let vc = FindSearchViewController()
         
-        vc.mainView.myLabel.text = "???"
-        vc.mainView.myLabel.textColor = .zatchYellow
-        vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+//        vc.mainView.myLabel.text = "???"
+//        vc.mainView.myLabel.textColor = .zatchYellow
+//        vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
         
     }
 }
@@ -71,20 +71,20 @@ class MySearchViewController: BaseViewController{
 extension MySearchViewController: CellDelegate{
     
     func cellDidSelected(_ indexPath: IndexPath){
-        if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
-            currentTag.setBtnInitState()
-        }
-        
-        if(currentSelect == indexPath.row){
-            currentSelect = -1
-            mainView.selectTextField.text = ""
-        }else{
-            if let newTag = mainView.collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
-                newTag.setBtnSelectedState()
-                mainView.selectTextField.text = myZatchData[indexPath.row]
-                currentSelect = indexPath.row
-            }
-        }
+//        if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
+//            currentTag.setBtnInitState()
+//        }
+//        
+//        if(currentSelect == indexPath.row){
+//            currentSelect = -1
+//            mainView.selectTextField.text = ""
+//        }else{
+//            if let newTag = mainView.collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
+//                newTag.setBtnSelectedState()
+//                mainView.selectTextField.text = myZatchData[indexPath.row]
+//                currentSelect = indexPath.row
+//            }
+//        }
     }
     
     func cellDidSelected(_ cell: UICollectionViewCell) { }

@@ -158,16 +158,16 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
                 _ = Alert.ImageMax.generateAlert().show(in: self.navigationController)
             }
         }else{
-            
-            let imageDetailVC = DeleteImageDetailViewController()
-            
-            imageDetailVC.imageView.image = imageArray[indexPath.row - 1]
-            imageDetailVC.imageDetailHandler = { result in
-                self.imageArray.remove(at: indexPath.row - 1)
-                self.imageCollectionView.reloadData()
-            }
-            
-            self.navigationController.pushViewController(imageDetailVC, animated: true)
+//
+//            let imageDetailVC = DeleteImageDetailViewController()
+//
+//            imageDetailVC.imageView.image = imageArray[indexPath.row - 1]
+//            imageDetailVC.imageDetailHandler = { result in
+//                self.imageArray.remove(at: indexPath.row - 1)
+//                self.imageCollectionView.reloadData()
+//            }
+//
+//            self.navigationController.pushViewController(imageDetailVC, animated: true)
         }
     }
 }
@@ -179,17 +179,17 @@ extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationCo
         
         let imgae = info[.originalImage] as! UIImage
         
-        let imageDetailVC = RegisterImageDetailViewController()
-        
-        imageDetailVC.imageView.image = imgae
-        imageDetailVC.imageDetailHandler = { result in
-            if(result){
-                self.imageArray.append(imgae)
-                self.imageCollectionView.reloadData()
-            }
-        }
-        
-        self.navigationController.pushViewController(imageDetailVC, animated: true)
+//        let imageDetailVC = RegisterImageDetailViewController()
+//        
+//        imageDetailVC.imageView.image = imgae
+//        imageDetailVC.imageDetailHandler = { result in
+//            if(result){
+//                self.imageArray.append(imgae)
+//                self.imageCollectionView.reloadData()
+//            }
+//        }
+//        
+//        self.navigationController.pushViewController(imageDetailVC, animated: true)
         
         picker.dismiss(animated: true, completion: nil)
     }

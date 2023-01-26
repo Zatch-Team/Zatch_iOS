@@ -9,12 +9,12 @@ import UIKit
 
 class GatchSearchViewController: BaseLeftTitleViewController {
     
-    let headerView = GatchSearchHeaderView()
-    let mainView = GatchSearchMainView()
+//    let headerView = GatchSearchHeaderView()
+//    let mainView = GatchSearchMainView()
     
     override func style() {
         super.style()
-        navigationTitle.text = "가치"
+//        navigationTitle.text = "가치"
     }
     
     override func layout() {

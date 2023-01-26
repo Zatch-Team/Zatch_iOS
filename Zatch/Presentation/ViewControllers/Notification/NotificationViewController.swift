@@ -13,14 +13,14 @@ class NotificationViewController: BaseCenterTitleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.navigationTitle.text = "알림"
+//        super.navigationTitle.text = "알림"
         
         notificationView = NotificationView()
         self.view.addSubview(notificationView)
         notificationView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview()
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(super.headerView.snp.bottom)
         }
         notificationView.setUpTableView(dataSourceDelegate: self)
         notificationView.setUpView()

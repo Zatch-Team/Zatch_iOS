@@ -71,15 +71,15 @@ extension MypageSettingTableViewCell: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = indexPath.row
         switch tag {
-        case 0:
-            let vc = NoticeViewController()
-            self.preVC.navigationController?.pushViewController(vc, animated: true)
-        case 1:
-            let vc = ServiceCenterViewController()
-            self.preVC.navigationController?.pushViewController(vc, animated: true)
-        case 2:
-            let vc = QnAViewController()
-            self.preVC.navigationController?.pushViewController(vc, animated: true)
+//        case 0:
+//            let vc = NoticeViewController()
+//            self.preVC.navigationController?.pushViewController(vc, animated: true)
+//        case 1:
+//            let vc = ServiceCenterViewController()
+//            self.preVC.navigationController?.pushViewController(vc, animated: true)
+//        case 2:
+//            let vc = QnAViewController()
+//            self.preVC.navigationController?.pushViewController(vc, animated: true)
         default:
             tableView.deselectRow(at: indexPath, animated: true)
         }

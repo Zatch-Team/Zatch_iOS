@@ -83,8 +83,7 @@
 		571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */; };
 		571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */; };
 		571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */; };
-		571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */; };
-		571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */; };
+		571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC6297BAE030079CCD3 /* BaseTabBarHeaderView.swift */; };
 		571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */; };
 		5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */; };
 		5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */; };
@@ -293,6 +292,8 @@
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
+		EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC347298295C3002B5C60 /* EtcButton.swift */; };
+		EE2BC34A29829A32002B5C60 /* BaseNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34929829A32002B5C60 /* BaseNavigationTitleHeaderView.swift */; };
 		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
@@ -401,8 +402,7 @@
 		571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenZatchInfoView.swift; sourceTree = "<group>"; };
 		571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListTableViewCell+Layout.swift"; sourceTree = "<group>"; };
 		571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderView.swift; sourceTree = "<group>"; };
-		571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderView.swift; sourceTree = "<group>"; };
-		571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderProtocol.swift; sourceTree = "<group>"; };
+		571DADC6297BAE030079CCD3 /* BaseTabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarHeaderView.swift; sourceTree = "<group>"; };
 		571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProtocol.swift; sourceTree = "<group>"; };
 		5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -628,6 +628,8 @@
 		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2BC347298295C3002B5C60 /* EtcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButton.swift; sourceTree = "<group>"; };
+		EE2BC34929829A32002B5C60 /* BaseNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -1225,7 +1227,8 @@
 			isa = PBXGroup;
 			children = (
 				571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */,
-				571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */,
+				571DADC6297BAE030079CCD3 /* BaseTabBarHeaderView.swift */,
+				EE2BC34929829A32002B5C60 /* BaseNavigationTitleHeaderView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -1379,7 +1382,6 @@
 			children = (
 				574E1CA8296400E6005D2048 /* CellReuse.swift */,
 				57B9F70B28D94B7800ACEC94 /* Delegate.swift */,
-				571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */,
 				571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */,
 				EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */,
 			);
@@ -1785,6 +1787,7 @@
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
+				EE2BC347298295C3002B5C60 /* EtcButton.swift */,
 			);
 			path = ZatchComponent;
 			sourceTree = "<group>";
@@ -2309,7 +2312,6 @@
 				57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
-				571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
 				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
@@ -2348,6 +2350,7 @@
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
 				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
+				EE2BC34A29829A32002B5C60 /* BaseNavigationTitleHeaderView.swift in Sources */,
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */,
@@ -2400,6 +2403,7 @@
 				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
 				232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */,
+				EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				57E75ECB28E5482900AC24B2 /* ResultSearchView.swift in Sources */,
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
@@ -2438,7 +2442,7 @@
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
-				571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */,
+				571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
 				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,

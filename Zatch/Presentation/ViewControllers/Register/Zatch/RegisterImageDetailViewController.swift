@@ -38,7 +38,7 @@ class RegisterImageDetailViewController: BaseViewController {
             make.height.equalTo(20)
             make.width.equalTo(okBtn.titleLabel!.snp.width)
             make.trailing.equalToSuperview().offset(-20)
-            make.centerY.equalTo(super.backBtn)
+//            make.centerY.equalTo(super.backBtn)
         }
         
         imageView.snp.makeConstraints{ make in

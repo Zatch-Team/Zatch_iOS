@@ -11,17 +11,17 @@ class BlockUserViewController: BaseCenterTitleViewController {
     
     var blockData : [String] = ["1"] {
         didSet{
-            mainView.tableView.reloadData()
+//            mainView.tableView.reloadData()
         }
     }
     
-    let mainView = BlockUserView()
+//    let mainView = BlockUserView()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        self.navigationTitle.text = "차단된 사용자"
+//        self.navigationTitle.text = "차단된 사용자"
         
         self.view.addSubview(mainView)
         
@@ -33,9 +33,9 @@ class BlockUserViewController: BaseCenterTitleViewController {
     }
     
     override func initialize(){
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+//        mainView.tableView.separatorStyle = .none
+//        mainView.tableView.dataSource = self
+//        mainView.tableView.delegate = self
     }
     
     @objc func unblockBtnDidClicked(){
@@ -51,7 +51,7 @@ extension BlockUserViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        mainView.emptyView.isHidden = blockData.isEmpty ? false : true
+//        mainView.emptyView.isHidden = blockData.isEmpty ? false : true
         
         return blockData.count
     }

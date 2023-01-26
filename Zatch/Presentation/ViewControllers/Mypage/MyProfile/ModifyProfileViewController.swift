@@ -13,9 +13,9 @@ class ModifyProfileViewController: BaseCenterTitleViewController {
     let imagePickerController = UIImagePickerController()
     var selectedPhoto: UIImage!
     
-    override init(){
-        super.init(rightButton: "저장")
-    }
+//    override init(){
+//        super.init(rightButton: "저장")
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -30,19 +30,20 @@ class ModifyProfileViewController: BaseCenterTitleViewController {
         setNavigationView()
         setModifyProfileView()
     }
-    override func rightPositionBtnDidClicked() {
-        
-        let alert = Alert.ChangeNickname.generateAlert().show(in: self)
-        
-        alert.confirmHandler = {
-            print("ok")
-        }
-    }
+    
+//    override func rightPositionBtnDidClicked() {
+//
+//        let alert = Alert.ChangeNickname.generateAlert().show(in: self)
+//
+//        alert.confirmHandler = {
+//            print("ok")
+//        }
+//    }
 }
 // MARK: - Actions & Functions
 extension ModifyProfileViewController {
     func setNavigationView() {
-        self.navigationTitle.text = "프로필 편집"
+//        self.navigationTitle.text = "프로필 편집"
     }
     func setModifyProfileView() {
         modifyProfileView = ModifyProfileView()
@@ -50,7 +51,7 @@ extension ModifyProfileViewController {
         
         modifyProfileView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(self.navigationView.snp.bottom)
+            make.top.equalTo(self.headerView.snp.bottom)
         }
         
         modifyProfileView.cameraButton.addTarget(self, action: #selector(goAlbumButtonDidTap), for: .touchUpInside)

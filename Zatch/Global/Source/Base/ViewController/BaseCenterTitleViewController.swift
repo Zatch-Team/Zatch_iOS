@@ -17,10 +17,10 @@ class BaseCenterTitleViewController: BaseViewController{
         
         super.layout()
         
-        navigationView.addSubview(navigationTitle)
-        
-        navigationTitle.snp.makeConstraints{
-            $0.centerY.centerX.equalToSuperview()
-        }
+//        headerView.addSubview(navigationTitle)
+//
+//        navigationTitle.snp.makeConstraints{
+//            $0.centerY.centerX.equalToSuperview()
+//        }
     }
 }

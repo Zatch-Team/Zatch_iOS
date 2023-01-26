@@ -13,7 +13,7 @@ class CheckExchangeRegisterViewController: CheckRegisterViewController {
         
         super.viewDidLoad()
         
-        mainView.infoFrame = CheckExchangeRegisterView()
+//        mainView.infoFrame = CheckExchangeRegisterView()
 
     }
 

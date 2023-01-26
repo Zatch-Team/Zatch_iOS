@@ -15,17 +15,17 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     var resultData: [String] = []
     
-    lazy var mainView = ResultSearchView().then{
-        $0.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        $0.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
-        $0.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
-        
-        $0.wantZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        $0.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
-        $0.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
-        
-        $0.townFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
-    }
+//    lazy var mainView = ResultSearchView().then{
+//        $0.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+//        $0.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
+//        $0.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+//        
+//        $0.wantZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+//        $0.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
+//        $0.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+//        
+//        $0.townFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
+//    }
     
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 //        if(resultData.isEmpty){
 //            emptyResultView.isHidden = false
 //        }else{
-        mainView.emptyResultView.isHidden = true
+//        mainView.emptyResultView.isHidden = true
 //        }
          
     }
@@ -54,11 +54,11 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     //TextField 입력 끝나거나 취소됐을 경우
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-        mainView.myZatchFrame.productTextField.isHidden = true
-        mainView.wantZatchFrame.productTextField.isHidden = true
-        
-        mainView.myZatchFrame.productLabel.isHidden = false
-        mainView.wantZatchFrame.productLabel.isHidden = false
+//        mainView.myZatchFrame.productTextField.isHidden = true
+//        mainView.wantZatchFrame.productTextField.isHidden = true
+//
+//        mainView.myZatchFrame.productLabel.isHidden = false
+//        mainView.wantZatchFrame.productLabel.isHidden = false
         
         self.view.endEditing(true)
     }
@@ -66,11 +66,11 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     //MARK: - Helper
     func setUpDelegate(){
         
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
-
-        mainView.myZatchFrame.productTextField.delegate = self
-        mainView.wantZatchFrame.productTextField.delegate = self
+//        mainView.tableView.dataSource = self
+//        mainView.tableView.delegate = self
+//
+//        mainView.myZatchFrame.productTextField.delegate = self
+//        mainView.wantZatchFrame.productTextField.delegate = self
         
     }
     
@@ -81,10 +81,10 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         let bottomSheet = MyZatchSheetViewController()
         bottomSheet.currentTag = myZatchIndex
         
-        bottomSheet.selectCompleteHandelr = { text, index in
-            self.mainView.myZatchFrame.productLabel.text = text
-            self.myZatchIndex = index
-        }
+//        bottomSheet.selectCompleteHandelr = { text, index in
+//            self.mainView.myZatchFrame.productLabel.text = text
+//            self.myZatchIndex = index
+//        }
         
         bottomSheet.loadViewIfNeeded()
         present(bottomSheet, animated: true, completion: nil)
@@ -96,7 +96,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         bottomSheet.currentTag = wantZatchIndex
         
         bottomSheet.selectCompleteHandelr = { text, index in
-            self.mainView.wantZatchFrame.productLabel.text = text
+//            self.mainView.wantZatchFrame.productLabel.text = text
             self.wantZatchIndex = index
         }
         bottomSheet.loadViewIfNeeded()
@@ -119,27 +119,27 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 
         //기존 입력값 초기화
         
-        mainView.myZatchFrame.productTextField.text = nil
-        mainView.wantZatchFrame.productTextField.text = nil
-
-        mainView.myZatchFrame.productTextField.placeholder = mainView.myZatchFrame.productLabel.text
-        mainView.wantZatchFrame.productTextField.placeholder = mainView.wantZatchFrame.productLabel.text
-
-        mainView.myZatchFrame.productTextField.setPlaceholderColor(.black10)
-        mainView.wantZatchFrame.productTextField.setPlaceholderColor(.black10)
-
-        mainView.myZatchFrame.productTextField.isHidden = false
-        mainView.wantZatchFrame.productTextField.isHidden = false
-
-        mainView.myZatchFrame.productLabel.isHidden = true
-        mainView.wantZatchFrame.productLabel.isHidden = true
-
-        //커서 올리기
-        if(recognizer.view == mainView.wantZatchFrame.productLabel){
-            mainView.wantZatchFrame.productTextField.becomeFirstResponder()
-        }else{
-            mainView.myZatchFrame.productTextField.becomeFirstResponder()
-        }
+//        mainView.myZatchFrame.productTextField.text = nil
+//        mainView.wantZatchFrame.productTextField.text = nil
+//
+//        mainView.myZatchFrame.productTextField.placeholder = mainView.myZatchFrame.productLabel.text
+//        mainView.wantZatchFrame.productTextField.placeholder = mainView.wantZatchFrame.productLabel.text
+//
+//        mainView.myZatchFrame.productTextField.setPlaceholderColor(.black10)
+//        mainView.wantZatchFrame.productTextField.setPlaceholderColor(.black10)
+//
+//        mainView.myZatchFrame.productTextField.isHidden = false
+//        mainView.wantZatchFrame.productTextField.isHidden = false
+//
+//        mainView.myZatchFrame.productLabel.isHidden = true
+//        mainView.wantZatchFrame.productLabel.isHidden = true
+//
+//        //커서 올리기
+//        if(recognizer.view == mainView.wantZatchFrame.productLabel){
+//            mainView.wantZatchFrame.productTextField.becomeFirstResponder()
+//        }else{
+//            mainView.myZatchFrame.productTextField.becomeFirstResponder()
+//        }
     }
     
     @objc
@@ -167,8 +167,8 @@ extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ZatchDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = ZatchDetailViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -177,17 +177,17 @@ extension ResultSearchViewController: UITextFieldDelegate{
     //return 키 클릭시 호출 메서드
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        mainView.myZatchFrame.productTextField.isHidden = true
-        mainView.wantZatchFrame.productTextField.isHidden = true
-        
-        mainView.myZatchFrame.productLabel.isHidden = false
-        mainView.wantZatchFrame.productLabel.isHidden = false
-        
-        if(textField == mainView.myZatchFrame.productTextField){
-            mainView.myZatchFrame.productLabel.text = mainView.myZatchFrame.productTextField.text
-        }else{
-            mainView.wantZatchFrame.productLabel.text = mainView.wantZatchFrame.productTextField.text
-        }
+//        mainView.myZatchFrame.productTextField.isHidden = true
+//        mainView.wantZatchFrame.productTextField.isHidden = true
+//
+//        mainView.myZatchFrame.productLabel.isHidden = false
+//        mainView.wantZatchFrame.productLabel.isHidden = false
+//
+//        if(textField == mainView.myZatchFrame.productTextField){
+//            mainView.myZatchFrame.productLabel.text = mainView.myZatchFrame.productTextField.text
+//        }else{
+//            mainView.wantZatchFrame.productLabel.text = mainView.wantZatchFrame.productTextField.text
+//        }
         
         self.view.endEditing(true)
         return true

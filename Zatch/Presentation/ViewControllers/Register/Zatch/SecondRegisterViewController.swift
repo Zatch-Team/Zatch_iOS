@@ -28,18 +28,18 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     
     //MARK: - LifeCycle
     
-    override init(){
-        super.init(rightButton: Image.exit)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    override init(){
+//        super.init(rightButton: Image.exit)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     //MARK: - Override
     override func style() {
         super.style()
-        self.navigationTitle.text = "재치 등록하기"
+//        self.navigationTitle.text = "재치 등록하기"
     }
     
     override func initialize() {
@@ -77,13 +77,13 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     }
     
     @objc func shareBtnDidClicked(){
-        let vc = CheckShareRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = CheckShareRegisterViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func nextBtnDidClicked(){
-        let vc = CheckExchangeRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = CheckExchangeRegisterViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func exitBtnDidClicked(){

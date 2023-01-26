@@ -76,8 +76,8 @@ extension MyZatchTabmanViewController {
         floatingButton.addTarget(self, action: #selector(addZatchButtonDidTap), for: .touchUpInside)
     }
     @objc func addZatchButtonDidTap() {
-        let vc = FirstRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = FirstRegisterViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - TabMan delegate

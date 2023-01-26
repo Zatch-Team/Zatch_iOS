@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MypageViewController: BaseTabBarViewController<TabBarHeaderView> {
+class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     var mypageView: MypageView!
     var isCertified: Bool!      // 인증 전 후
 
@@ -38,8 +38,8 @@ class MypageViewController: BaseTabBarViewController<TabBarHeaderView> {
 
     // MARK: - Actions
     @objc func goSettingButtonDidTap() {
-        let vc = SettingViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = SettingViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func setTownButtonDidTap(sender: UITapGestureRecognizer) {
         let vc = SearchTownViewController()
@@ -105,10 +105,10 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             // MARK: 내 프로필
-            let vc = ProfileViewController(rightButton: "수정")
-            vc.isMyProfile = true
-            vc.profileUserName = "나"
-            self.navigationController?.pushViewController(vc, animated: true)
+//            let vc = ProfileViewController(rightButton: "수정")
+//            vc.isMyProfile = true
+//            vc.profileUserName = "나"
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

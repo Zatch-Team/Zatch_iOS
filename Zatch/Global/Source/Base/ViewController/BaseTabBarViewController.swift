@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class BaseTabBarViewController<T: BaseHeaderView>: UIViewController, DefaultObservable {
+class BaseTabBarViewController<T: BaseView>: UIViewController, DefaultObservable {
 
     let headerView: T
     final let disposeBag = DisposeBag()

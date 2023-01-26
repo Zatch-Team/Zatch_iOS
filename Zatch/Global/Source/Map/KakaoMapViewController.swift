@@ -16,7 +16,7 @@ class KakaoMapViewController: UIViewController {
     var locationManager: CLLocationManager!
     
     let mainView = MapTownView().then{
-        $0.backBtn.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
+//        $0.backBtn.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
         $0.settingBtn.addTarget(self, action: #selector(settingBtnDidClicked), for: .touchUpInside)
     }
 

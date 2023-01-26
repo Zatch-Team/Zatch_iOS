@@ -9,19 +9,19 @@ import UIKit
 
 class CheckRegisterViewController: BaseLeftTitleViewController {
     
-    let mainView = CheckRegisterView().then{
-        $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
-    }
+//    let mainView = CheckRegisterView().then{
+//        $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
+//    }
     
     //MARK: - LifeCycle
     
-    override init(){
-        super.init(rightButton: Image.exit)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    override init(){
+//        super.init(rightButton: Image.exit)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     //MARK: - Override
     
@@ -29,7 +29,7 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
         
         super.style()
         
-        self.navigationTitle.text = "재치 등록하기"
+//        self.navigationTitle.text = "재치 등록하기"
 //        self.addRightTopBtn(image: Image.exit)
     }
     
@@ -37,10 +37,10 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
         
         super.initialize()
         
-        mainView.photoCollectionView.delegate = self
-        mainView.photoCollectionView.dataSource = self
-        
-        mainView.addExplainTextView.delegate = self
+//        mainView.photoCollectionView.delegate = self
+//        mainView.photoCollectionView.dataSource = self
+//        
+//        mainView.addExplainTextView.delegate = self
     }
     
     override func layout(){
@@ -67,9 +67,9 @@ class CheckRegisterViewController: BaseLeftTitleViewController {
         }
     }
     
-    override func rightPositionBtnDidClicked(){
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+//    override func rightPositionBtnDidClicked(){
+//        self.navigationController?.popToRootViewController(animated: true)
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         

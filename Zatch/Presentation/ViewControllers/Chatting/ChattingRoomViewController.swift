@@ -231,11 +231,11 @@ class ChattingRoomViewController: BaseViewController {
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {
-        let vc = ProfileViewController(rightButton: Image.chat)
-        vc.navigationTitle.text = nil
-        vc.isMyProfile = false
-        vc.profileUserName = nameLabel.text
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = ProfileViewController(rightButton: Image.chat)
+//        vc.navigationTitle.text = nil
+//        vc.isMyProfile = false
+//        vc.profileUserName = nameLabel.text
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - Helper
@@ -293,18 +293,18 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
         
         let image = info[.originalImage] as! UIImage
         
-        let imageDetailVC = RegisterImageDetailViewController()
+//        let imageDetailVC = RegisterImageDetailViewController()
+//        
+//        imageDetailVC.okBtn.setTitle("전송", for: .normal)
+//        imageDetailVC.imageView.image = image
+//        imageDetailVC.imageDetailHandler = { [self] result in
+//            if(result){
+//                let newChat = ChatMessage(message: nil, image: image, chatType: .RightImage)
+//                self.messageData.append(newChat)
+//            }
+//        }
         
-        imageDetailVC.okBtn.setTitle("전송", for: .normal)
-        imageDetailVC.imageView.image = image
-        imageDetailVC.imageDetailHandler = { [self] result in
-            if(result){
-                let newChat = ChatMessage(message: nil, image: image, chatType: .RightImage)
-                self.messageData.append(newChat)
-            }
-        }
-        
-        self.navigationController?.pushViewController(imageDetailVC, animated: true)
+//        self.navigationController?.pushViewController(imageDetailVC, animated: true)
 
         picker.dismiss(animated: true, completion: nil)
     }

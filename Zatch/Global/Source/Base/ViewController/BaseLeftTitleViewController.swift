@@ -17,12 +17,12 @@ class BaseLeftTitleViewController: BaseViewController {
         
         super.layout()
         
-        navigationView.addSubview(navigationTitle)
-        
-        navigationTitle.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.leading.equalTo(backBtn.snp.trailing).offset(4)
-        }
+//        headerView.addSubview(navigationTitle)
+//        
+//        navigationTitle.snp.makeConstraints{
+//            $0.centerY.equalToSuperview()
+//            $0.leading.equalTo(backBtn.snp.trailing).offset(4)
+//        }
     }
     
 }

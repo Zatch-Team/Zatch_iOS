@@ -35,7 +35,7 @@ class ServiceCenterViewController: BaseCenterTitleViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.navigationTitle.text = "고객센터"
+//        super.navigationTitle.text = "고객센터"
         
         setUpView()
         setUpConstraint()
@@ -50,8 +50,8 @@ class ServiceCenterViewController: BaseCenterTitleViewController {
         servicecenterVC.viewDidAppear(true)
     }
     @objc func goQnAButtonDidTap() {
-        let vc = QnAViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = QnAViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     // MARK: - Functions
     func setUpView() {
@@ -70,7 +70,7 @@ class ServiceCenterViewController: BaseCenterTitleViewController {
     func setUpConstraint() {
         searchView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(super.headerView.snp.bottom)
             make.height.equalTo(64)
         }
         searchStack.snp.makeConstraints { make in

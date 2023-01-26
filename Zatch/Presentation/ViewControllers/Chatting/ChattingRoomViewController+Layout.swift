@@ -28,11 +28,11 @@ extension ChattingRoomViewController{
     
     func setUpView(){
         
-        super.navigationView.addSubview(nameLabel)
-        super.navigationView.addSubview(townLabel)
-        super.navigationView.addSubview(reservationFinishTag)
-        super.navigationView.addSubview(etcBtn)
-        super.navigationTitle.removeFromSuperview()
+        super.headerView.addSubview(nameLabel)
+        super.headerView.addSubview(townLabel)
+        super.headerView.addSubview(reservationFinishTag)
+        super.headerView.addSubview(etcBtn)
+//        super.navigationTitle.removeFromSuperview()
         
         self.view.addSubview(matchBannerView)
         self.view.addSubview(tableView)

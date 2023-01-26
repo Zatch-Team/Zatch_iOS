@@ -39,7 +39,7 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         
         super.style()
         
-        self.navigationTitle.text = "재치 등록하기"
+//        self.navigationTitle.text = "재치 등록하기"
     }
     
     override func layout() {
@@ -87,9 +87,9 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         }else if(productInfo.category == "음식|조리" && productInfo.endDate.isEmpty){
             alert = .EndDate
         }else{ //input 데이터 모두 유효할 경우, Second로 이동
-            let vc  = SecondRegisterViewController()
+//            let vc  = SecondRegisterViewController()
             //TODO: Data 담아서 넘기기
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
             return
         }
         

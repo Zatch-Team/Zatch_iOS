@@ -15,7 +15,7 @@ class ProfileViewController: BaseCenterTitleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationTitle.text = "내 프로필"
+//        self.navigationTitle.text = "내 프로필"
         
         profileView = MyProfileView()
         self.view.addSubview(profileView)
@@ -26,18 +26,18 @@ class ProfileViewController: BaseCenterTitleViewController {
         
         profileView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(super.headerView.snp.bottom)
         }
     }
 
-    override func rightPositionBtnDidClicked() {
-        if isMyProfile {
-            let vc = ModifyProfileViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            // TODO: Chat Icon 클릭 이벤트 연결
-        }
-    }
+//    override func rightPositionBtnDidClicked() {
+//        if isMyProfile {
+//            let vc = ModifyProfileViewController()
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        } else {
+//            // TODO: Chat Icon 클릭 이벤트 연결
+//        }
+//    }
 }
 // MARK: - TableView delegate
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,9 +83,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = indexPath.row
         switch tag {
-        case 0:
-            let vc = ReviewViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+//        case 0:
+//            let vc = ReviewViewController()
+//            self.navigationController?.pushViewController(vc, animated: true)
         default:
             tableView.deselectRow(at: indexPath, animated: true)
         }

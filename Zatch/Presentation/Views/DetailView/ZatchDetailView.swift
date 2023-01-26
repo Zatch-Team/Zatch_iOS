@@ -10,7 +10,8 @@ import UIKit
 class ZatchDetailView: UIView {
     
     var tableView = UITableView().then{
-        $0.contentInset = UIEdgeInsets(top: -48, left: 0, bottom: 0, right: 0);
+        $0.contentInset = UIEdgeInsets(top: -48, left: 0, bottom: 0, right: 0)
+        $0.showsVerticalScrollIndicator = false
         
         $0.register(DetailImageTableViewCell.self, forCellReuseIdentifier: "imageViewCell")
         $0.register(ExchangeDetailTableViewCell.self, forCellReuseIdentifier: "firstWantCell")

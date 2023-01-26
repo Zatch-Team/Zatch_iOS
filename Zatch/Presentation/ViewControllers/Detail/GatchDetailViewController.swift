@@ -9,25 +9,25 @@ import UIKit
 
 class GatchDetailViewController: BaseViewController {
     
-    let mainView = GatchDetailView().then{
-        $0.bottomFixView.recruitFinishButton.addTarget(self, action: #selector(recruitFinishButtonDidClicked), for: .touchUpInside)
-    }
+//    let mainView = GatchDetailView().then{
+//        $0.bottomFixView.recruitFinishButton.addTarget(self, action: #selector(recruitFinishButtonDidClicked), for: .touchUpInside)
+//    }
     
-    override init() {
-        super.init(rightButton: Image.dot)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-//        fatalError("init(coder:) has not been implemented")
-    }
+//    override init() {
+//        super.init(rightButton: Image.dot)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+////        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func layout() {
         
         super.layout()
         
         self.view.addSubview(mainView)
-        self.view.bringSubviewToFront(self.navigationView)
+        self.view.bringSubviewToFront(self.headerView)
         mainView.snp.makeConstraints{
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
@@ -35,11 +35,11 @@ class GatchDetailViewController: BaseViewController {
     }
     
     override func initialize() {
-        mainView.infoTableView.separatorStyle = .none
-        mainView.infoTableView.delegate = self
-        mainView.infoTableView.dataSource = self
-        
-        self.rightPositionButton?.addTarget(self, action: #selector(detailEtcBottomSheetWillShow), for: .touchUpInside)
+//        mainView.infoTableView.separatorStyle = .none
+//        mainView.infoTableView.delegate = self
+//        mainView.infoTableView.dataSource = self
+//        
+//        self.rightPositionButton?.addTarget(self, action: #selector(detailEtcBottomSheetWillShow), for: .touchUpInside)
     }
     
     @objc private func detailEtcBottomSheetWillShow() {
@@ -47,7 +47,7 @@ class GatchDetailViewController: BaseViewController {
     }
     
     @objc private func recruitFinishButtonDidClicked(){
-        mainView.bottomFixView.setRecruitFinishButtonDeactivationStatus()
+//        mainView.bottomFixView.setRecruitFinishButtonDeactivationStatus()
     }
 
 }

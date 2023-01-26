@@ -38,17 +38,17 @@ class MyZatchStatisticTableViewCell: UITableViewCell {
     }
     // MARK: - Actions
     @objc func myZatchDidTap(sender: UITapGestureRecognizer) {
-        let vc = MyZatchViewController()
-        self.preVC.navigationController?.pushViewController(vc, animated: true)
+//        let vc = MyZatchViewController()
+//        self.preVC.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func myHeartDidTap(sender: UITapGestureRecognizer) {
-        let vc = HeartListViewController()
-        self.preVC.navigationController?.pushViewController(vc, animated: true)
+//        let vc = HeartListViewController()
+//        self.preVC.navigationController?.pushViewController(vc, animated: true)
     }
     // 임시
     @objc func myTradeDidTap(sender: UITapGestureRecognizer) {
-        let vc = MyZatchViewController()
-        self.preVC.navigationController?.pushViewController(vc, animated: true)
+//        let vc = MyZatchViewController()
+//        self.preVC.navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK: - Functions

@@ -9,14 +9,14 @@ import UIKit
 
 class ZatchDetailViewController: BaseViewController {
     
-    let mainView = ZatchDetailView()
-
-    override func viewDidLoad() {
+//    private let mainView = ZatchDetailView()
+    
+    override func layout() {
         
-        super.viewDidLoad()
+        super.layout()
         
         self.view.addSubview(mainView)
-        self.view.bringSubviewToFront(super.navigationView)
+        self.view.bringSubviewToFront(self.headerView)
         
         mainView.snp.makeConstraints{
             $0.top.bottom.leading.trailing.equalToSuperview()
@@ -24,9 +24,9 @@ class ZatchDetailViewController: BaseViewController {
     }
     
     override func initialize(){
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+//        mainView.tableView.separatorStyle = .none
+//        mainView.tableView.dataSource = self
+//        mainView.tableView.delegate = self
     }
 
 }
