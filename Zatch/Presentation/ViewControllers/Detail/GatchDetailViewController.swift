@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GatchDetailViewController: BaseViewController {
+class GatchDetailViewController: BaseViewController<BaseHeaderView, GatchDetailView> {
     
 //    let mainView = GatchDetailView().then{
 //        $0.bottomFixView.recruitFinishButton.addTarget(self, action: #selector(recruitFinishButtonDidClicked), for: .touchUpInside)
@@ -21,6 +21,10 @@ class GatchDetailViewController: BaseViewController {
 //        super.init(coder: coder)
 ////        fatalError("init(coder:) has not been implemented")
 //    }
+    
+    init(){
+        super.init(headerView: BaseHeaderView(), mainView: GatchDetailView())
+    }
     
     override func layout() {
         
@@ -38,7 +42,7 @@ class GatchDetailViewController: BaseViewController {
 //        mainView.infoTableView.separatorStyle = .none
 //        mainView.infoTableView.delegate = self
 //        mainView.infoTableView.dataSource = self
-//        
+//
 //        self.rightPositionButton?.addTarget(self, action: #selector(detailEtcBottomSheetWillShow), for: .touchUpInside)
     }
     
