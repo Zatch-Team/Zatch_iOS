@@ -9,23 +9,12 @@ import UIKit
 
 class GatchSearchViewController: BaseLeftTitleViewController {
     
-//    let headerView = GatchSearchHeaderView()
-//    let mainView = GatchSearchMainView()
-    
-    override func style() {
-        super.style()
-//        navigationTitle.text = "가치"
+    init(){
+        super.init(headerView: LeftNavigationTitleHeaderView(title: "가치"), mainView: GatchSearchMainView())
     }
     
-    override func layout() {
-        super.layout()
-        
-        self.view.addSubview(headerView)
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
