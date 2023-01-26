@@ -7,26 +7,31 @@
 
 import UIKit
 
-class ZatchDetailViewController: BaseViewController {
+class ZatchDetailViewController: BaseViewController<BaseHeaderView, ZatchDetailView> {
     
-//    private let mainView = ZatchDetailView()
+    init() {
+        super.init(headerView: BaseHeaderView(), mainView: ZatchDetailView())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func layout() {
         
         super.layout()
-        
-        self.view.addSubview(mainView)
+    
         self.view.bringSubviewToFront(self.headerView)
         
-        mainView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
+        mainView.snp.updateConstraints{
+            $0.top.equalToSuperview()
         }
     }
     
     override func initialize(){
-//        mainView.tableView.separatorStyle = .none
-//        mainView.tableView.dataSource = self
-//        mainView.tableView.delegate = self
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
     }
 
 }
