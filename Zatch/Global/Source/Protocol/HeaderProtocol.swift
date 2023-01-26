@@ -7,11 +7,29 @@
 
 import Foundation
 
-protocol SecondEtcButtonProtocol{
+//MARK: - FirstEtcButton
+protocol HeaderFirstEtcButton{
+    var etcButton: EtcButton { get }
+}
+
+extension HeaderFirstEtcButton where Self: BaseView{
+    func setEtcButtonLayout(){
+        self.addSubview(etcButton)
+        etcButton.snp.makeConstraints{
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalToSuperview().offset(14)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(etcButton.snp.height)
+        }
+    }
+}
+
+//MARK: - SecondEtcButton
+protocol HeaderSecondEtcButton{
     var secondEtcButton: EtcButton { get }
 }
 
-extension SecondEtcButtonProtocol where Self: BaseHeaderView{
+extension HeaderSecondEtcButton where Self: HeaderFirstEtcButton, Self: BaseView{
     func setSecondEtcButtonLayout(){
         self.addSubview(secondEtcButton)
         secondEtcButton.snp.makeConstraints{
