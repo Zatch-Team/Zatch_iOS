@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyZatchTableViewCell: UITableViewCell {
+class MyZatchTableViewCell: BaseTableViewCell {
     let backView = UIView().then{
         $0.backgroundColor = .white
     }
@@ -53,18 +53,10 @@ class MyZatchTableViewCell: UITableViewCell {
         $0.setImage(Image.heartSilver, for: .normal)
     }
     // MARK: - LifeCycles
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-        
+    
+    override func style() {
         heartButton.isHidden = true
         heartButton.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Actions
@@ -72,8 +64,10 @@ class MyZatchTableViewCell: UITableViewCell {
         if heartButton.isSelected {heartButton.isSelected = false}
         else {heartButton.isSelected = true}
     }
+    
     // MARK: - Functions
-    func setUpView() {
+    override func hierarchy() {
+        
         contentView.backgroundColor = .systemGray5
         contentView.addSubview(backView)
         
@@ -94,7 +88,8 @@ class MyZatchTableViewCell: UITableViewCell {
         
         backView.addSubview(heartButton)
     }
-    func setUpConstraint() {
+    
+    override func layout() {
         backView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
