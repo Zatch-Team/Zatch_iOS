@@ -7,7 +7,8 @@
 
 import UIKit
 
-class MyZatchViewController: UIViewController {
+class MyZatchViewController: BaseTabBarViewController<> {
+    
     let navigationView = UIView()
     lazy var navigationTitle = UILabel().then{
         $0.text = "나의 재치"
