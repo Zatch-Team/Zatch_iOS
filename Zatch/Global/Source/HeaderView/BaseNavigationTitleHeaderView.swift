@@ -39,6 +39,7 @@ class BaseNavigationTitleHeaderView: BaseHeaderView, HeaderNavigationTitle{
     
     init(title: String){
         self.title = title
+        super.init(frame: .zero)
     }
     
     required init?(coder: NSCoder) {
@@ -63,6 +64,7 @@ class LeftNavigationTitleHeaderView: BaseHeaderView, HeaderNavigationTitle{
     
     init(title: String){
         self.title = title
+        super.init(frame: .zero)
     }
     
     required init?(coder: NSCoder) {
