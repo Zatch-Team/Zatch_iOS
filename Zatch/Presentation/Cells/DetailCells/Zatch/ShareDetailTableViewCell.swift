@@ -9,8 +9,6 @@ import UIKit
 
 class ShareDetailTableViewCell: BaseTableViewCell {
     
-    static let cellIdentifier = "ShareDetailTableViewCell"
-    
     //MARK: - UI
     let shareTag = PaddingLabel().then{
         $0.text = "나눔"

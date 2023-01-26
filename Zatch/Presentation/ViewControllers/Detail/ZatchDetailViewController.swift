@@ -22,7 +22,6 @@ class ZatchDetailViewController: BaseViewController<BaseHeaderView, ZatchDetailV
         super.layout()
     
         self.view.bringSubviewToFront(self.headerView)
-        
         mainView.snp.updateConstraints{
             $0.top.equalToSuperview()
         }
@@ -46,9 +45,7 @@ extension ZatchDetailViewController : UITableViewDelegate, UITableViewDataSource
         
         switch indexPath.row {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "imageViewCell", for: indexPath) as? DetailImageTableViewCell else{
-                fatalError("Cell Casting Error")
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: DetailImageTableViewCell.self)
             return cell
         case 1:
             
@@ -58,24 +55,16 @@ extension ZatchDetailViewController : UITableViewDelegate, UITableViewDataSource
 //            }
             
             //2. share
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ShareDetailTableViewCell.cellIdentifier, for: indexPath) as? ShareDetailTableViewCell else{
-                fatalError("Cell Casting Error")
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ShareDetailTableViewCell.self)
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "productInfoCell", for: indexPath) as? ProductInfoTableViewCell else{
-                fatalError("Cell Casting Error")
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductInfoTableViewCell.self)
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "moreTextCell", for: indexPath) as? MoreTextTableViewCell else{
-                fatalError("Cell Casting Error")
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MoreTextTableViewCell.self)
             return cell
         case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "similarZatchCell", for: indexPath) as? SimilarZatchTableViewCell else{
-                fatalError("Cell Casting Error")
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SimilarZatchTableViewCell.self)
             return cell
         default:
             return UITableViewCell()
