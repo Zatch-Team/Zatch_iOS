@@ -7,20 +7,13 @@
 
 import UIKit
 
-class BaseCenterTitleViewController: BaseViewController{
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class BaseCenterTitleViewController: BaseViewController<BaseNavigationTitleHeaderView, BaseView> {
+    
+    override init(headerView: BaseNavigationTitleHeaderView, mainView: BaseView) {
+        super.init(headerView: headerView, mainView: mainView)
     }
     
-    override func layout() {
-        
-        super.layout()
-        
-//        headerView.addSubview(navigationTitle)
-//
-//        navigationTitle.snp.makeConstraints{
-//            $0.centerY.centerX.equalToSuperview()
-//        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
