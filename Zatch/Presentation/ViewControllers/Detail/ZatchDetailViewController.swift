@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ZatchDetailViewController: BaseViewController<BaseHeaderView, ZatchDetailView> {
+class ZatchDetailViewController: BaseViewController<EtcButtonHeader, ZatchDetailView> {
     
     init() {
-        super.init(headerView: BaseHeaderView(), mainView: ZatchDetailView())
+        super.init(headerView: EtcButtonHeader(image: Image.dot), mainView: ZatchDetailView())
     }
     
     required init?(coder: NSCoder) {
