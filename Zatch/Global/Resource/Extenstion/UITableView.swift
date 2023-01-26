@@ -12,7 +12,7 @@ extension UITableView{
         self.register(cellType.self, forCellReuseIdentifier: cellType.cellIdentifier)
     }
     
-    final func dequeueReusableCell<T: BaseTableViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T {
+    final func dequeueReusableCell<T: BaseTableViewCell>(for indexPath: IndexPath, cellType: T.Type) -> T { //cellType: T.Type = T.self
         guard let cell = self.dequeueReusableCell(withIdentifier: cellType.cellIdentifier, for: indexPath) as? T else {
           fatalError(
             "Failed to dequeue a cell with identifier \(cellType.cellIdentifier) matching type \(cellType.self). "
