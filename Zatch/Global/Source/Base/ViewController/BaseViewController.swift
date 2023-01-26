@@ -27,7 +27,7 @@ class BaseViewController<T: BaseHeaderView,
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError()
     }
     
     //MARK: - LifeCycle

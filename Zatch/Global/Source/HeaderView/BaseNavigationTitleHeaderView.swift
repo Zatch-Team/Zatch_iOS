@@ -8,6 +8,7 @@
 import Foundation
 
 protocol HeaderNavigationTitle{
+    var title: String { get }
     var navigationTitleLabel: UILabel { get }
     func layoutNavigationTitle()
 }
@@ -31,9 +32,21 @@ extension HeaderNavigationTitle{
 }
 
 class BaseNavigationTitleHeaderView: BaseHeaderView, HeaderNavigationTitle{
-    
+    let title: String
     let navigationTitleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
+    }
+    
+    init(title: String){
+        self.title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func style() {
+        navigationTitleLabel.text = title
     }
     
     override func layout() {
@@ -43,9 +56,21 @@ class BaseNavigationTitleHeaderView: BaseHeaderView, HeaderNavigationTitle{
 }
 
 class LeftNavigationTitleHeaderView: BaseHeaderView, HeaderNavigationTitle{
-    
+    let title: String
     let navigationTitleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 20, family: .Bold)
+    }
+    
+    init(title: String){
+        self.title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func style() {
+        navigationTitleLabel.text = title
     }
     
     override func layout() {
