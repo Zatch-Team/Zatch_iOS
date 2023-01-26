@@ -9,34 +9,24 @@ import UIKit
 import RxSwift
 
 class BaseViewController<T: BaseHeaderView,
-                         P: BaseView,
-                         L: BaseViewModel>: UIViewController, DefaultObservable {
+                         P: BaseView>: UIViewController, DefaultObservable {
     
     //MARK: - Properties
     
     let headerView: T
     let mainView: P
-    let viewModel: L?
     
     final var disposeBag = DisposeBag()
     
     //MARK: - Generator
-
-    convenience init(headerView: T, mainView: P){
-        self.init(headerView: headerView, mainView: mainView, viewModel: nil)
-    }
     
-    init(headerView: T, mainView: P, viewModel: L?){
+    init(headerView: T, mainView: P){
         self.headerView = headerView
         self.mainView = mainView
-        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
-        self.headerView = BaseHeaderView() as! T
-        self.mainView = BaseView() as! P
-        self.viewModel = nil
         super.init(coder: coder)
     }
     
