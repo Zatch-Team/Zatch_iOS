@@ -7,13 +7,9 @@
 
 import UIKit
 
-class SecondRegisterView: BaseView {
+class ZatchRegisterSecondView: BaseView {
     
     //MARK: - UI
-    
-    lazy var exitBtn = UIButton().then{
-        $0.setImage(Image.exit, for: .normal)
-    }
     
     let topTitleView = TitleView().then{
         $0.titleLabel.text = "받고 싶은\n물건이 있나요?"
