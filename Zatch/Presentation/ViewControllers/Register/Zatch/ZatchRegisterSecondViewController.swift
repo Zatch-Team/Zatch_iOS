@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondRegisterViewController: BaseLeftTitleViewController {
+class ZatchRegisterSecondViewController: BaseLeftTitleViewController<LeftNavigationEtcButtonHeaderView,ZatchRegisterSecondView> {
     
     //MARK: - Properties
     
@@ -17,49 +17,30 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     
     var currentBtnSelect: ZatchRoundCheck!
     
-    let registerView = SecondRegisterView().then{
-        $0.exitBtn.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
-        $0.topCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
-        $0.belowCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
-        $0.shareBtn.addTarget(self, action: #selector(shareBtnDidClicked), for: .touchUpInside)
-        $0.nextBtn.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
-        
-    }
-    
     //MARK: - LifeCycle
     
-//    override init(){
-//        super.init(rightButton: Image.exit)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(){
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기",
+                                                                 etcButton: Image.exit),
+                   mainView: ZatchRegisterSecondView())
+    }
     
-    //MARK: - Override
-    override func style() {
-        super.style()
-//        self.navigationTitle.text = "재치 등록하기"
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func initialize() {
-        currentBtnSelect = registerView.topCheckBoxBtn
-        registerView.tableView.dataSource = self
-        registerView.tableView.delegate = self
-        registerView.tableView.separatorStyle = .none
-    }
-    
-    override func layout() {
+        currentBtnSelect = mainView.topCheckBoxBtn
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
+        mainView.tableView.separatorStyle = .none
         
-        super.layout()
+        headerView.etcButton.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
         
-        self.view.addSubview(registerView)
-        
-        registerView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
-        }
+        mainView.topCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
+        mainView.belowCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
+        mainView.shareBtn.addTarget(self, action: #selector(shareBtnDidClicked), for: .touchUpInside)
+        mainView.nextBtn.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
     
     //MARK: - Action
@@ -77,13 +58,13 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
     }
     
     @objc func shareBtnDidClicked(){
-//        let vc = CheckShareRegisterViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = CheckShareRegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func nextBtnDidClicked(){
-//        let vc = CheckExchangeRegisterViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = CheckExchangeRegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func exitBtnDidClicked(){
@@ -105,7 +86,7 @@ class SecondRegisterViewController: BaseLeftTitleViewController {
 }
 
 //MARK: - TableView
-extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSource{
+extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -156,10 +137,10 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
                         self.isFieldOpen[indexPath.section] = true
                     }
                     
-                    self.registerView.tableView.reloadData()
+                    self.mainView.tableView.reloadData()
                     
                     if(indexPath.section == 2){
-                        self.registerView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
+                        self.mainView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
                     }
                 }
             }
@@ -167,7 +148,7 @@ extension SecondRegisterViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 
-extension SecondRegisterViewController: UITextFieldDelegate{
+extension ZatchRegisterSecondViewController: UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
