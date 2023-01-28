@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstRegisterView: BaseView {
+class ZatchRegisterFirstView: BaseView {
     
     //MARK: - UI
     let topView = TitleView().then{
