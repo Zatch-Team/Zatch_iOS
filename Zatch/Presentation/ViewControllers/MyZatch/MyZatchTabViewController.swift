@@ -38,7 +38,7 @@ class MyZatchTabViewController: BaseTabBarViewController<MyZatchTabBarHeaderView
     }
     
     @objc func willMoveZatchRegister(){
-        let vc = FirstRegisterViewController()
+        let vc = ZatchRegisterFirstViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

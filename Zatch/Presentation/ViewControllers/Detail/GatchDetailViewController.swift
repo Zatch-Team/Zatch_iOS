@@ -7,10 +7,10 @@
 
 import UIKit
 
-class GatchDetailViewController: BaseViewController<EtcButtonHeader, GatchDetailView> {
+class GatchDetailViewController: BaseViewController<EtcButtonHeaderView, GatchDetailView> {
     
     init(){
-        super.init(headerView: EtcButtonHeader(image: Image.dot), mainView: GatchDetailView())
+        super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: GatchDetailView())
     }
     
     required init?(coder: NSCoder) {

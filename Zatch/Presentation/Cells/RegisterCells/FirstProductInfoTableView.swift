@@ -13,7 +13,7 @@ class FirstProductInfoTableView: UITableViewCell {
     
     static let cellIdentifier = "firstProductCell"
     
-    var viewController: FirstRegisterViewController!
+    var viewController: ZatchRegisterFirstViewController!
     
     //MARK: - UI
     
