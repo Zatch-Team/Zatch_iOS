@@ -55,7 +55,7 @@
 		23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */; };
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
 		23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* MypageViewController.swift */; };
-		23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */; };
+		23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */; };
 		23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */; };
 		23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */; };
 		23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */; };
@@ -297,6 +297,7 @@
 		EE2BC34D2982B067002B5C60 /* EtcButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34C2982B067002B5C60 /* EtcButtonHeader.swift */; };
 		EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */; };
 		EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC3502982B881002B5C60 /* MainHeaderView.swift */; };
+		EE410191298541010083B7E0 /* MyZatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410190298541010083B7E0 /* MyZatchView.swift */; };
 		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
@@ -372,7 +373,7 @@
 		23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageSettingTableViewCell.swift; sourceTree = "<group>"; };
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		23CB3CF428C7D38500C42858 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
-		23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchViewController.swift; sourceTree = "<group>"; };
+		23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabViewController.swift; sourceTree = "<group>"; };
 		23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationSheetViewController.swift; sourceTree = "<group>"; };
 		23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
 		23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterTabmanViewController.swift; sourceTree = "<group>"; };
@@ -636,6 +637,7 @@
 		EE2BC34C2982B067002B5C60 /* EtcButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButtonHeader.swift; sourceTree = "<group>"; };
 		EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabBarHeaderView.swift; sourceTree = "<group>"; };
 		EE2BC3502982B881002B5C60 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		EE410190298541010083B7E0 /* MyZatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchView.swift; sourceTree = "<group>"; };
 		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -909,6 +911,7 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE41018F298540F60083B7E0 /* MyZatch */,
 				5724EC8D291E0E8200DC529B /* LoginView */,
 				23B051B728E1FDBE005D08EA /* NotificationView */,
 				57FFEDBD28DD27DE0041719B /* RegisterView */,
@@ -1145,9 +1148,8 @@
 		23CB3CEE28C7D34E00C42858 /* MyZatch */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */,
-				23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */,
-				23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */,
+				23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */,
+				EE41018E298540D60083B7E0 /* willDelete */,
 			);
 			path = MyZatch;
 			sourceTree = "<group>";
@@ -1897,6 +1899,23 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		EE41018E298540D60083B7E0 /* willDelete */ = {
+			isa = PBXGroup;
+			children = (
+				23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */,
+				23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */,
+			);
+			path = willDelete;
+			sourceTree = "<group>";
+		};
+		EE41018F298540F60083B7E0 /* MyZatch */ = {
+			isa = PBXGroup;
+			children = (
+				EE410190298541010083B7E0 /* MyZatchView.swift */,
+			);
+			path = MyZatch;
+			sourceTree = "<group>";
+		};
 		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2251,7 +2270,7 @@
 				23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */,
 				5724EC8F291E0E9B00DC529B /* LoginView.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
-				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
+				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
@@ -2359,6 +2378,7 @@
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
+				EE410191298541010083B7E0 /* MyZatchView.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
