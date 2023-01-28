@@ -22,6 +22,7 @@ struct ChatMessage{
     //TODO: 전송 시간 기준 프론트? 서버?
 }
 
+/*
 class ChattingRoomViewController: BaseViewController {
 
     //MARK: - Properties
@@ -331,3 +332,5 @@ extension ChattingRoomViewController: SideMenuNavigationControllerDelegate{
         self.blurView.removeFromSuperview()
     }
 }
+
+*/

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 extension ChattingRoomViewController{
     
     func setInitView(){
@@ -91,3 +92,4 @@ extension ChattingRoomViewController{
         
     }
 }
+*/
