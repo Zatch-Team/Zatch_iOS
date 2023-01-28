@@ -38,3 +38,29 @@ extension HeaderSecondEtcButton where Self: HeaderFirstEtcButton, Self: BaseView
         }
     }
 }
+
+//MARK: - NavigationTitle
+
+protocol HeaderNavigationTitle{
+    var title: String { get }
+    var navigationTitleLabel: UILabel { get }
+    func layoutNavigationTitle()
+}
+
+extension HeaderNavigationTitle{
+    
+    func layoutNavigationTitle() where Self: CenterNavigationHeaderView{
+        self.addSubview(navigationTitleLabel)
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.centerX.equalToSuperview()
+        }
+    }
+    
+    func layoutNavigationTitle() where Self: LeftNavigationHeaderView{
+        self.addSubview(navigationTitleLabel)
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(self.backButton.snp.trailing).offset(8)
+        }
+    }
+}
