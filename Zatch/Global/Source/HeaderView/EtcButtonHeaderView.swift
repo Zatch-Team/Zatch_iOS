@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EtcButtonHeader: BaseHeaderView, HeaderFirstEtcButton{
+class EtcButtonHeaderView: BaseHeaderView, HeaderFirstEtcButton{
     
     var etcButton: EtcButton
     
