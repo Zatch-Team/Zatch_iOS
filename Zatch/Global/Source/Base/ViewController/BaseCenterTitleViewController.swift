@@ -7,9 +7,9 @@
 
 import UIKit
 
-class BaseCenterTitleViewController: BaseViewController<BaseNavigationTitleHeaderView, BaseView> {
+class BaseCenterTitleViewController: BaseViewController<CenterNavigationHeaderView, BaseView> {
     
-    override init(headerView: BaseNavigationTitleHeaderView, mainView: BaseView) {
+    override init(headerView: CenterNavigationHeaderView, mainView: BaseView) {
         super.init(headerView: headerView, mainView: mainView)
     }
     
