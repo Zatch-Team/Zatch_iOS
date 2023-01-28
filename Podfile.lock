@@ -12,7 +12,6 @@ PODS:
     - KakaoSDKCommon/Common (= 2.11.1)
   - KakaoSDKUser (2.11.1):
     - KakaoSDKAuth (= 2.11.1)
-  - Pageboy (3.7.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -21,8 +20,6 @@ PODS:
   - RxSwift (6.5.0)
   - SideMenu (6.5.0)
   - SnapKit (5.6.0)
-  - Tabman (2.13.0):
-    - Pageboy (~> 3.7.0)
   - Then (3.0.0)
 
 DEPENDENCIES:
@@ -34,7 +31,6 @@ DEPENDENCIES:
   - RxSwift
   - SideMenu (~> 6.0)
   - SnapKit (~> 5.6.0)
-  - Tabman (~> 2.12)
   - Then
 
 SPEC REPOS:
@@ -44,13 +40,11 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
-    - Pageboy
     - RxCocoa
     - RxRelay
     - RxSwift
     - SideMenu
     - SnapKit
-    - Tabman
     - Then
 
 SPEC CHECKSUMS:
@@ -59,15 +53,13 @@ SPEC CHECKSUMS:
   KakaoSDKAuth: bb2dfa7be30daa8403c9cfc8001aa6fde7a5b779
   KakaoSDKCommon: 555e1bb46595b842ded01cf7888cc17bbae4e113
   KakaoSDKUser: 08c0a4f40bebdebdf948a9e3d0e44ed5c2754f99
-  Pageboy: fe646118f7168960058bea7a96038386aa7c0da8
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Tabman: 66ea44c44488327ec20f3c8dc5554a5d22f5908c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 47fad02b0cdba6870bbdadbb5340f315da68561a
+PODFILE CHECKSUM: 0a67eddc4bcc0a2c7d2fab28b43b567e6550bd48
 
 COCOAPODS: 1.11.3
