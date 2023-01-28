@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstRegisterViewController: BaseLeftTitleViewController {
+class ZatchRegisterFirstViewController: BaseLeftTitleViewController<LeftNavigationHeaderView, ZatchRegisterFirstView> {
     
     //MARK: - Properties
     
@@ -23,42 +23,23 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     
     var productInfo = ZatchFirstInput()
     
-    let registerView = FirstRegisterView().then{
-        $0.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
+    init(){
+        super.init(headerView: LeftNavigationHeaderView(title: "재치 등록하기"),
+                   mainView: ZatchRegisterFirstView())
     }
     
-    //MARK: - LifeCycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Override
     
-    override func style() {
-        
-        super.style()
-        
-//        self.navigationTitle.text = "재치 등록하기"
-    }
-    
-    override func layout() {
-        
-        super.layout()
-        
-        self.view.addSubview(registerView)
-        
-        registerView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
-        }
-    }
-    
     override func initialize(){
-        registerView.backTableView.dataSource = self
-        registerView.backTableView.delegate = self
-        registerView.backTableView.separatorStyle = .none
+        mainView.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
+        
+        mainView.backTableView.dataSource = self
+        mainView.backTableView.delegate = self
+        mainView.backTableView.separatorStyle = .none
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,7 +52,7 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
     @objc func nextBtnDidClicked(){
         
         //cell에서 등록한 이미지 데이터 가져오기
-        guard let imageCell = registerView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
+        guard let imageCell = mainView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
         productInfo.images = imageCell.imageArray
         
         let alert: Alert
@@ -87,9 +68,9 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
         }else if(productInfo.category == "음식|조리" && productInfo.endDate.isEmpty){
             alert = .EndDate
         }else{ //input 데이터 모두 유효할 경우, Second로 이동
-//            let vc  = SecondRegisterViewController()
+            let vc  = ZatchRegisterSecondViewController()
             //TODO: Data 담아서 넘기기
-//            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
             return
         }
         
@@ -99,7 +80,7 @@ class FirstRegisterViewController: BaseLeftTitleViewController {
 
 }
 
-extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSource{
+extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -171,13 +152,13 @@ extension FirstRegisterViewController: UITableViewDelegate, UITableViewDataSourc
             guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else { return}
             isOpen.toggle()
             cell.arrowImage.isSelected = isOpen
-            self.registerView.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
+            self.mainView.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
         }
     }
     
 }
 
-extension FirstRegisterViewController: UITextFieldDelegate{
+extension ZatchRegisterFirstViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.productInfo.productName = textField.text ?? ""
     }
