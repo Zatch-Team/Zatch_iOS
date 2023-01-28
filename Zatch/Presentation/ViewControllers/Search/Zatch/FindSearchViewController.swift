@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-
+/*
 class FindSearchViewController: BaseViewController {
     
     //MARK: - Properties
@@ -73,7 +73,7 @@ extension FindSearchViewController: CellDelegate{
     
     func cellDidSelected(_ indexPath: IndexPath) { }
 }
-/*
+
  extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
  
  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-
+/*
 class MySearchViewController: BaseViewController{
     
     //MARK: - Properties
@@ -124,3 +124,4 @@ extension MySearchViewController: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: adjustWidth, height: 28)
     }
 }
+*/

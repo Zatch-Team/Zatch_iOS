@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class GatchSearchViewController: BaseLeftTitleViewController {
     
     init(){
@@ -18,3 +19,4 @@ class GatchSearchViewController: BaseLeftTitleViewController {
     }
 
 }
+*/
