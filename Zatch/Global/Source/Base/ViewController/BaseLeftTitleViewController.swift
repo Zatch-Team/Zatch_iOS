@@ -7,13 +7,7 @@
 
 import UIKit
 
-class BaseLeftTitleViewController: BaseViewController<LeftNavigationTitleHeaderView, BaseView> {
-    
-    override init(headerView: LeftNavigationTitleHeaderView, mainView: BaseView) {
-        super.init(headerView: headerView, mainView: mainView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class BaseLeftTitleViewController<T: LeftNavigationHeaderView, P: BaseView>: BaseViewController<T, P> {
+
 }
+
