@@ -13,7 +13,7 @@ class CheckShareRegisterViewController: CheckRegisterViewController {
         
         super.viewDidLoad()
 
-//        mainView.infoFrame = CheckShareRegisterView()
+        mainView.infoFrame = CheckShareRegisterView()
     }
 
 }
