@@ -27,8 +27,6 @@
 		23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */; };
 		23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */; };
 		23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */; };
-		23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */; };
-		23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */; };
 		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
 		23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */; };
 		23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F529085258003E46AB /* NoticeTableViewCell.swift */; };
@@ -63,7 +61,6 @@
 		23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D128E9EF80002F234C /* AccountViewController.swift */; };
 		23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D328E9EF89002F234C /* TradeViewController.swift */; };
 		23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D528E9EF92002F234C /* EtcViewController.swift */; };
-		23ECCB5A28EEDBAC0026A6AD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */; };
 		23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44828D874C200C4C67E /* ZatchViewController.swift */; };
 		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
@@ -348,8 +345,6 @@
 		23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchChattingListViewController.swift; sourceTree = "<group>"; };
 		23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTabManViewController.swift; sourceTree = "<group>"; };
 		23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchChattingListViewController.swift; sourceTree = "<group>"; };
-		23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabmanViewController.swift; sourceTree = "<group>"; };
-		23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchChildViewController.swift; sourceTree = "<group>"; };
 		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		23A767F529085258003E46AB /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -384,7 +379,6 @@
 		23E764D128E9EF80002F234C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		23E764D328E9EF89002F234C /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		23E764D528E9EF92002F234C /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
-		23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		23EEA44828D874C200C4C67E /* ZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44A28D874CC00C4C67E /* GatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
@@ -953,7 +947,6 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
 				5724EC8A291E0CB400DC529B /* Login */,
 				23A767EF2908518B003E46AB /* Notice */,
 				23E764CA28E9EDFE002F234C /* ServiceCenter */,
@@ -1155,7 +1148,6 @@
 			isa = PBXGroup;
 			children = (
 				23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */,
-				EE41018E298540D60083B7E0 /* willDelete */,
 			);
 			path = MyZatch;
 			sourceTree = "<group>";
@@ -1908,15 +1900,6 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		EE41018E298540D60083B7E0 /* willDelete */ = {
-			isa = PBXGroup;
-			children = (
-				23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */,
-				23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */,
-			);
-			path = willDelete;
-			sourceTree = "<group>";
-		};
 		EE41018F298540F60083B7E0 /* MyZatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -2311,7 +2294,6 @@
 				EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */,
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
-				23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */,
 				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
 				23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
@@ -2380,7 +2362,6 @@
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
-				23ECCB5A28EEDBAC0026A6AD /* TempViewController.swift in Sources */,
 				57E75EC728E5480A00AC24B2 /* MySearchView.swift in Sources */,
 				EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */,
 				EE410197298557440083B7E0 /* RegisterImageDetailView.swift in Sources */,
@@ -2433,7 +2414,6 @@
 				57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */,
-				23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */,
 				232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */,
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
