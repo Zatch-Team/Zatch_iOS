@@ -7,8 +7,8 @@
 
 import UIKit
 import SnapKit
-/*
-class MySearchViewController: BaseViewController{
+
+class MySearchViewController: BaseViewController<BaseHeaderView, MySearchView>{
     
     //MARK: - Properties
     
@@ -16,75 +16,70 @@ class MySearchViewController: BaseViewController{
     
     var currentSelect: Int = -1
     
-//    let mainView = MySearchView().then{
-//        $0.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
-//        $0.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
-//    }
-    
     //MARK: - LifeCycle
+
+    init(){
+        super.init(headerView: BaseHeaderView(), mainView: MySearchView())
+    }
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-//        mainView.collectionView.delegate = self
-//        mainView.collectionView.dataSource = self
+    override func initialize(){
         
-        self.view.addSubview(mainView)
+        super.initialize()
         
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
+        mainView.collectionView.delegate = self
+        mainView.collectionView.dataSource = self
         
+        mainView.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
+        mainView.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
     }
     
     //MARK: Action
     
-    @objc
-    func nextButtonClick(){
+    @objc func nextButtonClick(){
+        let product = mainView.selectTextField.text
         
-//        let product = mainView.selectTextField.text
-        
-//        if(product == "" || product == nil){
-//            skipBtnDidClicked()
-//        }else{
-//            let vc = FindSearchViewController()
-//            vc.mainView.myLabel.text = product
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
+        if(product == "" || product == nil){
+            skipBtnDidClicked()
+        }else{
+            let vc = FindSearchViewController()
+            vc.mainView.myLabel.text = product
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @objc func skipBtnDidClicked(){
         
-//        let vc = FindSearchViewController()
+        let vc = FindSearchViewController()
         
-//        vc.mainView.myLabel.text = "???"
-//        vc.mainView.myLabel.textColor = .zatchYellow
-//        vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
-//
-//        self.navigationController?.pushViewController(vc, animated: true)
-        
+        vc.mainView.myLabel.text = "???"
+        vc.mainView.myLabel.textColor = .zatchYellow
+        vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension MySearchViewController: CellDelegate{
     
     func cellDidSelected(_ indexPath: IndexPath){
-//        if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
-//            currentTag.setBtnInitState()
-//        }
-//        
-//        if(currentSelect == indexPath.row){
-//            currentSelect = -1
-//            mainView.selectTextField.text = ""
-//        }else{
-//            if let newTag = mainView.collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
-//                newTag.setBtnSelectedState()
-//                mainView.selectTextField.text = myZatchData[indexPath.row]
-//                currentSelect = indexPath.row
-//            }
-//        }
+        if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
+            currentTag.setBtnInitState()
+        }
+        
+        if(currentSelect == indexPath.row){
+            currentSelect = -1
+            mainView.selectTextField.text = ""
+        }else{
+            if let newTag = mainView.collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
+                newTag.setBtnSelectedState()
+                mainView.selectTextField.text = myZatchData[indexPath.row]
+                currentSelect = indexPath.row
+            }
+        }
     }
     
     func cellDidSelected(_ cell: UICollectionViewCell) { }
@@ -124,4 +119,4 @@ extension MySearchViewController: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: adjustWidth, height: 28)
     }
 }
-*/
+

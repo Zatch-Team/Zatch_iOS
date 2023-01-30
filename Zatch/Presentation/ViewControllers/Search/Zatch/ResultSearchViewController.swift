@@ -23,6 +23,14 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
         }
     }
     
+    init(){
+        super.init(headerView: BaseHeaderView(), mainView: ResultSearchView())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func initialize() {
         
         super.initialize()
@@ -81,8 +89,7 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
         }
     }
     
-    @objc
-    func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
+    @objc func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
         let vc = CategorySheetViewController(service: .Zatch).show(in: self)
         vc.completion = { category in
             print(category)
@@ -90,8 +97,7 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
         }
     }
     
-    @objc
-    func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
+    @objc func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
         //기존 입력값 초기화
         mainView.myZatchFrame.productTextField.text = nil
         mainView.wantZatchFrame.productTextField.text = nil

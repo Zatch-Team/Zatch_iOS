@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MySearchView: UIView {
+class MySearchView: BaseView {
     
     //MARK: UI
     
@@ -56,18 +56,7 @@ class MySearchView: UIView {
         $0.register(MySearchTagCollectionViewCell.self, forCellWithReuseIdentifier: MySearchTagCollectionViewCell.cellIdentifier)
     }
     
-    override init(frame: CGRect){
-        super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpView(){
+    override func hierarchy() {
         
         self.addSubview(topView)
         
@@ -82,7 +71,7 @@ class MySearchView: UIView {
         self.addSubview(skipButton)
     }
     
-    func setUpConstraints(){
+    override func layout() {
         
         self.topView.snp.makeConstraints{ make in
             make.top.equalToSuperview()
