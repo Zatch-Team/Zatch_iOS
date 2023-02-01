@@ -185,7 +185,6 @@
 		577A01B628A496D1004B2575 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B528A496D1004B2575 /* UITextView.swift */; };
 		577A01B828A49C97004B2575 /* CheckRegisterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B728A49C97004B2575 /* CheckRegisterInfoView.swift */; };
 		578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */; };
-		578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */; };
 		578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */; };
 		5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */; };
 		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
@@ -298,6 +297,8 @@
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
 		EE410197298557440083B7E0 /* RegisterImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* RegisterImageDetailView.swift */; };
+		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
+		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
 		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
@@ -514,7 +515,6 @@
 		577A01B528A496D1004B2575 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		577A01B728A49C97004B2575 /* CheckRegisterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterInfoView.swift; sourceTree = "<group>"; };
 		578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomViewController.swift; sourceTree = "<group>"; };
-		578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingRoomViewController+Layout.swift"; sourceTree = "<group>"; };
 		578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
 		5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDeclarationSheetViewController.swift; sourceTree = "<group>"; };
 		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
@@ -638,6 +638,8 @@
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE410196298557440083B7E0 /* RegisterImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDetailView.swift; sourceTree = "<group>"; };
+		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
+		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
 		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -988,7 +990,6 @@
 				23A5791C296546A2004F08DE /* ChattingList */,
 				576B374F28D6D77700EF36E6 /* Appointment */,
 				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
-				578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */,
 				57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */,
 				5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */,
 			);
@@ -1034,6 +1035,8 @@
 			isa = PBXGroup;
 			children = (
 				576B375028D6D7B800EF36E6 /* AppointmentView */,
+				EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */,
+				EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */,
 				578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */,
 				57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */,
 				57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */,
@@ -2343,7 +2346,6 @@
 				576EA925282B7FBB0028046C /* ZatchRegisterSecondViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
-				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
 				EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
@@ -2401,6 +2403,7 @@
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */,
+				EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */,
 				EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */,
 				57C585022821F0A10078FAFF /* MyZatchSheetViewController.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
@@ -2477,6 +2480,7 @@
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
 				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,
+				EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,

@@ -22,109 +22,82 @@ struct ChatMessage{
     //TODO: 전송 시간 기준 프론트? 서버?
 }
 
-/*
-class ChattingRoomViewController: BaseViewController {
+class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, ChattingRoomView> {
 
     //MARK: - Properties
     var memberBlockBottomSheet: MemberDeclarationSheetViewController?
     var sideMenuViewController : ChattingSideSheetViewController?
     
-    var messageData: [ChatMessage] = [] {
+    var messageData = [ChatMessage](){
         didSet{
-            tableView.reloadData()
+            mainView.tableView.reloadData()
         }
     }
     
     //MARK: - UI
-    var nameLabel = UILabel().then{
-        $0.text = "쑤야"
-        $0.font = UIFont.pretendard(size: 18, family: .Bold)
-        $0.textColor = .black85
-        $0.isUserInteractionEnabled = true
-    }
-    
-    let townLabel = UILabel().then{
-        $0.text = "중계동"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .zatchPurple
-    }
-    
-    let reservationFinishTag = UILabel().then{
-        $0.text = "예약완료"
-        $0.textAlignment = .center
-        $0.font = UIFont.pretendard(size: 13, family: .Bold)
-        $0.textColor = .white
-        $0.backgroundColor = .zatchPurple
-        $0.layer.cornerRadius = 24/2
-        $0.clipsToBounds = true
-    }
-    
-    lazy var etcBtn = UIButton().then{
-        $0.setImage(Image.dot, for: .normal)
-        $0.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
-    }
-    
-    let matchBannerView = ChattingMatchBannerView()
-    
-    var tableView: UITableView!
-    
-    let chatBottomFrame = UIStackView().then{
-        $0.axis = .vertical
-        $0.spacing = 0
-        $0.alignment = .leading
-    }
-    
-    let chatInputView = ChatInputView().then{
-        $0.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
-        $0.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
-    }
-    
-    let chatEtcBtnView = ChatEtcBtnView().then{
-        $0.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
-        $0.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
-        $0.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
-    }
     
     let blurView = UIView().then{
         $0.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.6)
     }
-
-    //MARK: - LifeCycle
-    override func viewDidLoad(){
+    
+    init(){
+        super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Override
+    
+    override func initialize() {
         
-        super.viewDidLoad()
-
-        setInitView()
-        setUpView()
-        setUpConstraint()
+        super.initialize()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goOthersProfile(sender:)))
-        nameLabel.addGestureRecognizer(tapGesture)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
+        
+        headerView.etcButton.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
+        headerView.opponentNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOthersProfile)))
+        
+        mainView.chatInputView.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
+        mainView.chatInputView.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
+        
+        mainView.chatEtcBtnView.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+        
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
     
     //MARK: - Action
     
+    @objc func viewDidTapped(){
+        self.view.endEditing(true)
+    }
+    
     @objc func chatSendBtnDidClicked(){
         
-        let newMessage = ChatMessage(message: chatInputView.chatTextField.text!,
+        let newMessage = ChatMessage(message: mainView.chatInputView.chatTextField.text!,
                                      image: nil,
                                      chatType: .RightMessage)
         
-        self.messageData.append(newMessage)
-        self.chatInputView.sendBtn.isEnabled = false
-        self.chatInputView.chatTextField.text = nil
+        messageData.append(newMessage)
+        mainView.chatInputView.sendBtn.isEnabled = false
+        mainView.chatInputView.chatTextField.text = nil
 
     }
     
     //채팅 하단 기타 기능 함수
     @objc func chatEtcBtnDidClicked(){
         
-        chatInputView.etcBtn.isSelected.toggle()
+        mainView.chatInputView.etcBtn.isSelected.toggle()
         
-        if(chatInputView.etcBtn.isSelected){
-            chatBottomFrame.addArrangedSubview(chatEtcBtnView)
+        if(mainView.chatInputView.etcBtn.isSelected){
+            mainView.chatBottomFrame.addArrangedSubview(mainView.chatEtcBtnView)
         }else{
-            self.chatEtcBtnView.removeFromSuperview()
+            mainView.chatEtcBtnView.removeFromSuperview()
         }
     }
     
@@ -245,9 +218,8 @@ class ChattingRoomViewController: BaseViewController {
 }
 
 extension ChattingRoomViewController: UITextViewDelegate{
-    
     func textViewDidChange(_ textView: UITextView) {
-        chatInputView.sendBtn.isEnabled = textView.text.isEmpty ? false : true
+        mainView.chatInputView.sendBtn.isEnabled = textView.text.isEmpty ? false : true
     }
 }
 
@@ -295,7 +267,7 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
         let image = info[.originalImage] as! UIImage
         
 //        let imageDetailVC = RegisterImageDetailViewController()
-//        
+//
 //        imageDetailVC.okBtn.setTitle("전송", for: .normal)
 //        imageDetailVC.imageView.image = image
 //        imageDetailVC.imageDetailHandler = { [self] result in
@@ -304,10 +276,10 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
 //                self.messageData.append(newChat)
 //            }
 //        }
-        
+//
 //        self.navigationController?.pushViewController(imageDetailVC, animated: true)
 
-        picker.dismiss(animated: true, completion: nil)
+//        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
@@ -333,4 +305,3 @@ extension ChattingRoomViewController: SideMenuNavigationControllerDelegate{
     }
 }
 
-*/
