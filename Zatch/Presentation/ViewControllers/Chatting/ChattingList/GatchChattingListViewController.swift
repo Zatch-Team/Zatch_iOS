@@ -22,10 +22,8 @@ class GatchChattingListViewController: UIViewController, SelectedTableViewCellDe
         setUpView()
         setUpConstraint()
     }
-    
 
-    @objc
-    func cellWillClamp(_ indexPath: IndexPath){
+    @objc func cellWillClamp(_ indexPath: IndexPath){
         
         //1. 기존 고정 cell 존재 여부 점검 (row 값 -1인지 아닌지)
         if(clampCell == indexPath){
@@ -89,8 +87,8 @@ extension GatchChattingListViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("select") //TODO: view 전체에 gesture로 cellWillMoveToOriginalPosition 설정해놔서 실행X
-//        let vc = ChattingRoomViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = ChattingRoomViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

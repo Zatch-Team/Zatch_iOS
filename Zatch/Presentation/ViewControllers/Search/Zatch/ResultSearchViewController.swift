@@ -122,8 +122,7 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
         }
     }
     
-    @objc
-    func townFrameDidClicked(){
+    @objc func townFrameDidClicked(){
         let vc = TownSettingSheetViewController().show(in: self)
         vc.completion = { town in
             print(town)
