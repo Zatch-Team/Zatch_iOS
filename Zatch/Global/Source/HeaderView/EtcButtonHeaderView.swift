@@ -27,6 +27,7 @@ class EtcButtonHeaderView: BaseHeaderView, HeaderFirstEtcButton{
     }
     
     override func layout() {
+        super.layout()
         setEtcButtonLayout()
     }
 }
