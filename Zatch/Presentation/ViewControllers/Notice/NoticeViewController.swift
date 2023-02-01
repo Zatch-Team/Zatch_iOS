@@ -12,13 +12,13 @@ class NoticeViewController: BaseCenterTitleViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.navigationTitle.text = "공지사항"
+//        super.navigationTitle.text = "공지사항"
 
         setUpTableView(dataSourceDelegate: self)
         
         self.view.addSubview(noticeTableView)
         noticeTableView.snp.makeConstraints { make in
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(super.headerView.snp.bottom)
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview()
         }
@@ -50,9 +50,9 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = NoticeDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+//        let vc = NoticeDetailViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

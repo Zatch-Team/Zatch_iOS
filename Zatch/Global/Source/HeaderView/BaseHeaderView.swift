@@ -9,39 +9,26 @@ import Foundation
 
 class BaseHeaderView: BaseView{
     
-    let etcButton: EtcButton
-    
-    //MARK: - Generator
-    
-    init(title: String){
-        self.etcButton = EtcButton(title: title)
-        super.init(frame: .zero)
+    let backButton = UIButton().then{
+        $0.setImage(Image.arrowLeft, for: .normal)
     }
-    
-    init(image: UIImage){
-        self.etcButton = EtcButton(image: image)
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //MARK: - Override
     
     override func hierarchy() {
-        self.addSubview(etcButton)
+        self.addSubview(backButton)
     }
     
     override func layout() {
+        
         self.snp.makeConstraints{
             $0.height.equalTo(60)
         }
-        etcButton.snp.makeConstraints{
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.top.equalToSuperview().offset(16)
+        
+        backButton.snp.makeConstraints{
+            $0.leading.equalToSuperview().offset(20)
+            $0.top.equalToSuperview().offset(14)
             $0.centerY.equalToSuperview()
-            $0.width.equalTo(etcButton.snp.height)
+            $0.width.equalTo(backButton.snp.height)
         }
     }
 }
+

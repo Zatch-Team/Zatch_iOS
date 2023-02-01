@@ -7,20 +7,6 @@
 
 import UIKit
 
-class BaseCenterTitleViewController: BaseViewController{
+class BaseCenterTitleViewController: BaseViewController<CenterNavigationHeaderView, BaseView> {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func layout() {
-        
-        super.layout()
-        
-        navigationView.addSubview(navigationTitle)
-        
-        navigationTitle.snp.makeConstraints{
-            $0.centerY.centerX.equalToSuperview()
-        }
-    }
 }

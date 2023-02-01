@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CheckRegisterView: UIView {
+class CheckRegisterView: BaseView {
 
     //MARK: - Properties
 
@@ -40,13 +40,8 @@ class CheckRegisterView: UIView {
         $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
     }
 
-    var infoFrame : UIView!{
-        didSet{
-            setUpView()
-            setUpConstraint()
-        }
-    }
-
+    var infoFrame : UIView!
+    
     let addTitle = UILabel().then{
         $0.text = "추가 설명"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
@@ -68,16 +63,7 @@ class CheckRegisterView: UIView {
         $0.setTitle("재치 등록", for: .normal)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setUpView(){
-        
+    override func hierarchy(){
         self.addSubview(titleView)
         self.addSubview(registerBtn)
         self.addSubview(photoFrame)
@@ -90,7 +76,7 @@ class CheckRegisterView: UIView {
         self.addSubview(addExplainTextView)
     }
 
-    func setUpConstraint(){
+    override func layout(){
 
         titleView.snp.makeConstraints{ make in
             make.top.equalToSuperview()

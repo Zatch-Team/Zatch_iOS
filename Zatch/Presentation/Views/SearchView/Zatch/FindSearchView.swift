@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindSearchView: UIView {
+class FindSearchView: BaseView {
     
     //MARK: - UI
     let titleView = TitleView().then{
@@ -80,18 +80,7 @@ class FindSearchView: UIView {
     
     let nextButton = Purple36Button(title: "검색하기")
 
-    override init(frame: CGRect){
-        super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setUpView(){
+    override func hierarchy() {
         
         self.addSubview(titleView)
         
@@ -111,7 +100,7 @@ class FindSearchView: UIView {
     }
     
     //뷰 제약조건 설정
-    func setUpConstraint(){
+    override func layout() {
         
         titleView.snp.makeConstraints{ make in
             make.top.equalToSuperview()

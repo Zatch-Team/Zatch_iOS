@@ -13,15 +13,14 @@ class DeleteImageDetailViewController: RegisterImageDetailViewController {
         
         super.viewDidLoad()
         
-        super.okBtn.setTitle("삭제", for: .normal)
+        headerView.etcButton.setTitle("삭제", for: .normal)
     }
     
     override func okBtnDidClicked(){
         
         let alert = Alert.ImageDelete.generateAlert().show(in: self)
-        
         alert.confirmHandler = {
-            super.okBtnDidClicked()
+            self.okBtnDidClicked()
         }
     }
 }

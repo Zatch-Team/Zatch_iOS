@@ -9,13 +9,13 @@ import UIKit
 
 class SettingViewController: BaseCenterTitleViewController {
     
-    let mainView = SettingView()
+//    let mainView = SettingView()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
     
-        navigationTitle.text = "설정"
+//        navigationTitle.text = "설정"
         
         self.view.addSubview(mainView)
         
@@ -27,9 +27,9 @@ class SettingViewController: BaseCenterTitleViewController {
     }
     
     override func initialize(){
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+//        mainView.tableView.separatorStyle = .none
+//        mainView.tableView.dataSource = self
+//        mainView.tableView.delegate = self
     }
 
 }
@@ -119,9 +119,9 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath{
-        case [1,1]:
-            let blockVC = BlockUserViewController()
-            self.navigationController?.pushViewController(blockVC, animated: true)
+//        case [1,1]:
+//            let blockVC = BlockUserViewController()
+//            self.navigationController?.pushViewController(blockVC, animated: true)
         case [2,2]:
             let alert = Alert.Logout.generateAlert().show(in: self)
             

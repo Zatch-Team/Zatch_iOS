@@ -7,48 +7,45 @@
 
 import UIKit
 
-class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegate {
+class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearchView>, UIGestureRecognizerDelegate {
     
     //MARK: - Properties
-    var myZatchIndex: Int?
-    var wantZatchIndex: Int?
     
-    var resultData: [String] = []
-    
-    lazy var mainView = ResultSearchView().then{
-        $0.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        $0.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
-        $0.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
-        
-        $0.wantZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        $0.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
-        $0.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
-        
-        $0.townFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
+    private var myZatchIndex: Int?
+    private var wantZatchIndex: Int?
+    private var resultData = [String](){
+        didSet{
+            if(resultData.isEmpty){
+                mainView.emptyResultView.isHidden = false
+            }else{
+                mainView.emptyResultView.isHidden = true
+            }
+        }
     }
     
+    init(){
+        super.init(headerView: BaseHeaderView(), mainView: ResultSearchView())
+    }
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+    override func initialize() {
+        
+        super.initialize()
+        
         setUpDelegate()
         
+        mainView.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+        mainView.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
+        mainView.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
         
-        //api 연동시 위치 변경시키기
-//        if(resultData.isEmpty){
-//            emptyResultView.isHidden = false
-//        }else{
-        mainView.emptyResultView.isHidden = true
-//        }
-         
+        mainView.wantZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
+        mainView.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
+        mainView.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+        
+        mainView.townFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
     }
     
     //TextField 입력 끝나거나 취소됐을 경우
@@ -56,7 +53,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
 
         mainView.myZatchFrame.productTextField.isHidden = true
         mainView.wantZatchFrame.productTextField.isHidden = true
-        
+
         mainView.myZatchFrame.productLabel.isHidden = false
         mainView.wantZatchFrame.productLabel.isHidden = false
         
@@ -65,60 +62,43 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
     
     //MARK: - Helper
     func setUpDelegate(){
-        
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
 
         mainView.myZatchFrame.productTextField.delegate = self
         mainView.wantZatchFrame.productTextField.delegate = self
-        
     }
     
     //MARK: Action
     
-    @objc
-    func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottomSheet = MyZatchSheetViewController()
+    @objc func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
+        let bottomSheet = MyZatchSheetViewController().show(in: self)
         bottomSheet.currentTag = myZatchIndex
-        
         bottomSheet.selectCompleteHandelr = { text, index in
             self.mainView.myZatchFrame.productLabel.text = text
             self.myZatchIndex = index
         }
-        
-        bottomSheet.loadViewIfNeeded()
-        present(bottomSheet, animated: true, completion: nil)
     }
     
-    @objc
-    func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottomSheet = WantZatchSheetViewController()
+    @objc func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
+        let bottomSheet = WantZatchSheetViewController().show(in: self)
         bottomSheet.currentTag = wantZatchIndex
-        
         bottomSheet.selectCompleteHandelr = { text, index in
             self.mainView.wantZatchFrame.productLabel.text = text
             self.wantZatchIndex = index
         }
-        bottomSheet.loadViewIfNeeded()
-        present(bottomSheet, animated: true, completion: nil)
     }
     
-    @objc
-    func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
-        
+    @objc func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
         let vc = CategorySheetViewController(service: .Zatch).show(in: self)
-        
         vc.completion = { category in
             print(category)
             (recognizer.view as? ResultSearchView.SearchCateogryDotButton)?.isSelected = true
         }
     }
     
-    @objc
-    func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
-
+    @objc func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
         //기존 입력값 초기화
-        
         mainView.myZatchFrame.productTextField.text = nil
         mainView.wantZatchFrame.productTextField.text = nil
 
@@ -142,8 +122,7 @@ class ResultSearchViewController: BaseViewController, UIGestureRecognizerDelegat
         }
     }
     
-    @objc
-    func townFrameDidClicked(){
+    @objc func townFrameDidClicked(){
         let vc = TownSettingSheetViewController().show(in: self)
         vc.completion = { town in
             print(town)
@@ -160,8 +139,7 @@ extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchTableViewCell", for: indexPath) as? MyZatchTableViewCell else{ fatalError() }
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MyZatchTableViewCell.self)
         cell.addHeartToCell(color: "yellow")
         return cell
     }
@@ -176,13 +154,12 @@ extension ResultSearchViewController: UITextFieldDelegate{
     
     //return 키 클릭시 호출 메서드
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         mainView.myZatchFrame.productTextField.isHidden = true
         mainView.wantZatchFrame.productTextField.isHidden = true
-        
+
         mainView.myZatchFrame.productLabel.isHidden = false
         mainView.wantZatchFrame.productLabel.isHidden = false
-        
+
         if(textField == mainView.myZatchFrame.productTextField){
             mainView.myZatchFrame.productLabel.text = mainView.myZatchFrame.productTextField.text
         }else{

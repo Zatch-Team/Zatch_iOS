@@ -14,7 +14,6 @@ class CheckExchangeRegisterViewController: CheckRegisterViewController {
         super.viewDidLoad()
         
         mainView.infoFrame = CheckExchangeRegisterView()
-
     }
 
 }

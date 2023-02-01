@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FindSearchViewController: BaseViewController {
+class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchView> {
     
     //MARK: - Properties
     
@@ -17,28 +17,25 @@ class FindSearchViewController: BaseViewController {
     
     var currentSelect: SearchTagCollectionViewCell?
     
-    let mainView = FindSearchView().then{
-        $0.nextButton.addTarget(self, action: #selector(moveToResultVC(_:)), for: .touchUpInside)
+    init(){
+        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
     }
     
-    //MARK: - LifeCycle
-
-    override func viewDidLoad() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func initialize() {
         
-        super.viewDidLoad()
+        super.initialize()
+        
+        mainView.nextButton.addTarget(self, action: #selector(moveToResultVC(_:)), for: .touchUpInside)
         
         mainView.firstCollectionView.delegate = self
         mainView.firstCollectionView.dataSource = self
         
         mainView.secondCollectionView.delegate = self
         mainView.secondCollectionView.dataSource = self
-        
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
     }
     
     
@@ -48,7 +45,7 @@ class FindSearchViewController: BaseViewController {
         let nextVC = ResultSearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-
+    
 }
 
 extension FindSearchViewController: CellDelegate{
@@ -94,7 +91,7 @@ extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
         
         let tmpLabel = UILabel().then{
@@ -102,7 +99,7 @@ extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollect
             $0.numberOfLines = 1
             $0.sizeToFit()
         }
-
+        
         let width = tmpLabel.frame.size.width
         
         let adjustWidth = title.count < 6 ? width + 18 : width
@@ -111,3 +108,4 @@ extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollect
     }
     
 }
+

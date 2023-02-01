@@ -8,48 +8,26 @@
 import UIKit
 import RxSwift
 
-class BaseViewController: UIViewController, DefaultObservable {
+class BaseViewController<T: BaseHeaderView,
+                         P: BaseView>: UIViewController, DefaultObservable {
     
     //MARK: - Properties
     
-    let navigationView = UIView()
-    
-    lazy var backBtn = UIButton().then{
-        $0.setImage(Image.arrowLeft, for: .normal)
-        $0.isUserInteractionEnabled = true
-        $0.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
-    }
-    
-    lazy var navigationTitle = UILabel().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-    }
-    
-    lazy var rightPositionButton: EtcButton? = nil{
-        didSet{
-            settingRightPostionBtn()
-        }
-    }
+    let headerView: T
+    let mainView: P
     
     final var disposeBag = DisposeBag()
     
     //MARK: - Generator
     
-    init(){
+    init(headerView: T, mainView: P){
+        self.headerView = headerView
+        self.mainView = mainView
         super.init(nibName: nil, bundle: nil)
-    }
-    
-    init(rightButton: String){
-        super.init(nibName: nil, bundle: nil)
-        self.rightPositionButton = EtcButton(title: rightButton)
-    }
-    
-    init(rightButton: UIImage){
-        super.init(nibName: nil, bundle: nil)
-        self.rightPositionButton = EtcButton(image: rightButton)
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError()
     }
     
     //MARK: - LifeCycle
@@ -72,77 +50,30 @@ class BaseViewController: UIViewController, DefaultObservable {
     
     func layout() {
         
-        self.view.addSubview(navigationView)
-        navigationView.addSubview(backBtn)
+        self.view.addSubview(headerView)
+        self.view.addSubview(mainView)
         
-        navigationView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(44)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(60)
+        headerView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.headerTop)
+            $0.leading.trailing.equalToSuperview()
         }
-        backBtn.snp.makeConstraints{ make in
-            make.width.equalTo(backBtn.snp.height)
-            make.leading.equalToSuperview().offset(20)
-            make.top.equalToSuperview().offset(14)
-            make.centerY.equalToSuperview()
+        
+        mainView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
     
-    func initialize() {}
+    func initialize() {
+        headerView.backButton.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
+    }
     
     func bind() { }
     
     //MARK: - Action
     
-    @objc func backBtnDidClicked(){
+    @objc func backButtonDidClicked(){
         self.navigationController?.popViewController(animated: true)
     }
-    
-    //TODO: 제거
-    @objc func rightPositionBtnDidClicked(){
-        print("right position btn did clicked")
-    }
-    
-    //MARK: - Method
-    
-    private final func settingRightPostionBtn(){
-        
-        guard let rightPositionBtn = rightPositionButton else { return }
-        
-        navigationView.addSubview(rightPositionBtn)
-        
-        rightPositionBtn.snp.makeConstraints{
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.top.equalToSuperview().offset(14)
-            $0.centerY.equalToSuperview()
-            $0.width.equalTo(rightPositionBtn.snp.height)
-        }
-
-        rightPositionBtn.addTarget(self, action: #selector(rightPositionBtnDidClicked), for: .touchUpInside)
-    }
 }
-
-//extension BaseViewController{
-    
-    class EtcButton: UIButton{
-        
-        init(title: String){
-            super.init(frame: .zero)
-            
-            self.setTitle(title, for: .normal)
-            self.titleLabel?.textAlignment = .center
-            self.titleLabel?.font = UIFont.pretendard(size: 16, family: .Bold)
-            self.setTitleColor(.black85, for: .normal)
-            self.titleEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 4, right: 0)
-        }
-        
-        init(image: UIImage){
-            super.init(frame: .zero)
-            self.setImage(image, for: .normal)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-//}

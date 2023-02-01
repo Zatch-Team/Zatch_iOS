@@ -7,22 +7,7 @@
 
 import UIKit
 
-class BaseLeftTitleViewController: BaseViewController {
+class BaseLeftTitleViewController<T: LeftNavigationHeaderView, P: BaseView>: BaseViewController<T, P> {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func layout() {
-        
-        super.layout()
-        
-        navigationView.addSubview(navigationTitle)
-        
-        navigationTitle.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.leading.equalTo(backBtn.snp.trailing).offset(4)
-        }
-    }
-    
 }
+

@@ -34,7 +34,7 @@ DEPENDENCIES:
   - RxSwift
   - SideMenu (~> 6.0)
   - SnapKit (~> 5.6.0)
-  - Tabman (~> 2.12)
+  - Tabman (~> 2.11)
   - Then
 
 SPEC REPOS:
@@ -68,6 +68,6 @@ SPEC CHECKSUMS:
   Tabman: 66ea44c44488327ec20f3c8dc5554a5d22f5908c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 47fad02b0cdba6870bbdadbb5340f315da68561a
+PODFILE CHECKSUM: 426c0ccd2c2d66b4333c4628eb608a1a5e59453b
 
 COCOAPODS: 1.11.3

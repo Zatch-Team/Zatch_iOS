@@ -13,13 +13,13 @@ class ReviewViewController: BaseCenterTitleViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.navigationTitle.text = "한 줄 후기"
+//        super.navigationTitle.text = "한 줄 후기"
         
         setUpTableView(dataSourceDelegate: self)
         self.view.addSubview(reviewTableView)
         reviewTableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(super.headerView.snp.bottom)
             make.bottom.equalToSuperview()
         }
     }

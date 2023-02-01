@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultSearchView: UIView {
+class ResultSearchView: BaseView {
     
     let topView = UIView()
     
@@ -54,25 +54,12 @@ class ResultSearchView: UIView {
     }
     
     lazy var tableView = UITableView().then{
-//        $0.separatorStyle = .none
-        
-        $0.register(MyZatchTableViewCell.self, forCellReuseIdentifier: "MyZatchTableViewCell")
+        $0.register(cellType: MyZatchTableViewCell.self)
     }
     
     let emptyResultView = ResultEmptyTableViewCell()
-
-    override init(frame: CGRect){
-        super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstraint()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpView(){
+    override func hierarchy(){
 
         self.addSubview(topView)
         
@@ -96,7 +83,7 @@ class ResultSearchView: UIView {
         self.addSubview(emptyResultView)
     }
     
-    func setUpConstraint(){
+    override func layout(){
      
         self.topView.snp.makeConstraints { make in
             make.top.equalToSuperview()

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MySearchViewController: BaseViewController{
+class MySearchViewController: BaseViewController<BaseHeaderView, MySearchView>{
     
     //MARK: - Properties
     
@@ -16,34 +16,30 @@ class MySearchViewController: BaseViewController{
     
     var currentSelect: Int = -1
     
-    let mainView = MySearchView().then{
-        $0.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
-        $0.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
+    //MARK: - LifeCycle
+
+    init(){
+        super.init(headerView: BaseHeaderView(), mainView: MySearchView())
     }
     
-    //MARK: - LifeCycle
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    override func viewDidLoad() {
+    override func initialize(){
         
-        super.viewDidLoad()
-    
+        super.initialize()
+        
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
         
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
-        
+        mainView.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
+        mainView.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
     }
     
     //MARK: Action
     
-    @objc
-    func nextButtonClick(){
-        
+    @objc func nextButtonClick(){
         let product = mainView.selectTextField.text
         
         if(product == "" || product == nil){
@@ -62,9 +58,8 @@ class MySearchViewController: BaseViewController{
         vc.mainView.myLabel.text = "???"
         vc.mainView.myLabel.textColor = .zatchYellow
         vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
-        
+
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
 }
 
@@ -124,3 +119,4 @@ extension MySearchViewController: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: adjustWidth, height: 28)
     }
 }
+

@@ -12,13 +12,13 @@ class NoticeDetailViewController: BaseCenterTitleViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.navigationTitle.text = "공지사항"
+//        super.navigationTitle.text = "공지사항"
 
         setUpTableView(dataSourceDelegate: self)
         
         self.view.addSubview(noticeDetailTableView)
         noticeDetailTableView.snp.makeConstraints { make in
-            make.top.equalTo(super.navigationView.snp.bottom)
+            make.top.equalTo(super.headerView.snp.bottom)
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview()
         }

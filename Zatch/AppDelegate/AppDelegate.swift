@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(2)
         
         window = UIWindow()
-        window?.rootViewController = ZatchDetailViewController()
+//        window?.rootViewController = ZatchDetailViewController()
         window?.makeKeyAndVisible()
         
         KakaoSDK.initSDK(appKey: Const.KakaoAPI.KAKAO_APP_KEY)

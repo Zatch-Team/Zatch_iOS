@@ -40,7 +40,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
                                                                          action: #selector(townBottomSheetWillShow)))
         
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
-        headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
+//        headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
     }
     
     override func bind(){
@@ -78,13 +78,13 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     @objc func goSearchButtonDidTap() {
-        self.navigationController?.pushViewController(MySearchViewController(),
-                                                      animated: true)
+//        self.navigationController?.pushViewController(MySearchViewController(),
+//                                                      animated: true)
     }
     
     @objc func goNotiButtonDidTap() {
-        self.navigationController?.pushViewController(NotificationViewController(),
-                                                      animated: true)
+//        self.navigationController?.pushViewController(NotificationViewController(),
+//                                                      animated: true)
     }
 }
 
@@ -151,14 +151,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = indexPath.row
         switch tag {
-        case 0:
-            let vc = ResultSearchViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 2:
-            let vc = FirstRegisterViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+//        case 0:
+//            let vc = ResultSearchViewController()
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            break
+//        case 2:
+//            let vc = FirstRegisterViewController()
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            break
         default:
-            fatalError()
+            return
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -176,7 +178,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ZatchDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = ZatchDetailViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
