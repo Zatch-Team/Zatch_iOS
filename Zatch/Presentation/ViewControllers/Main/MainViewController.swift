@@ -40,7 +40,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
                                                                          action: #selector(townBottomSheetWillShow)))
         
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
-//        headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
+        headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
     }
     
     override func bind(){
@@ -151,14 +151,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = indexPath.row
         switch tag {
-//        case 0:
-//            let vc = ResultSearchViewController()
-//            self.navigationController?.pushViewController(vc, animated: true)
-//            break
-//        case 2:
-//            let vc = FirstRegisterViewController()
-//            self.navigationController?.pushViewController(vc, animated: true)
-//            break
+        case 0:
+            let vc = ResultSearchViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            break
+        case 2:
+            let vc = ZatchRegisterFirstViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            break
         default:
             return
         }
@@ -166,7 +166,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - 메인페이지의 콜렉션뷰를 갖고있는 테이블뷰의 CollectionView delegate
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
@@ -178,7 +177,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = ZatchDetailViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = ZatchDetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

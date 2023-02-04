@@ -10,10 +10,8 @@ import Foundation
 class LeftNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
     
     internal let title: String
-    let navigationTitleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 20, family: .Bold)
-    }
-    
+    let navigationTitleLabel = UILabel()
+
     init(title: String){
         self.title = title
         super.init(frame: .zero)
@@ -24,7 +22,7 @@ class LeftNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
     }
     
     override func style() {
-        navigationTitleLabel.text = title
+        setNavigationTitleLabelAttribute(typo: .bold20)
     }
     
     override func layout() {

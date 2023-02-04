@@ -49,6 +49,11 @@ protocol HeaderNavigationTitle{
 
 extension HeaderNavigationTitle{
     
+    func setNavigationTitleLabelAttribute(typo: TypoStyle){
+        navigationTitleLabel.text = title
+        navigationTitleLabel.setTypoStyleWithSingleLine(typoStyle: typo)
+    }
+    
     func layoutNavigationTitle() where Self: CenterNavigationHeaderView{
         self.addSubview(navigationTitleLabel)
         navigationTitleLabel.snp.makeConstraints{

@@ -8,10 +8,9 @@
 import Foundation
 
 class CenterNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
+    
     let title: String
-    let navigationTitleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 20, family: .Bold)
-    }
+    let navigationTitleLabel = UILabel()
     
     init(title: String){
         self.title = title
@@ -23,7 +22,7 @@ class CenterNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
     }
     
     override func style() {
-        navigationTitleLabel.text = title
+        setNavigationTitleLabelAttribute(typo: .bold20)
     }
     
     override func layout() {
