@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class ServiceCenterViewController: BaseCenterTitleViewController {
     // MARK: - Views
     let searchView = UIView().then{
@@ -100,3 +101,4 @@ class ServiceCenterViewController: BaseCenterTitleViewController {
         servicecenterVC.didMove(toParent: self)
     }
 }
+*/

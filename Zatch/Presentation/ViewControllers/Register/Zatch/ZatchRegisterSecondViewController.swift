@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZatchRegisterSecondViewController: BaseLeftTitleViewController<LeftNavigationEtcButtonHeaderView,ZatchRegisterSecondView> {
+class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcButtonHeaderView,ZatchRegisterSecondView> {
     
     //MARK: - Properties
     

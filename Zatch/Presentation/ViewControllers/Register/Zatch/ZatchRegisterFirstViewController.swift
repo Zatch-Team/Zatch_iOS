@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZatchRegisterFirstViewController: BaseLeftTitleViewController<LeftNavigationHeaderView, ZatchRegisterFirstView> {
+class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderView, ZatchRegisterFirstView> {
     
     //MARK: - Properties
     
@@ -35,6 +35,9 @@ class ZatchRegisterFirstViewController: BaseLeftTitleViewController<LeftNavigati
     //MARK: - Override
     
     override func initialize(){
+        
+        super.initialize()
+        
         mainView.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
         
         mainView.backTableView.dataSource = self

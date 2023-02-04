@@ -148,8 +148,6 @@
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
-		576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */; };
-		576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */; };
 		576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */; };
 		576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */; };
 		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
@@ -478,8 +476,6 @@
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
-		576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLeftTitleViewController.swift; sourceTree = "<group>"; };
-		576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCenterTitleViewController.swift; sourceTree = "<group>"; };
 		576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownMapAlertViewController.swift; sourceTree = "<group>"; };
 		576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMapAlertViewController.swift; sourceTree = "<group>"; };
 		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
@@ -1924,8 +1920,6 @@
 			isa = PBXGroup;
 			children = (
 				57468A80289E3FB600056691 /* BaseViewController.swift */,
-				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
-				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
 				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
 			);
 			path = ViewController;
@@ -2421,13 +2415,11 @@
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
-				576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */,
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
 				EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */,
 				5724EC8C291E0E7A00DC529B /* LoginViewController.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
 				57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */,
-				576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
 				57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,

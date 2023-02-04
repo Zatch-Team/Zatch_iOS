@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class QnAViewController: BaseCenterTitleViewController {
 
     override func viewDidLoad() {
@@ -26,3 +27,4 @@ class QnAViewController: BaseCenterTitleViewController {
         qnaVC.didMove(toParent: self)
     }
 }
+*/

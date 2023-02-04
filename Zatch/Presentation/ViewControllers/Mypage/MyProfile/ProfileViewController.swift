@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/*
 class ProfileViewController: BaseCenterTitleViewController {
     var profileView: MyProfileView!
     var isMyProfile: Bool!
@@ -121,3 +121,4 @@ extension ProfileViewController {
         }
     }
 }
+*/

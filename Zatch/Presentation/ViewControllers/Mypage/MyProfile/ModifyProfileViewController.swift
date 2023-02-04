@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class ModifyProfileViewController: BaseCenterTitleViewController {
     var modifyProfileView: ModifyProfileView!
     // Image Properties
@@ -72,3 +73,4 @@ extension ModifyProfileViewController : UIImagePickerControllerDelegate, UINavig
         self.dismiss(animated: true, completion: nil)
     }
 }
+*/

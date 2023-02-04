@@ -7,7 +7,8 @@
 
 import UIKit
 
-class NoticeDetailViewController: BaseCenterTitleViewController {
+/*
+class NoticeDetailViewController: BaseViewController {
     var noticeDetailTableView: UITableView!
 
     override func viewDidLoad() {
@@ -53,3 +54,5 @@ extension NoticeDetailViewController: UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+*/

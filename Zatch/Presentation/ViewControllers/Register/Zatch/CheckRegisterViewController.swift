@@ -7,13 +7,12 @@
 
 import UIKit
 
-class CheckRegisterViewController: BaseLeftTitleViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
+class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
     //MARK: - LifeCycle
     
     init(){
-        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기",
-                                                                 etcButton: Image.exit),
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: CheckRegisterView())
     }
     

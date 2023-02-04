@@ -9,7 +9,7 @@ import Foundation
 
 class BaseHeaderView: BaseView{
     
-    let backButton = UIButton().then{
+    lazy var backButton = UIButton().then{
         $0.setImage(Image.arrowLeft, for: .normal)
     }
     

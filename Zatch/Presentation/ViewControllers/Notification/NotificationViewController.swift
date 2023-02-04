@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class NotificationViewController: BaseCenterTitleViewController {
     var notificationView: NotificationView!
 
@@ -44,3 +45,4 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+*/
