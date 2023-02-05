@@ -7,9 +7,7 @@
 
 import UIKit
 
-class ImageAddBtnCollectionViewCell: UICollectionViewCell {
-    
-    static let cellIdentifier = "imageAddBtnCell"
+class ImageAddBtnCollectionViewCell: BaseCollectionViewCell {
     
     let backView = UIView().then{
         $0.layer.borderWidth = 1.5

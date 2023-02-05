@@ -7,10 +7,8 @@
 
 import UIKit
 
-class ImageRegisterCollectionViewCell: UICollectionViewCell {
-    
-    static let cellIdentifier = "imageRegisterCell"
-    
+class ImageRegisterCollectionViewCell: BaseCollectionViewCell {
+
     let backView = UIView()
     
     let imageView = UIImageView().then{

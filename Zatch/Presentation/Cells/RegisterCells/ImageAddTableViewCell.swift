@@ -9,10 +9,6 @@ import UIKit
 
 class ImageAddTableViewCell: BaseTableViewCell {
     
-    //MARK: - Properties
-    
-    static let cellIdentifier = "imageAddCell"
-    
     var navigationController: UINavigationController!
     
     var imageArray = [UIImage](){

@@ -12,31 +12,20 @@ class CategorySelectWithRankTableViewCell: CategorySelectTableViewCell {
     let rankLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-
-    //MARK: - LifeCycle
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        setUpView()
-        setUpConstriant()
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Helper
-    override func setUpView() {
-        
-        super.setUpView()
-        
+    override func hierarchy() {
+        super.hierarchy()
         baseView.addSubview(rankLabel)
     }
     
-    override func setUpConstriant() {
+    override func layout() {
         
-        super.setUpConstriant()
+        super.layout()
         
         baseView.snp.makeConstraints{ make in
             make.height.equalTo(88)

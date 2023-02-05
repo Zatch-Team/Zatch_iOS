@@ -8,11 +8,7 @@
 import UIKit
 
 class CategorySelectTableViewCell: BaseTableViewCell {
-    
-    //MARK: - Properties
-    
-    static let cellIdentifier = "categoryViewCell"
-    
+
     //MARK: - UI
     
     let categoryFrame = UIView()
@@ -23,29 +19,17 @@ class CategorySelectTableViewCell: BaseTableViewCell {
     
     let categoryText = UILabel().then{
         $0.text = "카테고리 선택"
-        $0.font = UIFont.pretendard(family: .Medium)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
     }
     
     lazy var arrowImage = UIButton().then{
         $0.setImage(Image.arrowDown, for: .normal)
         $0.setImage(Image.arrowUp, for: .selected)
     }
-
     
-    //MARK: - LifeCycle
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override func hierarchy() {
         
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        setUpView()
-        setUpConstriant()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpView(){
+        super.hierarchy()
         
         baseView.addSubview(categoryFrame)
         
@@ -54,8 +38,10 @@ class CategorySelectTableViewCell: BaseTableViewCell {
         categoryFrame.addSubview(arrowImage)
     }
     
-    func setUpConstriant(){
-
+    override func layout() {
+        
+        super.layout()
+        
         categoryFrame.snp.makeConstraints{ make in
             make.leading.trailing.top.bottom.equalToSuperview()
             make.height.equalTo(41)

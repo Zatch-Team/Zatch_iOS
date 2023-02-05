@@ -7,11 +7,9 @@
 
 import UIKit
 
-class FirstProductInfoTableView: UITableViewCell {
+class FirstProductInfoTableView: BaseTableViewCell {
     
     //MARK: - Properties
-    
-    static let cellIdentifier = "firstProductCell"
     
     var viewController: ZatchRegisterFirstViewController!
     
@@ -110,9 +108,9 @@ extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
             cell.dateTextField.text = String (array[2] + 1)
             
             if(indexPath.row == 1){
-                self.viewController.productInfo.buyDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
+                self.viewController.registerManager.buyDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
             }else{
-                self.viewController.productInfo.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
+                self.viewController.registerManager.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
             }
         }
         

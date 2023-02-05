@@ -8,11 +8,7 @@
 import UIKit
 
 class ProductNameTabeViewCell: BaseTableViewCell {
-    
-    //MARK: - Properties
-    
-    static let cellIdentifier = "productInputCell"
-    
+
     //MARK: - UI
     
     let boundaryLine = UIView().then{
