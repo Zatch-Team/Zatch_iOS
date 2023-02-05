@@ -8,6 +8,7 @@
 import Foundation
 
 extension UITableView{
+    
     final func register<T: BaseTableViewCell>(cellType: T.Type) {
         self.register(cellType.self, forCellReuseIdentifier: cellType.cellIdentifier)
     }
@@ -20,6 +21,11 @@ extension UITableView{
               + "and that you registered the cell beforehand"
           )
         }
+        return cell
+    }
+    
+    final func cellForRow<T: BaseTableViewCell>(at indexPath: IndexPath, cellType: T.Type) -> T {
+        guard let cell = self.cellForRow(at: indexPath) as? T else { fatalError() }
         return cell
     }
 }
