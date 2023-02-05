@@ -11,17 +11,13 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     
     //MARK: - Properties
     
-    struct ZatchFirstInput{ //상품 정보 유효성 검사 위한 데이터 저장 구조체(서버 통신용 Model 아님)
-        var category: String = ""
-        var productName: String = ""
-        var images = [UIImage]()
-        var buyDate: String = ""
-        var endDate: String = ""
-    }
+    let categoryCellIndex: IndexPath = [0,0]
+    let productNameCellIndex: IndexPath = [0,1]
     
     var isOpen = false
-    
-    var productInfo = ZatchFirstInput()
+    let registerManager = ZatchRegisterRequestManager.shared
+    let viewModel = ZatchRegisterFirstViewModel()
+    let categoryBottomSheet = CategorySheetViewController()
     
     init(){
         super.init(headerView: LeftNavigationHeaderView(title: "재치 등록하기"),
@@ -66,36 +62,33 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
         self.view.endEditing(true)
     }
     
-    
     //MARK: - Action
     
     @objc func nextBtnDidClicked(){
-        
+        print("test",registerManager.productName)
         //cell에서 등록한 이미지 데이터 가져오기
         guard let imageCell = mainView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
-        productInfo.images = imageCell.imageArray
+        registerManager.images = imageCell.imageArray
         
         let alert: Alert
         
-        if(productInfo.category.isEmpty){
+        if(registerManager.category.isEmpty){
             alert = .RegisterCategory
-        }else if(productInfo.productName.isEmpty){
+        }else if(registerManager.productName.isEmpty){
             alert = .ProductName
-        }else if(productInfo.images.count == 0){
+        }else if(registerManager.images.count == 0){
             alert = .ImageMin
-        }else if(productInfo.category == "음식|조리" && productInfo.buyDate.isEmpty){
+        }else if(registerManager.category == "음식|조리" && registerManager.buyDate.isEmpty){
             alert = .BuyDate
-        }else if(productInfo.category == "음식|조리" && productInfo.endDate.isEmpty){
+        }else if(registerManager.category == "음식|조리" && registerManager.endDate.isEmpty){
             alert = .EndDate
         }else{ //input 데이터 모두 유효할 경우, Second로 이동
             let vc  = ZatchRegisterSecondViewController()
-            //TODO: Data 담아서 넘기기
             self.navigationController?.pushViewController(vc, animated: true)
             return
         }
         
         _ = alert.generateAlert().show(in: self)
-        
     }
 
 }
@@ -118,14 +111,14 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         if(indexPath.section == 0){
             switch indexPath.row {
             case 0:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectTableViewCell.self)
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier, for: indexPath) as? ProductNameTabeViewCell else{ fatalError("Cell Casting Error")}
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
                 cell.productNameTextField.delegate = self
                 return cell
             case 2:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageAddTableViewCell.cellIdentifier, for: indexPath) as? ImageAddTableViewCell else{ fatalError("Cell Casting Error")}
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ImageAddTableViewCell.self)
                 cell.navigationController = self.navigationController
                 return cell
             default:
@@ -134,13 +127,12 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         }else{
             switch indexPath.row {
             case 0:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectTableViewCell.self)
                 cell.categoryText.text = "입력사항 더보기"
                 cell.arrowImage.isSelected = !isOpen
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstProductInfoTableView.cellIdentifier, for: indexPath) as? FirstProductInfoTableView else{ fatalError("Cell Casting Error")}
-                
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FirstProductInfoTableView.self)
                 cell.viewController = self
                 
                 return cell
@@ -159,15 +151,11 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
             categoryBottomSheet.completion = { category in
                 let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
                 cell.categoryText.text = category
-                self.productInfo.category = category
+                self.registerManager.category = category
             }
             
-            vc.loadViewIfNeeded()
-            self.present(vc, animated: true, completion: nil)
-            
         }else if(indexPath == [1,0]){
-            
-            guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else { return}
+            let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
             isOpen.toggle()
             cell.arrowImage.isSelected = isOpen
             self.mainView.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
@@ -178,7 +166,7 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
 
 extension ZatchRegisterFirstViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.productInfo.productName = textField.text ?? ""
+        self.registerManager.productName = textField.text ?? ""
     }
 }
 
