@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class ProductNameTabeViewCell: BaseTableViewCell {
-
+class ProductNameTabeViewCell: BaseTableViewCell, DefaultObservable {
+    
+    let disposeBag = DisposeBag()
+    let registerManager = ZatchRegisterRequestManager.shared
+    
     //MARK: - UI
     
     let boundaryLine = UIView().then{
@@ -21,28 +26,22 @@ class ProductNameTabeViewCell: BaseTableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepareForReuse() {
-        self.productNameTextField.delegate = nil
-    }
-    
-    func setUpView(){
+    override func hierarchy(){
+        super.hierarchy()
         baseView.addSubview(boundaryLine)
         baseView.addSubview(productNameTextField)
     }
     
-    func setUpConstraint(){
-        
+    override func layout(){
+        super.layout()
         baseView.snp.makeConstraints{ make in
             make.height.equalTo(41)
         }
@@ -62,6 +61,14 @@ class ProductNameTabeViewCell: BaseTableViewCell {
             make.leading.equalToSuperview().offset(36)
             make.centerY.equalToSuperview()
         }
+    }
+    
+    func bind(){
+        let input: Observable<String> = productNameTextField.rx.text.orEmpty.asObservable()
+        input.asDriver(onErrorJustReturn: "")
+            .drive{
+                self.registerManager.productName = $0
+            }.disposed(by: disposeBag)
     }
 
 }
