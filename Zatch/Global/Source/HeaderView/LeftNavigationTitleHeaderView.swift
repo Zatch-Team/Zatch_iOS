@@ -9,10 +9,10 @@ import Foundation
 
 class LeftNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
     
-    internal let title: String
+    let title: String
     let navigationTitleLabel = UILabel()
 
-    init(title: String){
+    required init(title: String){
         self.title = title
         super.init(frame: .zero)
     }
@@ -25,8 +25,16 @@ class LeftNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
         setNavigationTitleLabelAttribute(typo: .bold20)
     }
     
+    override func hierarchy() {
+        super.hierarchy()
+        self.addSubview(navigationTitleLabel)
+    }
+    
     override func layout() {
         super.layout()
-        layoutNavigationTitle()
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(self.backButton.snp.trailing).offset(8)
+        }
     }
 }

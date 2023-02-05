@@ -74,7 +74,6 @@ class BaseViewController<T: BaseHeaderView,
     //MARK: - Action
     
     @objc func viewControllerWillPop(){
-        print("not clicked?®")
         self.navigationController?.popViewController(animated: true)
     }
 }

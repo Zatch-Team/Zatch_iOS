@@ -25,6 +25,10 @@ class LeftNavigationEtcButtonHeaderView: LeftNavigationHeaderView, HeaderFirstEt
         fatalError("init(coder:) has not been implemented")
     }
     
+    required init(title: String) {
+        fatalError("init(title:) has not been implemented")
+    }
+    
     override func layout() {
         super.layout()
         setEtcButtonLayout()

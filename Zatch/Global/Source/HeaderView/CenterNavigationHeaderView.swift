@@ -12,7 +12,7 @@ class CenterNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
     let title: String
     let navigationTitleLabel = UILabel()
     
-    init(title: String){
+    required init(title: String){
         self.title = title
         super.init(frame: .zero)
     }
@@ -25,8 +25,15 @@ class CenterNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
         setNavigationTitleLabelAttribute(typo: .bold20)
     }
     
+    override func hierarchy() {
+        super.hierarchy()
+        self.addSubview(navigationTitleLabel)
+    }
+    
     override func layout() {
         super.layout()
-        layoutNavigationTitle()
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.centerX.equalToSuperview()
+        }
     }
 }
