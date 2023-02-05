@@ -45,6 +45,23 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
         mainView.backTableView.separatorStyle = .none
     }
     
+    override func bind() {
+        
+        categoryBottomSheet.rx.viewWillAppear
+            .map{ _ in }
+            .bind(onNext: {
+                let cell = self.mainView.backTableView.cellForRow(at: self.categoryCellIndex, cellType: CategorySelectTableViewCell.self)
+                cell.arrowImage.isSelected = true
+            }).disposed(by: disposeBag)
+        
+        categoryBottomSheet.rx.viewWillDisappear
+            .map{ _ in }
+            .bind(onNext: {
+                let cell = self.mainView.backTableView.cellForRow(at: self.categoryCellIndex, cellType: CategorySelectTableViewCell.self)
+                cell.arrowImage.isSelected = false
+            }).disposed(by: disposeBag)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -137,12 +154,10 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         
         self.view.endEditing(true)
         
-        if(indexPath == [0,0]){
-            
-            let vc = CategorySheetViewController(service: .Zatch)
-            
-            vc.completion = { category in
-                guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
+        if(indexPath == categoryCellIndex){
+            _ = categoryBottomSheet.show(in: self)
+            categoryBottomSheet.completion = { category in
+                let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
                 cell.categoryText.text = category
                 self.productInfo.category = category
             }
