@@ -45,7 +45,7 @@ class MapTownViewController: KakaoMapViewController{
         if(currentLoactionTown == selectTown){
             let alert = TownMapAlertViewController()
             alert.townName = self.currentLoactionTown
-            alert.confirmHandler = {
+            alert.completion = {
                 print("ok 눌림")
                 self.navigationController?.pushViewController(MainViewController(), animated: true)
             }

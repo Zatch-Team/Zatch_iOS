@@ -74,7 +74,7 @@ class RegisterQuestionViewController: UIViewController {
         }
         if isCategorySelected && self.questionTitle != nil && self.questionContent != nil {
             let alert = Alert.QuestionRegister.generateAlert().show(in: self)
-            alert.confirmHandler = {
+            alert.completion = {
                 print("등록 clicked!")
             }
         }

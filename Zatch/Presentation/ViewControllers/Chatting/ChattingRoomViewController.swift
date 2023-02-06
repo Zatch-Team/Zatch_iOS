@@ -174,7 +174,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
 
             let alert = Alert.ChattingRoomExit.generateAlert().show(in: self)
             
-            alert.confirmHandler = {
+            alert.completion = {
                 self.navigationController?.popViewController(animated: true)
             }
         })
@@ -188,7 +188,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         let alert = Alert.Block(user: "쑤야").generateAlert().show(in: bottomSheet)
         
-        alert.confirmHandler = {
+        alert.completion = {
             print("차단 완료")
             bottomSheet.dismiss(animated: true, completion: nil)
         }
