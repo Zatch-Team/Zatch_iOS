@@ -20,8 +20,7 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     //MARK: - LifeCycle
     
     init(){
-        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기",
-                                                                 etcButton: Image.exit),
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: ZatchRegisterSecondView())
     }
     
@@ -99,23 +98,14 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row == 0){
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier)
-                    as? CategorySelectWithRankTableViewCell else { fatalError() }
-            
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectWithRankTableViewCell.self)
             cell.rankLabel.text = "\(indexPath.section + 1)순위"
             cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
-        
             return cell
-            
         }else{
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier)
-                    as? ProductNameTabeViewCell else { fatalError() }
-            
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
             cell.productNameTextField.delegate = self
             cell.productNameTextField.tag = indexPath.section
-
             return cell
         }
     }
@@ -129,8 +119,7 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
                 let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
                 sheet.completion = { category in
                     
-                    guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
-                    
+                    let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
                     self.categoryChoose[indexPath.section] = category
                     
                     if(!self.isFieldOpen[indexPath.section]){
