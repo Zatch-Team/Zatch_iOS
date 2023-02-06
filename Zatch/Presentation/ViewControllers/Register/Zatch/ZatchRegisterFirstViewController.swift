@@ -34,8 +34,6 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
         
         super.initialize()
         
-        mainView.nextButton.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
-        
         mainView.backTableView.dataSource = self
         mainView.backTableView.delegate = self
         mainView.backTableView.separatorStyle = .none
@@ -56,6 +54,11 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
                 let cell = self.mainView.backTableView.cellForRow(at: self.categoryCellIndex, cellType: CategorySelectTableViewCell.self)
                 cell.arrowImage.isSelected = false
             }).disposed(by: disposeBag)
+        
+        mainView.nextButton.rx.tap
+            .bind{
+                self.nextBtnDidClicked()
+            }.disposed(by: disposeBag)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,7 +68,6 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     //MARK: - Action
     
     @objc func nextBtnDidClicked(){
-        print("test",registerManager.productName)
         //cell에서 등록한 이미지 데이터 가져오기
         guard let imageCell = mainView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
         registerManager.images = imageCell.imageArray
@@ -115,7 +117,6 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
-                cell.productNameTextField.delegate = self
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ImageAddTableViewCell.self)
@@ -162,11 +163,5 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         }
     }
     
-}
-
-extension ZatchRegisterFirstViewController: UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.registerManager.productName = textField.text ?? ""
-    }
 }
 
