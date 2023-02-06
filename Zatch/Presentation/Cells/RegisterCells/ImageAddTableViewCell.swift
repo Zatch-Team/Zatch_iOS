@@ -10,7 +10,6 @@ import UIKit
 class ImageAddTableViewCell: BaseTableViewCell {
     
     var navigationController: UINavigationController!
-    
     var imageArray = [UIImage](){
         didSet{
             imageCountLabel.text =  "\(imageArray.count) / 10"
@@ -20,70 +19,61 @@ class ImageAddTableViewCell: BaseTableViewCell {
     
     //MARK: - UI
     
-    var imageCollectionView: UICollectionView!
-    
+    let imageCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+        
+        let flowLayout = UICollectionViewFlowLayout().then{
+            $0.scrollDirection = .horizontal
+            $0.itemSize = CGSize(width: 84, height: 84)
+            $0.minimumInteritemSpacing = CGFloat(8)
+        }
+        
+        $0.collectionViewLayout = flowLayout
+        $0.contentInset = UIEdgeInsets(top: 0, left: 36, bottom: 0, right: 20)
+        $0.showsHorizontalScrollIndicator = false
+        
+        $0.register(cellType: ImageAddBtnCollectionViewCell.self)
+        $0.register(cellType: ImageRegisterCollectionViewCell.self)
+    }
     let imageCountLabel = UILabel().then{
-        $0.font = UIFont.pretendard(family: .Medium)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
         $0.text = "0 / 10"
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        setInitSetting()
-        setUpView()
-        setUpConstraint()
-        
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setInitSetting(){
-        
-        imageCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
-            
-            let flowLayout = UICollectionViewFlowLayout()
-            flowLayout.scrollDirection = .horizontal
-            flowLayout.itemSize = CGSize(width: 84, height: 84)
-            flowLayout.minimumInteritemSpacing = CGFloat(8)
-            
-            $0.delegate = self
-            $0.dataSource = self
-            
-            $0.collectionViewLayout = flowLayout
-            $0.contentInset = UIEdgeInsets(top: 0, left: 36, bottom: 0, right: 20)
-            $0.showsHorizontalScrollIndicator = false
-            
-            $0.register(ImageAddBtnCollectionViewCell.self, forCellWithReuseIdentifier: ImageAddBtnCollectionViewCell.cellIdentifier)
-            $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
-        }
-        
-        changeCountLabelTextColor() //image count 텍스트 색상 커스텀
+    private func initialize(){
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
     }
     
     //MARK: - Helper
     
-    func setUpView(){
+    override func hierarchy(){
+        super.hierarchy()
         baseView.addSubview(imageCollectionView)
         baseView.addSubview(imageCountLabel)
     }
     
-    func setUpConstraint(){
+    override func layout(){
+        
+        super.layout()
         
         baseView.snp.makeConstraints{ make in
             make.height.equalTo(165)
         }
-        
         imageCollectionView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(28)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.equalTo(84)
         }
-        
         imageCountLabel.snp.makeConstraints{ make in
             make.top.equalTo(imageCollectionView.snp.bottom).offset(12)
             make.leading.equalToSuperview().offset(36)
@@ -108,15 +98,15 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if(indexPath.row == 0){
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageAddBtnCollectionViewCell.cellIdentifier, for: indexPath)
-            return cell
-        }else{
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath) as? ImageRegisterCollectionViewCell else { fatalError() }
-            cell.imageView.image = imageArray[indexPath.row - 1]
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageAddBtnCollectionViewCell.self)
             return cell
         }
+
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self)
+        cell.imageView.image = imageArray[indexPath.row - 1]
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -154,16 +144,15 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
                 _ = Alert.ImageMax.generateAlert().show(in: self.navigationController)
             }
         }else{
-//
-//            let imageDetailVC = DeleteImageDetailViewController()
-//
-//            imageDetailVC.imageView.image = imageArray[indexPath.row - 1]
-//            imageDetailVC.imageDetailHandler = { result in
-//                self.imageArray.remove(at: indexPath.row - 1)
-//                self.imageCollectionView.reloadData()
-//            }
-//
-//            self.navigationController.pushViewController(imageDetailVC, animated: true)
+
+            let vc = DeleteImageDetailViewController()
+            vc.mainView.imageView.image = imageArray[indexPath.row - 1]
+            vc.completion = {
+                self.imageArray.remove(at: indexPath.row - 1)
+                self.imageCollectionView.reloadData()
+            }
+            
+            self.navigationController.pushViewController(vc, animated: true)
         }
     }
 }
@@ -175,17 +164,14 @@ extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationCo
         
         let imgae = info[.originalImage] as! UIImage
         
-//        let imageDetailVC = RegisterImageDetailViewController()
-//        
-//        imageDetailVC.imageView.image = imgae
-//        imageDetailVC.imageDetailHandler = { result in
-//            if(result){
-//                self.imageArray.append(imgae)
-//                self.imageCollectionView.reloadData()
-//            }
-//        }
-//        
-//        self.navigationController.pushViewController(imageDetailVC, animated: true)
+        let vc = RegisterImageDetailViewController()
+        vc.mainView.imageView.image = imgae
+        vc.completion = {
+            self.imageArray.append(imgae)
+            self.imageCollectionView.reloadData()
+        }
+
+        self.navigationController.pushViewController(vc, animated: true)
         
         picker.dismiss(animated: true, completion: nil)
     }
