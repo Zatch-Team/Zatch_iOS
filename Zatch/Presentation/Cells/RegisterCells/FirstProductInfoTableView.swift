@@ -61,22 +61,18 @@ extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row{
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductQuantityUIView.cellIdentifier, for: indexPath)
-                    as? ProductQuantityUIView else{ fatalError("cell indexing error") }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityUIView.self)
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDateChoiceUIView.cellIdentifier, for: indexPath)
-                    as? ProductDateChoiceUIView else{ fatalError("cell indexing error") }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceUIView.self)
             cell.titleLabel.text = "구매일자"
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDateChoiceUIView.cellIdentifier, for: indexPath)
-                    as? ProductDateChoiceUIView else{ fatalError("cell indexing error")}
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceUIView.self)
             cell.titleLabel.text = "유통기한"
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductOpenUIView.cellIdentifier, for: indexPath)
-                    as? ProductOpenUIView else{ fatalError("cell indexing error")}
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductOpenUIView.self)
             return cell
         default:
             fatalError()
@@ -98,11 +94,8 @@ extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
         
         let vc = DatePickerAlertViewController()
         vc.titleLabel.text = title
-        
         vc.pickerHandler = { array in
-            
             guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
-            
             cell.yearTextField.text = String (array[0])
             cell.monthTextField.text = String (array[1] + 1)
             cell.dateTextField.text = String (array[2] + 1)
@@ -113,10 +106,7 @@ extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
                 self.viewController.registerManager.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
             }
         }
-        
-        vc.modalPresentationStyle = .overFullScreen
-        
-        self.viewController.navigationController?.present(vc, animated: false, completion: nil)
+        _ = vc.show(in: viewController)
     }
 
     
