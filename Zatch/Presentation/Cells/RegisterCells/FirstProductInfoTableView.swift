@@ -15,39 +15,44 @@ class FirstProductInfoTableView: BaseTableViewCell {
     
     //MARK: - UI
     
-    var tableView: UITableView!
+    let tableView = UITableView().then{
+        $0.isScrollEnabled = true
+        $0.showsVerticalScrollIndicator = false
+        
+        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
+        
+        $0.register(cellType: ProductQuantityUIView.self)
+        $0.register(cellType: ProductDateChoiceUIView.self)
+        $0.register(cellType: ProductDateChoiceUIView.self)
+        $0.register(cellType: ProductOpenUIView.self)
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        tableView = UITableView().then{
-            
-            $0.separatorStyle = .none
-            $0.isScrollEnabled = true
-            $0.showsVerticalScrollIndicator = false
-            
-            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
-            
-            $0.dataSource = self
-            $0.delegate = self
-            
-            $0.register(ProductQuantityUIView.self, forCellReuseIdentifier: ProductQuantityUIView.cellIdentifier)
-            $0.register(ProductDateChoiceUIView.self, forCellReuseIdentifier: ProductDateChoiceUIView.cellIdentifier)
-            $0.register(ProductDateChoiceUIView.self, forCellReuseIdentifier: ProductDateChoiceUIView.cellIdentifier)
-            $0.register(ProductOpenUIView.self, forCellReuseIdentifier: ProductOpenUIView.cellIdentifier)
-        }
-        
-        self.contentView.addSubview(tableView)
-        
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func hierarchy() {
+        super.hierarchy()
+        baseView.addSubview(tableView)
+    }
+    
+    override func layout() {
+        super.layout()
         tableView.snp.makeConstraints{ make in
             make.top.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(286)
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func initialize(){
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
     }
     
 }
