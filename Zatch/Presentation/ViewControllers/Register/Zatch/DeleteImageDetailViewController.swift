@@ -7,20 +7,28 @@
 
 import UIKit
 
-class DeleteImageDetailViewController: RegisterImageDetailViewController {
+class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView> {
+    
+    var completion: (() -> Void)!
 
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        headerView.etcButton.setTitle("삭제", for: .normal)
+    init(){
+        super.init(headerView: EtcButtonHeaderView(title: "삭제"), mainView: ImageDetailView())
     }
     
-    override func okBtnDidClicked(){
-        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func initialize() {
+        super.initialize()
+        headerView.etcButton.addTarget(self, action: #selector(deleteButtonDidClicked), for: .touchUpInside)
+    }
+    
+    //MARK: - Action
+    @objc func deleteButtonDidClicked(){
         let alert = Alert.ImageDelete.generateAlert().show(in: self)
-        alert.confirmHandler = {
-            self.okBtnDidClicked()
+        alert.completion = {
+            self.completion()
         }
     }
 }
