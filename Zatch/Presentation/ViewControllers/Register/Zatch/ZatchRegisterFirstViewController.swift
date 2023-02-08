@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxGesture
 
 class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderView, ZatchRegisterFirstView> {
     
@@ -59,10 +60,12 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
             .bind{
                 self.nextBtnDidClicked()
             }.disposed(by: disposeBag)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        
+//        self.view.rx.tapGesture()
+//            .when(.recognized)
+//            .bind(onNext: { _ in
+//                self.view.endEditing(true)
+//            }).disposed(by: disposeBag)
     }
     
     //MARK: - Action
@@ -74,15 +77,15 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
         
         let alert: Alert
         
-        if(registerManager.category.isEmpty){
+        if(registerManager.categoryId == -1){
             alert = .RegisterCategory
         }else if(registerManager.productName.isEmpty){
             alert = .ProductName
         }else if(registerManager.images.count == 0){
             alert = .ImageMin
-        }else if(registerManager.category == "음식|조리" && registerManager.buyDate.isEmpty){
+        }else if(registerManager.categoryId == 0 && registerManager.buyDate.isEmpty){
             alert = .BuyDate
-        }else if(registerManager.category == "음식|조리" && registerManager.endDate.isEmpty){
+        }else if(registerManager.categoryId == 0 && registerManager.endDate.isEmpty){
             alert = .EndDate
         }else{ //input 데이터 모두 유효할 경우, Second로 이동
             let vc  = ZatchRegisterSecondViewController()
@@ -151,8 +154,8 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
             _ = categoryBottomSheet.show(in: self)
             categoryBottomSheet.completion = { category in
                 let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
-                cell.categoryText.text = category
-                self.registerManager.category = category
+                cell.categoryText.text = category.0
+                self.registerManager.categoryId = category.1
             }
             
         }else if(indexPath == [1,0]){

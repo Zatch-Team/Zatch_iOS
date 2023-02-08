@@ -291,6 +291,8 @@
 		EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */; };
 		EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */; };
 		EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC3502982B881002B5C60 /* MainHeaderView.swift */; };
+		EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33D21B2993BF710020866E /* LettersAndArrowView.swift */; };
+		EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33D21D2993E1120020866E /* ZatchComponent.swift */; };
 		EE410191298541010083B7E0 /* MyZatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410190298541010083B7E0 /* MyZatchView.swift */; };
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
@@ -633,6 +635,8 @@
 		EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabBarHeaderView.swift; sourceTree = "<group>"; };
 		EE2BC3502982B881002B5C60 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		EE33D21B2993BF710020866E /* LettersAndArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersAndArrowView.swift; sourceTree = "<group>"; };
+		EE33D21D2993E1120020866E /* ZatchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchComponent.swift; sourceTree = "<group>"; };
 		EE410190298541010083B7E0 /* MyZatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchView.swift; sourceTree = "<group>"; };
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
@@ -1380,6 +1384,7 @@
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
 				57FEFA89297A5CED008A78B0 /* Utils */,
+				EE33D21A2993BF050020866E /* Component */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1588,7 +1593,7 @@
 				574E1CAA2964010E005D2048 /* DesignSystem */,
 				57B32C32291FB3D90018C0CB /* Namespace */,
 				57468A9928A1096600056691 /* Extenstion */,
-				57EF61AF287D5BCE0035A2E6 /* ZatchComponent */,
+				EE33D2192993BEF80020866E /* Old */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1906,6 +1911,23 @@
 				EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EE33D2192993BEF80020866E /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				57EF61AF287D5BCE0035A2E6 /* ZatchComponent */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		EE33D21A2993BF050020866E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EE33D21D2993E1120020866E /* ZatchComponent.swift */,
+				EE33D21B2993BF710020866E /* LettersAndArrowView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		EE41018F298540F60083B7E0 /* MyZatch */ = {
@@ -2261,11 +2283,13 @@
 				57B32C34291FB58F0018C0CB /* Image.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* FirstProductInfoTableView.swift in Sources */,
+				EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */,
 				576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
+				EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */,
 				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
 				57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */,
@@ -2612,7 +2636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2667,7 +2691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

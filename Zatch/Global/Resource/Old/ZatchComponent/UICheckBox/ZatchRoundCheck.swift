@@ -19,7 +19,6 @@ class ZatchRoundCheck: UIButton {
     }
     
     private func commonInit(){
-        
         self.setImage(Image.zatchUncheck, for: .normal)
         self.setImage(Image.zatchCheck, for: .selected)
 

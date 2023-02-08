@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class CategorySheetViewController: BaseBottomSheetViewController<String> {
+class CategorySheetViewController: BaseBottomSheetViewController<(String, Int)> {
     
     //MARK: - Properties
     
@@ -59,7 +59,7 @@ class CategorySheetViewController: BaseBottomSheetViewController<String> {
         super.layout()
         
         self.view.addSubview(collectionView)
-        
+    
         collectionView.snp.makeConstraints{ make in
             make.top.equalTo(super.titleLabel.snp.bottom).offset(20)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
@@ -89,7 +89,7 @@ extension CategorySheetViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        completion(self.service.getCategoryFromCategories(at: indexPath.row).title)
+        completion((self.service.getCategoryFromCategories(at: indexPath.row).title, indexPath.row))
         self.dismiss(animated: true, completion: nil)
     }
 }

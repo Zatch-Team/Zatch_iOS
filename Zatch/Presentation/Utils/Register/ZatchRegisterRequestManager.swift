@@ -11,7 +11,7 @@ class ZatchRegisterRequestManager{
     
     static let shared = ZatchRegisterRequestManager()
     
-    var category: String = ""
+    var categoryId: Int = -1
     var productName: String = ""
     var images = [UIImage]()
     var buyDate: String = ""
@@ -19,7 +19,7 @@ class ZatchRegisterRequestManager{
     var isOpen: Bool = false
     
     func initialize(){
-        category = ""
+        categoryId = -1
         productName = ""
         images = [UIImage]()
         buyDate = ""

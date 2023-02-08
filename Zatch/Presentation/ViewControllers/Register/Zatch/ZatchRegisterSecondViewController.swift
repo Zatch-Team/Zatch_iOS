@@ -29,7 +29,9 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     override func initialize() {
+        
         currentBtnSelect = mainView.topCheckBoxBtn
+        
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
         mainView.tableView.separatorStyle = .none
@@ -120,7 +122,7 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
                 sheet.completion = { category in
                     
                     let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
-                    self.categoryChoose[indexPath.section] = category
+                    self.categoryChoose[indexPath.section] = category.0
                     
                     if(!self.isFieldOpen[indexPath.section]){
                         self.isFieldOpen[indexPath.section] = true
