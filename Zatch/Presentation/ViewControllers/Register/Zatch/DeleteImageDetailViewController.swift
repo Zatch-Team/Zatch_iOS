@@ -12,7 +12,8 @@ class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, I
     var completion: (() -> Void)!
 
     init(){
-        super.init(headerView: EtcButtonHeaderView(title: "삭제"), mainView: ImageDetailView())
+        super.init(headerView: EtcButtonHeaderView(title: "삭제"),
+                   mainView: ImageDetailView())
     }
     
     required init?(coder: NSCoder) {

@@ -107,9 +107,8 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0){
             return 3
-        }else{
-            return isOpen ? 2 : 1
         }
+        return isOpen ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,7 +125,7 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
                 cell.navigationController = self.navigationController
                 return cell
             default:
-                fatalError("index error")
+                return BaseTableViewCell()
             }
         }else{
             switch indexPath.row {
@@ -138,10 +137,9 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
             case 1:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FirstProductInfoTableView.self)
                 cell.viewController = self
-                
                 return cell
             default:
-                fatalError("index error")
+                return BaseTableViewCell()
             }
         }
     }
