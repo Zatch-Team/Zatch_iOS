@@ -18,8 +18,8 @@ class ZatchRegisterSecondView: BaseView {
     var tableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false
         
-        $0.register(CategorySelectWithRankTableViewCell.self, forCellReuseIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier)
-        $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
+        $0.register(cellType: RegisterCategorySelectWithRankTableViewCell.self)
+        $0.register(cellType: ProductNameTabeViewCell.self)
     }
     
     let checkBoxFrame = UIStackView().then{

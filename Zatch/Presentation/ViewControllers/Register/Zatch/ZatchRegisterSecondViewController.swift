@@ -25,7 +25,8 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
+                   mainView: ZatchRegisterSecondView())
     }
     
     override func initialize() {
@@ -100,7 +101,7 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row == 0){
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectWithRankTableViewCell.self)
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
             cell.rankLabel.text = "\(indexPath.section + 1)순위"
 //            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
             return cell
@@ -121,7 +122,7 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
                 let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
                 sheet.completion = { category in
                     
-                    let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectTableViewCell.self)
+                    let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
 //                    self.categoryChoose[indexPath.section] = category.0
                     
                     if(!self.isFieldOpen[indexPath.section]){

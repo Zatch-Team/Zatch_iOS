@@ -128,7 +128,7 @@
 		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
 		57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */; };
 		57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */; };
-		57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */; };
+		57468AAE28A3A58900056691 /* RegisterCategorySelectWithRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* RegisterCategorySelectWithRankTableViewCell.swift */; };
 		574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CA8296400E6005D2048 /* CellReuse.swift */; };
 		574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */; };
 		574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */; };
@@ -298,6 +298,7 @@
 		EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */; };
 		EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */; };
 		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
+		EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */; };
 		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
 		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
 		EE9B053529953A1200068503 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B053429953A1200068503 /* FilterView.swift */; };
@@ -454,7 +455,7 @@
 		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingSheetViewController.swift; sourceTree = "<group>"; };
 		57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePurpleButton.swift; sourceTree = "<group>"; };
-		57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWithRankTableViewCell.swift; sourceTree = "<group>"; };
+		57468AAD28A3A58900056691 /* RegisterCategorySelectWithRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectWithRankTableViewCell.swift; sourceTree = "<group>"; };
 		574E1CA8296400E6005D2048 /* CellReuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuse.swift; sourceTree = "<group>"; };
 		574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoDesignSystem.swift; sourceTree = "<group>"; };
 		574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -641,6 +642,7 @@
 		EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDateFormatter.swift; sourceTree = "<group>"; };
 		EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterRequestManager.swift; sourceTree = "<group>"; };
 		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
+		EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectView.swift; sourceTree = "<group>"; };
 		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
 		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
 		EE9B053429953A1200068503 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
@@ -1089,7 +1091,7 @@
 			isa = PBXGroup;
 			children = (
 				574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */,
-				57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */,
+				57468AAD28A3A58900056691 /* RegisterCategorySelectWithRankTableViewCell.swift */,
 				57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */,
 				57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */,
 				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
@@ -1888,6 +1890,7 @@
 		57FFEDBD28DD27DE0041719B /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
+				EE73C5152995E1C20000F8AC /* CellView */,
 				57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */,
 				57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */,
 				57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */,
@@ -1949,6 +1952,14 @@
 				EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		EE73C5152995E1C20000F8AC /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */,
+			);
+			path = CellView;
 			sourceTree = "<group>";
 		};
 		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
@@ -2378,6 +2389,7 @@
 				574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
 				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
+				EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */,
@@ -2435,7 +2447,7 @@
 				233DDF6028EB7D2C008E32B4 /* NanumTableViewCell.swift in Sources */,
 				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
-				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
+				57468AAE28A3A58900056691 /* RegisterCategorySelectWithRankTableViewCell.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				576B375D28D82EAF00EF36E6 /* SettingView.swift in Sources */,

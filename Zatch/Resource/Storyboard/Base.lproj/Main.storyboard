@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Zatch Register First View Controller-->
+        <!--Zatch Register Second View Controller-->
         <scene sceneID="taS-U0-2JF">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="PQU-fM-ZNj" customClass="ZatchRegisterFirstViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="PQU-fM-ZNj" customClass="ZatchRegisterSecondViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RAj-80-sbT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
