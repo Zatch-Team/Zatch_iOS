@@ -18,17 +18,14 @@ class RegisterCategorySelectTableViewCell: BaseTableViewCell {
     }
     
     let categoryFrame = UIView()
-    
     let boundaryLine = UIView().then{
         $0.backgroundColor = .black5
     }
-    
-    let categoryText = UILabel().then{
+    private let categoryText = UILabel().then{
         $0.text = "카테고리 선택"
         $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
     }
-    
-    lazy var arrowImage = UIButton().then{
+    private lazy var arrowImage = UIButton().then{
         $0.setImage(Image.arrowDown, for: .normal)
         $0.setImage(Image.arrowUp, for: .selected)
     }
@@ -70,5 +67,13 @@ class RegisterCategorySelectTableViewCell: BaseTableViewCell {
             make.trailing.equalToSuperview().offset(-24)
             make.top.equalToSuperview().offset(12)
         }
+    }
+    
+    func setDefaultTitle(_ title: String){
+        categoryText.text = title
+    }
+    
+    func setCategoryTitle(id: Int){
+        categoryText.text = ServiceType.Zatch.getCategoryFromCategories(at: id).title
     }
 }
