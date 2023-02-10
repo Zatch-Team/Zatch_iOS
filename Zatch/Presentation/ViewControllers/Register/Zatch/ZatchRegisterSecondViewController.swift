@@ -118,10 +118,20 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
             }
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
-            cell.productNameTextField.delegate = self
-            cell.productNameTextField.tag = indexPath.section
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self)
+            getTextFieldCellType(section: indexPath.section){
+                cell.informationType = $0
+            }
             return cell
+        }
+    }
+    
+    private func getTextFieldCellType(section: Int, closure: (TextFieldTabeViewCell.CellType) -> Void){
+        switch section{
+        case 0:     closure(.firstPriority); return
+        case 1:     closure(.secondPriority); return
+        case 2:     closure(.thirdPriority); return
+        default:    return
         }
     }
     

@@ -18,8 +18,8 @@ class ZatchRegisterSecondView: BaseView {
     var tableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false
         
-        $0.register(cellType: RegisterCategorySelectWithRankTableViewCell.self)
-        $0.register(cellType: ProductNameTabeViewCell.self)
+        $0.register(cellType: RegisterCategorySelectWithPriorityTableViewCell.self)
+        $0.register(cellType: TextFieldTabeViewCell.self)
     }
     
     let radioButtonFrame = UIStackView().then{
