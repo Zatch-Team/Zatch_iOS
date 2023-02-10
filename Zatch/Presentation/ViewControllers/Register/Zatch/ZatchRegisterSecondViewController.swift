@@ -14,9 +14,7 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     var isFieldOpen = [true, false, false]
     var categoryChoose : [String?] = [nil, nil, nil]
     var isKeyboardOpen = false
-    
-    var currentBtnSelect: ZatchRoundCheck!
-    
+
     //MARK: - LifeCycle
     
     init(){
@@ -31,18 +29,28 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     
     override func initialize() {
         
-        currentBtnSelect = mainView.topCheckBoxBtn
-        
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
         mainView.tableView.separatorStyle = .none
         
         headerView.etcButton.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
-        
-        mainView.topCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
-        mainView.belowCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
         mainView.shareBtn.addTarget(self, action: #selector(shareBtnDidClicked), for: .touchUpInside)
         mainView.nextBtn.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
+    }
+    
+    override func bind() {
+        
+        mainView.topRadioButtonFrame.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] in
+                self?.radioButtonDidSelected($0)
+            }).disposed(by: disposeBag)
+        
+        mainView.belowRadioButtonFrame.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] in
+                self?.radioButtonDidSelected($0)
+            }).disposed(by: disposeBag)
     }
     
     //MARK: - Action
@@ -51,12 +59,13 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
         dismissKeyboardView()
     }
     
-    @objc func radioBtnDidClicked(_ sender: ZatchRoundCheck){
-        if(sender != currentBtnSelect){
-            sender.isSelected.toggle()
-            currentBtnSelect.isSelected.toggle()
-            currentBtnSelect = sender
-        }
+    @objc func radioButtonDidSelected(_ sender: UITapGestureRecognizer){
+        
+        guard let selectView = sender.view as? ZatchComponent.RadioButtonView,
+              let willDeselectView = view.viewWithTag(Const.ViewTag.select) as? ZatchComponent.RadioButtonView else { return }
+        
+        selectView.isSelected = true
+        willDeselectView.isSelected = false
     }
     
     @objc func shareBtnDidClicked(){
