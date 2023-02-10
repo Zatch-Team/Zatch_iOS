@@ -142,7 +142,7 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
                 }
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FirstProductInfoTableView.self)
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDetailInputTableViewCell.self)
                 cell.viewController = self
                 return cell
             default:
@@ -181,3 +181,7 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
     }
 }
 
+//MARK: - ImageDelegate
+extension ZatchRegisterFirstViewController{
+    
+}

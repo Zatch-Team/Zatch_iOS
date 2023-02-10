@@ -7,6 +7,7 @@
 
 import UIKit
 
+//TODO: IMAGE 관리 ViewController에서
 class ImageAddTableViewCell: BaseTableViewCell {
     
     var navigationController: UINavigationController!
@@ -98,14 +99,14 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if(indexPath.row == 0){
-            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageAddBtnCollectionViewCell.self)
-            return cell
+            return collectionView.dequeueReusableCell(for: indexPath, cellType: ImageAddBtnCollectionViewCell.self)
         }
 
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self)
-        cell.imageView.image = imageArray[indexPath.row - 1]
-        
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self).then{
+            $0.imageView.image = imageArray[indexPath.row - 1]
+        }
         return cell
     }
     
@@ -162,17 +163,15 @@ extension ImageAddTableViewCell: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
-        let imgae = info[.originalImage] as! UIImage
+        let image = info[.originalImage] as! UIImage
         
-        let vc = RegisterImageDetailViewController()
-        vc.mainView.imageView.image = imgae
+        let vc = RegisterImageDetailViewController(image: image)
         vc.completion = {
-            self.imageArray.append(imgae)
+            self.imageArray.append(image)
             self.imageCollectionView.reloadData()
         }
 
         self.navigationController.pushViewController(vc, animated: true)
-        
         picker.dismiss(animated: true, completion: nil)
     }
     

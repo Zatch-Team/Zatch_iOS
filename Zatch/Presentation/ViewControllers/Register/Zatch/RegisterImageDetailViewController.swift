@@ -12,14 +12,21 @@ class RegisterImageDetailViewController: BaseViewController<EtcButtonHeaderView,
     //MARK: - Properties
     
     var completion: (() -> ())!
+    private var image: UIImage
     
-    init(){
+    init(image: UIImage){
+        self.image = image
         super.init(headerView: EtcButtonHeaderView(title: "확인"),
                    mainView: ImageDetailView())
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func style() {
+        super.style()
+        mainView.imageView.image = image
     }
     
     override func initialize() {
