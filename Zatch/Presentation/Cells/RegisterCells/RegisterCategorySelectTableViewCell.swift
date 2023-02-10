@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategorySelectTableViewCell: BaseTableViewCell {
+class RegisterCategorySelectTableViewCell: BaseTableViewCell {
 
     //MARK: - UI
     
