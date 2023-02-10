@@ -7,40 +7,50 @@
 
 import UIKit
 
-class ZatchRegisterSecondViewController: BaseLeftTitleViewController<LeftNavigationEtcButtonHeaderView,ZatchRegisterSecondView> {
+class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcButtonHeaderView,ZatchRegisterSecondView> {
     
     //MARK: - Properties
     
     var isFieldOpen = [true, false, false]
     var categoryChoose : [String?] = [nil, nil, nil]
     var isKeyboardOpen = false
-    
-    var currentBtnSelect: ZatchRoundCheck!
-    
+
     //MARK: - LifeCycle
     
     init(){
-        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기",
-                                                                 etcButton: Image.exit),
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: ZatchRegisterSecondView())
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
+                   mainView: ZatchRegisterSecondView())
     }
     
     override func initialize() {
-        currentBtnSelect = mainView.topCheckBoxBtn
+        
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
         mainView.tableView.separatorStyle = .none
         
         headerView.etcButton.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
-        
-        mainView.topCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
-        mainView.belowCheckBoxBtn.addTarget(self, action: #selector(radioBtnDidClicked(_:)), for: .touchUpInside)
         mainView.shareBtn.addTarget(self, action: #selector(shareBtnDidClicked), for: .touchUpInside)
         mainView.nextBtn.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
+    }
+    
+    override func bind() {
+        
+        mainView.topRadioButtonFrame.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] in
+                self?.radioButtonDidSelected($0)
+            }).disposed(by: disposeBag)
+        
+        mainView.belowRadioButtonFrame.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] in
+                self?.radioButtonDidSelected($0)
+            }).disposed(by: disposeBag)
     }
     
     //MARK: - Action
@@ -49,12 +59,13 @@ class ZatchRegisterSecondViewController: BaseLeftTitleViewController<LeftNavigat
         dismissKeyboardView()
     }
     
-    @objc func radioBtnDidClicked(_ sender: ZatchRoundCheck){
-        if(sender != currentBtnSelect){
-            sender.isSelected.toggle()
-            currentBtnSelect.isSelected.toggle()
-            currentBtnSelect = sender
-        }
+    @objc func radioButtonDidSelected(_ sender: UITapGestureRecognizer){
+        
+        guard let selectView = sender.view as? ZatchComponent.RadioButtonView,
+              let willDeselectView = view.viewWithTag(Const.ViewTag.select) as? ZatchComponent.RadioButtonView else { return }
+        
+        selectView.isSelected = true
+        willDeselectView.isSelected = false
     }
     
     @objc func shareBtnDidClicked(){
@@ -99,23 +110,14 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row == 0){
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectWithRankTableViewCell.cellIdentifier)
-                    as? CategorySelectWithRankTableViewCell else { fatalError() }
-            
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
             cell.rankLabel.text = "\(indexPath.section + 1)순위"
-            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
-        
+//            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
             return cell
-            
         }else{
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier)
-                    as? ProductNameTabeViewCell else { fatalError() }
-            
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
             cell.productNameTextField.delegate = self
             cell.productNameTextField.tag = indexPath.section
-
             return cell
         }
     }
@@ -129,9 +131,8 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
                 let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
                 sheet.completion = { category in
                     
-                    guard let cell = tableView.cellForRow(at: indexPath) as? CategorySelectTableViewCell else{ return }
-                    
-                    self.categoryChoose[indexPath.section] = category
+                    let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
+//                    self.categoryChoose[indexPath.section] = category.0
                     
                     if(!self.isFieldOpen[indexPath.section]){
                         self.isFieldOpen[indexPath.section] = true

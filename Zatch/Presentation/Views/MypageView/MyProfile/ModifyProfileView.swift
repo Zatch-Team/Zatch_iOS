@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/*
 class ModifyProfileView: UIView {
     // MARK: - Views
     let userImage = UIImageView().then{
@@ -107,3 +108,4 @@ class ModifyProfileView: UIView {
         }
     }
 }
+*/

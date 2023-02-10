@@ -9,26 +9,12 @@ import Foundation
 
 class MyZatchView: BaseView{
     
-    let filterStackView = UIStackView().then{
-        $0.spacing = 4
+    lazy var filterView = ZatchComponent.LettersAndArrowView().then{
+        $0.setTitle("전체보기")
     }
-    let filterLabel = UILabel().then{
-        $0.text = "전체보기"
-    }
-    let filterButton = UIButton().then{
-        $0.setTitle("전체보기", for: .normal)
-        $0.semanticContentAttribute = .forceRightToLeft
-        $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.setTitleColor(.black85, for: .normal)
-        
-        $0.setImage(Image.arrowDown, for: .normal)
-        $0.setImage(Image.arrowUp, for: .selected)
-    }
-    
     let zatchTableView = UITableView().then{
         $0.register(cellType: MyZatchTableViewCell.self)
     }
-    
     lazy var floatingButton = UIButton().then{
         $0.backgroundColor = .zatchPurple
         $0.clipsToBounds = true
@@ -44,31 +30,19 @@ class MyZatchView: BaseView{
     }
     
     override func hierarchy() {
-        self.addSubview(filterStackView)
+        self.addSubview(filterView)
         self.addSubview(zatchTableView)
         self.addSubview(floatingButton)
-        
-        filterStackView.addArrangedSubview(filterLabel)
-        filterStackView.addArrangedSubview(filterButton)
     }
     
     override func layout() {
         
-        filterStackView.snp.makeConstraints{
+        filterView.snp.makeConstraints{
             $0.top.equalToSuperview().offset(8)
             $0.trailing.equalToSuperview().offset(-16)
         }
-        
-        filterLabel.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-        }
-        
-        filterButton.snp.makeConstraints{
-            $0.width.height.equalTo(20)
-        }
-        
         zatchTableView.snp.makeConstraints{
-            $0.top.equalTo(filterStackView.snp.bottom).offset(8)
+            $0.top.equalTo(filterView.snp.bottom).offset(8)
             $0.leading.trailing.bottom.equalToSuperview()
         }
         

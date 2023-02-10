@@ -8,12 +8,11 @@
 import Foundation
 
 class CenterNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
-    let title: String
-    let navigationTitleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 20, family: .Bold)
-    }
     
-    init(title: String){
+    let title: String
+    let navigationTitleLabel = UILabel()
+    
+    required init(title: String){
         self.title = title
         super.init(frame: .zero)
     }
@@ -23,11 +22,18 @@ class CenterNavigationHeaderView: BaseHeaderView, HeaderNavigationTitle{
     }
     
     override func style() {
-        navigationTitleLabel.text = title
+        setNavigationTitleLabelAttribute(typo: .bold20)
+    }
+    
+    override func hierarchy() {
+        super.hierarchy()
+        self.addSubview(navigationTitleLabel)
     }
     
     override func layout() {
         super.layout()
-        layoutNavigationTitle()
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.centerX.equalToSuperview()
+        }
     }
 }

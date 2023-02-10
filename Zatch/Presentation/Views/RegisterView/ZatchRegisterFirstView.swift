@@ -18,10 +18,10 @@ class ZatchRegisterFirstView: BaseView {
         $0.showsVerticalScrollIndicator = false
         $0.isScrollEnabled = false
         
-        $0.register(CategorySelectTableViewCell.self, forCellReuseIdentifier: CategorySelectTableViewCell.cellIdentifier)
+        $0.register(RegisterCategorySelectTableViewCell.self, forCellReuseIdentifier: RegisterCategorySelectTableViewCell.cellIdentifier)
         $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
         $0.register(ImageAddTableViewCell.self, forCellReuseIdentifier: ImageAddTableViewCell.cellIdentifier)
-        $0.register(FirstProductInfoTableView.self, forCellReuseIdentifier: FirstProductInfoTableView.cellIdentifier)
+        $0.register(ProductDetailInputTableViewCell.self, forCellReuseIdentifier: ProductDetailInputTableViewCell.cellIdentifier)
     }
     
     lazy var nextButton = Purple36Button(title: "다음 단계로")

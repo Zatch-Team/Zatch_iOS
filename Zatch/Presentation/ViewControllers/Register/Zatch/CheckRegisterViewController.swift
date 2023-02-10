@@ -7,13 +7,12 @@
 
 import UIKit
 
-class CheckRegisterViewController: BaseLeftTitleViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
+class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
     //MARK: - LifeCycle
     
     init(){
-        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기",
-                                                                 etcButton: Image.exit),
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: CheckRegisterView())
     }
     
@@ -39,7 +38,7 @@ class CheckRegisterViewController: BaseLeftTitleViewController<LeftNavigationEtc
     
     @objc func registerBtnDidClicked(){
         let alert = Alert.Register.generateAlert().show(in: self)
-        alert.confirmHandler = {
+        alert.completion = {
             print("등록 완료 버튼 눌림")
         }
     }
@@ -89,7 +88,7 @@ extension CheckRegisterViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self)
         return cell
     }
 }

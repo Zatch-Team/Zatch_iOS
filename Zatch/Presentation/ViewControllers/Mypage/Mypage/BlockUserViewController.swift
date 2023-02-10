@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class BlockUserViewController: BaseCenterTitleViewController {
     
     var blockData : [String] = ["1"] {
@@ -67,3 +68,4 @@ extension BlockUserViewController: UITableViewDelegate, UITableViewDataSource{
     }
 
 }
+*/

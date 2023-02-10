@@ -7,34 +7,24 @@
 
 import UIKit
 
-class ImageRegisterCollectionViewCell: UICollectionViewCell {
-    
-    static let cellIdentifier = "imageRegisterCell"
-    
-    let backView = UIView()
-    
+class ImageRegisterCollectionViewCell: BaseCollectionViewCell {
+
     let imageView = UIImageView().then{
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
         $0.backgroundColor = .black10
+        $0.contentMode = .scaleAspectFill
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        self.addSubview(backView)
-        backView.addSubview(imageView)
-        
-        backView.snp.makeConstraints{ make in
-            make.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
+    override func hierarchy() {
+        super.hierarchy()
+        baseView.addSubview(imageView)
+    }
+    
+    override func layout() {
+        super.layout()
         imageView.snp.makeConstraints{ make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

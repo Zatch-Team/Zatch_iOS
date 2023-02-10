@@ -13,7 +13,6 @@ class PurpleButton: UIButton{
         
         super.init(frame: CGRect.zero)
         
-//        self.backgroundColor = .zatchPurple
         self.setBackgroundColor(.zatchPurple, for: .normal)
         self.setBackgroundColor(.black5, for: .disabled)
         self.setTitleColor(.white, for: .normal)

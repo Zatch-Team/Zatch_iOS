@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 class ReviewViewController: BaseCenterTitleViewController {
     var reviewTableView: UITableView!
     var profileUserName: String!
@@ -81,3 +82,4 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+*/

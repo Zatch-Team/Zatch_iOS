@@ -66,14 +66,14 @@ class BaseViewController<T: BaseHeaderView,
     }
     
     func initialize() {
-        headerView.backButton.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
+        headerView.backButton.addTarget(self, action: #selector(viewControllerWillPop), for: .touchUpInside)
     }
     
     func bind() { }
     
     //MARK: - Action
     
-    @objc func backButtonDidClicked(){
+    @objc func viewControllerWillPop(){
         self.navigationController?.popViewController(animated: true)
     }
 }

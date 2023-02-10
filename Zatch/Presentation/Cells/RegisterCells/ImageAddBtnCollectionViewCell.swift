@@ -7,9 +7,7 @@
 
 import UIKit
 
-class ImageAddBtnCollectionViewCell: UICollectionViewCell {
-    
-    static let cellIdentifier = "imageAddBtnCell"
+class ImageAddBtnCollectionViewCell: BaseCollectionViewCell {
     
     let backView = UIView().then{
         $0.layer.borderWidth = 1.5
@@ -22,23 +20,22 @@ class ImageAddBtnCollectionViewCell: UICollectionViewCell {
         $0.image = Image.imageAddButton
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        self.addSubview(backView)
-        backView.addSubview(addBtnImage)
-        
-        backView.snp.makeConstraints{ make in
-            make.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
+    override func style() {
+        baseView.layer.borderWidth = 1.5
+        baseView.layer.borderColor = UIColor.black10.cgColor
+        baseView.layer.cornerRadius = 8
+    }
+    
+    override func hierarchy() {
+        super.hierarchy()
+        baseView.addSubview(addBtnImage)
+    }
+    
+    override func layout() {
+        super.layout()
         addBtnImage.snp.makeConstraints{ make in
             make.center.equalToSuperview()
             make.width.height.equalTo(32)
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

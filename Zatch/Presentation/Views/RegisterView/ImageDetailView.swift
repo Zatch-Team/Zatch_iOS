@@ -7,7 +7,8 @@
 
 import Foundation
 
-class RegisterImageDetailView: BaseView{
+class ImageDetailView: BaseView{
+    
     let imageView = UIImageView().then{
         $0.contentMode = .scaleAspectFit
     }

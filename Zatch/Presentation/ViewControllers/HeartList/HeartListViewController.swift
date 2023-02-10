@@ -7,6 +7,7 @@
 import UIKit
 import SnapKit
 
+/*
 class HeartListViewController: BaseCenterTitleViewController {
 
     override func viewDidLoad() {
@@ -25,3 +26,4 @@ class HeartListViewController: BaseCenterTitleViewController {
         heartVC.didMove(toParent: self)
     }
 }
+*/

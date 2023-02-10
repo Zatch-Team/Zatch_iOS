@@ -55,7 +55,7 @@ class MapMeetingViewController: KakaoMapViewController{
         
         alert.addressName = locationString
 
-        alert.confirmHandler = {
+        alert.completion = {
             print("ok 눌림")
 
             let popViewController = self.navigation.viewControllers[0] as! MakeMeetingSheetViewController

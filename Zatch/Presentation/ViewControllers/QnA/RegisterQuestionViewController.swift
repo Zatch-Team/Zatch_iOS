@@ -29,7 +29,7 @@ class RegisterQuestionViewController: UIViewController {
         questionTableView.then{
             $0.delegate = self
             $0.dataSource = self
-            $0.register(CategorySelectTableViewCell.self, forCellReuseIdentifier: CategorySelectTableViewCell.cellIdentifier)
+            $0.register(RegisterCategorySelectTableViewCell.self, forCellReuseIdentifier: RegisterCategorySelectTableViewCell.cellIdentifier)
             $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
             $0.register(QuestionContentTableViewCell.self, forCellReuseIdentifier: QuestionContentTableViewCell.cellIdentifier)
             
@@ -74,7 +74,7 @@ class RegisterQuestionViewController: UIViewController {
         }
         if isCategorySelected && self.questionTitle != nil && self.questionContent != nil {
             let alert = Alert.QuestionRegister.generateAlert().show(in: self)
-            alert.confirmHandler = {
+            alert.completion = {
                 print("등록 clicked!")
             }
         }
@@ -94,7 +94,7 @@ extension RegisterQuestionViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySelectTableViewCell.cellIdentifier, for: indexPath) as? CategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCategorySelectTableViewCell.cellIdentifier, for: indexPath) as? RegisterCategorySelectTableViewCell else{ fatalError("Cell Casting Error")}
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductNameTabeViewCell.cellIdentifier, for: indexPath) as? ProductNameTabeViewCell else{ fatalError("Cell Casting Error")}
