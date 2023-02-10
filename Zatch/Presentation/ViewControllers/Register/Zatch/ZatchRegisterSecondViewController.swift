@@ -31,6 +31,14 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
                    mainView: ZatchRegisterSecondView())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        addKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardNotifications()
+    }
+    
     override func initialize() {
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
@@ -57,8 +65,35 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     
     //MARK: - Action
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dismissKeyboardView()
+    private func addKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillAppear(noti: NSNotification) {
+        
+        isKeyboardOpen = true
+
+        /*
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            UIView.animate(
+                withDuration: 0.3
+                , animations: {
+                    self.view.transform = CGAffineTransform(translationX: 0, y: -60)
+                }
+            )
+        }
+         */
+    }
+
+    @objc private func keyboardWillDisappear() {
+        isKeyboardOpen = false
+        self.view.transform = .identity
     }
     
     @objc func radioButtonDidSelected(_ sender: UITapGestureRecognizer){
@@ -83,19 +118,6 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     @objc func exitBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
-    //MARK: - Helper
-    func dismissKeyboardView(){
-        
-        UIView.animate(withDuration: 0.3){
-            self.view.window?.frame.origin.y = 0
-        }
-        
-        isKeyboardOpen = false
-        
-        self.view.endEditing(true)
-
-    }
 }
 
 //MARK: - TableView
@@ -117,13 +139,13 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
                 $0.setCategoryTitle(id: categoryPriority[indexPath.section])
             }
             return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self)
-            getTextFieldCellType(section: indexPath.section){
-                cell.informationType = $0
-            }
-            return cell
         }
+        
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self)
+        getTextFieldCellType(section: indexPath.section){
+            cell.informationType = $0
+        }
+        return cell
     }
     
     private func getTextFieldCellType(section: Int, closure: (TextFieldTabeViewCell.CellType) -> Void){
@@ -137,19 +159,19 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //TODO: 키보드 제어...
         if(isKeyboardOpen){
-            dismissKeyboardView()
+            self.view.endEditing(true)
             return
         }
         
         if(indexPath.row == 0){
+            
             let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
             sheet.completion = { categoryId in
-                
-                let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
+                _ = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
                     $0.setCategoryTitle(id: categoryId)
                 }
+                
                 self.categoryPriority[indexPath.section] = categoryId
                 self.isCategoryFieldOpen[indexPath.section] = true
                 

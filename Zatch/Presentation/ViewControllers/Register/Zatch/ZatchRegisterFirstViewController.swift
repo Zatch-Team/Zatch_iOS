@@ -37,6 +37,10 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     
     //MARK: - Override
     
+    override func viewWillAppear(_ animated: Bool) {
+        registerManager.initialize()
+    }
+    
     override func initialize(){
         
         super.initialize()
