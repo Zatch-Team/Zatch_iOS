@@ -16,7 +16,9 @@ class ProductDetailInputTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     
-    var viewController: ZatchRegisterFirstViewController!
+    var delegate: RegisterCellDelegate!
+    private let buyDateCellIndex: IndexPath = [0,1]
+    private let endDateCellIndex: IndexPath = [0,2]
 
     //MARK: - UI
     
@@ -70,8 +72,7 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row{
         case 0:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityUIView.self)
-            return cell
+            return tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityUIView.self)
         case 1:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
                 $0.setTitle(type: .buy)
@@ -83,43 +84,41 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
             }
             return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductOpenUIView.self)
-            return cell
+            return tableView.dequeueReusableCell(for: indexPath, cellType: ProductOpenUIView.self)
         default:
-            fatalError()
+            return BaseTableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let title: String!
-        
-        switch indexPath.row{
-        case 1:
-            title = "구매일자"
-        case 2:
-            title = "유통기한"
+        getDateType(indexPath: indexPath){
+            let cell = tableView.cellForRow(at: indexPath, cellType: ProductDateChoiceTableViewCell.self)
+            
+            delegate.datePickerWillShow(dateType: $0, cell: cell)
+        }
+    }
+    
+    private func getDateType(indexPath: IndexPath, closure: (ProductDate) -> Void){
+        switch indexPath{
+        case buyDateCellIndex:
+            closure(.buy)
+            return
+        case endDateCellIndex:
+            closure(.end)
+            return
         default:
             return
         }
-        
-        let vc = DatePickerAlertViewController()
-        vc.titleLabel.text = title
-        vc.pickerHandler = { array in
-            guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceTableViewCell else { return }
-            cell.yearTextField.text = String (array[0])
-            cell.monthTextField.text = String (array[1] + 1)
-            cell.dateTextField.text = String (array[2] + 1)
-            
-//            if(indexPath.row == 1){
-//                self.viewController.registerManager.buyDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
-//            }else{
-//                self.viewController.registerManager.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
-//            }
-        }
-        _ = vc.show(in: viewController)
     }
+}
 
-    
-    
+extension ProductDetailInputTableViewCell.ProductDate{
+    func update(date: String){
+        switch self{
+        case .buy:  ZatchRegisterRequestManager.shared.buyDate = date
+            return
+        case .end:  ZatchRegisterRequestManager.shared.endDate = date
+            return
+        }
+    }
 }

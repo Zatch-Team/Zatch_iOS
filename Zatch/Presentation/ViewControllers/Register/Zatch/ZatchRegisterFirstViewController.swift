@@ -142,8 +142,9 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
                 }
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDetailInputTableViewCell.self)
-                cell.viewController = self
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDetailInputTableViewCell.self).then{
+                    $0.delegate = self
+                }
                 return cell
             default:
                 return BaseTableViewCell()
@@ -185,3 +186,23 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
 extension ZatchRegisterFirstViewController{
     
 }
+
+//MARK: - ProductDetailDelegate
+
+extension ZatchRegisterFirstViewController: RegisterCellDelegate{
+    
+    func datePickerWillShow(dateType: ProductDetailInputTableViewCell.ProductDate, cell: ProductDateChoiceTableViewCell) {
+        
+        let vc = DatePickerAlertViewController().show(in: self)
+        vc.titleLabel.text = dateType.rawValue
+        vc.pickerHandler = { array in
+            cell.yearTextField.text = String (array[0])
+            cell.monthTextField.text = String (array[1] + 1)
+            cell.dateTextField.text = String (array[2] + 1)
+            
+            let date = "\(array[0])-\(array[1] + 1)-\(array[2] + 1)"
+            dateType.update(date: date)
+        }
+    }
+}
+
