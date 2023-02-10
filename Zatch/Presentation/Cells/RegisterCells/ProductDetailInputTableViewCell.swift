@@ -9,6 +9,11 @@ import UIKit
 
 class ProductDetailInputTableViewCell: BaseTableViewCell {
     
+    enum ProductDate: String{
+        case buy = "구매일자"
+        case end = "유통기한"
+    }
+    
     //MARK: - Properties
     
     var viewController: ZatchRegisterFirstViewController!
@@ -21,8 +26,8 @@ class ProductDetailInputTableViewCell: BaseTableViewCell {
         $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         
         $0.register(cellType: ProductQuantityUIView.self)
-        $0.register(cellType: ProductDateChoiceUIView.self)
-        $0.register(cellType: ProductDateChoiceUIView.self)
+        $0.register(cellType: ProductDateChoiceTableViewCell.self)
+        $0.register(cellType: ProductDateChoiceTableViewCell.self)
         $0.register(cellType: ProductOpenUIView.self)
     }
     
@@ -68,12 +73,14 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityUIView.self)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceUIView.self)
-            cell.titleLabel.text = "구매일자"
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
+                $0.setTitle(type: .buy)
+            }
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceUIView.self)
-            cell.titleLabel.text = "유통기한"
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
+                $0.setTitle(type: .end)
+            }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductOpenUIView.self)
@@ -99,7 +106,7 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
         let vc = DatePickerAlertViewController()
         vc.titleLabel.text = title
         vc.pickerHandler = { array in
-            guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceUIView else { return }
+            guard let cell = tableView.cellForRow(at: indexPath) as? ProductDateChoiceTableViewCell else { return }
             cell.yearTextField.text = String (array[0])
             cell.monthTextField.text = String (array[1] + 1)
             cell.dateTextField.text = String (array[2] + 1)
