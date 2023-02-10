@@ -299,6 +299,7 @@
 		EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */; };
 		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
 		EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */; };
+		EE73C51A2995FB170000F8AC /* ProductDateChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */; };
 		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
 		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
 		EE9B053529953A1200068503 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B053429953A1200068503 /* FilterView.swift */; };
@@ -643,6 +644,7 @@
 		EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterRequestManager.swift; sourceTree = "<group>"; };
 		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
 		EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectView.swift; sourceTree = "<group>"; };
+		EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDateChoiceTableViewCell.swift; sourceTree = "<group>"; };
 		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
 		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
 		EE9B053429953A1200068503 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
@@ -1090,6 +1092,7 @@
 		23C9031928C5CEDE00FB6D3D /* RegisterCells */ = {
 			isa = PBXGroup;
 			children = (
+				EE73C5182995FB0B0000F8AC /* DetailInput */,
 				574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */,
 				57468AAD28A3A58900056691 /* RegisterCategorySelectWithRankTableViewCell.swift */,
 				57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */,
@@ -1962,6 +1965,14 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		EE73C5182995FB0B0000F8AC /* DetailInput */ = {
+			isa = PBXGroup;
+			children = (
+				EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */,
+			);
+			path = DetailInput;
+			sourceTree = "<group>";
+		};
 		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2492,6 +2503,7 @@
 				EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				57E75ECB28E5482900AC24B2 /* ResultSearchView.swift in Sources */,
+				EE73C51A2995FB170000F8AC /* ProductDateChoiceTableViewCell.swift in Sources */,
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
 				577A01B828A49C97004B2575 /* CheckRegisterInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,

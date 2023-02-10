@@ -146,8 +146,8 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
             }
         }else{
 
-            let vc = DeleteImageDetailViewController()
-            vc.mainView.imageView.image = imageArray[indexPath.row - 1]
+            let image = imageArray[indexPath.row - 1]
+            let vc = DeleteImageDetailViewController(image: image)
             vc.completion = {
                 self.imageArray.remove(at: indexPath.row - 1)
                 self.imageCollectionView.reloadData()
