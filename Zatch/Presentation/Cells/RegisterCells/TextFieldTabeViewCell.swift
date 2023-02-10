@@ -9,20 +9,31 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ProductNameTabeViewCell: BaseTableViewCell, DefaultObservable {
+class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
     
+    enum CellType{
+        case myProduct
+        case firstPriority
+        case secondPriority
+        case thirdPriority
+        case question
+    }
+    
+    var informationType: CellType!{
+        didSet{
+            textField.placeholder = informationType.placeholder
+        }
+    }
     let disposeBag = DisposeBag()
-    let registerManager = ZatchRegisterRequestManager.shared
+    private let registerManager = ZatchRegisterRequestManager.shared
     
     //MARK: - UI
     
-    let boundaryLine = UIView().then{
+    private let boundaryLine = UIView().then{
         $0.backgroundColor = .black5
     }
-    
-    let productNameTextField = UITextField().then{
+    private let textField = UITextField().then{
         $0.font = UIFont.pretendard(family: .Medium)
-        $0.placeholder = "상품 이름을 입력해주세요."
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,7 +48,7 @@ class ProductNameTabeViewCell: BaseTableViewCell, DefaultObservable {
     override func hierarchy(){
         super.hierarchy()
         baseView.addSubview(boundaryLine)
-        baseView.addSubview(productNameTextField)
+        baseView.addSubview(textField)
     }
     
     override func layout(){
@@ -57,14 +68,14 @@ class ProductNameTabeViewCell: BaseTableViewCell, DefaultObservable {
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        productNameTextField.snp.makeConstraints{ make in
+        textField.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(36)
             make.centerY.equalToSuperview()
         }
     }
     
     func bind(){
-        let input: Observable<String> = productNameTextField.rx.text.orEmpty.asObservable()
+        let input: Observable<String> = textField.rx.text.orEmpty.asObservable()
         input.asDriver(onErrorJustReturn: "")
             .drive{
                 self.registerManager.productName = $0
