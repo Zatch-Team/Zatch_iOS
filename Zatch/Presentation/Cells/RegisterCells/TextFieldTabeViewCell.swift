@@ -78,8 +78,37 @@ class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
         let input: Observable<String> = textField.rx.text.orEmpty.asObservable()
         input.asDriver(onErrorJustReturn: "")
             .drive{
-                self.registerManager.productName = $0
+                self.setProductNameToManager($0)
             }.disposed(by: disposeBag)
     }
+    
+    private func setProductNameToManager(_ product: String){
+        switch informationType{
+        case .myProduct:
+            registerManager.productName = product
+            return
+        case .firstPriority:
+            registerManager.firstPriorityProductName = product
+            return
+        case .secondPriority:
+            registerManager.secondPriorityProductName = product
+            return
+        case .thirdPriority:
+            registerManager.thirdPriorityProductName = product
+            return
+        default:
+            return
+        }
+    }
 
+}
+
+
+extension TextFieldTabeViewCell.CellType{
+    var placeholder: String{
+        switch self{
+        case .question:     return "제목을 입력해주세요."
+        default:            return "상품 이름을 입력해주세요."
+        }
+    }
 }
