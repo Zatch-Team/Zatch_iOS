@@ -7,18 +7,17 @@
 
 import UIKit
 
-class FirstProductInfoTableView: BaseTableViewCell {
+class ProductDetailInputTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
     
     var viewController: ZatchRegisterFirstViewController!
-    
+
     //MARK: - UI
     
     let tableView = UITableView().then{
         $0.isScrollEnabled = true
         $0.showsVerticalScrollIndicator = false
-        
         $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         
         $0.register(cellType: ProductQuantityUIView.self)
@@ -57,7 +56,7 @@ class FirstProductInfoTableView: BaseTableViewCell {
     
 }
 
-extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
+extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
