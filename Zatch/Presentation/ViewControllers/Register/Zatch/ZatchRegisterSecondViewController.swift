@@ -11,9 +11,13 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     
     //MARK: - Properties
     
-    var isFieldOpen = [true, false, false]
-    var categoryChoose : [String?] = [nil, nil, nil]
-    var isKeyboardOpen = false
+    private var categoryPriority : [Int?] = [nil, nil, nil]
+    private var isCategoryFieldOpen = [true, false, false]{
+        didSet{
+            mainView.tableView.reloadData()
+        }
+    }
+    private var isKeyboardOpen = false
 
     //MARK: - LifeCycle
     
@@ -28,7 +32,6 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     override func initialize() {
-        
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
         mainView.tableView.separatorStyle = .none
@@ -39,7 +42,6 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     override func bind() {
-        
         mainView.topRadioButtonFrame.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] in
@@ -104,15 +106,16 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 || isFieldOpen[section] ? 2 : 1
+        return section == 0 || isCategoryFieldOpen[section] ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row == 0){
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
-            cell.rankLabel.text = "\(indexPath.section + 1)순위"
-//            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
+                $0.setPriorityTitle(section: indexPath.section)
+                $0.setCategoryTitle(id: categoryPriority[indexPath.section])
+            }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
@@ -124,42 +127,26 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //TODO: 키보드 제어...
         if(isKeyboardOpen){
             dismissKeyboardView()
-        }else{
-            if(indexPath.row == 0){
-                let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
-                sheet.completion = { category in
-                    
-                    let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
-//                    self.categoryChoose[indexPath.section] = category.0
-                    
-                    if(!self.isFieldOpen[indexPath.section]){
-                        self.isFieldOpen[indexPath.section] = true
-                    }
-                    
-                    self.mainView.tableView.reloadData()
-                    
-                    if(indexPath.section == 2){
-                        self.mainView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
-                    }
+            return
+        }
+        
+        if(indexPath.row == 0){
+            let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
+            sheet.completion = { categoryId in
+                
+                let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
+                    $0.setCategoryTitle(id: categoryId)
+                }
+                self.categoryPriority[indexPath.section] = categoryId
+                self.isCategoryFieldOpen[indexPath.section] = true
+                
+                if(indexPath.section == 2){
+                    self.mainView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
                 }
             }
         }
     }
-}
-
-extension ZatchRegisterSecondViewController: UITextFieldDelegate{
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if(textField.tag == 2){
-            UIView.animate(withDuration: 0.3){
-                self.view.window?.frame.origin.y -= 80
-            }
-        }
-        
-        self.isKeyboardOpen = true
-    }
-    
 }
