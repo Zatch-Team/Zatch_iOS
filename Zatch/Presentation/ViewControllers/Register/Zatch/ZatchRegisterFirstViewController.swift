@@ -12,8 +12,9 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     
     //MARK: - Properties
     
-    let categoryCellIndex: IndexPath = [0,0]
-    let productNameCellIndex: IndexPath = [0,1]
+    private let categoryCellIndex: IndexPath = [0,0]
+    private let productNameCellIndex: IndexPath = [0,1]
+    private let informationDetailOpenCellIndex: IndexPath = [1,0]
     
     var isOpen = false
     let registerManager = ZatchRegisterRequestManager.shared
