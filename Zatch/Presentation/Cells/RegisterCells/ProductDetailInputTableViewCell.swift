@@ -27,10 +27,10 @@ class ProductDetailInputTableViewCell: BaseTableViewCell {
         $0.showsVerticalScrollIndicator = false
         $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         
-        $0.register(cellType: ProductQuantityUIView.self)
+        $0.register(cellType: ProductQuantityTableViewCell.self)
         $0.register(cellType: ProductDateChoiceTableViewCell.self)
         $0.register(cellType: ProductDateChoiceTableViewCell.self)
-        $0.register(cellType: ProductOpenUIView.self)
+        $0.register(cellType: ProductIsOpenTableViewCell.self)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -72,7 +72,7 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row{
         case 0:
-            return tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityUIView.self)
+            return tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self)
         case 1:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
                 $0.setTitle(type: .buy)
@@ -84,7 +84,7 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
             }
             return cell
         case 3:
-            return tableView.dequeueReusableCell(for: indexPath, cellType: ProductOpenUIView.self)
+            return tableView.dequeueReusableCell(for: indexPath, cellType: ProductIsOpenTableViewCell.self)
         default:
             return BaseTableViewCell()
         }
