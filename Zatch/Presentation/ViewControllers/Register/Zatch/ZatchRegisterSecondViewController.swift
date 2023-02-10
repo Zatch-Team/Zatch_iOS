@@ -102,7 +102,7 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectWithRankTableViewCell.self)
             cell.rankLabel.text = "\(indexPath.section + 1)순위"
-            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
+//            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
@@ -121,8 +121,8 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
                 let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
                 sheet.completion = { category in
                     
-                    let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
-                    self.categoryChoose[indexPath.section] = category.0
+                    let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectTableViewCell.self)
+//                    self.categoryChoose[indexPath.section] = category.0
                     
                     if(!self.isFieldOpen[indexPath.section]){
                         self.isFieldOpen[indexPath.section] = true

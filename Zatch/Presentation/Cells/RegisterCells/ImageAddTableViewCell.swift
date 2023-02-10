@@ -138,7 +138,7 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
                 alert.addAction(cameraBtn)
                 alert.addAction(cancelBtn)
                 
-                self.navigationController.present(alert, animated: true, completion: nil)
+                self.navigationController?.present(alert, animated: true, completion: nil)
                 
             }else{
                 _ = Alert.ImageMax.generateAlert().show(in: self.navigationController)

@@ -16,10 +16,14 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     private let productNameCellIndex: IndexPath = [0,1]
     private let informationDetailOpenCellIndex: IndexPath = [1,0]
     
-    var isOpen = false
-    let registerManager = ZatchRegisterRequestManager.shared
-    let viewModel = ZatchRegisterFirstViewModel()
-    let categoryBottomSheet = CategorySheetViewController()
+    private var isInformationDetailCellOpen = false{
+        didSet{
+            mainView.backTableView.reloadSections(IndexSet.init(integer: 1), with: .none)
+        }
+    }
+    private let registerManager = ZatchRegisterRequestManager.shared
+    private let viewModel = ZatchRegisterFirstViewModel()
+    private let categoryBottomSheet = CategorySheetViewController()
     
     init(){
         super.init(headerView: LeftNavigationHeaderView(title: "재치 등록하기"),
@@ -27,7 +31,8 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(headerView: LeftNavigationHeaderView(title: "재치 등록하기"),
+                   mainView: ZatchRegisterFirstView())
     }
     
     //MARK: - Override
@@ -45,16 +50,16 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
         
         categoryBottomSheet.rx.viewWillAppear
             .map{ _ in }
-            .bind(onNext: {
-                let cell = self.mainView.backTableView.cellForRow(at: self.categoryCellIndex, cellType: CategorySelectTableViewCell.self)
-                cell.arrowImage.isSelected = true
+            .bind(onNext: { [self] in
+                let cell = mainView.backTableView.cellForRow(at: categoryCellIndex, cellType: RegisterCategorySelectTableViewCell.self)
+                cell.isSubViewOpen = true
             }).disposed(by: disposeBag)
         
         categoryBottomSheet.rx.viewWillDisappear
             .map{ _ in }
             .bind(onNext: {
-                let cell = self.mainView.backTableView.cellForRow(at: self.categoryCellIndex, cellType: CategorySelectTableViewCell.self)
-                cell.arrowImage.isSelected = false
+                let cell = self.mainView.backTableView.cellForRow(at: self.categoryCellIndex, cellType: RegisterCategorySelectTableViewCell.self)
+                cell.isSubViewOpen = false
             }).disposed(by: disposeBag)
         
         mainView.nextButton.rx.tap
@@ -109,14 +114,14 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         if(section == 0){
             return 3
         }
-        return isOpen ? 2 : 1
+        return isInformationDetailCellOpen ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.section == 0){
             switch indexPath.row {
             case 0:
-                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectTableViewCell.self)
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectTableViewCell.self)
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
@@ -131,9 +136,10 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         }else{
             switch indexPath.row {
             case 0:
-                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CategorySelectTableViewCell.self)
-                cell.categoryText.text = "입력사항 더보기"
-                cell.arrowImage.isSelected = !isOpen
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectTableViewCell.self).then{
+                    $0.setDefaultTitle("입력사항 더보기")
+                    $0.isSubViewOpen = !isInformationDetailCellOpen
+                }
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FirstProductInfoTableView.self)
@@ -149,21 +155,29 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         
         self.view.endEditing(true)
         
-        if(indexPath == categoryCellIndex){
-            _ = categoryBottomSheet.show(in: self)
-            categoryBottomSheet.completion = { category in
-                let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
-                cell.categoryText.text = category.0
-                self.registerManager.categoryId = category.1
-            }
-            
-        }else if(indexPath == [1,0]){
-            let cell = tableView.cellForRow(at: indexPath, cellType: CategorySelectTableViewCell.self)
-            isOpen.toggle()
-            cell.arrowImage.isSelected = isOpen
-            self.mainView.backTableView.reloadSections(IndexSet.init(integer: indexPath.section), with: .none)
+        switch indexPath{
+        case categoryCellIndex:
+            categoryBottomSheetWillOpen()
+            return
+        case informationDetailOpenCellIndex:
+            informationDetailInputCellWillOpen()
+            return
+        default:
+            return
         }
     }
     
+    private func categoryBottomSheetWillOpen(){
+        _ = categoryBottomSheet.show(in: self)
+        categoryBottomSheet.completion = { [self] categoryId in
+            let cell = mainView.backTableView.cellForRow(at: categoryCellIndex, cellType: RegisterCategorySelectTableViewCell.self)
+            cell.setCategoryTitle(id: categoryId)
+            self.registerManager.categoryId = categoryId
+        }
+    }
+    
+    private func informationDetailInputCellWillOpen(){
+        isInformationDetailCellOpen.toggle()
+    }
 }
 

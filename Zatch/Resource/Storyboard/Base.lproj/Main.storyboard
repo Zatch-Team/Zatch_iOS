@@ -1,71 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1x8-qs-7k3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IhO-2R-Axo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="BbO-4x-qEE">
+        <!--Zatch Register First View Controller-->
+        <scene sceneID="taS-U0-2JF">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="1x8-qs-7k3" customClass="ViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XUy-vJ-xEE">
+                <viewController modalPresentationStyle="fullScreen" id="PQU-fM-ZNj" customClass="ZatchRegisterFirstViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RAj-80-sbT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O89-Af-Wbe">
-                                <rect key="frame" x="163" y="177" width="66" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Gomin"/>
-                                <connections>
-                                    <segue destination="oAb-ch-SD2" kind="show" id="C4F-Qa-v4a"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4X-FD-fAy">
-                                <rect key="frame" x="160" y="321" width="71" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Ssooya"/>
-                                <connections>
-                                    <segue destination="lfR-oN-EVF" kind="show" id="6u0-uY-uEm"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Oxr-Ho-Rd5"/>
+                        <viewLayoutGuide key="safeArea" id="SuJ-JB-bim"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="O89-Af-Wbe" firstAttribute="centerY" secondItem="Oxr-Ho-Rd5" secondAttribute="centerY" id="VPM-AC-nAT"/>
-                            <constraint firstItem="O89-Af-Wbe" firstAttribute="centerX" secondItem="Oxr-Ho-Rd5" secondAttribute="centerX" id="cpa-GI-yfc"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oMv-wv-rhU"/>
+                    <navigationItem key="navigationItem" id="FCO-lG-s7n"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="shY-m5-DhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snF-iV-nt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5934.7826086956529" y="136.60714285714286"/>
+            <point key="canvasLocation" x="915.94202898550736" y="80.357142857142847"/>
         </scene>
-        <!--SsooyaStoryboard-->
-        <scene sceneID="Lgf-sp-rDS">
+        <!--Navigation Controller-->
+        <scene sceneID="2Fa-se-JDr">
             <objects>
-                <viewControllerPlaceholder storyboardName="SsooyaStoryboard" id="lfR-oN-EVF" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="pnR-0t-Cp5"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dxH-82-DMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="IhO-2R-Axo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ls5-zu-oe5">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PQU-fM-ZNj" kind="relationship" relationship="rootViewController" id="Glp-Ha-y4M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aa0-BJ-Hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6432" y="238"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="80.357142857142847"/>
         </scene>
-        <!--GominStoryboard-->
-        <scene sceneID="idc-SQ-xaO">
+        <!--Tab Bar Controller-->
+        <scene sceneID="XbC-dz-4Md">
             <objects>
-                <viewControllerPlaceholder storyboardName="GominStoryboard" id="oAb-ch-SD2" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Eab-oS-1Ot"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dvu-cT-6Fm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="Ynj-Qs-0DW" customClass="TabBarController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M0H-4e-AOe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Fn-zm-M7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6440" y="-27"/>
+            <point key="canvasLocation" x="6" y="1132"/>
         </scene>
     </scenes>
     <resources>

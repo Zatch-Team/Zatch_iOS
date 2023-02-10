@@ -105,11 +105,11 @@ extension FirstProductInfoTableView: UITableViewDelegate, UITableViewDataSource{
             cell.monthTextField.text = String (array[1] + 1)
             cell.dateTextField.text = String (array[2] + 1)
             
-            if(indexPath.row == 1){
-                self.viewController.registerManager.buyDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
-            }else{
-                self.viewController.registerManager.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
-            }
+//            if(indexPath.row == 1){
+//                self.viewController.registerManager.buyDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
+//            }else{
+//                self.viewController.registerManager.endDate = "\(array[0])/\(array[1] + 1)/\(array[2] + 1)"
+//            }
         }
         _ = vc.show(in: viewController)
     }

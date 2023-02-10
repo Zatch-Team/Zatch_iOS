@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategorySelectWithRankTableViewCell: CategorySelectTableViewCell {
+class CategorySelectWithRankTableViewCell: RegisterCategorySelectTableViewCell {
     
     let rankLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
