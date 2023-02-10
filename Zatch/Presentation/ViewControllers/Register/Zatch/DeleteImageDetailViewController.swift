@@ -9,9 +9,11 @@ import UIKit
 
 class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView> {
     
+    private let image: UIImage
     var completion: (() -> Void)!
-
-    init(){
+    
+    init(image: UIImage){
+        self.image = image
         super.init(headerView: EtcButtonHeaderView(title: "삭제"),
                    mainView: ImageDetailView())
     }
@@ -22,6 +24,7 @@ class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, I
     
     override func initialize() {
         super.initialize()
+        mainView.imageView.image = image
         headerView.etcButton.addTarget(self, action: #selector(deleteButtonDidClicked), for: .touchUpInside)
     }
     

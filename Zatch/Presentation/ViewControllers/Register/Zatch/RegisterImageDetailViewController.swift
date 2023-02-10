@@ -12,7 +12,7 @@ class RegisterImageDetailViewController: BaseViewController<EtcButtonHeaderView,
     //MARK: - Properties
     
     var completion: (() -> ())!
-    private var image: UIImage
+    private let image: UIImage
     
     init(image: UIImage){
         self.image = image
@@ -23,14 +23,10 @@ class RegisterImageDetailViewController: BaseViewController<EtcButtonHeaderView,
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func style() {
-        super.style()
-        mainView.imageView.image = image
-    }
-    
+
     override func initialize() {
         super.initialize()
+        mainView.imageView.image = image
         headerView.etcButton.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
     }
     
