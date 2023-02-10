@@ -11,6 +11,12 @@ class RegisterCategorySelectTableViewCell: BaseTableViewCell {
 
     //MARK: - UI
     
+    var isSubViewOpen = false{
+        didSet{
+            arrowImage.isSelected = isSubViewOpen
+        }
+    }
+    
     let categoryFrame = UIView()
     
     let boundaryLine = UIView().then{
