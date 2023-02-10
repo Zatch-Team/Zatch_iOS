@@ -28,8 +28,6 @@ class ProductIsOpenTableViewCell: BaseTableViewCell {
         $0.addTarget(self, action: #selector(radioButtonSelectListener(_:)), for: .touchUpInside)
     }
     
-//    let backView = UIView()
-    
     let stackView = UIStackView().then{
         $0.spacing = 8
         $0.axis = .horizontal
