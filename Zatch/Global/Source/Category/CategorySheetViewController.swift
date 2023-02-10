@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-
-class CategorySheetViewController: BaseBottomSheetViewController<(String, Int)> {
+class CategorySheetViewController: BaseBottomSheetViewController<Int> {
     
     //MARK: - Properties
     
@@ -89,7 +88,7 @@ extension CategorySheetViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        completion((self.service.getCategoryFromCategories(at: indexPath.row).title, indexPath.row))
+        completion(indexPath.row)
         self.dismiss(animated: true, completion: nil)
     }
 }
