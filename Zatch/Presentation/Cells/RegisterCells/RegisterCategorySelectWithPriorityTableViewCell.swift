@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterCategorySelectWithRankTableViewCell: BaseTableViewCell {
+class RegisterCategorySelectWithPriorityTableViewCell: BaseTableViewCell {
     
     let rankLabel = UILabel().then{
         $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
