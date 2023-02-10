@@ -24,4 +24,8 @@ struct Const{
         static let headerTop = 47
     }
     
+    struct ViewTag{
+        static let select = 1
+        static let unselect = 0
+    }
 }
