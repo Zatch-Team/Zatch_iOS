@@ -23,7 +23,7 @@ extension ZatchComponent{
     class YellowTag: Tag{
         
         init(configuration: ZatchComponent.Tag.TagType){
-            super.init(color: .purple, configuration: configuration)
+            super.init(color: .yellow, configuration: configuration)
         }
         
         required init?(coder: NSCoder) {
