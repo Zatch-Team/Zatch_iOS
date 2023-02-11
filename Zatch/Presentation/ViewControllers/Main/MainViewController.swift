@@ -78,8 +78,8 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     @objc func goSearchButtonDidTap() {
-//        self.navigationController?.pushViewController(MySearchViewController(),
-//                                                      animated: true)
+        self.navigationController?.pushViewController(ExchangeMyZatchSearchViewController(),
+                                                      animated: true)
     }
     
     @objc func goNotiButtonDidTap() {

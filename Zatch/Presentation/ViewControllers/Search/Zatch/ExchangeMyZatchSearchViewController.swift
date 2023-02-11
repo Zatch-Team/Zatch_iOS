@@ -12,7 +12,7 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     
     //MARK: - Properties
     
-    let myZatchData: [String] = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
+    let zatches = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
     
     var currentSelect: Int = -1
     
@@ -63,60 +63,33 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     }
 }
 
-extension ExchangeMyZatchSearchViewController: CellDelegate{
-    
-    func cellDidSelected(_ indexPath: IndexPath){
-        if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
-            currentTag.setBtnInitState()
-        }
-        
-        if(currentSelect == indexPath.row){
-            currentSelect = -1
-            mainView.selectTextField.text = ""
-        }else{
-            if let newTag = mainView.collectionView.cellForItem(at: indexPath) as? MySearchTagCollectionViewCell{
-                newTag.setBtnSelectedState()
-                mainView.selectTextField.text = myZatchData[indexPath.row]
-                currentSelect = indexPath.row
-            }
-        }
-    }
-    
-    func cellDidSelected(_ cell: UICollectionViewCell) { }
-}
-
 extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myZatchData.count
+        return zatches.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MySearchTagCollectionViewCell.cellIdentifier,
-                                                            for: indexPath)
-                as? MySearchTagCollectionViewCell else{ fatalError() }
-        
-        cell.delegate = self
-        cell.selectBtn.setTitle(myZatchData[indexPath.row], for: .normal)
-        cell.setBtnInitState()
-        
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
+            $0.setTitle(zatches[indexPath.row])
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let tmpLabel = UILabel().then{
-            $0.text = myZatchData[indexPath.row]
-            $0.numberOfLines = 1
-            $0.sizeToFit()
+        return SearchTagCollectionViewCell.getEstimatedSize(title: zatches[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
+            cell.setSelectState()
         }
-
-        let width = tmpLabel.frame.size.width
-        
-        let adjustWidth = myZatchData[indexPath.row].count < 6 ? width + 18 : width
-        
-        return CGSize(width: adjustWidth, height: 28)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
+            cell.setDeselectState()
+        }
     }
 }
 
