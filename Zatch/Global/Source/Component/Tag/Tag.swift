@@ -33,6 +33,11 @@ extension ZatchComponent{
     
     class Tag: UILabel{
         
+        var isDisabled = false{
+            didSet{
+                isDisabled ? setDisabledState() : setNormalState()
+            }
+        }
         var isSelected = false{
             didSet{
                 isSelected ? setSelectState() : setNormalState()
@@ -87,6 +92,11 @@ extension ZatchComponent{
         private func setNormalState(){
             self.textColor = colorType.textColor
             self.backgroundColor = colorType.backgroundColor
+        }
+        
+        private func setDisabledState(){
+            self.textColor = colorType.disabledTextColor
+            self.backgroundColor = colorType.disabledBackgroundColor
         }
         
         private func setSelectState(){

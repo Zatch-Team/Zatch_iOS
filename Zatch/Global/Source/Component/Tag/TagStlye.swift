@@ -26,6 +26,8 @@ extension ZatchComponent.Tag.TagColor{
         let backgroundColor: UIColor
         let selectedTextColor: UIColor = .white
         let selectedBackgroundColor: UIColor
+        let disabledTextColor: UIColor
+        let disabledBackgroundColor: UIColor
     }
     
     private var colorInfo: TagColorStyle{
@@ -33,11 +35,15 @@ extension ZatchComponent.Tag.TagColor{
         case .purple:
             return TagColorStyle(textColor: .zatchPurple,
                                  backgroundColor: .purple40,
-                                 selectedBackgroundColor: .zatchPurple)
+                                 selectedBackgroundColor: .zatchPurple,
+                                 disabledTextColor: .black20,
+                                 disabledBackgroundColor: .black10)
         case .yellow:
             return TagColorStyle(textColor: .zatchDeepYellow,
                                  backgroundColor: .yellow40,
-                                 selectedBackgroundColor: .zatchDeepYellow)
+                                 selectedBackgroundColor: .zatchDeepYellow,
+                                 disabledTextColor: .black20,
+                                 disabledBackgroundColor: .black10)
         }
     }
     
@@ -55,6 +61,14 @@ extension ZatchComponent.Tag.TagColor{
     
     var selectedBackgroundColor: UIColor{
         colorInfo.selectedBackgroundColor
+    }
+    
+    var disabledTextColor: UIColor{
+        colorInfo.disabledTextColor
+    }
+    
+    var disabledBackgroundColor: UIColor{
+        colorInfo.disabledBackgroundColor
     }
 }
 
