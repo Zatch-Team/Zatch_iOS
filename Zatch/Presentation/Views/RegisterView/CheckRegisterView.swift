@@ -132,3 +132,82 @@ class CheckRegisterView: BaseView {
     }
 }
 
+extension CheckRegisterView{
+    
+    class MyProductDetailView: UIStackView{
+        
+        let endDateFrame = MyProductInfoStackView(title: "유통기한")
+        let buyDateFrame = MyProductInfoStackView(title: "구매 일자")
+        let countFrame = MyProductInfoStackView(title: "수량")
+        let openFrame = MyProductInfoStackView(title: "개봉 상태")
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            hierarchy()
+            style()
+        }
+        
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func hierarchy(){
+            self.addArrangedSubview(endDateFrame)
+            self.addArrangedSubview(buyDateFrame)
+            self.addArrangedSubview(countFrame)
+            self.addArrangedSubview(openFrame)
+        }
+        
+        private func style(){
+            self.axis = .vertical
+            self.spacing = 8
+            self.alignment = .leading
+        }
+    }
+}
+
+extension CheckRegisterView.MyProductDetailView{
+    
+    class MyProductInfoStackView: UIStackView{
+        
+        private let titleLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
+            $0.textColor = .black85
+        }
+        private let infoLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
+            $0.textColor = .black85
+            $0.text = "2022/02/03"
+        }
+        
+        init(title: String){
+            self.titleLabel.text = title
+            super.init(frame: .zero)
+            style()
+            layout()
+        }
+        
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func style(){
+            self.spacing = 10
+            self.axis = .horizontal
+        }
+        
+        private func layout(){
+            self.addArrangedSubview(titleLabel)
+            self.addArrangedSubview(infoLabel)
+            
+            titleLabel.snp.makeConstraints{
+                $0.width.equalTo(47)
+            }
+        }
+        
+        func setInfo(value: String){
+            infoLabel.text = value
+        }
+        
+    }
+}
