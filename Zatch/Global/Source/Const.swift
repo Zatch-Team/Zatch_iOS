@@ -23,9 +23,10 @@ struct Const{
         static let TOP_OFFSET = 107 //navigationView 고려한 top offset
         static let headerTop = 47
     }
-    
-    struct ViewTag{
-        static let select = 1
-        static let unselect = 0
-    }
+}
+
+struct ViewTag{
+    static let normal = 1
+    static let select = 2
+    static let deselect = 3
 }

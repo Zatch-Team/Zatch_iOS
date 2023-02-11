@@ -99,7 +99,7 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     @objc func radioButtonDidSelected(_ sender: UITapGestureRecognizer){
         
         guard let selectView = sender.view as? ZatchComponent.RadioButtonView,
-              let willDeselectView = view.viewWithTag(Const.ViewTag.select) as? ZatchComponent.RadioButtonView else { return }
+              let willDeselectView = view.viewWithTag(ViewTag.select) as? ZatchComponent.RadioButtonView else { return }
         
         selectView.isSelected = true
         willDeselectView.isSelected = false
