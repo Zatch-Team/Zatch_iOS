@@ -8,7 +8,16 @@
 import UIKit
 
 class CheckRegisterView: BaseView {
-
+    
+    init(infoView: BaseView){
+        self.infoFrame = infoView
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Properties
 
     static let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
@@ -20,12 +29,10 @@ class CheckRegisterView: BaseView {
     }
 
     let photoFrame = UIView()
-
     let photoTitle = UILabel().then{
         $0.text = "사진"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-
     let photoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -40,13 +47,12 @@ class CheckRegisterView: BaseView {
         $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
     }
 
-    var infoFrame : UIView!
+    let infoFrame: BaseView
     
     let addTitle = UILabel().then{
         $0.text = "추가 설명"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-
     let addExplainTextView = UITextView().then{
         $0.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         $0.layer.borderWidth = 1
@@ -88,13 +94,11 @@ class CheckRegisterView: BaseView {
             make.height.equalTo(129)
             make.trailing.equalToSuperview()
         }
-
         photoTitle.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(36)
             make.top.equalToSuperview().offset(9)
             make.height.equalTo(17)
         }
-
         photoCollectionView.snp.makeConstraints{ make in
             make.top.equalTo(photoTitle.snp.bottom).offset(19)
             make.leading.trailing.equalToSuperview()
@@ -103,7 +107,7 @@ class CheckRegisterView: BaseView {
         }
 
         infoFrame.snp.makeConstraints{ make in
-            make.top.equalTo(photoFrame.snp.bottom)
+            make.top.equalTo(photoFrame.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(166)
         }
@@ -113,7 +117,6 @@ class CheckRegisterView: BaseView {
             make.top.equalTo(infoFrame.snp.bottom).offset(18)
             make.height.equalTo(17)
         }
-
         addExplainTextView.snp.makeConstraints{ make in
             make.top.equalTo(addTitle.snp.bottom).offset(11)
             make.leading.equalToSuperview().offset(24)
