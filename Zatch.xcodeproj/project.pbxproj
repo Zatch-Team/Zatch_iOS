@@ -148,7 +148,7 @@
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
 		576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */; };
 		576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */; };
-		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
+		5767752C281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */; };
 		5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */; };
 		5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */; };
 		5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */; };
@@ -487,7 +487,7 @@
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
 		576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownMapAlertViewController.swift; sourceTree = "<group>"; };
 		576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMapAlertViewController.swift; sourceTree = "<group>"; };
-		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
+		5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeMyZatchSearchViewController.swift; sourceTree = "<group>"; };
 		5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailViewController.swift; sourceTree = "<group>"; };
 		5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1334,7 +1334,7 @@
 		57397FC6296FBD040088B5F4 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				5767752B281CDA4B000BC7CD /* MySearchViewController.swift */,
+				5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */,
 				579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */,
 				579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */,
 			);
@@ -2332,7 +2332,7 @@
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift in Sources */,
 				EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */,
-				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
+				5767752C281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */,
 				576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */,
 				EE73C51C299600230000F8AC /* RegisterCellDelegate.swift in Sources */,

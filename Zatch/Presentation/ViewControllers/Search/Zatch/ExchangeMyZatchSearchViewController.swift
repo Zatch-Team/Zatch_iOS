@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  ExchangeMyZatchSearchViewController.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/04/30.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MySearchViewController: BaseViewController<BaseHeaderView, MySearchView>{
+class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, MySearchView>{
     
     //MARK: - Properties
     
@@ -63,7 +63,7 @@ class MySearchViewController: BaseViewController<BaseHeaderView, MySearchView>{
     }
 }
 
-extension MySearchViewController: CellDelegate{
+extension ExchangeMyZatchSearchViewController: CellDelegate{
     
     func cellDidSelected(_ indexPath: IndexPath){
         if let currentTag = mainView.collectionView.cellForItem(at: [0, currentSelect]) as? MySearchTagCollectionViewCell {
@@ -85,7 +85,7 @@ extension MySearchViewController: CellDelegate{
     func cellDidSelected(_ cell: UICollectionViewCell) { }
 }
 
-extension MySearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myZatchData.count
