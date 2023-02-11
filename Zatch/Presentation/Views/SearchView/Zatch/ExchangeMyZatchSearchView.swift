@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MySearchView: BaseView {
+class ExchangeMyZatchSearchView: BaseView {
     
     //MARK: UI
     
@@ -48,12 +48,11 @@ class MySearchView: BaseView {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         
         let layout = LeftAlignCollectionViewFlowLayout()
-        layout.minimumLineSpacing = 12
-        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 4
         
         $0.collectionViewLayout = layout
-        
-        $0.register(MySearchTagCollectionViewCell.self, forCellWithReuseIdentifier: MySearchTagCollectionViewCell.cellIdentifier)
+        $0.register(cellType: SearchTagCollectionViewCell.self)
     }
     
     override func hierarchy() {

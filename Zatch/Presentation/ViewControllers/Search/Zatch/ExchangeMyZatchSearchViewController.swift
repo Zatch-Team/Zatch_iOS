@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, MySearchView>{
+class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, ExchangeMyZatchSearchView>{
     
     //MARK: - Properties
     
@@ -19,7 +19,7 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, My
     //MARK: - LifeCycle
 
     init(){
-        super.init(headerView: BaseHeaderView(), mainView: MySearchView())
+        super.init(headerView: BaseHeaderView(), mainView: ExchangeMyZatchSearchView())
     }
     
     required init?(coder: NSCoder) {
