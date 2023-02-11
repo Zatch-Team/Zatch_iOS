@@ -9,11 +9,12 @@ import UIKit
 
 class CheckShareRegisterViewController: CheckRegisterViewController {
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-
-        mainView.infoFrame = CheckShareRegisterView()
+    init(){
+        super.init(infoView: CheckShareRegisterView())
     }
-
+    
+    required init?(coder: NSCoder) {
+        super.init(infoView: CheckShareRegisterView())
+    }
+    
 }
