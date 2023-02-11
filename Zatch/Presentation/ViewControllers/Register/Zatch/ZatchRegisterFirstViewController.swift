@@ -70,12 +70,6 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
             .bind{
                 self.nextBtnDidClicked()
             }.disposed(by: disposeBag)
-        
-//        self.view.rx.tapGesture()
-//            .when(.recognized)
-//            .bind(onNext: { _ in
-//                self.view.endEditing(true)
-//            }).disposed(by: disposeBag)
     }
     
     //MARK: - Action
