@@ -14,7 +14,7 @@ extension ZatchComponent{
         var isSelected = false{
             didSet{
                 radioButton.isSelected = isSelected
-                self.tag = isSelected ? Const.ViewTag.select : Const.ViewTag.unselect
+                self.tag = isSelected ? ViewTag.select : ViewTag.normal
             }
         }
         

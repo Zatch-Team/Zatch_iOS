@@ -18,6 +18,15 @@ class ZatchRegisterRequestManager{
     var endDate: String = ""
     var isOpen: Bool = false
     
+    var firstPriorityCategoryId: Int = -1
+    var secondPriorityCategoryId: Int = -1
+    var thirdPriorityCategoryId: Int = -1
+    var firstPriorityProductName: String = ""
+    var secondPriorityProductName: String = ""
+    var thirdPriorityProductName: String = ""
+    var isAnyZatch: Bool = false
+    var isShare: Bool = false
+    
     func initialize(){
         categoryId = -1
         productName = ""
@@ -25,5 +34,14 @@ class ZatchRegisterRequestManager{
         buyDate = ""
         endDate = ""
         isOpen = false
+        
+        firstPriorityCategoryId = -1
+        secondPriorityCategoryId = -1
+        thirdPriorityCategoryId = -1
+        firstPriorityProductName = ""
+        secondPriorityProductName = ""
+        thirdPriorityProductName = ""
+        isAnyZatch = false
+        isShare = false
     }
 }

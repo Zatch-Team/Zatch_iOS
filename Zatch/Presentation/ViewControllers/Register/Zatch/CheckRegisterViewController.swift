@@ -11,9 +11,9 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
     
     //MARK: - LifeCycle
     
-    init(){
+    init(infoView: BaseView){
         super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
-                   mainView: CheckRegisterView())
+                   mainView: CheckRegisterView(infoView: infoView))
     }
     
     required init?(coder: NSCoder) {

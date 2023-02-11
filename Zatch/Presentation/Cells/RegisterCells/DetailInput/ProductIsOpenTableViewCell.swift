@@ -6,43 +6,34 @@
 //
 
 import Foundation
+import RxSwift
 
-class ProductIsOpenTableViewCell: BaseTableViewCell {
+class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
+    
+    let disposeBag = DisposeBag()
+    let registerManager = ZatchRegisterRequestManager.shared
     
     let titleLabel = UILabel().then{
         $0.text = "개봉상태"
         $0.textColor = .black
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-    
-    var radioButtonArray : [ZatchTextRadioButton]!
-    
-    let unOpenRadioButton = ZatchTextRadioButton().then{
-        $0.setTitle("미개봉", for: .normal)
-        $0.isSelected = true
-        $0.addTarget(self, action: #selector(radioButtonSelectListener(_:)), for: .touchUpInside)
-    }
-    
-    let openRadioButton = ZatchTextRadioButton().then{
-        $0.setTitle("개봉", for: .normal)
-        $0.addTarget(self, action: #selector(radioButtonSelectListener(_:)), for: .touchUpInside)
-    }
-    
-    let stackView = UIStackView().then{
+    let tagStackView = UIStackView().then{
         $0.spacing = 8
         $0.axis = .horizontal
     }
-    
-    var currentSelect : ZatchTextRadioButton!
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        currentSelect = unOpenRadioButton
-
+    let unOpenRadioButton = ZatchComponent.PurlpleTag(configuration: .height20).then{
+        $0.setTitle("미개봉")
+    }
+    let openRadioButton = ZatchComponent.PurlpleTag(configuration: .height20).then{
+        $0.setTitle("개봉")
+        $0.isDisabled = true
     }
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        bind()
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,14 +42,15 @@ class ProductIsOpenTableViewCell: BaseTableViewCell {
         super.hierarchy()
         
         baseView.addSubview(titleLabel)
-        baseView.addSubview(stackView)
+        baseView.addSubview(tagStackView)
         
-        stackView.addArrangedSubview(unOpenRadioButton)
-        stackView.addArrangedSubview(openRadioButton)
+        tagStackView.addArrangedSubview(unOpenRadioButton)
+        tagStackView.addArrangedSubview(openRadioButton)
         
     }
     
     override func layout() {
+        
         super.layout()
         
         baseView.snp.updateConstraints{
@@ -67,7 +59,6 @@ class ProductIsOpenTableViewCell: BaseTableViewCell {
         
         baseView.snp.makeConstraints{
             $0.height.equalTo(37)
-            $0.leading.trailing.bottom.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints{ make in
@@ -75,30 +66,34 @@ class ProductIsOpenTableViewCell: BaseTableViewCell {
             make.centerY.equalToSuperview()
         }
         
-        stackView.snp.makeConstraints{ make in
+        tagStackView.snp.makeConstraints{ make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(titleLabel.snp.trailing).offset(12)
-            make.width.equalTo(100)
-            make.height.equalTo(20)
-        }
-        
-        unOpenRadioButton.snp.makeConstraints{ make in
-            make.width.equalTo(48)
-            make.height.equalTo(20)
-        }
-        
-        openRadioButton.snp.makeConstraints{ make in
-            make.width.equalTo(37)
-            make.height.equalTo(20)
+            make.leading.equalTo(titleLabel.snp.trailing).offset(20)
         }
     }
     
-    @objc func radioButtonSelectListener(_ sender: ZatchTextRadioButton){
-        if(currentSelect != sender){
-            currentSelect.isSelected = false
-            sender.isSelected = true
-            currentSelect = sender
-        }
+    func bind() {
+        unOpenRadioButton.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] in
+                self?.registerManager.isOpen = false
+                self?.changeTagState(recognizer: $0)
+            }).disposed(by: disposeBag)
+        
+        openRadioButton.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] in
+                self?.registerManager.isOpen = true
+                self?.changeTagState(recognizer: $0)
+            }).disposed(by: disposeBag)
     }
-
+    
+    private func changeTagState(recognizer: UITapGestureRecognizer){
+        
+        guard let selectTag = recognizer.view as? ZatchComponent.PurlpleTag,
+              let willDisabledTag = tagStackView.viewWithTag(ViewTag.normal) as? ZatchComponent.PurlpleTag else { return }
+        
+        willDisabledTag.isDisabled = true
+        selectTag.isDisabled = false
+    }
 }

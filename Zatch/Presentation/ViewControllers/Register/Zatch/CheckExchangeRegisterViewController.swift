@@ -9,11 +9,13 @@ import UIKit
 
 class CheckExchangeRegisterViewController: CheckRegisterViewController {
 
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        mainView.infoFrame = CheckExchangeRegisterView()
+    init(){
+        super.init(infoView: CheckExchangeRegisterInfoView())
     }
-
+    
+    required init?(coder: NSCoder) {
+        super.init(infoView: CheckExchangeRegisterInfoView())
+    }
+    
 }
+

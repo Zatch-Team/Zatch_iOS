@@ -37,6 +37,10 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     
     //MARK: - Override
     
+    override func viewWillAppear(_ animated: Bool) {
+        registerManager.initialize()
+    }
+    
     override func initialize(){
         
         super.initialize()
@@ -66,12 +70,6 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
             .bind{
                 self.nextBtnDidClicked()
             }.disposed(by: disposeBag)
-        
-//        self.view.rx.tapGesture()
-//            .when(.recognized)
-//            .bind(onNext: { _ in
-//                self.view.endEditing(true)
-//            }).disposed(by: disposeBag)
     }
     
     //MARK: - Action
@@ -124,7 +122,8 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectTableViewCell.self)
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self)
+                cell.informationType = .myProduct
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ImageAddTableViewCell.self)

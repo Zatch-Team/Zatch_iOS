@@ -11,9 +11,13 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     
     //MARK: - Properties
     
-    var isFieldOpen = [true, false, false]
-    var categoryChoose : [String?] = [nil, nil, nil]
-    var isKeyboardOpen = false
+    private var categoryPriority = [Int?](repeating: nil, count: 3)
+    private var isCategoryFieldOpen = [true, false, false]{
+        didSet{
+            mainView.tableView.reloadData()
+        }
+    }
+    private var isKeyboardOpen = false
 
     //MARK: - LifeCycle
     
@@ -27,8 +31,15 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
                    mainView: ZatchRegisterSecondView())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        addKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardNotifications()
+    }
+    
     override func initialize() {
-        
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
         mainView.tableView.separatorStyle = .none
@@ -39,7 +50,6 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     override func bind() {
-        
         mainView.topRadioButtonFrame.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] in
@@ -55,14 +65,41 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     
     //MARK: - Action
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dismissKeyboardView()
+    private func addKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillAppear(noti: NSNotification) {
+        
+        isKeyboardOpen = true
+
+        /* TODO: - 세번째 카테고리 focus 갈 때만 높이 조절 시키기
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            UIView.animate(
+                withDuration: 0.3
+                , animations: {
+                    self.view.transform = CGAffineTransform(translationX: 0, y: -60)
+                }
+            )
+        }
+         */
+    }
+
+    @objc private func keyboardWillDisappear() {
+        isKeyboardOpen = false
+        self.view.transform = .identity
     }
     
     @objc func radioButtonDidSelected(_ sender: UITapGestureRecognizer){
         
         guard let selectView = sender.view as? ZatchComponent.RadioButtonView,
-              let willDeselectView = view.viewWithTag(Const.ViewTag.select) as? ZatchComponent.RadioButtonView else { return }
+              let willDeselectView = view.viewWithTag(ViewTag.select) as? ZatchComponent.RadioButtonView else { return }
         
         selectView.isSelected = true
         willDeselectView.isSelected = false
@@ -81,19 +118,6 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     @objc func exitBtnDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
-    //MARK: - Helper
-    func dismissKeyboardView(){
-        
-        UIView.animate(withDuration: 0.3){
-            self.view.window?.frame.origin.y = 0
-        }
-        
-        isKeyboardOpen = false
-        
-        self.view.endEditing(true)
-
-    }
 }
 
 //MARK: - TableView
@@ -104,62 +128,58 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 || isFieldOpen[section] ? 2 : 1
+        return section == 0 || isCategoryFieldOpen[section] ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row == 0){
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
-            cell.rankLabel.text = "\(indexPath.section + 1)순위"
-//            cell.categoryText.text = categoryChoose[indexPath.section] ?? "카테고리 선택"
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
+                $0.setPriorityTitle(section: indexPath.section)
+                $0.setCategoryTitle(id: categoryPriority[indexPath.section])
+            }
             return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductNameTabeViewCell.self)
-            cell.productNameTextField.delegate = self
-            cell.productNameTextField.tag = indexPath.section
-            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self)
+        getTextFieldCellType(section: indexPath.section){
+            cell.informationType = $0
+        }
+        return cell
+    }
+    
+    private func getTextFieldCellType(section: Int, closure: (TextFieldTabeViewCell.CellType) -> Void){
+        switch section{
+        case 0:     closure(.firstPriority); return
+        case 1:     closure(.secondPriority); return
+        case 2:     closure(.thirdPriority); return
+        default:    return
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if(isKeyboardOpen){
-            dismissKeyboardView()
-        }else{
-            if(indexPath.row == 0){
-                let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
-                sheet.completion = { category in
-                    
-                    let cell = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithRankTableViewCell.self)
-//                    self.categoryChoose[indexPath.section] = category.0
-                    
-                    if(!self.isFieldOpen[indexPath.section]){
-                        self.isFieldOpen[indexPath.section] = true
-                    }
-                    
-                    self.mainView.tableView.reloadData()
-                    
-                    if(indexPath.section == 2){
-                        self.mainView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
-                    }
+            self.view.endEditing(true)
+            return
+        }
+        
+        if(indexPath.row == 0){
+            
+            let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
+            sheet.completion = { categoryId in
+                
+                _ = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
+                    $0.setCategoryTitle(id: categoryId)
+                }
+                
+                self.categoryPriority[indexPath.section] = categoryId
+                self.isCategoryFieldOpen[indexPath.section] = true
+                
+                if(indexPath.section == 2){
+                    self.mainView.tableView.scrollToRow(at: [2,1], at: .bottom, animated: true)
                 }
             }
         }
     }
-}
-
-extension ZatchRegisterSecondViewController: UITextFieldDelegate{
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if(textField.tag == 2){
-            UIView.animate(withDuration: 0.3){
-                self.view.window?.frame.origin.y -= 80
-            }
-        }
-        
-        self.isKeyboardOpen = true
-    }
-    
 }

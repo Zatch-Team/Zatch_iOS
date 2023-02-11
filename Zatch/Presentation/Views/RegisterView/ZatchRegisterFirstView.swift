@@ -19,7 +19,7 @@ class ZatchRegisterFirstView: BaseView {
         $0.isScrollEnabled = false
         
         $0.register(RegisterCategorySelectTableViewCell.self, forCellReuseIdentifier: RegisterCategorySelectTableViewCell.cellIdentifier)
-        $0.register(ProductNameTabeViewCell.self, forCellReuseIdentifier: ProductNameTabeViewCell.cellIdentifier)
+        $0.register(TextFieldTabeViewCell.self, forCellReuseIdentifier: TextFieldTabeViewCell.cellIdentifier)
         $0.register(ImageAddTableViewCell.self, forCellReuseIdentifier: ImageAddTableViewCell.cellIdentifier)
         $0.register(ProductDetailInputTableViewCell.self, forCellReuseIdentifier: ProductDetailInputTableViewCell.cellIdentifier)
     }
