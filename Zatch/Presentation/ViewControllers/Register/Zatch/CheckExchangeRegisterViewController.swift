@@ -10,11 +10,12 @@ import UIKit
 class CheckExchangeRegisterViewController: CheckRegisterViewController {
 
     init(){
-        super.init(infoView: CheckExchangeRegisterView())
+        super.init(infoView: CheckExchangeRegisterInfoView())
     }
     
     required init?(coder: NSCoder) {
-        super.init(infoView: CheckExchangeRegisterView())
+        super.init(infoView: CheckExchangeRegisterInfoView())
     }
     
 }
+
