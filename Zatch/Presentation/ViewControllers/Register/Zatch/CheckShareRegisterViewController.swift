@@ -10,11 +10,11 @@ import UIKit
 class CheckShareRegisterViewController: CheckRegisterViewController {
     
     init(){
-        super.init(infoView: CheckShareRegisterView())
+        super.init(infoView: CheckShareRegisterInfoView())
     }
     
     required init?(coder: NSCoder) {
-        super.init(infoView: CheckShareRegisterView())
+        super.init(infoView: CheckShareRegisterInfoView())
     }
     
 }

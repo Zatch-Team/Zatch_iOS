@@ -11,7 +11,7 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     
     //MARK: - Properties
     
-    private var categoryPriority : [Int?] = [nil, nil, nil]
+    private var categoryPriority = [Int?](repeating: nil, count: 3)
     private var isCategoryFieldOpen = [true, false, false]{
         didSet{
             mainView.tableView.reloadData()
@@ -79,7 +79,7 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
         
         isKeyboardOpen = true
 
-        /*
+        /* TODO: - 세번째 카테고리 focus 갈 때만 높이 조절 시키기
         if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             UIView.animate(
                 withDuration: 0.3
@@ -168,6 +168,7 @@ extension ZatchRegisterSecondViewController: UITableViewDelegate, UITableViewDat
             
             let sheet = CategorySheetViewController(service: .Zatch).show(in: self)
             sheet.completion = { categoryId in
+                
                 _ = tableView.cellForRow(at: indexPath, cellType: RegisterCategorySelectWithPriorityTableViewCell.self).then{
                     $0.setCategoryTitle(id: categoryId)
                 }

@@ -129,6 +129,7 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self)
+                cell.informationType = .myProduct
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ImageAddTableViewCell.self)
