@@ -314,6 +314,9 @@
 		EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */; };
 		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
 		EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */; };
+		EEE6D15829973C1C0004FC7B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15729973C1C0004FC7B /* Tag.swift */; };
+		EEE6D15B299752EB0004FC7B /* TagStlye.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15A299752EB0004FC7B /* TagStlye.swift */; };
+		EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15D299757EF0004FC7B /* Padding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -662,6 +665,9 @@
 		EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeCycle+Rx.swift"; sourceTree = "<group>"; };
+		EEE6D15729973C1C0004FC7B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		EEE6D15A299752EB0004FC7B /* TagStlye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStlye.swift; sourceTree = "<group>"; };
+		EEE6D15D299757EF0004FC7B /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1933,6 +1939,8 @@
 			isa = PBXGroup;
 			children = (
 				EE33D21D2993E1120020866E /* ZatchComponent.swift */,
+				EEE6D15C299757E20004FC7B /* Util */,
+				EEE6D159299752E00004FC7B /* Tag */,
 				EE33D21B2993BF710020866E /* LettersAndArrowView.swift */,
 				EE9B053429953A1200068503 /* FilterView.swift */,
 				EE73C52129961BF30000F8AC /* RadioButtonView.swift */,
@@ -2016,6 +2024,23 @@
 				EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		EEE6D159299752E00004FC7B /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D15A299752EB0004FC7B /* TagStlye.swift */,
+				EEE6D15729973C1C0004FC7B /* Tag.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		EEE6D15C299757E20004FC7B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D15D299757EF0004FC7B /* Padding.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
@@ -2343,6 +2368,7 @@
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */,
 				57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */,
+				EEE6D15829973C1C0004FC7B /* Tag.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
@@ -2531,6 +2557,7 @@
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
 				57468A8E289FEF1800056691 /* WantZatchSheetViewController.swift in Sources */,
+				EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */,
 				23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
@@ -2552,6 +2579,7 @@
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
+				EEE6D15B299752EB0004FC7B /* TagStlye.swift in Sources */,
 				571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
