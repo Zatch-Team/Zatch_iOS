@@ -11,7 +11,7 @@ extension ZatchComponent{
     
     class SearchTextFieldView: BaseView{
         
-        private let textField = UITextField().then{
+        let textField = UITextField().then{
             $0.font = UIFont.pretendard(size: 18, family: .Bold)
             $0.textAlignment = .center
         }
