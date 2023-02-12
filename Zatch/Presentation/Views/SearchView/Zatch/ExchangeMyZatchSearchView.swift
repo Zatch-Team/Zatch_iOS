@@ -9,35 +9,17 @@ import UIKit
 
 class ExchangeMyZatchSearchView: BaseView {
     
-    //MARK: UI
+    private let titleView = TopTitleView(title: "내가 교환할 재치를\n입력해주세요.")
     
-    let topView = TopTitleView(title: "내가 교환할 재치를\n입력해주세요.")
+    private let searchFrame = UIView()
+    let searchTextFieldFrame = ZatchComponent.SearchTextFieldView()
     
-    //selectFrame
-    let selectFrame = ZatchComponent.SearchTextFieldView()
-//    let selectFrame = UIView()
-//
-//    let selectTextField = UILabel().then{
-//        $0.textAlignment = .center
-//        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-//    }
-//
-//    let searchImage = UIImageView().then{
-//        $0.image = Image.search
-//    }
-//
-//    let underLine = UIView().then{
-//        $0.backgroundColor = .black85
-//    }
-    
-    //
-    let subTitle = UILabel().then{
+    private let subTitleLabel = UILabel().then{
         $0.text = "나의 재치"
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
     }
     
     lazy var nextButton = ZatchComponent.FillButton(color: .purple, title: "다음으로", configuration: .height48)
-    
     lazy var skipButton = UIButton().then{
         $0.setTitle("건너뛰기", for: .normal)
         $0.setTitleColor(.black45, for: .normal)
@@ -54,15 +36,12 @@ class ExchangeMyZatchSearchView: BaseView {
     }
     
     override func hierarchy() {
+        self.addSubview(titleView)
         
-        self.addSubview(topView)
+        self.addSubview(searchFrame)
+        searchFrame.addSubview(searchTextFieldFrame)
         
-        self.addSubview(selectFrame)
-//        self.selectFrame.addSubview(selectTextField)
-//        self.selectFrame.addSubview(underLine)
-//        self.selectFrame.addSubview(searchImage)
-        
-        self.addSubview(subTitle)
+        self.addSubview(subTitleLabel)
         self.addSubview(collectionView)
         self.addSubview(nextButton)
         self.addSubview(skipButton)
@@ -70,64 +49,41 @@ class ExchangeMyZatchSearchView: BaseView {
     
     override func layout() {
         
-        self.topView.snp.makeConstraints{ make in
-            make.top.equalToSuperview()
+        titleView.snp.makeConstraints{ make in
             make.top.leading.trailing.equalToSuperview()
         }
         
-        //selectFrame
-        self.selectFrame.snp.makeConstraints{ make in
-//            make.height.equalTo(122)
-            make.top.equalTo(topView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
+        searchFrame.snp.makeConstraints{
+            $0.top.equalTo(titleView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(122)
+        }
+        searchTextFieldFrame.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(46)
+            $0.leading.trailing.equalToSuperview()
         }
         
-//        self.selectTextField.snp.makeConstraints{ make in
-//            make.height.equalTo(44)
-//            make.top.equalToSuperview().offset(54)
-//            make.leading.equalToSuperview().offset(40)
-//            make.trailing.equalToSuperview().offset(-40)
-//        }
-
-//        self.searchImage.snp.makeConstraints{ make in
-//            make.width.height.equalTo(24)
-//            make.trailing.equalToSuperview().offset(-48)
-//            make.bottom.equalTo(underLine).offset(-8)
-//            make.top.equalToSuperview().offset(62)
-//        }
-        
-//        self.underLine.snp.makeConstraints{ make in
-////            make.top.equalTo(selectTextField.snp.bottom).offset(8)
-//            make.top.equalTo(selectTextField.snp.bottom)
-//            make.height.equalTo(1.5)
-//            make.leading.equalTo(selectTextField)
-//            make.trailing.equalTo(selectTextField)
-//        }
-        
-        
-        //
-        self.subTitle.snp.makeConstraints{ make in
-            make.top.equalTo(selectFrame.snp.bottom).offset(48)
-            make.leading.equalToSuperview().offset(20)
+        subTitleLabel.snp.makeConstraints{
+            $0.top.equalTo(searchFrame.snp.bottom).offset(24)
+            $0.leading.equalToSuperview().offset(24)
         }
         
-        self.collectionView.snp.makeConstraints{ make in
-            make.top.equalTo(subTitle.snp.bottom).offset(16)
-            make.bottom.equalTo(nextButton.snp.top).offset(-16)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+        collectionView.snp.makeConstraints{
+            $0.top.equalTo(subTitleLabel.snp.bottom).offset(12)
+            $0.bottom.equalTo(nextButton.snp.top).offset(-16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
-        self.nextButton.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview().offset(-55)
-            make.leading.equalToSuperview().offset(nextButton.offset)
-            make.trailing.equalToSuperview().offset(-nextButton.offset)
+        nextButton.snp.makeConstraints{
+            $0.bottom.equalToSuperview().offset(-55)
+            $0.leading.equalToSuperview().offset(nextButton.offset)
+            $0.trailing.equalToSuperview().offset(-nextButton.offset)
         }
-        
-        self.skipButton.snp.makeConstraints{ make in
-            make.top.equalTo(nextButton.snp.bottom).offset(12)
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-26)
+        skipButton.snp.makeConstraints{
+            $0.top.equalTo(nextButton.snp.bottom).offset(16)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-20)
         }
     }
 }
