@@ -9,6 +9,12 @@ import UIKit
 
 class SearchTagCollectionViewCell: BaseCollectionViewCell{
     
+    var isSelectState: Bool = false{
+        didSet{
+            isSelectState ? setSelectState() : setDeselectState()
+        }
+    }
+    
     private let tagLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
         $0.numberOfLines = 1
         $0.clipsToBounds = true
@@ -32,24 +38,6 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         }
     }
     
-    func setTitle(_ title: String){
-        tagLabel.text = title
-    }
-    
-    func setSelectState(){
-        tagLabel.textColor = .zatchYellow
-        tagLabel.layer.borderColor = UIColor.zatchYellow.cgColor
-        tagLabel.layer.borderWidth = 1.5
-        tagLabel.setTypoStyleWithSingleLine(typoStyle: .bold15)
-    }
-    
-    func setDeselectState(){
-        tagLabel.textColor = .black45
-        tagLabel.layer.borderColor = UIColor.black45.cgColor
-        tagLabel.layer.borderWidth = 1
-        tagLabel.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
-    }
-    
     static func getEstimatedSize(title: String) -> CGSize{
         
         let testLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
@@ -57,13 +45,28 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         }
         
         let boldSize = testLabel.then{
-            $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
-        }.intrinsicContentSize
-        
+            $0.setTypoStyleWithSingleLine(typoStyle: .bold15) }.intrinsicContentSize
         let mediumSize = testLabel.then{
-            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
-        }.intrinsicContentSize
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_19) }.intrinsicContentSize
         
         return boldSize.width > mediumSize.width ? boldSize : mediumSize
+    }
+    
+    func setTitle(_ title: String){
+        tagLabel.text = title
+    }
+    
+    private func setSelectState(){
+        tagLabel.textColor = .zatchYellow
+        tagLabel.layer.borderColor = UIColor.zatchYellow.cgColor
+        tagLabel.layer.borderWidth = 1.5
+        tagLabel.setTypoStyleWithSingleLine(typoStyle: .bold15)
+    }
+    
+    private func setDeselectState(){
+        tagLabel.textColor = .black45
+        tagLabel.layer.borderColor = UIColor.black45.cgColor
+        tagLabel.layer.borderWidth = 1
+        tagLabel.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
     }
 }
