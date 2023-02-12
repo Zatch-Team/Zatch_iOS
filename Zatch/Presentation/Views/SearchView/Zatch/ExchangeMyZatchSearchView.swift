@@ -37,7 +37,7 @@ class ExchangeMyZatchSearchView: BaseView {
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
     }
     
-    lazy var nextButton = Purple36Button(title: "다음으로")
+    lazy var nextButton = ZatchComponent.FillButton(color: .purple, title: "다음으로", configuration: .height48)
     
     lazy var skipButton = UIButton().then{
         $0.setTitle("건너뛰기", for: .normal)
@@ -121,9 +121,9 @@ class ExchangeMyZatchSearchView: BaseView {
         }
         
         self.nextButton.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-54)
-            make.leading.equalToSuperview().offset(74)
-            make.trailing.equalToSuperview().offset(-74)
+            make.bottom.equalToSuperview().offset(-55)
+            make.leading.equalToSuperview().offset(nextButton.offset)
+            make.trailing.equalToSuperview().offset(-nextButton.offset)
         }
         
         self.skipButton.snp.makeConstraints{ make in

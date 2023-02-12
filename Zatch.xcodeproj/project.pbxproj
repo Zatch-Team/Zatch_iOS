@@ -317,6 +317,8 @@
 		EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15D299757EF0004FC7B /* Padding.swift */; };
 		EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15F299762670004FC7B /* CheckExchangeRegisterInfoView.swift */; };
 		EEE6D1622997AFA30004FC7B /* TagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D1612997AFA30004FC7B /* TagLabel.swift */; };
+		EEE6D1652997BF830004FC7B /* ZatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D1642997BF830004FC7B /* ZatchButton.swift */; };
+		EEE6D16729987F0D0004FC7B /* ZatchFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -668,6 +670,8 @@
 		EEE6D15D299757EF0004FC7B /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		EEE6D15F299762670004FC7B /* CheckExchangeRegisterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterInfoView.swift; sourceTree = "<group>"; };
 		EEE6D1612997AFA30004FC7B /* TagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLabel.swift; sourceTree = "<group>"; };
+		EEE6D1642997BF830004FC7B /* ZatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchButton.swift; sourceTree = "<group>"; };
+		EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchFillButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1940,6 +1944,7 @@
 			children = (
 				EE33D21D2993E1120020866E /* ZatchComponent.swift */,
 				EEE6D15C299757E20004FC7B /* Util */,
+				EEE6D1632997BEEE0004FC7B /* Button */,
 				EEE6D159299752E00004FC7B /* Tag */,
 				EE33D21B2993BF710020866E /* LettersAndArrowView.swift */,
 				EE9B053429953A1200068503 /* FilterView.swift */,
@@ -2041,6 +2046,15 @@
 				EEE6D15D299757EF0004FC7B /* Padding.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE6D1632997BEEE0004FC7B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D1642997BF830004FC7B /* ZatchButton.swift */,
+				EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
@@ -2466,6 +2480,7 @@
 				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
+				EEE6D1652997BF830004FC7B /* ZatchButton.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
 				57E75EC728E5480A00AC24B2 /* ExchangeMyZatchSearchView.swift in Sources */,
 				EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */,
@@ -2532,6 +2547,7 @@
 				57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
 				57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */,
+				EEE6D16729987F0D0004FC7B /* ZatchFillButton.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,
 				23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */,
 				57397FD0296FBDFE0088B5F4 /* GatchSearchView.swift in Sources */,
