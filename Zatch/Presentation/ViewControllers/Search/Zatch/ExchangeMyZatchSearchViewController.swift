@@ -50,35 +50,21 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
             }.disposed(by: disposeBag)
         
         output.canMoveNext
-            .drive{
-                self.mainView.nextButton.isEnabled = $0
-            }.disposed(by: disposeBag)
+            .drive(
+                self.mainView.nextButton.rx.isEnabled
+            ).disposed(by: disposeBag)
     }
     
     //MARK: Action
     
     @objc func nextButtonClick(){
-//        let product = mainView.selectTextField.text
-//
-//        if(product == "" || product == nil){
-//            skipBtnDidClicked()
-//        }else{
-//            let vc = FindSearchViewController()
-//            vc.mainView.myLabel.text = product
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
+        let vc = FindSearchViewController(productName: searchManager.myZatch)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func skipBtnDidClicked(){
-        
         searchManager.myZatch = ""
-        
         let vc = FindSearchViewController()
-        
-        vc.mainView.myLabel.text = "???"
-        vc.mainView.myLabel.textColor = .zatchYellow
-        vc.mainView.nextButton.setTitle("유연한 탐색", for: .normal)
-
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

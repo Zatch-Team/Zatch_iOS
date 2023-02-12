@@ -19,6 +19,12 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        setFlexibleSearchAttribute()
+    }
+    
+    init(productName: String){
+        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        mainView.myLabel.text = productName
     }
     
     required init?(coder: NSCoder) {
@@ -46,26 +52,10 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-}
-
-extension FindSearchViewController: CellDelegate{
-    
-    func cellDidSelected(_ cell: UICollectionViewCell){
-        if(currentSelect == cell){
-            currentSelect?.setBtnInitState()
-            currentSelect = nil
-            mainView.wantTextField.text = ""
-        }else{
-            if let newCell = cell as? FindSearchTagCollectionViewCell {
-                
-                newCell.setBtnSelectedState()
-                
-                mainView.wantTextField.text = newCell.selectBtn.title(for: .normal)
-                
-                currentSelect?.setBtnInitState()
-                currentSelect = newCell
-            }
-        }
+    private func setFlexibleSearchAttribute(){
+        mainView.myLabel.text = "???"
+        mainView.myLabel.textColor = .zatchYellow
+        mainView.nextButton.setTitle("유연한 탐색", for: .normal)
     }
     
     func cellDidSelected(_ indexPath: IndexPath) { }
