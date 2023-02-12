@@ -11,7 +11,11 @@ class ZatchSearchRequestManager{
     
     static let shared = ZatchSearchRequestManager()
     
+    private init() { }
+    
+    var myZatch: String = ""
+    
     func initialize(){
-        
+        myZatch = ""
     }
 }
