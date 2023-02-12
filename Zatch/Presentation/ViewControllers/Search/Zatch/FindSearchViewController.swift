@@ -27,7 +27,7 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     
     init(productName: String){
         super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
-        mainView.myLabel.text = productName
+        mainView.myProductNameLabel.text = productName
     }
     
     required init?(coder: NSCoder) {
@@ -53,8 +53,8 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     }
     
     private func setFlexibleSearchAttribute(){
-        mainView.myLabel.text = "???"
-        mainView.myLabel.textColor = .zatchYellow
+        mainView.myProductNameLabel.text = "???"
+        mainView.myProductNameLabel.textColor = .zatchYellow
         mainView.nextButton.setTitle("유연한 탐색", for: .normal)
     }
     

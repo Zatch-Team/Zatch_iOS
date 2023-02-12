@@ -16,7 +16,7 @@ class ExchangeMyZatchSearchView: BaseView {
     
     private let subTitleLabel = UILabel().then{
         $0.text = "나의 재치"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
     }
     
     lazy var nextButton = ZatchComponent.FillButton(color: .purple, title: "다음으로", configuration: .height48)

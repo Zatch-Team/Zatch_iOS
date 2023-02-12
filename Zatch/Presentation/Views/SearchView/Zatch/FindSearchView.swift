@@ -12,34 +12,18 @@ class FindSearchView: BaseView {
     //MARK: - UI
     let titleView = TopTitleView(title: "무엇을 찾고 있나요?")
     
-    let exchangeFrame = UIView()
-    
-    let myLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+    let searchFrame = UIView()
+    let myProductNameLabel = UILabel().then{
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
         $0.textColor = .black85
         $0.numberOfLines = 1
         $0.textAlignment = .center
     }
-    
     let exchangeImage = UIImageView().then{
         $0.image = Image.exchangeVertical
     }
+    let searchTextFieldFrame = ZatchComponent.SearchTextFieldView()
     
-    let wantTextField = UITextField().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.textColor = .black85
-        $0.textAlignment = .center
-    }
-    
-    let textFieldBorderLine = UIView().then{
-        $0.backgroundColor = .black85
-    }
-    
-    let searchImage = UIImageView().then{
-        $0.image = Image.search
-    }
-    
-    //
     let subTitle1 = UILabel().then{
         $0.text = "가장 인기있는 재치"
         $0.textColor = .black85
@@ -59,7 +43,7 @@ class FindSearchView: BaseView {
     let subTitle2 = UILabel().then{
         $0.text = "내가 찾는 재치"
         $0.textColor = .black85
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
     }
     
     let secondCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
@@ -72,18 +56,16 @@ class FindSearchView: BaseView {
         $0.register(cellType: SearchTagCollectionViewCell.self)
     }
     
-    let nextButton = Purple36Button(title: "검색하기")
+    let nextButton = ZatchComponent.FillButton(color: .purple, title: "검색하기", configuration: .height48)
 
     override func hierarchy() {
         
         self.addSubview(titleView)
         
-        self.addSubview(exchangeFrame)
-        exchangeFrame.addSubview(myLabel)
-        exchangeFrame.addSubview(exchangeImage)
-        exchangeFrame.addSubview(wantTextField)
-        exchangeFrame.addSubview(textFieldBorderLine)
-        exchangeFrame.addSubview(searchImage)
+        self.addSubview(searchFrame)
+        searchFrame.addSubview(myProductNameLabel)
+        searchFrame.addSubview(exchangeImage)
+        searchFrame.addSubview(searchTextFieldFrame)
         
         self.addSubview(subTitle1)
         self.addSubview(firstCollectionView)
@@ -101,74 +83,54 @@ class FindSearchView: BaseView {
             make.leading.trailing.equalToSuperview()
         }
         
-        exchangeFrame.snp.makeConstraints{ make in
+        searchFrame.snp.makeConstraints{ make in
             make.top.equalTo(titleView.snp.bottom)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(170)
+            make.height.equalTo(182)
+        }
+        myProductNameLabel.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(16)
+            $0.centerX.equalToSuperview()
+        }
+        exchangeImage.snp.makeConstraints{
+            $0.top.equalTo(myProductNameLabel.snp.bottom).offset(28)
+            $0.width.height.equalTo(24)
+            $0.centerX.equalToSuperview()
+        }
+        searchTextFieldFrame.snp.makeConstraints{
+            $0.top.equalTo(exchangeImage.snp.bottom).offset(14)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
-        myLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(18)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
-            make.height.equalTo(20)
+        subTitle1.snp.makeConstraints{
+            $0.top.equalTo(searchFrame.snp.bottom).offset(36)
+            $0.leading.equalToSuperview().offset(24)
         }
         
-        exchangeImage.snp.makeConstraints{ make in
-            make.top.equalTo(myLabel.snp.bottom).offset(24)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(24)
+        firstCollectionView.snp.makeConstraints{
+            $0.top.equalTo(subTitle1.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.height.equalTo(SearchTagCollectionViewCell.height)
         }
         
-        wantTextField.snp.makeConstraints{ make in
-            make.top.equalTo(exchangeImage.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
-            make.height.equalTo(20)
+        subTitle2.snp.makeConstraints{
+            $0.top.equalTo(firstCollectionView.snp.bottom).offset(28)
+            $0.left.equalToSuperview().offset(24)
         }
         
-        searchImage.snp.makeConstraints{ make in
-            make.width.height.equalTo(24)
-            make.bottom.equalTo(textFieldBorderLine.snp.top).offset(-8)
-            make.trailing.equalToSuperview().offset(-48)
-            make.top.equalTo(wantTextField)
+        secondCollectionView.snp.makeConstraints{
+            $0.top.equalTo(subTitle2.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.height.equalTo(SearchTagCollectionViewCell.height)
         }
         
-        textFieldBorderLine.snp.makeConstraints{ make in
-            make.leading.equalToSuperview().offset(40)
-            make.trailing.equalToSuperview().offset(-40)
-            make.height.equalTo(2)
-        }
-        
-        subTitle1.snp.makeConstraints{ make in
-            make.top.equalTo(exchangeFrame.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(24)
-        }
-        
-        firstCollectionView.snp.makeConstraints{ make in
-            make.top.equalTo(subTitle1.snp.bottom).offset(16)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(SearchTagCollectionViewCell.height)
-        }
-        
-        subTitle2.snp.makeConstraints{ make in
-            make.top.equalTo(firstCollectionView.snp.bottom).offset(28)
-            make.left.equalToSuperview().offset(24)
-        }
-        
-        secondCollectionView.snp.makeConstraints{ make in
-            make.top.equalTo(subTitle2.snp.bottom).offset(16)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(SearchTagCollectionViewCell.height)
-        }
-        
-        nextButton.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-54)
-            make.leading.equalToSuperview().offset(74)
-            make.trailing.equalToSuperview().offset(-74)
-            make.height.equalTo(36)
+        nextButton.snp.makeConstraints{
+            $0.bottom.equalToSuperview().offset(-55)
+            $0.leading.equalToSuperview().offset(nextButton.offset)
+            $0.centerX.equalToSuperview()
         }
     }
 }
