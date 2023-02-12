@@ -9,6 +9,8 @@ import UIKit
 
 class SearchTagCollectionViewCell: BaseCollectionViewCell{
     
+    static let height = 32
+    
     var isSelectState: Bool = false{
         didSet{
             isSelectState ? setSelectState() : setDeselectState()
@@ -34,7 +36,7 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         super.layout()
         tagLabel.snp.makeConstraints{
             $0.top.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(32)
+            $0.height.equalTo(SearchTagCollectionViewCell.height)
         }
     }
     
@@ -42,6 +44,9 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         
         let testLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
             $0.text = title
+            $0.snp.makeConstraints{
+                $0.height.equalTo(SearchTagCollectionViewCell.height)
+            }
         }
         
         let boldSize = testLabel.then{

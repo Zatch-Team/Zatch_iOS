@@ -149,7 +149,7 @@ class FindSearchView: BaseView {
             make.top.equalTo(subTitle1.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview()
-            make.height.equalTo(28)
+            make.height.equalTo(SearchTagCollectionViewCell.height)
         }
         
         subTitle2.snp.makeConstraints{ make in
@@ -161,7 +161,7 @@ class FindSearchView: BaseView {
             make.top.equalTo(subTitle2.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview()
-            make.height.equalTo(28)
+            make.height.equalTo(SearchTagCollectionViewCell.height)
         }
         
         nextButton.snp.makeConstraints{ make in

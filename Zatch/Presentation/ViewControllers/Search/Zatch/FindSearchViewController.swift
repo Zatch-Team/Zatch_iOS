@@ -12,8 +12,8 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     
     //MARK: - Properties
     
-    private var popularData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
-    private var findData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
+    private var popularData : [String] = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
+    private var findData : [String] = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
     private var currentSelectCell: SearchTagCollectionViewCell?{
         didSet{
             currentSelectCell?.isSelectState = true
@@ -47,7 +47,7 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
         mainView.secondCollectionView.dataSource = self
     }
     
-    @objc func moveToResultVC(_ sender: UIButton){
+    @objc private func moveToResultVC(_ sender: UIButton){
         let nextVC = ResultSearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
