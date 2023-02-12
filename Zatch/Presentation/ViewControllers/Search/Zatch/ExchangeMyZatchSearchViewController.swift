@@ -14,8 +14,6 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     
     let zatches = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
     
-    var currentSelect: Int = -1
-    
     //MARK: - LifeCycle
 
     init(){
@@ -40,15 +38,15 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     //MARK: Action
     
     @objc func nextButtonClick(){
-        let product = mainView.selectTextField.text
-        
-        if(product == "" || product == nil){
-            skipBtnDidClicked()
-        }else{
-            let vc = FindSearchViewController()
-            vc.mainView.myLabel.text = product
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+//        let product = mainView.selectTextField.text
+//
+//        if(product == "" || product == nil){
+//            skipBtnDidClicked()
+//        }else{
+//            let vc = FindSearchViewController()
+//            vc.mainView.myLabel.text = product
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
     
     @objc func skipBtnDidClicked(){
@@ -82,13 +80,13 @@ extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
-            cell.setSelectState()
+            cell.isSelectState = cell.isSelectState ? false : true
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
-            cell.setDeselectState()
+            cell.isSelectState = false
         }
     }
 }
