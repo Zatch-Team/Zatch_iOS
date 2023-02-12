@@ -11,9 +11,7 @@ class ZatchRegisterSecondView: BaseView {
     
     //MARK: - UI
     
-    let topTitleView = TitleView().then{
-        $0.titleLabel.text = "받고 싶은\n물건이 있나요?"
-    }
+    let topTitleView = TopTitleView(title: "받고 싶은\n물건이 있나요?")
     
     var tableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false

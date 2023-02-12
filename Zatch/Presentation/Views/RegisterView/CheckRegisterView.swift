@@ -24,9 +24,7 @@ class CheckRegisterView: BaseView {
 
     //MARK: - UI
     
-    let titleView = TitleView().then{
-        $0.titleLabel.text = "이렇게 재치를\n업로드해도 괜찮을까요?"
-    }
+    let titleView = TopTitleView(title: "이렇게 재치를\n업로드해도 괜찮을까요?")
 
     let photoFrame = UIView()
     let photoTitle = UILabel().then{

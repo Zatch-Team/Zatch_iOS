@@ -10,10 +10,7 @@ import UIKit
 class FindSearchView: BaseView {
     
     //MARK: - UI
-    let titleView = TitleView().then{
-        $0.titleLabel.text = "무엇을 찾고 있나요?"
-        $0.titleLabel.font = UIFont.pretendard(size: 20, family: .Bold)
-    }
+    let titleView = TopTitleView(title: "무엇을 찾고 있나요?")
     
     //
     let exchangeFrame = UIView()
@@ -58,7 +55,7 @@ class FindSearchView: BaseView {
         
         $0.collectionViewLayout = flexLayout
         
-        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
+//        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
     }
     
     let subTitle2 = UILabel().then{
@@ -75,7 +72,7 @@ class FindSearchView: BaseView {
         
         $0.collectionViewLayout = flexLayout
         
-        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
+//        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
     }
     
     let nextButton = Purple36Button(title: "검색하기")
