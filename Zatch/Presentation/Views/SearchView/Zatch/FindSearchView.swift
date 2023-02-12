@@ -10,12 +10,8 @@ import UIKit
 class FindSearchView: BaseView {
     
     //MARK: - UI
-    let titleView = TitleView().then{
-        $0.titleLabel.text = "무엇을 찾고 있나요?"
-        $0.titleLabel.font = UIFont.pretendard(size: 20, family: .Bold)
-    }
+    let titleView = TopTitleView(title: "무엇을 찾고 있나요?")
     
-    //
     let exchangeFrame = UIView()
     
     let myLabel = UILabel().then{
@@ -57,8 +53,7 @@ class FindSearchView: BaseView {
         flexLayout.minimumInteritemSpacing = 8
         
         $0.collectionViewLayout = flexLayout
-        
-        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
+        $0.register(cellType: SearchTagCollectionViewCell.self)
     }
     
     let subTitle2 = UILabel().then{
@@ -74,8 +69,7 @@ class FindSearchView: BaseView {
         flexLayout.minimumInteritemSpacing = 8
         
         $0.collectionViewLayout = flexLayout
-        
-        $0.register(FindSearchTagCollectionViewCell.self, forCellWithReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier)
+        $0.register(cellType: SearchTagCollectionViewCell.self)
     }
     
     let nextButton = Purple36Button(title: "검색하기")
@@ -155,7 +149,7 @@ class FindSearchView: BaseView {
             make.top.equalTo(subTitle1.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview()
-            make.height.equalTo(28)
+            make.height.equalTo(SearchTagCollectionViewCell.height)
         }
         
         subTitle2.snp.makeConstraints{ make in
@@ -167,7 +161,7 @@ class FindSearchView: BaseView {
             make.top.equalTo(subTitle2.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview()
-            make.height.equalTo(28)
+            make.height.equalTo(SearchTagCollectionViewCell.height)
         }
         
         nextButton.snp.makeConstraints{ make in

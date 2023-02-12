@@ -10,9 +10,7 @@ import UIKit
 class ZatchRegisterFirstView: BaseView {
     
     //MARK: - UI
-    let topView = TitleView().then{
-        $0.titleLabel.text = "주고 싶은\n물건이 무엇인가요?"
-    }
+    let topView = TopTitleView(title: "주고 싶은\n물건이 무엇인가요?")
     
     let backTableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false

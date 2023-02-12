@@ -12,13 +12,22 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     
     //MARK: - Properties
     
-    let popularData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
-    let findData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
-    
-    var currentSelect: SearchTagCollectionViewCell?
+    private var popularData : [String] = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
+    private var findData : [String] = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
+    private var currentSelectCell: SearchTagCollectionViewCell?{
+        didSet{
+            currentSelectCell?.isSelectState = true
+        }
+    }
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        setFlexibleSearchAttribute()
+    }
+    
+    init(productName: String){
+        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        mainView.myLabel.text = productName
     }
     
     required init?(coder: NSCoder) {
@@ -38,37 +47,17 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
         mainView.secondCollectionView.dataSource = self
     }
     
-    
-    //MARK: Action
-    
-    @objc func moveToResultVC(_ sender: UIButton){
+    @objc private func moveToResultVC(_ sender: UIButton){
         let nextVC = ResultSearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-}
-
-extension FindSearchViewController: CellDelegate{
-    
-    func cellDidSelected(_ cell: UICollectionViewCell){
-        if(currentSelect == cell){
-            currentSelect?.setBtnInitState()
-            currentSelect = nil
-            mainView.wantTextField.text = ""
-        }else{
-            if let newCell = cell as? FindSearchTagCollectionViewCell {
-                
-                newCell.setBtnSelectedState()
-                
-                mainView.wantTextField.text = newCell.selectBtn.title(for: .normal)
-                
-                currentSelect?.setBtnInitState()
-                currentSelect = newCell
-            }
-        }
+    private func setFlexibleSearchAttribute(){
+        mainView.myLabel.text = "???"
+        mainView.myLabel.textColor = .zatchYellow
+        mainView.nextButton.setTitle("유연한 탐색", for: .normal)
     }
     
-    func cellDidSelected(_ indexPath: IndexPath) { }
 }
 
 extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
@@ -78,34 +67,27 @@ extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier,
-                                                            for: indexPath) as? FindSearchTagCollectionViewCell else { fatalError()}
-        
         let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
-        
-        cell.delegate = self
-        cell.selectBtn.setTitle(title, for: .normal)
-        cell.setBtnInitState()
-        
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
+            $0.setTitle(title)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
-        
-        let tmpLabel = UILabel().then{
-            $0.text = title
-            $0.numberOfLines = 1
-            $0.sizeToFit()
-        }
-        
-        let width = tmpLabel.frame.size.width
-        
-        let adjustWidth = title.count < 6 ? width + 18 : width
-        
-        return CGSize(width: adjustWidth, height: 28)
+        return SearchTagCollectionViewCell.getEstimatedSize(title: title)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectCell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self) else { return }
+        guard let willDeselectCell = currentSelectCell else {
+            currentSelectCell = selectCell
+            return
+        }
+        
+        willDeselectCell.isSelectState = false
+        currentSelectCell = selectCell == willDeselectCell ? nil : selectCell
+    }
 }
 

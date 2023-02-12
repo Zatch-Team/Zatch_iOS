@@ -31,7 +31,7 @@ extension ZatchComponent{
         }
     }
     
-    class Tag: UILabel{
+    class Tag: TagLabel{
         
         var isDisabled = false{
             didSet{
@@ -50,25 +50,12 @@ extension ZatchComponent{
         init(color: TagColor, configuration: TagType){
             self.colorType = color
             self.configuration = configuration
-            super.init(frame: .zero)
+            super.init(padding: configuration.padding)
             initialize()
         }
         
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
-        }
-        
-        override func drawText(in rect: CGRect) {
-            let inset = configuration.padding.inset
-            super.drawText(in: rect.inset(by: inset))
-        }
-        
-        override var intrinsicContentSize: CGSize{
-            let padding = configuration.padding
-            var contentSize = super.intrinsicContentSize
-            contentSize.height += padding.top + padding.bottom
-            contentSize.width += padding.left + padding.right
-            return contentSize
         }
         
         private func initialize(){
