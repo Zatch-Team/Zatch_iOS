@@ -12,10 +12,13 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     
     //MARK: - Properties
     
-    let popularData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
-    let findData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
-    
-    var currentSelect: SearchTagCollectionViewCell?
+    private var popularData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
+    private var findData : [String] = ["몰랑이","몰랑몰랑","몰랑","말랑이","말랭"]
+    private var currentSelectCell: SearchTagCollectionViewCell?{
+        didSet{
+            currentSelectCell?.isSelectState = true
+        }
+    }
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
@@ -44,9 +47,6 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
         mainView.secondCollectionView.dataSource = self
     }
     
-    
-    //MARK: Action
-    
     @objc func moveToResultVC(_ sender: UIButton){
         let nextVC = ResultSearchViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
@@ -58,7 +58,6 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
         mainView.nextButton.setTitle("유연한 탐색", for: .normal)
     }
     
-    func cellDidSelected(_ indexPath: IndexPath) { }
 }
 
 extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
@@ -68,34 +67,27 @@ extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindSearchTagCollectionViewCell.cellIdentifier,
-                                                            for: indexPath) as? FindSearchTagCollectionViewCell else { fatalError()}
-        
         let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
-        
-        cell.delegate = self
-        cell.selectBtn.setTitle(title, for: .normal)
-        cell.setBtnInitState()
-        
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
+            $0.setTitle(title)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
-        
-        let tmpLabel = UILabel().then{
-            $0.text = title
-            $0.numberOfLines = 1
-            $0.sizeToFit()
-        }
-        
-        let width = tmpLabel.frame.size.width
-        
-        let adjustWidth = title.count < 6 ? width + 18 : width
-        
-        return CGSize(width: adjustWidth, height: 28)
+        return SearchTagCollectionViewCell.getEstimatedSize(title: title)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectCell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self) else { return }
+        guard let willDeselectCell = currentSelectCell else {
+            currentSelectCell = selectCell
+            return
+        }
+        
+        willDeselectCell.isSelectState = false
+        currentSelectCell = selectCell == willDeselectCell ? nil : selectCell
+    }
 }
 
