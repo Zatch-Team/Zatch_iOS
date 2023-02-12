@@ -7,12 +7,16 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, ExchangeMyZatchSearchView>{
     
     //MARK: - Properties
     
-    let zatches = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
+    private let zatches = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
+    private let viewModel = ExchangeMyZatchSearchViewModel()
+    private let searchManager = ZatchSearchRequestManager.shared
     
     //MARK: - LifeCycle
 
@@ -35,6 +39,22 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
         mainView.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
     }
     
+    override func bind() {
+        
+        let input = ExchangeMyZatchSearchViewModel.Input(exchangeProductName: mainView.searchTextFieldFrame.textField.rx.text.orEmpty.asObservable())
+        let output = viewModel.transform(input)
+        
+        output.exchangeProductName
+            .drive{
+                self.searchManager.myZatch = $0
+            }.disposed(by: disposeBag)
+        
+        output.canMoveNext
+            .drive{
+                self.mainView.nextButton.isEnabled = $0
+            }.disposed(by: disposeBag)
+    }
+    
     //MARK: Action
     
     @objc func nextButtonClick(){
@@ -50,6 +70,8 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     }
     
     @objc func skipBtnDidClicked(){
+        
+        searchManager.myZatch = ""
         
         let vc = FindSearchViewController()
         
@@ -79,9 +101,10 @@ extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
-            cell.isSelectState = cell.isSelectState ? false : true
-        }
+        guard let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self) else { return }
+        mainView.searchTextFieldFrame.textField.text = cell.isSelectState ? "" : zatches[indexPath.row]
+        mainView.searchTextFieldFrame.textField.sendActions(for: .valueChanged)
+        cell.isSelectState.toggle()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
