@@ -7,24 +7,24 @@
 
 import UIKit
 
-class FindSearchView: BaseView {
+class FindWantZatchSearchView: BaseView {
     
     //MARK: - UI
-    let titleView = TopTitleView(title: "무엇을 찾고 있나요?")
+    private let titleView = TopTitleView(title: "무엇을 찾고 있나요?")
     
-    let searchFrame = UIView()
+    private let searchFrame = UIView()
     let myProductNameLabel = UILabel().then{
         $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
         $0.textColor = .black85
         $0.numberOfLines = 1
         $0.textAlignment = .center
     }
-    let exchangeImage = UIImageView().then{
+    private let exchangeImage = UIImageView().then{
         $0.image = Image.exchangeVertical
     }
     let searchTextFieldFrame = ZatchComponent.SearchTextFieldView()
     
-    let subTitle1 = UILabel().then{
+    private let subTitle1 = UILabel().then{
         $0.text = "가장 인기있는 재치"
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
@@ -40,12 +40,11 @@ class FindSearchView: BaseView {
         $0.register(cellType: SearchTagCollectionViewCell.self)
     }
     
-    let subTitle2 = UILabel().then{
+    private let subTitle2 = UILabel().then{
         $0.text = "내가 찾는 재치"
         $0.textColor = .black85
         $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
     }
-    
     let secondCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         
         let flexLayout = UICollectionViewFlowLayout()
@@ -61,21 +60,18 @@ class FindSearchView: BaseView {
     override func hierarchy() {
         
         self.addSubview(titleView)
-        
         self.addSubview(searchFrame)
-        searchFrame.addSubview(myProductNameLabel)
-        searchFrame.addSubview(exchangeImage)
-        searchFrame.addSubview(searchTextFieldFrame)
-        
         self.addSubview(subTitle1)
         self.addSubview(firstCollectionView)
-        
         self.addSubview(subTitle2)
         self.addSubview(secondCollectionView)
         self.addSubview(nextButton)
+        
+        searchFrame.addSubview(myProductNameLabel)
+        searchFrame.addSubview(exchangeImage)
+        searchFrame.addSubview(searchTextFieldFrame)
     }
     
-    //뷰 제약조건 설정
     override func layout() {
         
         titleView.snp.makeConstraints{ make in

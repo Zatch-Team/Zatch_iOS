@@ -180,7 +180,7 @@
 		578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */; };
 		578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */; };
 		5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */; };
-		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
+		579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindWantZatchSearchViewController.swift */; };
 		579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */; };
 		57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */; };
 		57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3C28CED93700263079 /* MapTownViewController.swift */; };
@@ -259,7 +259,7 @@
 		57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */; };
 		57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */; };
 		57E75EC728E5480A00AC24B2 /* ExchangeMyZatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */; };
-		57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC828E5481900AC24B2 /* FindSearchView.swift */; };
+		57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */; };
 		57E75ECB28E5482900AC24B2 /* ResultSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
@@ -524,7 +524,7 @@
 		578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomViewController.swift; sourceTree = "<group>"; };
 		578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
 		5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDeclarationSheetViewController.swift; sourceTree = "<group>"; };
-		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
+		579F5E57281E574200D3F0D5 /* FindWantZatchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWantZatchSearchViewController.swift; sourceTree = "<group>"; };
 		579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
 		57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTownViewController.swift; sourceTree = "<group>"; };
 		57A28B3C28CED93700263079 /* MapTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTownViewController.swift; sourceTree = "<group>"; };
@@ -612,7 +612,7 @@
 		57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailView.swift; sourceTree = "<group>"; };
 		57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailTableViewCell.swift; sourceTree = "<group>"; };
 		57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeMyZatchSearchView.swift; sourceTree = "<group>"; };
-		57E75EC828E5481900AC24B2 /* FindSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchView.swift; sourceTree = "<group>"; };
+		57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWantZatchSearchView.swift; sourceTree = "<group>"; };
 		57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchView.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1336,7 +1336,7 @@
 			isa = PBXGroup;
 			children = (
 				57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */,
-				57E75EC828E5481900AC24B2 /* FindSearchView.swift */,
+				57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */,
 				57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */,
 			);
 			path = Zatch;
@@ -1346,7 +1346,7 @@
 			isa = PBXGroup;
 			children = (
 				5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */,
-				579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */,
+				579F5E57281E574200D3F0D5 /* FindWantZatchSearchViewController.swift */,
 				579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */,
 			);
 			path = Zatch;
@@ -2478,7 +2478,7 @@
 				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
-				57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */,
+				57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
 				576EA925282B7FBB0028046C /* ZatchRegisterSecondViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
@@ -2489,7 +2489,7 @@
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */,
 				235613F728D0976500D44E97 /* MyProfileView.swift in Sources */,
-				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
+				579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */,
 				57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */,
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				EE9B053529953A1200068503 /* FilterView.swift in Sources */,

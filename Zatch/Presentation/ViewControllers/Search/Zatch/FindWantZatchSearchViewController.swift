@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchView> {
+class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, FindWantZatchSearchView> {
     
     //MARK: - Properties
     
@@ -21,12 +21,12 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     }
     
     init(){
-        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        super.init(headerView: BaseHeaderView(), mainView: FindWantZatchSearchView())
         setFlexibleSearchAttribute()
     }
     
     init(productName: String){
-        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        super.init(headerView: BaseHeaderView(), mainView: FindWantZatchSearchView())
         mainView.myProductNameLabel.text = productName
     }
     
@@ -60,7 +60,7 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     
 }
 
-extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
+extension FindWantZatchSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionView == mainView.firstCollectionView ? popularData.count : findData.count
