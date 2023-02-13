@@ -58,7 +58,6 @@ class FindWantZatchSearchView: BaseView {
     let nextButton = ZatchComponent.FillButton(color: .purple, title: "검색하기", configuration: .height48)
 
     override func hierarchy() {
-        
         self.addSubview(titleView)
         self.addSubview(searchFrame)
         self.addSubview(subTitle1)

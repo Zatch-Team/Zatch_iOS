@@ -152,7 +152,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let tag = indexPath.row
         switch tag {
         case 0:
-            let vc = ResultSearchViewController()
+            let vc = ZatchSearchResultViewController()
             self.navigationController?.pushViewController(vc, animated: true)
             break
         case 2:

@@ -48,7 +48,7 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
     }
     
     @objc private func moveToResultVC(_ sender: UIButton){
-        let nextVC = ResultSearchViewController()
+        let nextVC = ZatchSearchResultViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

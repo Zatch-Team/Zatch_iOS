@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultSearchView: BaseView {
+class ZatchSearchResultView: BaseView {
     
     let topView = UIView()
     
@@ -157,7 +157,7 @@ class ResultSearchView: BaseView {
     
 }
 
-extension ResultSearchView{
+extension ZatchSearchResultView{
     
     class SearchCateogryDotButton: UIButton {
         

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearchView>, UIGestureRecognizerDelegate {
+class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchSearchResultView>, UIGestureRecognizerDelegate {
     
     //MARK: - Properties
     
@@ -24,7 +24,7 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
     }
     
     init(){
-        super.init(headerView: BaseHeaderView(), mainView: ResultSearchView())
+        super.init(headerView: BaseHeaderView(), mainView: ZatchSearchResultView())
     }
     
     required init?(coder: NSCoder) {
@@ -93,7 +93,7 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
         let vc = CategorySheetViewController(service: .Zatch).show(in: self)
         vc.completion = { category in
             print(category)
-            (recognizer.view as? ResultSearchView.SearchCateogryDotButton)?.isSelected = true
+            (recognizer.view as? ZatchSearchResultView.SearchCateogryDotButton)?.isSelected = true
         }
     }
     
@@ -132,7 +132,7 @@ class ResultSearchViewController: BaseViewController<BaseHeaderView, ResultSearc
 
 }
 
-extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource{
+extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -150,7 +150,7 @@ extension ResultSearchViewController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
-extension ResultSearchViewController: UITextFieldDelegate{
+extension ZatchSearchResultViewController: UITextFieldDelegate{
     
     //return 키 클릭시 호출 메서드
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
