@@ -25,7 +25,7 @@ extension ZatchComponent{
         private let filterImage = UIImageView()
         private let filterLabel = UILabel().then{
             $0.text = "검색 필터"
-            $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
         }
         
         override func style() {
@@ -43,7 +43,7 @@ extension ZatchComponent{
                 $0.top.leading.trailing.bottom.equalToSuperview()
             }
             filterImage.snp.makeConstraints{
-                $0.width.height.equalTo(20)
+                $0.width.height.equalTo(24)
             }
         }
         
