@@ -6,68 +6,68 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class MyZatchTableViewCell: BaseTableViewCell {
+class ZatchTableViewCell: BaseTableViewCell, DefaultObservable {
+    
+    var disposeBag = DisposeBag()
+    private let viewModel = ZatchTableViewCellViewModel()
     
     // 재치 내용
-    let zatchImage = UIImageView().then{
+    private let zatchImage = UIImageView().then{
         $0.backgroundColor = .systemGray6
         $0.layer.cornerRadius = 4
     }
-    let zatchStackView = UIStackView().then{
+    private let zatchStackView = UIStackView().then{
         $0.spacing = 4
         $0.axis = .vertical
         $0.alignment = .leading
     }
-    let myZatchName = UILabel().then{
+    private let myZatchName = UILabel().then{
         $0.text = "삼다수 생수 1L"
         $0.font = UIFont.pretendard(size: 17, family: .Bold)
     }
-    let tradeImg = UIImageView().then{
+    private let tradeImageView = UIImageView().then{
         $0.image = Image.exchangeVerticalSilver
     }
-    let otherZatchName = UILabel().then{
+    private let otherZatchName = UILabel().then{
         $0.text = "신라면 3봉"
         $0.font = UIFont.pretendard(size: 17, family: .Bold)
     }
     
-    let nicknameAndTownLabel = UILabel().then{
+    private let nicknameAndTownLabel = UILabel().then{
         $0.text = "냥냥이 · 불광동"
         $0.setTypoStyleWithSingleLine(typoStyle: .regular14_18)
     }
 
-    let countInformationStackView = UIStackView().then{
+    private let countInformationStackView = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 8
     }
-    let heartCountView = IconAndNumberView(icon: Image.profileEmptyHeart).then{
+    private let heartCountView = IconAndNumberView(icon: Image.profileEmptyHeart).then{
         $0.setNumber(count: 15)
     }
-    let chatCountView = IconAndNumberView(icon: Image.profileChat).then{
+    private let chatCountView = IconAndNumberView(icon: Image.profileChat).then{
         $0.setNumber(count: 2)
     }
-    let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1.5)
+    private let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1.5)
 
-    
-    // heart
-    lazy var heartButton = UIButton().then{
-        $0.setImage(Image.heartSilver, for: .selected)
+    private lazy var heartButton = UIButton().then{
+        $0.setImage(Image.heartPurple, for: .selected)
         $0.setImage(Image.heartSilver, for: .normal)
     }
-    // MARK: - LifeCycles
     
-    override func style() {
-        heartButton.isHidden = true
-        heartButton.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
+    //MARK: - Override
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        bind()
     }
-
-    // MARK: - Actions
-    @objc func heartButtonDidTap() {
-        if heartButton.isSelected {heartButton.isSelected = false}
-        else {heartButton.isSelected = true}
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Functions
     override func hierarchy() {
         
         super.hierarchy()
@@ -80,7 +80,7 @@ class MyZatchTableViewCell: BaseTableViewCell {
         baseView.addSubview(borderLine)
         
         zatchStackView.addArrangedSubview(myZatchName)
-        zatchStackView.addArrangedSubview(tradeImg)
+        zatchStackView.addArrangedSubview(tradeImageView)
         zatchStackView.addArrangedSubview(otherZatchName)
         
         countInformationStackView.addArrangedSubview(heartCountView)
@@ -102,7 +102,7 @@ class MyZatchTableViewCell: BaseTableViewCell {
             $0.leading.equalTo(zatchImage.snp.trailing).offset(16)
             $0.trailing.equalToSuperview().inset(55)
         }
-        tradeImg.snp.makeConstraints {
+        tradeImageView.snp.makeConstraints {
             $0.width.height.equalTo(20)
             $0.leading.equalToSuperview()
         }
@@ -134,7 +134,7 @@ class MyZatchTableViewCell: BaseTableViewCell {
     }
 }
 
-extension MyZatchTableViewCell{
+extension ZatchTableViewCell{
     
     class IconAndNumberView: UIStackView{
         private let iconImage = UIImageView()

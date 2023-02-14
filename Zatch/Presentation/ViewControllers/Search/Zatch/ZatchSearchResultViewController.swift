@@ -135,8 +135,7 @@ extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MyZatchTableViewCell.self)
-        cell.addHeartToCell(color: "yellow")
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchTableViewCell.self)
         return cell
     }
     

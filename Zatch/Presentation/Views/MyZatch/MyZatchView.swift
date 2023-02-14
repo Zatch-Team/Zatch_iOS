@@ -13,7 +13,7 @@ class MyZatchView: BaseView{
         $0.setTitle("전체보기")
     }
     let zatchTableView = UITableView().then{
-        $0.register(cellType: MyZatchTableViewCell.self)
+        $0.register(cellType: ZatchTableViewCell.self)
     }
     lazy var floatingButton = UIButton().then{
         $0.backgroundColor = .zatchPurple

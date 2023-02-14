@@ -50,7 +50,7 @@ extension MyZatchTabViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MyZatchTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchTableViewCell.self)
         return cell
     }
     
