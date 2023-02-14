@@ -9,148 +9,96 @@ import UIKit
 
 class ZatchSearchResultView: BaseView {
     
-    let topView = UIView()
-    
-    let separateLine = UIView().then{
-        $0.backgroundColor = .black10
-    }
-    
-    let separateRectangle = UIView().then{
-        $0.backgroundColor = .black5
-    }
+    private let topView = UIView()
+    private let separateLine = ZatchComponent.BorderLine(color: .black10, height: 1)
+    private let separateSection = ZatchComponent.BorderLine(color: .black5, height: 8)
     
     let myZatchFrame = SearchFieldFrame(alignment: .trailing)
-    
     let wantZatchFrame = SearchFieldFrame(alignment: .leading)
-    
     let exchangeImage = UIImageView().then{
         $0.image = Image.exchange
     }
+
+    let townFrame = ZatchComponent.LettersAndArrowView().then{
+        $0.setTitle("홍제동")
+    }
+    let searchFrame = ZatchComponent.FilterView()
+
     
-    lazy var townFrame = UIStackView().then{
-        $0.spacing = 4
-        $0.axis = .horizontal
-    }
-    let townSelectedLabel = UILabel().then{
-        $0.text = "홍제동"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textColor = .black85
-    }
-    let townSelectArrow = UIImageView().then{
-        $0.image = Image.arrowDown
-    }
-    
-    let searchFrame = UIStackView().then{
-        $0.spacing = 4
-        $0.axis = .horizontal
-    }
-    let searchFilterLabel = UILabel().then{
-        $0.text = "검색 필터"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textColor = .black85
-    }
-    let searchFilterImage = UIImageView().then{
-        $0.image = Image.searchFilter
-    }
-    
-    lazy var tableView = UITableView().then{
+    let tableView = UITableView().then{
         $0.register(cellType: MyZatchTableViewCell.self)
     }
     
-    let emptyResultView = ResultEmptyTableViewCell()
+    let emptyResultView = ResultEmptyTableViewCell().then{
+        $0.isHidden = true
+    }
     
     override func hierarchy(){
 
         self.addSubview(topView)
-        
-        self.topView.addSubview(exchangeImage)
-        
-        self.topView.addSubview(myZatchFrame)
-        self.topView.addSubview(wantZatchFrame)
-        
-        self.topView.addSubview(townFrame)
-        townFrame.addArrangedSubview(townSelectedLabel)
-        townFrame.addArrangedSubview(townSelectArrow)
-        
-        self.topView.addSubview(searchFrame)
-        searchFrame.addArrangedSubview(searchFilterImage)
-        searchFrame.addArrangedSubview(searchFilterLabel)
-        
         self.addSubview(separateLine)
-        self.addSubview(separateRectangle)
-        
+        self.addSubview(separateSection)
         self.addSubview(tableView)
         self.addSubview(emptyResultView)
+        
+        self.topView.addSubview(exchangeImage)
+        self.topView.addSubview(myZatchFrame)
+        self.topView.addSubview(wantZatchFrame)
+        self.topView.addSubview(townFrame)
+        self.topView.addSubview(searchFrame)
     }
     
     override func layout(){
      
-        self.topView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.height.equalTo(116)
-            make.width.equalToSuperview()
+        topView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.height.equalTo(116)
+            $0.width.equalToSuperview()
         }
-    
-        self.exchangeImage.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(36)
+        exchangeImage.snp.makeConstraints {
+            $0.width.height.equalTo(24)
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(38)
             
-            make.centerY.equalTo(myZatchFrame.productLabel)
-            make.centerY.equalTo(wantZatchFrame.productLabel)
-            make.centerY.equalTo(myZatchFrame.productTextField)
-            make.centerY.equalTo(wantZatchFrame.productTextField)
+            $0.centerY.equalTo(myZatchFrame.productLabel)
+            $0.centerY.equalTo(wantZatchFrame.productLabel)
+            $0.centerY.equalTo(myZatchFrame.productTextField)
+            $0.centerY.equalTo(wantZatchFrame.productTextField)
         }
-        
         myZatchFrame.snp.makeConstraints{
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().offset(11)
             $0.trailing.equalTo(exchangeImage.snp.leading).offset(-12)
         }
-        
         wantZatchFrame.snp.makeConstraints{
             $0.top.equalToSuperview()
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.trailing.equalToSuperview().offset(-11)
             $0.leading.equalTo(exchangeImage.snp.trailing).offset(12)
         }
-        
-        self.townFrame.snp.makeConstraints{ make in
-            make.leading.equalToSuperview().offset(16)
-            make.bottom.equalToSuperview().offset(-12)
+        townFrame.snp.makeConstraints{
+            $0.leading.equalToSuperview().offset(24)
+            $0.bottom.equalToSuperview().offset(-14)
+        }
+        searchFrame.snp.makeConstraints{
+            $0.trailing.equalToSuperview().offset(-24)
+            $0.bottom.equalToSuperview().offset(-14)
+        }
+        separateLine.snp.makeConstraints{
+            $0.top.equalTo(topView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+        }
+        separateSection.snp.makeConstraints{
+            $0.top.equalTo(separateLine.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
         }
         
-        self.townSelectArrow.snp.makeConstraints{ make in
-            make.height.width.equalTo(20)
+        tableView.snp.makeConstraints{
+            $0.top.equalTo(separateSection.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         
-        self.searchFrame.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-12)
-        }
-        
-        self.searchFilterImage.snp.makeConstraints{ make in
-            make.height.width.equalTo(20)
-        }
-        
-        self.separateLine.snp.makeConstraints{ make in
-            make.height.equalTo(1)
-            make.top.equalTo(topView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        self.separateRectangle.snp.makeConstraints{ make in
-            make.height.equalTo(8)
-            make.top.equalTo(separateLine.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        self.tableView.snp.makeConstraints{ make in
-            make.top.equalTo(separateRectangle.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
-        }
-        
-        self.emptyResultView.snp.makeConstraints{ make in
-            make.top.bottom.leading.trailing.equalTo(tableView)
+        emptyResultView.snp.makeConstraints{
+            $0.top.bottom.leading.trailing.equalTo(tableView)
         }
         
     }
@@ -164,13 +112,28 @@ extension ZatchSearchResultView{
         //MARK: - LifeCycle
         override init(frame: CGRect) {
             super.init(frame: .zero)
-            
-            self.setImage(Image.searchDot, for: .normal)
-            self.setImage(Image.searchDotChecked, for: .selected)
+            initialize()
         }
         
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func initialize(){
+            style()
+            layout()
+        }
+        
+        private func style(){
+            self.setImage(Image.searchDot, for: .normal)
+            self.setImage(Image.searchDotChecked, for: .selected)
+        }
+        
+        private func layout(){
+            self.snp.makeConstraints{
+                $0.width.equalTo(36)
+                $0.height.equalTo(18)
+            }
         }
         
     }
@@ -184,11 +147,11 @@ extension ZatchSearchResultView{
             $0.numberOfLines = 1
             $0.textAlignment = .right
             $0.textColor = .black85
-            $0.font = UIFont.pretendard(size: 16, family: .Bold)
+            $0.setTypoStyleWithSingleLine(typoStyle: .bold20)
             $0.isUserInteractionEnabled = true
         }
         let stackView = UIStackView().then{
-            $0.spacing = 14
+            $0.spacing = 6
             $0.axis = .vertical
         }
         
@@ -196,7 +159,7 @@ extension ZatchSearchResultView{
             $0.isHidden = true
             $0.textAlignment = .center
             $0.textColor = .black85
-            $0.font = UIFont.pretendard(size: 16, family: .Bold)
+            $0.font = UIFont.pretendard(size: 20, family: .Bold)
             $0.addPadding()
             $0.tintColor = .black10
             $0.returnKeyType = .done
@@ -223,17 +186,27 @@ extension ZatchSearchResultView{
             stackView.addArrangedSubview(productLabel)
             
             stackView.snp.makeConstraints{
-                $0.top.equalToSuperview().offset(8)
+                $0.top.equalToSuperview().offset(12)
                 $0.leading.trailing.equalToSuperview()
             }
             
             productTextField.snp.makeConstraints{
-                $0.top.equalTo(categortBtn.snp.bottom).offset(8)
-                $0.leading.trailing.equalToSuperview()
+                $0.top.equalTo(categortBtn.snp.bottom).offset(6)
                 $0.height.equalTo(32)
                 $0.bottom.equalToSuperview()
             }
-
+            
+            if(alignment == .trailing){
+                productTextField.snp.makeConstraints{
+                    $0.trailing.equalToSuperview()
+                    $0.leading.equalToSuperview().offset(24)
+                }
+            }else{
+                productTextField.snp.makeConstraints{
+                    $0.leading.equalToSuperview()
+                    $0.trailing.equalToSuperview().offset(-24)
+                }
+            }
         }
         
         required init?(coder: NSCoder) {
