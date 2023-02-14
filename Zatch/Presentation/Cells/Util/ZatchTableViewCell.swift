@@ -124,13 +124,22 @@ class ZatchTableViewCell: BaseTableViewCell, DefaultObservable {
             $0.centerX.bottom.equalToSuperview()
         }
     }
- 
-    // Heart
-    func addHeartToCell(color: String) {
-        if color == "purple" {heartButton.setImage(Image.heartPurple, for: .selected)}
-        else {heartButton.setImage(Image.heartYellow, for: .selected)}
+    
+    func bind() {
         
-        heartButton.isHidden = false
+        let input = ZatchTableViewCellViewModel.Input(heartState: heartButton.rx.isSelected.asObservable())
+        _ = viewModel.transform(input)
+        
+        heartButton.rx.tap
+            .map{
+                !self.heartButton.isSelected
+            }.asDriver(onErrorJustReturn: false)
+            .drive(heartButton.rx.isSelected)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindingData(){
+        
     }
 }
 
