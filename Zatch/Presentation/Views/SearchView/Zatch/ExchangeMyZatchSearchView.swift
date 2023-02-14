@@ -23,7 +23,7 @@ class ExchangeMyZatchSearchView: BaseView {
     lazy var skipButton = UIButton().then{
         $0.setTitle("건너뛰기", for: .normal)
         $0.setTitleColor(.black45, for: .normal)
-        $0.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.titleLabel?.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
     }
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
