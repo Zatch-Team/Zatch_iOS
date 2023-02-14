@@ -8,48 +8,50 @@
 import UIKit
 
 class MyZatchTableViewCell: BaseTableViewCell {
-    let backView = UIView().then{
-        $0.backgroundColor = .white
-    }
-    // 나의 재치 내용
+    
+    // 재치 내용
     let zatchImage = UIImageView().then{
         $0.backgroundColor = .systemGray6
         $0.layer.cornerRadius = 4
     }
+    let zatchStackView = UIStackView().then{
+        $0.spacing = 4
+        $0.axis = .vertical
+        $0.alignment = .leading
+    }
     let myZatchName = UILabel().then{
         $0.text = "삼다수 생수 1L"
-        $0.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.font = UIFont.pretendard(size: 17, family: .Bold)
     }
     let tradeImg = UIImageView().then{
         $0.image = Image.exchangeVerticalSilver
     }
     let otherZatchName = UILabel().then{
         $0.text = "신라면 3봉"
-        $0.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.font = UIFont.pretendard(size: 17, family: .Bold)
     }
-    let horizontalStackWith2 = UIStackView().then{
-        $0.axis = .horizontal
-        $0.spacing = 2
+    
+    let nicknameAndTownLabel = UILabel().then{
+        $0.text = "냥냥이 · 불광동"
+        $0.setTypoStyleWithSingleLine(typoStyle: .regular14_18)
     }
-    let peopleLabel = UILabel().then{
-        $0.text = "냥냥이"
-        $0.font = UIFont.pretendard(size: 12, family: .Regular)
-    }
-    let label = UILabel().then{
-        $0.text = "."
-        $0.font = UIFont.pretendard(size: 12, family: .Regular)
-    }
-    let locationLabel = UILabel().then{
-        $0.text = "불광동"
-        $0.font = UIFont.pretendard(size: 12, family: .Regular)
-    }
-    let horizontalStackWith8 = UIStackView().then{
+
+    let countInformationStackView = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 8
     }
+    let heartCountView = IconAndNumberView(icon: Image.profileEmptyHeart).then{
+        $0.setNumber(count: 15)
+    }
+    let chatCountView = IconAndNumberView(icon: Image.profileChat).then{
+        $0.setNumber(count: 2)
+    }
+    let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1.5)
+
+    
     // heart
     lazy var heartButton = UIButton().then{
-        $0.setImage(UIImage(named: "heartFilled"), for: .selected)
+        $0.setImage(Image.heartSilver, for: .selected)
         $0.setImage(Image.heartSilver, for: .normal)
     }
     // MARK: - LifeCycles
@@ -68,88 +70,109 @@ class MyZatchTableViewCell: BaseTableViewCell {
     // MARK: - Functions
     override func hierarchy() {
         
-        contentView.backgroundColor = .systemGray5
-        contentView.addSubview(backView)
+        super.hierarchy()
         
-        backView.addSubview(zatchImage)
-        backView.addSubview(myZatchName)
-        backView.addSubview(tradeImg)
-        backView.addSubview(otherZatchName)
+        baseView.addSubview(zatchImage)
+        baseView.addSubview(zatchStackView)
+        baseView.addSubview(nicknameAndTownLabel)
+        baseView.addSubview(countInformationStackView)
+        baseView.addSubview(heartButton)
+        baseView.addSubview(borderLine)
         
-        backView.addSubview(horizontalStackWith2)
-        horizontalStackWith2.addArrangedSubview(peopleLabel)
-        horizontalStackWith2.addArrangedSubview(label)
-        horizontalStackWith2.addArrangedSubview(locationLabel)
+        zatchStackView.addArrangedSubview(myZatchName)
+        zatchStackView.addArrangedSubview(tradeImg)
+        zatchStackView.addArrangedSubview(otherZatchName)
         
-        backView.addSubview(horizontalStackWith8)
-        
-        horizontalStackWith8.addArrangedSubview(setProfileStack("profile_emptyHeart", 15))
-        horizontalStackWith8.addArrangedSubview(setProfileStack("profile_chat", 2))
-        
-        backView.addSubview(heartButton)
+        countInformationStackView.addArrangedSubview(heartCountView)
+        countInformationStackView.addArrangedSubview(chatCountView)
     }
     
     override func layout() {
-        backView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-        zatchImage.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
-            make.leading.equalToSuperview().offset(20)
-            make.top.equalToSuperview().offset(20)
-            make.bottom.equalToSuperview().offset(-18)
-        }
-        myZatchName.snp.makeConstraints { make in
-            make.top.equalTo(zatchImage)
-            make.leading.equalTo(zatchImage.snp.trailing).offset(16)
-            make.trailing.equalToSuperview().inset(20)
-        }
-        tradeImg.snp.makeConstraints { make in
-            make.width.height.equalTo(20)
-            make.top.equalTo(myZatchName.snp.bottom).offset(4)
-            make.leading.equalTo(myZatchName)
-        }
-        otherZatchName.snp.makeConstraints { make in
-            make.top.equalTo(tradeImg.snp.bottom).offset(4)
-            make.leading.equalTo(myZatchName)
-        }
-        horizontalStackWith2.snp.makeConstraints { make in
-            make.leading.equalTo(myZatchName)
-            make.bottom.equalTo(zatchImage)
-        }
-        horizontalStackWith8.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(20)
-            make.centerY.equalTo(horizontalStackWith2)
-        }
-        heartButton.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-            make.trailing.top.equalToSuperview().inset(16)
-        }
-    }
-    func setProfileStack(_ img: String, _ count: Int) -> UIStackView {
-        let stack = UIStackView().then{
-            $0.axis = .horizontal
-            $0.spacing = 4
-        }
-        let iconImg = UIImageView().then{
-            $0.image = UIImage(named: img)
-        }
-        let countLabel = UILabel().then{
-            $0.text = String(count)
-            $0.font = UIFont.pretendard(size: 12, family: .Medium)
-            $0.textColor = .black20
-        }
-        stack.addArrangedSubview(iconImg)
-        stack.addArrangedSubview(countLabel)
         
-        return stack
+        super.layout()
+        
+        zatchImage.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().offset(20)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(108)
+        }
+        zatchStackView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(24)
+            $0.leading.equalTo(zatchImage.snp.trailing).offset(16)
+            $0.trailing.equalToSuperview().inset(55)
+        }
+        tradeImg.snp.makeConstraints {
+            $0.width.height.equalTo(20)
+            $0.leading.equalToSuperview()
+        }
+        
+        nicknameAndTownLabel.snp.makeConstraints {
+            $0.leading.equalTo(zatchStackView)
+            $0.bottom.equalToSuperview().offset(-20)
+        }
+        countInformationStackView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-24)
+            $0.bottom.equalToSuperview().offset(-20)
+        }
+        heartButton.snp.makeConstraints {
+            $0.width.height.equalTo(28)
+            $0.trailing.top.equalToSuperview().inset(20)
+        }
+        borderLine.snp.makeConstraints{
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerX.bottom.equalToSuperview()
+        }
     }
+ 
     // Heart
     func addHeartToCell(color: String) {
         if color == "purple" {heartButton.setImage(Image.heartPurple, for: .selected)}
         else {heartButton.setImage(Image.heartYellow, for: .selected)}
         
         heartButton.isHidden = false
+    }
+}
+
+extension MyZatchTableViewCell{
+    
+    class IconAndNumberView: UIStackView{
+        private let iconImage = UIImageView()
+        private let numberLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
+            $0.textColor = .black20
+        }
+        
+        init(icon: UIImage){
+            self.iconImage.image = icon
+            super.init(frame: .zero)
+            initialize()
+        }
+        
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func initialize(){
+            self.spacing = 4
+            self.axis = .horizontal
+            hierarchy()
+            layout()
+        }
+        
+        private func hierarchy(){
+            self.addArrangedSubview(iconImage)
+            self.addArrangedSubview(numberLabel)
+        }
+        
+        private func layout(){
+            iconImage.snp.makeConstraints{
+                $0.width.height.equalTo(20)
+            }
+        }
+        
+        func setNumber(count: Int){
+            numberLabel.text = "\(count)"
+        }
     }
 }

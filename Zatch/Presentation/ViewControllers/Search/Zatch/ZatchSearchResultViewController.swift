@@ -35,7 +35,12 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
         
         super.initialize()
         
-        setUpDelegate()
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
+
+        mainView.myZatchFrame.productTextField.delegate = self
+        mainView.wantZatchFrame.productTextField.delegate = self
         
         mainView.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
         mainView.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
@@ -58,15 +63,6 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
         mainView.wantZatchFrame.productLabel.isHidden = false
         
         self.view.endEditing(true)
-    }
-    
-    //MARK: - Helper
-    func setUpDelegate(){
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
-
-        mainView.myZatchFrame.productTextField.delegate = self
-        mainView.wantZatchFrame.productTextField.delegate = self
     }
     
     //MARK: Action
