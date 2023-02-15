@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WantZatchSheetViewController: SearchTagSheetViewController{
+class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
     
     init(){
         super.init(type: .searchWantTag)
