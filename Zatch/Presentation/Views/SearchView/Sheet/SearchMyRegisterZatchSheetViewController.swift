@@ -27,10 +27,14 @@ class SearchMyRegisterZatchSheetViewController: SearchTagSheetViewController{
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchMyZatchByRegisterCollectionViewCell.self).then{
             $0.setTitle(title: tagData[indexPath.row])
         }
+        if(indexPath.row == currentTag){
+            cell.isSelectedState = true
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        completion(indexPath.row)
+        self.dismiss(animated: true)
     }
 }

@@ -9,6 +9,12 @@ import UIKit
 
 class SearchMyZatchByRegisterCollectionViewCell: BaseCollectionViewCell, SearchZatchByRegister {
     
+    var isSelectedState: Bool = false{
+        didSet{
+            isSelectedState ? setSelectState() : setDeselectState()
+        }
+    }
+    
     let tagLabel = ZatchComponent.YellowTag(configuration: .height31)
     
     override func hierarchy() {
