@@ -26,6 +26,9 @@ class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchWantZatchByRegisterCollectionViewCell.self).then{
             $0.setTitle(title: tagData[indexPath.row])
         }
+        if(indexPath.row == currentTag){
+            cell.isSelectedState = true
+        }
         return cell
     }
     
