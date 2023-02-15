@@ -97,18 +97,9 @@ class ZatchTableViewCell: BaseTableViewCell, DefaultObservable {
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(108)
         }
-        zatchStackView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(24)
-            $0.leading.equalTo(zatchImage.snp.trailing).offset(16)
-            $0.trailing.equalToSuperview().inset(55)
-        }
-        tradeImageView.snp.makeConstraints {
-            $0.width.height.equalTo(20)
-            $0.leading.equalToSuperview()
-        }
         
         nicknameAndTownLabel.snp.makeConstraints {
-            $0.leading.equalTo(zatchStackView)
+            $0.leading.equalTo(zatchImage.snp.trailing).offset(16)
             $0.bottom.equalToSuperview().offset(-20)
         }
         countInformationStackView.snp.makeConstraints {
