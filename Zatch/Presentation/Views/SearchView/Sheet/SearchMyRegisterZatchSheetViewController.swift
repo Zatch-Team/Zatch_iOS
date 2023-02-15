@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MyZatchSheetViewController: SearchTagSheetViewController{
+class SearchMyRegisterZatchSheetViewController: SearchTagSheetViewController{
     
     init(){
         super.init(type: .searchMyTag)
