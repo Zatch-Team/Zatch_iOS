@@ -15,7 +15,7 @@ class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransi
     var completion: ((T) -> Void)!
     
     let titleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
         $0.textColor = .black85
     }
     
