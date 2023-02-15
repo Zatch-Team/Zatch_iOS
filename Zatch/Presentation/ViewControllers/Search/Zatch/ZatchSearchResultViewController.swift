@@ -135,8 +135,13 @@ extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchTableViewCell.self)
-        return cell
+        if(indexPath.row < 5){
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchShareTableViewCell.self)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchExchangeTableViewCell.self)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

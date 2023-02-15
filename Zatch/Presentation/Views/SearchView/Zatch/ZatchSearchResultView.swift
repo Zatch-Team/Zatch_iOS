@@ -26,7 +26,8 @@ class ZatchSearchResultView: BaseView {
 
     
     let tableView = UITableView().then{
-        $0.register(cellType: ZatchTableViewCell.self)
+        $0.register(cellType: ZatchShareTableViewCell.self)
+        $0.register(cellType: ZatchExchangeTableViewCell.self)
     }
     
     let emptyResultView = ResultEmptyTableViewCell().then{
