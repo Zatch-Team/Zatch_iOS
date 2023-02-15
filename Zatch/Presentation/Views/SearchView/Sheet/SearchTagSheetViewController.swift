@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchTagSheetViewController: BaseBottomSheetViewController<String>{
+class SearchTagSheetViewController: BaseBottomSheetViewController<Int>{
     
     //MARK: - Properties
     
@@ -54,10 +54,5 @@ extension SearchTagSheetViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return SearchWantZatchByRegisterCollectionViewCell.getEstimatedSize(title: tagData[indexPath.row])
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-////        selectCompleteHandelr!(tagData[indexPath.row], indexPath.row)
-//        self.dismiss(animated: true, completion: nil)
-//    }
 
 }

@@ -70,19 +70,19 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
     @objc func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
         let bottomSheet = SearchMyRegisterZatchSheetViewController().show(in: self)
         bottomSheet.currentTag = myZatchIndex
-//        bottomSheet.selectCompleteHandelr = { text, index in
+        bottomSheet.completion = {
 //            self.mainView.myZatchFrame.productLabel.text = text
-//            self.myZatchIndex = index
-//        }
+            self.myZatchIndex = $0
+        }
     }
     
     @objc func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
         let bottomSheet = SearchWantRegisterZatchSheetViewController().show(in: self)
         bottomSheet.currentTag = wantZatchIndex
-//        bottomSheet.selectCompleteHandelr = { text, index in
+        bottomSheet.completion = {
 //            self.mainView.wantZatchFrame.productLabel.text = text
-//            self.wantZatchIndex = index
-//        }
+            self.wantZatchIndex = $0
+        }
     }
     
     @objc func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){

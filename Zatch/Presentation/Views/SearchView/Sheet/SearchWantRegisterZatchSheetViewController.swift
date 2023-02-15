@@ -33,7 +33,8 @@ class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        completion(indexPath.row)
+        self.dismiss(animated: true)
     }
 
 }
