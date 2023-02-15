@@ -118,9 +118,9 @@
 		57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */; };
 		57468A8E289FEF1800056691 /* WantZatchSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */; };
 		57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */; };
-		57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */; };
-		57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */; };
-		57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */; };
+		57468A9428A000CB00056691 /* SearchZatchByRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* SearchZatchByRegister.swift */; };
+		57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */; };
+		57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */; };
 		57468A9B28A1098300056691 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9A28A1098300056691 /* UITextField.swift */; };
 		57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */; };
 		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
@@ -294,6 +294,7 @@
 		EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */; };
 		EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */; };
 		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
+		EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */; };
 		EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */; };
 		EE73C51A2995FB170000F8AC /* ProductDateChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */; };
 		EE73C51C299600230000F8AC /* RegisterCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */; };
@@ -460,9 +461,9 @@
 		57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagSheetViewController.swift; sourceTree = "<group>"; };
-		57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		57468A9328A000CB00056691 /* SearchZatchByRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchZatchByRegister.swift; sourceTree = "<group>"; };
+		57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMyZatchByRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
+		57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWantZatchByRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9A28A1098300056691 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -653,6 +654,7 @@
 		EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDateFormatter.swift; sourceTree = "<group>"; };
 		EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterRequestManager.swift; sourceTree = "<group>"; };
 		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
+		EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectView.swift; sourceTree = "<group>"; };
 		EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDateChoiceTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellDelegate.swift; sourceTree = "<group>"; };
@@ -1374,9 +1376,9 @@
 			children = (
 				57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */,
 				5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */,
-				57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */,
-				57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */,
-				57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */,
+				57468A9328A000CB00056691 /* SearchZatchByRegister.swift */,
+				57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */,
+				57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */,
 				57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */,
 				233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */,
 			);
@@ -1913,7 +1915,7 @@
 		57FEFA89297A5CED008A78B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
+				EE661A44299D0E06002904A7 /* FlowLayout */,
 				EEE6D1612997AFA30004FC7B /* TagLabel.swift */,
 			);
 			path = Utils;
@@ -2009,6 +2011,15 @@
 				EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		EE661A44299D0E06002904A7 /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
+				EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */,
+			);
+			path = FlowLayout;
 			sourceTree = "<group>";
 		};
 		EE73C5152995E1C20000F8AC /* CellView */ = {
@@ -2413,7 +2424,7 @@
 				EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */,
-				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
+				57468A9428A000CB00056691 /* SearchZatchByRegister.swift in Sources */,
 				23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */,
 				576EA923282B7F840028046C /* ZatchRegisterFirstViewController.swift in Sources */,
 				5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */,
@@ -2469,7 +2480,7 @@
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
 				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
-				57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */,
+				57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */,
 				57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */,
 				5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */,
 				23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */,
@@ -2487,7 +2498,7 @@
 				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */,
-				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
+				57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */,
 				EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */,
 				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
@@ -2661,6 +2672,7 @@
 				EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
+				EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
 				23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */,
 			);

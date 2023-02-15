@@ -70,19 +70,19 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
     @objc func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
         let bottomSheet = MyZatchSheetViewController().show(in: self)
         bottomSheet.currentTag = myZatchIndex
-        bottomSheet.selectCompleteHandelr = { text, index in
-            self.mainView.myZatchFrame.productLabel.text = text
-            self.myZatchIndex = index
-        }
+//        bottomSheet.selectCompleteHandelr = { text, index in
+//            self.mainView.myZatchFrame.productLabel.text = text
+//            self.myZatchIndex = index
+//        }
     }
     
     @objc func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
         let bottomSheet = WantZatchSheetViewController().show(in: self)
         bottomSheet.currentTag = wantZatchIndex
-        bottomSheet.selectCompleteHandelr = { text, index in
-            self.mainView.wantZatchFrame.productLabel.text = text
-            self.wantZatchIndex = index
-        }
+//        bottomSheet.selectCompleteHandelr = { text, index in
+//            self.mainView.wantZatchFrame.productLabel.text = text
+//            self.wantZatchIndex = index
+//        }
     }
     
     @objc func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
@@ -141,9 +141,11 @@ extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row < 5){
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchShareTableViewCell.self)
+            cell.bindingData()
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchExchangeTableViewCell.self)
+            cell.bindingData()
             return cell
         }
     }
