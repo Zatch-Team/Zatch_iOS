@@ -55,22 +55,7 @@ extension MyZatchSheetViewController : UICollectionViewDelegate, UICollectionVie
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let title = tagData[indexPath.row]
-        let tmpLabel = UILabel().then{
-            $0.text = title
-            $0.numberOfLines = 1
-            $0.sizeToFit()
-        }
-        
-        let width = tmpLabel.frame.size.width
-        
-        return CGSize(width: width + 12, height: 28)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectCompleteHandelr!(tagData[indexPath.row], indexPath.row)
-        self.dismiss(animated: true, completion: nil)
+        
     }
 }
