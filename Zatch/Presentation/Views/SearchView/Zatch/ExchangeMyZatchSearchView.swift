@@ -76,14 +76,13 @@ class ExchangeMyZatchSearchView: BaseView {
         }
         
         nextButton.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-55)
             $0.leading.equalToSuperview().offset(nextButton.offset)
             $0.trailing.equalToSuperview().offset(-nextButton.offset)
         }
         skipButton.snp.makeConstraints{
             $0.top.equalTo(nextButton.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-20)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide).offset(-20)
         }
     }
 }

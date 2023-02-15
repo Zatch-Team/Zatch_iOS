@@ -123,7 +123,7 @@ class FindWantZatchSearchView: BaseView {
         }
         
         nextButton.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-55)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide).offset(-55)
             $0.leading.equalToSuperview().offset(nextButton.offset)
             $0.centerX.equalToSuperview()
         }
