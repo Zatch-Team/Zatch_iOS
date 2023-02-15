@@ -10,7 +10,7 @@ import UIKit
 class SearchTagCollectionViewCell: BaseCollectionViewCell{
     
     static let height = 32
-    
+
     var isSelectState: Bool = false{
         didSet{
             isSelectState ? setSelectState() : setDeselectState()

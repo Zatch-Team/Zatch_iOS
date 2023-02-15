@@ -22,7 +22,7 @@ extension ZatchComponent{
             $0.axis = .horizontal
         }
         private let label = UILabel().then{
-            $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
             $0.textColor = .black85
         }
         private let arrowImage = UIImageView().then{
@@ -40,7 +40,7 @@ extension ZatchComponent{
                 $0.top.leading.trailing.bottom.equalToSuperview()
             }
             arrowImage.snp.makeConstraints{
-                $0.width.height.equalTo(20)
+                $0.width.height.equalTo(24)
                 $0.top.bottom.trailing.equalToSuperview()
             }
         }

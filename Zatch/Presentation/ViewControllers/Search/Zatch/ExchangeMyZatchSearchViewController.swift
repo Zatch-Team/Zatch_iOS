@@ -58,13 +58,13 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     //MARK: Action
     
     @objc func nextButtonClick(){
-        let vc = FindSearchViewController(productName: searchManager.myZatch)
+        let vc = FindWantZatchSearchViewController(productName: searchManager.myZatch)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func skipBtnDidClicked(){
         searchManager.myZatch = ""
-        let vc = FindSearchViewController()
+        let vc = FindWantZatchSearchViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

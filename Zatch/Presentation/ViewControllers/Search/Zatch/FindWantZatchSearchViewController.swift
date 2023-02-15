@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchView> {
+class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, FindWantZatchSearchView> {
     
     //MARK: - Properties
     
@@ -21,13 +21,13 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     }
     
     init(){
-        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
+        super.init(headerView: BaseHeaderView(), mainView: FindWantZatchSearchView())
         setFlexibleSearchAttribute()
     }
     
     init(productName: String){
-        super.init(headerView: BaseHeaderView(), mainView: FindSearchView())
-        mainView.myLabel.text = productName
+        super.init(headerView: BaseHeaderView(), mainView: FindWantZatchSearchView())
+        mainView.myProductNameLabel.text = productName
     }
     
     required init?(coder: NSCoder) {
@@ -48,19 +48,19 @@ class FindSearchViewController: BaseViewController<BaseHeaderView, FindSearchVie
     }
     
     @objc private func moveToResultVC(_ sender: UIButton){
-        let nextVC = ResultSearchViewController()
+        let nextVC = ZatchSearchResultViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     private func setFlexibleSearchAttribute(){
-        mainView.myLabel.text = "???"
-        mainView.myLabel.textColor = .zatchYellow
+        mainView.myProductNameLabel.text = "???"
+        mainView.myProductNameLabel.textColor = .zatchYellow
         mainView.nextButton.setTitle("유연한 탐색", for: .normal)
     }
     
 }
 
-extension FindSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
+extension FindWantZatchSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionView == mainView.firstCollectionView ? popularData.count : findData.count

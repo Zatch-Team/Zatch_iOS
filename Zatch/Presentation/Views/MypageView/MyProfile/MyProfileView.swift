@@ -26,7 +26,7 @@ class MyProfileView: UIView {
             $0.delegate = dataSourceDelegate
             $0.dataSource = dataSourceDelegate
             $0.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
-            $0.register(MyZatchTableViewCell.self, forCellReuseIdentifier: "MyZatchTableViewCell")
+            $0.register(ZatchTableViewCell.self, forCellReuseIdentifier: "MyZatchTableViewCell")
             
             // autoHeight
             $0.rowHeight = UITableView.automaticDimension

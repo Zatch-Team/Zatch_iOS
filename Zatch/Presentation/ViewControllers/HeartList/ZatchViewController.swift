@@ -23,7 +23,7 @@ extension ZatchViewController {
         heartZatchTableView = UITableView().then{
             $0.delegate = self
             $0.dataSource = self
-            $0.register(MyZatchTableViewCell.self, forCellReuseIdentifier: "MyZatchTableViewCell")
+            $0.register(ZatchTableViewCell.self, forCellReuseIdentifier: "MyZatchTableViewCell")
             
             // autoHeight
             $0.rowHeight = UITableView.automaticDimension
@@ -42,8 +42,7 @@ extension ZatchViewController: UITableViewDelegate, UITableViewDataSource {
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchTableViewCell", for: indexPath) as? MyZatchTableViewCell else { return UITableViewCell() }
-        cell.addHeartToCell(color: "purple")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyZatchTableViewCell", for: indexPath) as? ZatchTableViewCell else { return UITableViewCell() }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

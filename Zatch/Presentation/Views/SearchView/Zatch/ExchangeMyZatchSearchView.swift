@@ -16,14 +16,14 @@ class ExchangeMyZatchSearchView: BaseView {
     
     private let subTitleLabel = UILabel().then{
         $0.text = "나의 재치"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
     }
     
     lazy var nextButton = ZatchComponent.FillButton(color: .purple, title: "다음으로", configuration: .height48)
     lazy var skipButton = UIButton().then{
         $0.setTitle("건너뛰기", for: .normal)
         $0.setTitleColor(.black45, for: .normal)
-        $0.titleLabel?.font = UIFont.pretendard(size: 12, family: .Medium)
+        $0.titleLabel?.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
     }
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
@@ -76,14 +76,13 @@ class ExchangeMyZatchSearchView: BaseView {
         }
         
         nextButton.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-55)
             $0.leading.equalToSuperview().offset(nextButton.offset)
             $0.trailing.equalToSuperview().offset(-nextButton.offset)
         }
         skipButton.snp.makeConstraints{
             $0.top.equalTo(nextButton.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-20)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide).offset(-20)
         }
     }
 }
