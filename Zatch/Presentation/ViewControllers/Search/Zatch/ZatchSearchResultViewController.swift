@@ -125,6 +125,10 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
 //            (recognizer.view as? SearchCateogryDotButton)?.isSelected = true
         }
     }
+    
+    override func viewControllerWillPop() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
 }
 
