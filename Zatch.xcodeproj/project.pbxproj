@@ -322,6 +322,9 @@
 		EEE6D1622997AFA30004FC7B /* TagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D1612997AFA30004FC7B /* TagLabel.swift */; };
 		EEE6D1652997BF830004FC7B /* ZatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D1642997BF830004FC7B /* ZatchButton.swift */; };
 		EEE6D16729987F0D0004FC7B /* ZatchFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */; };
+		EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */; };
+		EEE7F2B5299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */; };
+		EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -678,6 +681,9 @@
 		EEE6D1612997AFA30004FC7B /* TagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLabel.swift; sourceTree = "<group>"; };
 		EEE6D1642997BF830004FC7B /* ZatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchButton.swift; sourceTree = "<group>"; };
 		EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchFillButton.swift; sourceTree = "<group>"; };
+		EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchShareTableViewCell.swift; sourceTree = "<group>"; };
+		EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchExchangeTableViewCell.swift; sourceTree = "<group>"; };
+		EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchInformationAttach.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1973,7 +1979,10 @@
 		EE532954299BCFEF00C79CF2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */,
 				235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */,
+				EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */,
+				EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2431,6 +2440,7 @@
 				57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */,
 				23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */,
+				EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
@@ -2453,6 +2463,7 @@
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */,
+				EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
 				232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */,
 				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
@@ -2642,6 +2653,7 @@
 				EEE6D15B299752EB0004FC7B /* TagStlye.swift in Sources */,
 				571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
+				EEE7F2B5299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
 				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,
 				EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */,
