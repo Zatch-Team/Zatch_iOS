@@ -15,25 +15,9 @@ class ZatchTableViewCell: BaseTableViewCell, DefaultObservable {
     private let viewModel = ZatchTableViewCellViewModel()
     
     // 재치 내용
-    private let zatchImage = UIImageView().then{
+    let zatchImage = UIImageView().then{
         $0.backgroundColor = .systemGray6
         $0.layer.cornerRadius = 4
-    }
-    private let zatchStackView = UIStackView().then{
-        $0.spacing = 4
-        $0.axis = .vertical
-        $0.alignment = .leading
-    }
-    private let myZatchName = UILabel().then{
-        $0.text = "삼다수 생수 1L"
-        $0.font = UIFont.pretendard(size: 17, family: .Bold)
-    }
-    private let tradeImageView = UIImageView().then{
-        $0.image = Image.exchangeVerticalSilver
-    }
-    private let otherZatchName = UILabel().then{
-        $0.text = "신라면 3봉"
-        $0.font = UIFont.pretendard(size: 17, family: .Bold)
     }
     
     private let nicknameAndTownLabel = UILabel().then{
@@ -54,7 +38,7 @@ class ZatchTableViewCell: BaseTableViewCell, DefaultObservable {
     private let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1.5)
 
     private lazy var heartButton = UIButton().then{
-        $0.setImage(Image.heartPurple, for: .selected)
+        $0.setImage(Image.heartYellow, for: .selected)
         $0.setImage(Image.heartSilver, for: .normal)
     }
     
@@ -73,15 +57,10 @@ class ZatchTableViewCell: BaseTableViewCell, DefaultObservable {
         super.hierarchy()
         
         baseView.addSubview(zatchImage)
-        baseView.addSubview(zatchStackView)
         baseView.addSubview(nicknameAndTownLabel)
         baseView.addSubview(countInformationStackView)
         baseView.addSubview(heartButton)
         baseView.addSubview(borderLine)
-        
-        zatchStackView.addArrangedSubview(myZatchName)
-        zatchStackView.addArrangedSubview(tradeImageView)
-        zatchStackView.addArrangedSubview(otherZatchName)
         
         countInformationStackView.addArrangedSubview(heartCountView)
         countInformationStackView.addArrangedSubview(chatCountView)
