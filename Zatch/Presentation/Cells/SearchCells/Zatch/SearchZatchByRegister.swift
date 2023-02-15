@@ -9,22 +9,29 @@ import UIKit
 
 protocol SearchZatchByRegister{
     associatedtype TagType: ZatchComponent.Tag
+    var isSelectedState: Bool { get set }
     var tagLabel: TagType { get }
-    func setTitle(title: String)
-    static func getEstimatedSize(title: String) -> CGSize
 }
 
 extension SearchZatchByRegister where Self: BaseCollectionViewCell{
-    
-    func setTitle(title: String){
-        tagLabel.setTitle(title)
-    }
     
     static func getEstimatedSize(title: String) -> CGSize{
         let testLabel = ZatchComponent.PurlpleTag(configuration: .height31).then{
             $0.setTitle(title)
         }
         return testLabel.intrinsicContentSize
+    }
+    
+    func setTitle(title: String){
+        tagLabel.setTitle(title)
+    }
+    
+    func setSelectState(){
+        tagLabel.isSelected = true
+    }
+    
+    func setDeselectState(){
+        tagLabel.isSelected = false
     }
     
     func tagLabelHierarchy(){
