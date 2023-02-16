@@ -7,27 +7,26 @@
 
 import UIKit
 
-class MainBannerTableViewCell: UITableViewCell {
+class MainBannerTableViewCell: BaseTableViewCell {
 
-    // Main Banner
-    let banner = UIImageView().then{
+    private let banner = UIImageView().then{
         $0.image = Image.MainBanner
-    }
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
+        $0.contentMode = .scaleAspectFit
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func hierarchy() {
+        super.hierarchy()
+        baseView.addSubview(banner)
     }
-
-    func setUpView() {
-        addSubview(banner)
-        
-        banner.snp.makeConstraints{ make in
-            make.width.height.leading.trailing.top.bottom.equalToSuperview()
+    
+    override func layout() {
+        super.layout()
+        banner.snp.makeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    func setBannerImage(_ image: UIImage){
+        banner.image = image
     }
 }

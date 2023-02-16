@@ -99,8 +99,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let tag = indexPath.row
         switch tag {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainBannerTableViewCell", for: indexPath) as? MainBannerTableViewCell else { return UITableViewCell() }
-            cell.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainBannerTableViewCell.self).then{
+                $0.setBannerImage(Image.MainBanner)
+            }
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
@@ -112,9 +113,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainBannerTableViewCell", for: indexPath) as? MainBannerTableViewCell else { return UITableViewCell() }
-            cell.banner.image = Image.addZatchBanner
-            cell.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainBannerTableViewCell.self).then{
+                $0.setBannerImage(Image.addZatchBanner)
+            }
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
