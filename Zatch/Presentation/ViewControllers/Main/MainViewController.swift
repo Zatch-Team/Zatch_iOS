@@ -104,11 +104,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            _ = cell.then{
-                $0.setUpCollectionView(self)
-                $0.setUpView()
-                $0.setUpConstraint()
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
+                $0.collectionView.delegate = self
+                $0.collectionView.dataSource = self
                 $0.selectionStyle = .none
             }
             return cell
@@ -118,36 +116,32 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            _ = cell.then{
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
                 $0.label.text = "지금 인기있는 재치"
                 $0.subLabel.text = "재치 있는 자취인이 되는 법"
-                
-                $0.setUpCollectionView(self)
-                $0.setUpView()
-                $0.setUpConstraint()
+                $0.collectionView.delegate = self
+                $0.collectionView.dataSource = self
                 $0.selectionStyle = .none
             }
             return cell
         default:
-            let cell = UITableViewCell()
-            return cell
+            return UITableViewCell()
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tag = indexPath.row
-        switch tag {
-        case 0:
-            return 160
-        case 1, 3:
-            return 300
-        case 2:
-            return 150
-        default:
-            return 50
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let tag = indexPath.row
+//        switch tag {
+//        case 0:
+//            return 160
+//        case 1, 3:
+//            return 300
+//        case 2:
+//            return 150
+//        default:
+//            return 50
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = indexPath.row
@@ -172,9 +166,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return 7
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainZatchCollectionViewCell.cellIdentifier,
-                                                            for: indexPath)
-                as? MainZatchCollectionViewCell else{ fatalError() }
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
