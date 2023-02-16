@@ -9,15 +9,9 @@ import UIKit
 
 extension UIColor{
     
-    static let transparent = UIColor(red: 0/255,
-                                     green: 0/255,
-                                     blue: 0/255,
-                                     alpha: 0)
+    static let transparent = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0)
     
-    static let purple40 = UIColor(red: 216/255,
-                                  green: 203/255,
-                                  blue: 255/255,
-                                  alpha: 1)
+    static let purple40 = UIColor(red: 216/255, green: 203/255, blue: 255/255, alpha: 1)
     
     static let zatchPurple = UIColor(red: 158/255,
                                      green: 124/255,
@@ -52,6 +46,11 @@ extension UIColor{
     static let black20 = UIColor(red: 204/255,
                                  green: 204/255,
                                  blue: 204/255,
+                                 alpha: 1)
+    
+    static let black30 = UIColor(red: 179/255,
+                                 green: 179/255,
+                                 blue: 179/255,
                                  alpha: 1)
     
     static let black45 = UIColor(red: 140/255,

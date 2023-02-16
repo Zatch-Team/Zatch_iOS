@@ -15,8 +15,8 @@ class MainHeaderView: BaseView, HeaderFirstEtcButton, HeaderSecondEtcButton{
         $0.axis = .horizontal
     }
     lazy var locationLabel = UILabel().then{
-        $0.text = "양재동" //temp
-        $0.font = UIFont.pretendard(size: 20, family: .Bold)
+        $0.text = "양재동"
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold20)
         $0.textColor = .zatchDeepYellow
         $0.isUserInteractionEnabled = false
     }
@@ -28,14 +28,6 @@ class MainHeaderView: BaseView, HeaderFirstEtcButton, HeaderSecondEtcButton{
 
     lazy var etcButton = EtcButton(image: Image.bell)
     lazy var secondEtcButton = EtcButton(image: Image.search)
-    
-//    init(){
-//        super.init(image: Image.bell)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
 
     override func hierarchy() {
         super.hierarchy()
@@ -57,7 +49,6 @@ class MainHeaderView: BaseView, HeaderFirstEtcButton, HeaderSecondEtcButton{
             $0.leading.equalToSuperview().offset(24)
             $0.centerY.equalToSuperview()
         }
-
         arrowButton.snp.makeConstraints{ make in
             make.width.height.equalTo(24)
         }
@@ -70,11 +61,11 @@ class MainHeaderView: BaseView, HeaderFirstEtcButton, HeaderSecondEtcButton{
 class MainView: BaseView {
 
     let mainTableView = UITableView().then {
-        $0.register(MainBannerTableViewCell.self, forCellReuseIdentifier: "MainBannerTableViewCell")
-        $0.register(MainCollectionViewTableViewCell.self, forCellReuseIdentifier: "MainCollectionViewTableViewCell")
+        $0.register(cellType: MainBannerTableViewCell.self)
+        $0.register(cellType: MainCollectionViewTableViewCell.self)
         
-        $0.rowHeight = UITableView.automaticDimension
-        $0.estimatedRowHeight = UITableView.automaticDimension
+//        $0.rowHeight = UITableView.automaticDimension
+//        $0.estimatedRowHeight = UITableView.automaticDimension
         $0.showsVerticalScrollIndicator = false
     }
     
