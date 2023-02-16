@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultEmptyTableViewCell: UIView {
+class SearchResultEmptyView: BaseView {
     
     let titleLabel = UILabel().then{
         $0.text = "이런!\n검색결과가 없어요."

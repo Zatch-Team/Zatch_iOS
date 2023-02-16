@@ -30,7 +30,7 @@ class ZatchSearchResultView: BaseView {
         $0.register(cellType: ZatchExchangeTableViewCell.self)
     }
     
-    let emptyResultView = ResultEmptyTableViewCell().then{
+    let emptyResultView = SearchResultEmptyView().then{
         $0.isHidden = true
     }
     
