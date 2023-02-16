@@ -16,9 +16,9 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
     private var resultData = [String](){
         didSet{
             if(resultData.isEmpty){
-                mainView.emptyResultView.isHidden = false
+                mainView.tableView.backgroundView?.isHidden = false
             }else{
-                mainView.emptyResultView.isHidden = true
+                mainView.tableView.backgroundView?.isHidden = true
             }
         }
     }
@@ -135,7 +135,7 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
 extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -122,7 +122,7 @@
 		57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */; };
 		57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */; };
 		57468A9B28A1098300056691 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9A28A1098300056691 /* UITextField.swift */; };
-		57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */; };
+		57468A9E28A1E5E300056691 /* SearchResultEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* SearchResultEmptyView.swift */; };
 		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
 		57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */; };
 		57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */; };
@@ -465,7 +465,7 @@
 		57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMyZatchByRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWantZatchByRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9A28A1098300056691 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		57468A9D28A1E5E300056691 /* SearchResultEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultEmptyView.swift; sourceTree = "<group>"; };
 		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingSheetViewController.swift; sourceTree = "<group>"; };
 		57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePurpleButton.swift; sourceTree = "<group>"; };
@@ -1379,7 +1379,7 @@
 				57468A9328A000CB00056691 /* SearchZatchByRegister.swift */,
 				57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */,
 				57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */,
-				57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */,
+				57468A9D28A1E5E300056691 /* SearchResultEmptyView.swift */,
 				233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */,
 			);
 			path = Zatch;
@@ -2477,7 +2477,7 @@
 				EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
 				232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */,
-				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
+				57468A9E28A1E5E300056691 /* SearchResultEmptyView.swift in Sources */,
 				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */,

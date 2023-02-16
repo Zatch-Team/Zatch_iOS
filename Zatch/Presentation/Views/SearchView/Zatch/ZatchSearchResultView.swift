@@ -24,14 +24,11 @@ class ZatchSearchResultView: BaseView {
     }
     let searchFrame = ZatchComponent.FilterView()
 
-    
     let tableView = UITableView().then{
+        $0.backgroundView = SearchResultEmptyView()
+        
         $0.register(cellType: ZatchShareTableViewCell.self)
         $0.register(cellType: ZatchExchangeTableViewCell.self)
-    }
-    
-    let emptyResultView = ResultEmptyTableViewCell().then{
-        $0.isHidden = true
     }
     
     override func hierarchy(){
@@ -40,7 +37,6 @@ class ZatchSearchResultView: BaseView {
         self.addSubview(separateLine)
         self.addSubview(separateSection)
         self.addSubview(tableView)
-        self.addSubview(emptyResultView)
         
         self.topView.addSubview(exchangeImage)
         self.topView.addSubview(myZatchFrame)
@@ -98,8 +94,9 @@ class ZatchSearchResultView: BaseView {
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
-        emptyResultView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalTo(tableView)
+        tableView.backgroundView?.snp.makeConstraints{
+            $0.top.bottom.width.equalToSuperview()
+            
         }
         
     }
