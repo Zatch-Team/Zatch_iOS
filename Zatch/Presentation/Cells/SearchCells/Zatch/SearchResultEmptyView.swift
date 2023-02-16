@@ -13,13 +13,13 @@ class SearchResultEmptyView: BaseView {
         $0.text = "이런!\n검색결과가 없어요."
         $0.numberOfLines = 2
         $0.textAlignment = .center
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
         $0.textColor = .black85
     }
     
     let tipTitle = UILabel().then{
         $0.text = "검색 TIP"
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold16)
         $0.textColor = .black85
     }
     
@@ -34,10 +34,9 @@ class SearchResultEmptyView: BaseView {
     }
     
     let tipLabel1 = UILabel().then{
-        $0.text = "교환하고 싶은 재치가 있다면 나의 재치를 ‘ ? ‘ 로 설정하고 검색해서 상대방에게 제안해보세요!"
+        $0.text = "교환하고 싶은 재치가 있다면 나의 재치를 ‘?‘ 로 설정하고 검색해서 상대방에게 제안해보세요!"
         $0.numberOfLines = 2
-        $0.font = UIFont.pretendard(size: 14, family: .Regular)
-        $0.setTextWithLineHeight(lineHeight: 19.6)
+        $0.setTypoStyleWithMultiLine(typoStyle: .regular15)
     }
     
     let paragraph2 = UILabel().then{
@@ -48,23 +47,10 @@ class SearchResultEmptyView: BaseView {
     let tipLabel2 = UILabel().then{
         $0.text = "유연한 탐색을 통해 우리 집 근처의 재치들을 둘러보세요!"
         $0.numberOfLines = 2
-        $0.font = UIFont.pretendard(size: 14, family: .Regular)
-        $0.setTextWithLineHeight(lineHeight: 19.6)
+        $0.setTypoStyleWithMultiLine(typoStyle: .regular15)
     }
     
-    override init(frame: CGRect){
-        
-        super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setUpView(){
+    override func hierarchy() {
         
         self.addSubview(titleLabel)
         self.addSubview(tipTitle)
@@ -76,13 +62,12 @@ class SearchResultEmptyView: BaseView {
         tipFrame.addSubview(tipLabel2)
     }
     
-    private func setUpConstraint(){
+    override func layout() {
         
-        self.titleLabel.snp.makeConstraints{ make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(172)
-            make.bottom.equalToSuperview().offset(-294)
-            make.height.equalTo(40)
+        self.titleLabel.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(167)
+            $0.bottom.equalToSuperview().offset(-398)
         }
         
         self.tipTitle.snp.makeConstraints{ make in
@@ -92,19 +77,20 @@ class SearchResultEmptyView: BaseView {
         self.tipFrame.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(tipTitle.snp.bottom).offset(8)
-            make.bottom.equalToSuperview().offset(-80)
+            make.top.equalTo(tipTitle.snp.bottom).offset(12)
+            make.bottom.equalToSuperview().offset(-74)
         }
         
         self.paragraph1.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(12)
             make.firstBaseline.equalTo(tipLabel1).offset(2)
+            make.width.height.equalTo(paragraph2)
         }
         
         self.tipLabel1.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(12)
             make.leading.equalTo(paragraph1.snp.trailing).offset(3)
-            make.trailing.equalToSuperview().offset(-15)
+            make.trailing.equalToSuperview().offset(-41)
         }
         
         self.paragraph2.snp.makeConstraints{ make in
@@ -115,7 +101,7 @@ class SearchResultEmptyView: BaseView {
         self.tipLabel2.snp.makeConstraints{ make in
             make.top.equalTo(tipLabel1.snp.bottom).offset(8)
             make.leading.equalTo(paragraph2.snp.trailing).offset(3)
-            make.trailing.equalToSuperview().offset(-20)
+            make.trailing.equalToSuperview().offset(-41)
             make.bottom.equalToSuperview().offset(-12)
         }
     }
