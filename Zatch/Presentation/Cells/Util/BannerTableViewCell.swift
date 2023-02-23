@@ -7,10 +7,9 @@
 
 import UIKit
 
-class MainBannerTableViewCell: BaseTableViewCell {
+class BannerTableViewCell: BaseTableViewCell {
 
     private let banner = UIImageView().then{
-        $0.image = Image.MainBanner
         $0.contentMode = .scaleAspectFit
     }
     
