@@ -64,13 +64,14 @@ class TownSettingTableViewCell: BaseTableViewCell {
         townStackView.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(22)
             $0.leading.equalToSuperview().offset(16)
-            $0.bottom.equalToSuperview().inset(18)
+            $0.bottom.equalToSuperview().inset(18 + 8)
         }
         settingIcon.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
         borderLine.snp.makeConstraints{
-            $0.bottom.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(8)
         }
     }
     
