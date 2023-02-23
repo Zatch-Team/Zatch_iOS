@@ -8,8 +8,10 @@
 import UIKit
 
 class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
-    var mypageView: MypageView!
+    
     var isCertified: Bool!      // 인증 전 후
+    
+    private let mainView = MyPageView()
     
     init(){
         super.init(headerView: BaseTabBarHeaderView(title: "내 정보", button: Image.setting))
@@ -19,29 +21,26 @@ class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        isCertified = false     // 임시로 false 처리
-
-        /*
-        super.titleLabel.text = "내 정보"
-        super.etcBtn.setImage(Image.setting, for: .normal)
-        super.etcBtn.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
-        
-        mypageView = MypageView()
-        self.view.addSubview(mypageView)
-        
-        mypageView.setUpTableView(dataSourceDelegate: self)
-        mypageView.setUpView()
-        mypageView.setUpConstraint()
-        
-        mypageView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(super.titleView.snp.bottom)
+    override func layout() {
+        super.layout()
+        self.view.addSubview(mainView)
+        mainView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
-         */
+    }
+    
+    override func initialize() {
+        isCertified = true
         
-        self.tabBarController?.tabBar.tintColor = .zatchPurple
+        headerView.etcButton.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
+        
+        setTableViewDelegateAndDataSource()
+    }
+    
+    private func setTableViewDelegateAndDataSource(){
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
 
     // MARK: - Actions
