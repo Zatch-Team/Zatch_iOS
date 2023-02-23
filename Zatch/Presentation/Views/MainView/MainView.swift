@@ -61,7 +61,7 @@ class MainHeaderView: BaseView, HeaderFirstEtcButton, HeaderSecondEtcButton{
 class MainView: BaseView {
 
     let mainTableView = UITableView().then {
-        $0.register(cellType: MainBannerTableViewCell.self)
+        $0.register(cellType: BannerTableViewCell.self)
         $0.register(cellType: MainCollectionViewTableViewCell.self)
         
 //        $0.rowHeight = UITableView.automaticDimension

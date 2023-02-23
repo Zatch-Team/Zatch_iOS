@@ -72,18 +72,17 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
 extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return zatches.count
+        zatches.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
             $0.setTitle(zatches[indexPath.row])
         }
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return SearchTagCollectionViewCell.getEstimatedSize(title: zatches[indexPath.row])
+        SearchTagCollectionViewCell.getEstimatedSize(title: zatches[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -30,7 +30,7 @@
 		23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F529085258003E46AB /* NoticeTableViewCell.swift */; };
 		23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */; };
 		23A86A5628C72C7700B073CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5528C72C7700B073CB /* MainView.swift */; };
-		23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */; };
+		23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */; };
 		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
 		23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5E28C7408C00B073CB /* MainZatchCollectionViewCell.swift */; };
 		23B051B628E1FD7F005D08EA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051B528E1FD7F005D08EA /* NotificationViewController.swift */; };
@@ -43,9 +43,8 @@
 		23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */; };
 		23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */; };
 		23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */; };
-		23B7FBA928CEB9430018642E /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBA828CEB9430018642E /* MypageView.swift */; };
+		23B7FBA928CEB9430018642E /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBA828CEB9430018642E /* MyPageView.swift */; };
 		23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */; };
-		23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */; };
 		23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */; };
 		23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */; };
 		23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */; };
@@ -308,10 +307,13 @@
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
 		EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */; };
-		EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */; };
+		EEB13B8B297FBBAE001A8DD9 /* DefaultObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */; };
 		EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */; };
 		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
 		EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */; };
+		EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153729A713ED003FD4E3 /* SectionDivider.swift */; };
+		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
+		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
 		EEE326A72998B5190017DF46 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */; };
 		EEE326AA2998B6EA0017DF46 /* BorderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326A92998B6EA0017DF46 /* BorderLine.swift */; };
 		EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */; };
@@ -368,7 +370,7 @@
 		23A767F529085258003E46AB /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5528C72C7700B073CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerTableViewCell.swift; sourceTree = "<group>"; };
+		23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5E28C7408C00B073CB /* MainZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		23B051B528E1FD7F005D08EA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -381,9 +383,8 @@
 		23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentTableViewCell.swift; sourceTree = "<group>"; };
 		23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
-		23B7FBA828CEB9430018642E /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		23B7FBA828CEB9430018642E /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
-		23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationBannerTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchStatisticTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -668,10 +669,13 @@
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
-		EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservablel.swift; sourceTree = "<group>"; };
+		EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservable.swift; sourceTree = "<group>"; };
 		EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeCycle+Rx.swift"; sourceTree = "<group>"; };
+		EEE1153729A713ED003FD4E3 /* SectionDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDivider.swift; sourceTree = "<group>"; };
+		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
+		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
 		EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		EEE326A92998B6EA0017DF46 /* BorderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLine.swift; sourceTree = "<group>"; };
 		EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchSearchRequestManager.swift; sourceTree = "<group>"; };
@@ -775,7 +779,7 @@
 		235613F428D0975300D44E97 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				23B7FBA828CEB9430018642E /* MypageView.swift */,
+				23B7FBA828CEB9430018642E /* MyPageView.swift */,
 				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
 				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
 				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
@@ -796,9 +800,9 @@
 			isa = PBXGroup;
 			children = (
 				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
-				23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */,
 				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
 				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
+				EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */,
 				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
 				576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */,
 			);
@@ -852,14 +856,13 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		23A86A5728C731CB00B073CB /* MainCells */ = {
+		23A86A5728C731CB00B073CB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */,
 				23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */,
 				23A86A5E28C7408C00B073CB /* MainZatchCollectionViewCell.swift */,
 			);
-			path = MainCells;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		23B051B428E1FD70005D08EA /* Notification */ = {
@@ -1095,7 +1098,7 @@
 				23B051BA28E1FE77005D08EA /* NotificationCells */,
 				57A28CE028CF23E000263079 /* TownCells */,
 				23B7FBAA28CEBFBC0018642E /* MypageCells */,
-				23A86A5728C731CB00B073CB /* MainCells */,
+				23A86A5728C731CB00B073CB /* Main */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
 				23C9031C28C5CF4000FB6D3D /* DetailCells */,
 				23C9031928C5CEDE00FB6D3D /* RegisterCells */,
@@ -1433,11 +1436,10 @@
 		57468A79289D3C0800056691 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				574E1CA8296400E6005D2048 /* CellReuse.swift */,
+				EEE1153C29A72646003FD4E3 /* Util */,
+				EEE1153D29A72661003FD4E3 /* Domain */,
 				57B9F70B28D94B7800ACEC94 /* Delegate.swift */,
 				571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */,
-				EEB13B8A297FBBAE001A8DD9 /* DefaultObservablel.swift */,
-				EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1961,6 +1963,7 @@
 				EEE6D1632997BEEE0004FC7B /* Button */,
 				EEE6D159299752E00004FC7B /* Tag */,
 				EEE326A92998B6EA0017DF46 /* BorderLine.swift */,
+				EEE1153729A713ED003FD4E3 /* SectionDivider.swift */,
 				EE33D21B2993BF710020866E /* LettersAndArrowView.swift */,
 				EE9B053429953A1200068503 /* FilterView.swift */,
 				EE73C52129961BF30000F8AC /* RadioButtonView.swift */,
@@ -1981,10 +1984,8 @@
 		EE532954299BCFEF00C79CF2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */,
-				235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */,
-				EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */,
-				EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */,
+				EEE1153929A71CA7003FD4E3 /* Zatch */,
+				23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2074,6 +2075,35 @@
 				EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		EEE1153929A71CA7003FD4E3 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */,
+				235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */,
+				EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */,
+				EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		EEE1153C29A72646003FD4E3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				574E1CA8296400E6005D2048 /* CellReuse.swift */,
+				EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE1153D29A72661003FD4E3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */,
+				EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		EEE326AB2998C5FD0017DF46 /* Search */ = {
@@ -2437,7 +2467,7 @@
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
-				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
+				23B7FBA928CEB9430018642E /* MyPageView.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
@@ -2516,7 +2546,6 @@
 				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
 				EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
-				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
 				57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */,
@@ -2535,7 +2564,7 @@
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				EE9B053529953A1200068503 /* FilterView.swift in Sources */,
 				57FFEDC128DD28090041719B /* CheckShareRegisterInfoView.swift in Sources */,
-				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
+				23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */,
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
@@ -2571,6 +2600,7 @@
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */,
 				57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */,
+				EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */,
 				233DDF6028EB7D2C008E32B4 /* NanumTableViewCell.swift in Sources */,
@@ -2589,6 +2619,7 @@
 				EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */,
 				EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */,
 				EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */,
+				EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */,
 				57C585022821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
@@ -2621,6 +2652,7 @@
 				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
 				232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */,
+				EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */,
 				EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
 				57E75ECB28E5482900AC24B2 /* ZatchSearchResultView.swift in Sources */,
@@ -2665,7 +2697,7 @@
 				571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EEE7F2B5299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift in Sources */,
-				EEB13B8B297FBBAE001A8DD9 /* DefaultObservablel.swift in Sources */,
+				EEB13B8B297FBBAE001A8DD9 /* DefaultObservable.swift in Sources */,
 				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,
 				EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,

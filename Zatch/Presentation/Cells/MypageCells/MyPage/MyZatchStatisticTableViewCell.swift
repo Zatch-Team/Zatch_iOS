@@ -7,112 +7,130 @@
 
 import UIKit
 
-class MyZatchStatisticTableViewCell: UITableViewCell {
-    let backView = UIView().then{
-        $0.backgroundColor = .white
-    }
-    let titleLabel = UILabel().then{
+class MyZatchStatisticTableViewCell: BaseTableViewCell {
+    
+    var delegate: MyPageCellDelegate?
+
+    private let titleLabel = UILabel().then{
         $0.text = "나의 재치 현황"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
     }
-    let myZatchStack = UIStackView().then{
+    private let myZatchStack = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 28
     }
-
-    // MARK: - LifeCycles
-    var preVC: MypageViewController!
-    var zatchTapGesture: UITapGestureRecognizer!
-    var heartTapGesture: UITapGestureRecognizer!
-    var tradeTapGesture: UITapGestureRecognizer!
+    private let myZatchCountView = MyZatchCountView(title: "나의 재치").then{
+        $0.setZatchCount(7)
+    }
+    private let heartCountView = MyZatchCountView(title: "관심 목록").then{
+        $0.setZatchCount(0)
+    }
+    private let exchangeCountView = MyZatchCountView(title: "교환 완료").then{
+        $0.setZatchCount(20)
+    }
+    private let borderLine = ZatchComponent.SectionDivider()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setTapGestures()
-        setUpView()
-        setUpConstraint()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // MARK: - Actions
-    @objc func myZatchDidTap(sender: UITapGestureRecognizer) {
-//        let vc = MyZatchViewController()
-//        self.preVC.navigationController?.pushViewController(vc, animated: true)
+    
+    override func hierarchy() {
+        
+        super.hierarchy()
+        
+        baseView.addSubview(titleLabel)
+        baseView.addSubview(myZatchStack)
+        baseView.addSubview(borderLine)
+        
+        myZatchStack.addArrangedSubview(myZatchCountView)
+        myZatchStack.addArrangedSubview(heartCountView)
+        myZatchStack.addArrangedSubview(exchangeCountView)
     }
-    @objc func myHeartDidTap(sender: UITapGestureRecognizer) {
-//        let vc = HeartListViewController()
-//        self.preVC.navigationController?.pushViewController(vc, animated: true)
-    }
-    // 임시
-    @objc func myTradeDidTap(sender: UITapGestureRecognizer) {
-//        let vc = MyZatchViewController()
-//        self.preVC.navigationController?.pushViewController(vc, animated: true)
-    }
+    
+    override func layout() {
+        
+        super.layout()
 
-    // MARK: - Functions
-    func setTapGestures() {
-        zatchTapGesture = UITapGestureRecognizer(target: self, action: #selector(myZatchDidTap(sender:)))
-        heartTapGesture = UITapGestureRecognizer(target: self, action: #selector(myHeartDidTap(sender:)))
-        tradeTapGesture = UITapGestureRecognizer(target: self, action: #selector(myTradeDidTap(sender:)))
+        titleLabel.snp.makeConstraints {
+            $0.top.leading.equalToSuperview().offset(20)
+        }
+        myZatchStack.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(24)
+            $0.centerX.equalToSuperview()
+        }
+        borderLine.snp.makeConstraints{
+            $0.top.equalTo(myZatchStack.snp.bottom).offset(36)
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
     }
-    func setUpView() {
-        contentView.backgroundColor = .systemGray5
-        contentView.addSubview(backView)
-        
-        backView.addSubview(titleLabel)
-        backView.addSubview(myZatchStack)
-        
-        let countStack = setMyZatchCount(7, "나의 재치")
-        let heartStack = setMyZatchCount(0, "관심 목록")
-        let tradeStack = setMyZatchCount(20, "교환 완료")
-        
-        countStack.addGestureRecognizer(zatchTapGesture)
-        heartStack.addGestureRecognizer(heartTapGesture)
-        tradeStack.addGestureRecognizer(tradeTapGesture)
-        
-        setMyZatch(countStack)
-        setMyZatch(heartStack)
-        setMyZatch(tradeStack)
+    
+    private func initialize() {
+        myZatchCountView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(myZatchCountViewDidTapped)))
+        heartCountView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heartCountViewDidTapped)))
+        exchangeCountView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exchangeCountViewDidTapped)))
     }
-    func setUpConstraint() {
-        backView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-8)
-        }
-        titleLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(20)
-        }
-        myZatchStack.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(24)
-            make.centerX.equalToSuperview()
-        }
+    
+    // MARK: - Actions
+    @objc private func myZatchCountViewDidTapped() {
+        delegate?.willMoveMyZatchViewController()
+    }
+    
+    @objc private func heartCountViewDidTapped() {
+        delegate?.willMoveHeartListViewController()
+    }
+    
+    @objc private func exchangeCountViewDidTapped() {
+        delegate?.willMoveExchangeFinishViewController()
+    }
+    
+    func bindingData(){
+        
     }
 }
-extension MyZatchStatisticTableViewCell {
-    func setMyZatchCount(_ count: Int, _ title: String) -> UIStackView {
-        let verticalStack = UIStackView().then{
-            $0.axis = .vertical
-        }
-        let countLabel = UILabel().then{
-            $0.text = String(count)
+
+extension MyZatchStatisticTableViewCell{
+    
+    class MyZatchCountView: UIStackView{
+        
+        private let countLabel = UILabel().then{
             $0.font = UIFont.pretendard(size: 32, family: .Bold)
             $0.textColor = .zatchPurple
             $0.textAlignment = .center
         }
-        let titleLabel = UILabel().then{
-            $0.text = title
-            $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        private let titleLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
             $0.textColor = .black65
             $0.textAlignment = .center
         }
-        verticalStack.addArrangedSubview(countLabel)
-        verticalStack.addArrangedSubview(titleLabel)
         
-        return verticalStack
-    }
-    func setMyZatch(_ stackView: UIStackView) {
-        self.myZatchStack.addArrangedSubview(stackView)
+        init(title: String){
+            titleLabel.text = title
+            super.init(frame: .zero)
+            style()
+            hierarchy()
+        }
+        
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func style(){
+            axis = .vertical
+            spacing = 0
+        }
+        
+        private func hierarchy(){
+            self.addArrangedSubview(countLabel)
+            self.addArrangedSubview(titleLabel)
+        }
+        
+        func setZatchCount(_ count: Int){
+            countLabel.text = String(count)
+        }
     }
 }

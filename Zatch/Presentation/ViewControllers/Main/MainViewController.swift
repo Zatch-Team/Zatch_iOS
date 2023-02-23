@@ -99,7 +99,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let tag = indexPath.row
         switch tag {
         case 0:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainBannerTableViewCell.self).then{
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
                 $0.setBannerImage(Image.MainBanner)
             }
             return cell
@@ -111,7 +111,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainBannerTableViewCell.self).then{
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
                 $0.setBannerImage(Image.addZatchBanner)
             }
             return cell

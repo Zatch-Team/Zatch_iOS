@@ -31,8 +31,7 @@ class TabBarController: UITabBarController {
         let tabs = [UINavigationController(rootViewController: MainViewController()),
                     UINavigationController(rootViewController: MyZatchTabViewController()),
                     UINavigationController(rootViewController: ChattingListViewController()),
-                    UINavigationController(rootViewController: MypageViewController(headerView: BaseTabBarHeaderView(title: "내 정보" ,
-                                                                                                                     button: Image.setting)))]
+                    UINavigationController(rootViewController: MypageViewController())]
         
         TabBarItem.allCases.forEach {
             tabs[$0.rawValue].tabBarItem = $0.asTabBarItem()
