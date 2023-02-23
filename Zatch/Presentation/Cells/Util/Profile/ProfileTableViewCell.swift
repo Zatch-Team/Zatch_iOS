@@ -8,22 +8,20 @@
 import UIKit
 import Cosmos
 
-class ProfileTableViewCell: UITableViewCell {
-    let backView = UIView().then{
-        $0.backgroundColor = .white
+class ProfileTableViewCell: BaseTableViewCell {
+    
+    private let userImage = UIImageView().then{
+        $0.backgroundColor = .black10
+        $0.layer.cornerRadius = 100/2
     }
-    let userImage = UIImageView().then{
-        $0.backgroundColor = .systemGray4
-        $0.layer.cornerRadius = 50
-    }
-    var userNameLabel = UILabel().then{
+    private let userNameLabel = UILabel().then{
         $0.text = "userName"
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold16)
     }
     // star
-    let starView = CosmosView().then{
+    private let starView = CosmosView().then{
         $0.rating = 4
-        $0.settings.updateOnTouch = true
+        $0.settings.updateOnTouch = false
         $0.settings.fillMode = .full
         $0.settings.starSize = 24
         $0.settings.starMargin = 0
@@ -31,11 +29,12 @@ class ProfileTableViewCell: UITableViewCell {
         $0.settings.emptyImage = Image.emptyStar
     }
     // 한 줄 후기
-    let titleLabel = UILabel().then{
+    private let titleLabel = UILabel().then{
         $0.text = "한 줄 후기"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
+        $0.textColor = .black85
     }
-    let moreButton = UIButton().then{
+    private let moreButton = UIButton().then{
         var config = UIButton.Configuration.plain()
         var attText = AttributedString.init("더보기")
         
@@ -45,19 +44,16 @@ class ProfileTableViewCell: UITableViewCell {
         
         $0.configuration = config
     }
-    let reviewLabel = UILabel().then{
+    private let reviewLabel = UILabel().then{
         $0.text = "“답장이 빠르고 친절하게 답해주세요.”"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
+        $0.textColor = .black85
     }
+    private let borderLine = ZatchComponent.SectionDivider()
 
-    // MARK: - LifeCycles
-    var userName: String!
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-        userNameLabel.text = self.userName
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -65,22 +61,24 @@ class ProfileTableViewCell: UITableViewCell {
     }
 
     // MARK: - Functions
-    func setUpView() {
-        contentView.backgroundColor = .systemGray5
-        contentView.addSubview(backView)
+    
+    override func hierarchy() {
         
-        backView.addSubview(userImage)
-        backView.addSubview(userNameLabel)
-        backView.addSubview(starView)
-        backView.addSubview(titleLabel)
-        backView.addSubview(moreButton)
-        backView.addSubview(reviewLabel)
+        super.hierarchy()
+
+        baseView.addSubview(userImage)
+        baseView.addSubview(userNameLabel)
+        baseView.addSubview(starView)
+        baseView.addSubview(titleLabel)
+        baseView.addSubview(moreButton)
+        baseView.addSubview(reviewLabel)
+        baseView.addSubview(borderLine)
     }
-    func setUpConstraint() {
-        backView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-8)
-        }
+    
+    override func layout() {
+        
+        super.layout()
+    
         userImage.snp.makeConstraints { make in
             make.width.height.equalTo(100)
             make.top.equalToSuperview().offset(20)
@@ -88,7 +86,7 @@ class ProfileTableViewCell: UITableViewCell {
         }
         userNameLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(userImage.snp.bottom).offset(12)
+            make.top.equalTo(userImage.snp.bottom).offset(13)
         }
         starView.snp.makeConstraints { make in
             make.width.equalTo(120)
@@ -108,5 +106,17 @@ class ProfileTableViewCell: UITableViewCell {
             make.centerX.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(14)
         }
+        borderLine.snp.makeConstraints{
+            $0.top.equalTo(reviewLabel.snp.bottom).offset(24)
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    private func initialize(){
+        
+    }
+    
+    func bindingData(){
+        
     }
 }

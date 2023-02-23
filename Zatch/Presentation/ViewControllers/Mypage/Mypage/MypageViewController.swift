@@ -9,8 +9,7 @@ import UIKit
 
 class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
-    var isCertified: Bool = true    // 인증 전 후
-    
+    private var isCertified: Bool = true    // 인증 전 후
     private let mainView = MyPageView()
     
     init(){
@@ -130,10 +129,8 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
 extension MypageViewController: MyPageCellDelegate{
     
     func willMoveProfileViewController(){
-//        let vc = ProfileViewController(rightButton: "수정")
-//        vc.isMyProfile = true
-//        vc.profileUserName = "나"
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = MyProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func willMoveMyZatchViewController(){
 //        let vc = MyZatchViewController()
