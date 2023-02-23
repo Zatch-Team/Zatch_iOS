@@ -18,10 +18,10 @@ class MyPageView: BaseView {
         $0.separatorStyle = .none
         
         $0.register(cellType: MyInfoTableViewCell.self)
-//        $0.register(cellType: CertificationBannerTableViewCell.self)
-//        $0.register(cellType: MyZatchStatisticTableViewCell.self)
-//        $0.register(cellType: TownSettingTableViewCell.self)
-//        $0.register(cellType: MypageSettingTableViewCell.self)
+        $0.register(cellType: BannerTableViewCell.self)
+        $0.register(cellType: MyZatchStatisticTableViewCell.self)
+        $0.register(cellType: TownSettingTableViewCell.self)
+        $0.register(cellType: BaseMyPageTableViewCell.self)
     }
     
     override func hierarchy() {
