@@ -12,4 +12,5 @@ protocol MyPageCellDelegate{
     func willMoveMyZatchViewController()
     func willMoveHeartListViewController()
     func willMoveExchangeFinishViewController()
+    func willMoveTownSettingViewController()
 }

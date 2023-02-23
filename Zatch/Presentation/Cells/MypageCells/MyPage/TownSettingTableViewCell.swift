@@ -7,62 +7,74 @@
 
 import UIKit
 
-class TownSettingTableViewCell: UITableViewCell {
-    let backView = UIView().then{
-        $0.backgroundColor = .white
-    }
-    let titleLabel = UILabel().then{
+class TownSettingTableViewCell: BaseTableViewCell {
+    
+    var delegate: MyPageCellDelegate?
+    
+    private let titleLabel = UILabel().then{
         $0.text = "내 동네 관리"
-        $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
     }
-    let stack = UIStackView().then{
+    private let townStackView = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 8
     }
-    let settingIcon = UIImageView().then{
+    private let settingIcon = UIImageView().then{
         $0.image = Image.pin
     }
-    let setTownLabel = UILabel().then{
+    private let setTownLabel = UILabel().then{
         $0.text = "내 동네 설정"
-        $0.font = UIFont.pretendard(size: 15, family: .Regular)
+        $0.setTypoStyleWithSingleLine(typoStyle: .regular15)
     }
+    private let borderLine = ZatchComponent.SectionDivider()
 
     // MARK: - LifeCycles
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // MARK: - Functions
-    func setUpView() {
-        contentView.backgroundColor = .systemGray5
-        contentView.addSubview(backView)
-        
-        backView.addSubview(titleLabel)
-        backView.addSubview(stack)
-        
-        stack.addArrangedSubview(settingIcon)
-        stack.addArrangedSubview(setTownLabel)
+    
+    private func initialize(){
+        townStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townStackViewDidTappeed)))
     }
-    func setUpConstraint() {
-        backView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-8)
+
+    override func hierarchy() {
+        
+        super.hierarchy()
+
+        baseView.addSubview(titleLabel)
+        baseView.addSubview(townStackView)
+        baseView.addSubview(borderLine)
+        
+        townStackView.addArrangedSubview(settingIcon)
+        townStackView.addArrangedSubview(setTownLabel)
+    }
+    
+    override func layout() {
+        
+        super.layout()
+        
+        titleLabel.snp.makeConstraints{
+            $0.leading.top.equalToSuperview().offset(20)
         }
-        titleLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(20)
-        }
-        stack.snp.makeConstraints { make in
-            make.leading.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom).offset(22)
+        townStackView.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(22)
+            $0.leading.equalToSuperview().offset(16)
+            $0.bottom.equalToSuperview().inset(18)
         }
         settingIcon.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        borderLine.snp.makeConstraints{
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    @objc private func townStackViewDidTappeed(){
+        delegate?.willMoveTownSettingViewController()
     }
 }
