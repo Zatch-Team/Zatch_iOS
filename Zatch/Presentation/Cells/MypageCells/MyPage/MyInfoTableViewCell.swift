@@ -7,61 +7,67 @@
 
 import UIKit
 
-class MyInfoTableViewCell: UITableViewCell {
-    let backView = UIView().then{
-        $0.backgroundColor = .white
+class MyInfoTableViewCell: BaseTableViewCell {
+    
+    private let userImage = UIImageView().then{
+        $0.backgroundColor = .black10
+        $0.layer.cornerRadius = 100/2
     }
-    let userImage = UIImageView().then{
-        $0.backgroundColor = .systemGray4
-        $0.layer.cornerRadius = 50
-    }
-    let userName = UILabel().then{
+    private let userName = UILabel().then{
         $0.text = "userName"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    lazy var goProfileButton = WhitePurpleButton().then{
+    private lazy var goProfileButton = WhitePurpleButton().then{
         $0.setTitle("프로필 보기", for: .normal)
     }
+    private let sectionDivider = ZatchComponent.SectionDivider().then{
+        $0.isHidden = true
+    }
 
-    // MARK: - LifeCycles
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override func hierarchy() {
         
-        setUpView()
-        setUpConstraint()
+        super.hierarchy()
+
+        baseView.addSubview(userImage)
+        baseView.addSubview(userName)
+        baseView.addSubview(goProfileButton)
+        baseView.addSubview(sectionDivider)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layout() {
+        
+        super.layout()
+        
+        userImage.snp.makeConstraints {
+            $0.width.height.equalTo(100)
+            $0.top.equalToSuperview().offset(20)
+            $0.centerX.equalToSuperview()
+        }
+        userName.snp.makeConstraints {
+            $0.top.equalTo(userImage.snp.bottom).offset(13)
+            $0.centerX.equalToSuperview()
+        }
+        goProfileButton.snp.makeConstraints {
+            $0.top.equalTo(userName.snp.bottom).offset(12)
+            $0.leading.trailing.equalToSuperview().inset(73)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(25)
+            $0.height.equalTo(36)
+        }
+        
+        sectionDivider.snp.makeConstraints{
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
     }
-
-    // MARK: - Functions
-    func setUpView() {
-        contentView.backgroundColor = .systemGray5
-        contentView.addSubview(backView)
-        backView.addSubview(userImage)
-        backView.addSubview(userName)
-        backView.addSubview(goProfileButton)
+    
+    func willSectionDividerShow(){
+        sectionDivider.isHidden = false
+        goProfileButton.snp.updateConstraints{
+            $0.bottom.equalToSuperview().inset(25 + 8)
+        }
     }
-    func setUpConstraint() {
-        backView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
-            make.height.equalTo(224)
-        }
-        userImage.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
-            make.top.equalToSuperview().offset(20)
-            make.centerX.equalToSuperview()
-        }
-        userName.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(userImage.snp.bottom).offset(12)
-        }
-        goProfileButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(73)
-            make.height.equalTo(36)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(userName.snp.bottom).offset(12)
-        }
+    
+    func bindingData(_ profile: Any){
+        
     }
 }
