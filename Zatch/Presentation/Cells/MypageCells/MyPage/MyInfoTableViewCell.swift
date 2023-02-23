@@ -9,6 +9,8 @@ import UIKit
 
 class MyInfoTableViewCell: BaseTableViewCell {
     
+    var delegate: MyPageCellDelegate?
+    
     private let userImage = UIImageView().then{
         $0.backgroundColor = .black10
         $0.layer.cornerRadius = 100/2
@@ -23,7 +25,16 @@ class MyInfoTableViewCell: BaseTableViewCell {
     private let sectionDivider = ZatchComponent.SectionDivider().then{
         $0.isHidden = true
     }
-
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func hierarchy() {
         
         super.hierarchy()
@@ -58,6 +69,14 @@ class MyInfoTableViewCell: BaseTableViewCell {
         sectionDivider.snp.makeConstraints{
             $0.bottom.leading.trailing.equalToSuperview()
         }
+    }
+    
+    private func initialize(){
+        goProfileButton.addTarget(self, action: #selector(goProfileButtonDidTapped), for: .touchUpInside)
+    }
+    
+    @objc private func goProfileButtonDidTapped(){
+        delegate?.willMoveProfileViewController()
     }
     
     func willSectionDividerShow(){
