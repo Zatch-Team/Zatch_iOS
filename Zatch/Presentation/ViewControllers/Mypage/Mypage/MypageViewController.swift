@@ -10,7 +10,15 @@ import UIKit
 class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     var mypageView: MypageView!
     var isCertified: Bool!      // 인증 전 후
-
+    
+    init(){
+        super.init(headerView: BaseTabBarHeaderView(title: "내 정보", button: Image.setting))
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         isCertified = false     // 임시로 false 처리

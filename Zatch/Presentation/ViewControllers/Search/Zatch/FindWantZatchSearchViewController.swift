@@ -63,15 +63,14 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
 extension FindWantZatchSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == mainView.firstCollectionView ? popularData.count : findData.count
+        collectionView == mainView.firstCollectionView ? popularData.count : findData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
             $0.setTitle(title)
         }
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
