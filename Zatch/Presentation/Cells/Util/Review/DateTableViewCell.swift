@@ -7,39 +7,34 @@
 
 import UIKit
 
-class DateTableViewCell: UITableViewCell {
+class DateTableViewCell: BaseTableViewCell {
+    
+    var reviewDate: String!
+    
     var dateLabel = UILabel().then{
         $0.text = "2022-07-15"
-        $0.font = UIFont.pretendard(size: 12, family: .Regular)
+        $0.setTypoStyleWithSingleLine(typoStyle: .regular12)
         $0.textColor = .black45
     }
-    let seperatorLineLeft = UIView().then{
+    private let seperatorLineLeft = UIView().then{
         $0.backgroundColor = .black45
     }
-    let seperatorLineRight = UIView().then{
+    private let seperatorLineRight = UIView().then{
         $0.backgroundColor = .black45
-    }
-
-    // MARK: - LifeCycles
-    var reviewDate: String!
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Functions
-    func setUpView() {
-        contentView.addSubview(dateLabel)
-        contentView.addSubview(seperatorLineLeft)
-        contentView.addSubview(seperatorLineRight)
+    override func hierarchy() {
+        super.hierarchy()
+
+        baseView.addSubview(dateLabel)
+        baseView.addSubview(seperatorLineLeft)
+        baseView.addSubview(seperatorLineRight)
     }
-    func setUpConstraint() {
+    
+    override func layout() {
+        super.layout()
+
         dateLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
