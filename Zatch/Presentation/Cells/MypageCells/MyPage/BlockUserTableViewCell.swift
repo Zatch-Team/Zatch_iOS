@@ -9,7 +9,7 @@ import UIKit
 
 class BlockUserTableViewCell: BaseTableViewCell {
     
-    static let cellIdentifier = "BlockUserTableViewCell"
+    var delegate: BlockUserDelegate?
     
     let userInfoStackView = UIStackView().then{
         $0.spacing = 8
@@ -35,33 +35,34 @@ class BlockUserTableViewCell: BaseTableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpView(){
+    override func hierarchy() {
         
-        self.baseView.addSubview(userInfoStackView)
-        self.baseView.addSubview(unblockBtn)
+        super.hierarchy()
+        
+        baseView.addSubview(userInfoStackView)
+        baseView.addSubview(unblockBtn)
         
         userInfoStackView.addArrangedSubview(userImageView)
         userInfoStackView.addArrangedSubview(userNameLabel)
-        
     }
     
-    func setUpConstraint(){
+    override func layout() {
+        
+        super.layout()
         
         userInfoStackView.snp.makeConstraints{
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(24)
             $0.top.equalToSuperview().offset(10)
         }
-        
+  
         userImageView.snp.makeConstraints{
             $0.top.bottom.leading.equalToSuperview()
             $0.width.height.equalTo(32)
@@ -77,9 +78,17 @@ class BlockUserTableViewCell: BaseTableViewCell {
         userNameLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
         }
-    
     }
     
+    private func initialize(){
+        unblockBtn.addTarget(self, action: #selector(unblockBtnDidClicked), for: .touchUpInside)
+    }
     
-
+    @objc private func unblockBtnDidClicked(){
+        delegate?.willBlockUser()
+    }
+    
+    func bindingData(){
+        
+    }
 }
