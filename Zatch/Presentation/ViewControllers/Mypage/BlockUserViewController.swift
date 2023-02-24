@@ -29,6 +29,7 @@ class BlockUserViewController: BaseViewController<CenterNavigationHeaderView, Bl
     }
     
     override func initialize(){
+        super.initialize()
         mainView.tableView.separatorStyle = .none
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
