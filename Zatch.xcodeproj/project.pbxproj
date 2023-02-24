@@ -317,6 +317,7 @@
 		EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */; };
 		EEE1154929A747B6003FD4E3 /* OthersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */; };
 		EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */; };
+		EEE1155429A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1155329A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift */; };
 		EEE326A72998B5190017DF46 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */; };
 		EEE326AA2998B6EA0017DF46 /* BorderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326A92998B6EA0017DF46 /* BorderLine.swift */; };
 		EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */; };
@@ -682,6 +683,7 @@
 		EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersProfileViewController.swift; sourceTree = "<group>"; };
 		EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndMoreButtonTableViewCell.swift; sourceTree = "<group>"; };
+		EEE1155329A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		EEE326A92998B6EA0017DF46 /* BorderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLine.swift; sourceTree = "<group>"; };
 		EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchSearchRequestManager.swift; sourceTree = "<group>"; };
@@ -784,22 +786,10 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		235613F428D0975300D44E97 /* Mypage */ = {
-			isa = PBXGroup;
-			children = (
-				23B7FBA828CEB9430018642E /* MyPageView.swift */,
-				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
-				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
-				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
-			);
-			path = Mypage;
-			sourceTree = "<group>";
-		};
 		235613F528D0975A00D44E97 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				EEE1154229A742D2003FD4E3 /* ProfileView.swift */,
-				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -919,12 +909,16 @@
 			path = QnACells;
 			sourceTree = "<group>";
 		};
-		23B7FBA728CEB8E80018642E /* MypageView */ = {
+		23B7FBA728CEB8E80018642E /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				235613F428D0975300D44E97 /* Mypage */,
+				23B7FBA828CEB9430018642E /* MyPageView.swift */,
+				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
+				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
+				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
+				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
 			);
-			path = MypageView;
+			path = Mypage;
 			sourceTree = "<group>";
 		};
 		23B7FBAA28CEBFBC0018642E /* MypageCells */ = {
@@ -965,7 +959,7 @@
 				5724EC8D291E0E8200DC529B /* LoginView */,
 				23B051B728E1FDBE005D08EA /* NotificationView */,
 				57FFEDBD28DD27DE0041719B /* RegisterView */,
-				23B7FBA728CEB8E80018642E /* MypageView */,
+				23B7FBA728CEB8E80018642E /* Mypage */,
 				23A86A5428C72C4C00B073CB /* MainView */,
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
 				23C9031B28C5CF3100FB6D3D /* DetailView */,
@@ -1289,8 +1283,9 @@
 			children = (
 				EE2BC34B2982B01E002B5C60 /* TabBar */,
 				571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */,
-				EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */,
 				EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */,
+				EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */,
+				EEE1155329A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift */,
 				EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */,
 				EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */,
 			);
@@ -2657,6 +2652,7 @@
 				EEE326AA2998B6EA0017DF46 /* BorderLine.swift in Sources */,
 				57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */,
 				23B051B628E1FD7F005D08EA /* NotificationViewController.swift in Sources */,
+				EEE1155429A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift in Sources */,
 				579F5E5A281E7F2800D3F0D5 /* ZatchSearchResultViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
