@@ -7,65 +7,52 @@
 
 import UIKit
 
-class BlockUserView: UIView {
+class BlockUserView: BaseView {
     
     let tableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false
+        $0.backgroundView = EmptyBlockUserView()
         
-        $0.register(BlockUserTableViewCell.self, forCellReuseIdentifier: BlockUserTableViewCell.cellIdentifier)
+        $0.register(cellType: BlockUserTableViewCell.self)
     }
     
-    let emptyView = EmptyBlockUserView().then{
-        $0.isHidden = true
-    }
-
-    override init(frame: CGRect) {
-        
-        super.init(frame: .zero)
-        
+    override func hierarchy() {
         self.addSubview(tableView)
-        self.addSubview(emptyView)
-        
-        tableView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
-        emptyView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
-        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layout() {
+        tableView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(20)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        tableView.backgroundView?.snp.makeConstraints{
+            $0.width.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        }
     }
     
 }
 
 extension BlockUserView{
     
-    class EmptyBlockUserView: UIView{
+    class EmptyBlockUserView: BaseView{
         
         let message = UILabel().then{
             $0.text = "차단된 사용자가 없습니다."
             $0.textColor = .black20
-            $0.font = UIFont.pretendard(size: 15, family: .Medium)
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
         }
         
-        override init(frame: CGRect){
-            
-            super.init(frame: .zero)
-            
+        override func hierarchy() {
             self.addSubview(message)
-            
+        }
+        
+        override func layout() {
             message.snp.makeConstraints{
                 $0.centerX.equalToSuperview()
                 $0.top.equalToSuperview().offset(292)
                 $0.bottom.equalToSuperview().offset(-317)
             }
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
         }
     }
 }
