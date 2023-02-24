@@ -7,70 +7,44 @@
 
 import UIKit
 
-/*
-class ModifyProfileViewController: BaseCenterTitleViewController {
-    var modifyProfileView: ModifyProfileView!
-    // Image Properties
-    let imagePickerController = UIImagePickerController()
+class ModifyProfileViewController: BaseViewController<CenterNavigationEtcButtonHeaderView, ModifyProfileView> {
+    
+    private let imagePickerController = UIImagePickerController()
     var selectedPhoto: UIImage!
     
-//    override init(){
-//        super.init(rightButton: "저장")
-//    }
+    init() {
+        super.init(headerView: CenterNavigationEtcButtonHeaderView(title: "프로필 편집", etcButton: "저장"), mainView: ModifyProfileView())
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // imagePicker delegate
+    override func initialize() {
+        super.initialize()
         imagePickerController.delegate = self
-        
-        setNavigationView()
-        setModifyProfileView()
+        headerView.etcButton.addTarget(self, action: #selector(requestModifyProfile), for: .touchUpInside)
+        mainView.cameraButton.addTarget(self, action: #selector(goAlbumButtonDidTapped), for: .touchUpInside)
     }
     
-//    override func rightPositionBtnDidClicked() {
-//
-//        let alert = Alert.ChangeNickname.generateAlert().show(in: self)
-//
-//        alert.confirmHandler = {
-//            print("ok")
-//        }
-//    }
-}
-// MARK: - Actions & Functions
-extension ModifyProfileViewController {
-    func setNavigationView() {
-//        self.navigationTitle.text = "프로필 편집"
+    @objc private func requestModifyProfile() {
+        navigationController?.popViewController(animated: true)
     }
-    func setModifyProfileView() {
-        modifyProfileView = ModifyProfileView()
-        self.view.addSubview(modifyProfileView)
-        
-        modifyProfileView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(self.headerView.snp.bottom)
-        }
-        
-        modifyProfileView.cameraButton.addTarget(self, action: #selector(goAlbumButtonDidTap), for: .touchUpInside)
-    }
-    @objc func goAlbumButtonDidTap() {
+    
+    @objc private func goAlbumButtonDidTapped() {
         self.imagePickerController.sourceType = .photoLibrary
         self.present(imagePickerController, animated: true, completion: nil)
     }
 }
+
 // MARK: - ImagePicker Delegate
 extension ModifyProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         self.selectedPhoto = UIImage()
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.selectedPhoto = image
-            self.modifyProfileView.userImage.image = image
+            self.mainView.userImage.image = image
         }
         self.dismiss(animated: true, completion: nil)
     }
 }
-*/

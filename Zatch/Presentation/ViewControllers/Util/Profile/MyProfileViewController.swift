@@ -22,7 +22,8 @@ class MyProfileViewController: ProfileViewController{
     }
 
     override func etcButtonDidTapped() {
-        print("수정임")
+        let vc = ModifyProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
