@@ -8,20 +8,21 @@
 import UIKit
 import Cosmos
 
-class ReviewProfileTableViewCell: UITableViewCell {
-    let userImage = UIImageView().then{
+class ReviewProfileTableViewCell: BaseTableViewCell {
+    
+    private let userImage = UIImageView().then{
         $0.backgroundColor = .systemGray4
-        $0.layer.cornerRadius = 50
+        $0.layer.cornerRadius = 100/2
     }
     var userNameLabel = UILabel().then{
         $0.text = "userName"
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold16)
         $0.textAlignment = .center
     }
     // star
     let starView = CosmosView().then{
         $0.rating = 4
-        $0.settings.updateOnTouch = true
+        $0.settings.updateOnTouch = false
         $0.settings.fillMode = .full
         $0.settings.starSize = 24
         $0.settings.starMargin = 0
@@ -41,33 +42,26 @@ class ReviewProfileTableViewCell: UITableViewCell {
         
         $0.text = "님과의 거래는 어떠셨나요?"
     }
-    
-
-    // MARK: - LifeCycles
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - Functions
     func setUpName(name: String) {
         userNameLabel.text = name
         myMessageLabel.text = "\(name)님과의 거래는 어떠셨나요?"
     }
-    func setUpView() {
-        contentView.addSubview(userImage)
-        contentView.addSubview(userNameLabel)
-        contentView.addSubview(starView)
-        contentView.addSubview(myMessageLabel)
+    
+    override func hierarchy() {
         
+        super.hierarchy()
+        
+        baseView.addSubview(userImage)
+        baseView.addSubview(userNameLabel)
+        baseView.addSubview(starView)
+        baseView.addSubview(myMessageLabel)
     }
-    func setUpConstraint() {
+    
+    override func layout() {
+        
+        super.layout()
+        
         userImage.snp.makeConstraints { make in
             make.width.height.equalTo(100)
             make.top.equalToSuperview().offset(12)
@@ -90,5 +84,9 @@ class ReviewProfileTableViewCell: UITableViewCell {
             make.top.equalTo(starView.snp.bottom).offset(32)
             make.bottom.equalToSuperview().offset(-20)
         }
+    }
+    
+    func bindingData(){
+        
     }
 }

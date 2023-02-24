@@ -7,45 +7,26 @@
 
 import UIKit
 
-/*
-class ReviewViewController: BaseCenterTitleViewController {
-    var reviewTableView: UITableView!
-    var profileUserName: String!
+class ReviewViewController: BaseViewController<CenterNavigationHeaderView, ReviewView> {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        super.navigationTitle.text = "한 줄 후기"
-        
-        setUpTableView(dataSourceDelegate: self)
-        self.view.addSubview(reviewTableView)
-        reviewTableView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(super.headerView.snp.bottom)
-            make.bottom.equalToSuperview()
-        }
+    init(){
+        super.init(headerView: CenterNavigationHeaderView(title: "한 줄 후기"), mainView: ReviewView())
     }
     
-    // MARK: - Functions
-    func setUpTableView(dataSourceDelegate: UITableViewDelegate & UITableViewDataSource) {
-        reviewTableView = UITableView()
-        reviewTableView.then{
-            $0.delegate = dataSourceDelegate
-            $0.dataSource = dataSourceDelegate
-            $0.register(ReviewProfileTableViewCell.self, forCellReuseIdentifier: "ReviewProfileTableViewCell")
-            $0.register(DateTableViewCell.self, forCellReuseIdentifier: "DateTableViewCell")
-            $0.register(OtherReviewTableViewCell.self, forCellReuseIdentifier: "OtherReviewTableViewCell")
-            
-            // autoHeight
-            $0.rowHeight = UITableView.automaticDimension
-            $0.estimatedRowHeight = UITableView.automaticDimension
-            $0.showsVerticalScrollIndicator = false
-            $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            $0.separatorStyle = .none
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func initialize() {
+        super.initialize()
+        mainView.reviewTableView.dataSource = self
+        mainView.reviewTableView.delegate = self
+        mainView.reviewTableView.separatorStyle = .none
     }
 }
-// MARK: - TableView delegate
+
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
@@ -82,4 +63,4 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-*/
+

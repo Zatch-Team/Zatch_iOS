@@ -10,6 +10,8 @@ import Cosmos
 
 class ProfileTableViewCell: BaseTableViewCell {
     
+    var delegate: ProfileMoreDelegate?
+    
     private let userImage = UIImageView().then{
         $0.backgroundColor = .black10
         $0.layer.cornerRadius = 100/2
@@ -113,7 +115,11 @@ class ProfileTableViewCell: BaseTableViewCell {
     }
     
     private func initialize(){
-        
+        moreButton.addTarget(self, action: #selector(moreButtonDidTapped), for: .touchUpInside)
+    }
+    
+    @objc private func moreButtonDidTapped(){
+        delegate?.willMoveReviewViewController()
     }
     
     func bindingData(){

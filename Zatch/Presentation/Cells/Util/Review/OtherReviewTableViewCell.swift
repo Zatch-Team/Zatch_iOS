@@ -8,7 +8,10 @@
 import UIKit
 import Cosmos
 
-class OtherReviewTableViewCell: UITableViewCell {
+class OtherReviewTableViewCell: BaseTableViewCell {
+    
+    var reviewDate: String!
+    
     let profileImage = UIImageView().then{
         $0.image = Image.gatchProfile
     }
@@ -34,33 +37,26 @@ class OtherReviewTableViewCell: UITableViewCell {
     // star
     let starView = CosmosView().then{
         $0.rating = 4
-        $0.settings.updateOnTouch = true
+        $0.settings.updateOnTouch = false
         $0.settings.fillMode = .full
         $0.settings.starSize = 16
         $0.settings.starMargin = 0
         $0.settings.filledImage = Image.filledStar
         $0.settings.emptyImage = Image.emptyStar
     }
-    // MARK: - LifeCycles
-    var reviewDate: String!
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
+    
+    override func hierarchy() {
+        super.hierarchy()
+
+        baseView.addSubview(profileImage)
+        baseView.addSubview(userNameLabel)
+        baseView.addSubview(messageLabel)
+        baseView.addSubview(starView)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    // MARK: - Functions
-    func setUpView() {
-        contentView.addSubview(profileImage)
-        contentView.addSubview(userNameLabel)
-        contentView.addSubview(messageLabel)
-        contentView.addSubview(starView)
-    }
-    func setUpConstraint() {
+    override func layout() {
+        super.layout()
+
         profileImage.snp.makeConstraints { make in
             make.width.height.equalTo(32)
             make.leading.top.equalToSuperview()
