@@ -7,6 +7,11 @@
 
 import Foundation
 
+protocol ProfileMoreDelegate{
+    func willMoveReviewViewController()
+    func willMoveMyZatchViewController()
+}
+
 class ProfileViewController: BaseViewController<EtcButtonHeaderView,ProfileView>{
     
     var userAttachTitle: String?{
@@ -31,6 +36,18 @@ class ProfileViewController: BaseViewController<EtcButtonHeaderView,ProfileView>
     @objc func etcButtonDidTapped() { }
 }
 
+extension ProfileViewController: ProfileMoreDelegate{
+    
+    func willMoveReviewViewController() {
+        let vc = ReviewViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func willMoveMyZatchViewController() {
+        
+    }
+}
+
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,6 +62,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         
         if(indexPath.section == 0){
             return tableView.dequeueReusableCell(for: indexPath, cellType: ProfileTableViewCell.self).then{
+                $0.delegate = self
                 $0.bindingData()
             }
         }
