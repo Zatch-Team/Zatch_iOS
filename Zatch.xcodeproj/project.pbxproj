@@ -1190,8 +1190,8 @@
 			children = (
 				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
 				234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */,
-				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
 				576B375A28D82E9A00EF36E6 /* SettingViewController.swift */,
+				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
 				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
 			);
 			path = Mypage;
