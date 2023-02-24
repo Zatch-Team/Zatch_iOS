@@ -7,31 +7,26 @@
 
 import UIKit
 
-class SettingView: UIView {
+class SettingView: BaseView {
 
     let tableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false
         $0.isScrollEnabled = false
         
-        $0.register(AlarmSettingTableViewCell.self, forCellReuseIdentifier: AlarmSettingTableViewCell.cellIdentifier)
-        $0.register(DefaultSettingTableViewCell.self, forCellReuseIdentifier: DefaultSettingTableViewCell.cellIdentifier)
-        $0.register(SettingTitleTableViewCell.self, forCellReuseIdentifier: SettingTitleTableViewCell.cellIdentifier)
-        $0.register(SettingBorderLineTableViewCell.self, forCellReuseIdentifier: SettingBorderLineTableViewCell.cellIdentifier)
+        $0.register(cellType: AlarmSettingTableViewCell.self)
+        $0.register(cellType: DefaultSettingTableViewCell.self)
+        $0.register(cellType: SettingTitleTableViewCell.self)
+        $0.register(cellType: SettingBorderLineTableViewCell.self)
     }
     
-    override init(frame: CGRect) {
-        
-        super.init(frame: .zero)
-        
+    override func hierarchy() {
         self.addSubview(tableView)
-        
+    }
+    
+    override func layout() {
         tableView.snp.makeConstraints{
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }

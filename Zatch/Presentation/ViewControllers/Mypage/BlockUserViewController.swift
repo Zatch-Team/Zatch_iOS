@@ -7,65 +7,56 @@
 
 import UIKit
 
-/*
-class BlockUserViewController: BaseCenterTitleViewController {
+protocol BlockUserDelegate{
+    func willBlockUser()
+}
+
+class BlockUserViewController: BaseViewController<CenterNavigationHeaderView, BlockUserView> {
     
-    var blockData : [String] = ["1"] {
+    var blockData = [String](repeating: "test", count: 10) {
         didSet{
-//            mainView.tableView.reloadData()
+            mainView.tableView.reloadData()
         }
     }
     
-//    let mainView = BlockUserView()
-
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-
-//        self.navigationTitle.text = "차단된 사용자"
-        
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(108)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
-        }
+    init(){
+        super.init(headerView: CenterNavigationHeaderView(title: "차단된 사용자"), mainView: BlockUserView())
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(headerView: CenterNavigationHeaderView(title: "차단된 사용자"), mainView: BlockUserView())
+//        fatalError("init(coder:) has not been implemented")
     }
     
     override func initialize(){
-//        mainView.tableView.separatorStyle = .none
-//        mainView.tableView.dataSource = self
-//        mainView.tableView.delegate = self
+        super.initialize()
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
     }
-    
-    @objc func unblockBtnDidClicked(){
-        let alert = Alert.UnBlock.generateAlert().show(in: self)
-        alert.confirmHandler = {
-            print("block 해제")
+}
+
+extension BlockUserViewController: BlockUserDelegate{
+    func willBlockUser(){
+        Alert.UnBlock.generateAlert().show(in: self).do{
+            $0.completion = {
+                print("block success")
+            }
         }
     }
-
 }
 
 extension BlockUserViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-//        mainView.emptyView.isHidden = blockData.isEmpty ? false : true
-        
         return blockData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BlockUserTableViewCell.cellIdentifier, for: indexPath)
-                as? BlockUserTableViewCell else { fatalError() }
-        
-        cell.unblockBtn.addTarget(self, action: #selector(unblockBtnDidClicked), for: .touchUpInside)
-        
-        return cell
+        return tableView.dequeueReusableCell(for: indexPath, cellType: BlockUserTableViewCell.self).then{
+            $0.delegate = self
+            $0.bindingData()
+        }
     }
 
 }
-*/

@@ -27,12 +27,15 @@ class ProfileViewController: BaseViewController<EtcButtonHeaderView,ProfileView>
     }
     
     override func initialize() {
+        
+        super.initialize()
+        
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         
         headerView.etcButton.addTarget(self, action: #selector(etcButtonDidTapped), for: .touchUpInside)
     }
-    
+
     @objc func etcButtonDidTapped() { }
 }
 
