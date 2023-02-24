@@ -41,8 +41,8 @@ class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
 
     // MARK: - Actions
     @objc func goSettingButtonDidTap() {
-//        let vc = SettingViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = SettingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - TableView delegate
