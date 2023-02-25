@@ -31,6 +31,7 @@ class SettingViewController: BaseViewController<CenterNavigationHeaderView, Sett
 }
 
 extension SettingViewController: AlarmSwitchDelegate{
+    
     func willChangeChattingAlarmState(_ isOn: Bool) {
         
     }
