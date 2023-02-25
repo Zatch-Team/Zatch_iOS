@@ -135,8 +135,7 @@ extension MypageViewController: MyPageCellDelegate{
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
     func willMoveHeartListViewController(){
-//        let vc = HeartListViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(HeartListViewController(), animated: true)
     }
     func willMoveExchangeFinishViewController(){
 //        let vc = MyZatchViewController()
