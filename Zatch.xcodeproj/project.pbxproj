@@ -56,10 +56,7 @@
 		23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D128E9EF80002F234C /* AccountViewController.swift */; };
 		23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D328E9EF89002F234C /* TradeViewController.swift */; };
 		23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D528E9EF92002F234C /* EtcViewController.swift */; };
-		23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44828D874C200C4C67E /* ZatchViewController.swift */; };
-		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
-		23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */; };
 		57067864281C143A00F48342 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* Color.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
 		57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
@@ -277,6 +274,7 @@
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
 		EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD329A9DA92008964E3 /* NoticeView.swift */; };
+		EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD529A9ED79008964E3 /* HeartListView.swift */; };
 		EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC347298295C3002B5C60 /* EtcButton.swift */; };
 		EE2BC34A29829A32002B5C60 /* CenterNavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */; };
 		EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */; };
@@ -402,10 +400,7 @@
 		23E764D128E9EF80002F234C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		23E764D328E9EF89002F234C /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		23E764D528E9EF92002F234C /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
-		23EEA44828D874C200C4C67E /* ZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchViewController.swift; sourceTree = "<group>"; };
-		23EEA44A28D874CC00C4C67E /* GatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
-		23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListTabmanViewController.swift; sourceTree = "<group>"; };
 		2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B45FEA4F195407269C19923 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -645,6 +640,7 @@
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
 		EE1C3CD329A9DA92008964E3 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
+		EE1C3CD529A9ED79008964E3 /* HeartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListView.swift; sourceTree = "<group>"; };
 		EE2BC347298295C3002B5C60 /* EtcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButton.swift; sourceTree = "<group>"; };
 		EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterNavigationHeaderView.swift; sourceTree = "<group>"; };
 		EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButtonHeaderView.swift; sourceTree = "<group>"; };
@@ -887,6 +883,7 @@
 				EE1C3CD229A9DA89008964E3 /* Notice */,
 				23B7FBA828CEB9430018642E /* MyPageView.swift */,
 				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
+				EE1C3CD529A9ED79008964E3 /* HeartListView.swift */,
 				EEE1155529A85197003FD4E3 /* ReviewView.swift */,
 				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
 				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
@@ -979,7 +976,6 @@
 				23E764CA28E9EDFE002F234C /* ServiceCenter */,
 				23B051BD28E2060A005D08EA /* QnA */,
 				23B051B428E1FD70005D08EA /* Notification */,
-				23EEA44228D8703400C4C67E /* HeartList */,
 				23CB3CEF28C7D35600C42858 /* Mypage */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
 				23C9031428C5CE6400FB6D3D /* Register */,
@@ -1186,6 +1182,7 @@
 				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
 				234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */,
 				576B375A28D82E9A00EF36E6 /* SettingViewController.swift */,
+				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
 				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
 				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
 			);
@@ -1225,17 +1222,6 @@
 				23E764D528E9EF92002F234C /* EtcViewController.swift */,
 			);
 			path = ServiceCenter;
-			sourceTree = "<group>";
-		};
-		23EEA44228D8703400C4C67E /* HeartList */ = {
-			isa = PBXGroup;
-			children = (
-				23EEA44828D874C200C4C67E /* ZatchViewController.swift */,
-				23EEA44A28D874CC00C4C67E /* GatchViewController.swift */,
-				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
-				23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */,
-			);
-			path = HeartList;
 			sourceTree = "<group>";
 		};
 		57067862281C13D500F48342 /* Font */ = {
@@ -2496,7 +2482,6 @@
 				EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
-				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
 				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
@@ -2555,7 +2540,6 @@
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
 				574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
-				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
 				EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */,
 				EEE1154129A7424B003FD4E3 /* ProfileViewController.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
@@ -2629,12 +2613,12 @@
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
-				23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */,
 				EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */,
 				EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */,
 				EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */,
 				EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */,
 				57C585022821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift in Sources */,
+				EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */,
