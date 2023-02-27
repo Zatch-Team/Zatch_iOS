@@ -113,8 +113,7 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 2:
-//            let vc = NoticeViewController()
-//            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(NoticeViewController(), animated: true)
             return
         case 3:
 //            let vc = ServiceCenterViewController()
@@ -129,16 +128,14 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
 extension MypageViewController: MyPageCellDelegate{
     
     func willMoveProfileViewController(){
-        let vc = MyProfileViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(MyProfileViewController(), animated: true)
     }
     func willMoveMyZatchViewController(){
 //        let vc = MyZatchViewController()
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
     func willMoveHeartListViewController(){
-//        let vc = HeartListViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(HeartListViewController(), animated: true)
     }
     func willMoveExchangeFinishViewController(){
 //        let vc = MyZatchViewController()
