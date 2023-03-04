@@ -53,7 +53,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     override func initialize() {
         
         super.initialize()
-        
+
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
         
         headerView.etcButton.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)

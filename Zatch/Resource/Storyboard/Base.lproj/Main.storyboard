@@ -42,15 +42,14 @@
         <!--Navigation Controller-->
         <scene sceneID="5qX-75-KyY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1d5-kB-zZH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1d5-kB-zZH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z8d-8D-RV8">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RWY-s0-TBQ" kind="relationship" relationship="rootViewController" id="PWt-kS-zqK"/>
+                        <segue destination="RWY-s0-TBQ" kind="relationship" relationship="rootViewController" id="iE3-nc-ozy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvG-uJ-gx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
