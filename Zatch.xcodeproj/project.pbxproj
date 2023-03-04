@@ -21,8 +21,6 @@
 		235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */; };
 		235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */; };
 		23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */; };
-		23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */; };
-		23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */; };
 		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
 		23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */; };
 		23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F529085258003E46AB /* NoticeTableViewCell.swift */; };
@@ -65,7 +63,6 @@
 		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
 		571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */; };
 		571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */; };
-		571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */; };
 		571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */; };
 		571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */; };
 		571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */; };
@@ -365,8 +362,6 @@
 		235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCell.swift; sourceTree = "<group>"; };
 		23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchChattingListViewController.swift; sourceTree = "<group>"; };
-		23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTabManViewController.swift; sourceTree = "<group>"; };
-		23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchChattingListViewController.swift; sourceTree = "<group>"; };
 		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		23A767F529085258003E46AB /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -414,7 +409,6 @@
 		57067876281C2F3900F48342 /* pretendard_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_regular.ttf; sourceTree = "<group>"; };
 		571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewController.swift; sourceTree = "<group>"; };
-		571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListViewController+Layout.swift"; sourceTree = "<group>"; };
 		571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTableViewCell.swift; sourceTree = "<group>"; };
 		571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenDeleteView.swift; sourceTree = "<group>"; };
@@ -788,10 +782,7 @@
 			isa = PBXGroup;
 			children = (
 				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
-				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
 				23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */,
-				23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */,
-				23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */,
 			);
 			path = ChattingList;
 			sourceTree = "<group>";
@@ -2442,7 +2433,6 @@
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */,
-				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
 				57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */,
 				EEE6D1622997AFA30004FC7B /* TagLabel.swift in Sources */,
@@ -2478,7 +2468,6 @@
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */,
-				23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */,
 				EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
@@ -2496,7 +2485,6 @@
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
 				EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */,
-				23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */,
