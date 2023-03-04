@@ -59,12 +59,13 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         headerView.etcButton.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
         headerView.opponentNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOthersProfile)))
         
+        mainView.chatInputView.chatTextField.delegate = self
         mainView.chatInputView.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
         mainView.chatInputView.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
         
-        mainView.chatEtcBtnView.cameraStackView.buttonImage.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
-        mainView.chatEtcBtnView.galleryStackView.buttonImage.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
-        mainView.chatEtcBtnView.appointmentStackView.buttonImage.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.cameraStackView.button.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.galleryStackView.button.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.appointmentStackView.button.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
         
         mainView.tableView.separatorStyle = .none
         mainView.tableView.delegate = self
@@ -136,8 +137,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         guard let sideMenu = sideMenuViewController else { return }
         
-        let exitGesture = UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked))
-        sideMenu.exitTitle.addGestureRecognizer(exitGesture)
+        sideMenu.exitTitle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
         
         sideMenu.declarationHandler = { indexPath in
             print(indexPath)
@@ -219,6 +219,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
 
 extension ChattingRoomViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
+        print("?")
         mainView.chatInputView.sendBtn.isEnabled = textView.text.isEmpty ? false : true
     }
 }
@@ -234,7 +235,7 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
         
         switch chatData.chatType {
         case .RightMessage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingMessageTableViewCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingMessageTableViewCell else { fatalError() }
             cell.messageLabel.text = chatData.message
             return cell
             

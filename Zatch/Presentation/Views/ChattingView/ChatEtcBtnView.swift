@@ -45,7 +45,7 @@ extension ChattingRoomView.ChatEtcBtnView{
     
     class EtcButtonLabelStackView: UIStackView{
         
-        lazy var buttonImage = UIButton()
+        lazy var button = UIButton()
         private let titleLabel = UILabel().then{
             $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
             $0.textColor = .black65
@@ -54,7 +54,7 @@ extension ChattingRoomView.ChatEtcBtnView{
         init(title: String, image: UIImage){
             super.init(frame: .zero)
             titleLabel.text = title
-            buttonImage.setImage(image, for: .normal)
+            button.setImage(image, for: .normal)
             style()
             layout()
         }
@@ -70,10 +70,10 @@ extension ChattingRoomView.ChatEtcBtnView{
         }
         
         private func layout(){
-            addArrangedSubview(buttonImage)
+            addArrangedSubview(button)
             addArrangedSubview(titleLabel)
             
-            buttonImage.snp.makeConstraints{
+            button.snp.makeConstraints{
                 $0.width.height.equalTo(52)
             }
         }
