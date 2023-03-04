@@ -205,11 +205,12 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {
+        let vc  = OthersProfileViewController(nickName: "쑤야")
 //        let vc = ProfileViewController(rightButton: Image.chat)
 //        vc.navigationTitle.text = nil
 //        vc.isMyProfile = false
 //        vc.profileUserName = nameLabel.text
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - Helper
@@ -219,7 +220,6 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
 
 extension ChattingRoomViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
-        print("?")
         mainView.chatInputView.sendBtn.isEnabled = textView.text.isEmpty ? false : true
     }
 }
@@ -294,15 +294,14 @@ extension ChattingRoomViewController: SideMenuNavigationControllerDelegate{
     
     func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool){
         
-        self.view.addSubview(self.blurView)
-        
-        self.blurView.snp.makeConstraints{ make in
-            make.width.height.equalToSuperview()
+        view.addSubview(blurView)
+        blurView.snp.makeConstraints{
+            $0.width.height.equalToSuperview()
         }
     }
     
     func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool){
-        self.blurView.removeFromSuperview()
+        blurView.removeFromSuperview()
     }
 }
 
