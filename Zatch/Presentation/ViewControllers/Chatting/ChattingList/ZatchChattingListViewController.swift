@@ -24,8 +24,7 @@ class ZatchChattingListViewController: UIViewController, SelectedTableViewCellDe
     }
     
 
-    @objc
-    func cellWillClamp(_ indexPath: IndexPath){
+    @objc func cellWillClamp(_ indexPath: IndexPath){
         
         //1. 기존 고정 cell 존재 여부 점검 (row 값 -1인지 아닌지)
         if(clampCell == indexPath){

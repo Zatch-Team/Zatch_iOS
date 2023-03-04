@@ -36,8 +36,8 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     
     //MARK: - UI
     
-    let blurView = UIView().then{
-        $0.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.6)
+    private let blurView = UIView().then{
+        $0.backgroundColor = .popupBackgroundColor
     }
     
     init(){
@@ -45,7 +45,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
     //MARK: - Override
@@ -62,9 +62,9 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         mainView.chatInputView.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
         mainView.chatInputView.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
         
-        mainView.chatEtcBtnView.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
-        mainView.chatEtcBtnView.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
-        mainView.chatEtcBtnView.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.cameraStackView.buttonImage.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.galleryStackView.buttonImage.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.appointmentStackView.buttonImage.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
         
         mainView.tableView.separatorStyle = .none
         mainView.tableView.delegate = self
