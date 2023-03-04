@@ -22,7 +22,6 @@ class ChattingListViewController: BaseTabBarViewController<BaseTabBarHeaderView>
     
     override func layout() {
         super.layout()
-        setUpChildVC()
     }
     
     override func initialize() {

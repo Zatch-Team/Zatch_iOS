@@ -48,7 +48,7 @@ class ChattingRoomView: BaseView{
         
         chatBottomFrame.snp.makeConstraints{ make in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
         chatInputView.snp.makeConstraints{ make in

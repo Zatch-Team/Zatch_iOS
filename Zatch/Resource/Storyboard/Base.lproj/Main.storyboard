@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ynj-Qs-0DW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1d5-kB-zZH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Block User View Controller-->
+        <!--Chatting Room View Controller-->
         <scene sceneID="S0q-X6-tua">
             <objects>
-                <viewController id="RWY-s0-TBQ" customClass="BlockUserViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RWY-s0-TBQ" customClass="ChattingRoomViewController" customModule="Zatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ham-9L-aC2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dY1-hl-Apl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613.0434782608697" y="-2.0089285714285712"/>
+            <point key="canvasLocation" x="2523.1884057971015" y="-2.0089285714285712"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XbC-dz-4Md">
@@ -40,22 +40,21 @@
             <point key="canvasLocation" x="587" y="769"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="2WZ-s5-JQ5">
+        <scene sceneID="5qX-75-KyY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lyx-67-9H1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1d5-kB-zZH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eDj-1a-tmN">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z8d-8D-RV8">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RWY-s0-TBQ" kind="relationship" relationship="rootViewController" id="len-la-xsS"/>
+                        <segue destination="RWY-s0-TBQ" kind="relationship" relationship="rootViewController" id="iE3-nc-ozy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="awg-cW-ezu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvG-uJ-gx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702.89855072463774" y="-2.0089285714285712"/>
+            <point key="canvasLocation" x="1613.0434782608697" y="-2.0089285714285712"/>
         </scene>
     </scenes>
     <resources>

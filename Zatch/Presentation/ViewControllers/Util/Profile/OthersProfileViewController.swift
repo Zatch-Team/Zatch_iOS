@@ -9,12 +9,13 @@ import Foundation
 
 class OthersProfileViewController: ProfileViewController{
     
-    var userNickname: String = "행복한 호랑이"
+    private var userNickname: String = "행복한 호랑이"
     override var userAttachTitle: String?{
         return "\(userNickname)님의 재치 현황"
     }
     
-    init(){
+    init(nickName: String){
+        userNickname = nickName
         super.init(headerView: EtcButtonHeaderView(image: Image.chat))
     }
     

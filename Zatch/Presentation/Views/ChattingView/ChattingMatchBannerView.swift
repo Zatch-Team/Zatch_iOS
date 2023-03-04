@@ -7,105 +7,84 @@
 
 import UIKit
 
-class ChattingMatchBannerView: UIView {
-    
-    let explainLabel = UILabel().then{
-        $0.text = "매치가 된 사용자입니다.\n거래 시간과 날짜를 정해주세요."
-        $0.numberOfLines = 0
-        $0.textAlignment = .center
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black20
-    }
-    
-    let imageView = UIImageView().then{
-        $0.layer.cornerRadius = 8
-        $0.clipsToBounds = true
+extension ChattingRoomView{
+    class ChattingMatchBannerView: BaseView {
         
-        $0.backgroundColor = .black20
-    }
-    
-    let exchangeImage = UIImageView().then{
-        $0.image = Image.exchange
-    }
-    
-    let myZatch = UILabel().then{
-        $0.text = "수녀님 코스튬"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
-        $0.textAlignment = .right
-    }
-    
-    let otherZatch = UILabel().then{
-        $0.text = "코스튬 아무거나"
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.textColor = .black85
-    }
-    
-    let zatchInfoFrame = UIStackView().then{
-        $0.spacing = 16
-        $0.alignment = .center
-    }
-    
-    let borderLine = UIView().then{
-        $0.backgroundColor = .black5
-    }
-    
-    override init(frame: CGRect) {
-        
-        super.init(frame: .zero)
-        
-        setUpValue()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpValue(){
-        
-        self.addSubview(explainLabel)
-        self.addSubview(imageView)
-        self.addSubview(zatchInfoFrame)
-        self.addSubview(borderLine)
-        
-        zatchInfoFrame.addArrangedSubview(myZatch)
-        zatchInfoFrame.addArrangedSubview(exchangeImage)
-        zatchInfoFrame.addArrangedSubview(otherZatch)
-    }
-    
-    func setUpConstraint(){
-        
-        self.snp.makeConstraints{ make in
-            make.height.equalTo(172)
+        private let explainLabel = UILabel().then{
+            $0.text = "매치가 된 사용자입니다.\n거래 시간과 날짜를 정해주세요."
+            $0.setTypoStyleWithMultiLine(typoStyle: .medium14)
+            $0.textColor = .black20
+            $0.numberOfLines = 2
+            $0.textAlignment = .center
         }
         
-        explainLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(12)
-            make.centerX.equalToSuperview()
+        let imageView = UIImageView().then{
+            $0.layer.cornerRadius = 8
+            $0.clipsToBounds = true
+            $0.backgroundColor = .black20
         }
         
-        imageView.snp.makeConstraints{ make in
-            make.width.height.equalTo(72)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(explainLabel.snp.bottom).offset(12)
+        private let zatchInfoFrame = UIStackView().then{
+            $0.spacing = 8
+        }
+        private let exchangeImage = UIImageView().then{
+            $0.image = Image.exchange
+        }
+        let myZatch = UILabel().then{
+            $0.text = "수녀님 코스튬"
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
+            $0.textColor = .black85
+            $0.textAlignment = .right
         }
         
-        zatchInfoFrame.snp.makeConstraints{ make in
-            make.top.equalTo(imageView.snp.bottom).offset(12)
-            make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
+        let otherZatch = UILabel().then{
+            $0.text = "코스튬 아무거나"
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
+            $0.textColor = .black85
         }
         
-        exchangeImage.snp.makeConstraints{ make in
-            make.centerX.equalToSuperview()
+        private let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1)
+        
+        override func hierarchy() {
+            
+            addSubview(explainLabel)
+            addSubview(imageView)
+            addSubview(zatchInfoFrame)
+            addSubview(borderLine)
+            
+            zatchInfoFrame.addArrangedSubview(myZatch)
+            zatchInfoFrame.addArrangedSubview(exchangeImage)
+            zatchInfoFrame.addArrangedSubview(otherZatch)
         }
         
-        borderLine.snp.makeConstraints{ make in
-            make.height.equalTo(1)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+        override func layout() {
+            explainLabel.snp.makeConstraints{
+                $0.top.equalToSuperview().offset(12)
+                $0.centerX.equalToSuperview()
+            }
+            
+            imageView.snp.makeConstraints{
+                $0.top.equalTo(explainLabel.snp.bottom).offset(12)
+                $0.width.height.equalTo(104)
+                $0.centerX.equalToSuperview()
+            }
+            
+            zatchInfoFrame.snp.makeConstraints{
+                $0.top.equalTo(imageView.snp.bottom).offset(12)
+                $0.leading.trailing.equalToSuperview().inset(15)
+            }
+            
+            exchangeImage.snp.makeConstraints{
+                $0.width.height.equalTo(24)
+                $0.centerX.equalTo(imageView)
+            }
+            
+            borderLine.snp.makeConstraints{
+                $0.top.equalTo(zatchInfoFrame.snp.bottom).offset(12)
+                $0.leading.trailing.equalToSuperview().inset(15)
+                $0.bottom.equalToSuperview()
+            }
         }
+        
     }
-
 }

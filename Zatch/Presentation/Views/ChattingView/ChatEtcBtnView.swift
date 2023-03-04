@@ -7,111 +7,75 @@
 
 import UIKit
 
-class ChatEtcBtnView: UIView {
-
-    let etcBtnStackView = UIStackView().then{
-        $0.spacing = 20
-        $0.axis = .horizontal
-        $0.alignment = .leading
-    }
-
-    let cameraStackView = UIStackView().then{
-        $0.spacing = 8
-        $0.axis = .vertical
-        $0.alignment = .center
-    }
-
-    lazy var cameraBtn = UIButton().then{
-        $0.setImage(Image.chatCamera, for: .normal)
-    }
-
-    let cameraLabel = UILabel().then{
-        $0.text = "카메라"
-        $0.font = UIFont.pretendard(size: 13, family: .Medium)
-    }
-
-    let galleryStackView = UIStackView().then{
-        $0.spacing = 8
-        $0.axis = .vertical
-        $0.alignment = .center
-    }
-
-    lazy var galleryBtn = UIButton().then{
-        $0.setImage(Image.chatGallery, for: .normal)
-    }
+extension ChattingRoomView{
     
-    let galleryLabel = UILabel().then{
-        $0.text = "갤러리"
-        $0.font = UIFont.pretendard(size: 13, family: .Medium)
+    class ChatEtcBtnView: BaseView {
+        
+        private let etcBtnStackView = UIStackView().then{
+            $0.spacing = 20
+            $0.axis = .horizontal
+            $0.alignment = .leading
+        }
+        
+        let cameraStackView = EtcButtonLabelStackView(title: "카메라", image: Image.chatCamera)
+        let galleryStackView = EtcButtonLabelStackView(title: "갤러리", image: Image.chatGallery)
+        let appointmentStackView = EtcButtonLabelStackView(title: "거래약속", image: Image.chatAppintment)
+        
+        override func hierarchy() {
+            
+            addSubview(etcBtnStackView)
+            
+            etcBtnStackView.addArrangedSubview(cameraStackView)
+            etcBtnStackView.addArrangedSubview(galleryStackView)
+            etcBtnStackView.addArrangedSubview(appointmentStackView)
+        }
+        
+        override func layout() {
+            
+            etcBtnStackView.snp.makeConstraints{ make in
+                make.top.equalToSuperview().offset(12)
+                make.leading.equalToSuperview().offset(52)
+                make.bottom.equalToSuperview().offset(-23)
+            }
+        }
     }
+}
 
-    let appointmentStackView = UIStackView().then{
-        $0.spacing = 8
-        $0.axis = .vertical
-        $0.alignment = .center
-    }
-
-    lazy var appointmentBtn = UIButton().then{
-        $0.setImage(Image.chatAppintment, for: .normal)
-    }
+extension ChattingRoomView.ChatEtcBtnView{
     
-    let appointmentLabel = UILabel().then{
-        $0.text = "거래약속"
-        $0.font = UIFont.pretendard(size: 13, family: .Medium)
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-
-        setUpView()
-        setUpConstraint()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setUpView(){
+    class EtcButtonLabelStackView: UIStackView{
         
-        self.addSubview(etcBtnStackView)
-        
-        etcBtnStackView.addArrangedSubview(cameraStackView)
-        etcBtnStackView.addArrangedSubview(galleryStackView)
-        etcBtnStackView.addArrangedSubview(appointmentStackView)
-        
-        cameraStackView.addArrangedSubview(cameraBtn)
-        cameraStackView.addArrangedSubview(cameraLabel)
-        
-        galleryStackView.addArrangedSubview(galleryBtn)
-        galleryStackView.addArrangedSubview(galleryLabel)
-        
-        appointmentStackView.addArrangedSubview(appointmentBtn)
-        appointmentStackView.addArrangedSubview(appointmentLabel)
-    }
-
-    func setUpConstraint(){
-        
-        self.snp.makeConstraints{ make in
-            make.height.equalTo(116)
+        lazy var button = UIButton()
+        private let titleLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
+            $0.textColor = .black65
         }
         
-        etcBtnStackView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(16)
-            make.leading.equalToSuperview().offset(44)
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-28)
+        init(title: String, image: UIImage){
+            super.init(frame: .zero)
+            titleLabel.text = title
+            button.setImage(image, for: .normal)
+            style()
+            layout()
         }
         
-        cameraBtn.snp.makeConstraints{ make in
-            make.width.height.equalTo(48)
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
         }
         
-        galleryBtn.snp.makeConstraints{ make in
-            make.width.height.equalTo(48)
+        private func style(){
+            spacing = 8
+            axis = .vertical
+            alignment = .center
         }
         
-        appointmentBtn.snp.makeConstraints{ make in
-            make.width.height.equalTo(48)
+        private func layout(){
+            addArrangedSubview(button)
+            addArrangedSubview(titleLabel)
+            
+            button.snp.makeConstraints{
+                $0.width.height.equalTo(52)
+            }
         }
     }
 }

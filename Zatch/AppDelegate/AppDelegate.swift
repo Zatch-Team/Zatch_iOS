@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         sleep(2)
         
-        window = UIWindow()
-//        window?.rootViewController = ZatchDetailViewController()
-        window?.makeKeyAndVisible()
-        
         KakaoSDK.initSDK(appKey: Const.KakaoAPI.KAKAO_APP_KEY)
         
         return true

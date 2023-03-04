@@ -9,27 +9,22 @@ import Foundation
 
 class ChattingRoomHeaderView: EtcButtonHeaderView{
     
-    var opponentNameLabel = UILabel().then{
+    let opponentNameLabel = UILabel().then{
         $0.text = "쑤야"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold20)
         $0.textColor = .black85
         $0.isUserInteractionEnabled = true
     }
     
-    let townLabel = UILabel().then{
+    private let townLabel = UILabel().then{
         $0.text = "중계동"
-        $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
         $0.textColor = .zatchPurple
     }
     
-    let reservationFinishTag = UILabel().then{
+    private let reservationTag = ZatchComponent.PurlpleTag(configuration: .height29).then{
         $0.text = "예약완료"
-        $0.textAlignment = .center
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold13)
-        $0.textColor = .white
-        $0.backgroundColor = .zatchPurple
-        $0.layer.cornerRadius = 24/2
-        $0.clipsToBounds = true
+        $0.isSelected = true
     }
     
     init(){
@@ -44,7 +39,7 @@ class ChattingRoomHeaderView: EtcButtonHeaderView{
         super.hierarchy()
         self.addSubview(opponentNameLabel)
         self.addSubview(townLabel)
-        self.addSubview(reservationFinishTag)
+        self.addSubview(reservationTag)
     }
     
     override func layout() {
@@ -52,20 +47,16 @@ class ChattingRoomHeaderView: EtcButtonHeaderView{
         super.layout()
         
         opponentNameLabel.snp.makeConstraints{
-            $0.leading.equalTo(self.backButton.snp.trailing).offset(16)
+            $0.leading.equalTo(backButton.snp.trailing).offset(8)
             $0.centerY.equalToSuperview()
         }
-        
         townLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(opponentNameLabel.snp.trailing).offset(8)
         }
-        
-        reservationFinishTag.snp.makeConstraints{ make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalTo(etcButton.snp.leading).offset(-16)
-            make.height.equalTo(24)
-            make.width.equalTo(58)
+        reservationTag.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalTo(etcButton.snp.leading).offset(-8)
         }
     }
 }

@@ -7,72 +7,54 @@
 
 import UIKit
 
-class ChatInputView: UIView {
+extension ChattingRoomView{
     
-    lazy var etcBtn = UIButton().then{
-        $0.setImage(Image.chatOpen, for: .normal)
-        $0.setImage(Image.chatClose, for: .selected)
-    }
-    
-    let chatTextField = UITextView().then{
-        $0.font = UIFont.pretendard(size: 14, family: .Regular)
-        $0.layer.cornerRadius = 40/2
-        $0.layer.borderWidth = 1.5
-        $0.layer.borderColor = UIColor.black20.cgColor
-        $0.textContainerInset = UIEdgeInsets(top: 10, left: 16, bottom: 20, right: 24)
-    }
-    
-    lazy var sendBtn = UIButton().then{
-        $0.setImage(Image.send, for: .disabled)
-        $0.setImage(Image.sendActivate, for: .normal)
-        $0.isEnabled = false 
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    class ChatInputView: BaseView {
         
-        setUpView()
-        setUpConstraint()
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpView(){
-        
-        self.addSubview(etcBtn)
-        self.addSubview(chatTextField)
-        
-        self.addSubview(sendBtn)
-    }
-    
-    func setUpConstraint(){
-        
-        self.snp.makeConstraints{ make in
-            make.height.equalTo(52)
+        lazy var etcBtn = UIButton().then{
+            $0.setImage(Image.chatOpen, for: .normal)
+            $0.setImage(Image.chatClose, for: .selected)
         }
         
-        etcBtn.snp.makeConstraints{ make in
-            make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(24)
+        let chatTextField = UITextView().then{
+            $0.font = UIFont.pretendard(size: 14, family: .Regular)
+            $0.layer.cornerRadius = 44/2
+            $0.layer.borderWidth = 1.5
+            $0.layer.borderColor = UIColor.black20.cgColor
+            $0.textContainerInset = UIEdgeInsets(top: 10, left: 16, bottom: 20, right: 24)
         }
         
-        chatTextField.snp.makeConstraints{ make in
-            make.leading.equalTo(etcBtn.snp.trailing).offset(8)
-            make.trailing.equalToSuperview().offset(-16)
-            make.centerY.equalToSuperview()
-            make.height.equalTo(40)
+        lazy var sendBtn = UIButton().then{
+            $0.setImage(Image.send, for: .disabled)
+            $0.setImage(Image.sendActivate, for: .normal)
+            $0.isEnabled = false
         }
         
-        sendBtn.snp.makeConstraints{ make in
-            make.trailing.equalTo(chatTextField).offset(-10)
-            make.width.height.equalTo(24)
-            make.centerY.equalTo(chatTextField)
+        override func hierarchy() {
+            addSubview(etcBtn)
+            addSubview(chatTextField)
+            addSubview(sendBtn)
         }
         
+        override func layout() {
+            self.snp.makeConstraints{
+                $0.height.equalTo(60)
+            }
+            etcBtn.snp.makeConstraints{
+                $0.top.leading.equalToSuperview().offset(16)
+                $0.centerY.equalToSuperview()
+                $0.width.height.equalTo(28)
+            }
+            chatTextField.snp.makeConstraints{
+                $0.top.bottom.equalToSuperview().inset(8)
+                $0.leading.equalTo(etcBtn.snp.trailing).offset(8)
+                $0.trailing.equalToSuperview().offset(-16)
+                $0.height.equalTo(44)
+            }
+            sendBtn.snp.makeConstraints{
+                $0.top.trailing.bottom.equalTo(chatTextField).inset(8)
+                $0.width.height.equalTo(28)
+            }
+        }
     }
-    
 }

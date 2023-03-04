@@ -73,7 +73,7 @@ class AlertViewController: UIViewController {
     
     func setting(){
         
-        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.view.backgroundColor = .popupBackgroundColor
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlertController))
         gesture.delegate = self

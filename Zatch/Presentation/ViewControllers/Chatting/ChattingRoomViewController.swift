@@ -36,8 +36,8 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     
     //MARK: - UI
     
-    let blurView = UIView().then{
-        $0.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.6)
+    private let blurView = UIView().then{
+        $0.backgroundColor = .popupBackgroundColor
     }
     
     init(){
@@ -45,7 +45,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
     //MARK: - Override
@@ -53,18 +53,19 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     override func initialize() {
         
         super.initialize()
-        
+
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
         
         headerView.etcButton.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
         headerView.opponentNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOthersProfile)))
         
+        mainView.chatInputView.chatTextField.delegate = self
         mainView.chatInputView.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
         mainView.chatInputView.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
         
-        mainView.chatEtcBtnView.cameraBtn.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
-        mainView.chatEtcBtnView.galleryBtn.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
-        mainView.chatEtcBtnView.appointmentBtn.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.cameraStackView.button.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.galleryStackView.button.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
+        mainView.chatEtcBtnView.appointmentStackView.button.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
         
         mainView.tableView.separatorStyle = .none
         mainView.tableView.delegate = self
@@ -136,8 +137,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         guard let sideMenu = sideMenuViewController else { return }
         
-        let exitGesture = UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked))
-        sideMenu.exitTitle.addGestureRecognizer(exitGesture)
+        sideMenu.exitTitle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
         
         sideMenu.declarationHandler = { indexPath in
             print(indexPath)
@@ -205,11 +205,12 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     }
 
     @objc func goOthersProfile(sender: UITapGestureRecognizer) {
+        let vc  = OthersProfileViewController(nickName: "쑤야")
 //        let vc = ProfileViewController(rightButton: Image.chat)
 //        vc.navigationTitle.text = nil
 //        vc.isMyProfile = false
 //        vc.profileUserName = nameLabel.text
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - Helper
@@ -234,7 +235,7 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
         
         switch chatData.chatType {
         case .RightMessage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingMessageTableViewCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingMessageTableViewCell else { fatalError() }
             cell.messageLabel.text = chatData.message
             return cell
             
@@ -293,15 +294,14 @@ extension ChattingRoomViewController: SideMenuNavigationControllerDelegate{
     
     func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool){
         
-        self.view.addSubview(self.blurView)
-        
-        self.blurView.snp.makeConstraints{ make in
-            make.width.height.equalToSuperview()
+        view.addSubview(blurView)
+        blurView.snp.makeConstraints{
+            $0.width.height.equalToSuperview()
         }
     }
     
     func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool){
-        self.blurView.removeFromSuperview()
+        blurView.removeFromSuperview()
     }
 }
 
