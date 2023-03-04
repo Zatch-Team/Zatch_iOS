@@ -50,15 +50,13 @@ class ChattingRoomHeaderView: EtcButtonHeaderView{
             $0.leading.equalTo(backButton.snp.trailing).offset(8)
             $0.centerY.equalToSuperview()
         }
-        
         townLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(opponentNameLabel.snp.trailing).offset(8)
         }
-        
-        reservationTag.snp.makeConstraints{ make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalTo(etcButton.snp.leading).offset(-8)
+        reservationTag.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalTo(etcButton.snp.leading).offset(-8)
         }
     }
 }
