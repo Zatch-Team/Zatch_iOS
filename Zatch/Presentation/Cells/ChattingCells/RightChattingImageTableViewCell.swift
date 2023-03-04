@@ -8,9 +8,6 @@
 import UIKit
 
 class RightChattingImageTableViewCell: BaseTableViewCell {
-    //MARK: - Properties
-    
-    static let cellIdentifier = "rightImageCell"
     
     //MARK: - UI
     
