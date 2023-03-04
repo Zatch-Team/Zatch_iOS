@@ -21,54 +21,40 @@ class RightChattingImageTableViewCell: BaseTableViewCell {
     }
     
     let timeLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 12, family: .Regular)
+        $0.setTypoStyleWithSingleLine(typoStyle: .regular13)
         $0.textColor = .black85
-        
         $0.text = "13:42"
     }
-    
-    //MARK: - LifeCycle
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     //MARK: - Helper
-    
-    private func setUpView(){
+    override func hierarchy() {
+        super.hierarchy()
         baseView.addSubview(timeLabel)
         baseView.addSubview(imageMessageView)
     }
-    
-    private func setUpConstraint(){
+    override func layout() {
         
-        self.contentView.snp.makeConstraints{ make in
-            make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+        super.layout()
+
+        contentView.snp.makeConstraints{
+            $0.top.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
-        baseView.snp.updateConstraints{ make in
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().offset(-8)
+        baseView.snp.updateConstraints{
+            $0.top.equalToSuperview().offset(8)
+            $0.bottom.equalToSuperview().offset(-8)
         }
         
-        self.timeLabel.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview()
-            make.trailing.equalTo(imageMessageView.snp.leading).offset(-4)
+        timeLabel.snp.makeConstraints{
+            $0.bottom.equalToSuperview()
+            $0.trailing.equalTo(imageMessageView.snp.leading).offset(-4)
         }
         
-        self.imageMessageView.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview()
-            make.top.bottom.equalToSuperview()
-            make.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
+        imageMessageView.snp.makeConstraints{
+            $0.trailing.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
+            $0.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
         }
     }
 }
