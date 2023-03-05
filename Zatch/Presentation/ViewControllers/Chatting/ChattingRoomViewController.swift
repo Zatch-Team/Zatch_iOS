@@ -137,7 +137,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         guard let sideMenu = sideMenuViewController else { return }
         
-        sideMenu.exitTitle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
+        sideMenu.mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
         
         sideMenu.declarationHandler = { indexPath in
             print(indexPath)
