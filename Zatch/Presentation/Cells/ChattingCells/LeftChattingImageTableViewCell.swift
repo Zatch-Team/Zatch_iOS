@@ -8,9 +8,6 @@
 import UIKit
 
 class LeftChattingImageTableViewCell: BaseTableViewCell {
-    //MARK: - Properties
-    
-    static let cellIdentifier = "leftImageCell"
     
     //MARK: - UI
     
@@ -19,10 +16,10 @@ class LeftChattingImageTableViewCell: BaseTableViewCell {
     }
     
     let userNameLabel = UILabel().then{
-        $0.textColor = .black
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.numberOfLines = 1
         $0.text = "쑤야"
+        $0.numberOfLines = 1
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
+        $0.textColor = .black85
     }
     
     let imageMessageView = UIImageView().then{
@@ -32,68 +29,52 @@ class LeftChattingImageTableViewCell: BaseTableViewCell {
     }
     
     let timeLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 12, family: .Regular)
-        $0.textColor = .black85
-        
         $0.text = "13:42"
-    }
-    
-    //MARK: - LifeCycle
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        $0.setTypoStyleWithSingleLine(typoStyle: .regular13)
+        $0.textColor = .black85
     }
     
     //MARK: - Helper
-    
-    private func setUpView(){
+    override func hierarchy() {
+        super.hierarchy()
         baseView.addSubview(profileImage)
         baseView.addSubview(userNameLabel)
         baseView.addSubview(timeLabel)
         baseView.addSubview(imageMessageView)
     }
     
-    private func setUpConstraint(){
+    override func layout() {
+        super.layout()
         
-        self.contentView.snp.makeConstraints{ make in
-            make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+        contentView.snp.makeConstraints{
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        baseView.snp.updateConstraints{ make in
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().offset(-8)
+        baseView.snp.updateConstraints{
+            $0.top.bottom.equalToSuperview().inset(8)
         }
         
-        self.profileImage.snp.makeConstraints{ make in
-            make.width.height.equalTo(32)
-            make.top.leading.equalToSuperview()
+        profileImage.snp.makeConstraints{
+            $0.width.height.equalTo(48)
+            $0.top.leading.equalToSuperview()
         }
         
-        self.userNameLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview()
-            make.leading.equalTo(profileImage.snp.trailing).offset(8)
+        userNameLabel.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.leading.equalTo(profileImage.snp.trailing).offset(8)
         }
         
-        self.imageMessageView.snp.makeConstraints{ make in
-            make.leading.equalTo(profileImage.snp.trailing).offset(8)
-            make.top.equalToSuperview().offset(18)
-            make.bottom.equalToSuperview()
-            
-            make.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
+        imageMessageView.snp.makeConstraints{
+            $0.top.equalTo(userNameLabel.snp.bottom).offset(7)
+            $0.leading.equalTo(profileImage.snp.trailing).offset(8)
+            $0.bottom.equalToSuperview()
+            $0.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
         }
         
-        self.timeLabel.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview()
-            make.leading.equalTo(imageMessageView.snp.trailing).offset(4)
+        timeLabel.snp.makeConstraints{
+            $0.bottom.equalToSuperview()
+            $0.leading.equalTo(imageMessageView.snp.trailing).offset(4)
         }
     }
 }

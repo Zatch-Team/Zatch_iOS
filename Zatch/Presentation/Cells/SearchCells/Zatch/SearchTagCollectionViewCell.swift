@@ -7,66 +7,71 @@
 
 import UIKit
 
-class SearchTagCollectionViewCell: UICollectionViewCell{
+class SearchTagCollectionViewCell: BaseCollectionViewCell{
     
-    //MARK: - Properties
-    
-    static let cellIdentifier = "selectionCell"
-    
-    var delegate: CellDelegate?
-    
-    //MARK: - UI
-    
-    let backView = UIView()
-    
-    lazy var selectBtn = UIButton().then{
-        $0.layer.cornerRadius = 28 / 2
-        $0.addTarget(self, action: #selector(selectBtnIsTapped), for: .touchUpInside)
-        $0.titleLabel?.numberOfLines = 1
-    }
-    
-    //MARK: - Helper
-    
-    func setBtnInitState(){
-        self.selectBtn.layer.borderWidth = 1
-        self.selectBtn.titleLabel?.font = UIFont.pretendard(size: 13, family: .Medium)
-        self.selectBtn.layer.borderColor = UIColor.black45.cgColor
-        self.selectBtn.setTitleColor(.black45, for: .normal)
-    }
-    
-    func setBtnSelectedState(){
-        self.selectBtn.layer.borderWidth = 1.5
-        self.selectBtn.titleLabel?.font = UIFont.pretendard(size: 13, family: .Bold)
-        self.selectBtn.layer.borderColor = UIColor.zatchYellow.cgColor
-        self.selectBtn.setTitleColor(.zatchYellow, for: .normal)
-    }
-    
-    //MARK: - Action
-    @objc
-    func selectBtnIsTapped(){}
-    
-    //MARK: - LifeCycle
-    
-    override init(frame: CGRect) {
-        
-        super.init(frame: .zero)
-        
-        self.contentView.addSubview(backView)
-        
-        backView.addSubview(selectBtn)
-        
-        self.backView.snp.makeConstraints{ make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-        self.selectBtn.snp.makeConstraints{ make in
-            make.height.equalToSuperview()
-            make.leading.trailing.top.bottom.equalToSuperview()
+    static let height = 32
+
+    var isSelectState: Bool = false{
+        didSet{
+            isSelectState ? setSelectState() : setDeselectState()
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private let tagLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
+        $0.numberOfLines = 1
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 32/2
     }
     
+    override func style() {
+        setDeselectState()
+    }
+    
+    override func hierarchy() {
+        super.hierarchy()
+        self.baseView.addSubview(tagLabel)
+    }
+    
+    override func layout() {
+        super.layout()
+        tagLabel.snp.makeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.height.equalTo(SearchTagCollectionViewCell.height)
+        }
+    }
+    
+    static func getEstimatedSize(title: String) -> CGSize{
+        
+        let testLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
+            $0.text = title
+            $0.snp.makeConstraints{
+                $0.height.equalTo(SearchTagCollectionViewCell.height)
+            }
+        }
+        
+        let boldSize = testLabel.then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .bold15) }.intrinsicContentSize
+        let mediumSize = testLabel.then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium15_19) }.intrinsicContentSize
+        
+        return boldSize.width > mediumSize.width ? boldSize : mediumSize
+    }
+    
+    func setTitle(_ title: String){
+        tagLabel.text = title
+    }
+    
+    private func setSelectState(){
+        tagLabel.textColor = .zatchYellow
+        tagLabel.layer.borderColor = UIColor.zatchYellow.cgColor
+        tagLabel.layer.borderWidth = 1.5
+        tagLabel.setTypoStyleWithSingleLine(typoStyle: .bold15)
+    }
+    
+    private func setDeselectState(){
+        tagLabel.textColor = .black45
+        tagLabel.layer.borderColor = UIColor.black45.cgColor
+        tagLabel.layer.borderWidth = 1
+        tagLabel.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
+    }
 }

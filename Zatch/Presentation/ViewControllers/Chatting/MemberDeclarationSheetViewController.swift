@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberDeclarationSheetViewController: BaseBottomSheetViewController {
+class MemberDeclarationSheetViewController: BaseBottomSheetViewController<Void> {
     
     let blockBtn = UILabel().then{
         $0.text = "차단하기"
@@ -24,7 +24,6 @@ class MemberDeclarationSheetViewController: BaseBottomSheetViewController {
         $0.textAlignment = .center
         $0.isUserInteractionEnabled = true
     }
-    
 
     init(){
         super.init(type: .declaration)

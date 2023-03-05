@@ -10,7 +10,6 @@ import UIKit
 class GatchDetailInfomationTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
-    static let cellIdentifier: String = "GatchDetailInfomationTableViewCell"
     
     let titleStackView = UIStackView().then{
         $0.spacing = 12

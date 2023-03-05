@@ -13,7 +13,7 @@ extension UICollectionView{
         self.register(cellType.self, forCellWithReuseIdentifier: cellType.cellIdentifier)
     }
     
-    final func dequeueReusableCell<T: BaseCollectionViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T {
+    final func dequeueReusableCell<T: BaseCollectionViewCell>(for indexPath: IndexPath, cellType: T.Type) -> T {
         let bareCell = self.dequeueReusableCell(withReuseIdentifier: cellType.cellIdentifier, for: indexPath)
         guard let cell = bareCell as? T else {
           fatalError(
@@ -23,5 +23,12 @@ extension UICollectionView{
           )
         }
         return cell
+    }
+    
+    final func cellForItem<T: BaseCollectionViewCell>(at indexPath: IndexPath, cellType: T.Type) -> T? {
+        if let cell = self.cellForItem(at: indexPath) as? T {
+            return cell
+        }
+        return nil
     }
 }

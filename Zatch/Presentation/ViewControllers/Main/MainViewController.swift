@@ -9,9 +9,9 @@ import Foundation
 
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
-    //    var viewModel: MainViewModel!
-
-    let mainView = MainView()
+    private let mainView = MainView()
+    private let viewModel = MainViewModel()
+    private let townSelectBottomSheet = ChangeLocationSheetViewController()
     
     init(){
         super.init(headerView: MainHeaderView())
@@ -28,7 +28,6 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
             $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
             $0.leading.trailing.bottom.equalToSuperview()
         }
-//        viewModel = MainViewModel()
     }
     
     override func initialize() {
@@ -37,46 +36,55 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.separatorStyle = .none
         
-//        guard let headerView = headerView as? MainHeaderView else { return }
+        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                         action: #selector(townBottomSheetWillShow)))
         
-        let tap = UITapGestureRecognizer(target: self, action:  #selector(arrowTapped(_:)))
-        headerView.stackView.addGestureRecognizer(tap)
-//        headerView.arrowButton.addTarget(self, action:  #selector(buttonTapped(_:)), for: .touchUpInside)
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
     }
     
+    override func bind(){
+        
+        /*
+        let input = MainViewModel.Input()
+        let output = viewModel.transform(input)
+         */
+        
+        townSelectBottomSheet.rx.viewWillAppear
+            .map{ _ in }
+            .bind(onNext: {
+                self.headerView.arrowButton.isSelected = true
+            }).disposed(by: disposeBag)
+        
+        townSelectBottomSheet.rx.viewWillDisappear
+            .map{ _ in }
+            .bind(onNext: {
+                self.headerView.arrowButton.isSelected = false
+            }).disposed(by: disposeBag)
+    }
+    
+    
+    
     // MARK: - Actions
-    @objc func arrowTapped(_ sender: UIButton) {
-        setBottomSheet()
+    @objc func townBottomSheetWillShow() {
+
+        _ = townSelectBottomSheet.show(in: self)
+        
+        let currentLocation = headerView.locationLabel.text
+        townSelectBottomSheet.myLocation = currentLocation
+        townSelectBottomSheet.completion = { town in
+            self.headerView.locationLabel.text = town
+        }
     }
     
     @objc func goSearchButtonDidTap() {
-        let vc = MySearchViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(ExchangeMyZatchSearchViewController(),
+                                                      animated: true)
     }
     
     @objc func goNotiButtonDidTap() {
-        let vc = NotificationViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func setBottomSheet() {
-        
-//        guard let headerView = headerView as? MainHeaderView else { return }
-        
-        headerView.arrowButton.isSelected = true
-        headerView.layoutIfNeeded()
-        
-        let sheet = ChangeLocationSheetViewController()
-
-//        locationChangeBottomSheet?.viewModel = self.viewModel
-//        let currentLocation = mainView.locationLabel.text!
-//        locationChangeBottomSheet?.myLocation = currentLocation
-        
-        sheet.loadViewIfNeeded()
-        self.present(sheet, animated: true, completion: nil)
-         
+//        self.navigationController?.pushViewController(NotificationViewController(),
+//                                                      animated: true)
     }
 }
 
@@ -91,80 +99,74 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let tag = indexPath.row
         switch tag {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainBannerTableViewCell", for: indexPath) as? MainBannerTableViewCell else { return UITableViewCell() }
-            cell.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
+                $0.setBannerImage(Image.MainBanner)
+            }
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            cell.then{
-                $0.setUpCollectionView(self)
-                $0.setUpView()
-                $0.setUpConstraint()
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
+                $0.collectionView.delegate = self
+                $0.collectionView.dataSource = self
                 $0.selectionStyle = .none
             }
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainBannerTableViewCell", for: indexPath) as? MainBannerTableViewCell else { return UITableViewCell() }
-            cell.banner.image = Image.addZatchBanner
-            cell.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
+                $0.setBannerImage(Image.addZatchBanner)
+            }
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCollectionViewTableViewCell", for: indexPath) as? MainCollectionViewTableViewCell else { return UITableViewCell() }
-            cell.then{
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
                 $0.label.text = "지금 인기있는 재치"
                 $0.subLabel.text = "재치 있는 자취인이 되는 법"
-                
-                $0.setUpCollectionView(self)
-                $0.setUpView()
-                $0.setUpConstraint()
+                $0.collectionView.delegate = self
+                $0.collectionView.dataSource = self
                 $0.selectionStyle = .none
             }
             return cell
         default:
-            let cell = UITableViewCell()
-            return cell
+            return UITableViewCell()
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tag = indexPath.row
-        switch tag {
-        case 0:
-            return 160
-        case 1, 3:
-            return 300
-        case 2:
-            return 150
-        default:
-            return 50
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let tag = indexPath.row
+//        switch tag {
+//        case 0:
+//            return 160
+//        case 1, 3:
+//            return 300
+//        case 2:
+//            return 150
+//        default:
+//            return 50
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = indexPath.row
         switch tag {
         case 0:
-            let vc = ResultSearchViewController()
+            let vc = ZatchSearchResultViewController()
             self.navigationController?.pushViewController(vc, animated: true)
+            break
         case 2:
-            let vc = FirstRegisterViewController()
+            let vc = ZatchRegisterFirstViewController()
             self.navigationController?.pushViewController(vc, animated: true)
+            break
         default:
-            fatalError()
+            return
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-// MARK: - 메인페이지의 콜렉션뷰를 갖고있는 테이블뷰의 CollectionView delegate
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier,
-                                                            for: indexPath)
-                as? MainCollectionViewCell else{ fatalError() }
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -7,25 +7,30 @@
 
 import UIKit
 
-class CheckRegisterView: UIView {
-
+class CheckRegisterView: BaseView {
+    
+    init(infoView: BaseView){
+        self.infoFrame = infoView
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Properties
 
     static let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
 
     //MARK: - UI
     
-    let titleView = TitleView().then{
-        $0.titleLabel.text = "이렇게 재치를\n업로드해도 괜찮을까요?"
-    }
+    let titleView = TopTitleView(title: "이렇게 재치를\n업로드해도 괜찮을까요?")
 
     let photoFrame = UIView()
-
     let photoTitle = UILabel().then{
         $0.text = "사진"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-
     let photoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -40,18 +45,12 @@ class CheckRegisterView: UIView {
         $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
     }
 
-    var infoFrame : UIView!{
-        didSet{
-            setUpView()
-            setUpConstraint()
-        }
-    }
-
+    let infoFrame: BaseView
+    
     let addTitle = UILabel().then{
         $0.text = "추가 설명"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-
     let addExplainTextView = UITextView().then{
         $0.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         $0.layer.borderWidth = 1
@@ -68,16 +67,7 @@ class CheckRegisterView: UIView {
         $0.setTitle("재치 등록", for: .normal)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setUpView(){
-        
+    override func hierarchy(){
         self.addSubview(titleView)
         self.addSubview(registerBtn)
         self.addSubview(photoFrame)
@@ -90,7 +80,7 @@ class CheckRegisterView: UIView {
         self.addSubview(addExplainTextView)
     }
 
-    func setUpConstraint(){
+    override func layout(){
 
         titleView.snp.makeConstraints{ make in
             make.top.equalToSuperview()
@@ -102,13 +92,11 @@ class CheckRegisterView: UIView {
             make.height.equalTo(129)
             make.trailing.equalToSuperview()
         }
-
         photoTitle.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(36)
             make.top.equalToSuperview().offset(9)
             make.height.equalTo(17)
         }
-
         photoCollectionView.snp.makeConstraints{ make in
             make.top.equalTo(photoTitle.snp.bottom).offset(19)
             make.leading.trailing.equalToSuperview()
@@ -117,7 +105,7 @@ class CheckRegisterView: UIView {
         }
 
         infoFrame.snp.makeConstraints{ make in
-            make.top.equalTo(photoFrame.snp.bottom)
+            make.top.equalTo(photoFrame.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(166)
         }
@@ -127,7 +115,6 @@ class CheckRegisterView: UIView {
             make.top.equalTo(infoFrame.snp.bottom).offset(18)
             make.height.equalTo(17)
         }
-
         addExplainTextView.snp.makeConstraints{ make in
             make.top.equalTo(addTitle.snp.bottom).offset(11)
             make.leading.equalToSuperview().offset(24)
@@ -143,3 +130,82 @@ class CheckRegisterView: UIView {
     }
 }
 
+extension CheckRegisterView{
+    
+    class MyProductDetailView: UIStackView{
+        
+        let endDateFrame = MyProductInfoStackView(title: "유통기한")
+        let buyDateFrame = MyProductInfoStackView(title: "구매 일자")
+        let countFrame = MyProductInfoStackView(title: "수량")
+        let openFrame = MyProductInfoStackView(title: "개봉 상태")
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            hierarchy()
+            style()
+        }
+        
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func hierarchy(){
+            self.addArrangedSubview(endDateFrame)
+            self.addArrangedSubview(buyDateFrame)
+            self.addArrangedSubview(countFrame)
+            self.addArrangedSubview(openFrame)
+        }
+        
+        private func style(){
+            self.axis = .vertical
+            self.spacing = 8
+            self.alignment = .leading
+        }
+    }
+}
+
+extension CheckRegisterView.MyProductDetailView{
+    
+    class MyProductInfoStackView: UIStackView{
+        
+        private let titleLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
+            $0.textColor = .black85
+        }
+        private let infoLabel = UILabel().then{
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
+            $0.textColor = .black85
+            $0.text = "2022/02/03"
+        }
+        
+        init(title: String){
+            self.titleLabel.text = title
+            super.init(frame: .zero)
+            style()
+            layout()
+        }
+        
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func style(){
+            self.spacing = 10
+            self.axis = .horizontal
+        }
+        
+        private func layout(){
+            self.addArrangedSubview(titleLabel)
+            self.addArrangedSubview(infoLabel)
+            
+            titleLabel.snp.makeConstraints{
+                $0.width.equalTo(47)
+            }
+        }
+        
+        func setInfo(value: String){
+            infoLabel.text = value
+        }
+        
+    }
+}

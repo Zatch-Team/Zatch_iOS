@@ -18,7 +18,7 @@ class AlertViewController: UIViewController {
      3의 경우 버튼 위치 및 특성은 각각 조절
      */
     
-    var confirmHandler : (() -> ())?
+    var completion : (() -> ())?
     
     lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)
@@ -73,7 +73,7 @@ class AlertViewController: UIViewController {
     
     func setting(){
         
-        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.view.backgroundColor = .popupBackgroundColor
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlertController))
         gesture.delegate = self
@@ -128,7 +128,7 @@ class AlertViewController: UIViewController {
         }
     }
     
-    func show(in viewController: UIViewController) -> AlertViewController{
+    func show(in viewController: UIViewController) -> Self{
         self.modalPresentationStyle = .overFullScreen
         viewController.present(self, animated: false, completion: nil)
         return self
@@ -142,7 +142,7 @@ class AlertViewController: UIViewController {
     
     @objc func okBtnDidClicked(){
         self.dismiss(animated: false, completion: {
-            self.confirmHandler?()
+            self.completion?()
         })
     }
 

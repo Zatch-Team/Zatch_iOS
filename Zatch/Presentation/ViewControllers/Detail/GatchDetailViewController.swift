@@ -7,30 +7,23 @@
 
 import UIKit
 
-class GatchDetailViewController: BaseViewController {
+class GatchDetailViewController: BaseViewController<EtcButtonHeaderView, GatchDetailView> {
     
-    let mainView = GatchDetailView().then{
-        $0.bottomFixView.recruitFinishButton.addTarget(self, action: #selector(recruitFinishButtonDidClicked), for: .touchUpInside)
-    }
-    
-    override init() {
-        super.init(rightButton: Image.dot)
+    init(){
+        super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: GatchDetailView())
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-//        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layout() {
         
         super.layout()
         
-        self.view.addSubview(mainView)
-        self.view.bringSubviewToFront(self.navigationView)
-        mainView.snp.makeConstraints{
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        self.view.bringSubviewToFront(self.headerView)
+        mainView.snp.updateConstraints{
+            $0.top.equalToSuperview()
         }
     }
     
@@ -38,14 +31,13 @@ class GatchDetailViewController: BaseViewController {
         mainView.infoTableView.separatorStyle = .none
         mainView.infoTableView.delegate = self
         mainView.infoTableView.dataSource = self
-        
-        self.rightPositionButton?.addTarget(self, action: #selector(detailEtcBottomSheetWillShow), for: .touchUpInside)
+
+        mainView.bottomFixView.recruitFinishButton.addTarget(self, action: #selector(recruitFinishButtonDidClicked), for: .touchUpInside)
+        headerView.etcButton.addTarget(self, action: #selector(detailEtcBottomSheetWillShow), for: .touchUpInside)
     }
     
     @objc private func detailEtcBottomSheetWillShow() {
-        let sheet = DetailEtcBottomSheetViewController()
-        sheet.loadViewIfNeeded()
-        self.present(sheet, animated: true)
+        let sheet = DetailEtcBottomSheetViewController().show(in: self)
     }
     
     @objc private func recruitFinishButtonDidClicked(){
@@ -62,11 +54,10 @@ extension GatchDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row{
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailImageTableViewCell.cellIdentifier, for: indexPath) as? DetailImageTableViewCell else { return UITableViewCell() }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: DetailImageTableViewCell.self)
             return cell
-            
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: GatchDetailInfomationTableViewCell.cellIdentifier, for: indexPath) as? GatchDetailInfomationTableViewCell else { return UITableViewCell() }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: GatchDetailInfomationTableViewCell.self)
             return cell
         default:
             return UITableViewCell()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ModifyMeetingSheetViewController: BaseBottomSheetViewController {
+class ModifyMeetingSheetViewController: BaseBottomSheetViewController<Void> {
 
     let mainView = ModifyMeetingSheetView().then{
         $0.registerBtn.addTarget(self, action: #selector(modifyBtnDidClicked), for: .touchUpInside)

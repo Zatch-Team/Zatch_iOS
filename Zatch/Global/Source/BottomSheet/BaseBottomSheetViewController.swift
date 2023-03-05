@@ -7,19 +7,20 @@
 
 import UIKit
 
-class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransitioningDelegate {
     
     //MARK: - Properties
     
-    private final let bottomSheetType: BottomSheetType!
+    private final let type: BottomSheet
+    var completion: ((T) -> Void)!
     
     let titleLabel = UILabel().then{
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
         $0.textColor = .black85
     }
     
-    init(type: BottomSheetType){
-        self.bottomSheetType = type
+    init(type: BottomSheet){
+        self.type = type
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,7 +31,7 @@ class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitio
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
         style()
         initialize()
         layout()
@@ -40,11 +41,11 @@ class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitio
         
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
         
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Detent1", constant: bottomSheetType.sheetHeight * Const.Device.DEVICE_HEIGHT / 810)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Detent1", constant: type.sheetHeight * Const.Device.DEVICE_HEIGHT / 810)
     
         controller.detents = [detent]
         controller.preferredCornerRadius = 28
-        controller.prefersGrabberVisible = bottomSheetType.grabberVisibility
+        controller.prefersGrabberVisible = type.grabberVisibility
         
         return controller
     }
@@ -53,7 +54,7 @@ class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitio
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
         
-        self.titleLabel.text = bottomSheetType.title
+        self.titleLabel.text = type.title
     }
     
     func initialize() {
@@ -67,5 +68,11 @@ class BaseBottomSheetViewController: UIViewController, UIViewControllerTransitio
             make.top.equalToSuperview().offset(24)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    func show(in viewController: UIViewController) -> Self{
+        self.loadViewIfNeeded()
+        viewController.present(self, animated: true)
+        return self
     }
 }

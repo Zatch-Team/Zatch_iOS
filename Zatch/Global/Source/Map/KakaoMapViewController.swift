@@ -16,7 +16,7 @@ class KakaoMapViewController: UIViewController {
     var locationManager: CLLocationManager!
     
     let mainView = MapTownView().then{
-        $0.backBtn.addTarget(self, action: #selector(backBtnDidClicked), for: .touchUpInside)
+//        $0.backBtn.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
         $0.settingBtn.addTarget(self, action: #selector(settingBtnDidClicked), for: .touchUpInside)
     }
 
@@ -57,7 +57,7 @@ class KakaoMapViewController: UIViewController {
         if(locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .denied ){
             
             let alert = Alert.LocationAuthority.generateAlert().show(in: self)
-            alert.confirmHandler = {
+            alert.completion = {
                 self.navigationController?.popViewController(animated: true)
             }
         }

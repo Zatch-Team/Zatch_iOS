@@ -91,7 +91,7 @@ enum Image{
     
     //MARK: - Login
     public static let kakaoLogo = UIImage(named: "kakao_logo")!
-    public static let loginCharacter = UIImage(named: "loginCharacter")!
+    public static let loginCharacter = UIImage(named: "login_character")!
     
     //MARK: - Logo
     public static let Logo = UIImage(named: "Logo")!

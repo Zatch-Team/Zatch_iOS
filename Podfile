@@ -19,8 +19,11 @@ target 'Zatch' do
 
   pod 'SideMenu', '~> 6.0'
 
+  pod 'Moya', '~> 15.0'
+
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod "RxGesture"
 
   pod 'KakaoSDKCommon'  # 필수 요소를 담은 공통 모듈
   pod 'KakaoSDKAuth'  # 사용자 인증
@@ -28,7 +31,7 @@ target 'Zatch' do
 
   pod 'Cosmos', '~> 23.0' # 별점
 
-  pod 'Tabman', '~> 2.12'
+  pod 'Tabman', '~> 2.11'
 
   target 'ZatchTests' do
     inherit! :search_paths

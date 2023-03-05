@@ -7,72 +7,47 @@
 
 import UIKit
 
-class CheckRegisterViewController: BaseLeftTitleViewController {
-    
-    let mainView = CheckRegisterView().then{
-        $0.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
-    }
+class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
     //MARK: - LifeCycle
     
-    override init(){
-        super.init(rightButton: Image.exit)
+    init(infoView: BaseView){
+        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
+                   mainView: CheckRegisterView(infoView: infoView))
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Override
-    
-    override func style(){
-        
-        super.style()
-        
-        self.navigationTitle.text = "재치 등록하기"
-//        self.addRightTopBtn(image: Image.exit)
-    }
-    
     override func initialize(){
         
         super.initialize()
+        
+        headerView.etcButton.addTarget(self, action: #selector(exitButtonDidClicked), for: .touchUpInside)
         
         mainView.photoCollectionView.delegate = self
         mainView.photoCollectionView.dataSource = self
         
         mainView.addExplainTextView.delegate = self
-    }
-    
-    override func layout(){
         
-        super.layout()
-        
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
-        }
-
+        mainView.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
     }
 
     //MARK: - Action
     
     @objc func registerBtnDidClicked(){
         let alert = Alert.Register.generateAlert().show(in: self)
-        
-        alert.confirmHandler = {
+        alert.completion = {
             print("등록 완료 버튼 눌림")
         }
     }
     
-    override func rightPositionBtnDidClicked(){
+    @objc func exitButtonDidClicked(){
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         self.view.endEditing(true)
         
         UIView.animate(withDuration: 0.3){
@@ -113,7 +88,7 @@ extension CheckRegisterViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self)
         return cell
     }
 }

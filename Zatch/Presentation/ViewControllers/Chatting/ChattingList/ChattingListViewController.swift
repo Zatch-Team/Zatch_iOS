@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ChattingListViewController: BaseTabBarViewController<TabBarHeaderView> {
+class ChattingListViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
     //MARK: - Properties
     
     init(){
-        super.init(headerView: TabBarHeaderView(title: "채팅",
-                                                etcButton: Image.bell))
+        super.init(headerView: BaseTabBarHeaderView(title: "채팅",
+                                                    button: Image.bell))
     }
     
     required init?(coder: NSCoder) {
@@ -22,7 +22,6 @@ class ChattingListViewController: BaseTabBarViewController<TabBarHeaderView> {
     
     override func layout() {
         super.layout()
-        setUpChildVC()
     }
     
     override func initialize() {

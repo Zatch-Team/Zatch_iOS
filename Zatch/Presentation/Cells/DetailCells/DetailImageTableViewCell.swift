@@ -9,8 +9,6 @@ import UIKit
 
 class DetailImageTableViewCell: BaseTableViewCell {
     
-    static let cellIdentifier = "DetailImageTableViewCell"
-    
     //MARK: - Properties
     var images : [UIImage?] = [
         Image.chatCamera,

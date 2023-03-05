@@ -7,50 +7,32 @@
 
 import UIKit
 
-class RegisterImageDetailViewController: BaseViewController {
+class RegisterImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView> {
     
     //MARK: - Properties
     
-    var imageDetailHandler: ((Bool) -> ())?
+    var completion: (() -> ())!
+    private let image: UIImage
     
-    //MARK: - UI
-    
-    lazy var okBtn = UIButton().then{
-        $0.setTitle("확인", for: .normal)
-        $0.titleLabel?.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.setTitleColor(.black85, for: .normal)
-        $0.backgroundColor = .white
-        $0.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
+    init(image: UIImage){
+        self.image = image
+        super.init(headerView: EtcButtonHeaderView(title: "확인"),
+                   mainView: ImageDetailView())
     }
     
-    let imageView = UIImageView().then{
-        $0.contentMode = .scaleAspectFit
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        self.view.addSubview(okBtn)
-        self.view.addSubview(imageView)
-        
-        okBtn.snp.makeConstraints{ make in
-            make.height.equalTo(20)
-            make.width.equalTo(okBtn.titleLabel!.snp.width)
-            make.trailing.equalToSuperview().offset(-20)
-            make.centerY.equalTo(super.backBtn)
-        }
-        
-        imageView.snp.makeConstraints{ make in
-            make.leading.trailing.equalToSuperview()
-            make.centerY.equalToSuperview().offset(5)
-        }
+    override func initialize() {
+        super.initialize()
+        mainView.imageView.image = image
+        headerView.etcButton.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
     }
     
     //MARK: - Action
-    @objc
-    func okBtnDidClicked(){
-        self.imageDetailHandler!(true)
+    @objc func okBtnDidClicked(){
+        self.completion()
         self.navigationController?.popViewController(animated: true)
     }
 

@@ -18,25 +18,17 @@
 		234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */; };
 		234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */; };
 		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
-		235613F328D0974A00D44E97 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F228D0974A00D44E97 /* ProfileViewController.swift */; };
-		235613F728D0976500D44E97 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613F628D0976500D44E97 /* MyProfileView.swift */; };
 		235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */; };
-		235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */; };
-		23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */; };
-		23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */; };
+		235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */; };
 		23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */; };
-		23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */; };
-		23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */; };
-		23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */; };
-		23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */; };
 		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
 		23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */; };
 		23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F529085258003E46AB /* NoticeTableViewCell.swift */; };
 		23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */; };
 		23A86A5628C72C7700B073CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5528C72C7700B073CB /* MainView.swift */; };
-		23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */; };
+		23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */; };
 		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
-		23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */; };
+		23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5E28C7408C00B073CB /* MainZatchCollectionViewCell.swift */; };
 		23B051B628E1FD7F005D08EA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051B528E1FD7F005D08EA /* NotificationViewController.swift */; };
 		23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051B828E1FDCC005D08EA /* NotificationView.swift */; };
 		23B051BC28E1FE8B005D08EA /* NotiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051BB28E1FE8B005D08EA /* NotiTableViewCell.swift */; };
@@ -47,16 +39,14 @@
 		23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */; };
 		23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */; };
 		23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */; };
-		23B7FBA928CEB9430018642E /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBA828CEB9430018642E /* MypageView.swift */; };
+		23B7FBA928CEB9430018642E /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBA828CEB9430018642E /* MyPageView.swift */; };
 		23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */; };
-		23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */; };
 		23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */; };
 		23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */; };
 		23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */; };
 		23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C9031D28C5CF7900FB6D3D /* MainViewController.swift */; };
 		23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* MypageViewController.swift */; };
-		23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */; };
-		23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */; };
+		23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */; };
 		23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */; };
 		23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */; };
 		23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */; };
@@ -64,12 +54,8 @@
 		23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D128E9EF80002F234C /* AccountViewController.swift */; };
 		23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D328E9EF89002F234C /* TradeViewController.swift */; };
 		23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D528E9EF92002F234C /* EtcViewController.swift */; };
-		23ECCB5A28EEDBAC0026A6AD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */; };
-		23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44828D874C200C4C67E /* ZatchViewController.swift */; };
-		23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44A28D874CC00C4C67E /* GatchViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
-		23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */; };
-		57067864281C143A00F48342 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* UIColor.swift */; };
+		57067864281C143A00F48342 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* Color.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
 		57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067875281C2F3900F48342 /* pretendard_bold.ttf */; };
 		57067878281C2F4A00F48342 /* pretendard_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57067873281C2F3900F48342 /* pretendard_medium.ttf */; };
@@ -77,15 +63,13 @@
 		5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */; };
 		571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */; };
 		571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */; };
-		571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */; };
 		571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */; };
 		571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */; };
 		571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */; };
 		571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */; };
 		571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */; };
 		571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */; };
-		571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */; };
-		571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */; };
+		571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADC6297BAE030079CCD3 /* BaseTabBarHeaderView.swift */; };
 		571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */; };
 		5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */; };
 		5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */; };
@@ -122,23 +106,21 @@
 		57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */; };
 		57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */; };
 		57468A81289E3FB600056691 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A80289E3FB600056691 /* BaseViewController.swift */; };
-		57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */; };
-		57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */; };
 		57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */; };
-		57468A8E289FEF1800056691 /* WantZatchSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */; };
+		57468A8E289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8D289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift */; };
 		57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */; };
-		57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */; };
-		57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */; };
-		57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */; };
+		57468A9428A000CB00056691 /* SearchZatchByRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9328A000CB00056691 /* SearchZatchByRegister.swift */; };
+		57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */; };
+		57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */; };
 		57468A9B28A1098300056691 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9A28A1098300056691 /* UITextField.swift */; };
-		57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */; };
+		57468A9E28A1E5E300056691 /* SearchResultEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9D28A1E5E300056691 /* SearchResultEmptyView.swift */; };
 		57468AA028A214FD00056691 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468A9F28A214FD00056691 /* UILabel.swift */; };
 		57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */; };
 		57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */; };
-		57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */; };
+		57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57468AAD28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift */; };
 		574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CA8296400E6005D2048 /* CellReuse.swift */; };
 		574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */; };
-		574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */; };
+		574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */; };
 		5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */; };
 		575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */; };
 		575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF6FE27E0CBC6008D5B3C /* SceneDelegate.swift */; };
@@ -153,11 +135,9 @@
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
-		576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */; };
-		576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */; };
 		576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */; };
 		576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */; };
-		5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* MySearchViewController.swift */; };
+		5767752C281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */; };
 		5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */; };
 		5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */; };
 		5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */; };
@@ -166,7 +146,7 @@
 		5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */; };
 		5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */; };
 		5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */; };
-		5767D787286ADA4D0075DB28 /* FirstProductInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D786286ADA4D0075DB28 /* FirstProductInfoTableView.swift */; };
+		5767D787286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D786286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift */; };
 		5767D78A286C0AF70075DB28 /* ZatchRoundCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D789286C0AF70075DB28 /* ZatchRoundCheck.swift */; };
 		5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D78C286C4AB70075DB28 /* ZatchTextRadioButton.swift */; };
 		576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */; };
@@ -183,18 +163,16 @@
 		576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */; };
 		576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */; };
 		576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376B28D85F8B00EF36E6 /* UITableView.swift */; };
-		576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* FirstRegisterViewController.swift */; };
-		576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */; };
+		576EA923282B7F840028046C /* ZatchRegisterFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* ZatchRegisterFirstViewController.swift */; };
+		576EA925282B7FBB0028046C /* ZatchRegisterSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* ZatchRegisterSecondViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
-		57713944281F596C0066DEEB /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57713943281F596C0066DEEB /* TitleView.swift */; };
+		57713944281F596C0066DEEB /* TopTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57713943281F596C0066DEEB /* TopTitleView.swift */; };
 		577A01B628A496D1004B2575 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B528A496D1004B2575 /* UITextView.swift */; };
-		577A01B828A49C97004B2575 /* CheckRegisterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B728A49C97004B2575 /* CheckRegisterInfoView.swift */; };
 		578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */; };
-		578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */; };
 		578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */; };
 		5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */; };
-		579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */; };
-		579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */; };
+		579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E57281E574200D3F0D5 /* FindWantZatchSearchViewController.swift */; };
+		579F5E5A281E7F2800D3F0D5 /* ZatchSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579F5E59281E7F2800D3F0D5 /* ZatchSearchResultViewController.swift */; };
 		57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */; };
 		57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3C28CED93700263079 /* MapTownViewController.swift */; };
 		57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3E28CED94B00263079 /* SearchTownViewController.swift */; };
@@ -242,21 +220,21 @@
 		57A28D0E28D03FAE00263079 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0D28D03FAE00263079 /* String.swift */; };
 		57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0F28D041F800263079 /* MapAlertViewController.swift */; };
 		57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */; };
-		57B32C2C291F49CF0018C0CB /* FirstRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2B291F49CF0018C0CB /* FirstRegisterView.swift */; };
-		57B32C2E291F49DC0018C0CB /* SecondRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */; };
+		57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */; };
+		57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */; };
 		57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */; };
 		57B32C34291FB58F0018C0CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C33291FB58F0018C0CB /* Image.swift */; };
 		57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C352920C5320018C0CB /* CategoryInfo.swift */; };
-		57B32C3829220EA10018C0CB /* BottomSheetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C3729220EA10018C0CB /* BottomSheetInfo.swift */; };
+		57B32C3829220EA10018C0CB /* BottomSheetSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */; };
 		57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C39292261D30018C0CB /* AlertInfo.swift */; };
-		57B5D6D328346AB100EA1439 /* ProductNameTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */; };
+		57B5D6D328346AB100EA1439 /* TextFieldTabeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D228346AB100EA1439 /* TextFieldTabeViewCell.swift */; };
 		57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */; };
 		57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9F70B28D94B7800ACEC94 /* Delegate.swift */; };
 		57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */; };
 		57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */; };
 		57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */; };
 		57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */; };
-		57C585022821F0A10078FAFF /* MyZatchSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* MyZatchSheetViewController.swift */; };
+		57C585022821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585012821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift */; };
 		57C585042821F2A70078FAFF /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C585032821F2A70078FAFF /* ServiceType.swift */; };
 		57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */; };
 		57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */; };
@@ -269,12 +247,11 @@
 		57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */; };
 		57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */; };
 		57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */; };
-		57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */; };
 		57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */; };
 		57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */; };
-		57E75EC728E5480A00AC24B2 /* MySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC628E5480900AC24B2 /* MySearchView.swift */; };
-		57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC828E5481900AC24B2 /* FindSearchView.swift */; };
-		57E75ECB28E5482900AC24B2 /* ResultSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */; };
+		57E75EC728E5480A00AC24B2 /* ExchangeMyZatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */; };
+		57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */; };
+		57E75ECB28E5482900AC24B2 /* ZatchSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75ECA28E5482900AC24B2 /* ZatchSearchResultView.swift */; };
 		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
 		57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */; };
@@ -288,14 +265,77 @@
 		57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */; };
 		57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */; };
 		57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */; };
-		57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */; };
-		57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */; };
+		57FFEDC128DD28090041719B /* CheckShareRegisterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC028DD28090041719B /* CheckShareRegisterInfoView.swift */; };
 		57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */; };
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
+		EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD329A9DA92008964E3 /* NoticeView.swift */; };
+		EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD529A9ED79008964E3 /* HeartListView.swift */; };
+		EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC347298295C3002B5C60 /* EtcButton.swift */; };
+		EE2BC34A29829A32002B5C60 /* CenterNavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */; };
+		EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */; };
+		EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */; };
+		EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC3502982B881002B5C60 /* MainHeaderView.swift */; };
+		EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33D21B2993BF710020866E /* LettersAndArrowView.swift */; };
+		EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33D21D2993E1120020866E /* ZatchComponent.swift */; };
+		EE410191298541010083B7E0 /* MyZatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410190298541010083B7E0 /* MyZatchView.swift */; };
+		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
+		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
+		EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* ImageDetailView.swift */; };
+		EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */; };
+		EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */; };
+		EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1429B44CF700DD0F20 /* BaseRouter.swift */; };
+		EE541C1729B44DCB00DD0F20 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1629B44DCB00DD0F20 /* BaseService.swift */; };
+		EE541C1929B44E7D00DD0F20 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1829B44E7D00DD0F20 /* NetworkResult.swift */; };
+		EE541C1B29B44E9100DD0F20 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */; };
+		EE541C1D29B44EE400DD0F20 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */; };
+		EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */; };
+		EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */; };
+		EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */; };
+		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
+		EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */; };
+		EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */; };
+		EE73C51A2995FB170000F8AC /* ProductDateChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */; };
+		EE73C51C299600230000F8AC /* RegisterCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */; };
+		EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */; };
+		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
+		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
+		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
+		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
+		EE9B053529953A1200068503 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B053429953A1200068503 /* FilterView.swift */; };
 		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
+		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
+		EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */; };
+		EEB13B8B297FBBAE001A8DD9 /* DefaultObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */; };
+		EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */; };
+		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
+		EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */; };
+		EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153729A713ED003FD4E3 /* SectionDivider.swift */; };
+		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
+		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
+		EEE1154129A7424B003FD4E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154029A7424B003FD4E3 /* ProfileViewController.swift */; };
+		EEE1154329A742D2003FD4E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154229A742D2003FD4E3 /* ProfileView.swift */; };
+		EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */; };
+		EEE1154929A747B6003FD4E3 /* OthersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */; };
+		EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */; };
+		EEE1155429A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1155329A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift */; };
+		EEE1155629A85197003FD4E3 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1155529A85197003FD4E3 /* ReviewView.swift */; };
+		EEE326A72998B5190017DF46 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */; };
+		EEE326AA2998B6EA0017DF46 /* BorderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326A92998B6EA0017DF46 /* BorderLine.swift */; };
+		EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */; };
+		EEE326B02998C6DF0017DF46 /* ExchangeMyZatchSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE326AF2998C6DF0017DF46 /* ExchangeMyZatchSearchViewModel.swift */; };
+		EEE6D15829973C1C0004FC7B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15729973C1C0004FC7B /* Tag.swift */; };
+		EEE6D15B299752EB0004FC7B /* TagStlye.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15A299752EB0004FC7B /* TagStlye.swift */; };
+		EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15D299757EF0004FC7B /* Padding.swift */; };
+		EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D15F299762670004FC7B /* CheckExchangeRegisterInfoView.swift */; };
+		EEE6D1622997AFA30004FC7B /* TagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D1612997AFA30004FC7B /* TagLabel.swift */; };
+		EEE6D1652997BF830004FC7B /* ZatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D1642997BF830004FC7B /* ZatchButton.swift */; };
+		EEE6D16729987F0D0004FC7B /* ZatchFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */; };
+		EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */; };
+		EEE7F2B5299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */; };
+		EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,25 +366,17 @@
 		234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
 		234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		235613F228D0974A00D44E97 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		235613F628D0976500D44E97 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTableViewCell.swift; sourceTree = "<group>"; };
-		23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GominStoryboard.storyboard; sourceTree = "<group>"; };
-		23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SsooyaStoryboard.storyboard; sourceTree = "<group>"; };
+		235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCell.swift; sourceTree = "<group>"; };
 		23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchChattingListViewController.swift; sourceTree = "<group>"; };
-		23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTabManViewController.swift; sourceTree = "<group>"; };
-		23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchChattingListViewController.swift; sourceTree = "<group>"; };
-		23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabmanViewController.swift; sourceTree = "<group>"; };
-		23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchChildViewController.swift; sourceTree = "<group>"; };
 		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		23A767F529085258003E46AB /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5528C72C7700B073CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerTableViewCell.swift; sourceTree = "<group>"; };
+		23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
-		23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		23A86A5E28C7408C00B073CB /* MainZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		23B051B528E1FD7F005D08EA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		23B051B828E1FDCC005D08EA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		23B051BB28E1FE8B005D08EA /* NotiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTableViewCell.swift; sourceTree = "<group>"; };
@@ -355,16 +387,14 @@
 		23B051C728E20BE1005D08EA /* QuestionContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentTableViewCell.swift; sourceTree = "<group>"; };
 		23B051C928E21BAD005D08EA /* MyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		23B051CB28E23B0C005D08EA /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
-		23B7FBA828CEB9430018642E /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		23B7FBA828CEB9430018642E /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
-		23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationBannerTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchStatisticTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingTableViewCell.swift; sourceTree = "<group>"; };
 		23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageSettingTableViewCell.swift; sourceTree = "<group>"; };
 		23C9031D28C5CF7900FB6D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		23CB3CF428C7D38500C42858 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
-		23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchViewController.swift; sourceTree = "<group>"; };
-		23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabViewController.swift; sourceTree = "<group>"; };
 		23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationSheetViewController.swift; sourceTree = "<group>"; };
 		23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
 		23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterTabmanViewController.swift; sourceTree = "<group>"; };
@@ -372,17 +402,13 @@
 		23E764D128E9EF80002F234C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		23E764D328E9EF89002F234C /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		23E764D528E9EF92002F234C /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
-		23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
-		23EEA44828D874C200C4C67E /* ZatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchViewController.swift; sourceTree = "<group>"; };
-		23EEA44A28D874CC00C4C67E /* GatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
-		23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListTabmanViewController.swift; sourceTree = "<group>"; };
 		2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B45FEA4F195407269C19923 /* Pods_Zatch_ZatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch_ZatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.release.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		537DC8121E89810426FB0D7A /* Pods-Zatch-ZatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		57067863281C143A00F48342 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		57067863281C143A00F48342 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		57067865281C167100F48342 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		57067873281C2F3900F48342 /* pretendard_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_medium.ttf; sourceTree = "<group>"; };
 		57067874281C2F3900F48342 /* rixyeoljeongdo_pro_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rixyeoljeongdo_pro_regular.otf; sourceTree = "<group>"; };
@@ -390,15 +416,13 @@
 		57067876281C2F3900F48342 /* pretendard_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pretendard_regular.ttf; sourceTree = "<group>"; };
 		571AD7122828D9EB00390AAD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewController.swift; sourceTree = "<group>"; };
-		571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListViewController+Layout.swift"; sourceTree = "<group>"; };
 		571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		571C0C7428AB224E002293B6 /* ChattingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTableViewCell.swift; sourceTree = "<group>"; };
 		571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenDeleteView.swift; sourceTree = "<group>"; };
 		571C0C7828AB5080002293B6 /* HiddenZatchInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenZatchInfoView.swift; sourceTree = "<group>"; };
 		571C0C7A28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingListTableViewCell+Layout.swift"; sourceTree = "<group>"; };
 		571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderView.swift; sourceTree = "<group>"; };
-		571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderView.swift; sourceTree = "<group>"; };
-		571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHeaderProtocol.swift; sourceTree = "<group>"; };
+		571DADC6297BAE030079CCD3 /* BaseTabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarHeaderView.swift; sourceTree = "<group>"; };
 		571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProtocol.swift; sourceTree = "<group>"; };
 		5722460128BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5722460328BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChattingMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -435,23 +459,21 @@
 		57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		57468A80289E3FB600056691 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetViewController.swift; sourceTree = "<group>"; };
-		57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantZatchSheetViewController.swift; sourceTree = "<group>"; };
+		57468A8D289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWantRegisterZatchSheetViewController.swift; sourceTree = "<group>"; };
 		57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagSheetViewController.swift; sourceTree = "<group>"; };
-		57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
-		57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTagSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		57468A9328A000CB00056691 /* SearchZatchByRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchZatchByRegister.swift; sourceTree = "<group>"; };
+		57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMyZatchByRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
+		57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWantZatchByRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57468A9A28A1098300056691 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		57468A9D28A1E5E300056691 /* SearchResultEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultEmptyView.swift; sourceTree = "<group>"; };
 		57468A9F28A214FD00056691 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownSettingSheetViewController.swift; sourceTree = "<group>"; };
 		57468AAB28A3A3AA00056691 /* WhitePurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePurpleButton.swift; sourceTree = "<group>"; };
-		57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWithRankTableViewCell.swift; sourceTree = "<group>"; };
+		57468AAD28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectWithPriorityTableViewCell.swift; sourceTree = "<group>"; };
 		574E1CA8296400E6005D2048 /* CellReuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuse.swift; sourceTree = "<group>"; };
 		574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoDesignSystem.swift; sourceTree = "<group>"; };
-		574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectTableViewCell.swift; sourceTree = "<group>"; };
+		574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectTableViewCell.swift; sourceTree = "<group>"; };
 		5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		575BF6F927E0CBC6008D5B3C /* Zatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF6FC27E0CBC6008D5B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -472,11 +494,9 @@
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
-		576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLeftTitleViewController.swift; sourceTree = "<group>"; };
-		576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCenterTitleViewController.swift; sourceTree = "<group>"; };
 		576341C328D40A200067D2C5 /* TownMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownMapAlertViewController.swift; sourceTree = "<group>"; };
 		576341C528D40A3A0067D2C5 /* MeetingMapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMapAlertViewController.swift; sourceTree = "<group>"; };
-		5767752B281CDA4B000BC7CD /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
+		5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeMyZatchSearchViewController.swift; sourceTree = "<group>"; };
 		5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailViewController.swift; sourceTree = "<group>"; };
 		5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -485,7 +505,7 @@
 		5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTextTableViewCell.swift; sourceTree = "<group>"; };
 		5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchTableViewCell.swift; sourceTree = "<group>"; };
 		5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchCollectionViewCell.swift; sourceTree = "<group>"; };
-		5767D786286ADA4D0075DB28 /* FirstProductInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstProductInfoTableView.swift; sourceTree = "<group>"; };
+		5767D786286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInputTableViewCell.swift; sourceTree = "<group>"; };
 		5767D789286C0AF70075DB28 /* ZatchRoundCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRoundCheck.swift; sourceTree = "<group>"; };
 		5767D78C286C4AB70075DB28 /* ZatchTextRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTextRadioButton.swift; sourceTree = "<group>"; };
 		576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapViewController.swift; sourceTree = "<group>"; };
@@ -502,18 +522,16 @@
 		576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingTableViewCell.swift; sourceTree = "<group>"; };
 		576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBorderLineTableViewCell.swift; sourceTree = "<group>"; };
 		576B376B28D85F8B00EF36E6 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		576EA922282B7F840028046C /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
-		576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
+		576EA922282B7F840028046C /* ZatchRegisterFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewController.swift; sourceTree = "<group>"; };
+		576EA924282B7FBB0028046C /* ZatchRegisterSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterSecondViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
-		57713943281F596C0066DEEB /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		57713943281F596C0066DEEB /* TopTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitleView.swift; sourceTree = "<group>"; };
 		577A01B528A496D1004B2575 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
-		577A01B728A49C97004B2575 /* CheckRegisterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterInfoView.swift; sourceTree = "<group>"; };
 		578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomViewController.swift; sourceTree = "<group>"; };
-		578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChattingRoomViewController+Layout.swift"; sourceTree = "<group>"; };
 		578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
 		5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDeclarationSheetViewController.swift; sourceTree = "<group>"; };
-		579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchViewController.swift; sourceTree = "<group>"; };
-		579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
+		579F5E57281E574200D3F0D5 /* FindWantZatchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWantZatchSearchViewController.swift; sourceTree = "<group>"; };
+		579F5E59281E7F2800D3F0D5 /* ZatchSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchSearchResultViewController.swift; sourceTree = "<group>"; };
 		57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTownViewController.swift; sourceTree = "<group>"; };
 		57A28B3C28CED93700263079 /* MapTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTownViewController.swift; sourceTree = "<group>"; };
 		57A28B3E28CED94B00263079 /* SearchTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTownViewController.swift; sourceTree = "<group>"; };
@@ -569,21 +587,21 @@
 		57A28D0F28D041F800263079 /* MapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAlertViewController.swift; sourceTree = "<group>"; };
 		57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAddressModel.swift; sourceTree = "<group>"; };
 		57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
-		57B32C2B291F49CF0018C0CB /* FirstRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterView.swift; sourceTree = "<group>"; };
-		57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterView.swift; sourceTree = "<group>"; };
+		57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstView.swift; sourceTree = "<group>"; };
+		57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterSecondView.swift; sourceTree = "<group>"; };
 		57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterModel.swift; sourceTree = "<group>"; };
 		57B32C33291FB58F0018C0CB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		57B32C352920C5320018C0CB /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
-		57B32C3729220EA10018C0CB /* BottomSheetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetInfo.swift; sourceTree = "<group>"; };
+		57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSystem.swift; sourceTree = "<group>"; };
 		57B32C39292261D30018C0CB /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
-		57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameTabeViewCell.swift; sourceTree = "<group>"; };
+		57B5D6D228346AB100EA1439 /* TextFieldTabeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTabeViewCell.swift; sourceTree = "<group>"; };
 		57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddTableViewCell.swift; sourceTree = "<group>"; };
 		57B9F70B28D94B7800ACEC94 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEtcBtnView.swift; sourceTree = "<group>"; };
 		57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMatchBannerView.swift; sourceTree = "<group>"; };
 		57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingSideSheetViewController.swift; sourceTree = "<group>"; };
 		57C23CD328B2698C006E7915 /* ChattingMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMemberTableViewCell.swift; sourceTree = "<group>"; };
-		57C585012821F0A10078FAFF /* MyZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchSheetViewController.swift; sourceTree = "<group>"; };
+		57C585012821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMyRegisterZatchSheetViewController.swift; sourceTree = "<group>"; };
 		57C585032821F2A70078FAFF /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		57D6D78C28CDB59100F805B7 /* MessageAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlertViewController.swift; sourceTree = "<group>"; };
 		57D6D78E28CDB62000F805B7 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
@@ -597,12 +615,11 @@
 		57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewController.swift; sourceTree = "<group>"; };
 		57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalTownModel.swift; sourceTree = "<group>"; };
 		57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
-		57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailView.swift; sourceTree = "<group>"; };
 		57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailTableViewCell.swift; sourceTree = "<group>"; };
-		57E75EC628E5480900AC24B2 /* MySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchView.swift; sourceTree = "<group>"; };
-		57E75EC828E5481900AC24B2 /* FindSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSearchView.swift; sourceTree = "<group>"; };
-		57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchView.swift; sourceTree = "<group>"; };
+		57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeMyZatchSearchView.swift; sourceTree = "<group>"; };
+		57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWantZatchSearchView.swift; sourceTree = "<group>"; };
+		57E75ECA28E5482900AC24B2 /* ZatchSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchSearchResultView.swift; sourceTree = "<group>"; };
 		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddBtnCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -617,15 +634,78 @@
 		57FEFA8A297A5E48008A78B0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		57FEFA8B297A70F5008A78B0 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterView.swift; sourceTree = "<group>"; };
-		57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterView.swift; sourceTree = "<group>"; };
-		57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterView.swift; sourceTree = "<group>"; };
+		57FFEDC028DD28090041719B /* CheckShareRegisterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterInfoView.swift; sourceTree = "<group>"; };
 		57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckShareRegisterViewController.swift; sourceTree = "<group>"; };
 		57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterViewController.swift; sourceTree = "<group>"; };
 		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		EE1C3CD329A9DA92008964E3 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
+		EE1C3CD529A9ED79008964E3 /* HeartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListView.swift; sourceTree = "<group>"; };
+		EE2BC347298295C3002B5C60 /* EtcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButton.swift; sourceTree = "<group>"; };
+		EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterNavigationHeaderView.swift; sourceTree = "<group>"; };
+		EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButtonHeaderView.swift; sourceTree = "<group>"; };
+		EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabBarHeaderView.swift; sourceTree = "<group>"; };
+		EE2BC3502982B881002B5C60 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		EE33D21B2993BF710020866E /* LettersAndArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersAndArrowView.swift; sourceTree = "<group>"; };
+		EE33D21D2993E1120020866E /* ZatchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchComponent.swift; sourceTree = "<group>"; };
+		EE410190298541010083B7E0 /* MyZatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchView.swift; sourceTree = "<group>"; };
+		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
+		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
+		EE410196298557440083B7E0 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodURL.swift; sourceTree = "<group>"; };
+		EE541C1429B44CF700DD0F20 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		EE541C1629B44DCB00DD0F20 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		EE541C1829B44E7D00DD0F20 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponseModel.swift; sourceTree = "<group>"; };
+		EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDateFormatter.swift; sourceTree = "<group>"; };
+		EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterRequestManager.swift; sourceTree = "<group>"; };
+		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
+		EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCategorySelectView.swift; sourceTree = "<group>"; };
+		EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDateChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellDelegate.swift; sourceTree = "<group>"; };
+		EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductQuantityTableViewCell.swift; sourceTree = "<group>"; };
+		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
+		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
+		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
+		EE9B053429953A1200068503 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservable.swift; sourceTree = "<group>"; };
+		EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
+		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeCycle+Rx.swift"; sourceTree = "<group>"; };
+		EEE1153729A713ED003FD4E3 /* SectionDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDivider.swift; sourceTree = "<group>"; };
+		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
+		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
+		EEE1154029A7424B003FD4E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EEE1154229A742D2003FD4E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersProfileViewController.swift; sourceTree = "<group>"; };
+		EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndMoreButtonTableViewCell.swift; sourceTree = "<group>"; };
+		EEE1155329A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
+		EEE1155529A85197003FD4E3 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
+		EEE326A92998B6EA0017DF46 /* BorderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLine.swift; sourceTree = "<group>"; };
+		EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchSearchRequestManager.swift; sourceTree = "<group>"; };
+		EEE326AF2998C6DF0017DF46 /* ExchangeMyZatchSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeMyZatchSearchViewModel.swift; sourceTree = "<group>"; };
+		EEE6D15729973C1C0004FC7B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		EEE6D15A299752EB0004FC7B /* TagStlye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStlye.swift; sourceTree = "<group>"; };
+		EEE6D15D299757EF0004FC7B /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		EEE6D15F299762670004FC7B /* CheckExchangeRegisterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExchangeRegisterInfoView.swift; sourceTree = "<group>"; };
+		EEE6D1612997AFA30004FC7B /* TagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLabel.swift; sourceTree = "<group>"; };
+		EEE6D1642997BF830004FC7B /* ZatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchButton.swift; sourceTree = "<group>"; };
+		EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchFillButton.swift; sourceTree = "<group>"; };
+		EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchShareTableViewCell.swift; sourceTree = "<group>"; };
+		EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchExchangeTableViewCell.swift; sourceTree = "<group>"; };
+		EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchInformationAttach.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -665,22 +745,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		232DD0A428ECDBA400BC6E91 /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */,
-			);
-			path = Review;
-			sourceTree = "<group>";
-		};
-		232DD0A728ECDC6C00BC6E91 /* ReviewCells */ = {
+		232DD0A728ECDC6C00BC6E91 /* Review */ = {
 			isa = PBXGroup;
 			children = (
 				232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */,
 				232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */,
 				232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */,
 			);
-			path = ReviewCells;
+			path = Review;
 			sourceTree = "<group>";
 		};
 		2342271C28EA9C2D004D6F99 /* FAQCells */ = {
@@ -692,76 +764,39 @@
 			path = FAQCells;
 			sourceTree = "<group>";
 		};
-		235613F028D0972D00D44E97 /* Mypage */ = {
+		235613F128D0973900D44E97 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
-				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
-				576B375A28D82E9A00EF36E6 /* SettingViewController.swift */,
-				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
+				EEE1154029A7424B003FD4E3 /* ProfileViewController.swift */,
+				EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */,
+				EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */,
+				232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */,
 			);
-			path = Mypage;
+			path = Profile;
 			sourceTree = "<group>";
 		};
-		235613F128D0973900D44E97 /* MyProfile */ = {
+		235613F528D0975A00D44E97 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				235613F228D0974A00D44E97 /* ProfileViewController.swift */,
-				234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */,
+				EEE1154229A742D2003FD4E3 /* ProfileView.swift */,
 			);
-			path = MyProfile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
-		235613F428D0975300D44E97 /* Mypage */ = {
-			isa = PBXGroup;
-			children = (
-				23B7FBA828CEB9430018642E /* MypageView.swift */,
-				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
-				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
-				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
-			);
-			path = Mypage;
-			sourceTree = "<group>";
-		};
-		235613F528D0975A00D44E97 /* MyProfile */ = {
-			isa = PBXGroup;
-			children = (
-				235613F628D0976500D44E97 /* MyProfileView.swift */,
-				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
-			);
-			path = MyProfile;
-			sourceTree = "<group>";
-		};
-		235613F828D09A0500D44E97 /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
-				23B7FBAD28CEC91D0018642E /* CertificationBannerTableViewCell.swift */,
-				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
-				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
-				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
-				576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */,
-			);
-			path = MyPage;
-			sourceTree = "<group>";
-		};
-		235613F928D09A0E00D44E97 /* MyProfile */ = {
+		235613F928D09A0E00D44E97 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				235613FA28D09A2300D44E97 /* ProfileTableViewCell.swift */,
-				235613FC28D09DCD00D44E97 /* MyZatchTableViewCell.swift */,
+				EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */,
 			);
-			path = MyProfile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		23A5791C296546A2004F08DE /* ChattingList */ = {
 			isa = PBXGroup;
 			children = (
 				571C0C6B28AB151A002293B6 /* ChattingListViewController.swift */,
-				571C0C6F28AB1B4D002293B6 /* ChattingListViewController+Layout.swift */,
 				23A5791D296546C8004F08DE /* ZatchChattingListViewController.swift */,
-				23A5791F296547AC004F08DE /* ChattingListTabManViewController.swift */,
-				23A5792129654C2A004F08DE /* GatchChattingListViewController.swift */,
 			);
 			path = ChattingList;
 			sourceTree = "<group>";
@@ -775,13 +810,13 @@
 			path = Notice;
 			sourceTree = "<group>";
 		};
-		23A767F429085244003E46AB /* NoticeCells */ = {
+		23A767F429085244003E46AB /* Notice */ = {
 			isa = PBXGroup;
 			children = (
 				23A767F529085258003E46AB /* NoticeTableViewCell.swift */,
 				23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */,
 			);
-			path = NoticeCells;
+			path = Notice;
 			sourceTree = "<group>";
 		};
 		23A86A5428C72C4C00B073CB /* MainView */ = {
@@ -793,14 +828,13 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		23A86A5728C731CB00B073CB /* MainCells */ = {
+		23A86A5728C731CB00B073CB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				23A86A5828C7321C00B073CB /* MainBannerTableViewCell.swift */,
 				23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */,
-				23A86A5E28C7408C00B073CB /* MainCollectionViewCell.swift */,
+				23A86A5E28C7408C00B073CB /* MainZatchCollectionViewCell.swift */,
 			);
-			path = MainCells;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		23B051B428E1FD70005D08EA /* Notification */ = {
@@ -848,23 +882,34 @@
 			path = QnACells;
 			sourceTree = "<group>";
 		};
-		23B7FBA728CEB8E80018642E /* MypageView */ = {
+		23B7FBA728CEB8E80018642E /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				235613F528D0975A00D44E97 /* MyProfile */,
-				235613F428D0975300D44E97 /* Mypage */,
+				EE1C3CD229A9DA89008964E3 /* Notice */,
+				23B7FBA828CEB9430018642E /* MyPageView.swift */,
+				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
+				EE1C3CD529A9ED79008964E3 /* HeartListView.swift */,
+				EEE1155529A85197003FD4E3 /* ReviewView.swift */,
+				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
+				576B375C28D82EAF00EF36E6 /* SettingView.swift */,
+				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
 			);
-			path = MypageView;
+			path = Mypage;
 			sourceTree = "<group>";
 		};
-		23B7FBAA28CEBFBC0018642E /* MypageCells */ = {
+		23B7FBAA28CEBFBC0018642E /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				23A767F429085244003E46AB /* Notice */,
 				576B376228D82FFD00EF36E6 /* Setting */,
-				235613F928D09A0E00D44E97 /* MyProfile */,
-				235613F828D09A0500D44E97 /* MyPage */,
+				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
+				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
+				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
+				EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */,
+				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
+				576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */,
 			);
-			path = MypageCells;
+			path = Mypage;
 			sourceTree = "<group>";
 		};
 		23C9030828C5CDE700FB6D3D /* Global */ = {
@@ -891,10 +936,12 @@
 		23C9030A28C5CE1C00FB6D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEE1154529A746F7003FD4E3 /* Util */,
+				EE41018F298540F60083B7E0 /* MyZatch */,
 				5724EC8D291E0E8200DC529B /* LoginView */,
 				23B051B728E1FDBE005D08EA /* NotificationView */,
 				57FFEDBD28DD27DE0041719B /* RegisterView */,
-				23B7FBA728CEB8E80018642E /* MypageView */,
+				23B7FBA728CEB8E80018642E /* Mypage */,
 				23A86A5428C72C4C00B073CB /* MainView */,
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
 				23C9031B28C5CF3100FB6D3D /* DetailView */,
@@ -907,6 +954,8 @@
 		23C9030B28C5CE2100FB6D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */,
+				EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */,
 				57B32C2F291F55F20018C0CB /* RegisterModels */,
 				57A28D5428D1A07000263079 /* TownModels */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
@@ -917,8 +966,11 @@
 		23C9030C28C5CE2500FB6D3D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CF828C7D85500C42858 /* MainViewModels */,
-				5722461928C6C84D009B7C78 /* ChattingViewModels */,
+				EE532955299BD00400C79CF2 /* Util */,
+				EEE326AE2998C6CC0017DF46 /* Search */,
+				EE642C5B298FAE1D00E15869 /* Register */,
+				23CB3CF828C7D85500C42858 /* Main */,
+				5722461928C6C84D009B7C78 /* Chatting */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -926,13 +978,11 @@
 		23C9030D28C5CE2A00FB6D3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				23ECCB5928EEDBAC0026A6AD /* TempViewController.swift */,
+				EEE1154429A746D3003FD4E3 /* Util */,
 				5724EC8A291E0CB400DC529B /* Login */,
-				23A767EF2908518B003E46AB /* Notice */,
 				23E764CA28E9EDFE002F234C /* ServiceCenter */,
 				23B051BD28E2060A005D08EA /* QnA */,
 				23B051B428E1FD70005D08EA /* Notification */,
-				23EEA44228D8703400C4C67E /* HeartList */,
 				23CB3CEF28C7D35600C42858 /* Mypage */,
 				23CB3CEE28C7D34E00C42858 /* MyZatch */,
 				23C9031428C5CE6400FB6D3D /* Register */,
@@ -948,6 +998,7 @@
 		23C9030E28C5CE2E00FB6D3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EE541C1129B44C7B00DD0F20 /* Foundation */,
 				57A28D5328D19D3700263079 /* KakaoDataManager */,
 			);
 			path = Services;
@@ -968,7 +1019,6 @@
 				23A5791C296546A2004F08DE /* ChattingList */,
 				576B374F28D6D77700EF36E6 /* Appointment */,
 				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
-				578B7A9928AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift */,
 				57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */,
 				5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */,
 			);
@@ -1014,6 +1064,8 @@
 			isa = PBXGroup;
 			children = (
 				576B375028D6D7B800EF36E6 /* AppointmentView */,
+				EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */,
+				EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */,
 				578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */,
 				57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */,
 				57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */,
@@ -1024,14 +1076,13 @@
 		23C9031728C5CEC100FB6D3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				23A767F429085244003E46AB /* NoticeCells */,
-				232DD0A728ECDC6C00BC6E91 /* ReviewCells */,
+				EE532954299BCFEF00C79CF2 /* Util */,
 				2342271C28EA9C2D004D6F99 /* FAQCells */,
 				23B051C628E20BC2005D08EA /* QnACells */,
 				23B051BA28E1FE77005D08EA /* NotificationCells */,
 				57A28CE028CF23E000263079 /* TownCells */,
-				23B7FBAA28CEBFBC0018642E /* MypageCells */,
-				23A86A5728C731CB00B073CB /* MainCells */,
+				23B7FBAA28CEBFBC0018642E /* Mypage */,
+				23A86A5728C731CB00B073CB /* Main */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
 				23C9031C28C5CF4000FB6D3D /* DetailCells */,
 				23C9031928C5CEDE00FB6D3D /* RegisterCells */,
@@ -1060,12 +1111,12 @@
 		23C9031928C5CEDE00FB6D3D /* RegisterCells */ = {
 			isa = PBXGroup;
 			children = (
-				574EC1EC282E62A000E3CE4B /* CategorySelectTableViewCell.swift */,
-				57468AAD28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift */,
-				57B5D6D228346AB100EA1439 /* ProductNameTabeViewCell.swift */,
+				EE73C5182995FB0B0000F8AC /* DetailInput */,
+				574EC1EC282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift */,
+				57468AAD28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift */,
+				57B5D6D228346AB100EA1439 /* TextFieldTabeViewCell.swift */,
 				57B5D6D5283475EA00EA1439 /* ImageAddTableViewCell.swift */,
-				57DFC63A283636A7003AEB39 /* FirstRegisterTableViewCell.swift */,
-				5767D786286ADA4D0075DB28 /* FirstProductInfoTableView.swift */,
+				5767D786286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift */,
 				57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */,
 				57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */,
 			);
@@ -1108,8 +1159,8 @@
 			isa = PBXGroup;
 			children = (
 				57468A8F289FEF3200056691 /* SearchTagSheetViewController.swift */,
-				57C585012821F0A10078FAFF /* MyZatchSheetViewController.swift */,
-				57468A8D289FEF1800056691 /* WantZatchSheetViewController.swift */,
+				57C585012821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift */,
+				57468A8D289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift */,
 				57468AA128A21D1700056691 /* TownSettingSheetViewController.swift */,
 			);
 			path = Sheet;
@@ -1127,9 +1178,7 @@
 		23CB3CEE28C7D34E00C42858 /* MyZatch */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CF628C7D38F00C42858 /* MyZatchViewController.swift */,
-				23A767EB2908452A003E46AB /* MyZatchTabmanViewController.swift */,
-				23A767ED29084D0E003E46AB /* MyZatchChildViewController.swift */,
+				23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */,
 			);
 			path = MyZatch;
 			sourceTree = "<group>";
@@ -1137,19 +1186,24 @@
 		23CB3CEF28C7D35600C42858 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				232DD0A428ECDBA400BC6E91 /* Review */,
-				235613F128D0973900D44E97 /* MyProfile */,
-				235613F028D0972D00D44E97 /* Mypage */,
+				23A767EF2908518B003E46AB /* Notice */,
+				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
+				234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */,
+				576B375A28D82E9A00EF36E6 /* SettingViewController.swift */,
+				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
+				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
+				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
 		};
-		23CB3CF828C7D85500C42858 /* MainViewModels */ = {
+		23CB3CF828C7D85500C42858 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				23CB3CFC28C7D8AF00C42858 /* MainViewModel.swift */,
+				EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */,
+				EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */,
 			);
-			path = MainViewModels;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		23CFCBC801D90B1A2F9BB36B /* Pods */ = {
@@ -1178,17 +1232,6 @@
 			path = ServiceCenter;
 			sourceTree = "<group>";
 		};
-		23EEA44228D8703400C4C67E /* HeartList */ = {
-			isa = PBXGroup;
-			children = (
-				23EEA44828D874C200C4C67E /* ZatchViewController.swift */,
-				23EEA44A28D874CC00C4C67E /* GatchViewController.swift */,
-				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
-				23EEA45028D883C300C4C67E /* HeartListTabmanViewController.swift */,
-			);
-			path = HeartList;
-			sourceTree = "<group>";
-		};
 		57067862281C13D500F48342 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -1213,13 +1256,18 @@
 		571DADC5297BADDE0079CCD3 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
+				EE2BC34B2982B01E002B5C60 /* TabBar */,
 				571DADC1297BA41B0079CCD3 /* BaseHeaderView.swift */,
-				571DADC6297BAE030079CCD3 /* TabBarHeaderView.swift */,
+				EE2BC34C2982B067002B5C60 /* EtcButtonHeaderView.swift */,
+				EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */,
+				EEE1155329A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift */,
+				EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */,
+				EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
-		5722461928C6C84D009B7C78 /* ChattingViewModels */ = {
+		5722461928C6C84D009B7C78 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
 				5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */,
@@ -1227,7 +1275,7 @@
 				57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */,
 				57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */,
 			);
-			path = ChattingViewModels;
+			path = Chatting;
 			sourceTree = "<group>";
 		};
 		5724EB59290FC08A00DC529B /* Map */ = {
@@ -1279,9 +1327,9 @@
 		57397FC5296FBCE90088B5F4 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				57E75EC628E5480900AC24B2 /* MySearchView.swift */,
-				57E75EC828E5481900AC24B2 /* FindSearchView.swift */,
-				57E75ECA28E5482900AC24B2 /* ResultSearchView.swift */,
+				57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */,
+				57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */,
+				57E75ECA28E5482900AC24B2 /* ZatchSearchResultView.swift */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -1289,9 +1337,9 @@
 		57397FC6296FBD040088B5F4 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				5767752B281CDA4B000BC7CD /* MySearchViewController.swift */,
-				579F5E57281E574200D3F0D5 /* FindSearchViewController.swift */,
-				579F5E59281E7F2800D3F0D5 /* ResultSearchViewController.swift */,
+				5767752B281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift */,
+				579F5E57281E574200D3F0D5 /* FindWantZatchSearchViewController.swift */,
+				579F5E59281E7F2800D3F0D5 /* ZatchSearchResultViewController.swift */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -1308,13 +1356,11 @@
 			isa = PBXGroup;
 			children = (
 				57468A77289D2CD800056691 /* SearchTagCollectionViewCell.swift */,
-				57468A82289EB31200056691 /* MySearchTagCollectionViewCell.swift */,
-				57468A84289EB32000056691 /* FindSearchTagCollectionViewCell.swift */,
 				5752F1F928200B8C004CA4A5 /* ResultTableViewCell.swift */,
-				57468A9328A000CB00056691 /* ResultSearchTagCollectionViewCell.swift */,
-				57468A9528A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift */,
-				57468A9728A000F900056691 /* WantTagSearchResultCollectionViewCell.swift */,
-				57468A9D28A1E5E300056691 /* ResultEmptyTableViewCell.swift */,
+				57468A9328A000CB00056691 /* SearchZatchByRegister.swift */,
+				57468A9528A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift */,
+				57468A9728A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift */,
+				57468A9D28A1E5E300056691 /* SearchResultEmptyView.swift */,
 				233DDF5F28EB7D2C008E32B4 /* NanumTableViewCell.swift */,
 			);
 			path = Zatch;
@@ -1341,6 +1387,7 @@
 			children = (
 				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57C585032821F2A70078FAFF /* ServiceType.swift */,
+				EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */,
 				57B32C27291E8FB80018C0CB /* Base */,
 				571DADC5297BADDE0079CCD3 /* HeaderView */,
 				57B32C28291E8FF60018C0CB /* BottomSheet */,
@@ -1350,6 +1397,7 @@
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
 				57FEFA89297A5CED008A78B0 /* Utils */,
+				EE33D21A2993BF050020866E /* Component */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1366,9 +1414,9 @@
 		57468A79289D3C0800056691 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				574E1CA8296400E6005D2048 /* CellReuse.swift */,
+				EEE1153C29A72646003FD4E3 /* Util */,
+				EEE1153D29A72661003FD4E3 /* Domain */,
 				57B9F70B28D94B7800ACEC94 /* Delegate.swift */,
-				571DADC8297BB03C0079CCD3 /* TabBarHeaderProtocol.swift */,
 				571DADCA297BE3050079CCD3 /* HeaderProtocol.swift */,
 			);
 			path = Protocol;
@@ -1377,7 +1425,7 @@
 		57468A9928A1096600056691 /* Extenstion */ = {
 			isa = PBXGroup;
 			children = (
-				57067863281C143A00F48342 /* UIColor.swift */,
+				EEB13B92297FCCEE001A8DD9 /* RxSwift */,
 				57468A9A28A1098300056691 /* UITextField.swift */,
 				57468A73289D071100056691 /* UIButton.swift */,
 				57468A9F28A214FD00056691 /* UILabel.swift */,
@@ -1395,6 +1443,7 @@
 		574E1CAA2964010E005D2048 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				57067863281C143A00F48342 /* Color.swift */,
 				574E1CAB2964011D005D2048 /* TypoDesignSystem.swift */,
 			);
 			path = DesignSystem;
@@ -1458,8 +1507,8 @@
 		57600C072963073900A7F27B /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				576EA922282B7F840028046C /* FirstRegisterViewController.swift */,
-				576EA924282B7FBB0028046C /* SecondRegisterViewController.swift */,
+				576EA922282B7F840028046C /* ZatchRegisterFirstViewController.swift */,
+				576EA924282B7FBB0028046C /* ZatchRegisterSecondViewController.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
 				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
 				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
@@ -1557,7 +1606,7 @@
 				574E1CAA2964010E005D2048 /* DesignSystem */,
 				57B32C32291FB3D90018C0CB /* Namespace */,
 				57468A9928A1096600056691 /* Extenstion */,
-				57EF61AF287D5BCE0035A2E6 /* ZatchComponent */,
+				EE33D2192993BEF80020866E /* Old */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1677,12 +1726,9 @@
 			isa = PBXGroup;
 			children = (
 				5724EC90291E122F00DC529B /* BaseView.swift */,
-				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
-				57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */,
-				57468A80289E3FB600056691 /* BaseViewController.swift */,
-				576341AC28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift */,
-				576341AE28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift */,
-				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
+				EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */,
+				EEB13B8F297FC793001A8DD9 /* Cell */,
+				EEB13B8E297FC785001A8DD9 /* ViewController */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1690,7 +1736,7 @@
 		57B32C28291E8FF60018C0CB /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				57B32C3729220EA10018C0CB /* BottomSheetInfo.swift */,
+				57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */,
 				57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */,
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
 			);
@@ -1770,11 +1816,11 @@
 			isa = PBXGroup;
 			children = (
 				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
-				57713943281F596C0066DEEB /* TitleView.swift */,
 				57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */,
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
 				5767D78B286C4A9A0075DB28 /* RadioButton */,
+				EE2BC347298295C3002B5C60 /* EtcButton.swift */,
 			);
 			path = ZatchComponent;
 			sourceTree = "<group>";
@@ -1791,8 +1837,6 @@
 		57FEFA80297A5B41008A78B0 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				23711BD728C5E34400B7E840 /* GominStoryboard.storyboard */,
-				23711BD928C5E35400B7E840 /* SsooyaStoryboard.storyboard */,
 				575BF70227E0CBC6008D5B3C /* Main.storyboard */,
 				575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */,
 			);
@@ -1842,6 +1886,8 @@
 		57FEFA88297A5C50008A78B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EEE326AB2998C5FD0017DF46 /* Search */,
+				EE642C58298FA97100E15869 /* Register */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1849,7 +1895,8 @@
 		57FEFA89297A5CED008A78B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
+				EE661A44299D0E06002904A7 /* FlowLayout */,
+				EEE6D1612997AFA30004FC7B /* TagLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1857,14 +1904,141 @@
 		57FFEDBD28DD27DE0041719B /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
-				57B32C2B291F49CF0018C0CB /* FirstRegisterView.swift */,
-				57B32C2D291F49DC0018C0CB /* SecondRegisterView.swift */,
+				EE73C5152995E1C20000F8AC /* CellView */,
+				57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */,
+				57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */,
 				57FFEDBE28DD27FE0041719B /* CheckRegisterView.swift */,
-				577A01B728A49C97004B2575 /* CheckRegisterInfoView.swift */,
-				57FFEDC028DD28090041719B /* CheckShareRegisterView.swift */,
-				57FFEDC228DD281F0041719B /* CheckExchangeRegisterView.swift */,
+				57FFEDC028DD28090041719B /* CheckShareRegisterInfoView.swift */,
+				EEE6D15F299762670004FC7B /* CheckExchangeRegisterInfoView.swift */,
+				EE410196298557440083B7E0 /* ImageDetailView.swift */,
 			);
 			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		EE1C3CD229A9DA89008964E3 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C3CD329A9DA92008964E3 /* NoticeView.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		EE2BC34B2982B01E002B5C60 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				571DADC6297BAE030079CCD3 /* BaseTabBarHeaderView.swift */,
+				EE2BC3502982B881002B5C60 /* MainHeaderView.swift */,
+				EE2BC34E2982B870002B5C60 /* MyZatchTabBarHeaderView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EE33D2192993BEF80020866E /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				57EF61AF287D5BCE0035A2E6 /* ZatchComponent */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		EE33D21A2993BF050020866E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EE33D21D2993E1120020866E /* ZatchComponent.swift */,
+				EEE6D15C299757E20004FC7B /* Util */,
+				EEE6D1632997BEEE0004FC7B /* Button */,
+				EEE6D159299752E00004FC7B /* Tag */,
+				EEE326A92998B6EA0017DF46 /* BorderLine.swift */,
+				EEE1153729A713ED003FD4E3 /* SectionDivider.swift */,
+				EE33D21B2993BF710020866E /* LettersAndArrowView.swift */,
+				EE9B053429953A1200068503 /* FilterView.swift */,
+				EE73C52129961BF30000F8AC /* RadioButtonView.swift */,
+				EEE326A62998B5190017DF46 /* SearchTextFieldView.swift */,
+				57713943281F596C0066DEEB /* TopTitleView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		EE41018F298540F60083B7E0 /* MyZatch */ = {
+			isa = PBXGroup;
+			children = (
+				EE410190298541010083B7E0 /* MyZatchView.swift */,
+			);
+			path = MyZatch;
+			sourceTree = "<group>";
+		};
+		EE532954299BCFEF00C79CF2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1153929A71CA7003FD4E3 /* Zatch */,
+				235613F928D09A0E00D44E97 /* Profile */,
+				232DD0A728ECDC6C00BC6E91 /* Review */,
+				23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EE532955299BD00400C79CF2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EE541C1129B44C7B00DD0F20 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */,
+				EE541C1429B44CF700DD0F20 /* BaseRouter.swift */,
+				EE541C1629B44DCB00DD0F20 /* BaseService.swift */,
+				EE541C1829B44E7D00DD0F20 /* NetworkResult.swift */,
+				EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		EE642C58298FA97100E15869 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		EE642C5B298FAE1D00E15869 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		EE661A44299D0E06002904A7 /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				57468A7C289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift */,
+				EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
+		EE73C5152995E1C20000F8AC /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				EE73C5162995E1D70000F8AC /* RegisterCategorySelectView.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		EE73C5182995FB0B0000F8AC /* DetailInput */ = {
+			isa = PBXGroup;
+			children = (
+				EE73C5192995FB170000F8AC /* ProductDateChoiceTableViewCell.swift */,
+				EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */,
+				EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */,
+			);
+			path = DetailInput;
 			sourceTree = "<group>";
 		};
 		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
@@ -1874,6 +2048,120 @@
 				234E5DBB28C762810079640F /* TabBarViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EEB13B8E297FC785001A8DD9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57468A80289E3FB600056691 /* BaseViewController.swift */,
+				571C0C7128AB1D56002293B6 /* BaseTabBarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EEB13B8F297FC793001A8DD9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57EBCE4528A923A900212D20 /* BaseTableViewCell.swift */,
+				57397FD1296FC0150088B5F4 /* BaseCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EEB13B92297FCCEE001A8DD9 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */,
+				EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		EEE1153929A71CA7003FD4E3 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				EEE7F2B6299BD8FD00C674B9 /* ZatchInformationAttach.swift */,
+				235613FC28D09DCD00D44E97 /* ZatchTableViewCell.swift */,
+				EEE7F2B2299BD83100C674B9 /* ZatchShareTableViewCell.swift */,
+				EEE7F2B4299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		EEE1153C29A72646003FD4E3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				574E1CA8296400E6005D2048 /* CellReuse.swift */,
+				EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE1153D29A72661003FD4E3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */,
+				EE73C51B299600230000F8AC /* RegisterCellDelegate.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EEE1154429A746D3003FD4E3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				235613F128D0973900D44E97 /* Profile */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE1154529A746F7003FD4E3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				235613F528D0975A00D44E97 /* Profile */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE326AB2998C5FD0017DF46 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EEE326AC2998C60E0017DF46 /* ZatchSearchRequestManager.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EEE326AE2998C6CC0017DF46 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EEE326AF2998C6DF0017DF46 /* ExchangeMyZatchSearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EEE6D159299752E00004FC7B /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D15A299752EB0004FC7B /* TagStlye.swift */,
+				EEE6D15729973C1C0004FC7B /* Tag.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		EEE6D15C299757E20004FC7B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D15D299757EF0004FC7B /* Padding.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE6D1632997BEEE0004FC7B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D1642997BF830004FC7B /* ZatchButton.swift */,
+				EEE6D16629987F0D0004FC7B /* ZatchFillButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		FEF7190B609B082475C22250 /* Frameworks */ = {
@@ -2003,7 +2291,6 @@
 			files = (
 				57A28CD628CF05D300263079 /* map_present.png in Resources */,
 				57A28CD428CF05D300263079 /* map_present_direction.png in Resources */,
-				23711BDA28C5E35400B7E840 /* SsooyaStoryboard.storyboard in Resources */,
 				57A28CD028CF05D300263079 /* point_sprite.png in Resources */,
 				57A28CCD28CF05D300263079 /* map_present_tracking.png in Resources */,
 				57067877281C2F4700F48342 /* pretendard_bold.ttf in Resources */,
@@ -2021,7 +2308,6 @@
 				57A28CCC28CF05D300263079 /* map_pin@3x.png in Resources */,
 				57A28CC628CF05D300263079 /* map_pinup@3x.png in Resources */,
 				57A28CC128CF05D300263079 /* map_pin_custom.png in Resources */,
-				23711BD828C5E34400B7E840 /* GominStoryboard.storyboard in Resources */,
 				EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */,
 				5706787A281C2F5000F48342 /* rixyeoljeongdo_pro_regular.otf in Resources */,
 				57A28CC728CF05D300263079 /* map_pin_shadow@3x.png in Resources */,
@@ -2165,79 +2451,88 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57468A83289EB31200056691 /* MySearchTagCollectionViewCell.swift in Sources */,
+				EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */,
 				57B32C34291FB58F0018C0CB /* Image.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
-				5767D787286ADA4D0075DB28 /* FirstProductInfoTableView.swift in Sources */,
-				5767752C281CDA4B000BC7CD /* MySearchViewController.swift in Sources */,
+				5767D787286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift in Sources */,
+				EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */,
+				5767752C281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */,
 				576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */,
+				EE73C51C299600230000F8AC /* RegisterCellDelegate.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
-				571C0C7028AB1B4D002293B6 /* ChattingListViewController+Layout.swift in Sources */,
+				EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
 				57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */,
+				EEE6D1622997AFA30004FC7B /* TagLabel.swift in Sources */,
+				EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
+				EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
-				57468A9428A000CB00056691 /* ResultSearchTagCollectionViewCell.swift in Sources */,
+				EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */,
+				57468A9428A000CB00056691 /* SearchZatchByRegister.swift in Sources */,
+				EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */,
 				23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */,
-				576EA923282B7F840028046C /* FirstRegisterViewController.swift in Sources */,
+				576EA923282B7F840028046C /* ZatchRegisterFirstViewController.swift in Sources */,
+				EEE1154929A747B6003FD4E3 /* OthersProfileViewController.swift in Sources */,
+				EE541C1B29B44E9100DD0F20 /* MoyaLoggerPlugin.swift in Sources */,
 				5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */,
 				5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */,
+				EE541C1D29B44EE400DD0F20 /* BaseResponseModel.swift in Sources */,
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */,
-				57DFC63B283636A7003AEB39 /* FirstRegisterTableViewCell.swift in Sources */,
 				576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */,
 				23B051CC28E23B0C005D08EA /* AnswerTableViewCell.swift in Sources */,
 				5724EC8F291E0E9B00DC529B /* LoginView.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
-				23CB3CF728C7D38F00C42858 /* MyZatchViewController.swift in Sources */,
+				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
-				23B7FBA928CEB9430018642E /* MypageView.swift in Sources */,
+				23B7FBA928CEB9430018642E /* MyPageView.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */,
 				57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */,
+				EEE6D15829973C1C0004FC7B /* Tag.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
 				576B376628D8305200EF36E6 /* AlarmSettingTableViewCell.swift in Sources */,
 				57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */,
-				23A5792229654C2A004F08DE /* GatchChattingListViewController.swift in Sources */,
+				EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
-				23EEA44928D874C200C4C67E /* ZatchViewController.swift in Sources */,
 				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
-				235613FD28D09DCD00D44E97 /* MyZatchTableViewCell.swift in Sources */,
+				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
 				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
-				57713944281F596C0066DEEB /* TitleView.swift in Sources */,
-				57067864281C143A00F48342 /* UIColor.swift in Sources */,
-				235613F328D0974A00D44E97 /* ProfileViewController.swift in Sources */,
+				57713944281F596C0066DEEB /* TopTitleView.swift in Sources */,
+				57067864281C143A00F48342 /* Color.swift in Sources */,
+				EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
-				57FFEDC328DD281F0041719B /* CheckExchangeRegisterView.swift in Sources */,
-				57468A85289EB32000056691 /* FindSearchTagCollectionViewCell.swift in Sources */,
+				EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */,
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
-				23A767EC2908452A003E46AB /* MyZatchTabmanViewController.swift in Sources */,
 				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
-				23A57920296547AC004F08DE /* ChattingListTabManViewController.swift in Sources */,
+				EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
 				23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */,
+				EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
 				232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */,
-				57468A9E28A1E5E300056691 /* ResultEmptyTableViewCell.swift in Sources */,
+				EEE1154329A742D2003FD4E3 /* ProfileView.swift in Sources */,
+				57468A9E28A1E5E300056691 /* SearchResultEmptyView.swift in Sources */,
 				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
-				57468A9628A000ED00056691 /* MyTagSearchResultCollectionViewCell.swift in Sources */,
-				57B32C2E291F49DC0018C0CB /* SecondRegisterView.swift in Sources */,
+				57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */,
+				57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */,
 				5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */,
 				23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */,
-				57B5D6D328346AB100EA1439 /* ProductNameTabeViewCell.swift in Sources */,
+				57B5D6D328346AB100EA1439 /* TextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
 				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
 				23B051C328E206B7005D08EA /* RegisterQuestionViewController.swift in Sources */,
@@ -2247,9 +2542,12 @@
 				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */,
 				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
-				57468A9828A000F900056691 /* WantTagSearchResultCollectionViewCell.swift in Sources */,
+				EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */,
+				57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */,
+				EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */,
 				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
 				57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */,
@@ -2257,48 +2555,56 @@
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
+				EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
 				574E1CA9296400E6005D2048 /* CellReuse.swift in Sources */,
 				57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */,
-				23EEA45128D883C300C4C67E /* HeartListTabmanViewController.swift in Sources */,
+				EE73C5172995E1D70000F8AC /* RegisterCategorySelectView.swift in Sources */,
+				EEE1154129A7424B003FD4E3 /* ProfileViewController.swift in Sources */,
 				57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */,
-				23B7FBAE28CEC91D0018642E /* CertificationBannerTableViewCell.swift in Sources */,
 				571DADCB297BE3050079CCD3 /* HeaderProtocol.swift in Sources */,
 				23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */,
-				57E75EC928E5481900AC24B2 /* FindSearchView.swift in Sources */,
+				57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */,
+				EEE1155629A85197003FD4E3 /* ReviewView.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
-				576EA925282B7FBB0028046C /* SecondRegisterViewController.swift in Sources */,
-				571DADC9297BB03C0079CCD3 /* TabBarHeaderProtocol.swift in Sources */,
+				576EA925282B7FBB0028046C /* ZatchRegisterSecondViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
-				578B7A9A28AC6CCF00E7B4F4 /* ChattingRoomViewController+Layout.swift in Sources */,
+				EEE326B02998C6DF0017DF46 /* ExchangeMyZatchSearchViewModel.swift in Sources */,
+				EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
-				57B32C2C291F49CF0018C0CB /* FirstRegisterView.swift in Sources */,
-				235613F728D0976500D44E97 /* MyProfileView.swift in Sources */,
-				579F5E58281E574200D3F0D5 /* FindSearchViewController.swift in Sources */,
+				57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */,
+				579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */,
 				57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */,
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
-				57FFEDC128DD28090041719B /* CheckShareRegisterView.swift in Sources */,
-				23A86A5928C7321C00B073CB /* MainBannerTableViewCell.swift in Sources */,
+				EE9B053529953A1200068503 /* FilterView.swift in Sources */,
+				57FFEDC128DD28090041719B /* CheckShareRegisterInfoView.swift in Sources */,
+				23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */,
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
 				57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */,
-				574EC1ED282E62A000E3CE4B /* CategorySelectTableViewCell.swift in Sources */,
+				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
+				EEE6D1652997BF830004FC7B /* ZatchButton.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
-				23ECCB5A28EEDBAC0026A6AD /* TempViewController.swift in Sources */,
-				57E75EC728E5480A00AC24B2 /* MySearchView.swift in Sources */,
+				57E75EC728E5480A00AC24B2 /* ExchangeMyZatchSearchView.swift in Sources */,
+				EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */,
+				EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
+				EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */,
 				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
+				EE410191298541010083B7E0 /* MyZatchView.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
+				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
+				EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
 				2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
@@ -2307,16 +2613,20 @@
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
 				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
+				EE2BC34A29829A32002B5C60 /* CenterNavigationHeaderView.swift in Sources */,
+				EEE326A72998B5190017DF46 /* SearchTextFieldView.swift in Sources */,
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */,
 				57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */,
+				EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
 				234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */,
 				233DDF6028EB7D2C008E32B4 /* NanumTableViewCell.swift in Sources */,
 				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
-				57468AAE28A3A58900056691 /* CategorySelectWithRankTableViewCell.swift in Sources */,
+				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
+				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				576B375D28D82EAF00EF36E6 /* SettingView.swift in Sources */,
@@ -2325,33 +2635,39 @@
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
-				23EEA44B28D874CC00C4C67E /* GatchViewController.swift in Sources */,
-				57C585022821F0A10078FAFF /* MyZatchSheetViewController.swift in Sources */,
+				EE541C1929B44E7D00DD0F20 /* NetworkResult.swift in Sources */,
+				EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */,
+				EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */,
+				EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */,
+				EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */,
+				57C585022821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift in Sources */,
+				EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
+				EE541C1729B44DCB00DD0F20 /* BaseService.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */,
 				576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */,
 				57397FCD296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift in Sources */,
+				EEE326AA2998B6EA0017DF46 /* BorderLine.swift in Sources */,
 				57A28CDF28CF20AC00263079 /* LocationSearchTextField.swift in Sources */,
 				23B051B628E1FD7F005D08EA /* NotificationViewController.swift in Sources */,
-				579F5E5A281E7F2800D3F0D5 /* ResultSearchViewController.swift in Sources */,
+				EEE1155429A84948003FD4E3 /* CenterNavigationEtcButtonHeaderView.swift in Sources */,
+				579F5E5A281E7F2800D3F0D5 /* ZatchSearchResultViewController.swift in Sources */,
 				57468AA228A21D1700056691 /* TownSettingSheetViewController.swift in Sources */,
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */,
-				23A767EE29084D0E003E46AB /* MyZatchChildViewController.swift in Sources */,
 				232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */,
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
-				576341AD28D3EC3D0067D2C5 /* BaseLeftTitleViewController.swift in Sources */,
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
+				EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */,
 				5724EC8C291E0E7A00DC529B /* LoginViewController.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
 				57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */,
-				576341AF28D3EC4D0067D2C5 /* BaseCenterTitleViewController.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
-				23CB3CFD28C7D8AF00C42858 /* MainViewModel.swift in Sources */,
 				57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */,
+				EEE6D16729987F0D0004FC7B /* ZatchFillButton.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,
 				23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */,
 				57397FD0296FBDFE0088B5F4 /* GatchSearchView.swift in Sources */,
@@ -2359,14 +2675,17 @@
 				57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */,
 				57B5D6D6283475EA00EA1439 /* ImageAddTableViewCell.swift in Sources */,
 				232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */,
+				EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */,
+				EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */,
 				5722461F28C71665009B7C78 /* UIImageView.swift in Sources */,
-				57E75ECB28E5482900AC24B2 /* ResultSearchView.swift in Sources */,
+				57E75ECB28E5482900AC24B2 /* ZatchSearchResultView.swift in Sources */,
+				EE73C51A2995FB170000F8AC /* ProductDateChoiceTableViewCell.swift in Sources */,
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
-				577A01B828A49C97004B2575 /* CheckRegisterInfoView.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
+				EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */,
 				2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
 				23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */,
@@ -2374,9 +2693,11 @@
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
-				57468A8E289FEF1800056691 /* WantZatchSheetViewController.swift in Sources */,
+				57468A8E289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift in Sources */,
+				EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */,
 				23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
+				EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
 				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
 				576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */,
@@ -2386,21 +2707,28 @@
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
 				5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */,
 				57EBCE4828AA064C00212D20 /* RegisterImageDetailViewController.swift in Sources */,
-				57B32C3829220EA10018C0CB /* BottomSheetInfo.swift in Sources */,
+				57B32C3829220EA10018C0CB /* BottomSheetSystem.swift in Sources */,
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
 				57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */,
 				57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
-				23A86A5F28C7408C00B073CB /* MainCollectionViewCell.swift in Sources */,
+				23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */,
 				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
-				571DADC7297BAE030079CCD3 /* TabBarHeaderView.swift in Sources */,
+				EEE6D15B299752EB0004FC7B /* TagStlye.swift in Sources */,
+				571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
+				EEE7F2B5299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift in Sources */,
+				EEB13B8B297FBBAE001A8DD9 /* DefaultObservable.swift in Sources */,
+				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,
+				EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
+				EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
+				EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
 				23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */,
 			);
@@ -2575,10 +2903,11 @@
 		};
 		575BF72427E0CBC8008D5B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */;
+			baseConfigurationReference = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DS2AD6Q7T4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2604,6 +2933,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2616,10 +2946,11 @@
 		};
 		575BF72527E0CBC8008D5B3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */;
+			baseConfigurationReference = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DS2AD6Q7T4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2645,6 +2976,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssooya.Zatch.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2753,7 +3085,7 @@
 				575BF72227E0CBC8008D5B3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		575BF72327E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "Zatch" */ = {
 			isa = XCConfigurationList;
@@ -2762,7 +3094,7 @@
 				575BF72527E0CBC8008D5B3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		575BF72627E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "ZatchTests" */ = {
 			isa = XCConfigurationList;
@@ -2771,7 +3103,7 @@
 				575BF72827E0CBC8008D5B3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		575BF72927E0CBC8008D5B3C /* Build configuration list for PBXNativeTarget "ZatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -2780,7 +3112,7 @@
 				575BF72B27E0CBC8008D5B3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,12 +8,9 @@
 import UIKit
 import SnapKit
 
-
-class CategorySheetViewController: BaseBottomSheetViewController {
+class CategorySheetViewController: BaseBottomSheetViewController<Int> {
     
     //MARK: - Properties
-    
-    var categorySelectHandler : ((_ category: String) -> Void)!
     
     var currentCategory: Int?
 
@@ -33,11 +30,11 @@ class CategorySheetViewController: BaseBottomSheetViewController {
         $0.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.cellIdentifier)
     }
     
-    var service: ServiceType!
+    private let service: ServiceType
     
     //MARK: - LifeCycle
     
-    init(service: ServiceType){
+    init(service: ServiceType = .Zatch){
         self.service = service
         super.init(type: .category)
     }
@@ -61,7 +58,7 @@ class CategorySheetViewController: BaseBottomSheetViewController {
         super.layout()
         
         self.view.addSubview(collectionView)
-        
+    
         collectionView.snp.makeConstraints{ make in
             make.top.equalTo(super.titleLabel.snp.bottom).offset(20)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
@@ -91,7 +88,7 @@ extension CategorySheetViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        categorySelectHandler(self.service.getCategoryFromCategories(at: indexPath.row).title)
+        completion(indexPath.row)
         self.dismiss(animated: true, completion: nil)
     }
 }
