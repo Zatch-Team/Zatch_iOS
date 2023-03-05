@@ -9,10 +9,6 @@ import UIKit
 
 class ChattingMemberTableViewCell: BaseTableViewCell {
     
-    //MARK: - Properties
-    
-    static let cellIdentifier = "chattingMemberCell"
-    
     //MARK: - UI
     
     let profileImage = UIImageView().then{
@@ -37,27 +33,14 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     
     let nameLabel = UILabel().then{
         $0.text = "쑤야"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
         $0.textColor = .black85
     }
     
     lazy var declarationBtn = UIButton().then{
         $0.setImage(Image.chatDeclaration, for: .normal)
     }
-    
-    //MARK: - LifeCycle
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     override func prepareForReuse(){
         
         self.declarationBtn.removeFromSuperview()
@@ -67,28 +50,28 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
     }
     
     //MARK: - Helper
-    
-    func setUpView(){
+    override func hierarchy(){
+        super.hierarchy()
         baseView.addSubview(profileImage)
         baseView.addSubview(nameLabel)
     }
-    
-    func setUpConstraint(){
+
+    override func layout(){
         
-        baseView.snp.makeConstraints{ make in
-            make.height.equalTo(52)
+        super.layout()
+        
+        baseView.snp.makeConstraints{
+            $0.height.equalTo(52)
         }
-        
-        profileImage.snp.makeConstraints{ make in
-            make.width.height.equalTo(44)
-            make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
+        profileImage.snp.makeConstraints{
+            $0.width.height.equalTo(44)
+            $0.leading.equalToSuperview().offset(24)
+            $0.centerY.equalToSuperview()
         }
-        
-        nameLabel.snp.makeConstraints{ make in
-            make.centerY.equalToSuperview()
-            make.leading.equalTo(profileImage.snp.trailing).offset(4)
-            make.trailing.equalToSuperview().offset(-75)
+        nameLabel.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(profileImage.snp.trailing).offset(16)
+            $0.trailing.equalToSuperview().offset(-85)
         }
     }
     
@@ -115,10 +98,10 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         
         baseView.addSubview(declarationBtn)
         
-        declarationBtn.snp.makeConstraints{ make in
-            make.trailing.equalToSuperview().offset(-20)
-            make.width.trailing.equalTo(24)
-            make.centerY.equalToSuperview()
+        declarationBtn.snp.makeConstraints{
+            $0.trailing.equalToSuperview().offset(-24)
+            $0.width.trailing.equalTo(28)
+            $0.centerY.equalToSuperview()
         }
     }
     
@@ -126,10 +109,10 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         
         baseView.addSubview(managerCrownImage)
         
-        managerCrownImage.snp.makeConstraints{ make in
-            make.width.height.equalTo(12.94)
-            make.bottom.equalTo(profileImage.snp.bottom).offset(-3.88)
-            make.trailing.equalTo(profileImage).offset(-6.47)
+        managerCrownImage.snp.makeConstraints{
+            $0.width.height.equalTo(12.94)
+            $0.bottom.equalTo(profileImage.snp.bottom).offset(-3.88)
+            $0.trailing.equalTo(profileImage).offset(-6.47)
         }
     }
 
