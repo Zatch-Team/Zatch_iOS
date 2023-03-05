@@ -160,7 +160,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         let deviceWidth = UIScreen.main.bounds.size.width
         
-        menu.menuWidth = 276 / 360 * deviceWidth
+        menu.menuWidth = 300 / 390 * deviceWidth
         menu.presentationStyle = .menuSlideIn
         menu.delegate = self
         
