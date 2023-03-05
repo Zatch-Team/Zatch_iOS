@@ -204,18 +204,9 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
 
     }
 
-    @objc func goOthersProfile(sender: UITapGestureRecognizer) {
-        let vc  = OthersProfileViewController(nickName: "쑤야")
-//        let vc = ProfileViewController(rightButton: Image.chat)
-//        vc.navigationTitle.text = nil
-//        vc.isMyProfile = false
-//        vc.profileUserName = nameLabel.text
-        self.navigationController?.pushViewController(vc, animated: true)
+    @objc private func goOthersProfile() {
+        self.navigationController?.pushViewController(OthersProfileViewController(nickName: "쑤야"), animated: true)
     }
-    
-    //MARK: - Helper
-    
-
 }
 
 extension ChattingRoomViewController: UITextViewDelegate{
@@ -231,28 +222,26 @@ extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let chatData = messageData[indexPath.row]
         
         switch chatData.chatType {
         case .RightMessage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingMessageTableViewCell else { fatalError() }
-            cell.messageLabel.text = chatData.message
-            return cell
-            
+            return tableView.dequeueReusableCell(for: indexPath, cellType: RightChattingMessageTableViewCell.self).then{
+                $0.messageLabel.text = chatData.message
+            }
         case .RightImage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RightChattingImageTableViewCell.cellIdentifier, for: indexPath) as? RightChattingImageTableViewCell else { fatalError()}
-            cell.imageMessageView.image = chatData.image
-            return cell
-            
+            return tableView.dequeueReusableCell(for: indexPath, cellType: RightChattingImageTableViewCell.self).then{
+                $0.imageMessageView.image = chatData.image
+            }
         case .LeftMessage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingMessageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingMessageTableViewCell else { return UITableViewCell() }
-            cell.messageLabel.text = chatData.message
-            return cell
-            
+            return tableView.dequeueReusableCell(for: indexPath, cellType: LeftChattingMessageTableViewCell.self).then{
+                $0.messageLabel.text = chatData.message
+            }
         case .LeftImage:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: LeftChattingImageTableViewCell.cellIdentifier, for: indexPath) as? LeftChattingImageTableViewCell else { return UITableViewCell() }
-            cell.imageMessageView.image = chatData.image
-            return cell
+            return tableView.dequeueReusableCell(for: indexPath, cellType: LeftChattingImageTableViewCell.self).then{
+                $0.imageMessageView.image = chatData.image
+            }
         }
     }
     
@@ -293,7 +282,6 @@ extension ChattingRoomViewController: UIImagePickerControllerDelegate, UINavigat
 extension ChattingRoomViewController: SideMenuNavigationControllerDelegate{
     
     func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool){
-        
         view.addSubview(blurView)
         blurView.snp.makeConstraints{
             $0.width.height.equalToSuperview()
