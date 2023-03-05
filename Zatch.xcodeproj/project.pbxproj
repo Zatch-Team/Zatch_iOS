@@ -291,6 +291,7 @@
 		EE541C1B29B44E9100DD0F20 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */; };
 		EE541C1D29B44EE400DD0F20 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */; };
 		EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */; };
+		EE541C2329B45D7200DD0F20 /* ChattingSideSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C2229B45D7200DD0F20 /* ChattingSideSheetView.swift */; };
 		EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */; };
 		EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */; };
 		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
@@ -661,6 +662,7 @@
 		EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
 		EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponseModel.swift; sourceTree = "<group>"; };
+		EE541C2229B45D7200DD0F20 /* ChattingSideSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingSideSheetView.swift; sourceTree = "<group>"; };
 		EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDateFormatter.swift; sourceTree = "<group>"; };
 		EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterRequestManager.swift; sourceTree = "<group>"; };
 		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
@@ -1069,6 +1071,7 @@
 				578B7A9B28AC892800E7B4F4 /* ChatInputView.swift */,
 				57C23CCC28B1D93E006E7915 /* ChatEtcBtnView.swift */,
 				57C23CCF28B2073C006E7915 /* ChattingMatchBannerView.swift */,
+				EE541C2229B45D7200DD0F20 /* ChattingSideSheetView.swift */,
 			);
 			path = ChattingView;
 			sourceTree = "<group>";
@@ -2534,6 +2537,7 @@
 				23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */,
 				57B5D6D328346AB100EA1439 /* TextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
+				EE541C2329B45D7200DD0F20 /* ChattingSideSheetView.swift in Sources */,
 				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
 				23B051C328E206B7005D08EA /* RegisterQuestionViewController.swift in Sources */,
 				5724EB5F290FC18500DC529B /* MakeMeetingAlertController.swift in Sources */,

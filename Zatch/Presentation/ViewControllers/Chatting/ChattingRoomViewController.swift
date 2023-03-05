@@ -137,7 +137,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         guard let sideMenu = sideMenuViewController else { return }
         
-        sideMenu.exitTitle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
+        sideMenu.mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
         
         sideMenu.declarationHandler = { indexPath in
             print(indexPath)
@@ -160,7 +160,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         let deviceWidth = UIScreen.main.bounds.size.width
         
-        menu.menuWidth = 276 / 360 * deviceWidth
+        menu.menuWidth = 300 / 390 * deviceWidth
         menu.presentationStyle = .menuSlideIn
         menu.delegate = self
         
