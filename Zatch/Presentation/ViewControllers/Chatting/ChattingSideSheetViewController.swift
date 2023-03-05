@@ -12,97 +12,30 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
     //MARK: - Properties
     var declarationHandler: ((IndexPath) -> Void)?
     
-    //MARK: - UI
-
-    let sheetTitle = UILabel().then{
-        $0.text = "채팅 참여자"
-        $0.font = UIFont.pretendard(size: 16, family: .Bold)
-        $0.textColor = .black85
-    }
-    
-    var tableView: UITableView!
-    
-    let borderLine = UIView().then{
-        $0.backgroundColor = .black5
-    }
-    
-    let exitFrame = UIView()
-    
-    let exitImage = UIImageView().then{
-        $0.image = Image.chatExit
-    }
-    
-    let exitTitle = UILabel().then{
-        $0.text = "채팅 나가기"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
-        $0.textColor = .black85
-        $0.isUserInteractionEnabled = true
-    }
+    let mainView = ChattingSideSheetView()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.view.backgroundColor = .white
-        
-        tableView = UITableView().then{
-            $0.separatorStyle = .none
-            
-            $0.isScrollEnabled = false
-            
-            $0.delegate = self
-            $0.dataSource = self
-            
-            $0.register(ChattingMemberTableViewCell.self, forCellReuseIdentifier: ChattingMemberTableViewCell.cellIdentifier)
-        }
-        
-        setUpView()
-        setUpConstraint()
+        style()
+        layout()
+        initialzie()
+    }
+
+    private func style(){
+        view.backgroundColor = .white
     }
     
-    func setUpView(){
-        
-        self.view.addSubview(sheetTitle)
-        self.view.addSubview(tableView)
-        self.view.addSubview(exitFrame)
-        
-        self.exitFrame.addSubview(borderLine)
-        self.exitFrame.addSubview(exitImage)
-        self.exitFrame.addSubview(exitTitle)
+    private func initialzie(){
+        mainView.tableView.separatorStyle = .none
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
     
-    func setUpConstraint(){
-        
-        sheetTitle.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(63)
-            make.leading.equalToSuperview().offset(20)
-        }
-        
-        tableView.snp.makeConstraints{ make in
-            make.top.equalTo(sheetTitle.snp.bottom).offset(24)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(exitFrame.snp.top)
-        }
-        
-        exitFrame.snp.makeConstraints{ make in
-            make.height.equalTo(48)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
-        }
-        
-        borderLine.snp.makeConstraints{ make in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(1)
-        }
-        
-        exitImage.snp.makeConstraints{ make in
-            make.leading.equalToSuperview().offset(12)
-            make.centerY.equalToSuperview()
-        }
-        
-        exitTitle.snp.makeConstraints{ make in
-            make.leading.equalTo(exitImage.snp.trailing).offset(4)
-            make.centerY.equalToSuperview()
+    private func layout(){
+        view.addSubview(mainView)
+        mainView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(Const.Offset.headerTop)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     
@@ -110,7 +43,7 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
         
         let cell = sender.superview?.superview?.superview as! ChattingMemberTableViewCell
 
-        let index = self.tableView.indexPath(for: cell)
+        let index = mainView.tableView.indexPath(for: cell)
 
         self.declarationHandler!(index!)
     }
