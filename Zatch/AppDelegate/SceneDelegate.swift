@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -26,8 +27,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        var startViewController: UIViewController
 //        startViewController = UserManager.token == nil ? UINavigationController(rootViewController: OnboardingViewController()) : TabBarController()
         
-        window?.rootViewController = UINavigationController(rootViewController: ChattingRoomViewController())
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
         window?.makeKeyAndVisible()
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
