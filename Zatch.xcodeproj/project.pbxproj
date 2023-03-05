@@ -284,6 +284,13 @@
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
 		EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* ImageDetailView.swift */; };
 		EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */; };
+		EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */; };
+		EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1429B44CF700DD0F20 /* BaseRouter.swift */; };
+		EE541C1729B44DCB00DD0F20 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1629B44DCB00DD0F20 /* BaseService.swift */; };
+		EE541C1929B44E7D00DD0F20 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1829B44E7D00DD0F20 /* NetworkResult.swift */; };
+		EE541C1B29B44E9100DD0F20 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */; };
+		EE541C1D29B44EE400DD0F20 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */; };
+		EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */; };
 		EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */; };
 		EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */; };
 		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
@@ -647,6 +654,13 @@
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE410196298557440083B7E0 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodURL.swift; sourceTree = "<group>"; };
+		EE541C1429B44CF700DD0F20 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		EE541C1629B44DCB00DD0F20 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		EE541C1829B44E7D00DD0F20 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponseModel.swift; sourceTree = "<group>"; };
 		EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDateFormatter.swift; sourceTree = "<group>"; };
 		EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterRequestManager.swift; sourceTree = "<group>"; };
 		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
@@ -940,6 +954,8 @@
 		23C9030B28C5CE2100FB6D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */,
+				EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */,
 				57B32C2F291F55F20018C0CB /* RegisterModels */,
 				57A28D5428D1A07000263079 /* TownModels */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
@@ -982,6 +998,7 @@
 		23C9030E28C5CE2E00FB6D3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EE541C1129B44C7B00DD0F20 /* Foundation */,
 				57A28D5328D19D3700263079 /* KakaoDataManager */,
 			);
 			path = Services;
@@ -1969,6 +1986,18 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		EE541C1129B44C7B00DD0F20 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */,
+				EE541C1429B44CF700DD0F20 /* BaseRouter.swift */,
+				EE541C1629B44DCB00DD0F20 /* BaseService.swift */,
+				EE541C1829B44E7D00DD0F20 /* NetworkResult.swift */,
+				EE541C1A29B44E9100DD0F20 /* MoyaLoggerPlugin.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		EE642C58298FA97100E15869 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -2422,6 +2451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */,
 				57B32C34291FB58F0018C0CB /* Image.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift in Sources */,
@@ -2442,11 +2472,14 @@
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */,
 				57468A9428A000CB00056691 /* SearchZatchByRegister.swift in Sources */,
+				EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */,
 				23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */,
 				576EA923282B7F840028046C /* ZatchRegisterFirstViewController.swift in Sources */,
 				EEE1154929A747B6003FD4E3 /* OthersProfileViewController.swift in Sources */,
+				EE541C1B29B44E9100DD0F20 /* MoyaLoggerPlugin.swift in Sources */,
 				5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */,
 				5722460828BE0D0D009B7C78 /* RightChattingImageTableViewCell.swift in Sources */,
+				EE541C1D29B44EE400DD0F20 /* BaseResponseModel.swift in Sources */,
 				57468A9B28A1098300056691 /* UITextField.swift in Sources */,
 				57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */,
 				576341C428D40A200067D2C5 /* TownMapAlertViewController.swift in Sources */,
@@ -2593,6 +2626,7 @@
 				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
 				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
+				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				576B375D28D82EAF00EF36E6 /* SettingView.swift in Sources */,
@@ -2601,6 +2635,7 @@
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
+				EE541C1929B44E7D00DD0F20 /* NetworkResult.swift in Sources */,
 				EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */,
 				EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */,
 				EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */,
@@ -2608,6 +2643,7 @@
 				57C585022821F0A10078FAFF /* SearchMyRegisterZatchSheetViewController.swift in Sources */,
 				EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */,
 				57C23CD028B2073C006E7915 /* ChattingMatchBannerView.swift in Sources */,
+				EE541C1729B44DCB00DD0F20 /* BaseService.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */,
 				576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */,

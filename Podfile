@@ -19,6 +19,8 @@ target 'Zatch' do
 
   pod 'SideMenu', '~> 6.0'
 
+  pod 'Moya', '~> 15.0'
+
   pod 'RxSwift'
   pod 'RxCocoa'
   pod "RxGesture"
