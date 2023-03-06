@@ -23,6 +23,12 @@ struct Const{
         static let TOP_OFFSET = 107 //navigationView 고려한 top offset
         static let headerTop = 47
     }
+    
+    struct Constraint{
+        static let navigationViewTopOffset: CGFloat = 47
+        static let mainViewTopOffset: CGFloat = 107
+        static let profileImageSize: CGFloat = 116
+    }
 }
 
 struct ViewTag{
