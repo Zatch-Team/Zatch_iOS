@@ -13,7 +13,7 @@ class MyInfoTableViewCell: BaseTableViewCell {
     
     private let userImage = UIImageView().then{
         $0.backgroundColor = .black10
-        $0.layer.cornerRadius = 116/2
+        $0.layer.cornerRadius = Const.Constraint.profileImageSize/2
     }
     private let userName = UILabel().then{
         $0.text = "userName"
@@ -50,7 +50,7 @@ class MyInfoTableViewCell: BaseTableViewCell {
         super.layout()
         
         userImage.snp.makeConstraints {
-            $0.width.height.equalTo(116)
+            $0.width.height.equalTo(Const.Constraint.profileImageSize)
             $0.top.equalToSuperview().offset(20)
             $0.centerX.equalToSuperview()
         }
