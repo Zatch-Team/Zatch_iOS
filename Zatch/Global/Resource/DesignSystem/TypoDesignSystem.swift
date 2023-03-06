@@ -31,6 +31,7 @@ enum TypoStyle: Int, CaseIterable {
     case bold20     // 20pt / bold / 28
     case bold18     // 18pt / bold / 24
     case bold16     // 16pt / bold / 19.2
+    case bold17     // 17pt / bold / 20.4
     case bold15     // 15pt / bold / 18
     case bold14     // 14pt / bold / 16.8
     case bold13     // 13pt / bold / 18.2
@@ -67,6 +68,7 @@ extension TypoStyle {
         case .bold20:       return FontDescription(font: .Bold, size: 20)
         case .bold18:       return FontDescription(font: .Bold, size: 18)
         case .bold16:       return FontDescription(font: .Bold, size: 16)
+        case .bold17:       return FontDescription(font: .Bold, size: 17)
         case .bold15:       return FontDescription(font: .Bold, size: 15)
         case .bold14:       return FontDescription(font: .Bold, size: 14)
         case .bold13:       return FontDescription(font: .Bold, size: 13)
@@ -102,6 +104,7 @@ extension TypoStyle {
         case .bold32:       return LabelDescription(lineHeight: 38.4)
         case .bold20:       return LabelDescription(lineHeight: 28)
         case .bold18:       return LabelDescription(lineHeight: 24)
+        case .bold17:       return LabelDescription(lineHeight: 20.4)
         case .bold16:       return LabelDescription(lineHeight: 19.2)
         case .bold15:       return LabelDescription(lineHeight: 18)
         case .bold14:       return LabelDescription(lineHeight: 16.8)

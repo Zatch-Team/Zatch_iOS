@@ -13,12 +13,12 @@ class EtcButton: UIButton{
         
         super.init(frame: .zero)
         
-        self.setTitle(title, for: .normal)
-        self.setTitleColor(.black85, for: .normal)
+        setTitle(title, for: .normal)
+        setTitleColor(.black85, for: .normal)
         
-        self.titleLabel?.textAlignment = .center
-        self.titleLabel?.font = UIFont.pretendard(size: 16, family: .Bold)
-        self.titleEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 4, right: 0)
+        titleLabel?.setTypoStyleWithSingleLine(typoStyle: .bold18)
+        titleLabel?.textAlignment = .center
+        titleEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 4, right: 0)
     }
     
     init(image: UIImage){

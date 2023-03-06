@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  MypageViewController.swift
 //  Zatch
 //
 //  Created by gomin on 2022/09/07.
@@ -9,7 +9,7 @@ import UIKit
 
 class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
-    private var isCertified: Bool = true    // 인증 전 후
+    private var isCertified: Bool = false    // 인증 전 후
     private let mainView = MyPageView()
     
     init(){
@@ -68,6 +68,7 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
                     $0.delegate = self
                 }
                 if(isCertified){
+                    cell.showProfileImageBorderLine()
                     cell.willSectionDividerShow()
                 }
                 return cell

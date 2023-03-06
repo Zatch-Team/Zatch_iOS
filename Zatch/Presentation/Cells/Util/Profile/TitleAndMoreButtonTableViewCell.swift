@@ -10,13 +10,13 @@ import Foundation
 class TitleAndMoreButtonTableViewCell: BaseTableViewCell{
     
     private let titleLabel = UILabel().then{
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold17)
     }
     private let moreButton = UIButton().then{
         var config = UIButton.Configuration.plain()
         var attText = AttributedString.init("더보기")
         
-        attText.font = UIFont.pretendard(size: 12, family: .Medium)
+        attText.font = UIFont.pretendard(size: 14, family: .Medium)
         attText.foregroundColor = UIColor.black20
         config.attributedTitle = attText
         
@@ -33,11 +33,11 @@ class TitleAndMoreButtonTableViewCell: BaseTableViewCell{
         super.layout()
         titleLabel.snp.makeConstraints{
             $0.leading.top.equalToSuperview().offset(20)
-            $0.bottom.equalToSuperview().inset(8)
+            $0.bottom.equalToSuperview().inset(4)
         }
         moreButton.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(21)
-            $0.bottom.equalToSuperview().inset(9)
+            $0.top.equalToSuperview().offset(22)
+            $0.bottom.equalToSuperview().inset(5)
             $0.trailing.equalToSuperview().inset(20)
         }
     }

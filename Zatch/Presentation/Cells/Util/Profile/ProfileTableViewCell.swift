@@ -14,11 +14,11 @@ class ProfileTableViewCell: BaseTableViewCell {
     
     private let userImage = UIImageView().then{
         $0.backgroundColor = .black10
-        $0.layer.cornerRadius = 100/2
+        $0.layer.cornerRadius = Const.Constraint.profileImageSize/2
     }
     private let userNameLabel = UILabel().then{
         $0.text = "userName"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold16)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
     }
     // star
     private let starView = CosmosView().then{
@@ -33,22 +33,23 @@ class ProfileTableViewCell: BaseTableViewCell {
     // 한 줄 후기
     private let titleLabel = UILabel().then{
         $0.text = "한 줄 후기"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold17)
         $0.textColor = .black85
     }
     private let moreButton = UIButton().then{
         var config = UIButton.Configuration.plain()
         var attText = AttributedString.init("더보기")
         
-        attText.font = UIFont.pretendard(size: 12, family: .Medium)
+        attText.font = UIFont.pretendard(size: 14, family: .Medium)
         attText.foregroundColor = UIColor.black20
         config.attributedTitle = attText
+        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         $0.configuration = config
     }
     private let reviewLabel = UILabel().then{
         $0.text = "“답장이 빠르고 친절하게 답해주세요.”"
-        $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
         $0.textColor = .black85
     }
     private let borderLine = ZatchComponent.SectionDivider()
@@ -81,35 +82,35 @@ class ProfileTableViewCell: BaseTableViewCell {
         
         super.layout()
     
-        userImage.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
-            make.top.equalToSuperview().offset(20)
-            make.centerX.equalToSuperview()
+        userImage.snp.makeConstraints{
+            $0.width.height.equalTo(Const.Constraint.profileImageSize)
+            $0.top.equalToSuperview().offset(20)
+            $0.centerX.equalToSuperview()
         }
-        userNameLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(userImage.snp.bottom).offset(13)
+        userNameLabel.snp.makeConstraints{
+            $0.top.equalTo(userImage.snp.bottom).offset(16)
+            $0.centerX.equalToSuperview()
         }
-        starView.snp.makeConstraints { make in
-            make.width.equalTo(120)
-            make.height.equalTo(24)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(userNameLabel.snp.bottom).offset(12)
+        starView.snp.makeConstraints {
+            $0.top.equalTo(userNameLabel.snp.bottom).offset(8)
+            $0.width.equalTo(120)
+            $0.height.equalTo(28)
+            $0.centerX.equalToSuperview()
         }
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(starView.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(20)
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(starView.snp.bottom).offset(24)
+            $0.leading.equalToSuperview().offset(20)
         }
-        moreButton.snp.makeConstraints { make in
-            make.centerY.equalTo(titleLabel)
-            make.trailing.equalToSuperview().offset(-20)
+        moreButton.snp.makeConstraints {
+            $0.centerY.equalTo(titleLabel)
+            $0.trailing.equalToSuperview().inset(20)
         }
-        reviewLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(14)
+        reviewLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(titleLabel.snp.bottom).offset(12)
         }
         borderLine.snp.makeConstraints{
-            $0.top.equalTo(reviewLabel.snp.bottom).offset(24)
+            $0.top.equalTo(reviewLabel.snp.bottom).offset(20)
             $0.bottom.leading.trailing.equalToSuperview()
         }
     }

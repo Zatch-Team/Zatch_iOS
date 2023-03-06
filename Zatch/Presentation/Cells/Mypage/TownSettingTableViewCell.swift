@@ -13,7 +13,7 @@ class TownSettingTableViewCell: BaseTableViewCell {
     
     private let titleLabel = UILabel().then{
         $0.text = "내 동네 관리"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold17)
     }
     private let townStackView = UIStackView().then{
         $0.axis = .horizontal
@@ -24,7 +24,7 @@ class TownSettingTableViewCell: BaseTableViewCell {
     }
     private let setTownLabel = UILabel().then{
         $0.text = "내 동네 설정"
-        $0.setTypoStyleWithSingleLine(typoStyle: .regular15)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
     }
     private let borderLine = ZatchComponent.SectionDivider()
 
@@ -62,16 +62,15 @@ class TownSettingTableViewCell: BaseTableViewCell {
             $0.leading.top.equalToSuperview().offset(20)
         }
         townStackView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(22)
-            $0.leading.equalToSuperview().offset(16)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(18)
+            $0.leading.equalToSuperview().offset(20)
             $0.bottom.equalToSuperview().inset(18 + 8)
         }
         settingIcon.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
         borderLine.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(8)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     

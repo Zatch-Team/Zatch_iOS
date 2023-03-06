@@ -16,7 +16,7 @@ class BaseTabBarHeaderView: BaseView, TabBarHeaderProtocol, HeaderFirstEtcButton
     
     let title: String
     let tabBarTitleLabel = UILabel().then{
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold20)
         $0.textColor = .black85
     }
     let etcButton: EtcButton

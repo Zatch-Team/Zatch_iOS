@@ -13,7 +13,8 @@ class ModifyProfileViewController: BaseViewController<CenterNavigationEtcButtonH
     var selectedPhoto: UIImage!
     
     init() {
-        super.init(headerView: CenterNavigationEtcButtonHeaderView(title: "프로필 편집", etcButton: "저장"), mainView: ModifyProfileView())
+        super.init(headerView: CenterNavigationEtcButtonHeaderView(title: "프로필 편집", etcButton: "저장"),
+                   mainView: ModifyProfileView())
     }
     
     required init?(coder: NSCoder) {
