@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  MypageViewController.swift
 //  Zatch
 //
 //  Created by gomin on 2022/09/07.
@@ -68,6 +68,7 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
                     $0.delegate = self
                 }
                 if(isCertified){
+                    cell.showProfileImageBorderLine()
                     cell.willSectionDividerShow()
                 }
                 return cell
