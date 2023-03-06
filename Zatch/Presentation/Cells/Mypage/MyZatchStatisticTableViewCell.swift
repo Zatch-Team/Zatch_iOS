@@ -13,7 +13,7 @@ class MyZatchStatisticTableViewCell: BaseTableViewCell {
 
     private let titleLabel = UILabel().then{
         $0.text = "나의 재치 현황"
-        $0.font = UIFont.pretendard(size: 17, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold17)
     }
     private let myZatchStack = UIStackView().then{
         $0.axis = .horizontal
