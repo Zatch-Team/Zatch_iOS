@@ -13,7 +13,7 @@ class MyZatchStatisticTableViewCell: BaseTableViewCell {
 
     private let titleLabel = UILabel().then{
         $0.text = "나의 재치 현황"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
+        $0.font = UIFont.pretendard(size: 17, family: .Bold)
     }
     private let myZatchStack = UIStackView().then{
         $0.axis = .horizontal
@@ -64,7 +64,7 @@ class MyZatchStatisticTableViewCell: BaseTableViewCell {
             $0.centerX.equalToSuperview()
         }
         borderLine.snp.makeConstraints{
-            $0.top.equalTo(myZatchStack.snp.bottom).offset(36)
+            $0.top.equalTo(myZatchStack.snp.bottom).offset(32)
             $0.bottom.leading.trailing.equalToSuperview()
         }
     }
@@ -98,12 +98,12 @@ extension MyZatchStatisticTableViewCell{
     class MyZatchCountView: UIStackView{
         
         private let countLabel = UILabel().then{
-            $0.font = UIFont.pretendard(size: 32, family: .Bold)
+            $0.font = UIFont.pretendard(size: 36, family: .Bold)
             $0.textColor = .zatchPurple
             $0.textAlignment = .center
         }
         private let titleLabel = UILabel().then{
-            $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
+            $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
             $0.textColor = .black65
             $0.textAlignment = .center
         }
