@@ -10,7 +10,7 @@ import Foundation
 class BaseMyPageTableViewCell: BaseTableViewCell{
     
     let titleLabel = UILabel().then{
-        $0.setTypoStyleWithSingleLine(typoStyle: .regular15)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
         $0.textColor = .black85
     }
     
@@ -22,9 +22,9 @@ class BaseMyPageTableViewCell: BaseTableViewCell{
     override func layout() {
         super.layout()
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(10)
+            $0.top.equalToSuperview().offset(16)
             $0.leading.equalToSuperview().offset(20)
-            $0.bottom.equalToSuperview().offset(-13)
+            $0.centerY.equalToSuperview()
         }
     }
     
