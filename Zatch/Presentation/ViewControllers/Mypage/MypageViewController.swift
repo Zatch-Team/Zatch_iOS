@@ -9,7 +9,7 @@ import UIKit
 
 class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
-    private var isCertified: Bool = true    // 인증 전 후
+    private var isCertified: Bool = false    // 인증 전 후
     private let mainView = MyPageView()
     
     init(){
