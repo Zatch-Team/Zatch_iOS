@@ -9,6 +9,12 @@ import Foundation
 
 extension UITableView{
     
+    final func initializeDelegate(_ viewController: UIViewController){
+        separatorStyle = .none
+        delegate = viewController as? UITableViewDelegate
+        dataSource = viewController as? UITableViewDataSource
+    }
+    
     final func register<T: BaseTableViewCell>(cellType: T.Type) {
         self.register(cellType.self, forCellReuseIdentifier: cellType.cellIdentifier)
     }
