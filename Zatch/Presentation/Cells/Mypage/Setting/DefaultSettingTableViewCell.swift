@@ -11,7 +11,7 @@ class DefaultSettingTableViewCell: BaseTableViewCell {
     
     private let titleLabel = UILabel().then{
         $0.textColor = .black85
-        $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
     }
     
     override func hierarchy() {
@@ -22,7 +22,7 @@ class DefaultSettingTableViewCell: BaseTableViewCell {
     override func layout() {
         super.layout()
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(12)
+            $0.top.equalToSuperview().offset(16)
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
         }
