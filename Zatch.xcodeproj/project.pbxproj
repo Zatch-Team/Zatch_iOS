@@ -270,6 +270,7 @@
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
 		EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */; };
+		EE0D8E4D29B7561200D96050 /* TableOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */; };
 		EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD329A9DA92008964E3 /* NoticeView.swift */; };
 		EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD529A9ED79008964E3 /* HeartListView.swift */; };
 		EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC347298295C3002B5C60 /* EtcButton.swift */; };
@@ -317,7 +318,6 @@
 		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
 		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
 		EEE1154129A7424B003FD4E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154029A7424B003FD4E3 /* ProfileViewController.swift */; };
-		EEE1154329A742D2003FD4E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154229A742D2003FD4E3 /* ProfileView.swift */; };
 		EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */; };
 		EEE1154929A747B6003FD4E3 /* OthersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */; };
 		EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */; };
@@ -641,6 +641,7 @@
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
 		EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
+		EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOnlyView.swift; sourceTree = "<group>"; };
 		EE1C3CD329A9DA92008964E3 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		EE1C3CD529A9ED79008964E3 /* HeartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListView.swift; sourceTree = "<group>"; };
 		EE2BC347298295C3002B5C60 /* EtcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButton.swift; sourceTree = "<group>"; };
@@ -688,7 +689,6 @@
 		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
 		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1154029A7424B003FD4E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		EEE1154229A742D2003FD4E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersProfileViewController.swift; sourceTree = "<group>"; };
 		EEE1154A29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndMoreButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -773,14 +773,6 @@
 				EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */,
 				EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */,
 				232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		235613F528D0975A00D44E97 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				EEE1154229A742D2003FD4E3 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -2112,7 +2104,7 @@
 		EEE1154529A746F7003FD4E3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				235613F528D0975A00D44E97 /* Profile */,
+				EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2519,7 +2511,6 @@
 				EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
 				232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */,
-				EEE1154329A742D2003FD4E3 /* ProfileView.swift in Sources */,
 				57468A9E28A1E5E300056691 /* SearchResultEmptyView.swift in Sources */,
 				5722462D28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift in Sources */,
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
@@ -2659,6 +2650,7 @@
 				571C0C7928AB5080002293B6 /* HiddenZatchInfoView.swift in Sources */,
 				EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */,
 				5724EC8C291E0E7A00DC529B /* LoginViewController.swift in Sources */,
+				EE0D8E4D29B7561200D96050 /* TableOnlyView.swift in Sources */,
 				57EBCE4628A923A900212D20 /* BaseTableViewCell.swift in Sources */,
 				57FEFA8C297A70F5008A78B0 /* UICollectionView.swift in Sources */,
 				57A28D0E28D03FAE00263079 /* String.swift in Sources */,
