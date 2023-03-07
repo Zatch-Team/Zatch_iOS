@@ -13,7 +13,7 @@ class NoticeTableViewCell: BaseTableViewCell {
         $0.text = "공지1234"
         $0.numberOfLines = 2
         $0.textColor = .black85
-        $0.setTypoStyleWithMultiLine(typoStyle: .medium15_21)
+        $0.setTypoStyleWithMultiLine(typoStyle: .medium16)
     }
     private let dateLabel = UILabel().then{
         $0.text = "2022.10.19"
@@ -43,8 +43,7 @@ class NoticeTableViewCell: BaseTableViewCell {
         }
         borderLine.snp.makeConstraints{
             $0.bottom.equalToSuperview().inset(4)
-            $0.leading.equalToSuperview().offset(20)
-            $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
     

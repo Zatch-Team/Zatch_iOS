@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class NoticeViewController: BaseViewController<CenterNavigationHeaderView, NoticeView> {
     
     init(){
