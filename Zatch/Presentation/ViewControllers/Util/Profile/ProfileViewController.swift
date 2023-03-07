@@ -12,14 +12,14 @@ protocol ProfileMoreDelegate{
     func willMoveMyZatchViewController()
 }
 
-class ProfileViewController: BaseViewController<EtcButtonHeaderView,ProfileView>{
+class ProfileViewController: BaseViewController<EtcButtonHeaderView,TableOnlyView>{
     
     var userAttachTitle: String?{
         return nil
     }
     
     init(headerView: EtcButtonHeaderView){
-        super.init(headerView: headerView, mainView: ProfileView())
+        super.init(headerView: headerView, mainView: TableOnlyView())
     }
     
     required init?(coder: NSCoder) {
@@ -30,8 +30,10 @@ class ProfileViewController: BaseViewController<EtcButtonHeaderView,ProfileView>
         
         super.initialize()
         
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+        mainView.tableView.initializeDelegate(self)
+        mainView.registerCell(cellTypes: [ProfileTableViewCell.self, TitleAndMoreButtonTableViewCell.self, ZatchTableViewCell.self])
+//        mainView.tableView.delegate = self
+//        mainView.tableView.dataSource = self
         
         headerView.etcButton.addTarget(self, action: #selector(etcButtonDidTapped), for: .touchUpInside)
     }
