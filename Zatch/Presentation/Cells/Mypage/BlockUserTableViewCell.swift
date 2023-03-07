@@ -20,12 +20,12 @@ class BlockUserTableViewCell: BaseTableViewCell {
     let userImageView = UIImageView().then{
         $0.backgroundColor = .black20
         $0.clipsToBounds = true
-        $0.layer.cornerRadius = 32/2
+        $0.layer.cornerRadius = 40/2
     }
     
     let userNameLabel = UILabel().then{
         $0.text = "어리둥절 너구리"
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
         $0.textColor = .black85
     }
     
@@ -58,25 +58,25 @@ class BlockUserTableViewCell: BaseTableViewCell {
         super.layout()
         
         userInfoStackView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(5.5)
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(24)
-            $0.top.equalToSuperview().offset(10)
+            $0.leading.equalToSuperview().offset(20)
         }
   
         userImageView.snp.makeConstraints{
             $0.top.bottom.leading.equalToSuperview()
-            $0.width.height.equalTo(32)
-        }
-        
-        unblockBtn.snp.makeConstraints{
-            $0.trailing.equalToSuperview().offset(-24)
-            $0.top.equalToSuperview().offset(14)
-            $0.centerY.equalToSuperview()
-            $0.width.equalTo(unblockBtn.snp.height)
+            $0.width.height.equalTo(40)
         }
         
         userNameLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
+        }
+        
+        unblockBtn.snp.makeConstraints{
+            $0.trailing.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().offset(13.5)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(unblockBtn.snp.height)
         }
     }
     
