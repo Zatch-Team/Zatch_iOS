@@ -7,52 +7,16 @@
 
 import UIKit
 
-/*
-class NoticeDetailViewController: BaseViewController {
-    var noticeDetailTableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        super.navigationTitle.text = "공지사항"
-
-        setUpTableView(dataSourceDelegate: self)
-        
-        self.view.addSubview(noticeDetailTableView)
-        noticeDetailTableView.snp.makeConstraints { make in
-            make.top.equalTo(super.headerView.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview()
-        }
+class NoticeDetailViewController: BaseViewController<CenterNavigationHeaderView, NoticeDetailView> {
+    
+    init(){
+        super.init(headerView: CenterNavigationHeaderView(title: "공지사항"),
+                   mainView: NoticeDetailView())
     }
-    // MARK: - Functions
-    func setUpTableView(dataSourceDelegate: UITableViewDelegate & UITableViewDataSource) {
-        noticeDetailTableView = UITableView()
-        noticeDetailTableView.then{
-            $0.delegate = dataSourceDelegate
-            $0.dataSource = dataSourceDelegate
-            $0.register(NoticeDetailTableViewCell.self, forCellReuseIdentifier: "NoticeDetailTableViewCell")
-            
-            // autoHeight
-            $0.rowHeight = UITableView.automaticDimension
-            $0.estimatedRowHeight = UITableView.automaticDimension
-            $0.showsVerticalScrollIndicator = false
-            $0.separatorStyle = .none
-        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
 }
-// MARK: - TableView delegate
-extension NoticeDetailViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeDetailTableViewCell", for: indexPath) as? NoticeDetailTableViewCell else { return UITableViewCell() }
-        cell.selectionStyle = .none
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-*/

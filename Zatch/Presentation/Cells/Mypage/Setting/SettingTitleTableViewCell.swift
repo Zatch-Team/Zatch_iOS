@@ -10,8 +10,7 @@ import UIKit
 class SettingTitleTableViewCell: BaseTableViewCell {
     
     private let titleLabel = UILabel().then{
-        $0.text = "알림 설정"
-        $0.font = UIFont.pretendard(size: 13, family: .Bold)
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold14)
         $0.textColor = .black85
     }
 
@@ -23,9 +22,9 @@ class SettingTitleTableViewCell: BaseTableViewCell {
     override func layout() {
         super.layout()
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(17)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(15.5)
             $0.leading.equalToSuperview().offset(20)
+            $0.centerY.equalToSuperview()
         }
     }
     

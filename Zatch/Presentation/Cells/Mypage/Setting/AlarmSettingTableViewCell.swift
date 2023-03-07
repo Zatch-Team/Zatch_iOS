@@ -21,14 +21,13 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
     
     private let titleLabel = UILabel().then{
         $0.textColor = .black85
-        $0.setTypoStyleWithSingleLine(typoStyle: .medium15_21)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
     }
     
     private let explainLabel = UILabel().then{
         $0.numberOfLines = 0
-        $0.textAlignment = .left
         $0.textColor = .black85
-        $0.setTypoStyleWithMultiLine(typoStyle: .regular12)
+        $0.setTypoStyleWithMultiLine(typoStyle: .regular14_18)
         
     }
     
@@ -64,16 +63,15 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
         }
         
         explainLabel.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(4.72)
             $0.leading.equalTo(titleLabel)
-            $0.trailing.equalToSuperview().offset(-90)
-            $0.bottom.equalToSuperview().offset(-10)
+            $0.bottom.equalToSuperview().offset(-16)
         }
         
         alarmSwitch.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(10.5)
-            $0.leading.equalTo(explainLabel.snp.trailing).offset(21)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalToSuperview().offset(16)
+            $0.leading.equalTo(explainLabel.snp.trailing).offset(27)
+            $0.trailing.equalToSuperview().inset(20)
         }
     }
     
@@ -104,14 +102,14 @@ extension AlarmSettingTableViewCell.AlarmSettingType{
     var title: String{
         switch self{
         case .chatting:     return "채팅 알림"
-        case .gatch:        return "가치 알림"
+        case .gatch:        return "재치 알림"
         }
     }
     
     var explain: String{
         switch self{
         case .chatting:     return "누군가 나에게 채팅을 보낼 경우에 알림을 받습니다."
-        case .gatch:        return "내가 올린 가치에 참여자가 생기거나, 내가 참여한 가치의 참여자가 모두 모였을 경우에 알림을 받습니다."
+        case .gatch:        return "누군가 나에게 채팅을 보낼 경우에 알림을 받습니다."
         }
     }
 }

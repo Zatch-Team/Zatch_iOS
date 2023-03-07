@@ -9,7 +9,7 @@ import UIKit
 
 class SettingBorderLineTableViewCell: BaseTableViewCell {
 
-    private let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1)
+    private let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1.2)
     
     override func hierarchy() {
         super.hierarchy()

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class NoticeViewController: BaseViewController<CenterNavigationHeaderView, NoticeView> {
     
     init(){
@@ -37,8 +36,7 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = NoticeDetailViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(NoticeDetailViewController(), animated: true)
     }
 }
 

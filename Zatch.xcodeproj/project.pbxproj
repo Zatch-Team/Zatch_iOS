@@ -24,7 +24,6 @@
 		23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F0290851A3003E46AB /* NoticeViewController.swift */; };
 		23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */; };
 		23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F529085258003E46AB /* NoticeTableViewCell.swift */; };
-		23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */; };
 		23A86A5628C72C7700B073CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5528C72C7700B073CB /* MainView.swift */; };
 		23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */; };
 		23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */; };
@@ -270,6 +269,7 @@
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
+		EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */; };
 		EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD329A9DA92008964E3 /* NoticeView.swift */; };
 		EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD529A9ED79008964E3 /* HeartListView.swift */; };
 		EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC347298295C3002B5C60 /* EtcButton.swift */; };
@@ -373,7 +373,6 @@
 		23A767F0290851A3003E46AB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		23A767F2290851AC003E46AB /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		23A767F529085258003E46AB /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
-		23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5528C72C7700B073CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		23A86A5828C7321C00B073CB /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		23A86A5A28C73D8600B073CB /* MainCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -641,6 +640,7 @@
 		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		EE1C3CD329A9DA92008964E3 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		EE1C3CD529A9ED79008964E3 /* HeartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListView.swift; sourceTree = "<group>"; };
 		EE2BC347298295C3002B5C60 /* EtcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButton.swift; sourceTree = "<group>"; };
@@ -812,15 +812,6 @@
 			path = Notice;
 			sourceTree = "<group>";
 		};
-		23A767F429085244003E46AB /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				23A767F529085258003E46AB /* NoticeTableViewCell.swift */,
-				23A767F729085542003E46AB /* NoticeDetailTableViewCell.swift */,
-			);
-			path = Notice;
-			sourceTree = "<group>";
-		};
 		23A86A5428C72C4C00B073CB /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,12 +838,12 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
-		23B051B728E1FDBE005D08EA /* NotificationView */ = {
+		23B051B728E1FDBE005D08EA /* Notification */ = {
 			isa = PBXGroup;
 			children = (
 				23B051B828E1FDCC005D08EA /* NotificationView.swift */,
 			);
-			path = NotificationView;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		23B051BA28E1FE77005D08EA /* NotificationCells */ = {
@@ -902,12 +893,12 @@
 		23B7FBAA28CEBFBC0018642E /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				23A767F429085244003E46AB /* Notice */,
 				576B376228D82FFD00EF36E6 /* Setting */,
 				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
 				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
 				23B7FBB128CED37D0018642E /* TownSettingTableViewCell.swift */,
 				EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */,
+				23A767F529085258003E46AB /* NoticeTableViewCell.swift */,
 				23B7FBB328CED4FF0018642E /* MypageSettingTableViewCell.swift */,
 				576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */,
 			);
@@ -941,7 +932,7 @@
 				EEE1154529A746F7003FD4E3 /* Util */,
 				EE41018F298540F60083B7E0 /* MyZatch */,
 				5724EC8D291E0E8200DC529B /* LoginView */,
-				23B051B728E1FDBE005D08EA /* NotificationView */,
+				23B051B728E1FDBE005D08EA /* Notification */,
 				57FFEDBD28DD27DE0041719B /* RegisterView */,
 				23B7FBA728CEB8E80018642E /* Mypage */,
 				23A86A5428C72C4C00B073CB /* MainView */,
@@ -1922,6 +1913,7 @@
 			isa = PBXGroup;
 			children = (
 				EE1C3CD329A9DA92008964E3 /* NoticeView.swift */,
+				EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -2519,11 +2511,11 @@
 				EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */,
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
+				EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */,
 				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
 				EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
-				23A767F829085542003E46AB /* NoticeDetailTableViewCell.swift in Sources */,
 				EEE7F2B7299BD8FD00C674B9 /* ZatchInformationAttach.swift in Sources */,
 				576B376428D8303D00EF36E6 /* SettingTitleTableViewCell.swift in Sources */,
 				232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */,
