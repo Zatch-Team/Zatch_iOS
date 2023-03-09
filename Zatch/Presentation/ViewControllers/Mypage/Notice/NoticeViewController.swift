@@ -19,6 +19,7 @@ class NoticeViewController: BaseViewController<CenterNavigationHeaderView, Table
     
     override func initialize() {
         super.initialize()
+        mainView.tableView.initializeDelegate(self)
         mainView.registerCell(cellTypes: [NoticeTableViewCell.self])
     }
     
