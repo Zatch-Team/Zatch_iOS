@@ -271,7 +271,6 @@
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
 		EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */; };
 		EE0D8E4D29B7561200D96050 /* TableOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */; };
-		EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD329A9DA92008964E3 /* NoticeView.swift */; };
 		EE1C3CD629A9ED79008964E3 /* HeartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C3CD529A9ED79008964E3 /* HeartListView.swift */; };
 		EE2BC348298295C3002B5C60 /* EtcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC347298295C3002B5C60 /* EtcButton.swift */; };
 		EE2BC34A29829A32002B5C60 /* CenterNavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */; };
@@ -642,7 +641,6 @@
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
 		EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOnlyView.swift; sourceTree = "<group>"; };
-		EE1C3CD329A9DA92008964E3 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		EE1C3CD529A9ED79008964E3 /* HeartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListView.swift; sourceTree = "<group>"; };
 		EE2BC347298295C3002B5C60 /* EtcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcButton.swift; sourceTree = "<group>"; };
 		EE2BC34929829A32002B5C60 /* CenterNavigationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterNavigationHeaderView.swift; sourceTree = "<group>"; };
@@ -1904,7 +1902,6 @@
 		EE1C3CD229A9DA89008964E3 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				EE1C3CD329A9DA92008964E3 /* NoticeView.swift */,
 				EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */,
 			);
 			path = Notice;
@@ -2685,7 +2682,6 @@
 				EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */,
 				23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */,
 				5752F1FA28200B8C004CA4A5 /* ResultTableViewCell.swift in Sources */,
-				EE1C3CD429A9DA92008964E3 /* NoticeView.swift in Sources */,
 				57C585042821F2A70078FAFF /* ServiceType.swift in Sources */,
 				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
 				576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */,

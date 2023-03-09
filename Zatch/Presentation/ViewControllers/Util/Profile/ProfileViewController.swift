@@ -31,9 +31,9 @@ class ProfileViewController: BaseViewController<EtcButtonHeaderView,TableOnlyVie
         super.initialize()
         
         mainView.tableView.initializeDelegate(self)
-        mainView.registerCell(cellTypes: [ProfileTableViewCell.self, TitleAndMoreButtonTableViewCell.self, ZatchTableViewCell.self])
-//        mainView.tableView.delegate = self
-//        mainView.tableView.dataSource = self
+        mainView.registerCell(cellTypes: [ProfileTableViewCell.self,
+                                          TitleAndMoreButtonTableViewCell.self,
+                                          ZatchTableViewCell.self])
         
         headerView.etcButton.addTarget(self, action: #selector(etcButtonDidTapped), for: .touchUpInside)
     }
