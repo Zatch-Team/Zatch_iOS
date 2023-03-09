@@ -12,10 +12,10 @@ protocol AlarmSwitchDelegate{
     func willChangeGatchAlarmState(_ isOn: Bool)
 }
 
-class SettingViewController: BaseViewController<CenterNavigationHeaderView, SettingView> {
+class SettingViewController: BaseViewController<CenterNavigationHeaderView, TableOnlyView> {
     
     init(){
-        super.init(headerView: CenterNavigationHeaderView(title: "설정"), mainView: SettingView())
+        super.init(headerView: CenterNavigationHeaderView(title: "설정"), mainView: TableOnlyView())
     }
     
     required init?(coder: NSCoder) {
@@ -24,9 +24,11 @@ class SettingViewController: BaseViewController<CenterNavigationHeaderView, Sett
     
     override func initialize(){
         super.initialize()
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+        mainView.tableView.initializeDelegate(self)
+        mainView.registerCell(cellTypes: [AlarmSettingTableViewCell.self,
+                                          DefaultSettingTableViewCell.self,
+                                          SettingTitleTableViewCell.self,
+                                          SettingBorderLineTableViewCell.self])
     }
 }
 
