@@ -8,10 +8,10 @@ import UIKit
 import SnapKit
 
 
-class HeartListViewController: BaseViewController<CenterNavigationHeaderView, HeartListView> {
+class HeartListViewController: BaseViewController<CenterNavigationHeaderView, TableOnlyView> {
     
     init(){
-        super.init(headerView: CenterNavigationHeaderView(title: "관심 목록"), mainView: HeartListView())
+        super.init(headerView: CenterNavigationHeaderView(title: "관심 목록"), mainView: TableOnlyView())
     }
     
     required init?(coder: NSCoder) {
@@ -20,9 +20,10 @@ class HeartListViewController: BaseViewController<CenterNavigationHeaderView, He
     
     override func initialize() {
         super.initialize()
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
-        mainView.tableView.separatorStyle = .none
+        mainView.tableView.initializeDelegate(self)
+        mainView.registerCell(cellTypes: [ZatchTableViewCell.self,
+                                          ZatchShareTableViewCell.self,
+                                          ZatchExchangeTableViewCell.self])
     }
 
 }

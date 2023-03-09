@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ReviewViewController: BaseViewController<CenterNavigationHeaderView, ReviewView> {
+class ReviewViewController: BaseViewController<CenterNavigationHeaderView, TableOnlyView> {
     
     init(){
-        super.init(headerView: CenterNavigationHeaderView(title: "한 줄 후기"), mainView: ReviewView())
+        super.init(headerView: CenterNavigationHeaderView(title: "한 줄 후기"), mainView: TableOnlyView())
     }
     
     required init?(coder: NSCoder) {
@@ -19,9 +19,15 @@ class ReviewViewController: BaseViewController<CenterNavigationHeaderView, Revie
     
     override func initialize() {
         super.initialize()
-        mainView.reviewTableView.dataSource = self
-        mainView.reviewTableView.delegate = self
-        mainView.reviewTableView.separatorStyle = .none
+        mainView.tableView.initializeDelegate(self)
+        mainView.registerCell(cellTypes: [ReviewProfileTableViewCell.self,
+                                          DateTableViewCell.self,
+                                          OtherReviewTableViewCell.self])
+    }
+    
+    override func layout() {
+        super.layout()
+        mainView.setTableViewInset(leading: 20, trailing: 20)
     }
 }
 

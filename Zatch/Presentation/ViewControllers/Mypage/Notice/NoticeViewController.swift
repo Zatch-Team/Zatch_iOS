@@ -7,10 +7,10 @@
 
 import UIKit
 
-class NoticeViewController: BaseViewController<CenterNavigationHeaderView, NoticeView> {
+class NoticeViewController: BaseViewController<CenterNavigationHeaderView, TableOnlyView> {
     
     init(){
-        super.init(headerView: CenterNavigationHeaderView(title: "공지사항"), mainView: NoticeView())
+        super.init(headerView: CenterNavigationHeaderView(title: "공지사항"), mainView: TableOnlyView())
     }
     
     required init?(coder: NSCoder) {
@@ -19,9 +19,8 @@ class NoticeViewController: BaseViewController<CenterNavigationHeaderView, Notic
     
     override func initialize() {
         super.initialize()
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
-        mainView.tableView.separatorStyle = .none
+        mainView.tableView.initializeDelegate(self)
+        mainView.registerCell(cellTypes: [NoticeTableViewCell.self])
     }
     
 }
