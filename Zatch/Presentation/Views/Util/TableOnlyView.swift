@@ -31,4 +31,13 @@ class TableOnlyView: BaseView{
         }
     }
     
+    func setTableViewInset(top: CGFloat = 0, bottom: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0){
+        tableView.snp.updateConstraints{
+            $0.top.equalToSuperview().inset(top)
+            $0.leading.equalToSuperview().inset(leading)
+            $0.trailing.equalToSuperview().inset(trailing)
+            $0.bottom.equalToSuperview().inset(bottom)
+        }
+    }
+    
 }
