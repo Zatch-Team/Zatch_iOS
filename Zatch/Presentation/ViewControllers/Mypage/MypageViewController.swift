@@ -10,7 +10,7 @@ import UIKit
 class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
     private var isCertified: Bool = false    // 인증 전 후
-    private let mainView = MyPageView()
+    private let mainView = TableOnlyView()
     
     init(){
         super.init(headerView: BaseTabBarHeaderView(title: "내 정보", button: Image.setting))
@@ -31,12 +31,12 @@ class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
     override func initialize(){
         headerView.etcButton.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
-        setTableViewDelegateAndDataSource()
-    }
-    
-    private func setTableViewDelegateAndDataSource(){
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+        mainView.tableView.initializeDelegate(self)
+        mainView.registerCell(cellTypes: [MyInfoTableViewCell.self,
+                                          BannerTableViewCell.self,
+                                          MyZatchStatisticTableViewCell.self,
+                                          TownSettingTableViewCell.self,
+                                          BaseMyPageTableViewCell.self])
     }
 
     // MARK: - Actions
