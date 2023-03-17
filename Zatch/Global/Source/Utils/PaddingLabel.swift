@@ -16,6 +16,11 @@ class PaddingLabel: UILabel{
         super.init(frame: .zero)
     }
     
+    init(padding: UIEdgeInsets){
+        self.padding = padding
+        super.init(frame: .zero)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
