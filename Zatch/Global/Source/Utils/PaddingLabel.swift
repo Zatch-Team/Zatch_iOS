@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TagLabel: UILabel{
+class PaddingLabel: UILabel{
     
     private let padding: UIEdgeInsets
     
