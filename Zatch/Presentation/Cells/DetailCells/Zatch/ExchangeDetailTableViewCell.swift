@@ -10,7 +10,7 @@ import Then
 
 class ExchangeDetailTableViewCell: BaseTableViewCell {
     
-    let myZatchCategory = PaddingLabel().then{
+    let myZatchCategory = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 8, top: 2, bottom: 2)).then{
         $0.text = "생활용품"
         $0.textColor = .zatchPurple
         $0.backgroundColor = .purple40
@@ -19,7 +19,7 @@ class ExchangeDetailTableViewCell: BaseTableViewCell {
         $0.clipsToBounds = true
     }
     
-    let wantZatchCategory = PaddingLabel().then{
+    let wantZatchCategory = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 8, top: 2, bottom: 2)).then{
         $0.text = "생활용품"
         $0.textColor = .zatchDeepYellow
         $0.backgroundColor = .yellow40

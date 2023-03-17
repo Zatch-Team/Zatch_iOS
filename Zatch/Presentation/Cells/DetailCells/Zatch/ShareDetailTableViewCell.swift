@@ -10,7 +10,7 @@ import UIKit
 class ShareDetailTableViewCell: BaseTableViewCell {
     
     //MARK: - UI
-    let shareTag = PaddingLabel().then{
+    let shareTag = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 8, top: 2, bottom: 2)).then{
         $0.text = "나눔"
         $0.textColor = .zatchDeepYellow
         $0.backgroundColor = .yellow40
@@ -19,7 +19,7 @@ class ShareDetailTableViewCell: BaseTableViewCell {
         $0.clipsToBounds = true
     }
 
-    let categoryTag = PaddingLabel().then{
+    let categoryTag = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 8, top: 2, bottom: 2)).then{
         $0.text = "생활용품"
         $0.textColor = .zatchPurple
         $0.backgroundColor = .purple40

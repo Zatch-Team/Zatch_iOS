@@ -11,7 +11,7 @@ class RightChattingMessageTableViewCell: BaseTableViewCell {
     
     //MARK: - UI
     
-    let messageLabel = PaddingLabel(padding: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)).then{
+    let messageLabel = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 16, top: 8, bottom: 16)).then{
         $0.text = "가나다라마ㅏ바라ㅏ아사ㅏ가나다라마ㅏ바라ㅏ아사ㅏ가나다라마ㅏ바라ㅏ아사ㅏ가나다라마ㅏ바라ㅏ아"
         $0.layer.cornerRadius = 16
         $0.clipsToBounds = true
