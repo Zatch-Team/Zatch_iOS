@@ -304,6 +304,7 @@
 		EE813FDE29C445B30091F16E /* FilledTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FDD29C445B30091F16E /* FilledTag.swift */; };
 		EE813FE029C445B90091F16E /* StrokeTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FDF29C445B90091F16E /* StrokeTag.swift */; };
 		EE813FE229C44E950091F16E /* TagConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FE129C44E950091F16E /* TagConfiguration.swift */; };
+		EE813FE429C481690091F16E /* Tagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FE329C481690091F16E /* Tagable.swift */; };
 		EE9B053529953A1200068503 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B053429953A1200068503 /* FilterView.swift */; };
 		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
@@ -672,6 +673,7 @@
 		EE813FDD29C445B30091F16E /* FilledTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledTag.swift; sourceTree = "<group>"; };
 		EE813FDF29C445B90091F16E /* StrokeTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeTag.swift; sourceTree = "<group>"; };
 		EE813FE129C44E950091F16E /* TagConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConfiguration.swift; sourceTree = "<group>"; };
+		EE813FE329C481690091F16E /* Tagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagable.swift; sourceTree = "<group>"; };
 		EE9B053429953A1200068503 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -2016,6 +2018,16 @@
 			path = DetailInput;
 			sourceTree = "<group>";
 		};
+		EE813FE529C481800091F16E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EEE6D15A299752EB0004FC7B /* TagStlye.swift */,
+				EE813FE129C44E950091F16E /* TagConfiguration.swift */,
+				EE813FE329C481690091F16E /* Tagable.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2116,8 +2128,7 @@
 		EEE6D159299752E00004FC7B /* Tag */ = {
 			isa = PBXGroup;
 			children = (
-				EEE6D15A299752EB0004FC7B /* TagStlye.swift */,
-				EE813FE129C44E950091F16E /* TagConfiguration.swift */,
+				EE813FE529C481800091F16E /* Util */,
 				EE813FD729C3440E0091F16E /* Tag.swift */,
 				EE813FDD29C445B30091F16E /* FilledTag.swift */,
 				EE813FDF29C445B90091F16E /* StrokeTag.swift */,
@@ -2607,6 +2618,7 @@
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
+				EE813FE429C481690091F16E /* Tagable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				EE541C1929B44E7D00DD0F20 /* NetworkResult.swift in Sources */,
