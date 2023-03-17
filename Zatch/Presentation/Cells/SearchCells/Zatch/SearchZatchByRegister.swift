@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchZatchByRegister{
-    associatedtype TagType: ZatchComponent.Tag
+    associatedtype TagType: ZatchComponent.FilledTag
     var isSelectedState: Bool { get set }
     var tagLabel: TagType { get }
 }
@@ -16,7 +16,7 @@ protocol SearchZatchByRegister{
 extension SearchZatchByRegister where Self: BaseCollectionViewCell{
     
     static func getEstimatedSize(title: String) -> CGSize{
-        let testLabel = ZatchComponent.PurlpleTag(configuration: .height31).then{
+        let testLabel = ZatchComponent.Tag.filled(color: .purple, configuration: .height31).then{
             $0.setTitle(title)
         }
         return testLabel.intrinsicContentSize

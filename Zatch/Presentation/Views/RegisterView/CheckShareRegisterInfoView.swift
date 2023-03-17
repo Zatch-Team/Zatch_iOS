@@ -13,10 +13,10 @@ class CheckShareRegisterInfoView: BaseView{
         $0.axis = .horizontal
         $0.spacing = 4
     }
-    let shareTag = ZatchComponent.YellowTag(configuration: .height20).then{
+    let shareTag = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20).then{
         $0.setTitle("나눔")
     }
-    let myProductCategoryTag = ZatchComponent.PurlpleTag(configuration: .height20).then{
+    let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
         $0.setCategoryTitle(categoryId: 2)
     }
     let myProductNameLabel = UILabel().then{

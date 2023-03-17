@@ -14,7 +14,7 @@ class CheckExchangeRegisterInfoView: BaseView{
     }
 
     let wantFrame = UIView()
-    let firstWantCategoryTag = ZatchComponent.YellowTag(configuration: .height20).then{
+    let firstWantCategoryTag = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20).then{
         $0.setCategoryTitle(categoryId: 8)
     }
     let firstWantProductNameLabel = UILabel().then{
@@ -40,7 +40,7 @@ class CheckExchangeRegisterInfoView: BaseView{
     }
     
     let myFrame = UIView()
-    let myProductCategoryTag = ZatchComponent.PurlpleTag(configuration: .height20).then{
+    let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
         $0.setTitle("생활용품")
     }
     let myProductNameLabel = UILabel().then{

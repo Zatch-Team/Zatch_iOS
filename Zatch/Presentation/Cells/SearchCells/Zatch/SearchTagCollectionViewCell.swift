@@ -17,7 +17,7 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         }
     }
     
-    private let tagLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
+    private let tagLabel = PaddingLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
         $0.numberOfLines = 1
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 32/2
@@ -42,7 +42,7 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
     
     static func getEstimatedSize(title: String) -> CGSize{
         
-        let testLabel = TagLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
+        let testLabel = PaddingLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
             $0.text = title
             $0.snp.makeConstraints{
                 $0.height.equalTo(SearchTagCollectionViewCell.height)

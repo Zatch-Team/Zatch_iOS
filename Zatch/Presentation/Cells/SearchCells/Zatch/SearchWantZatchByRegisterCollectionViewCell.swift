@@ -14,8 +14,8 @@ class SearchWantZatchByRegisterCollectionViewCell: BaseCollectionViewCell, Searc
             isSelectedState ? setSelectState() : setDeselectState()
         }
     }
-    
-    let tagLabel = ZatchComponent.PurlpleTag(configuration: .height31)
+
+    let tagLabel = ZatchComponent.Tag.filled(color: .purple, configuration: .height31)
     
     override func hierarchy() {
         super.hierarchy()

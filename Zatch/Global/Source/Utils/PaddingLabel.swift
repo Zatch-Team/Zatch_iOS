@@ -7,12 +7,17 @@
 
 import Foundation
 
-class TagLabel: UILabel{
+class PaddingLabel: UILabel{
     
     private let padding: UIEdgeInsets
     
     init(padding: ZatchComponent.Padding){
         self.padding = padding.inset
+        super.init(frame: .zero)
+    }
+    
+    init(padding: UIEdgeInsets){
+        self.padding = padding
         super.init(frame: .zero)
     }
     

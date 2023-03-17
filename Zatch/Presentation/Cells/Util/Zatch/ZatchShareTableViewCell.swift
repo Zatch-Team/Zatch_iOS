@@ -14,7 +14,7 @@ class ZatchShareTableViewCell: ZatchTableViewCell, ZatchInformationAttach{
         $0.axis = .vertical
         $0.alignment = .leading
     }
-    let shareTag = ZatchComponent.YellowTag(configuration: .height25).then{
+    let shareTag = ZatchComponent.Tag.filled(color: .yellow, configuration: .height25).then{
         $0.setTitle("나눔")
     }
     let myZatchNameLabel = UILabel().then{

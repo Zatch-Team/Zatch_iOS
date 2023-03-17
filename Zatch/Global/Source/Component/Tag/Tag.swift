@@ -2,53 +2,20 @@
 //  Tag.swift
 //  Zatch
 //
-//  Created by 박소윤 on 2023/02/11.
+//  Created by 박소윤 on 2023/03/16.
 //
 
 import Foundation
 
 extension ZatchComponent{
     
-    class PurlpleTag: Tag{
+    class Tag: PaddingLabel{
         
-        init(configuration: ZatchComponent.Tag.TagType){
-            super.init(color: .purple, configuration: configuration)
-        }
+        private let configuration: ZatchComponent.TagConfiguration
+        let color: ZatchComponent.TagColor
         
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-    
-    class YellowTag: Tag{
-        
-        init(configuration: ZatchComponent.Tag.TagType){
-            super.init(color: .yellow, configuration: configuration)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-    
-    class Tag: TagLabel{
-        
-        var isDisabled = false{
-            didSet{
-                isDisabled ? setDisabledState() : setNormalState()
-            }
-        }
-        var isSelected = false{
-            didSet{
-                isSelected ? setSelectState() : setNormalState()
-            }
-        }
-        
-        private let configuration: TagType
-        private let colorType: TagColor
-        
-        init(color: TagColor, configuration: TagType){
-            self.colorType = color
+        init(color: ZatchComponent.TagColor, configuration: ZatchComponent.TagConfiguration){
+            self.color = color
             self.configuration = configuration
             super.init(padding: configuration.padding)
             initialize()
@@ -58,16 +25,23 @@ extension ZatchComponent{
             fatalError("init(coder:) has not been implemented")
         }
         
-        private func initialize(){
+        static func filled(color: ZatchComponent.TagColor, configuration: ZatchComponent.TagConfiguration) -> FilledTag{
+            return FilledTag(color: color, configuration: configuration)
+        }
+        
+        static func stroke(color: ZatchComponent.TagColor, configuration: ZatchComponent.TagConfiguration) -> StrokeTag{
+            return StrokeTag(color: color, configuration: configuration)
+        }
+        
+        func initialize(){
             style()
             layout()
-            setNormalState()
         }
         
         private func style(){
-            self.layer.cornerRadius = configuration.height / 2
-            self.clipsToBounds = true
-            self.setTypoStyleWithSingleLine(typoStyle: configuration.font)
+            layer.cornerRadius = configuration.height / 2
+            clipsToBounds = true
+            setTypoStyleWithSingleLine(typoStyle: configuration.font)
         }
         
         private func layout(){
@@ -76,31 +50,13 @@ extension ZatchComponent{
             }
         }
         
-        private func setNormalState(){
-            self.tag = ViewTag.normal
-            self.textColor = colorType.textColor
-            self.backgroundColor = colorType.backgroundColor
-        }
-        
-        private func setDisabledState(){
-            self.tag = ViewTag.deselect
-            self.textColor = colorType.disabledTextColor
-            self.backgroundColor = colorType.disabledBackgroundColor
-        }
-        
-        private func setSelectState(){
-            self.tag = ViewTag.select
-            self.textColor = colorType.selectedTextColor
-            self.backgroundColor = colorType.selectedBackgroundColor
-        }
-        
         func setTitle(_ title: String){
-            self.text = title
+            text = title
         }
         
         func setCategoryTitle(categoryId: Int){
             let category = ServiceType.Zatch.getCategoryFromCategories(at: categoryId)
-            self.text = category.title
+            text = category.title
         }
     }
 }

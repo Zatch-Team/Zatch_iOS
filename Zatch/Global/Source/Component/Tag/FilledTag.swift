@@ -1,28 +1,53 @@
 //
-//  TagStlye.swift
+//  FilledTag.swift
 //  Zatch
 //
-//  Created by 박소윤 on 2023/02/11.
+//  Created by 박소윤 on 2023/03/17.
 //
 
 import Foundation
 
-extension ZatchComponent.Tag{
+extension ZatchComponent{
     
-    enum TagColor{
-        case purple
-        case yellow
-    }
-    
-    enum TagType{
-        case height20
-        case height25
-        case height29
-        case height31
+    class FilledTag: ZatchComponent.Tag, Tagable{
+        
+        var isDisabled = false{
+            didSet{
+                isDisabled ? setDisabledState() : setUnselectState()
+            }
+        }
+        var isSelected = false{
+            didSet{
+                isSelected ? setSelectState() : setUnselectState()
+            }
+        }
+        
+        override func initialize() {
+            super.initialize()
+            setUnselectState()
+        }
+        
+        func setSelectState(){
+            tag = ViewTag.select
+            textColor = color.selectedTextColor
+            backgroundColor = color.selectedBackgroundColor
+        }
+        
+        func setUnselectState(){
+            tag = ViewTag.normal
+            textColor = color.textColor
+            backgroundColor = color.backgroundColor
+        }
+        
+        private func setDisabledState(){
+            tag = ViewTag.deselect
+            textColor = color.disabledTextColor
+            backgroundColor = color.disabledBackgroundColor
+        }
     }
 }
 
-extension ZatchComponent.Tag.TagColor{
+fileprivate extension ZatchComponent.TagColor{
     
     struct TagColorStyle{
         let textColor: UIColor
@@ -72,34 +97,5 @@ extension ZatchComponent.Tag.TagColor{
     
     var disabledBackgroundColor: UIColor{
         colorInfo.disabledBackgroundColor
-    }
-}
-
-extension ZatchComponent.Tag.TagType{
-    
-    var padding: ZatchComponent.Padding{
-        switch self{
-        case .height20:      return ZatchComponent.Padding(left: 8, right: 8, top: 0, bottom: 0)
-        case .height25:      return ZatchComponent.Padding(left: 12, right: 12, top: 2, bottom: 2)
-        case .height29:      return ZatchComponent.Padding(left: 10, right: 10, top: 4, bottom: 4)
-        case .height31:      return ZatchComponent.Padding(left: 12, right: 12, top: 6, bottom: 6)
-        }
-    }
-    
-    var font: TypoStyle{
-        switch self{
-        case .height20:                 return .medium12
-        case .height25, .height29:      return .medium15_21
-        case .height31:                 return .medium16
-        }
-    }
-    
-    var height: CGFloat{
-        switch self{
-        case .height20:      return 20
-        case .height25:      return 25
-        case .height29:      return 29
-        case .height31:      return 31
-        }
     }
 }
