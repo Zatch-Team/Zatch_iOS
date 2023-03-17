@@ -22,10 +22,10 @@ class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
         $0.spacing = 8
         $0.axis = .horizontal
     }
-    let unOpenRadioButton = ZatchComponent.PurlpleTag(configuration: .height20).then{
+    let unOpenRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
         $0.setTitle("미개봉")
     }
-    let openRadioButton = ZatchComponent.PurlpleTag(configuration: .height20).then{
+    let openRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
         $0.setTitle("개봉")
         $0.isDisabled = true
     }
@@ -90,8 +90,8 @@ class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
     
     private func changeTagState(recognizer: UITapGestureRecognizer){
         
-        guard let selectTag = recognizer.view as? ZatchComponent.PurlpleTag,
-              let willDisabledTag = tagStackView.viewWithTag(ViewTag.normal) as? ZatchComponent.PurlpleTag else { return }
+        guard let selectTag = recognizer.view as? ZatchComponent.FilledTag,
+              let willDisabledTag = tagStackView.viewWithTag(ViewTag.normal) as? ZatchComponent.FilledTag else { return }
         
         willDisabledTag.isDisabled = true
         selectTag.isDisabled = false
