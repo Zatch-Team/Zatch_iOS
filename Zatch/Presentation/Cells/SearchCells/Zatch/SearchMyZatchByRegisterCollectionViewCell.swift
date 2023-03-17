@@ -15,7 +15,7 @@ class SearchMyZatchByRegisterCollectionViewCell: BaseCollectionViewCell, SearchZ
         }
     }
     
-    let tagLabel = ZatchComponent.YellowTag(configuration: .height31)
+    let tagLabel = ZatchComponent.Tag.filled(color: .yellow, configuration: .height31)
     
     override func hierarchy() {
         super.hierarchy()
