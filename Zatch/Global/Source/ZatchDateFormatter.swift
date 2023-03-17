@@ -9,6 +9,6 @@ import Foundation
 
 struct ZatchDateFormatter{
     static let baseFormatter = DateFormatter().then{
-        $0.dateFormat = "yyyy-MM-dd"
+        $0.dateFormat = "yyyy.MM.dd"
     }
 }
