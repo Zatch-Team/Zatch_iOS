@@ -22,8 +22,8 @@ class ChattingRoomHeaderView: EtcButtonHeaderView{
         $0.textColor = .zatchPurple
     }
     
-    private let reservationTag = ZatchComponent.PurlpleTag(configuration: .height29).then{
-        $0.text = "예약완료"
+    private let reservationTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height29).then{
+        $0.setTitle("예약완료")
         $0.isSelected = true
     }
     
