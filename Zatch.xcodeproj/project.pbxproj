@@ -249,7 +249,6 @@
 		57E75EC728E5480A00AC24B2 /* ExchangeMyZatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */; };
 		57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */; };
 		57E75ECB28E5482900AC24B2 /* ZatchSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75ECA28E5482900AC24B2 /* ZatchSearchResultView.swift */; };
-		57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */; };
 		57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */; };
 		57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */; };
 		57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */; };
@@ -616,7 +615,6 @@
 		57E75EC628E5480900AC24B2 /* ExchangeMyZatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeMyZatchSearchView.swift; sourceTree = "<group>"; };
 		57E75EC828E5481900AC24B2 /* FindWantZatchSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWantZatchSearchView.swift; sourceTree = "<group>"; };
 		57E75ECA28E5482900AC24B2 /* ZatchSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchSearchResultView.swift; sourceTree = "<group>"; };
-		57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRegisterCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddBtnCollectionViewCell.swift; sourceTree = "<group>"; };
 		57EBCE3D28A88EF200212D20 /* BasicAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAlertViewController.swift; sourceTree = "<group>"; };
@@ -1793,7 +1791,6 @@
 		57EF61AF287D5BCE0035A2E6 /* ZatchComponent */ = {
 			isa = PBXGroup;
 			children = (
-				57EBCE3628A7CC5F00212D20 /* PaddingLabel.swift */,
 				57A28CDE28CF20AC00263079 /* LocationSearchTextField.swift */,
 				57468A72289D070400056691 /* UIButton */,
 				5767D788286C0ACB0075DB28 /* UICheckBox */,
@@ -2577,7 +2574,6 @@
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */,
-				57EBCE3728A7CC5F00212D20 /* PaddingLabel.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
 				EE410191298541010083B7E0 /* MyZatchView.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
