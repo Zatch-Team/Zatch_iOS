@@ -167,8 +167,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     private func getCellType(of collectionView: UICollectionView) -> ZatchCollectionViewType?{
-        if let tableViewCell = mainView.tableView.cellForRow(at: ZatchCollectionViewType.around.indexPath) as? MainCollectionViewTableViewCell{
-            return collectionView == tableViewCell.collectionView ? .around : .popular
+        if let aroundZatchCell = mainView.tableView.cellForRow(at: ZatchCollectionViewType.around.indexPath) as? MainCollectionViewTableViewCell{
+            return collectionView == aroundZatchCell.collectionView ? .around : .popular
         }
         return nil
     }
