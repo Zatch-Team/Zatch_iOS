@@ -105,56 +105,32 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tag = indexPath.row
-        switch tag {
+        switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
+            return tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
                 $0.setBannerImage(Image.MainBanner)
             }
-            return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
-                $0.collectionView.delegate = self
-                $0.collectionView.dataSource = self
-                $0.selectionStyle = .none
+            return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
+                $0.setTitleAndSubtitle(title: "내 주변 재치", subtitle: "내 주변에서는 이런 재치들이 거래되고 있어요!")
+                $0.collectionView.initializeDelegate(self)
             }
-            return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
+            return tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
                 $0.setBannerImage(Image.addZatchBanner)
             }
-            return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
-                $0.label.text = "지금 인기있는 재치"
-                $0.subLabel.text = "재치 있는 자취인이 되는 법"
-                $0.collectionView.delegate = self
-                $0.collectionView.dataSource = self
-                $0.selectionStyle = .none
+            return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
+                $0.setTitleAndSubtitle(title: "지금 인기있는 재치", subtitle: "재치 있는 자취인이 되는 법")
+                $0.collectionView.initializeDelegate(self)
             }
-            return cell
         default:
-            return UITableViewCell()
+            fatalError()
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let tag = indexPath.row
-//        switch tag {
-//        case 0:
-//            return 160
-//        case 1, 3:
-//            return 300
-//        case 2:
-//            return 150
-//        default:
-//            return 50
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tag = indexPath.row
-        switch tag {
+        switch indexPath.row {
         case 0:
             self.navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
             break
