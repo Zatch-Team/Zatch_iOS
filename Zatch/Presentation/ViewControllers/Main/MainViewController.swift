@@ -55,10 +55,8 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func bind(){
         
-        /*
         let input = MainViewModel.Input()
         let output = viewModel.transform(input)
-         */
         
         townSelectBottomSheet.rx.viewWillAppear
             .map{ _ in }
@@ -71,20 +69,19 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
             .bind(onNext: {
                 self.headerView.arrowButton.isSelected = false
             }).disposed(by: disposeBag)
+        
+        output.currentTown
+            .drive{ [weak self] in
+                self?.headerView.locationLabel.text = $0
+            }.disposed(by: disposeBag)
     }
     
     
     
     // MARK: - Actions
     @objc func townBottomSheetWillShow() {
-
-        _ = townSelectBottomSheet.show(in: self)
-        
-        let currentLocation = headerView.locationLabel.text
-        townSelectBottomSheet.myLocation = currentLocation
-        townSelectBottomSheet.completion = { town in
-            self.headerView.locationLabel.text = town
-        }
+        townSelectBottomSheet.setViewModel(viewModel)
+        townSelectBottomSheet.show(in: self)
     }
     
     @objc func goSearchButtonDidTap() {
