@@ -9,6 +9,11 @@ import Foundation
 
 extension UICollectionView{
     
+    final func initializeDelegate(_ viewController: UIViewController){
+        delegate = viewController as? UICollectionViewDelegate
+        dataSource = viewController as? UICollectionViewDataSource
+    }
+    
     final func register<T: BaseCollectionViewCell>(cellType: T.Type) {
         self.register(cellType.self, forCellWithReuseIdentifier: cellType.cellIdentifier)
     }
