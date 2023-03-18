@@ -11,7 +11,9 @@ import UIKit
 class ChangeLocationSheetViewController: BaseBottomSheetViewController<Int> {
     
     private var viewModel: MainViewModel!
-    private let locationTableView = UITableView()
+    private let locationTableView = UITableView().then{
+        $0.register(cellType: BaseBottomSheetTableViewCell.self)
+    }
     
     init(){
         super.init(type: .locationChange)
@@ -50,31 +52,12 @@ extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let itemIdx = indexPath.item
-        let cell = UITableViewCell()
-        cell.backgroundColor = [.red, .blue, .yellow][indexPath.row]
-//        cell.textLabel?.then{
-//            $0.text = viewModel.myTowns[itemIdx]
-//            $0.font = UIFont.pretendard(size: 16, family: .Medium)
-//            $0.textAlignment = .center
-//            // 현재 location인 Label만 노란색으로 글씨색 설정
-//            if let myLocation = self.myLocation {
-//                if myLocation == viewModel.myTowns[itemIdx] {$0.textColor = .zatchDeepYellow}
-//            } else {
-//                if itemIdx == 0 {$0.textColor = .zatchDeepYellow}
-//            }
-//        }
-        let currentIndex = try? viewModel.currentTownIndex.value()
-        if(indexPath.row == currentIndex ?? 0){
-            cell.backgroundColor = .purple
-            print(viewModel.myTowns[indexPath.row])
+        return tableView.dequeueReusableCell(for: indexPath, cellType: BaseBottomSheetTableViewCell.self).then{ cell in
+            cell.setTitle(viewModel.getTownName(by: indexPath.row))
+            if(indexPath.row == viewModel.getCurrentTownIndex()){
+                cell.setSelectState()
+            }
         }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
