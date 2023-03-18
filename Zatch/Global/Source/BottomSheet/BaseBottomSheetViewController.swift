@@ -53,13 +53,12 @@ class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransi
     func style(){
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
-        
-        self.titleLabel.text = type.title
     }
     
     func initialize() {
         modalPresentationStyle = .custom
         transitioningDelegate = self
+        titleLabel.text = type.title
     }
     
     func layout() {
