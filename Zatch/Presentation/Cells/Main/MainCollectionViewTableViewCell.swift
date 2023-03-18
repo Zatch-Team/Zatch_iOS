@@ -9,13 +9,11 @@ import UIKit
 
 class MainCollectionViewTableViewCell: BaseTableViewCell {
     
-    let label = UILabel().then{
-        $0.text = "내 주변 재치"
+    private let title = UILabel().then{
         $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
         $0.textColor = .black85
     }
-    let subLabel = UILabel().then{
-        $0.text = "내 주변에서는 이런 재치들이 거래되고 있어요!"
+    private let subtitle = UILabel().then{
         $0.setTypoStyleWithSingleLine(typoStyle: .medium15_19)
         $0.textColor = .black30
     }
@@ -33,13 +31,13 @@ class MainCollectionViewTableViewCell: BaseTableViewCell {
         $0.collectionViewLayout = flowLayout
         $0.showsHorizontalScrollIndicator = false
         
-        $0.register(MainZatchCollectionViewCell.self, forCellWithReuseIdentifier: MainZatchCollectionViewCell.cellIdentifier)
+        $0.register(cellType: MainZatchCollectionViewCell.self)
     }
 
     override func hierarchy() {
         super.hierarchy()
-        baseView.addSubview(label)
-        baseView.addSubview(subLabel)
+        baseView.addSubview(title)
+        baseView.addSubview(subtitle)
         baseView.addSubview(collectionView)
     }
     
@@ -50,18 +48,22 @@ class MainCollectionViewTableViewCell: BaseTableViewCell {
         baseView.snp.makeConstraints{
             $0.height.equalTo(362)
         }
-        
-        label.snp.makeConstraints {
+        title.snp.makeConstraints {
             $0.top.leading.equalToSuperview().offset(20)
         }
-        subLabel.snp.makeConstraints {
-            $0.leading.equalTo(label.snp.leading)
-            $0.top.equalTo(label.snp.bottom).offset(4)
+        subtitle.snp.makeConstraints {
+            $0.leading.equalTo(title.snp.leading)
+            $0.top.equalTo(title.snp.bottom).offset(4)
         }
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(subLabel.snp.bottom).offset(16)
+            $0.top.equalTo(subtitle.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().inset(28)
         }
+    }
+    
+    func setTitleAndSubtitle(title: String, subtitle: String){
+        self.title.text = title
+        self.subtitle.text = subtitle
     }
 }

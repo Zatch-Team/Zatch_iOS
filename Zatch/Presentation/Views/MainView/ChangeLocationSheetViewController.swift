@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
+class ChangeLocationSheetViewController: BaseBottomSheetViewController<Int> {
     
-    var locationData = ["양재동", "서교동", "돈암동"]
-    var myLocation: String!
-    
-    let locationTableView = UITableView()
+    private var viewModel: MainViewModel!
+    private let locationTableView = UITableView().then{
+        $0.register(cellType: BaseBottomSheetTableViewCell.self)
+    }
     
     init(){
         super.init(type: .locationChange)
@@ -24,54 +24,44 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController<String> {
     }
     
     override func initialize() {
-        
         super.initialize()
-        
-        locationTableView.delegate = self
-        locationTableView.dataSource = self
-        locationTableView.separatorStyle = .none
+        locationTableView.initializeDelegate(self)
     }
     
     override func layout() {
-        
         super.layout()
-        
-        self.view.addSubview(locationTableView)
+        view.addSubview(locationTableView)
         locationTableView.snp.makeConstraints{ make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(30)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
     
-}
-// MARK: - 동네 변경 TableView delegate
-extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = locationData.count ?? 0
-        return count
+    func setViewModel(_ viewModel: MainViewModel){
+        self.viewModel = viewModel
+        locationTableView.reloadData()
     }
+    
+}
+
+//MARK: - TableViewDelegate
+extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.myTownCount()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let itemIdx = indexPath.item
-        let cell = UITableViewCell()
-        cell.textLabel?.then{
-            $0.text = locationData[itemIdx]
-            $0.font = UIFont.pretendard(size: 16, family: .Medium)
-            $0.textAlignment = .center
-            // 현재 location인 Label만 노란색으로 글씨색 설정
-            if let myLocation = self.myLocation {
-                if myLocation == locationData[itemIdx] {$0.textColor = .zatchDeepYellow}
-            } else {
-                if itemIdx == 0 {$0.textColor = .zatchDeepYellow}
+        return tableView.dequeueReusableCell(for: indexPath, cellType: BaseBottomSheetTableViewCell.self).then{ cell in
+            cell.setTitle(viewModel.getTownName(by: indexPath.row))
+            if(indexPath.row == viewModel.getCurrentTownIndex()){
+                cell.setSelectState()
             }
         }
-        return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let idx = indexPath.item
-        completion(locationData[idx])
+        viewModel.changeCurrentTown(index: indexPath.row)
         self.dismiss(animated: true)
     }
 }

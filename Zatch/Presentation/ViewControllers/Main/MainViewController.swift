@@ -9,6 +9,12 @@ import Foundation
 
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
+    @frozen
+    enum ZatchCollectionViewType{
+        case around
+        case popular
+    }
+    
     private let mainView = MainView()
     private let viewModel = MainViewModel()
     private let townSelectBottomSheet = ChangeLocationSheetViewController()
@@ -21,9 +27,15 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadZatchCollectionView(type: .around)
+        reloadZatchCollectionView(type: .popular)
+    }
+    
     override func layout() {
         super.layout()
-        self.view.addSubview(mainView)
+        view.addSubview(mainView)
         mainView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
             $0.leading.trailing.bottom.equalToSuperview()
@@ -32,12 +44,9 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func initialize() {
         
-        mainView.mainTableView.delegate = self
-        mainView.mainTableView.dataSource = self
-        mainView.mainTableView.separatorStyle = .none
+        mainView.tableView.initializeDelegate(self)
         
-        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                         action: #selector(townBottomSheetWillShow)))
+        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townBottomSheetWillShow)))
         
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
@@ -45,10 +54,8 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func bind(){
         
-        /*
         let input = MainViewModel.Input()
         let output = viewModel.transform(input)
-         */
         
         townSelectBottomSheet.rx.viewWillAppear
             .map{ _ in }
@@ -61,30 +68,27 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
             .bind(onNext: {
                 self.headerView.arrowButton.isSelected = false
             }).disposed(by: disposeBag)
+        
+        output.currentTown
+            .drive{ [weak self] in
+                self?.headerView.locationLabel.text = $0
+            }.disposed(by: disposeBag)
     }
     
     
     
     // MARK: - Actions
     @objc func townBottomSheetWillShow() {
-
-        _ = townSelectBottomSheet.show(in: self)
-        
-        let currentLocation = headerView.locationLabel.text
-        townSelectBottomSheet.myLocation = currentLocation
-        townSelectBottomSheet.completion = { town in
-            self.headerView.locationLabel.text = town
-        }
+        townSelectBottomSheet.setViewModel(viewModel)
+        townSelectBottomSheet.show(in: self)
     }
     
     @objc func goSearchButtonDidTap() {
-        self.navigationController?.pushViewController(ExchangeMyZatchSearchViewController(),
-                                                      animated: true)
+        self.navigationController?.pushViewController(ExchangeMyZatchSearchViewController(), animated: true)
     }
     
     @objc func goNotiButtonDidTap() {
-//        self.navigationController?.pushViewController(NotificationViewController(),
-//                                                      animated: true)
+//        self.navigationController?.pushViewController(NotificationViewController(), animated: true)
     }
 }
 
@@ -96,75 +100,63 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tag = indexPath.row
-        switch tag {
+        switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
+            return tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
                 $0.setBannerImage(Image.MainBanner)
             }
-            return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
-                $0.collectionView.delegate = self
-                $0.collectionView.dataSource = self
-                $0.selectionStyle = .none
+            return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
+                $0.setTitleAndSubtitle(title: "내 주변 재치", subtitle: "내 주변에서는 이런 재치들이 거래되고 있어요!")
+                $0.collectionView.initializeDelegate(self)
             }
-            return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
+            return tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
                 $0.setBannerImage(Image.addZatchBanner)
             }
-            return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
-                $0.label.text = "지금 인기있는 재치"
-                $0.subLabel.text = "재치 있는 자취인이 되는 법"
-                $0.collectionView.delegate = self
-                $0.collectionView.dataSource = self
-                $0.selectionStyle = .none
+            return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
+                $0.setTitleAndSubtitle(title: "지금 인기있는 재치", subtitle: "재치 있는 자취인이 되는 법")
+                $0.collectionView.initializeDelegate(self)
             }
-            return cell
         default:
-            return UITableViewCell()
+            fatalError()
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let tag = indexPath.row
-//        switch tag {
-//        case 0:
-//            return 160
-//        case 1, 3:
-//            return 300
-//        case 2:
-//            return 150
-//        default:
-//            return 50
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tag = indexPath.row
-        switch tag {
+        switch indexPath.row {
         case 0:
-            let vc = ZatchSearchResultViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
             break
         case 2:
-            let vc = ZatchRegisterFirstViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(ZatchRegisterFirstViewController(), animated: true)
             break
         default:
             return
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MainViewController.ZatchCollectionViewType{
+    var indexPath: IndexPath{
+        switch self{
+        case .around:   return [0,1]
+        case .popular:  return [0,3]
+        }
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        guard let type = getCellType(of: collectionView) else { return 0 }
+        switch type{
+        case .around:       return viewModel.aroundZatchCount()
+        case .popular:      return viewModel.popularZatchCount()
+        }
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self)
         return cell
@@ -172,5 +164,18 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ZatchDetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func getCellType(of collectionView: UICollectionView) -> ZatchCollectionViewType?{
+        if let aroundZatchCell = mainView.tableView.cellForRow(at: ZatchCollectionViewType.around.indexPath) as? MainCollectionViewTableViewCell{
+            return collectionView == aroundZatchCell.collectionView ? .around : .popular
+        }
+        return nil
+    }
+    
+    private func reloadZatchCollectionView(type: ZatchCollectionViewType){
+        if let cell = mainView.tableView.cellForRow(at: type.indexPath) as? MainCollectionViewTableViewCell{
+            cell.collectionView.reloadData()
+        }
     }
 }
