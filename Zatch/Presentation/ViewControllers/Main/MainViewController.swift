@@ -44,10 +44,9 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func initialize() {
         
-        mainView.mainTableView.initializeDelegate(self)
+        mainView.tableView.initializeDelegate(self)
         
-        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                         action: #selector(townBottomSheetWillShow)))
+        headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townBottomSheetWillShow)))
         
         headerView.secondEtcButton.addTarget(self, action: #selector(goSearchButtonDidTap), for: .touchUpInside)
         headerView.etcButton.addTarget(self, action: #selector(goNotiButtonDidTap), for: .touchUpInside)
@@ -169,14 +168,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     private func getCellType(of collectionView: UICollectionView) -> ZatchCollectionViewType?{
-        if let tableViewCell = mainView.mainTableView.cellForRow(at: ZatchCollectionViewType.around.indexPath) as? MainCollectionViewTableViewCell{
+        if let tableViewCell = mainView.tableView.cellForRow(at: ZatchCollectionViewType.around.indexPath) as? MainCollectionViewTableViewCell{
             return collectionView == tableViewCell.collectionView ? .around : .popular
         }
         return nil
     }
     
     private func reloadZatchCollectionView(type: ZatchCollectionViewType){
-        if let cell = mainView.mainTableView.cellForRow(at: type.indexPath) as? MainCollectionViewTableViewCell{
+        if let cell = mainView.tableView.cellForRow(at: type.indexPath) as? MainCollectionViewTableViewCell{
             cell.collectionView.reloadData()
         }
     }

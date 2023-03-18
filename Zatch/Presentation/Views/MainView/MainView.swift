@@ -60,21 +60,19 @@ class MainHeaderView: BaseView, HeaderFirstEtcButton, HeaderSecondEtcButton{
 
 class MainView: BaseView {
 
-    let mainTableView = UITableView().then {
+    let tableView = UITableView().then {
         $0.register(cellType: BannerTableViewCell.self)
         $0.register(cellType: MainCollectionViewTableViewCell.self)
         
-//        $0.rowHeight = UITableView.automaticDimension
-//        $0.estimatedRowHeight = UITableView.automaticDimension
         $0.showsVerticalScrollIndicator = false
     }
     
     override func hierarchy() {
-        self.addSubview(mainTableView)
+        self.addSubview(tableView)
     }
 
     override func layout() {
-        mainTableView.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
