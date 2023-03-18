@@ -298,6 +298,12 @@
 		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
 		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
 		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
+		EE7B76BA29C5E36600942798 /* HeartZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B529C5E36600942798 /* HeartZatchUseCase.swift */; };
+		EE7B76BB29C5E36600942798 /* AroundZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B629C5E36600942798 /* AroundZatchUseCase.swift */; };
+		EE7B76BC29C5E36600942798 /* PopularZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B729C5E36600942798 /* PopularZatchUseCase.swift */; };
+		EE7B76BD29C5E36600942798 /* GetMyTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B929C5E36600942798 /* GetMyTownUseCase.swift */; };
+		EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */; };
+		EE7B76C229C5E36D00942798 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */; };
 		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
 		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
 		EE813FD829C3440E0091F16E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FD729C3440E0091F16E /* Tag.swift */; };
@@ -305,12 +311,6 @@
 		EE813FE029C445B90091F16E /* StrokeTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FDF29C445B90091F16E /* StrokeTag.swift */; };
 		EE813FE229C44E950091F16E /* TagConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FE129C44E950091F16E /* TagConfiguration.swift */; };
 		EE813FE429C481690091F16E /* Tagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FE329C481690091F16E /* Tagable.swift */; };
-		EE813FED29C582DA0091F16E /* AroundZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FEC29C582DA0091F16E /* AroundZatchUseCase.swift */; };
-		EE813FEF29C582E80091F16E /* PopularZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FEE29C582E80091F16E /* PopularZatchUseCase.swift */; };
-		EE813FF229C5831B0091F16E /* GetMyTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FF129C5831B0091F16E /* GetMyTownUseCase.swift */; };
-		EE813FF429C583450091F16E /* HeartZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FF329C583450091F16E /* HeartZatchUseCase.swift */; };
-		EE813FF729C584800091F16E /* ZatchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FF629C584800091F16E /* ZatchRepositoryInterface.swift */; };
-		EE813FF929C584B60091F16E /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FF829C584B60091F16E /* UserRepositoryInterface.swift */; };
 		EE813FFB29C585370091F16E /* ZatchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FFA29C585370091F16E /* ZatchRepository.swift */; };
 		EE813FFD29C585400091F16E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FFC29C585400091F16E /* UserRepository.swift */; };
 		EE9B053529953A1200068503 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B053429953A1200068503 /* FilterView.swift */; };
@@ -675,6 +675,12 @@
 		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
+		EE7B76B529C5E36600942798 /* HeartZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartZatchUseCase.swift; sourceTree = "<group>"; };
+		EE7B76B629C5E36600942798 /* AroundZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundZatchUseCase.swift; sourceTree = "<group>"; };
+		EE7B76B729C5E36600942798 /* PopularZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularZatchUseCase.swift; sourceTree = "<group>"; };
+		EE7B76B929C5E36600942798 /* GetMyTownUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyTownUseCase.swift; sourceTree = "<group>"; };
+		EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZatchRepositoryInterface.swift; sourceTree = "<group>"; };
+		EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
 		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
 		EE813FD729C3440E0091F16E /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -682,12 +688,6 @@
 		EE813FDF29C445B90091F16E /* StrokeTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeTag.swift; sourceTree = "<group>"; };
 		EE813FE129C44E950091F16E /* TagConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConfiguration.swift; sourceTree = "<group>"; };
 		EE813FE329C481690091F16E /* Tagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagable.swift; sourceTree = "<group>"; };
-		EE813FEC29C582DA0091F16E /* AroundZatchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AroundZatchUseCase.swift; path = UseCase/Zatch/AroundZatchUseCase.swift; sourceTree = SOURCE_ROOT; };
-		EE813FEE29C582E80091F16E /* PopularZatchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopularZatchUseCase.swift; path = UseCase/Zatch/PopularZatchUseCase.swift; sourceTree = SOURCE_ROOT; };
-		EE813FF129C5831B0091F16E /* GetMyTownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMyTownUseCase.swift; path = UseCase/User/GetMyTownUseCase.swift; sourceTree = SOURCE_ROOT; };
-		EE813FF329C583450091F16E /* HeartZatchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartZatchUseCase.swift; path = UseCase/Zatch/HeartZatchUseCase.swift; sourceTree = SOURCE_ROOT; };
-		EE813FF629C584800091F16E /* ZatchRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZatchRepositoryInterface.swift; path = RepositoryInterface/ZatchRepositoryInterface.swift; sourceTree = SOURCE_ROOT; };
-		EE813FF829C584B60091F16E /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRepositoryInterface.swift; path = RepositoryInterface/UserRepositoryInterface.swift; sourceTree = SOURCE_ROOT; };
 		EE813FFA29C585370091F16E /* ZatchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRepository.swift; sourceTree = "<group>"; };
 		EE813FFC29C585400091F16E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		EE9B053429953A1200068503 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
@@ -1473,7 +1473,7 @@
 				23C9030F28C5CE3600FB6D3D /* AppDelegate */,
 				23C9030828C5CDE700FB6D3D /* Global */,
 				23C9030928C5CDEF00FB6D3D /* Presentation */,
-				57FEFA83297A5B6B008A78B0 /* Domain */,
+				EE7B76B029C5E2FC00942798 /* Domain */,
 				57FEFA84297A5B6E008A78B0 /* Data */,
 				57B32C2A291E93220018C0CB /* Resource */,
 				57B32C29291E92EF0018C0CB /* Support */,
@@ -1838,16 +1838,6 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		57FEFA83297A5B6B008A78B0 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				57FEFA87297A5C38008A78B0 /* Entity */,
-				57FEFA86297A5C32008A78B0 /* UseCase */,
-				57FEFA85297A5C30008A78B0 /* RepositoryInterface */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		57FEFA84297A5B6E008A78B0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -1855,31 +1845,6 @@
 				23C9030E28C5CE2E00FB6D3D /* Repository */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		57FEFA85297A5C30008A78B0 /* RepositoryInterface */ = {
-			isa = PBXGroup;
-			children = (
-				EE813FF629C584800091F16E /* ZatchRepositoryInterface.swift */,
-				EE813FF829C584B60091F16E /* UserRepositoryInterface.swift */,
-			);
-			path = RepositoryInterface;
-			sourceTree = "<group>";
-		};
-		57FEFA86297A5C32008A78B0 /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-				EE813FF029C582FC0091F16E /* User */,
-				EE813FEB29C582970091F16E /* Zatch */,
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
-		57FEFA87297A5C38008A78B0 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		57FEFA88297A5C50008A78B0 /* Utils */ = {
@@ -2040,6 +2005,60 @@
 			path = DetailInput;
 			sourceTree = "<group>";
 		};
+		EE7B76B029C5E2FC00942798 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76C329C5E37900942798 /* Entitiy */,
+				EE7B76BE29C5E36D00942798 /* RepositoryInterface */,
+				EE7B76B329C5E36600942798 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EE7B76B329C5E36600942798 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76B429C5E36600942798 /* Zatch */,
+				EE7B76B829C5E36600942798 /* User */,
+			);
+			name = UseCase;
+			path = ../../../../UseCase;
+			sourceTree = "<group>";
+		};
+		EE7B76B429C5E36600942798 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76B529C5E36600942798 /* HeartZatchUseCase.swift */,
+				EE7B76B629C5E36600942798 /* AroundZatchUseCase.swift */,
+				EE7B76B729C5E36600942798 /* PopularZatchUseCase.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		EE7B76B829C5E36600942798 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76B929C5E36600942798 /* GetMyTownUseCase.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		EE7B76BE29C5E36D00942798 /* RepositoryInterface */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */,
+				EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */,
+			);
+			path = RepositoryInterface;
+			sourceTree = "<group>";
+		};
+		EE7B76C329C5E37900942798 /* Entitiy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entitiy;
+			sourceTree = "<group>";
+		};
 		EE813FE529C481800091F16E /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -2048,24 +2067,6 @@
 				EE813FE329C481690091F16E /* Tagable.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		EE813FEB29C582970091F16E /* Zatch */ = {
-			isa = PBXGroup;
-			children = (
-				EE813FEC29C582DA0091F16E /* AroundZatchUseCase.swift */,
-				EE813FEE29C582E80091F16E /* PopularZatchUseCase.swift */,
-				EE813FF329C583450091F16E /* HeartZatchUseCase.swift */,
-			);
-			path = Zatch;
-			sourceTree = "<group>";
-		};
-		EE813FF029C582FC0091F16E /* User */ = {
-			isa = PBXGroup;
-			children = (
-				EE813FF129C5831B0091F16E /* GetMyTownUseCase.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		EEB13B70297F99F0001A8DD9 /* TabBar */ = {
@@ -2498,6 +2499,7 @@
 				EEE6D1622997AFA30004FC7B /* PaddingLabel.swift in Sources */,
 				EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
+				EE7B76BC29C5E36600942798 /* PopularZatchUseCase.swift in Sources */,
 				EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */,
@@ -2518,6 +2520,7 @@
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
+				EE7B76BD29C5E36600942798 /* GetMyTownUseCase.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
@@ -2538,6 +2541,7 @@
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
 				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TopTitleView.swift in Sources */,
+				EE7B76C229C5E36D00942798 /* UserRepositoryInterface.swift in Sources */,
 				57067864281C143A00F48342 /* Color.swift in Sources */,
 				EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
@@ -2581,7 +2585,6 @@
 				57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */,
 				5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
-				EE813FF929C584B60091F16E /* UserRepositoryInterface.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
 				EE813FFB29C585370091F16E /* ZatchRepository.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
@@ -2606,7 +2609,6 @@
 				EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
-				EE813FF229C5831B0091F16E /* GetMyTownUseCase.swift in Sources */,
 				57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */,
 				57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */,
@@ -2654,13 +2656,11 @@
 				234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */,
 				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
-				EE813FEF29C582E80091F16E /* PopularZatchUseCase.swift in Sources */,
 				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
 				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
-				EE813FED29C582DA0091F16E /* AroundZatchUseCase.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				EE813FE429C481690091F16E /* Tagable.swift in Sources */,
@@ -2715,7 +2715,7 @@
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
-				EE813FF429C583450091F16E /* HeartZatchUseCase.swift in Sources */,
+				EE7B76BA29C5E36600942798 /* HeartZatchUseCase.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
 				EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */,
@@ -2726,6 +2726,7 @@
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
+				EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */,
 				57468A8E289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift in Sources */,
 				EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */,
 				23A767F629085258003E46AB /* NoticeTableViewCell.swift in Sources */,
@@ -2735,6 +2736,7 @@
 				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
 				576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
+				EE7B76BB29C5E36600942798 /* AroundZatchUseCase.swift in Sources */,
 				5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */,
 				5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
@@ -2764,7 +2766,6 @@
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
 				EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
-				EE813FF729C584800091F16E /* ZatchRepositoryInterface.swift in Sources */,
 				EE813FDE29C445B30091F16E /* FilledTag.swift in Sources */,
 				23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */,
 			);

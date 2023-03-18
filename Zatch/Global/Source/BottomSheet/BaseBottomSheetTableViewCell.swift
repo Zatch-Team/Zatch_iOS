@@ -29,11 +29,19 @@ class BaseBottomSheetTableViewCell: BaseTableViewCell{
         }
     }
     
+    override func prepareForReuse() {
+        setUnselectState()
+    }
+    
     func setTitle(_ title: String){
         titleLabel.text = title
     }
     
     func setSelectState(){
         titleLabel.textColor = .zatchYellow
+    }
+    
+    func setUnselectState(){
+        titleLabel.textColor = .black85
     }
 }
