@@ -23,7 +23,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func layout() {
         super.layout()
-        self.view.addSubview(mainView)
+        view.addSubview(mainView)
         mainView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
             $0.leading.trailing.bottom.equalToSuperview()
@@ -32,9 +32,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     override func initialize() {
         
-        mainView.mainTableView.delegate = self
-        mainView.mainTableView.dataSource = self
-        mainView.mainTableView.separatorStyle = .none
+        mainView.mainTableView.initializeDelegate(self)
         
         headerView.stackView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                          action: #selector(townBottomSheetWillShow)))
@@ -78,8 +76,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     @objc func goSearchButtonDidTap() {
-        self.navigationController?.pushViewController(ExchangeMyZatchSearchViewController(),
-                                                      animated: true)
+        self.navigationController?.pushViewController(ExchangeMyZatchSearchViewController(), animated: true)
     }
     
     @objc func goNotiButtonDidTap() {
@@ -147,12 +144,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let tag = indexPath.row
         switch tag {
         case 0:
-            let vc = ZatchSearchResultViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
             break
         case 2:
-            let vc = ZatchRegisterFirstViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(ZatchRegisterFirstViewController(), animated: true)
             break
         default:
             return
