@@ -9,6 +9,12 @@ import Foundation
 
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
+    @frozen
+    enum ZatchCollectionViewType{
+        case around
+        case popular
+    }
+    
     private let mainView = MainView()
     private let viewModel = MainViewModel()
     private let townSelectBottomSheet = ChangeLocationSheetViewController()
@@ -152,14 +158,28 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MainViewController.ZatchCollectionViewType{
+    var indexPath: IndexPath!{
+        switch self{
+        case .around:   return [0,1]
+        case .popular:  return [0,3]
+        }
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        guard let type = getCellType(of: collectionView) else { return 0 }
+        switch type{
+        case .around:       return viewModel.aroundZatch.count
+        case .popular:      return viewModel.popularZatch.count
+        }
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self)
         return cell
@@ -167,5 +187,18 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ZatchDetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func getCellType(of collectionView: UICollectionView) -> ZatchCollectionViewType?{
+        if let tableViewCell = mainView.mainTableView.cellForRow(at: ZatchCollectionViewType.around.indexPath) as? MainCollectionViewTableViewCell{
+            return collectionView == tableViewCell.collectionView ? .around : .popular
+        }
+        return nil
+    }
+    
+    private func reloadZatchCollectionView(type: ZatchCollectionViewType){
+        if let cell = mainView.mainTableView.cellForRow(at: type.indexPath) as? MainCollectionViewTableViewCell{
+            cell.collectionView.reloadData()
+        }
     }
 }
