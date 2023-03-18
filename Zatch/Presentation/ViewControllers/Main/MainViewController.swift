@@ -139,7 +139,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MainViewController.ZatchCollectionViewType{
-    var indexPath: IndexPath!{
+    var indexPath: IndexPath{
         switch self{
         case .around:   return [0,1]
         case .popular:  return [0,3]

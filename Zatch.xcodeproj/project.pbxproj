@@ -297,6 +297,7 @@
 		EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */; };
 		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
 		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
+		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
 		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
 		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
 		EE813FD829C3440E0091F16E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FD729C3440E0091F16E /* Tag.swift */; };
@@ -673,6 +674,7 @@
 		EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductQuantityTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
 		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
 		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
 		EE813FD729C3440E0091F16E /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -1732,6 +1734,7 @@
 				57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */,
 				57468A8A289FEB2000056691 /* BaseBottomSheetViewController.swift */,
 				5722462428C772E9009B7C78 /* SheetNavigationViewController.swift */,
+				EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -2673,6 +2676,7 @@
 				EE541C1729B44DCB00DD0F20 /* BaseService.swift in Sources */,
 				57D6D79228CDB96900F805B7 /* UINavigationController.swift in Sources */,
 				5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */,
+				EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */,
 				576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */,
 				57397FCD296FBDBE0088B5F4 /* GatchSearchFilterCollectionViewCell.swift in Sources */,
 				EEE326AA2998B6EA0017DF46 /* BorderLine.swift in Sources */,
