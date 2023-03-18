@@ -70,6 +70,7 @@ class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransi
         }
     }
     
+    @discardableResult
     func show(in viewController: UIViewController) -> Self{
         self.loadViewIfNeeded()
         viewController.present(self, animated: true)
