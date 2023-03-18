@@ -53,14 +53,14 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         
         townSelectBottomSheet.rx.viewWillAppear
             .map{ _ in }
-            .bind(onNext: {
-                self.headerView.arrowButton.isSelected = true
+            .bind(onNext: { [weak self] in
+                self?.headerView.arrowButton.isSelected = true
             }).disposed(by: disposeBag)
         
         townSelectBottomSheet.rx.viewWillDisappear
             .map{ _ in }
-            .bind(onNext: {
-                self.headerView.arrowButton.isSelected = false
+            .bind(onNext: { [weak self] in
+                self?.headerView.arrowButton.isSelected = false
             }).disposed(by: disposeBag)
         
         output.currentTown
