@@ -32,7 +32,7 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController<Int> {
         super.layout()
         view.addSubview(locationTableView)
         locationTableView.snp.makeConstraints{ make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(30)
+            make.top.equalTo(titleLabel.snp.bottom).offset(30)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }

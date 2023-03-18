@@ -127,10 +127,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
+            navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
             break
         case 2:
-            self.navigationController?.pushViewController(ZatchRegisterFirstViewController(), animated: true)
+            navigationController?.pushViewController(ZatchRegisterFirstViewController(), animated: true)
             break
         default:
             return
@@ -162,8 +162,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ZatchDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(ZatchDetailViewController(), animated: true)
     }
     
     private func getCellType(of collectionView: UICollectionView) -> ZatchCollectionViewType?{
