@@ -88,8 +88,7 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
     }
     
     @objc func goNotiButtonDidTap() {
-//        self.navigationController?.pushViewController(NotificationViewController(),
-//                                                      animated: true)
+//        self.navigationController?.pushViewController(NotificationViewController(), animated: true)
     }
 }
 
@@ -153,8 +152,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let type = getCellType(of: collectionView) else { return 0 }
         switch type{
-        case .around:       return viewModel.aroundZatch.count
-        case .popular:      return viewModel.popularZatch.count
+        case .around:       return viewModel.aroundZatchCount()
+        case .popular:      return viewModel.popularZatchCount()
         }
     }
     

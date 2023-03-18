@@ -11,10 +11,10 @@ import RxCocoa
 
 class MainViewModel: BaseViewModel{
     
-    var currentTownIndex = BehaviorSubject(value: 0)
-    var myTowns: [String] = ["상현동", "성복동", "풍덕천동"]
-    var aroundZatch = [Int](repeating: 0, count: 10)
-    var popularZatch = [Int](repeating: 0, count: 3)
+    private var currentTownIndex = BehaviorSubject(value: 0)
+    private var myTowns: [String] = ["상현동", "성복동", "풍덕천동"]
+    private var aroundZatch = [Int](repeating: 0, count: 10)
+    private var popularZatch = [Int](repeating: 0, count: 3)
     
     struct Input{
     }
@@ -47,10 +47,6 @@ class MainViewModel: BaseViewModel{
         return Output(currentTown: currentTown)
     }
     
-    func changeCurrentTown(index: Int){
-        currentTownIndex.onNext(index)
-    }
-    
 //    func viewWillAppear(){
 //
 //    }
@@ -58,4 +54,32 @@ class MainViewModel: BaseViewModel{
 //    func viewWillDisappear(){
 //
 //    }
+}
+
+//MARK: - Method
+extension MainViewModel{
+    
+    func getTownName(by index: Int) -> String{
+        myTowns[index]
+    }
+    
+    func getCurrentTownIndex() -> Int{
+        (try? currentTownIndex.value()) ?? -1
+    }
+    
+    func changeCurrentTown(index: Int){
+        currentTownIndex.onNext(index)
+    }
+    
+    func myTownCount() -> Int{
+        myTowns.count
+    }
+    
+    func aroundZatchCount() -> Int{
+        aroundZatch.count
+    }
+    
+    func popularZatchCount() -> Int{
+        popularZatch.count
+    }
 }

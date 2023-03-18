@@ -41,11 +41,12 @@ class ChangeLocationSheetViewController: BaseBottomSheetViewController<Int> {
     }
     
 }
-// MARK: - 동네 변경 TableView delegate
+
+//MARK: - TableViewDelegate
 extension ChangeLocationSheetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.myTowns.count
+        return viewModel.myTownCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
