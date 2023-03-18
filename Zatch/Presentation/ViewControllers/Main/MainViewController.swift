@@ -27,6 +27,12 @@ class MainViewController: BaseTabBarViewController<MainHeaderView>{
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadZatchCollectionView(type: .around)
+        reloadZatchCollectionView(type: .popular)
+    }
+    
     override func layout() {
         super.layout()
         view.addSubview(mainView)
