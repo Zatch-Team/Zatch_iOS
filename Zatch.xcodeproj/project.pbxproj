@@ -298,12 +298,12 @@
 		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
 		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
 		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
-		EE7B76BA29C5E36600942798 /* HeartZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B529C5E36600942798 /* HeartZatchUseCase.swift */; };
-		EE7B76BB29C5E36600942798 /* AroundZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B629C5E36600942798 /* AroundZatchUseCase.swift */; };
-		EE7B76BC29C5E36600942798 /* PopularZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B729C5E36600942798 /* PopularZatchUseCase.swift */; };
-		EE7B76BD29C5E36600942798 /* GetMyTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76B929C5E36600942798 /* GetMyTownUseCase.swift */; };
 		EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */; };
 		EE7B76C229C5E36D00942798 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */; };
+		EE7B76D629C5F61C00942798 /* HeartZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D129C5F61C00942798 /* HeartZatchUseCase.swift */; };
+		EE7B76D729C5F61C00942798 /* AroundZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D229C5F61C00942798 /* AroundZatchUseCase.swift */; };
+		EE7B76D829C5F61C00942798 /* PopularZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D329C5F61C00942798 /* PopularZatchUseCase.swift */; };
+		EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */; };
 		EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */; };
 		EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */; };
 		EE813FD829C3440E0091F16E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE813FD729C3440E0091F16E /* Tag.swift */; };
@@ -675,12 +675,12 @@
 		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
-		EE7B76B529C5E36600942798 /* HeartZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartZatchUseCase.swift; sourceTree = "<group>"; };
-		EE7B76B629C5E36600942798 /* AroundZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundZatchUseCase.swift; sourceTree = "<group>"; };
-		EE7B76B729C5E36600942798 /* PopularZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularZatchUseCase.swift; sourceTree = "<group>"; };
-		EE7B76B929C5E36600942798 /* GetMyTownUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyTownUseCase.swift; sourceTree = "<group>"; };
 		EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZatchRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
+		EE7B76D129C5F61C00942798 /* HeartZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartZatchUseCase.swift; sourceTree = "<group>"; };
+		EE7B76D229C5F61C00942798 /* AroundZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundZatchUseCase.swift; sourceTree = "<group>"; };
+		EE7B76D329C5F61C00942798 /* PopularZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularZatchUseCase.swift; sourceTree = "<group>"; };
+		EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyTownUseCase.swift; sourceTree = "<group>"; };
 		EE7C9FF5298A72CE00D2F238 /* ChattingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomView.swift; sourceTree = "<group>"; };
 		EE7C9FF7298A72F600D2F238 /* ChattingRoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomHeaderView.swift; sourceTree = "<group>"; };
 		EE813FD729C3440E0091F16E /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -2008,39 +2008,11 @@
 		EE7B76B029C5E2FC00942798 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EE7B76CF29C5F61C00942798 /* UseCase */,
 				EE7B76C329C5E37900942798 /* Entitiy */,
 				EE7B76BE29C5E36D00942798 /* RepositoryInterface */,
-				EE7B76B329C5E36600942798 /* UseCase */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		EE7B76B329C5E36600942798 /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-				EE7B76B429C5E36600942798 /* Zatch */,
-				EE7B76B829C5E36600942798 /* User */,
-			);
-			name = UseCase;
-			path = ../../../../UseCase;
-			sourceTree = "<group>";
-		};
-		EE7B76B429C5E36600942798 /* Zatch */ = {
-			isa = PBXGroup;
-			children = (
-				EE7B76B529C5E36600942798 /* HeartZatchUseCase.swift */,
-				EE7B76B629C5E36600942798 /* AroundZatchUseCase.swift */,
-				EE7B76B729C5E36600942798 /* PopularZatchUseCase.swift */,
-			);
-			path = Zatch;
-			sourceTree = "<group>";
-		};
-		EE7B76B829C5E36600942798 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				EE7B76B929C5E36600942798 /* GetMyTownUseCase.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		EE7B76BE29C5E36D00942798 /* RepositoryInterface */ = {
@@ -2057,6 +2029,33 @@
 			children = (
 			);
 			path = Entitiy;
+			sourceTree = "<group>";
+		};
+		EE7B76CF29C5F61C00942798 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76D029C5F61C00942798 /* Zatch */,
+				EE7B76D429C5F61C00942798 /* User */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		EE7B76D029C5F61C00942798 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76D129C5F61C00942798 /* HeartZatchUseCase.swift */,
+				EE7B76D229C5F61C00942798 /* AroundZatchUseCase.swift */,
+				EE7B76D329C5F61C00942798 /* PopularZatchUseCase.swift */,
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		EE7B76D429C5F61C00942798 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		EE813FE529C481800091F16E /* Util */ = {
@@ -2499,7 +2498,6 @@
 				EEE6D1622997AFA30004FC7B /* PaddingLabel.swift in Sources */,
 				EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */,
 				57468AAC28A3A3AA00056691 /* WhitePurpleButton.swift in Sources */,
-				EE7B76BC29C5E36600942798 /* PopularZatchUseCase.swift in Sources */,
 				EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */,
 				576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */,
 				EE2BC34F2982B870002B5C60 /* MyZatchTabBarHeaderView.swift in Sources */,
@@ -2520,7 +2518,6 @@
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
-				EE7B76BD29C5E36600942798 /* GetMyTownUseCase.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
@@ -2536,6 +2533,7 @@
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
+				EE7B76D629C5F61C00942798 /* HeartZatchUseCase.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
@@ -2561,6 +2559,7 @@
 				5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */,
 				57468A9628A000ED00056691 /* SearchMyZatchByRegisterCollectionViewCell.swift in Sources */,
 				57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */,
+				EE7B76D729C5F61C00942798 /* AroundZatchUseCase.swift in Sources */,
 				5722460C28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift in Sources */,
 				23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */,
 				57B5D6D328346AB100EA1439 /* TextFieldTabeViewCell.swift in Sources */,
@@ -2715,7 +2714,6 @@
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
-				EE7B76BA29C5E36600942798 /* HeartZatchUseCase.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
 				EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */,
@@ -2723,6 +2721,7 @@
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
 				23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */,
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
+				EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
@@ -2736,7 +2735,6 @@
 				23A86A5628C72C7700B073CB /* MainView.swift in Sources */,
 				576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */,
 				5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */,
-				EE7B76BB29C5E36600942798 /* AroundZatchUseCase.swift in Sources */,
 				5722460428BCBD5C009B7C78 /* LeftChattingMessageTableViewCell.swift in Sources */,
 				5722460A28BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift in Sources */,
 				576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */,
@@ -2761,6 +2759,7 @@
 				EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */,
 				EE7C9FF8298A72F600D2F238 /* ChattingRoomHeaderView.swift in Sources */,
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
+				EE7B76D829C5F61C00942798 /* PopularZatchUseCase.swift in Sources */,
 				EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */,
 				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
