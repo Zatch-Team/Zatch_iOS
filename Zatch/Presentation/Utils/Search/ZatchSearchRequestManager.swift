@@ -13,9 +13,11 @@ class ZatchSearchRequestManager{
     
     private init() { }
     
-    var myZatch: String = ""
+    var myProduct: String = ""
+    var wantProduct: String = ""
     
     func initialize(){
-        myZatch = ""
+        myProduct = ""
+        wantProduct = ""
     }
 }
