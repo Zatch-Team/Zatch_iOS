@@ -8,6 +8,10 @@
 import Foundation
 
 class SearchRepository: SearchRepositotyInterface{
+    func getSearchResult() {
+        
+    }
+    
     func getPopularKeyword() {
     }
 }

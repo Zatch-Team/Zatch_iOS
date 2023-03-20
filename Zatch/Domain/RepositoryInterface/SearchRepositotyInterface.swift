@@ -9,4 +9,5 @@ import Foundation
 
 protocol SearchRepositotyInterface{
     func getPopularKeyword()
+    func getSearchResult()
 }
