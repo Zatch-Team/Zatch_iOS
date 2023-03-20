@@ -82,7 +82,7 @@ extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        SearchTagCollectionViewCell.getEstimatedSize(title: zatches[indexPath.row])
+        SearchTagCollectionViewCell.getEstimatedSize(of: viewModel.getMyZatch(at: indexPath.row))
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
