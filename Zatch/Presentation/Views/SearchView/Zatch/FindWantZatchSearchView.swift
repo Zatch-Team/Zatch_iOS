@@ -30,7 +30,7 @@ class FindWantZatchSearchView: BaseView {
         $0.font = UIFont.pretendard(size: 15, family: .Bold)
     }
     
-    let firstCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+    let popularKeywordCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         
         let flexLayout = UICollectionViewFlowLayout()
         flexLayout.scrollDirection = .horizontal
@@ -45,7 +45,7 @@ class FindWantZatchSearchView: BaseView {
         $0.textColor = .black85
         $0.setTypoStyleWithSingleLine(typoStyle: .bold18)
     }
-    let secondCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+    let lookingForCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         
         let flexLayout = UICollectionViewFlowLayout()
         flexLayout.scrollDirection = .horizontal
@@ -61,9 +61,9 @@ class FindWantZatchSearchView: BaseView {
         self.addSubview(titleView)
         self.addSubview(searchFrame)
         self.addSubview(subTitle1)
-        self.addSubview(firstCollectionView)
+        self.addSubview(popularKeywordCollectionView)
         self.addSubview(subTitle2)
-        self.addSubview(secondCollectionView)
+        self.addSubview(lookingForCollectionView)
         self.addSubview(nextButton)
         
         searchFrame.addSubview(myProductNameLabel)
@@ -103,7 +103,7 @@ class FindWantZatchSearchView: BaseView {
             $0.leading.equalToSuperview().offset(24)
         }
         
-        firstCollectionView.snp.makeConstraints{
+        popularKeywordCollectionView.snp.makeConstraints{
             $0.top.equalTo(subTitle1.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
@@ -111,11 +111,11 @@ class FindWantZatchSearchView: BaseView {
         }
         
         subTitle2.snp.makeConstraints{
-            $0.top.equalTo(firstCollectionView.snp.bottom).offset(28)
+            $0.top.equalTo(popularKeywordCollectionView.snp.bottom).offset(28)
             $0.left.equalToSuperview().offset(24)
         }
         
-        secondCollectionView.snp.makeConstraints{
+        lookingForCollectionView.snp.makeConstraints{
             $0.top.equalTo(subTitle2.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
