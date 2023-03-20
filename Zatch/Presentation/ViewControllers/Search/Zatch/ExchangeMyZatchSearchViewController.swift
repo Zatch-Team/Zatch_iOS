@@ -14,6 +14,15 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     
     //MARK: - Properties
     
+    private var selectedRegisterCell: SearchTagCollectionViewCell?{
+        willSet{
+            selectedRegisterCell?.isSelectState = false
+        }
+        didSet{
+            selectedRegisterCell?.isSelectState = true
+        }
+    }
+    
     private let viewModel = ExchangeMyZatchSearchViewModel()
     private let searchManager = ZatchSearchRequestManager.shared
     
@@ -36,11 +45,13 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
         mainView.nextButton.addTarget(self, action: #selector(moveNextButtonDidTapped), for: .touchUpInside)
         mainView.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
     }
-    
+
     override func bind() {
         
         let input = ExchangeMyZatchSearchViewModel.Input(exchangeProductByTextField: mainView.searchTextFieldFrame.textField.rx.text.orEmpty.asObservable())
         let output = viewModel.transform(input)
+        
+        //TODO: 돋보기 비활성화 > black10 설정
         
         output.exchangeProductName
             .drive{ [weak self] in
@@ -51,7 +62,10 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
             .drive(mainView.nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        //cell 클릭으로 데이터 설정했다가 textField 입력 바꾸는 경우 > cell isSelectState toggle 시켜야
+        mainView.searchTextFieldFrame.textField.rx.controlEvent([.editingChanged]).asObservable()
+            .subscribe(onNext: {
+                self.selectedRegisterCell = nil
+            }).disposed(by: disposeBag)
     }
     
     //MARK: Action
@@ -85,14 +99,14 @@ extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self) else { return }
-        cell.isSelectState ? viewModel.willDeselectMyZatch() : viewModel.willSelectZatch(at: indexPath.row)
-        cell.isSelectState.toggle()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
-            cell.isSelectState = false
+            if(selectedRegisterCell == cell){
+                selectedRegisterCell = nil
+                viewModel.willDeselectMyZatch()
+            }else{
+                selectedRegisterCell = cell
+                viewModel.willSelectZatch(at: indexPath.row)
+            }
         }
     }
 }
