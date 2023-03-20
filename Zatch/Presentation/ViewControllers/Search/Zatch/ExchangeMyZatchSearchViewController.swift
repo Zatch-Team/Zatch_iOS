@@ -14,7 +14,6 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
     
     //MARK: - Properties
     
-    private let zatches = ["몰랑이 피규어","매일우유 250ml","콜드브루 60ml","예시가 있다면","이렇게 들어가야","해요요요요","해요요요","해요요","해요","해","아아앙아ㅏ앙아아앙아아"]
     private let viewModel = ExchangeMyZatchSearchViewModel()
     private let searchManager = ZatchSearchRequestManager.shared
     
@@ -32,38 +31,38 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
         
         super.initialize()
         
-        mainView.collectionView.delegate = self
-        mainView.collectionView.dataSource = self
+        mainView.collectionView.initializeDelegate(self)
         
-        mainView.nextButton.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
+        mainView.nextButton.addTarget(self, action: #selector(moveNextButtonDidTapped), for: .touchUpInside)
         mainView.skipButton.addTarget(self, action: #selector(skipBtnDidClicked), for: .touchUpInside)
     }
     
     override func bind() {
         
-        let input = ExchangeMyZatchSearchViewModel.Input(exchangeProductName: mainView.searchTextFieldFrame.textField.rx.text.orEmpty.asObservable())
+        let input = ExchangeMyZatchSearchViewModel.Input(exchangeProductByTextField: mainView.searchTextFieldFrame.textField.rx.text.orEmpty.asObservable())
         let output = viewModel.transform(input)
         
         output.exchangeProductName
-            .drive{
-                self.searchManager.myZatch = $0
+            .drive{ [weak self] in
+                self?.mainView.searchTextFieldFrame.textField.text = $0
             }.disposed(by: disposeBag)
         
         output.canMoveNext
-            .drive(
-                self.mainView.nextButton.rx.isEnabled
-            ).disposed(by: disposeBag)
+            .drive(mainView.nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        //cell 클릭으로 데이터 설정했다가 textField 입력 바꾸는 경우 > cell isSelectState toggle 시켜야
     }
     
     //MARK: Action
     
-    @objc func nextButtonClick(){
-        let vc = FindWantZatchSearchViewController(productName: searchManager.myZatch)
+    @objc private func moveNextButtonDidTapped(){
+        let vc = FindWantZatchSearchViewController(productName: searchManager.myProduct)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func skipBtnDidClicked(){
-        searchManager.myZatch = ""
+    @objc private func skipBtnDidClicked(){
+        viewModel.willSkipSelectMyZatch()
         let vc = FindWantZatchSearchViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -72,12 +71,12 @@ class ExchangeMyZatchSearchViewController: BaseViewController<BaseHeaderView, Ex
 extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        zatches.count
+        viewModel.getMyZatchesCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
-            $0.setTitle(zatches[indexPath.row])
+            $0.setTitle(viewModel.getMyZatch(at: indexPath.row))
         }
     }
     
@@ -87,8 +86,7 @@ extension ExchangeMyZatchSearchViewController: UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self) else { return }
-        mainView.searchTextFieldFrame.textField.text = cell.isSelectState ? "" : zatches[indexPath.row]
-        mainView.searchTextFieldFrame.textField.sendActions(for: .valueChanged)
+        cell.isSelectState ? viewModel.willDeselectMyZatch() : viewModel.willSelectZatch(at: indexPath.row)
         cell.isSelectState.toggle()
     }
     
