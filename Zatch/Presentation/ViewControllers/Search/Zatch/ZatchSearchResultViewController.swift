@@ -9,7 +9,11 @@ import UIKit
 
 class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchSearchResultView>, UIGestureRecognizerDelegate {
     
-    //MARK: - Properties
+    @frozen
+    enum ProductType{
+        case myProduct
+        case wantProduct
+    }
     
     private var myZatchIndex: Int?
     private var wantZatchIndex: Int?
