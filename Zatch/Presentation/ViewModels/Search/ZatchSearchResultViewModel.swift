@@ -91,6 +91,8 @@ class ZatchSearchResultViewModel: BaseViewModel{
     }
     
     func pressTextFieldReturnKey(myProduct: String?, wantProduct: String?){
+        selectedMyRegisterZatchIndex = nil
+        selectedLookingForZatchIndex = nil
         myProductName.onNext(myProduct ?? searchInitialValue)
         wantProductName.onNext(wantProduct ?? searchInitialValue)
     }
