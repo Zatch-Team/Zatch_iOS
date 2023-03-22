@@ -17,8 +17,8 @@ class ZatchSearchResultViewModel: BaseViewModel{
     private var selectedMyRegisterZatchIndex: Int?
     private var selectedLookingForZatchIndex: Int?
     
-    private let myProductName = BehaviorSubject<String>(value: "") //TODO: 초기값 앞에서 설정한 것으로 붙이기
-    private let wantProductName = BehaviorSubject<String>(value: "")
+    private let myProductName = BehaviorSubject<String>(value: "몰랑이") //TODO: 초기값 앞에서 설정한 것으로 붙이기
+    private let wantProductName = BehaviorSubject<String>(value: "손수건")
     private let myProductCategory = BehaviorSubject<Int?>(value: nil)
     private let wantProductCategory = BehaviorSubject<Int?>(value: nil)
     
@@ -35,9 +35,7 @@ class ZatchSearchResultViewModel: BaseViewModel{
     }
     
     
-    struct Input{
-        
-    }
+    struct Input{ }
     
     struct Output{
         let isMyProductCategorySelect: Driver<Bool>
@@ -90,6 +88,11 @@ class ZatchSearchResultViewModel: BaseViewModel{
                       myProductName: myProductName,
                       wantProductName: wantProductName,
                       willEmptyViewHidden: willEmptyViewHidden)
+    }
+    
+    func pressTextFieldReturnKey(myProduct: String?, wantProduct: String?){
+        myProductName.onNext(myProduct ?? searchInitialValue)
+        wantProductName.onNext(wantProduct ?? searchInitialValue)
     }
 }
 
