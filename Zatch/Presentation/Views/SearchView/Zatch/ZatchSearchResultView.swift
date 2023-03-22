@@ -33,16 +33,16 @@ class ZatchSearchResultView: BaseView {
     
     override func hierarchy(){
 
-        self.addSubview(topView)
-        self.addSubview(separateLine)
-        self.addSubview(separateSection)
-        self.addSubview(tableView)
+        addSubview(topView)
+        addSubview(separateLine)
+        addSubview(separateSection)
+        addSubview(tableView)
         
-        self.topView.addSubview(exchangeImage)
-        self.topView.addSubview(myZatchFrame)
-        self.topView.addSubview(wantZatchFrame)
-        self.topView.addSubview(townFrame)
-        self.topView.addSubview(searchFrame)
+        topView.addSubview(exchangeImage)
+        topView.addSubview(myZatchFrame)
+        topView.addSubview(wantZatchFrame)
+        topView.addSubview(townFrame)
+        topView.addSubview(searchFrame)
     }
     
     override func layout(){
@@ -159,6 +159,7 @@ extension ZatchSearchResultView{
             $0.textColor = .black85
             $0.font = UIFont.pretendard(size: 20, family: .Bold)
             $0.addPadding()
+            $0.setPlaceholderColor(.black10)
             $0.tintColor = .black10
             $0.returnKeyType = .done
             
