@@ -200,10 +200,8 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
         //커서 올리기
         let textField: UITextField = {
             switch getProductType(of: recognizerView){
-            case .myProduct:
-                return mainView.myZatchFrame.productTextField
-            case .wantProduct:
-                return mainView.myZatchFrame.productTextField
+            case .myProduct:        return mainView.myZatchFrame.productTextField
+            case .wantProduct:      return mainView.wantZatchFrame.productTextField
             }
         }()
         
