@@ -76,6 +76,24 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
                 self?.mainView.tableView.backgroundView?.isHidden = $0
             }.disposed(by: disposeBag)
         
+        output.myProductName
+            .drive{ [weak self] in
+                self?.mainView.myZatchFrame.productLabel.text = $0
+            }.disposed(by: disposeBag)
+        
+        output.wantProductName
+            .drive{ [weak self] in
+                self?.mainView.wantZatchFrame.productLabel.text = $0
+            }.disposed(by: disposeBag)
+        
+        output.isMyProductCategorySelect
+            .drive(mainView.myZatchFrame.categortBtn.rx.isSelected)
+            .disposed(by: disposeBag)
+        
+        output.isWantProductCategorySelect
+            .drive(mainView.wantZatchFrame.categortBtn.rx.isSelected)
+            .disposed(by: disposeBag)
+        
         mainView.townFrame.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] _ in
