@@ -35,6 +35,10 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewControllerWillPop() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func initialize() {
         
         super.initialize()
