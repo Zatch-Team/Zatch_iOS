@@ -164,19 +164,18 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
     @objc private func willShowCategoryBottomSheet(recognizer: UITapGestureRecognizer){
         categoryBottomSheet.show(in: self)
         categoryBottomSheet.completion = { [weak self] categoryId in
-            if let categoryButton = recognizer.view as? ZatchSearchResultView.SearchCateogryDotButton{
-                categoryButton.isSelected = true
-                self?.setCategoryIdWithCheckProductType(of: categoryButton, categoryId: categoryId)
+            if let view = recognizer.view{
+                self?.setCategoryIdWithCheckProductType(categoryId, recognizer: view)
             }
         }
     }
     
-    private func setCategoryIdWithCheckProductType(of view: UIView, categoryId: Int) {
+    private func setCategoryIdWithCheckProductType(_ id: Int, recognizer view: UIView) {
         switch getProductType(of: view){
         case .myProduct:
-            viewModel.setMyProductCategory(id: categoryId)
+            viewModel.setMyProductCategory(id: id)
         case .wantProduct:
-            viewModel.setWantProductCategory(id: categoryId)
+            viewModel.setWantProductCategory(id: id)
         }
     }
     
@@ -202,7 +201,6 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
             case .wantProduct:      return mainView.wantZatchFrame.productTextField
             }
         }()
-        
         textField.becomeFirstResponder()
     }
     
