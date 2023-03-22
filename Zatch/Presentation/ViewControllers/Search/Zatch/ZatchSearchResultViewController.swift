@@ -101,9 +101,6 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
             }).disposed(by: disposeBag)
         
         setProductFramesRx()
-        
-        setMyZatchFrameGestureRecognizer()
-        setWantZatchFrameGestureRecognizer()
     }
     
     private func setProductFramesRx(){
@@ -121,45 +118,28 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
                 .bind(onNext: { [weak self] in
                     self?.productTextFieldDidPressReturnKey()
                 }).disposed(by: disposeBag)
+            
+            //Product Label
+            $0.productLabel
+                .addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(willShowZatchBottomSheet(_:))))
+            
+            $0.productLabel
+                .addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(productNameTextFieldWillShow)))
+            
+            //        mainView.myZatchFrame.productLabel.rx.tapGesture()
+            //            .when(.recognized)
+            //            .bind{ [weak self] _ in
+            //                print("tap test")
+            //                self?.openMyZatchBottomSheet()
+            //            }.disposed(by: disposeBag)
+            //
+            //        mainView.myZatchFrame.productLabel.rx.longPressGesture()
+            //            .when(.recognized)
+            //            .bind{ [weak self] in
+            //                print("long press test")
+            //                self?.textFieldDidPressedLong($0)
+            //            }.disposed(by: disposeBag)
         }
-    }
-    
-    private func setMyZatchFrameGestureRecognizer(){
-        
-//        mainView.myZatchFrame.productLabel.rx.tapGesture()
-//            .when(.recognized)
-//            .bind{ [weak self] _ in
-//                print("tap test")
-//                self?.openMyZatchBottomSheet()
-//            }.disposed(by: disposeBag)
-//
-//        mainView.myZatchFrame.productLabel.rx.longPressGesture()
-//            .when(.recognized)
-//            .bind{ [weak self] in
-//                print("long press test")
-//                self?.textFieldDidPressedLong($0)
-//            }.disposed(by: disposeBag)
-        
-        mainView.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(willShowZatchBottomSheet(_:))))
-        mainView.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(productNameTextFieldWillShow)))
-    }
-    
-    private func setWantZatchFrameGestureRecognizer(){
-        
-//        mainView.wantZatchFrame.productLabel.rx.longPressGesture()
-//            .when(.recognized)
-//            .bind{ [weak self] in
-//                self?.textFieldDidPressedLong($0)
-//            }.disposed(by: disposeBag)
-//
-//        mainView.wantZatchFrame.productLabel.rx.tapGesture()
-//            .when(.recognized)
-//            .bind{ [weak self] _ in
-//                self?.openWantZatchBottomSheet()
-//            }.disposed(by: disposeBag)
-        
-        mainView.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(willShowZatchBottomSheet(_:))))
-        mainView.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(productNameTextFieldWillShow)))
     }
     
     private func getProductType(of: UIView) -> ProductType{
