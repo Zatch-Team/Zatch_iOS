@@ -115,8 +115,8 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
             //TextField
             $0.productTextField.rx.controlEvent([.editingDidEndOnExit])
                 .bind(onNext: { [weak self] in
-                    self?.viewModel.pressTextFieldReturnKey(myProduct: self?.mainView.myZatchFrame.productTextField.text,
-                                                            wantProduct: self?.mainView.wantZatchFrame.productTextField.text)
+                    self?.viewModel.pressTextFieldReturnKey(myProduct: self?.mainView.myZatchFrame.productTextField.text ?? "",
+                                                            wantProduct: self?.mainView.wantZatchFrame.productTextField.text ?? "")
                     self?.productTextFieldDidPressReturnKey()
                 }).disposed(by: disposeBag)
             

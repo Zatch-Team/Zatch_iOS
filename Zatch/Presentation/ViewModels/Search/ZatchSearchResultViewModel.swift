@@ -92,11 +92,15 @@ class ZatchSearchResultViewModel: BaseViewModel{
                       willEmptyViewHidden: willEmptyViewHidden)
     }
     
-    func pressTextFieldReturnKey(myProduct: String?, wantProduct: String?){
-        selectedMyRegisterZatchIndex = nil
-        selectedLookingForZatchIndex = nil
-        myProductName.onNext(myProduct ?? searchInitialValue)
-        wantProductName.onNext(wantProduct ?? searchInitialValue)
+    func pressTextFieldReturnKey(myProduct: String, wantProduct: String){
+        changeRegisterZatch(index: nil)
+        changeLookingForZatch(index: nil)
+        if(!myProduct.isEmpty){
+            changeMyProductName(myProduct)
+        }
+        if(!wantProduct.isEmpty){
+            changeWantProductName(wantProduct)
+        }
     }
 }
 
