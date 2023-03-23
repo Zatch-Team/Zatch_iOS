@@ -51,8 +51,8 @@ class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransi
     }
     
     func style(){
-        self.view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = .white
+        navigationController?.isNavigationBarHidden = true
     }
     
     func initialize() {
@@ -71,7 +71,7 @@ class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransi
     
     @discardableResult
     func show(in viewController: UIViewController) -> Self{
-        self.loadViewIfNeeded()
+        loadViewIfNeeded()
         viewController.present(self, animated: true)
         return self
     }
