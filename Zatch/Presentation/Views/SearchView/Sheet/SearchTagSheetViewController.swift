@@ -37,33 +37,31 @@ class SearchTagSheetViewController: BaseBottomSheetViewController<Int>{
     
     override func layout() {
         super.layout()
-        self.view.addSubview(collectionView)
+        view.addSubview(collectionView)
         collectionView.snp.makeConstraints{
-            $0.top.equalTo(self.titleLabel.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().offset(35)
-            $0.trailing.equalToSuperview().offset(-35)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(35)
             $0.bottom.equalToSuperview().offset(-30)
         }
     }
     override func initialize() {
         super.initialize()
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.initializeDelegate(self)
     }
 }
 
 extension SearchTagSheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.tagData.count
+        return tagData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return BaseCollectionViewCell()
+        BaseCollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return SearchWantZatchByRegisterCollectionViewCell.getEstimatedSize(title: tagData[indexPath.row])
+        SearchWantZatchByRegisterCollectionViewCell.getEstimatedSize(title: tagData[indexPath.row])
     }
 
 }
