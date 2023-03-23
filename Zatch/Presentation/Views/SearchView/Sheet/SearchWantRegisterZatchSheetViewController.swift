@@ -22,19 +22,31 @@ class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
         collectionView.register(cellType: SearchWantZatchByRegisterCollectionViewCell.self)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchWantZatchByRegisterCollectionViewCell.self).then{
-            $0.setTitle(title: tagData[indexPath.row])
-        }
-        if(indexPath.row == currentTag){
-            cell.isSelectedState = true
-        }
-        return cell
+    //MARK: - CollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.getLookingForZatchCount()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        completion(indexPath.row)
-        self.dismiss(animated: true)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //객체 생성될 때 한번만 로드
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: SearchWantZatchByRegisterCollectionViewCell.self).then{
+            $0.setTitle(title: viewModel.getLookingForProduct(at: indexPath.row))
+            $0.isSelectedState = viewModel.isLookingForZatchSelected(at: indexPath.row) ? true : false
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        SearchWantZatchByRegisterCollectionViewCell.getEstimatedSize(title: viewModel.getLookingForProduct(at: indexPath.row))
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.changeWantProductByLookingForZatch(at: indexPath.row)
+        super.collectionView(collectionView, didSelectItemAt: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        collectionView.dequeueReusableCell(for: indexPath, cellType: SearchWantZatchByRegisterCollectionViewCell.self).isSelectedState = false
     }
 
 }

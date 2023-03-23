@@ -26,5 +26,4 @@ class SearchMyZatchByRegisterCollectionViewCell: BaseCollectionViewCell, SearchZ
         super.layout()
         tagLabelLayout()
     }
-    
 }

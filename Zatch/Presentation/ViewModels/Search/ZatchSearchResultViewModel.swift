@@ -10,12 +10,14 @@ import RxSwift
 import RxCocoa
 
 class ZatchSearchResultViewModel: BaseViewModel{
-    
+
     private let searchInitialValue = "?"
     
     private var searchResult = [String]()
-    private var selectedMyRegisterZatchIndex: Int?
-    private var selectedLookingForZatchIndex: Int?
+    private var registerZatch = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
+    private var lookingForZatch = ["타이머","안경닦이","호랑이 인형","램프","2022 달력", "미니 가습기","마우스 패드"]
+    private var selectedMyRegisterZatchIndex: Int? = nil
+    private var selectedLookingForZatchIndex: Int? = nil
     
     private let myProductName = BehaviorSubject<String>(value: "몰랑이") //TODO: 초기값 앞에서 설정한 것으로 붙이기
     private let wantProductName = BehaviorSubject<String>(value: "손수건")
@@ -104,10 +106,44 @@ extension ZatchSearchResultViewModel{
         searchResult.count
     }
     
+    func getRegisterZatchCount() -> Int{
+        registerZatch.count
+    }
+    
+    func getLookingForZatchCount() -> Int{
+        lookingForZatch.count
+    }
+    
     func getZatch(at index: Int) -> String{
         searchResult[index]
     }
     
+    func getRegisterProduct(at index: Int) -> String{
+        registerZatch[index]
+    }
+    
+    func getLookingForProduct(at index: Int) -> String{
+        lookingForZatch[index]
+    }
+    
+    func changeMyProductByRegisterZatch(at index: Int){
+        changeRegisterZatch(index: index)
+        changeMyProductName(registerZatch[index])
+    }
+    
+    private func changeRegisterZatch(index: Int?){
+        selectedMyRegisterZatchIndex = index
+    }
+    
+    func changeWantProductByLookingForZatch(at index: Int){
+        changeLookingForZatch(index: index)
+        changeWantProductName(lookingForZatch[index])
+    }
+    
+    private func changeLookingForZatch(index: Int?){
+        selectedLookingForZatchIndex = index
+    }
+
     func changeMyProductName(_ value: String){
         myProductName.onNext(value)
     }
@@ -122,5 +158,13 @@ extension ZatchSearchResultViewModel{
 
     func setWantProductCategory(id: Int){
         wantProductCategory.onNext(id)
+    }
+    
+    func isRegisterZatchSelected(at index: Int) -> Bool{
+        selectedMyRegisterZatchIndex == index
+    }
+    
+    func isLookingForZatchSelected(at index: Int) -> Bool{
+        selectedLookingForZatchIndex == index
     }
 }
