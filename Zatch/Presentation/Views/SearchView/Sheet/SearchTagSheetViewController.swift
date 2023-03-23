@@ -23,7 +23,18 @@ class SearchTagSheetViewController: BaseBottomSheetViewController<Int>{
         }
         $0.collectionViewLayout = flexLayout
     }
-
+    
+    private let viewModel: ZatchSearchResultViewModel
+    
+    init(viewModel: ZatchSearchResultViewModel, type: BottomSheet){
+        self.viewModel = viewModel
+        super.init(type: type)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layout() {
         super.layout()
         self.view.addSubview(collectionView)

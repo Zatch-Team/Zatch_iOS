@@ -9,8 +9,8 @@ import UIKit
 
 class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
     
-    init(){
-        super.init(type: .searchWantTag)
+    init(viewModel: ZatchSearchResultViewModel){
+        super.init(viewModel: viewModel, type: .searchWantTag)
     }
     
     required init?(coder: NSCoder) {

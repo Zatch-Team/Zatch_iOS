@@ -10,8 +10,8 @@ import SnapKit
 
 class SearchMyRegisterZatchSheetViewController: SearchTagSheetViewController{
     
-    init(){
-        super.init(type: .searchMyTag)
+    init(viewModel: ZatchSearchResultViewModel){
+        super.init(viewModel: viewModel, type: .searchMyTag)
     }
     
     required init?(coder: NSCoder) {

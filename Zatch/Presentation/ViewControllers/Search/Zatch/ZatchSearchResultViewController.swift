@@ -24,14 +24,13 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
             changeProductLabelHiddenState()
         }
     }
-    private lazy var productFrames: [ZatchSearchResultView.SearchFieldFrame] = [mainView.myZatchFrame, mainView.wantZatchFrame]
-
-    //MARK: - Properties
     
     private let viewModel = ZatchSearchResultViewModel()
-    private let registerZatchBottomSheetInstance = SearchMyRegisterZatchSheetViewController()
-    private let lookingForZatchBottomSheetInstance = SearchWantRegisterZatchSheetViewController()
     private let categoryBottomSheet = CategorySheetViewController()
+    
+    private lazy var registerZatchBottomSheetInstance = SearchMyRegisterZatchSheetViewController(viewModel: viewModel)
+    private lazy var lookingForZatchBottomSheetInstance = SearchWantRegisterZatchSheetViewController(viewModel: viewModel)
+    private lazy var productFrames: [ZatchSearchResultView.SearchFieldFrame] = [mainView.myZatchFrame, mainView.wantZatchFrame]
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: ZatchSearchResultView())
