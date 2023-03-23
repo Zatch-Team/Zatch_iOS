@@ -66,5 +66,13 @@ extension SearchTagSheetViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         dismiss(animated: true)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        SearchWantZatchByRegisterCollectionViewCell.getEstimatedSize(title: getCellTitle(index: indexPath.row))
+    }
+    
+    @objc func getCellTitle(index: Int) -> String {
+        ""
+    }
 
 }

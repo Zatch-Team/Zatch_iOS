@@ -36,12 +36,12 @@ class SearchMyRegisterZatchSheetViewController: SearchTagSheetViewController{
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        SearchMyZatchByRegisterCollectionViewCell.getEstimatedSize(title: viewModel.getRegisterProduct(at: indexPath.row))
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.changeMyProductByRegisterZatch(at: indexPath.row)
         super.collectionView(collectionView, didSelectItemAt: indexPath)
+    }
+    
+    override func getCellTitle(index: Int) -> String {
+        viewModel.getRegisterProduct(at: index)
     }
 }
