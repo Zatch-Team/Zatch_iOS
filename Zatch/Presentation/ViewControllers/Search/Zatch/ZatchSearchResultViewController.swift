@@ -192,24 +192,23 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
         guard let recognizerView = recognizer.view else { return }
         
         isProductNameEditing = true
-        
         //기존 입력값 초기화
         initializeTextField()
-
         //커서 올리기
-        let textField: UITextField = {
-            switch getProductType(of: recognizerView){
-            case .myProduct:        return mainView.myZatchFrame.productTextField
-            case .wantProduct:      return mainView.wantZatchFrame.productTextField
-            }
-        }()
-        textField.becomeFirstResponder()
+        getProductTextField(from: recognizerView).becomeFirstResponder()
     }
     
     private func initializeTextField(){
         productFrames.forEach{
             $0.productTextField.text = nil
             $0.productTextField.placeholder = $0.productLabel.text
+        }
+    }
+    
+    private func getProductTextField(from recognizeView: UIView) -> UITextField{
+        switch getProductType(of: recognizeView){
+        case .myProduct:        return mainView.myZatchFrame.productTextField
+        case .wantProduct:      return mainView.wantZatchFrame.productTextField
         }
     }
     
