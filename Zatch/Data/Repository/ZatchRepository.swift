@@ -8,6 +8,14 @@
 import Foundation
 
 final class ZatchRepository: ZatchRepositoryInterface {
+    func getRegisterZatch() {
+        
+    }
+    
+    func getLookingForZatch() {
+        
+    }
+    
     func getPopularZatch(){
         
     }

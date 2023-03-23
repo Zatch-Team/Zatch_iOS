@@ -7,18 +7,21 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, FindWantZatchSearchView> {
     
     //MARK: - Properties
-    
-    private var popularData : [String] = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
-    private var findData : [String] = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
     private var currentSelectCell: SearchTagCollectionViewCell?{
+        willSet{
+            currentSelectCell?.isSelectState = false
+        }
         didSet{
             currentSelectCell?.isSelectState = true
         }
     }
+    private let viewModel = FindWantZatchSearchViewModel()
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: FindWantZatchSearchView())
@@ -38,18 +41,34 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
         
         super.initialize()
         
-        mainView.nextButton.addTarget(self, action: #selector(moveToResultVC(_:)), for: .touchUpInside)
+        mainView.nextButton.addTarget(self, action: #selector(willMoveSearchResultViewController), for: .touchUpInside)
         
-        mainView.firstCollectionView.delegate = self
-        mainView.firstCollectionView.dataSource = self
-        
-        mainView.secondCollectionView.delegate = self
-        mainView.secondCollectionView.dataSource = self
+        mainView.popularKeywordCollectionView.initializeDelegate(self)
+        mainView.lookingForCollectionView.initializeDelegate(self)
     }
     
-    @objc private func moveToResultVC(_ sender: UIButton){
-        let nextVC = ZatchSearchResultViewController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
+    override func bind() {
+
+        let input = FindWantZatchSearchViewModel.Input(productNameTextField: mainView.searchTextFieldFrame.textField.rx.text.orEmpty.asObservable())
+    
+        
+        let output = viewModel.transform(input)
+        
+        //TODO: editingChanged와 editingDidBegin 조합해서 observable 방출시키고 싶다
+        mainView.searchTextFieldFrame.textField.rx.controlEvent([.editingChanged]).asObservable()
+            .subscribe(onNext: {
+                self.currentSelectCell = nil
+            }).disposed(by: disposeBag)
+        
+        output.searchProduct
+            .drive(onNext: { [weak self] in
+                self?.mainView.searchTextFieldFrame.textField.text = $0
+            }).disposed(by: disposeBag)
+        
+    }
+    
+    @objc private func willMoveSearchResultViewController(){
+        self.navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
     }
     
     private func setFlexibleSearchAttribute(){
@@ -63,30 +82,40 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
 extension FindWantZatchSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        collectionView == mainView.firstCollectionView ? popularData.count : findData.count
+        collectionView == mainView.popularKeywordCollectionView ? viewModel.getPopularKeywordsCount() : viewModel.getLookingForZatchCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
+        let title = getCellTitle(of: collectionView, index: indexPath.row)
         return collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
             $0.setTitle(title)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let title = collectionView == mainView.firstCollectionView ? popularData[indexPath.row] : findData[indexPath.row]
-        return SearchTagCollectionViewCell.getEstimatedSize(title: title)
+        let title = getCellTitle(of: collectionView, index: indexPath.row)
+        return SearchTagCollectionViewCell.getEstimatedSize(of: title)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let selectCell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self) else { return }
-        guard let willDeselectCell = currentSelectCell else {
-            currentSelectCell = selectCell
-            return
-        }
         
-        willDeselectCell.isSelectState = false
-        currentSelectCell = selectCell == willDeselectCell ? nil : selectCell
+        if(mainView.searchTextFieldFrame.textField.isFocused){
+            mainView.searchTextFieldFrame.textField.resignFirstResponder()
+        }
+
+        if let willSelectCell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
+            if(currentSelectCell == willSelectCell){
+                currentSelectCell = nil
+                viewModel.deselectCell()
+                return
+            }
+            currentSelectCell = willSelectCell
+            collectionView == mainView.popularKeywordCollectionView ? viewModel.selectPopularKeyword(at: indexPath.row) : viewModel.selectLookingForZatch(at: indexPath.row)
+        }
+    }
+    
+    private func getCellTitle(of collectionView: UICollectionView, index: Int) -> String{
+        collectionView == mainView.popularKeywordCollectionView ? viewModel.getPopularKeyword(at: index) : viewModel.getLookingForZatch(at: index)
     }
 }
 

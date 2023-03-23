@@ -40,7 +40,7 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         }
     }
     
-    static func getEstimatedSize(title: String) -> CGSize{
+    static func getEstimatedSize(of title: String) -> CGSize{
         
         let testLabel = PaddingLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
             $0.text = title

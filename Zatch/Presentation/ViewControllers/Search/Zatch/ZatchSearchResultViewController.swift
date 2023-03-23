@@ -6,22 +6,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxGesture
 
 class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchSearchResultView>, UIGestureRecognizerDelegate {
     
-    //MARK: - Properties
+    @frozen
+    enum ProductType{
+        case myProduct
+        case wantProduct
+    }
     
-    private var myZatchIndex: Int?
-    private var wantZatchIndex: Int?
-    private var resultData = [String](){
+    private var isProductNameEditing: Bool = false{
         didSet{
-            if(resultData.isEmpty){
-                mainView.tableView.backgroundView?.isHidden = false
-            }else{
-                mainView.tableView.backgroundView?.isHidden = true
-            }
+            changeProductTextFieldHiddenState()
+            changeProductLabelHiddenState()
         }
     }
+    
+    private let viewModel = ZatchSearchResultViewModel()
+    private let categoryBottomSheet = CategorySheetViewController()
+    
+    private lazy var registerZatchBottomSheetInstance = SearchMyRegisterZatchSheetViewController(viewModel: viewModel)
+    private lazy var lookingForZatchBottomSheetInstance = SearchWantRegisterZatchSheetViewController(viewModel: viewModel)
+    private lazy var productFrames: [ZatchSearchResultView.SearchFieldFrame] = [mainView.myZatchFrame, mainView.wantZatchFrame]
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: ZatchSearchResultView())
@@ -31,103 +40,198 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewControllerWillPop() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func initialize() {
         
         super.initialize()
         
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
-
-        mainView.myZatchFrame.productTextField.delegate = self
-        mainView.wantZatchFrame.productTextField.delegate = self
+        setTagWithProductType()
         
-        mainView.myZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        mainView.myZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openMyZatchBottomSheet)))
-        mainView.myZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+        mainView.tableView.initializeDelegate(self)
+    }
+    
+    private func setTagWithProductType(){
+        let myZatchFrame = mainView.myZatchFrame
+        [myZatchFrame, myZatchFrame.productLabel, myZatchFrame.categortBtn].forEach{
+            $0.tag = ProductType.myProduct.tag
+        }
         
-        mainView.wantZatchFrame.categortBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCategoryBottomSheet)))
-        mainView.wantZatchFrame.productLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openWantZatchBottomSheet)))
-        mainView.wantZatchFrame.productLabel.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(textFieldDidPressedLong)))
+        let wantZatchFrame = mainView.wantZatchFrame
+        [wantZatchFrame, wantZatchFrame.productLabel, wantZatchFrame.categortBtn].forEach{
+            $0.tag = ProductType.wantProduct.tag
+        }
+    }
+    
+    override func bind() {
         
-        mainView.townFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townFrameDidClicked)))
+        let input = ZatchSearchResultViewModel.Input()
+        let output = viewModel.transform(input)
+        
+        output.willEmptyViewHidden
+            .drive{ [weak self] in
+                self?.mainView.tableView.backgroundView?.isHidden = $0
+            }.disposed(by: disposeBag)
+        
+        output.myProductName
+            .drive{ [weak self] in
+                self?.mainView.myZatchFrame.productLabel.text = $0
+            }.disposed(by: disposeBag)
+        
+        output.wantProductName
+            .drive{ [weak self] in
+                self?.mainView.wantZatchFrame.productLabel.text = $0
+            }.disposed(by: disposeBag)
+        
+        output.isMyProductCategorySelect
+            .drive(mainView.myZatchFrame.categortBtn.rx.isSelected)
+            .disposed(by: disposeBag)
+        
+        output.isWantProductCategorySelect
+            .drive(mainView.wantZatchFrame.categortBtn.rx.isSelected)
+            .disposed(by: disposeBag)
+        
+        mainView.townFrame.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] _ in
+                self?.townSettingBottomSheetWillShow()
+            }).disposed(by: disposeBag)
+        
+        setProductFramesRx()
+    }
+    
+    private func setProductFramesRx(){
+        
+        productFrames.forEach{
+            //Category
+            $0.categortBtn.rx.tapGesture()
+                .when(.recognized)
+                .bind(onNext: { [weak self] in
+                    self?.willShowCategoryBottomSheet(recognizer: $0)
+                }).disposed(by: disposeBag)
+            
+            //TextField
+            $0.productTextField.rx.controlEvent([.editingDidEndOnExit])
+                .bind(onNext: { [weak self] in
+                    self?.viewModel.pressTextFieldReturnKey(myProduct: self?.mainView.myZatchFrame.productTextField.text ?? "",
+                                                            wantProduct: self?.mainView.wantZatchFrame.productTextField.text ?? "")
+                    self?.productTextFieldDidPressReturnKey()
+                }).disposed(by: disposeBag)
+            
+            //Product Label
+            $0.productLabel
+                .addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(willShowZatchBottomSheet(_:))))
+            
+            $0.productLabel
+                .addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(productNameTextFieldWillShow)))
+            
+            //        mainView.myZatchFrame.productLabel.rx.tapGesture()
+            //            .when(.recognized)
+            //            .bind{ [weak self] _ in
+            //                print("tap test")
+            //                self?.openMyZatchBottomSheet()
+            //            }.disposed(by: disposeBag)
+            //
+            //        mainView.myZatchFrame.productLabel.rx.longPressGesture()
+            //            .when(.recognized)
+            //            .bind{ [weak self] in
+            //                print("long press test")
+            //                self?.textFieldDidPressedLong($0)
+            //            }.disposed(by: disposeBag)
+        }
+    }
+    
+    private func getProductType(of: UIView) -> ProductType{
+        switch of.tag{
+        case ProductType.myProduct.tag:         return .myProduct
+        case ProductType.wantProduct.tag:       return .wantProduct
+        default:                                fatalError()
+        }
+    }
+    
+    @objc private func willShowZatchBottomSheet(_ recognizer: UITapGestureRecognizer){
+        if let recognizeView = recognizer.view{
+            switch getProductType(of: recognizeView){
+            case .myProduct:
+                registerZatchBottomSheetInstance.show(in: self)
+            case .wantProduct:
+                lookingForZatchBottomSheetInstance.show(in: self)
+            }
+        }
+    }
+    
+    @objc private func willShowCategoryBottomSheet(recognizer: UITapGestureRecognizer){
+        categoryBottomSheet.show(in: self)
+        categoryBottomSheet.completion = { [weak self] categoryId in
+            if let view = recognizer.view{
+                self?.setCategoryIdWithCheckProductType(categoryId, recognizer: view)
+            }
+        }
+    }
+    
+    private func setCategoryIdWithCheckProductType(_ id: Int, recognizer view: UIView) {
+        switch getProductType(of: view){
+        case .myProduct:
+            viewModel.setMyProductCategory(id: id)
+        case .wantProduct:
+            viewModel.setWantProductCategory(id: id)
+        }
     }
     
     //TextField 입력 끝나거나 취소됐을 경우
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        mainView.myZatchFrame.productTextField.isHidden = true
-        mainView.wantZatchFrame.productTextField.isHidden = true
-
-        mainView.myZatchFrame.productLabel.isHidden = false
-        mainView.wantZatchFrame.productLabel.isHidden = false
+        isProductNameEditing = false
+        view.endEditing(true)
+    }
+    
+    @objc func productNameTextFieldWillShow(_ recognizer : UIGestureRecognizer){
         
-        self.view.endEditing(true)
-    }
-    
-    //MARK: Action
-    
-    @objc func openMyZatchBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottomSheet = SearchMyRegisterZatchSheetViewController().show(in: self)
-        bottomSheet.currentTag = myZatchIndex
-        bottomSheet.completion = {
-//            self.mainView.myZatchFrame.productLabel.text = text
-            self.myZatchIndex = $0
-        }
-    }
-    
-    @objc func openWantZatchBottomSheet(recognizer: UITapGestureRecognizer){
-        let bottomSheet = SearchWantRegisterZatchSheetViewController().show(in: self)
-        bottomSheet.currentTag = wantZatchIndex
-        bottomSheet.completion = {
-//            self.mainView.wantZatchFrame.productLabel.text = text
-            self.wantZatchIndex = $0
-        }
-    }
-    
-    @objc func openCategoryBottomSheet(recognizer: UITapGestureRecognizer){
-        let vc = CategorySheetViewController(service: .Zatch).show(in: self)
-        vc.completion = { category in
-            print(category)
-            (recognizer.view as? ZatchSearchResultView.SearchCateogryDotButton)?.isSelected = true
-        }
-    }
-    
-    @objc func textFieldDidPressedLong(_ recognizer : UIGestureRecognizer){
+        guard let recognizerView = recognizer.view else { return }
+        
+        isProductNameEditing = true
         //기존 입력값 초기화
-        mainView.myZatchFrame.productTextField.text = nil
-        mainView.wantZatchFrame.productTextField.text = nil
-
-        mainView.myZatchFrame.productTextField.placeholder = mainView.myZatchFrame.productLabel.text
-        mainView.wantZatchFrame.productTextField.placeholder = mainView.wantZatchFrame.productLabel.text
-
-        mainView.myZatchFrame.productTextField.setPlaceholderColor(.black10)
-        mainView.wantZatchFrame.productTextField.setPlaceholderColor(.black10)
-
-        mainView.myZatchFrame.productTextField.isHidden = false
-        mainView.wantZatchFrame.productTextField.isHidden = false
-
-        mainView.myZatchFrame.productLabel.isHidden = true
-        mainView.wantZatchFrame.productLabel.isHidden = true
-
+        initializeTextField()
         //커서 올리기
-        if(recognizer.view == mainView.wantZatchFrame.productLabel){
-            mainView.wantZatchFrame.productTextField.becomeFirstResponder()
-        }else{
-            mainView.myZatchFrame.productTextField.becomeFirstResponder()
+        getProductTextField(from: recognizerView).becomeFirstResponder()
+    }
+    
+    private func initializeTextField(){
+        productFrames.forEach{
+            $0.productTextField.text = nil
+            $0.productTextField.placeholder = $0.productLabel.text
         }
     }
     
-    @objc func townFrameDidClicked(){
+    private func getProductTextField(from recognizeView: UIView) -> UITextField{
+        switch getProductType(of: recognizeView){
+        case .myProduct:        return mainView.myZatchFrame.productTextField
+        case .wantProduct:      return mainView.wantZatchFrame.productTextField
+        }
+    }
+    
+    private func productTextFieldDidPressReturnKey(){
+        isProductNameEditing = false
+    }
+    
+    private func changeProductTextFieldHiddenState(){
+        productFrames.forEach{
+            $0.productTextField.isHidden = !isProductNameEditing
+        }
+    }
+    
+    private func changeProductLabelHiddenState(){
+        productFrames.forEach{
+            $0.productLabel.isHidden = isProductNameEditing
+        }
+    }
+    
+    @objc func townSettingBottomSheetWillShow(){
         let vc = TownSettingSheetViewController().show(in: self)
         vc.completion = { town in
             print(town)
-//            (recognizer.view as? SearchCateogryDotButton)?.isSelected = true
         }
-    }
-    
-    override func viewControllerWillPop() {
-        self.navigationController?.popToRootViewController(animated: true)
     }
 
 }
@@ -135,44 +239,33 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
 extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        viewModel.getSearchResultCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //임시 조건문 설정
+        let data = viewModel.getZatch(at: indexPath.row)
         if(indexPath.row < 5){
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchShareTableViewCell.self)
-            cell.bindingData()
-            return cell
+            return tableView.dequeueReusableCell(for: indexPath, cellType: ZatchShareTableViewCell.self).then{
+                $0.bindingData()
+            }
         }else{
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ZatchExchangeTableViewCell.self)
-            cell.bindingData()
-            return cell
+            return tableView.dequeueReusableCell(for: indexPath, cellType: ZatchExchangeTableViewCell.self).then{
+                $0.bindingData()
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ZatchDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(ZatchDetailViewController(), animated: true)
     }
 }
 
-extension ZatchSearchResultViewController: UITextFieldDelegate{
-    
-    //return 키 클릭시 호출 메서드
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        mainView.myZatchFrame.productTextField.isHidden = true
-        mainView.wantZatchFrame.productTextField.isHidden = true
-
-        mainView.myZatchFrame.productLabel.isHidden = false
-        mainView.wantZatchFrame.productLabel.isHidden = false
-
-        if(textField == mainView.myZatchFrame.productTextField){
-            mainView.myZatchFrame.productLabel.text = mainView.myZatchFrame.productTextField.text
-        }else{
-            mainView.wantZatchFrame.productLabel.text = mainView.wantZatchFrame.productTextField.text
+extension ZatchSearchResultViewController.ProductType{
+    var tag: Int{
+        switch self{
+        case .myProduct:        return 100
+        case .wantProduct:      return 200
         }
-        
-        self.view.endEditing(true)
-        return true
     }
 }

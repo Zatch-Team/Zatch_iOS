@@ -26,5 +26,4 @@ class SearchWantZatchByRegisterCollectionViewCell: BaseCollectionViewCell, Searc
         super.layout()
         tagLabelLayout()
     }
-    
 }

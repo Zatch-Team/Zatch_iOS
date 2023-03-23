@@ -10,8 +10,8 @@ import SnapKit
 
 class SearchMyRegisterZatchSheetViewController: SearchTagSheetViewController{
     
-    init(){
-        super.init(type: .searchMyTag)
+    init(viewModel: ZatchSearchResultViewModel){
+        super.init(viewModel: viewModel, type: .searchMyTag)
     }
     
     required init?(coder: NSCoder) {
@@ -23,18 +23,25 @@ class SearchMyRegisterZatchSheetViewController: SearchTagSheetViewController{
         collectionView.register(cellType: SearchMyZatchByRegisterCollectionViewCell.self)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchMyZatchByRegisterCollectionViewCell.self).then{
-            $0.setTitle(title: tagData[indexPath.row])
-        }
-        if(indexPath.row == currentTag){
-            cell.isSelectedState = true
-        }
-        return cell
+    //MARK: - CollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.getRegisterZatchCount()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        completion(indexPath.row)
-        self.dismiss(animated: true)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionView.dequeueReusableCell(for: indexPath, cellType: SearchMyZatchByRegisterCollectionViewCell.self).then{
+            $0.setTitle(title: viewModel.getRegisterProduct(at: indexPath.row))
+            $0.isSelectedState = viewModel.isRegisterZatchSelected(at: indexPath.row) ? true : false
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        SearchMyZatchByRegisterCollectionViewCell.getEstimatedSize(title: viewModel.getRegisterProduct(at: indexPath.row))
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.changeMyProductByRegisterZatch(at: indexPath.row)
+        super.collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }
