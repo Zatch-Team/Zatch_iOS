@@ -7,22 +7,19 @@
 
 import UIKit
 
-class SearchTownViewController: UIViewController {
+class SearchTownViewController: BaseViewController<BaseHeaderView, SearchTownView> {
     
-    let mainView = SearchTownView()
-
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        self.view.addSubview(mainView)
-        
-        mainView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
-        mainView.myTownCollectionView.delegate = self
-        mainView.myTownCollectionView.dataSource = self
+    init() {
+        super.init(headerView: BaseHeaderView(), mainView: SearchTownView())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func initialize() {
+        super.initialize()
+        mainView.myTownCollectionView.initializeDelegate(self)
     }
 
 }
@@ -30,26 +27,17 @@ class SearchTownViewController: UIViewController {
 extension SearchTownViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 3
+        3
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyTownTagCollectionViewCell.cellIdentifier, for: indexPath) as? MyTownTagCollectionViewCell else { fatalError() }
-        cell.townLabel.text = "성수동"
-        
-        return cell
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: MyTownTagCollectionViewCell.self).then{
+            $0.setTitle("성수동")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        
-        let label = UILabel().then{
-            $0.layer.cornerRadius = 28/2
-            $0.text = "성수동"
-            $0.numberOfLines = 1
-            $0.font = UIFont.pretendard(size: 14, family: .Medium)
-            $0.sizeToFit()
-        }
-        return CGSize(width: label.intrinsicContentSize.width + 40, height: 28)
+        MyTownTagCollectionViewCell.estimatedSize(of: "성수동")
     }
     
 }
