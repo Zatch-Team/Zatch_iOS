@@ -955,7 +955,7 @@
 				23C9031F28C5CFA700FB6D3D /* SearchView */,
 				23C9031B28C5CF3100FB6D3D /* DetailView */,
 				23C9031528C5CE9300FB6D3D /* ChattingView */,
-				57A28B4028CED9BC00263079 /* TownView */,
+				57A28B4028CED9BC00263079 /* Town */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1633,14 +1633,14 @@
 			path = Town;
 			sourceTree = "<group>";
 		};
-		57A28B4028CED9BC00263079 /* TownView */ = {
+		57A28B4028CED9BC00263079 /* Town */ = {
 			isa = PBXGroup;
 			children = (
 				57A28B4528CED9F600263079 /* SplashTownView.swift */,
 				57A28B4128CED9DD00263079 /* SearchTownView.swift */,
 				57A28B4328CED9ED00263079 /* MapTownView.swift */,
 			);
-			path = TownView;
+			path = Town;
 			sourceTree = "<group>";
 		};
 		57A28C9828CF053800263079 /* FrameWorkFiles */ = {
