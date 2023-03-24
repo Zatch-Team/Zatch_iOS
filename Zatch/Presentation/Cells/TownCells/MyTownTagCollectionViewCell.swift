@@ -7,18 +7,15 @@
 
 import UIKit
 
-class MyTownTagCollectionViewCell: UICollectionViewCell {
+class MyTownTagCollectionViewCell: BaseCollectionViewCell, TagCollectionViewCell {
     
-    static let cellIdentifier = "MyTownTagCollectionViewCell"
-
-    let yellowTagView = UIView().then{
+    static let height: CGFloat = 28
+    static let padding = ZatchComponent.Padding(left: 12, right: 28, top: 4.5, bottom: 4.5)
+    
+    let tagLabel = PaddingLabel(padding: MyTownTagCollectionViewCell.padding).then{
         $0.backgroundColor = .yellow40
-        $0.layer.cornerRadius = 28/2
-    }
-    
-    let townLabel = UILabel().then{
         $0.textColor = .zatchDeepYellow
-        $0.font = UIFont.pretendard(size: 14, family: .Medium)
+        $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
     }
     
     lazy var deleteBtn = UIButton().then{
@@ -26,42 +23,35 @@ class MyTownTagCollectionViewCell: UICollectionViewCell {
         $0.tintColor = .zatchDeepYellow
     }
     
-    override init(frame: CGRect) {
-        
-        super.init(frame: frame)
-        
-        setUpView()
-        setUpConstraint()
+    override func style() {
+        setTagLabelStyle()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        
+    override func hierarchy() {
+        super.hierarchy()
+        baseView.addSubview(tagLabel)
+        tagLabel.addSubview(deleteBtn)
     }
     
-    func setUpView(){
-        self.contentView.addSubview(yellowTagView)
-        
-        yellowTagView.addSubview(townLabel)
-        yellowTagView.addSubview(deleteBtn)
-    }
-    
-    func setUpConstraint(){
-        
-        yellowTagView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
-        townLabel.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(12)
-        }
-        
+    override func layout() {
+        super.layout()
+        setTagLayout()
         deleteBtn.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
             $0.width.height.equalTo(20)
-            $0.leading.equalTo(townLabel.snp.trailing).offset(4)
-            $0.trailing.equalToSuperview().offset(-4)
+            $0.leading.equalTo(tagLabel.snp.trailing).offset(4)
+            $0.trailing.equalToSuperview().inset(4)
+            $0.centerY.equalToSuperview()
         }
+    }
+    
+    static func estimatedSize(of title: String) -> CGSize {
+        let testLabel = PaddingLabel(padding: MyTownTagCollectionViewCell.padding).then{
+            $0.text = title
+            $0.snp.makeConstraints{
+                $0.height.equalTo(MyTownTagCollectionViewCell.height)
+            }
+        }
+        return CGSize(width: testLabel.intrinsicContentSize.width,
+                      height: MyTownTagCollectionViewCell.height)
     }
 }
