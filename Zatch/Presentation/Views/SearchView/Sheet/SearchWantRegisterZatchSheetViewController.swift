@@ -36,10 +36,6 @@ class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        SearchWantZatchByRegisterCollectionViewCell.getEstimatedSize(title: viewModel.getLookingForProduct(at: indexPath.row))
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.changeWantProductByLookingForZatch(at: indexPath.row)
         super.collectionView(collectionView, didSelectItemAt: indexPath)
@@ -47,6 +43,10 @@ class SearchWantRegisterZatchSheetViewController: SearchTagSheetViewController{
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.dequeueReusableCell(for: indexPath, cellType: SearchWantZatchByRegisterCollectionViewCell.self).isSelectedState = false
+    }
+    
+    override func getCellTitle(index: Int) -> String {
+        viewModel.getLookingForProduct(at: index)
     }
 
 }
