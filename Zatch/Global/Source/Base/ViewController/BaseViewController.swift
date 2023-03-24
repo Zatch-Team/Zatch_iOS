@@ -59,7 +59,7 @@ class BaseViewController<T: BaseHeaderView,
         }
         
         mainView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
+            $0.top.equalTo(headerView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
