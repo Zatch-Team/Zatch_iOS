@@ -148,7 +148,6 @@
 		5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D78C286C4AB70075DB28 /* ZatchTextRadioButton.swift */; };
 		576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */; };
 		576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */; };
-		576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375128D6D7E600EF36E6 /* MapMeetingView.swift */; };
 		576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */; };
 		576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */; };
 		576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375A28D82E9A00EF36E6 /* SettingViewController.swift */; };
@@ -173,7 +172,6 @@
 		57A28B3D28CED93700263079 /* MapTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3C28CED93700263079 /* MapTownViewController.swift */; };
 		57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B3E28CED94B00263079 /* SearchTownViewController.swift */; };
 		57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B4128CED9DD00263079 /* SearchTownView.swift */; };
-		57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B4328CED9ED00263079 /* MapTownView.swift */; };
 		57A28B4628CED9F600263079 /* SplashTownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28B4528CED9F600263079 /* SplashTownView.swift */; };
 		57A28B8B28CEF5E000263079 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28B8A28CEF5E000263079 /* OpenGLES.framework */; };
 		57A28B8D28CEF62700263079 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A28B8C28CEF62700263079 /* CoreLocation.framework */; };
@@ -524,7 +522,6 @@
 		5767D78C286C4AB70075DB28 /* ZatchTextRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTextRadioButton.swift; sourceTree = "<group>"; };
 		576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapViewController.swift; sourceTree = "<group>"; };
 		576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapView.swift; sourceTree = "<group>"; };
-		576B375128D6D7E600EF36E6 /* MapMeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingView.swift; sourceTree = "<group>"; };
 		576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingViewController.swift; sourceTree = "<group>"; };
 		576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalMeetingModel.swift; sourceTree = "<group>"; };
 		576B375A28D82E9A00EF36E6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -549,7 +546,6 @@
 		57A28B3C28CED93700263079 /* MapTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTownViewController.swift; sourceTree = "<group>"; };
 		57A28B3E28CED94B00263079 /* SearchTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTownViewController.swift; sourceTree = "<group>"; };
 		57A28B4128CED9DD00263079 /* SearchTownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTownView.swift; sourceTree = "<group>"; };
-		57A28B4328CED9ED00263079 /* MapTownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTownView.swift; sourceTree = "<group>"; };
 		57A28B4528CED9F600263079 /* SplashTownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTownView.swift; sourceTree = "<group>"; };
 		57A28B8A28CEF5E000263079 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		57A28B8C28CEF62700263079 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -1409,7 +1405,6 @@
 				57B32C28291E8FF60018C0CB /* BottomSheet */,
 				EEB13B70297F99F0001A8DD9 /* TabBar */,
 				571AD7112828D9C900390AAD /* Category */,
-				576B374C28D6D6EF00EF36E6 /* Map */,
 				57EBCE3C28A88E5000212D20 /* Alert */,
 				57468A79289D3C0800056691 /* Protocol */,
 				57FEFA89297A5CED008A78B0 /* Utils */,
@@ -1572,15 +1567,6 @@
 			path = RadioButton;
 			sourceTree = "<group>";
 		};
-		576B374C28D6D6EF00EF36E6 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */,
-				576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		576B374F28D6D77700EF36E6 /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
@@ -1601,7 +1587,6 @@
 				57D6D79428CDBC3A00F805B7 /* MeetingSheetView.swift */,
 				57D6D79628CDBC4F00F805B7 /* MakeMeetingSheetView.swift */,
 				57D6D79828CDBC6000F805B7 /* ModifyMeetingSheetView.swift */,
-				576B375128D6D7E600EF36E6 /* MapMeetingView.swift */,
 			);
 			path = AppointmentView;
 			sourceTree = "<group>";
@@ -1643,7 +1628,6 @@
 			children = (
 				57A28B4528CED9F600263079 /* SplashTownView.swift */,
 				57A28B4128CED9DD00263079 /* SearchTownView.swift */,
-				57A28B4328CED9ED00263079 /* MapTownView.swift */,
 			);
 			path = Town;
 			sourceTree = "<group>";
@@ -1872,6 +1856,7 @@
 		57FEFA88297A5C50008A78B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EE4D887129CF0D91003B6383 /* Map */,
 				EEE326AB2998C5FD0017DF46 /* Search */,
 				EE642C58298FA97100E15869 /* Register */,
 			);
@@ -1960,6 +1945,15 @@
 				EE410190298541010083B7E0 /* MyZatchView.swift */,
 			);
 			path = MyZatch;
+			sourceTree = "<group>";
+		};
+		EE4D887129CF0D91003B6383 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */,
+				576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		EE532954299BCFEF00C79CF2 /* Util */ = {
@@ -2526,7 +2520,6 @@
 				EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */,
-				576B375228D6D7E600EF36E6 /* MapMeetingView.swift in Sources */,
 				EE73C51C299600230000F8AC /* RegisterCellDelegate.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
@@ -2662,7 +2655,6 @@
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
-				57A28B4428CED9ED00263079 /* MapTownView.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
