@@ -22,7 +22,7 @@ class AlertViewController: UIViewController {
     
     lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)
-        $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.titleLabel?.setTypoStyleWithSingleLine(typoStyle: .bold16)
         $0.titleLabel?.textAlignment = .center
         $0.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
     }
