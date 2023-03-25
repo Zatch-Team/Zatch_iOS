@@ -15,9 +15,9 @@ class KakaoMapViewController: UIViewController {
     
     var locationManager: CLLocationManager!
     
-    let mainView = MapTownView().then{
+    let mainView = KakaoMapView(type: .town).then{
 //        $0.backBtn.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
-        $0.settingBtn.addTarget(self, action: #selector(settingBtnDidClicked), for: .touchUpInside)
+        $0.nextButton.addTarget(self, action: #selector(settingBtnDidClicked), for: .touchUpInside)
     }
 
     override func viewDidLoad() {

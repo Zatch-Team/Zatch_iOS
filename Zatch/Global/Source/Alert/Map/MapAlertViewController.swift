@@ -28,7 +28,7 @@ class MapAlertViewController: AlertViewController {
         $0.setTitle("다시 설정", for: .normal)
         $0.setTitleColor(.zatchPurple, for: .normal)
         $0.backgroundColor = .white
-        $0.titleLabel?.font = UIFont.pretendard(size: 14, family: .Bold)
+        $0.titleLabel?.setTypoStyleWithSingleLine(typoStyle: .bold16)
         $0.titleLabel?.textAlignment = .center
         $0.addTarget(self, action: #selector(cancelBtnDidClicked), for: .touchUpInside)
     }
@@ -57,13 +57,14 @@ class MapAlertViewController: AlertViewController {
         super.layout()
         
         characterImage.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(22.5)
+            $0.top.equalToSuperview().offset(17.5)
+            $0.leading.equalTo(109)
             $0.centerX.equalToSuperview()
-            $0.leading.equalTo(118)
+            $0.width.height.equalTo(110)
         }
         
         messageLabel.snp.makeConstraints{
-            $0.top.equalTo(characterImage.snp.bottom).offset(13.5)
+            $0.top.equalTo(characterImage.snp.bottom).offset(8.5)
             $0.leading.equalTo(28)
             $0.centerX.equalToSuperview()
         }
@@ -78,9 +79,9 @@ class MapAlertViewController: AlertViewController {
         }
         
         btnStackView.snp.makeConstraints{
+            $0.top.equalTo(messageLabel.snp.bottom).offset(12)
             $0.height.equalTo(32)
-            $0.bottom.equalToSuperview().offset(-16)
-            $0.top.equalTo(messageLabel.snp.bottom).offset(8)
+            $0.bottom.equalToSuperview().inset(20)
             $0.centerX.equalToSuperview()
         }
     }

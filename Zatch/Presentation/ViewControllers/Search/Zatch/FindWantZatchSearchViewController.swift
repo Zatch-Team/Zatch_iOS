@@ -94,7 +94,7 @@ extension FindWantZatchSearchViewController: UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let title = getCellTitle(of: collectionView, index: indexPath.row)
-        return SearchTagCollectionViewCell.getEstimatedSize(of: title)
+        return SearchTagCollectionViewCell.estimatedSize(of: title)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

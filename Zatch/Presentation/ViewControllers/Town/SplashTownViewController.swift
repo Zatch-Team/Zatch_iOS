@@ -9,29 +9,33 @@ import UIKit
 
 class SplashTownViewController: UIViewController {
     
-    let mainView = SplashTownView().then{
-        $0.moveSettingBtn.addTarget(self, action: #selector(moveSettingBtnDidClicked), for: .touchUpInside)
-    }
-
+    private let mainView = SplashTownView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        self.view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = true
-        
-        self.view.addSubview(mainView)
-        
+        style()
+        layout()
+        initialize()
+    }
+    
+    private func style(){
+        view.backgroundColor = .white
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func layout(){
+        view.addSubview(mainView)
         mainView.snp.makeConstraints{
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
-
     }
     
-    @objc func moveSettingBtnDidClicked(){
-        let vc = MapTownViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    private func initialize(){
+        mainView.moveSettingBtn.addTarget(self, action: #selector(willMoveTownSettingViewController), for: .touchUpInside)
+    }
+    
+    @objc func willMoveTownSettingViewController(){
+        navigationController?.pushViewController(MapTownViewController(), animated: true)
     }
 
 

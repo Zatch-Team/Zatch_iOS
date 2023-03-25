@@ -7,9 +7,10 @@
 
 import UIKit
 
-class SearchTagCollectionViewCell: BaseCollectionViewCell{
+class SearchTagCollectionViewCell: BaseCollectionViewCell, TagCollectionViewCell{
     
-    static let height = 32
+    static let height: CGFloat = 32
+    static let padding: ZatchComponent.Padding = ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)
 
     var isSelectState: Bool = false{
         didSet{
@@ -17,32 +18,26 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         }
     }
     
-    private let tagLabel = PaddingLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
-        $0.numberOfLines = 1
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 32/2
-    }
+    let tagLabel = PaddingLabel(padding: SearchTagCollectionViewCell.padding)
     
     override func style() {
+        setTagLabelStyle()
         setDeselectState()
     }
     
     override func hierarchy() {
         super.hierarchy()
-        self.baseView.addSubview(tagLabel)
+        baseView.addSubview(tagLabel)
     }
     
     override func layout() {
         super.layout()
-        tagLabel.snp.makeConstraints{
-            $0.top.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(SearchTagCollectionViewCell.height)
-        }
+        setTagLayout()
     }
     
-    static func getEstimatedSize(of title: String) -> CGSize{
+    static func estimatedSize(of title: String) -> CGSize{
         
-        let testLabel = PaddingLabel(padding: ZatchComponent.Padding(left: 14, right: 14, top: 6, bottom: 6)).then{
+        let testLabel = PaddingLabel(padding: SearchTagCollectionViewCell.padding).then{
             $0.text = title
             $0.snp.makeConstraints{
                 $0.height.equalTo(SearchTagCollectionViewCell.height)
@@ -54,11 +49,8 @@ class SearchTagCollectionViewCell: BaseCollectionViewCell{
         let mediumSize = testLabel.then{
             $0.setTypoStyleWithSingleLine(typoStyle: .medium15_19) }.intrinsicContentSize
         
-        return boldSize.width > mediumSize.width ? boldSize : mediumSize
-    }
-    
-    func setTitle(_ title: String){
-        tagLabel.text = title
+        return CGSize(width: max(boldSize.width, mediumSize.width),
+                      height: SearchTagCollectionViewCell.height)
     }
     
     private func setSelectState(){
