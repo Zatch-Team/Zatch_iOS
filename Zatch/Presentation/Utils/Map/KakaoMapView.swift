@@ -7,8 +7,22 @@
 
 import UIKit
 
-class KakaoMapView: UIView {
-
+class KakaoMapView: BaseView {
+    
+    enum ServiceType: String{
+        case town = "재치 시작하기"
+        case meeting = "약속 잡기"
+    }
+    
+    init(type: ServiceType){
+        super.init(frame: .zero)
+        nextButton.setTitle(type.rawValue, for: .normal)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let backBtnView = UIView().then{
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 40/2
@@ -26,41 +40,20 @@ class KakaoMapView: UIView {
         $0.baseMapType = .standard
     }
     
-    lazy var settingBtn = Purple52Button().then{
-        $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
-        $0.layer.shadowOpacity = 1
-        $0.layer.shadowRadius = 8
-        $0.layer.shadowOffset = CGSize(width: 0, height: 2)
-    }
+    lazy var nextButton = Purple52Button()
 
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        setUpView()
-        setUpConstriant()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setUpView(){
-        
-        self.addSubview(mapView)
-        
+    override func hierarchy() {
+        addSubview(mapView)
         mapView.addSubview(backBtnView)
-        mapView.addSubview(settingBtn)
-        
+        mapView.addSubview(nextButton)
         backBtnView.addSubview(backBtn)
-        
     }
     
-    func setUpConstriant(){
-        
+    override func layout() {
         backBtnView.snp.makeConstraints{
             $0.width.height.equalTo(40)
-            $0.top.equalToSuperview().offset(88)
-            $0.leading.equalToSuperview().offset(35)
+            $0.top.equalToSuperview().offset(79)
+            $0.leading.equalToSuperview().offset(24)
         }
         
         backBtn.snp.makeConstraints{
@@ -72,10 +65,9 @@ class KakaoMapView: UIView {
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
         
-        settingBtn.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-86)
-            $0.leading.equalToSuperview().offset(31)
-            $0.trailing.equalToSuperview().offset(-31)
+        nextButton.snp.makeConstraints{
+            $0.bottom.equalToSuperview().inset(86)
+            $0.leading.trailing.equalToSuperview().inset(31)
         }
     }
 
