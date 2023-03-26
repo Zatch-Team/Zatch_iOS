@@ -149,7 +149,7 @@
 		576B374B28D6D67700EF36E6 /* KakaoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */; };
 		576B374E28D6D71A00EF36E6 /* KakaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */; };
 		576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */; };
-		576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */; };
+		576B375628D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375528D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift */; };
 		576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375A28D82E9A00EF36E6 /* SettingViewController.swift */; };
 		576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */; };
 		576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376028D82F7300EF36E6 /* UserLeaveView.swift */; };
@@ -213,7 +213,7 @@
 		57A28CE228CF23FF00263079 /* MyTownTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */; };
 		57A28D0E28D03FAE00263079 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0D28D03FAE00263079 /* String.swift */; };
 		57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D0F28D041F800263079 /* MapAlertViewController.swift */; };
-		57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */; };
+		57A28D5628D1A0BB00263079 /* GetTownResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D5528D1A0BB00263079 /* GetTownResponseModel.swift */; };
 		57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */; };
 		57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */; };
 		57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */; };
@@ -239,7 +239,7 @@
 		57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */; };
 		57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */; };
 		57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */; };
-		57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */; };
+		57D6D7A328CDC32200F805B7 /* PlaceSearchRepsonseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A228CDC32200F805B7 /* PlaceSearchRepsonseModel.swift */; };
 		57D6D7A628CDC34800F805B7 /* KakaoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */; };
 		57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */; };
 		57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */; };
@@ -284,6 +284,16 @@
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
 		EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* ImageDetailView.swift */; };
+		EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887229CFF127003B6383 /* MapRepository.swift */; };
+		EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */; };
+		EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887929CFF3B4003B6383 /* MapRouter.swift */; };
+		EE4D887F29CFFA8B003B6383 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887E29CFFA8B003B6383 /* MapService.swift */; };
+		EE4D888129D000E7003B6383 /* PlaceSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888029D000E7003B6383 /* PlaceSearchUseCase.swift */; };
+		EE4D888329D00102003B6383 /* GetTownLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888229D00102003B6383 /* GetTownLocationUseCase.swift */; };
+		EE4D888529D0010F003B6383 /* GetMeetingLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888429D0010F003B6383 /* GetMeetingLocationUseCase.swift */; };
+		EE4D888729D00191003B6383 /* LocationCoordinateRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888629D00191003B6383 /* LocationCoordinateRequestValue.swift */; };
+		EE4D888929D01379003B6383 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888829D01379003B6383 /* MapViewController.swift */; };
+		EE4D888B29D013CC003B6383 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888A29D013CC003B6383 /* Map.swift */; };
 		EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */; };
 		EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */; };
 		EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1429B44CF700DD0F20 /* BaseRouter.swift */; };
@@ -523,7 +533,7 @@
 		576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapViewController.swift; sourceTree = "<group>"; };
 		576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapView.swift; sourceTree = "<group>"; };
 		576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMeetingViewController.swift; sourceTree = "<group>"; };
-		576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalMeetingModel.swift; sourceTree = "<group>"; };
+		576B375528D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLoactionResponseModel.swift; sourceTree = "<group>"; };
 		576B375A28D82E9A00EF36E6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLeaveViewController.swift; sourceTree = "<group>"; };
 		576B376028D82F7300EF36E6 /* UserLeaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLeaveView.swift; sourceTree = "<group>"; };
@@ -594,7 +604,7 @@
 		57A28CE128CF23FF00263079 /* MyTownTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTownTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		57A28D0D28D03FAE00263079 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		57A28D0F28D041F800263079 /* MapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAlertViewController.swift; sourceTree = "<group>"; };
-		57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAddressModel.swift; sourceTree = "<group>"; };
+		57A28D5528D1A0BB00263079 /* GetTownResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTownResponseModel.swift; sourceTree = "<group>"; };
 		57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstView.swift; sourceTree = "<group>"; };
 		57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterSecondView.swift; sourceTree = "<group>"; };
@@ -622,7 +632,7 @@
 		57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMeetingSheetViewModel.swift; sourceTree = "<group>"; };
 		57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewModel.swift; sourceTree = "<group>"; };
 		57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMeetingSheetViewController.swift; sourceTree = "<group>"; };
-		57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalTownModel.swift; sourceTree = "<group>"; };
+		57D6D7A228CDC32200F805B7 /* PlaceSearchRepsonseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchRepsonseModel.swift; sourceTree = "<group>"; };
 		57D6D7A528CDC34800F805B7 /* KakaoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocalDataManager.swift; sourceTree = "<group>"; };
 		57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailView.swift; sourceTree = "<group>"; };
 		57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -669,6 +679,16 @@
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE410196298557440083B7E0 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		EE4D887229CFF127003B6383 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
+		EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepositoryInterface.swift; sourceTree = "<group>"; };
+		EE4D887929CFF3B4003B6383 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		EE4D887E29CFFA8B003B6383 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		EE4D888029D000E7003B6383 /* PlaceSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchUseCase.swift; sourceTree = "<group>"; };
+		EE4D888229D00102003B6383 /* GetTownLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTownLocationUseCase.swift; sourceTree = "<group>"; };
+		EE4D888429D0010F003B6383 /* GetMeetingLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMeetingLocationUseCase.swift; sourceTree = "<group>"; };
+		EE4D888629D00191003B6383 /* LocationCoordinateRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinateRequestValue.swift; sourceTree = "<group>"; };
+		EE4D888829D01379003B6383 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EE4D888A29D013CC003B6383 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodURL.swift; sourceTree = "<group>"; };
 		EE541C1429B44CF700DD0F20 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -966,7 +986,7 @@
 				EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */,
 				EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */,
 				57B32C2F291F55F20018C0CB /* RegisterModels */,
-				57A28D5428D1A07000263079 /* TownModels */,
+				57A28D5428D1A07000263079 /* Map */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
 			);
 			path = Models;
@@ -1007,11 +1027,11 @@
 		23C9030E28C5CE2E00FB6D3D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				EE541C1129B44C7B00DD0F20 /* Foundation */,
 				57A28D5328D19D3700263079 /* KakaoDataManager */,
 				EE813FFA29C585370091F16E /* ZatchRepository.swift */,
 				EE813FFC29C585400091F16E /* UserRepository.swift */,
 				EE27C54B29C8286B00285CC5 /* SearchRepository.swift */,
+				EE4D887229CFF127003B6383 /* MapRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1619,6 +1639,8 @@
 				57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */,
 				57A28B3E28CED94B00263079 /* SearchTownViewController.swift */,
 				57A28B3C28CED93700263079 /* MapTownViewController.swift */,
+				EE4D888829D01379003B6383 /* MapViewController.swift */,
+				EE4D888A29D013CC003B6383 /* Map.swift */,
 			);
 			path = Town;
 			sourceTree = "<group>";
@@ -1715,12 +1737,13 @@
 			path = KakaoDataManager;
 			sourceTree = "<group>";
 		};
-		57A28D5428D1A07000263079 /* TownModels */ = {
+		57A28D5428D1A07000263079 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				57A28D5528D1A0BB00263079 /* KakaoLocationAddressModel.swift */,
+				57A28D5528D1A0BB00263079 /* GetTownResponseModel.swift */,
+				57D6D7A228CDC32200F805B7 /* PlaceSearchRepsonseModel.swift */,
 			);
-			path = TownModels;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		57B32C27291E8FB80018C0CB /* Base */ = {
@@ -1795,8 +1818,7 @@
 		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
 			isa = PBXGroup;
 			children = (
-				57D6D7A228CDC32200F805B7 /* KakaoLocalTownModel.swift */,
-				576B375528D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift */,
+				576B375528D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift */,
 			);
 			path = ChattingModels;
 			sourceTree = "<group>";
@@ -1847,8 +1869,10 @@
 		57FEFA84297A5B6E008A78B0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EE541C1129B44C7B00DD0F20 /* Foundation */,
 				23C9030B28C5CE2100FB6D3D /* Models */,
 				23C9030E28C5CE2E00FB6D3D /* Repository */,
+				EE4D887D29CFFA69003B6383 /* MoyaService */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1956,6 +1980,42 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		EE4D887629CFF142003B6383 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EE4D888629D00191003B6383 /* LocationCoordinateRequestValue.swift */,
+				EE4D888029D000E7003B6383 /* PlaceSearchUseCase.swift */,
+				EE4D888229D00102003B6383 /* GetTownLocationUseCase.swift */,
+				EE4D888429D0010F003B6383 /* GetMeetingLocationUseCase.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		EE4D887729CFF399003B6383 /* Zatch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Zatch;
+			sourceTree = "<group>";
+		};
+		EE4D887829CFF3AA003B6383 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EE4D887929CFF3B4003B6383 /* MapRouter.swift */,
+				EE4D887E29CFFA8B003B6383 /* MapService.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		EE4D887D29CFFA69003B6383 /* MoyaService */ = {
+			isa = PBXGroup;
+			children = (
+				EE4D887729CFF399003B6383 /* Zatch */,
+				EE4D887829CFF3AA003B6383 /* Map */,
+			);
+			path = MoyaService;
+			sourceTree = "<group>";
+		};
 		EE532954299BCFEF00C79CF2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -2046,6 +2106,7 @@
 				EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */,
 				EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */,
 				EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */,
+				EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */,
 			);
 			path = RepositoryInterface;
 			sourceTree = "<group>";
@@ -2060,6 +2121,7 @@
 		EE7B76CF29C5F61C00942798 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				EE4D887629CFF142003B6383 /* Map */,
 				EE27C54829C827EF00285CC5 /* Search */,
 				EE7B76D029C5F61C00942798 /* Zatch */,
 				EE7B76D429C5F61C00942798 /* User */,
@@ -2550,7 +2612,7 @@
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
-				576B375628D6FAFE00EF36E6 /* KakaoLocalMeetingModel.swift in Sources */,
+				576B375628D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift in Sources */,
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */,
@@ -2562,6 +2624,7 @@
 				57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */,
 				57E75EBF28E3C32800AC24B2 /* ZatchDetailView.swift in Sources */,
 				EEE7F2B3299BD83100C674B9 /* ZatchShareTableViewCell.swift in Sources */,
+				EE4D887F29CFFA8B003B6383 /* MapService.swift in Sources */,
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
@@ -2569,10 +2632,11 @@
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
-				57A28D5628D1A0BB00263079 /* KakaoLocationAddressModel.swift in Sources */,
+				57A28D5628D1A0BB00263079 /* GetTownResponseModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TopTitleView.swift in Sources */,
 				EE7B76C229C5E36D00942798 /* UserRepositoryInterface.swift in Sources */,
 				57067864281C143A00F48342 /* Color.swift in Sources */,
+				EE4D888929D01379003B6383 /* MapViewController.swift in Sources */,
 				EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */,
 				5722461628C2F827009B7C78 /* AlertViewController.swift in Sources */,
 				EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */,
@@ -2607,6 +2671,7 @@
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */,
 				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
+				EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
 				EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */,
 				57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */,
@@ -2614,10 +2679,14 @@
 				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
 				57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */,
+				EE4D888B29D013CC003B6383 /* Map.swift in Sources */,
+				EE4D888329D00102003B6383 /* GetTownLocationUseCase.swift in Sources */,
 				5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */,
+				EE4D888529D0010F003B6383 /* GetMeetingLocationUseCase.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
 				EE813FFB29C585370091F16E /* ZatchRepository.swift in Sources */,
+				EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */,
@@ -2640,11 +2709,13 @@
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
 				EEE326B02998C6DF0017DF46 /* ExchangeMyZatchSearchViewModel.swift in Sources */,
 				EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */,
+				EE4D888729D00191003B6383 /* LocationCoordinateRequestValue.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				EE27C54C29C8286B00285CC5 /* SearchRepository.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */,
 				EE27C54729C8273C00285CC5 /* FindWantZatchSearchViewModel.swift in Sources */,
+				EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */,
 				EE938DA129CD8936003A5BF6 /* UIColor.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */,
 				57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */,
@@ -2704,6 +2775,7 @@
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
 				EE541C1929B44E7D00DD0F20 /* NetworkResult.swift in Sources */,
 				EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */,
+				EE4D888129D000E7003B6383 /* PlaceSearchUseCase.swift in Sources */,
 				EE7C9FF6298A72CE00D2F238 /* ChattingRoomView.swift in Sources */,
 				EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */,
 				EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */,
@@ -2760,7 +2832,7 @@
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
-				57D6D7A328CDC32200F805B7 /* KakaoLocalTownModel.swift in Sources */,
+				57D6D7A328CDC32200F805B7 /* PlaceSearchRepsonseModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
 				EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */,
 				57468A8E289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift in Sources */,
