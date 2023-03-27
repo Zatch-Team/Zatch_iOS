@@ -28,6 +28,7 @@ class InfoAlertViewController: MessageAlertViewController {
         }
         
         btnStackView.snp.remakeConstraints{ make in
+            make.top.equalTo(messageLabel.snp.bottom).offset(12)
             make.trailing.equalToSuperview().offset(-30)
             make.bottom.equalToSuperview().offset(-10)
         }

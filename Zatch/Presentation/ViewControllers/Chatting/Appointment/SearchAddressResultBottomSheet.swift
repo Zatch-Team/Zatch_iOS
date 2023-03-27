@@ -8,14 +8,16 @@
 import UIKit
 import Alamofire
 
+//TODO: WILL DELETE
 class SearchAddressResultSheetViewController: BaseBottomSheetViewController<String> {
     
     //MARK: - Properties
-    var addressResult: [LocalTownResult] = []{
-        didSet{
-            self.mainView.tableView.reloadData()
-        }
-    }
+        var addressResult = [String]()
+//    var addressResult: [LocalTownResult] = []{
+//        didSet{
+//            self.mainView.tableView.reloadData()
+//        }
+//    }
     
     let mainView = SearchAddressResultView()
 
@@ -54,12 +56,12 @@ class SearchAddressResultSheetViewController: BaseBottomSheetViewController<Stri
     //MARK: - API
     func requestSearchResult(query: String){
         self.mainView.searchTextField.text = query
-        KakaoLocalDataManager().getPlaceSearch(query: query, viewController: self)
+//        KakaoLocalDataManager().getPlaceSearch(query: query, viewController: self)
     }
     
-    func successSearchAddressResult(result: [LocalTownResult]){
-        addressResult = result
-    }
+//    func successSearchAddressResult(result: [LocalTownResult]){
+//        addressResult = result
+//    }
 
 }
 extension SearchAddressResultSheetViewController: UITableViewDelegate, UITableViewDataSource {
@@ -72,9 +74,9 @@ extension SearchAddressResultSheetViewController: UITableViewDelegate, UITableVi
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchAddressResultTableViewCell.cellIdentifier, for: indexPath) as? SearchAddressResultTableViewCell else { fatalError() }
         
-        let data = addressResult[indexPath.row]
-        cell.locationLabel.text = data.place_name
-        cell.addressLabel.text = data.address_name
+//        let data = addressResult[indexPath.row]
+//        cell.locationLabel.text = data.place_name
+//        cell.addressLabel.text = data.address_name
         
         return cell
     }

@@ -23,9 +23,9 @@ class MapTownViewController: KakaoMapViewController{
         
         let userTown = locationManager.location?.coordinate
         
-        KakaoLocalDataManager().getsTownLocation(x: String(userTown!.longitude),
-                                                    y: String(userTown!.latitude),
-                                                    viewController: self)
+//        KakaoLocalDataManager().getsTownLocation(x: String(userTown!.longitude),
+//                                                    y: String(userTown!.latitude),
+//                                                    viewController: self)
     }
 
     override func settingBtnDidClicked(){
@@ -35,9 +35,9 @@ class MapTownViewController: KakaoMapViewController{
             return
         }
         
-        KakaoLocalDataManager().getsTownLocation(x: String( mapPoint.mapPointGeo().longitude),
-                                                    y: String(mapPoint.mapPointGeo().latitude),
-                                                    viewController: self)
+//        KakaoLocalDataManager().getsTownLocation(x: String( mapPoint.mapPointGeo().longitude),
+//                                                    y: String(mapPoint.mapPointGeo().latitude),
+//                                                    viewController: self)
     }
     
     func willCertificationUserTown(selectTown: String){
@@ -59,16 +59,16 @@ class MapTownViewController: KakaoMapViewController{
     
     //MARK: - API
     
-    func successGetLocationAddress(result: KakaoLocationAddressModel){
-        
-        print("현재 위치 주소",result)
-        
-        let selectTown = result.documents[1].region_3depth_name
-        
-        if (currentLoactionTown == nil){
-            currentLoactionTown = selectTown
-        }else{
-            willCertificationUserTown(selectTown: selectTown)
-        }
-    }
+//    func successGetLocationAddress(result: KakaoLocationAddressModel){
+//
+//        print("현재 위치 주소",result)
+//
+//        let selectTown = result.documents[1].region_3depth_name
+//
+//        if (currentLoactionTown == nil){
+//            currentLoactionTown = selectTown
+//        }else{
+//            willCertificationUserTown(selectTown: selectTown)
+//        }
+//    }
 }

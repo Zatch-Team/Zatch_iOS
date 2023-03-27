@@ -1,5 +1,5 @@
 //
-//  KakaoLocationAddressModel.swift
+//  GetTownResponseModel.swift
 //  Zatch
 //
 //  Created by 박지윤 on 2022/09/14.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct KakaoLocationAddressModel: Decodable{
-    let documents:[KakaoLocationAddressResult]
+struct GetTownResponseModel: Decodable{
+    let documents:[TownResponeModel]
 }
 
-struct KakaoLocationAddressResult: Decodable{
+struct TownResponeModel: Decodable{
     let region_type: String
     let address_name: String
     let region_1depth_name: String

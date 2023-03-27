@@ -12,7 +12,26 @@ class BaseService: MoyaProvider<MultiTarget> {
     
     var request: Cancellable?
     
-    func requestDecoded<T: BaseRouter, L: Decodable>(_ target: T, animate: Bool, completion: @escaping ((NetworkResult<L>) -> Void)) {
+    func requestDecoded<T: BaseRouter, L: Decodable>(_ target: T,
+                                       completion: @escaping (Result<L, Error>) -> Void){
+        addObserver()
+        request(MultiTarget(target)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let body = try JSONDecoder().decode(L.self, from: response.data)
+                    completion(.success(body))
+                } catch let error {
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
+    func requestDecoded<T: BaseRouter, L: Decodable>(_ target: T, animate: Bool = true, completion: @escaping ((NetworkResult<L>) -> Void)) {
         addObserver()
         if(animate){
 //            LoadingView.show()
@@ -46,7 +65,7 @@ class BaseService: MoyaProvider<MultiTarget> {
     }
     
     func requestNoResultAPI<T: BaseRouter>(_ target: T,
-                                           animate: Bool,
+                                           animate: Bool = true,
                                            completion: @escaping (NetworkResult<Any>) -> Void) {
         addObserver()
         if(animate){
