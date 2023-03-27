@@ -9,7 +9,6 @@ import Foundation
 import Moya
 
 enum MapRouter: BaseRouter{
-//    typealias ResultModel = Album
     case placeSearch(query: PlaceSearchRequestValue)
     case getTownLocation(coordinate: LocationCoordinateRequestValue)
     case getMeetingLocation
@@ -23,7 +22,6 @@ extension MapRouter{
 
     var headers: [String: String]? {
         let header = [
-            "Content-Type": "application/json",
             "Authorization": "KakaoAK \(Const.KakaoAPI.KAKAO_REST_API_KEY)"]
         return header
     }
