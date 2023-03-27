@@ -11,3 +11,7 @@ protocol Map{
     func willMovePreviousViewController()
     func showAlertAboutLocation(location: String)
 }
+
+protocol MapLocationSelectable{
+    func changeLocationMarker(x: Double, y: Double)
+}
