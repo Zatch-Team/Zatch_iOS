@@ -8,6 +8,6 @@
 import Foundation
 
 struct LocationCoordinateRequestValue {
-    let x: Float
-    let y: Float
+    let x: String
+    let y: String
 }
