@@ -17,8 +17,6 @@ class TownRegisterMapViewModel: BaseViewModel{
     private let townLocationSubject = PublishSubject<Coordinate>()
     private let currentLocationSubject = PublishSubject<Coordinate>()
     private var townLocation: Coordinate!
-    private var townResponseValue: Driver<String>!
-    private var currentLocation: String!
     
     
     private let getTownLocationUseCase: GetTownLocationUseCaseInterface
