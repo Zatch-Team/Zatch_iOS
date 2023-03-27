@@ -23,58 +23,58 @@ class KakaoMapViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
         
-        setUpView()
+//        setUpView()
         
         //TODO: - Authorization Status에 따라 권한 요청 진행하기 (CLAuthorizationStatus)
 
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        
-        switch (locationManager.authorizationStatus){
-            
-        case .authorizedAlways, .authorizedWhenInUse:
-            print("이미 허용됨?")
-            //따로 안내할 내용 없으니까 건너뛰어도 될 듯
-            locationManager.startUpdatingLocation()
-            settingAuthorizedState()
-            break
-        case .notDetermined:
-            print("아직 결정안됨?")
-            locationManager.requestWhenInUseAuthorization()
-            break
-        default:
-            print("이외?")
-        }
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//
+//        switch (locationManager.authorizationStatus){
+//
+//        case .authorizedAlways, .authorizedWhenInUse:
+//            print("이미 허용됨?")
+//            //따로 안내할 내용 없으니까 건너뛰어도 될 듯
+//            locationManager.startUpdatingLocation()
+//            settingAuthorizedState()
+//            break
+//        case .notDetermined:
+//            print("아직 결정안됨?")
+//            locationManager.requestWhenInUseAuthorization()
+//            break
+//        default:
+//            print("이외?")
+//        }
          
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(true)
-        
-        if(locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .denied ){
-            
-            let alert = Alert.LocationAuthority.generateAlert().show(in: self)
-            alert.completion = {
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//
+//        super.viewDidAppear(true)
+//
+//        if(locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .denied ){
+//
+//            let alert = Alert.LocationAuthority.generateAlert().show(in: self)
+//            alert.completion = {
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        }
+//    }
     
-    func setUpView(){
-        self.view.addSubview(mainView)
+//    func setUpView(){
+//        self.view.addSubview(mainView)
+//
+//        mainView.snp.makeConstraints{
+//            $0.top.bottom.leading.trailing.equalToSuperview()
+//        }
+//
+//        mainView.mapView.delegate = self
+//        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
+//        mainView.mapView.setZoomLevel(0, animated: true)
         
-        mainView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
-        mainView.mapView.delegate = self
-        mainView.mapView.currentLocationTrackingMode = .onWithoutHeading // 현 위치 트래킹 모드 on
-        mainView.mapView.setZoomLevel(0, animated: true)
-        
-    }
+//    }
     
     @objc func backBtnDidClicked(){
         self.navigationController?.popViewController(animated: true)

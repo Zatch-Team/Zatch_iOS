@@ -12,39 +12,28 @@ class KakaoLocalDataManager{
     
     let headers : HTTPHeaders = [.authorization("KakaoAK \(Const.KakaoAPI.KAKAO_REST_API_KEY)")]
     
-    func getPlaceSearch(query: String, viewController: SearchAddressResultSheetViewController){
-
-        AF.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: ["query":query], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalTownModel.self) { response in
-            switch response.result {
-            case .success(let result):
-                viewController.successSearchAddressResult(result: result.documents ?? [])
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func getsTownLocation(x: String, y: String, viewController: MapTownViewController){
-        
-        AF.request("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocationAddressModel.self) { response in
-            switch response.result {
-            case .success(let result):
-                viewController.successGetLocationAddress(result: result)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func getsMeetingLocation(x: String, y: String, viewController: MapMeetingViewController){
-        
-        AF.request("https://dapi.kakao.com/v2/local/geo/coord2address.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalMeetingModel.self) { response in
-            switch response.result {
-            case .success(let result):
-                viewController.successGetLocationAddress(result: result.documents[0].road_address)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    func getPlaceSearch(query: String, viewController: SearchAddressResultSheetViewController){
+//
+//        AF.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: ["query":query], encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: PlaceSearchRepsonseModel.self) { response in
+//            switch response.result {
+//            case .success(let result):
+//                viewController.successSearchAddressResult(result: result.documents ?? [])
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+//
+//
+//    func getsMeetingLocation(x: String, y: String, viewController: MapMeetingViewController){
+//
+//        AF.request("https://dapi.kakao.com/v2/local/geo/coord2address.json", method: .get, parameters: ["x": x, "y": y],  encoding: URLEncoding.queryString, headers: self.headers).validate().responseDecodable(of: KakaoLocalMeetingModel.self) { response in
+//            switch response.result {
+//            case .success(let result):
+//                viewController.successGetLocationAddress(result: result.documents[0].road_address)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
 }
