@@ -35,7 +35,7 @@ class SplashTownViewController: UIViewController {
     }
     
     @objc func willMoveTownSettingViewController(){
-        navigationController?.pushViewController(MapTownViewController(), animated: true)
+        navigationController?.pushViewController(TownRegisterMapViewController(), animated: true)
     }
 
 
