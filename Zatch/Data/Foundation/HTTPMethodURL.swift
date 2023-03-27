@@ -14,9 +14,9 @@ enum HTTPMethodURL {
     
     struct GET {
         //KAKAO LOCAL
-        static let placeSearch = "/search/keyword.json"
-        static let townLocation = "/geo/coord2regioncode.json"
-        static let meetingLocation = "/geo/coord2address.json"
+        static let placeSearch = kakaoLocal + "/search/keyword.json"
+        static let townLocation = kakaoLocal + "/geo/coord2regioncode.json"
+        static let meetingLocation = kakaoLocal + "/geo/coord2address.json"
     }
     
     struct POST {
