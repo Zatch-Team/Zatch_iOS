@@ -294,6 +294,8 @@
 		EE4D888729D00191003B6383 /* LocationCoordinateRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888629D00191003B6383 /* LocationCoordinateRequestValue.swift */; };
 		EE4D888929D01379003B6383 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888829D01379003B6383 /* MapViewController.swift */; };
 		EE4D888B29D013CC003B6383 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888A29D013CC003B6383 /* Map.swift */; };
+		EE4D888E29D01987003B6383 /* TownRegisterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */; };
+		EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */; };
 		EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */; };
 		EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */; };
 		EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1429B44CF700DD0F20 /* BaseRouter.swift */; };
@@ -313,6 +315,7 @@
 		EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */; };
 		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
 		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
+		EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */; };
 		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
 		EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */; };
 		EE7B76C229C5E36D00942798 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */; };
@@ -689,6 +692,8 @@
 		EE4D888629D00191003B6383 /* LocationCoordinateRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinateRequestValue.swift; sourceTree = "<group>"; };
 		EE4D888829D01379003B6383 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EE4D888A29D013CC003B6383 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterMapViewController.swift; sourceTree = "<group>"; };
+		EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterMapViewModel.swift; sourceTree = "<group>"; };
 		EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodURL.swift; sourceTree = "<group>"; };
 		EE541C1429B44CF700DD0F20 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -708,6 +713,7 @@
 		EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductQuantityTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLocationRegisterMapViewController.swift; sourceTree = "<group>"; };
 		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
 		EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZatchRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
@@ -996,6 +1002,7 @@
 			isa = PBXGroup;
 			children = (
 				EE532955299BD00400C79CF2 /* Util */,
+				EE4D888F29D01E3E003B6383 /* Town */,
 				EEE326AE2998C6CC0017DF46 /* Search */,
 				EE642C5B298FAE1D00E15869 /* Register */,
 				23CB3CF828C7D85500C42858 /* Main */,
@@ -1595,6 +1602,7 @@
 				5722460B28BF79D1009B7C78 /* MakeMeetingSheetViewController.swift */,
 				57D6D79E28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift */,
 				576B375328D6D82200EF36E6 /* MapMeetingViewController.swift */,
+				EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -1639,8 +1647,7 @@
 				57A28B3A28CED8DF00263079 /* SplashTownViewController.swift */,
 				57A28B3E28CED94B00263079 /* SearchTownViewController.swift */,
 				57A28B3C28CED93700263079 /* MapTownViewController.swift */,
-				EE4D888829D01379003B6383 /* MapViewController.swift */,
-				EE4D888A29D013CC003B6383 /* Map.swift */,
+				EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */,
 			);
 			path = Town;
 			sourceTree = "<group>";
@@ -1974,6 +1981,8 @@
 		EE4D887129CF0D91003B6383 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				EE4D888A29D013CC003B6383 /* Map.swift */,
+				EE4D888829D01379003B6383 /* MapViewController.swift */,
 				576B374A28D6D67700EF36E6 /* KakaoMapViewController.swift */,
 				576B374D28D6D71A00EF36E6 /* KakaoMapView.swift */,
 			);
@@ -2014,6 +2023,14 @@
 				EE4D887829CFF3AA003B6383 /* Map */,
 			);
 			path = MoyaService;
+			sourceTree = "<group>";
+		};
+		EE4D888F29D01E3E003B6383 /* Town */ = {
+			isa = PBXGroup;
+			children = (
+				EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */,
+			);
+			path = Town;
 			sourceTree = "<group>";
 		};
 		EE532954299BCFEF00C79CF2 /* Util */ = {
@@ -2714,6 +2731,7 @@
 				EE27C54C29C8286B00285CC5 /* SearchRepository.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */,
+				EE4D888E29D01987003B6383 /* TownRegisterMapViewController.swift in Sources */,
 				EE27C54729C8273C00285CC5 /* FindWantZatchSearchViewModel.swift in Sources */,
 				EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */,
 				EE938DA129CD8936003A5BF6 /* UIColor.swift in Sources */,
@@ -2726,6 +2744,7 @@
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
+				EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
@@ -2822,6 +2841,7 @@
 				EE73C51A2995FB170000F8AC /* ProductDateChoiceTableViewCell.swift in Sources */,
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
+				EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
 				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
