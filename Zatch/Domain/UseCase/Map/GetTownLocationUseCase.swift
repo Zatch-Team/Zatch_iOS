@@ -8,11 +8,11 @@
 import Foundation
 import RxSwift
 
-protocol GetTownLocationInterface {
+protocol GetTownLocationUseCaseInterface {
     func execute(requestValue: LocationCoordinateRequestValue) -> Observable<GetTownResponseModel>
 }
 
-final class GetTownLocationUseCase: GetTownLocationInterface {
+final class GetTownLocationUseCase: GetTownLocationUseCaseInterface {
 
     private let mapRepository: MapRepositoryInterface
 
