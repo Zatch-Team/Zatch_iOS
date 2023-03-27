@@ -9,7 +9,8 @@ import Foundation
 import RxSwift
 
 protocol GetMeetingLocationInterface {
-    func execute(requestValue: LocationCoordinateRequestValue) -> Observable<MeetingLoactionResponseModel>
+    func execute(requestValue: LocationCoordinateRequestValue)
+//    -> Observable<MeetingLoactionResponseModel>
 }
 
 final class GetMeetingLocationUseCase: GetMeetingLocationInterface {
@@ -20,7 +21,9 @@ final class GetMeetingLocationUseCase: GetMeetingLocationInterface {
         self.mapRepository = mapRepository
     }
 
-    func execute(requestValue: LocationCoordinateRequestValue) -> Observable<MeetingLoactionResponseModel>{
-        return mapRepository.getMeetingLocation(coordinate: requestValue)
+    func execute(requestValue: LocationCoordinateRequestValue)
+//    -> Observable<MeetingLoactionResponseModel>
+    {
+//        return mapRepository.getMeetingLocation(coordinate: requestValue)
     }
 }

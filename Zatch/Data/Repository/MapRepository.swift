@@ -19,9 +19,7 @@ class MapRepository: MapRepositoryInterface{
             let requestReference: () = MapService.shared.getTownLoacation(coordinate: coordinate){ response in
                 switch response {
                 case .success(let data):
-//                    if let data = data {
-                        observer.onNext(data)
-//                    }
+                    observer.onNext(data)
                 case .failure(let err):
                     print(err)
                 }
@@ -31,20 +29,23 @@ class MapRepository: MapRepositoryInterface{
         return observable
     }
     
-    func getMeetingLocation(coordinate: LocationCoordinateRequestValue) -> Observable<MeetingLoactionResponseModel> {
-        let observable = Observable<MeetingLoactionResponseModel>.create { observer -> Disposable in
-            let requestReference: () = MapService.shared.getMeetingLocation(coordinate: coordinate){ response in
-                switch response {
-                case .success(let data):
-//                    if let data = data {
-                        observer.onNext(data)
-//                    }
-                case .failure(let err):
-                    print(err)
-                }
-            }
-            return Disposables.create(with: { requestReference })
-        }
-        return observable
+    func getMeetingLocation(coordinate: LocationCoordinateRequestValue)
+//    -> Observable<MeetingLoactionResponseModel>
+    {
+//        let observable = Observable<MeetingLoactionResponseModel>.create { observer -> Disposable in
+//            let requestReference: () = MapService.shared.getMeetingLocation(coordinate: coordinate){ response in
+//                switch response {
+//                case .success(let data):
+////                    if let data = data {
+//                        observer.onNext(data)
+////                    }
+//                case .failure(let err):
+//                    print(err)
+//                }
+//            }
+//            return Disposables.create(with: { requestReference })
+//        }
+//        return observable
+        
     }
 }

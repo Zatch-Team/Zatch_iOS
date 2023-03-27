@@ -11,5 +11,6 @@ import RxSwift
 protocol MapRepositoryInterface{
     func placeSearch(query: PlaceSearchRequestValue)
     func getTownLocation(coordinate: LocationCoordinateRequestValue) -> Observable<GetTownResponseModel>
-    func getMeetingLocation(coordinate: LocationCoordinateRequestValue) -> Observable<MeetingLoactionResponseModel>
+    func getMeetingLocation(coordinate: LocationCoordinateRequestValue)
+//    -> Observable<MeetingLoactionResponseModel>
 }
