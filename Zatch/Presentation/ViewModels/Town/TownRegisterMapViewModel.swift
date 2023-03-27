@@ -10,10 +10,6 @@ import RxSwift
 import RxCocoa
 import CoreLocation
 
-protocol MapLocationSelectable{
-    func changeLocationMarker(x: Double, y: Double)
-}
-
 class TownRegisterMapViewModel: BaseViewModel{
     
     private typealias Coordinate = (x: Double, y: Double)
