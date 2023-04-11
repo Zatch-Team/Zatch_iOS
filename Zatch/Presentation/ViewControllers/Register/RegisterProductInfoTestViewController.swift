@@ -56,15 +56,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     
     override func initialize(){
         super.initialize()
-        setTableViewDelegate()
-    }
-    
-    private func setTableViewDelegate(){
-        mainView.backTableView.do{
-            $0.dataSource = self
-            $0.delegate = self
-            $0.separatorStyle = .none
-        }
+        mainView.backTableView.initializeDelegate(self)
     }
     
     override func bindAfterViewAppear() {
@@ -144,7 +136,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
         case 1:         return getDateSelectTableViewCell(about: .buy, indexPath: indexPath)
         case 2:         return getDateSelectTableViewCell(about: .end, indexPath: indexPath)
         case 3:         return getProductIsOpenTableViewCell(indexPath: indexPath)
-        default:    fatalError("재치 등록 section 0 TableView Cell indexPath 오류")
+        default:        fatalError("재치 등록 section 0 TableView Cell indexPath 오류")
         }
     }
     
