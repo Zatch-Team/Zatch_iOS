@@ -33,9 +33,9 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     
     private var isDetailCellOpen = false{
         didSet{
-            mainView.backTableView.isScrollEnabled = isDetailCellOpen
             mainView.backTableView.cellForRow(at: DETAIL_OPEN_CELL_INDEX, cellType: RegisterCategorySelectTableViewCell.self).isSubViewOpen = isDetailCellOpen
             mainView.backTableView.reloadSections(IndexSet.init(integer: 1), with: .automatic)
+            mainView.backTableView.isScrollEnabled = Device.isSmallDevice ? true : isDetailCellOpen
         }
     }
     
