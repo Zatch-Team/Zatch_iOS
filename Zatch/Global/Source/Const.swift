@@ -8,7 +8,6 @@
 import Foundation
 
 struct Const{
-    static let isSmallDevice = height <= 736
     struct KakaoAPI{
         static let KAKAO_APP_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as! String
         static let KAKAO_REST_API_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_REST_API_KEY") as! String
@@ -28,6 +27,7 @@ struct Const{
 
 
 struct Device{
+    static let isSmallDevice = height <= 736
     static let width = UIScreen.main.bounds.size.width
     static let height = UIScreen.main.bounds.size.height
 }
