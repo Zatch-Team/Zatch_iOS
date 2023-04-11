@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class ProductDateChoiceTableViewCell: BaseTableViewCell {
     
     let backView = UIView()
@@ -205,7 +204,7 @@ class ProductDateChoiceTableViewCell: BaseTableViewCell {
         }
     }
     
-    func setTitle(type: ProductDetailInputTableViewCell.ProductDate){
+    func setTitle(type: RegisterProductInfoTestViewController.ProductDate){
         titleLabel.text = type.rawValue
     }
 
