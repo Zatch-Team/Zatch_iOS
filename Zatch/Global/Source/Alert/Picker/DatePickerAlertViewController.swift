@@ -25,7 +25,16 @@ class DatePickerAlertViewController: PickerAlertViewController {
     //MARK: - UI
     
     let datePicker = UIPickerView()
-
+    
+    init(about: Register.ProductDate){
+        super.init(nibName: nil, bundle: nil)
+        titleLabel.text = about.rawValue
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
