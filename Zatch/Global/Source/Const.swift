@@ -8,12 +8,7 @@
 import Foundation
 
 struct Const{
-    
-    struct Device{
-        static let DEVICE_WIDTH = UIScreen.main.bounds.size.width
-        static let DEVICE_HEIGHT = UIScreen.main.bounds.size.height
-    }
-    
+    static let isSmallDevice = height <= 736
     struct KakaoAPI{
         static let KAKAO_APP_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as! String
         static let KAKAO_REST_API_KEY: String = Bundle.main.object(forInfoDictionaryKey: "KAKAO_REST_API_KEY") as! String
@@ -29,6 +24,12 @@ struct Const{
         static let mainViewTopOffset: CGFloat = 107
         static let profileImageSize: CGFloat = 116
     }
+}
+
+
+struct Device{
+    static let width = UIScreen.main.bounds.size.width
+    static let height = UIScreen.main.bounds.size.height
 }
 
 struct ViewTag{

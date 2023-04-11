@@ -51,7 +51,7 @@ class RightChattingImageTableViewCell: BaseTableViewCell {
         imageMessageView.snp.makeConstraints{
             $0.trailing.equalToSuperview()
             $0.top.bottom.equalToSuperview()
-            $0.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
+            $0.width.height.lessThanOrEqualTo(200 / 360 * Device.width)
         }
     }
 }
