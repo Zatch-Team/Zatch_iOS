@@ -7,26 +7,36 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
     
     let disposeBag = DisposeBag()
-    let registerManager = ZatchRegisterRequestManager.shared
+    var delegate: ZatchRegisterDelegate!
     
-    let titleLabel = UILabel().then{
+    private lazy var selectRadioButton: ZatchComponent.FilledTag = unOpenRadioButton{
+        willSet{
+            selectRadioButton.isDisabled = true
+        }
+        didSet{
+            selectRadioButton.isDisabled = false
+        }
+    }
+
+    private let titleLabel = UILabel().then{
         $0.text = "개봉상태"
         $0.textColor = .black
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
     }
-    let tagStackView = UIStackView().then{
+    private let tagStackView = UIStackView().then{
         $0.spacing = 8
         $0.axis = .horizontal
     }
-    let unOpenRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
-        $0.setTitle("미개봉")
+    private let unOpenRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
+        $0.setTitle(Register.ProductOpenState.unopen.title)
     }
-    let openRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
-        $0.setTitle("개봉")
+    private let openRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
+        $0.setTitle(Register.ProductOpenState.open.title)
         $0.isDisabled = true
     }
     
@@ -34,6 +44,7 @@ class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         bind()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -76,24 +87,20 @@ class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
         unOpenRadioButton.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] in
-                self?.registerManager.isOpen = false
-                self?.changeTagState(recognizer: $0)
+                self?.changetOpenState(recognizer: $0, state: Register.ProductOpenState.unopen.rawValue)
             }).disposed(by: disposeBag)
         
         openRadioButton.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] in
-                self?.registerManager.isOpen = true
-                self?.changeTagState(recognizer: $0)
+                self?.changetOpenState(recognizer: $0, state: Register.ProductOpenState.open.rawValue)
             }).disposed(by: disposeBag)
     }
-    
-    private func changeTagState(recognizer: UITapGestureRecognizer){
-        
-        guard let selectTag = recognizer.view as? ZatchComponent.FilledTag,
-              let willDisabledTag = tagStackView.viewWithTag(ViewTag.normal) as? ZatchComponent.FilledTag else { return }
-        
-        willDisabledTag.isDisabled = true
-        selectTag.isDisabled = false
+
+    private func changetOpenState(recognizer: UITapGestureRecognizer, state: Int){
+        if let view = recognizer.view as? ZatchComponent.FilledTag{
+            selectRadioButton = view
+            delegate.changeIsOpenState(state)
+        }
     }
 }

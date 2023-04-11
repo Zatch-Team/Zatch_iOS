@@ -7,101 +7,98 @@
 
 import Foundation
 
-
-class ProductDateChoiceTableViewCell: BaseTableViewCell {
+final class ProductDateChoiceTableViewCell: BaseTableViewCell {
     
-    let backView = UIView()
+    var productDateType: Register.ProductDate!{
+        didSet{
+            titleLabel.text = productDateType.rawValue
+        }
+    }
     
-    let titleLabel = UILabel().then{
+    var isNotConfirmed: Bool{
+        checkButton.isSelected
+    }
+    
+    var delegate: ZatchRegisterDelegate!
+    
+    private let backView = UIView()
+    private let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
     
-    let yearTextField = UILabel().then{
+    private let yearTextField = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black85
         $0.textAlignment = .center
     }
-    let yearLabel = UILabel().then{
+    private let yearLabel = UILabel().then{
         $0.text = "년"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
-    let yearBorderLine = UIView().then{
+    private let yearBorderLine = UIView().then{
         $0.backgroundColor = .black5
     }
     
-    let monthTextField = UILabel().then{
+    private let monthTextField = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black85
         $0.textAlignment = .center
     }
-    let monthLabel = UILabel().then{
+    private let monthLabel = UILabel().then{
         $0.text = "월"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
-    let monthBorderLine = UIView().then{
+    private let monthBorderLine = UIView().then{
         $0.backgroundColor = .black5
     }
     
-    let dateTextField = UILabel().then{
+    private let dateTextField = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black85
         $0.textAlignment = .center
     }
-    let dateLabel = UILabel().then{
+    private let dateLabel = UILabel().then{
         $0.text = "일"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
-    let dateBorderLine = UIView().then{
+    private let dateBorderLine = UIView().then{
         $0.backgroundColor = .black5
     }
     
-    let checkButton = ZatchRoundCheck().then{
+    private let checkButton = ZatchRoundCheck().then{
         $0.addTarget(self, action: #selector(checkButtonListener(_:)), for: .touchUpInside)
     }
-    let checkButtonLabel = UILabel().then{
+    private let checkButtonLabel = UILabel().then{
         $0.text = "확인 불가"
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
     
     //stack view
-    let stackView = UIStackView().then{
+    private let stackView = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 13
         $0.distribution = .equalSpacing
     }
-    let yearStack = UIStackView().then{
+    private let yearStack = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 4
     }
-    let monthStack = UIStackView().then{
+    private let monthStack = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 4
     }
-    let dateStack = UIStackView().then{
+    private let dateStack = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 4
     }
     
-    var labelArray : [UILabel]!
-    var textFieldArray: [UILabel]!
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        labelArray = [titleLabel,yearLabel,monthLabel,dateLabel]
-        textFieldArray = [yearTextField,monthTextField,dateTextField]
-
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private lazy var labelArray = [titleLabel,yearLabel,monthLabel,dateLabel]
+    private lazy var textFieldArray = [yearTextField,monthTextField,dateTextField]
     
     override func hierarchy() {
         
@@ -186,27 +183,32 @@ class ProductDateChoiceTableViewCell: BaseTableViewCell {
         }
     }
     
-    @objc func checkButtonListener(_ sender: ZatchRoundCheck){
-        
-        if(sender.isSelected){
-            sender.isSelected = false
-            stackView.isUserInteractionEnabled = true
-            labelArray.forEach{ label in
-                label.textColor = .black
-            }
-        }else{
-            sender.isSelected = true
-            labelArray.forEach{ label in
-                label.textColor = .black20
-            }
-            textFieldArray.forEach{ label in
-                label.text = ""
-            }
+    @objc private func checkButtonListener(_ sender: ZatchRoundCheck){
+        sender.isSelected.toggle()
+        sender.isSelected ? setNotConfirmedState() : setDateSelectedState()
+    }
+    
+    private func setNotConfirmedState(){
+        labelArray.forEach{ label in
+            label.textColor = .black20
+        }
+        delegate.dateNotConfirmed(about: productDateType)
+    }
+    
+    private func setDateSelectedState(){
+        stackView.isUserInteractionEnabled = true
+        labelArray.forEach{ label in
+            label.textColor = .black
         }
     }
     
-    func setTitle(type: ProductDetailInputTableViewCell.ProductDate){
-        titleLabel.text = type.rawValue
+    func setDate(_ date: Register.DateString?){
+        guard let date = date else {
+            textFieldArray.forEach{ $0.text = "" }; return
+        }
+        yearTextField.text = date.year
+        monthTextField.text = date.month
+        dateTextField.text = date.date
     }
 
 }

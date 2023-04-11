@@ -69,7 +69,7 @@ class LeftChattingImageTableViewCell: BaseTableViewCell {
             $0.top.equalTo(userNameLabel.snp.bottom).offset(7)
             $0.leading.equalTo(profileImage.snp.trailing).offset(8)
             $0.bottom.equalToSuperview()
-            $0.width.height.lessThanOrEqualTo(200 / 360 * Const.Device.DEVICE_WIDTH)
+            $0.width.height.lessThanOrEqualTo(200 / 360 * Device.width)
         }
         
         timeLabel.snp.makeConstraints{

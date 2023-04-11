@@ -8,6 +8,11 @@
 import Foundation
 
 final class ZatchRepository: ZatchRepositoryInterface {
+    
+    func registerZatch(){
+        
+    }
+    
     func getRegisterZatch() {
         
     }
@@ -19,9 +24,11 @@ final class ZatchRepository: ZatchRepositoryInterface {
     func getPopularZatch(){
         
     }
+    
     func getAroundZatch(){
         
     }
+    
     func fetchHeartState(){
         
     }

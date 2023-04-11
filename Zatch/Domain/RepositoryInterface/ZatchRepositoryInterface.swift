@@ -8,9 +8,11 @@
 import Foundation
 
 protocol ZatchRepositoryInterface {
+    func registerZatch()
     func getPopularZatch()
     func getAroundZatch()
     func fetchHeartState()
     func getRegisterZatch()
     func getLookingForZatch()
 }
+

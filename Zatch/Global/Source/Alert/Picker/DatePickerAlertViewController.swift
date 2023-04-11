@@ -20,10 +20,21 @@ class DatePickerAlertViewController: PickerAlertViewController {
     var year: Int!
     var dateArray : [Int] = []
     
+    var completionTest: ((Register.DateString) -> ())!
+    
     //MARK: - UI
     
     let datePicker = UIPickerView()
-
+    
+    init(about: Register.ProductDate){
+        super.init(nibName: nil, bundle: nil)
+        titleLabel.text = about.rawValue
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -81,8 +92,8 @@ class DatePickerAlertViewController: PickerAlertViewController {
     }
     
     override func okBtnDidClicked() {
-        self.pickerHandler!(dateArray)
-        self.dismiss(animated: false, completion: nil)
+        completionTest(("\(dateArray[0])", "\(dateArray[1] + 1)", "\(dateArray[2] + 1)"))
+        dismiss(animated: false, completion: nil)
     }
 
 }

@@ -16,8 +16,6 @@ class BaseViewController<T: BaseHeaderView,
     let headerView: T
     let mainView: P
     
-    final var disposeBag = DisposeBag()
-    
     //MARK: - Generator
     
     init(headerView: T, mainView: P){
@@ -30,34 +28,38 @@ class BaseViewController<T: BaseHeaderView,
         fatalError()
     }
     
+    final let disposeBag = DisposeBag()
+    
     //MARK: - LifeCycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bindAfterViewAppear()
+    }
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
         style()
         layout()
         initialize()
         bind()
     }
+    //MARK: - Template Method
     
     func style() {
-        self.view.backgroundColor = .white
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = .white
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
     
     func layout() {
-        
-        self.view.addSubview(headerView)
-        self.view.addSubview(mainView)
+        view.addSubview(headerView)
+        view.addSubview(mainView)
         
         headerView.snp.makeConstraints{
             $0.top.equalToSuperview().offset(Const.Offset.headerTop)
             $0.leading.trailing.equalToSuperview()
         }
-        
         mainView.snp.makeConstraints{
             $0.top.equalTo(headerView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
@@ -71,9 +73,11 @@ class BaseViewController<T: BaseHeaderView,
     
     func bind() { }
     
+    func bindAfterViewAppear(){ }
+    
     //MARK: - Action
     
     @objc func viewControllerWillPop(){
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }

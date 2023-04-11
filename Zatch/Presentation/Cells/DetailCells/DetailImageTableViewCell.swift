@@ -81,8 +81,8 @@ extension DetailImageTableViewCell: UIScrollViewDelegate{
             let imageView = UIImageView().then{
                 $0.backgroundColor = .black45
             }
-            let xPos = Const.Device.DEVICE_WIDTH * CGFloat(i)
-            imageView.frame = CGRect(x: xPos, y: 0, width: Const.Device.DEVICE_WIDTH, height: Const.Device.DEVICE_WIDTH)
+            let xPos = Device.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPos, y: 0, width: Device.width, height: Device.width)
 //            imageView.image = images[i]
             scrollView.addSubview(imageView)
             scrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
@@ -100,7 +100,7 @@ extension DetailImageTableViewCell: UIScrollViewDelegate{
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let value = scrollView.contentOffset.x/Const.Device.DEVICE_WIDTH
+        let value = scrollView.contentOffset.x/Device.width
         setPageControlSelectedPage(currentPage: Int(round(value)))
     }
 }

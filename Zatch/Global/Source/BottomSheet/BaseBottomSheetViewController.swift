@@ -41,7 +41,7 @@ class BaseBottomSheetViewController<T>: UIViewController, UIViewControllerTransi
         
         let controller: UISheetPresentationController = .init(presentedViewController: presented, presenting: presenting)
         
-        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Detent1", constant: type.sheetHeight * Const.Device.DEVICE_HEIGHT / 810)
+        let detent: UISheetPresentationController.Detent = ._detent(withIdentifier: "Detent1", constant: type.sheetHeight * Device.height / 810)
     
         controller.detents = [detent]
         controller.preferredCornerRadius = 28

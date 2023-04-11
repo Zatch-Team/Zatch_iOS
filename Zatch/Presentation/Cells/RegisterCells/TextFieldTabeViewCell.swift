@@ -11,12 +11,27 @@ import RxCocoa
 
 class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
     
+    enum CellTypeTest{
+        case product
+        case question
+    }
+    
     enum CellType{
         case myProduct
         case firstPriority
         case secondPriority
         case thirdPriority
         case question
+    }
+    
+    var informationTypeTest: CellTypeTest?{
+        didSet{
+            textField.placeholder = informationTypeTest?.placeholder
+        }
+    }
+    
+    var textObservable: Observable<String>!{
+        textField.rx.text.orEmpty.asObservable()
     }
     
     var informationType: CellType!{
@@ -75,11 +90,11 @@ class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
     }
     
     func bind(){
-        let input: Observable<String> = textField.rx.text.orEmpty.asObservable()
-        input.asDriver(onErrorJustReturn: "")
-            .drive{
-                self.setProductNameToManager($0)
-            }.disposed(by: disposeBag)
+//        let input: Observable<String> = textField.rx.text.orEmpty.asObservable()
+//        input.asDriver(onErrorJustReturn: "")
+//            .drive{
+//                self.setProductNameToManager($0)
+//            }.disposed(by: disposeBag)
     }
     
     private func setProductNameToManager(_ product: String){
@@ -103,6 +118,14 @@ class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
 
 }
 
+extension TextFieldTabeViewCell.CellTypeTest{
+    var placeholder: String{
+        switch self{
+        case .product:      return "상품 이름을 입력해주세요."
+        case .question:     return "제목을 입력해주세요."
+        }
+    }
+}
 
 extension TextFieldTabeViewCell.CellType{
     var placeholder: String{
