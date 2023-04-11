@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ProductRegisterDelegate{
-    func dateNotConfirmed(about type: Register.ProductDate)
-}
-
 final class ProductDateChoiceTableViewCell: BaseTableViewCell {
     
     var productDateType: Register.ProductDate!{
@@ -23,7 +19,7 @@ final class ProductDateChoiceTableViewCell: BaseTableViewCell {
         checkButton.isSelected
     }
     
-    var delegate: ProductRegisterDelegate!
+    var delegate: ZatchRegisterDelegate!
     
     private let backView = UIView()
     private let titleLabel = UILabel().then{
