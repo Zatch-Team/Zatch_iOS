@@ -46,7 +46,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     private let countSubject = PublishSubject<String>()
     private let buyDateSubject = PublishSubject<Register.DateString?>()
     private let endDateSubject = PublishSubject<Register.DateString?>()
-    private let isOpenSubject = BehaviorRelay<Bool>(value: false)
+    private let isOpenRelay = BehaviorRelay<Int>(value: Register.ProductOpenState.unopen.rawValue)
     
     //MARK: - Template Method
     
@@ -56,8 +56,8 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     }
     
     override func bindAfterViewAppear() {
-        
-        viewModel.textFieldObservable = mainView.backTableView
+    
+        viewModel.productName = mainView.backTableView
             .cellForRow(at: PRODUCT_NAME_CELL_INDEX,
                         cellType: TextFieldTabeViewCell.self)
             .textObservable
@@ -87,7 +87,10 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
             }).disposed(by: disposeBag)
         
         
-        let input = FirstRegisterTestViewModel.Input(categoryId: categoryRelay.asObservable())
+        let input = FirstRegisterTestViewModel.Input(categoryId: categoryRelay.asObservable(),
+                                                     buyDate: buyDateSubject.asObservable(),
+                                                     endDate: endDateSubject.asObservable(),
+                                                     isOpen: isOpenRelay.asObservable())
         _ = viewModel.transform(input)
     }
 }
@@ -105,7 +108,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section{
+        switch indexPath.section {
         case 0:     return getBasicInformationCells(indexPath: indexPath)
         case 1:     return getDetailInformationCells(indexPath: indexPath)
         default:    fatalError("재치 등록 TableView Cell indexPath 오류")
@@ -113,7 +116,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
     
     private func getBasicInformationCells(indexPath: IndexPath) -> BaseTableViewCell{
-        switch indexPath.row{
+        switch indexPath.row {
         case 0:     return getCategorySelectTableViewCell(indexPath: indexPath)
         case 1:     return getTextFieldTableViewCell(indexPath: indexPath)
         case 2:     return getImageAddTableViewCell(indexPath: indexPath)
@@ -143,7 +146,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
     
     private func getDetailInformationCells(indexPath: IndexPath) -> BaseTableViewCell{
-        switch indexPath.row{
+        switch indexPath.row {
         case 0:         return getProductQuantityTableViewCell(indexPath: indexPath)
         case 1:         return getDateSelectTableViewCell(about: .buy, indexPath: indexPath)
         case 2:         return getDateSelectTableViewCell(about: .end, indexPath: indexPath)
@@ -164,22 +167,19 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
     
     private func getProductIsOpenTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
-        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductIsOpenTableViewCell.self)
+        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductIsOpenTableViewCell.self).then{
+            $0.delegate = self
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
         switch indexPath{
-        case CATEGORY_CELL_INDEX:
-            categoryBottomSheetWillOpen()
-        case DETAIL_OPEN_CELL_INDEX:
-            isDetailCellOpen.toggle()
-        case BUY_DATE_CELL_INDEX:
-            datePickerWillShow(about: .buy)
-        case END_DATE_CELL_INDEX:
-            datePickerWillShow(about: .end)
-        default:
-            return
+        case CATEGORY_CELL_INDEX:           categoryBottomSheetWillOpen()
+        case DETAIL_OPEN_CELL_INDEX:        isDetailCellOpen.toggle()
+        case BUY_DATE_CELL_INDEX:           datePickerWillShow(about: .buy)
+        case END_DATE_CELL_INDEX:           datePickerWillShow(about: .end)
+        default:                            return
         }
     }
     
@@ -205,7 +205,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     
     private func isNotConfirmedState(type: Register.ProductDate) -> Bool{
         let indexPath = {
-            switch type{
+            switch type {
             case .buy:  return self.BUY_DATE_CELL_INDEX
             case .end:  return self.END_DATE_CELL_INDEX
             }
@@ -214,7 +214,13 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
 }
 
-extension RegisterProductInfoTestViewController: ProductRegisterDelegate{
+//MARK: - ProductRegisterDelegate
+
+extension RegisterProductInfoTestViewController: ZatchRegisterDelegate{
+    func changeIsOpenState(_ state: Int) {
+        isOpenRelay.accept(state)
+    }
+    
     func dateNotConfirmed(about type: Register.ProductDate) {
         switch type{
         case .buy:      buyDateSubject.onNext(nil)

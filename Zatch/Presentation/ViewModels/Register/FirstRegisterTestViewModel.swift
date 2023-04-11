@@ -21,10 +21,15 @@ struct RegisterFirstInformationDTO{
 
 final class FirstRegisterTestViewModel: BaseViewModel{
     
-    var textFieldObservable: Observable<String>!
+    var productName: Observable<String>!
+    
+    private let disposeBag = DisposeBag()
     
     struct Input{
         let categoryId: Observable<Int>
+        let buyDate: Observable<Register.DateString?>
+        let endDate: Observable<Register.DateString?>
+        let isOpen: Observable<Int>
     }
     
     struct Output{
@@ -32,10 +37,18 @@ final class FirstRegisterTestViewModel: BaseViewModel{
     }
     
     func transform(_ input: Input) -> Output {
-        Observable.combineLatest(textFieldObservable, input.categoryId)
-            .subscribe(onNext: {
-                print($0, $1)
-            })
+        
+        
+        
+        let requestObservable = Observable.combineLatest(input.categoryId,
+                                                         productName,
+                                                         input.buyDate,
+                                                         input.endDate,
+                                                         input.isOpen)
+            .map{
+                return $0
+            }.asObservable()
+        
         return Output()
     }
 }
