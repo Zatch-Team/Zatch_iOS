@@ -10,7 +10,7 @@ import UIKit
 class ZatchRegisterFirstView: BaseView {
     
     //MARK: - UI
-    let topView = TopTitleView(title: "주고 싶은\n물건이 무엇인가요?")
+    private let topView = TopTitleView(title: "주고 싶은\n물건이 무엇인가요?")
     
     let backTableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false
@@ -27,36 +27,22 @@ class ZatchRegisterFirstView: BaseView {
     }
     
     lazy var nextButton = Purple36Button(title: "다음 단계로")
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        style()
-        hierarchy()
-        layout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func hierarchy() {
-        self.addSubview(topView)
-        self.addSubview(backTableView)
-        self.addSubview(nextButton)
+        addSubview(topView)
+        addSubview(backTableView)
+        addSubview(nextButton)
     }
     
     override func layout() {
         topView.snp.makeConstraints{ make in
             make.top.leading.trailing.equalToSuperview()
         }
-        
         backTableView.snp.makeConstraints{ make in
             make.width.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
             make.bottom.equalTo(nextButton.snp.top).offset(-5)
         }
-        
         nextButton.snp.makeConstraints{ make in
             make.leading.equalToSuperview().offset(74)
             make.centerX.equalToSuperview()
