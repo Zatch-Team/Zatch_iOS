@@ -31,6 +31,11 @@ class BaseViewController<T: BaseHeaderView,
     final let disposeBag = DisposeBag()
     
     //MARK: - LifeCycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bindAfterViewAppear()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +72,8 @@ class BaseViewController<T: BaseHeaderView,
     }
     
     func bind() { }
+    
+    func bindAfterViewAppear(){ }
     
     //MARK: - Action
     
