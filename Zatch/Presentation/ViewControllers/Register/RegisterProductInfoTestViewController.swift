@@ -25,13 +25,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     
     //MARK: - Property
     
-    @frozen
-    enum ProductDate: String{
-        case buy = "구매일자"
-        case end = "유통기한"
-    }
-    
-    private var isDetailCellOpen = false{
+    private var isDetailCellOpen = false {
         didSet{
             mainView.backTableView.cellForRow(at: DETAIL_OPEN_CELL_INDEX, cellType: RegisterCategorySelectTableViewCell.self).isSubViewOpen = isDetailCellOpen
             mainView.backTableView.reloadSections(IndexSet.init(integer: 1), with: .automatic)
@@ -144,7 +138,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self)
     }
     
-    private func getDateSelectTableViewCell(about type: ProductDate,indexPath: IndexPath) -> BaseTableViewCell{
+    private func getDateSelectTableViewCell(about type: Register.ProductDate, indexPath: IndexPath) -> BaseTableViewCell{
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
             $0.setTitle(type: type)
         }
