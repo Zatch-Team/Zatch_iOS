@@ -36,14 +36,16 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     private let CATEGORY_CELL_INDEX: IndexPath = [0,0]
     private let PRODUCT_NAME_CELL_INDEX: IndexPath = [0,1]
     private let DETAIL_OPEN_CELL_INDEX: IndexPath = [0,3]
+    private let BUY_DATE_CELL_INDEX: IndexPath = [1,1]
+    private let END_DATE_CELL_INDEX: IndexPath = [1,2]
     
     private let viewModel = FirstRegisterTestViewModel()
     private let categoryBottomSheet = CategorySheetViewController()
     
     private let categoryRelay = PublishRelay<Int>()
     private let countSubject = PublishSubject<String>()
-    private let buyDateSubject = PublishSubject<String>()
-    private let endDateSubject = PublishSubject<String>()
+    private let buyDateSubject = PublishSubject<Register.DateString?>()
+    private let endDateSubject = PublishSubject<Register.DateString?>()
     private let isOpenSubject = BehaviorRelay<Bool>(value: false)
     
     //MARK: - Template Method
@@ -66,6 +68,22 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
                     .cellForRow(at: self.CATEGORY_CELL_INDEX,
                                 cellType: RegisterCategorySelectTableViewCell.self)
                     .setCategoryTitle(id: $0)
+            }).disposed(by: disposeBag)
+
+        buyDateSubject
+            .subscribe(onNext: {
+                self.mainView.backTableView
+                    .cellForRow(at: self.BUY_DATE_CELL_INDEX,
+                                cellType: ProductDateChoiceTableViewCell.self)
+                    .setDate($0)
+            }).disposed(by: disposeBag)
+        
+        endDateSubject
+            .subscribe(onNext: {
+                self.mainView.backTableView
+                    .cellForRow(at: self.END_DATE_CELL_INDEX,
+                                cellType: ProductDateChoiceTableViewCell.self)
+                    .setDate($0)
             }).disposed(by: disposeBag)
         
         
@@ -140,7 +158,8 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     
     private func getDateSelectTableViewCell(about type: Register.ProductDate, indexPath: IndexPath) -> BaseTableViewCell{
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
-            $0.setTitle(type: type)
+            $0.productDateType = type
+            $0.delegate = self
         }
     }
     
@@ -155,6 +174,10 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
             categoryBottomSheetWillOpen()
         case DETAIL_OPEN_CELL_INDEX:
             isDetailCellOpen.toggle()
+        case BUY_DATE_CELL_INDEX:
+            datePickerWillShow(about: .buy)
+        case END_DATE_CELL_INDEX:
+            datePickerWillShow(about: .end)
         default:
             return
         }
@@ -164,6 +187,38 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
         categoryBottomSheet.show(in: self)
         categoryBottomSheet.completion = { [weak self] in
             self?.categoryRelay.accept($0)
+        }
+    }
+    
+    private func datePickerWillShow(about type: Register.ProductDate){
+        
+        if(isNotConfirmedState(type: type)) { return }
+         
+        let datePicker = DatePickerAlertViewController(about: type).show(in: self)
+        datePicker.completionTest = { [weak self] in
+            switch type{
+            case .buy:      self?.buyDateSubject.onNext($0)
+            case .end:      self?.endDateSubject.onNext($0)
+            }
+        }
+    }
+    
+    private func isNotConfirmedState(type: Register.ProductDate) -> Bool{
+        let indexPath = {
+            switch type{
+            case .buy:  return self.BUY_DATE_CELL_INDEX
+            case .end:  return self.END_DATE_CELL_INDEX
+            }
+        }()
+        return !mainView.backTableView.cellForRow(at: indexPath,cellType: ProductDateChoiceTableViewCell.self).isNotConfirmed
+    }
+}
+
+extension RegisterProductInfoTestViewController: ProductRegisterDelegate{
+    func dateNotConfirmed(about type: Register.ProductDate) {
+        switch type{
+        case .buy:      buyDateSubject.onNext(nil)
+        case .end:      endDateSubject.onNext(nil)
         }
     }
 }

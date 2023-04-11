@@ -7,11 +7,26 @@
 
 import Foundation
 
-class ProductDateChoiceTableViewCell: BaseTableViewCell {
+protocol ProductRegisterDelegate{
+    func dateNotConfirmed(about type: Register.ProductDate)
+}
+
+final class ProductDateChoiceTableViewCell: BaseTableViewCell {
     
-    let backView = UIView()
+    var productDateType: Register.ProductDate!{
+        didSet{
+            titleLabel.text = productDateType.rawValue
+        }
+    }
     
-    let titleLabel = UILabel().then{
+    var isNotConfirmed: Bool{
+        checkButton.isSelected
+    }
+    
+    var delegate: ProductRegisterDelegate!
+    
+    private let backView = UIView()
+    private let titleLabel = UILabel().then{
         $0.font = UIFont.pretendard(size: 14, family: .Medium)
         $0.textColor = .black
     }
@@ -172,27 +187,32 @@ class ProductDateChoiceTableViewCell: BaseTableViewCell {
         }
     }
     
-    @objc func checkButtonListener(_ sender: ZatchRoundCheck){
-        
-        if(sender.isSelected){
-            sender.isSelected = false
-            stackView.isUserInteractionEnabled = true
-            labelArray.forEach{ label in
-                label.textColor = .black
-            }
-        }else{
-            sender.isSelected = true
-            labelArray.forEach{ label in
-                label.textColor = .black20
-            }
-            textFieldArray.forEach{ label in
-                label.text = ""
-            }
+    @objc private func checkButtonListener(_ sender: ZatchRoundCheck){
+        sender.isSelected.toggle()
+        sender.isSelected ? setNotConfirmedState() : setDateSelectedState()
+    }
+    
+    private func setNotConfirmedState(){
+        labelArray.forEach{ label in
+            label.textColor = .black20
+        }
+        delegate.dateNotConfirmed(about: productDateType)
+    }
+    
+    private func setDateSelectedState(){
+        stackView.isUserInteractionEnabled = true
+        labelArray.forEach{ label in
+            label.textColor = .black
         }
     }
     
-    func setTitle(type: RegisterProductInfoTestViewController.ProductDate){
-        titleLabel.text = type.rawValue
+    func setDate(_ date: Register.DateString?){
+        guard let date = date else {
+            textFieldArray.forEach{ $0.text = "" }; return
+        }
+        yearTextField.text = date.year
+        monthTextField.text = date.month
+        dateTextField.text = date.date
     }
 
 }
