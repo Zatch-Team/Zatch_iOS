@@ -16,8 +16,6 @@ class BaseViewController<T: BaseHeaderView,
     let headerView: T
     let mainView: P
     
-    final var disposeBag = DisposeBag()
-    
     //MARK: - Generator
     
     init(headerView: T, mainView: P){
@@ -29,6 +27,8 @@ class BaseViewController<T: BaseHeaderView,
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    final let disposeBag = DisposeBag()
     
     //MARK: - LifeCycle
 
