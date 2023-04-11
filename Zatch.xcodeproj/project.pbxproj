@@ -266,6 +266,7 @@
 		EE0AD54529E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54429E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift */; };
 		EE0AD54729E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54629E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift */; };
 		EE0AD54929E542A400C1CDA1 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54829E542A400C1CDA1 /* Register.swift */; };
+		EE0AD54B29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */; };
 		EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */; };
 		EE0D8E4D29B7561200D96050 /* TableOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */; };
 		EE27C54529C826E000285CC5 /* SearchRepositotyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */; };
@@ -668,6 +669,7 @@
 		EE0AD54429E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTestViewModel.swift; sourceTree = "<group>"; };
 		EE0AD54629E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProductInfoTestViewController.swift; sourceTree = "<group>"; };
 		EE0AD54829E542A400C1CDA1 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterDelegate.swift; sourceTree = "<group>"; };
 		EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOnlyView.swift; sourceTree = "<group>"; };
 		EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositotyInterface.swift; sourceTree = "<group>"; };
@@ -2078,6 +2080,7 @@
 			children = (
 				EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */,
 				EE0AD54829E542A400C1CDA1 /* Register.swift */,
+				EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2868,6 +2871,7 @@
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
+				EE0AD54B29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* PlaceSearchRepsonseModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
 				EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */,
