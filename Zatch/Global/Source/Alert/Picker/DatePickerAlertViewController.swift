@@ -20,7 +20,7 @@ class DatePickerAlertViewController: PickerAlertViewController {
     var year: Int!
     var dateArray : [Int] = []
     
-    var completionTest: ((String) -> ())!
+    var completionTest: ((Register.DateString) -> ())!
     
     //MARK: - UI
     
@@ -83,12 +83,8 @@ class DatePickerAlertViewController: PickerAlertViewController {
     }
     
     override func okBtnDidClicked() {
-        completionTest(dateString)
+        completionTest(("\(dateArray[0])", "\(dateArray[1] + 1)", "\(dateArray[2] + 1)"))
         dismiss(animated: false, completion: nil)
-    }
-    
-    private var dateString: String{
-        "\(dateArray[0])-\(dateArray[1] + 1)-\(dateArray[2] + 1)"
     }
 
 }
