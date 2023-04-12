@@ -42,10 +42,12 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     private let viewModel = FirstRegisterTestViewModel()
     private let categoryBottomSheet = CategorySheetViewController()
     
-    private let categoryRelay = PublishRelay<Int>()
-    private let countSubject = PublishSubject<String>()
-    private let buyDateSubject = PublishSubject<Register.DateString?>()
-    private let endDateSubject = PublishSubject<Register.DateString?>()
+    //불충족 조건 파악 위한 모든 Relay에 기본 값 설정
+    private let categoryRelay = BehaviorRelay<Int?>(value: nil)
+    private let countSubject = BehaviorSubject<String>(value: "")
+    private let countUnitSubject = BehaviorRelay<String?>(value: nil)
+    private let buyDateSubject = BehaviorRelay<Register.DateString?>(value: nil)
+    private let endDateSubject = BehaviorRelay<Register.DateString?>(value: nil)
     private let isOpenRelay = BehaviorRelay<Int>(value: Register.ProductOpenState.unopen.rawValue)
     
     //MARK: - Template Method
@@ -61,16 +63,20 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
             .cellForRow(at: PRODUCT_NAME_CELL_INDEX,
                         cellType: TextFieldTabeViewCell.self)
             .textObservable
+            .startWith("")
         
         categoryRelay
-            .subscribe(onNext: {
-                self.mainView.backTableView
-                    .cellForRow(at: self.CATEGORY_CELL_INDEX,
-                                cellType: RegisterCategorySelectTableViewCell.self)
-                    .setCategoryTitle(id: $0)
+            .subscribe(onNext: { id in
+                if let id = id{
+                    self.mainView.backTableView
+                        .cellForRow(at: self.CATEGORY_CELL_INDEX,
+                                    cellType: RegisterCategorySelectTableViewCell.self)
+                        .setCategoryTitle(id: id)
+                }
             }).disposed(by: disposeBag)
 
         buyDateSubject
+            .skip(1) //유효 조건 판단 위해 설정한 초기값 nil은 skip
             .subscribe(onNext: {
                 self.mainView.backTableView
                     .cellForRow(at: self.BUY_DATE_CELL_INDEX,
@@ -79,6 +85,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
             }).disposed(by: disposeBag)
         
         endDateSubject
+            .skip(1) //유효 조건 판단 위해 설정한 초기값 nil은 skip
             .subscribe(onNext: {
                 self.mainView.backTableView
                     .cellForRow(at: self.END_DATE_CELL_INDEX,
@@ -87,11 +94,30 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
             }).disposed(by: disposeBag)
         
         
-        let input = FirstRegisterTestViewModel.Input(categoryId: categoryRelay.asObservable(),
+        let input = FirstRegisterTestViewModel.Input(nextButtonTap: mainView.nextButton.rx.tap,
+                                                     categoryId: categoryRelay.asObservable(),
+                                                     count: countSubject.asObservable(),
+                                                     countUnit: countUnitSubject.asObservable(),
                                                      buyDate: buyDateSubject.asObservable(),
                                                      endDate: endDateSubject.asObservable(),
                                                      isOpen: isOpenRelay.asObservable())
-        _ = viewModel.transform(input)
+        let output = viewModel.transform(input)
+        
+        output.zatchDTO
+            .drive(onNext: { zatchInformation in
+                if let zatchInformation = zatchInformation {
+                    self.moveNextViewController(zatchDTO: zatchInformation)
+                }
+            }).disposed(by: disposeBag)
+        
+        output.dissatisfactionType
+            .drive(onNext: {
+                $0.generateAlert().show(in: self)
+            }).disposed(by: disposeBag)
+    }
+    
+    private func moveNextViewController(zatchDTO: RegisterFirstInformationDTO){
+        print(zatchDTO)
     }
 }
 
@@ -156,7 +182,9 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
     
     private func getProductQuantityTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
-        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self)
+        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self).then{
+            $0.countTextField.delegate = self
+        }
     }
     
     private func getDateSelectTableViewCell(about type: Register.ProductDate, indexPath: IndexPath) -> BaseTableViewCell{
@@ -197,8 +225,8 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
         let datePicker = DatePickerAlertViewController(about: type).show(in: self)
         datePicker.completionTest = { [weak self] in
             switch type{
-            case .buy:      self?.buyDateSubject.onNext($0)
-            case .end:      self?.endDateSubject.onNext($0)
+            case .buy:      self?.buyDateSubject.accept($0)
+            case .end:      self?.endDateSubject.accept($0)
             }
         }
     }
@@ -210,21 +238,33 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
             case .end:  return self.END_DATE_CELL_INDEX
             }
         }()
-        return !mainView.backTableView.cellForRow(at: indexPath,cellType: ProductDateChoiceTableViewCell.self).isNotConfirmed
+        return mainView.backTableView.cellForRow(at: indexPath,cellType: ProductDateChoiceTableViewCell.self).isNotConfirmed
+    }
+}
+
+extension RegisterProductInfoTestViewController: UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        countSubject.onNext(textField.text ?? "")
     }
 }
 
 //MARK: - ProductRegisterDelegate
 
 extension RegisterProductInfoTestViewController: ZatchRegisterDelegate{
+    
+    func willShowUnitBottomSheet() {
+        //임시
+        countUnitSubject.accept("개")
+    }
+    
     func changeIsOpenState(_ state: Int) {
         isOpenRelay.accept(state)
     }
     
     func dateNotConfirmed(about type: Register.ProductDate) {
         switch type{
-        case .buy:      buyDateSubject.onNext(nil)
-        case .end:      endDateSubject.onNext(nil)
+        case .buy:      buyDateSubject.accept(nil)
+        case .end:      endDateSubject.accept(nil)
         }
     }
 }
