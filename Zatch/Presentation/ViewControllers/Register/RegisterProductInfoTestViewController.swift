@@ -183,6 +183,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     
     private func getProductQuantityTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self).then{
+            $0.delegate = self
             $0.countTextField.delegate = self
         }
     }
