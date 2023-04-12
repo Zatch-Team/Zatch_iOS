@@ -19,6 +19,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
     }
     
     let countTextField = UITextField().then{
+        $0.font = UIFont.pretendard(family: .Medium)
         $0.textAlignment = .center
         $0.keyboardType = .numberPad
     }
@@ -85,7 +86,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
         
         textFieldBorderLine.snp.makeConstraints{ make in
             make.height.equalTo(1)
-            make.bottom.equalTo(countTextField)
+            make.bottom.equalTo(countTextField).offset(2)
             make.leading.trailing.equalTo(countTextField)
         }
         unitStackView.snp.makeConstraints{
