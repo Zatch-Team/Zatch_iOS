@@ -18,7 +18,7 @@ class AlertViewController: UIViewController {
      3의 경우 버튼 위치 및 특성은 각각 조절
      */
     
-    var completion : (() -> ())?
+    var completion : (() -> ())? //TODO: Generic으로 변경하기
     
     lazy var okBtn = UIButton().then{
         $0.setTitle("확인", for: .normal)

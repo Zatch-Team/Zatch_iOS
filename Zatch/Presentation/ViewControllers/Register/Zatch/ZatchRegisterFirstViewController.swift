@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import RxGesture
 
+//TODO: Will Delete
 class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderView, ZatchRegisterFirstView> {
     
     //MARK: - Properties
@@ -42,12 +45,16 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     }
     
     override func initialize(){
-        
         super.initialize()
-        
-        mainView.backTableView.dataSource = self
-        mainView.backTableView.delegate = self
-        mainView.backTableView.separatorStyle = .none
+        setTableViewDelegate()
+    }
+    
+    private func setTableViewDelegate(){
+        mainView.backTableView.do{
+            $0.dataSource = self
+            $0.delegate = self
+            $0.separatorStyle = .none
+        }
     }
     
     override func bind() {
@@ -158,17 +165,15 @@ extension ZatchRegisterFirstViewController: UITableViewDelegate, UITableViewData
         switch indexPath{
         case categoryCellIndex:
             categoryBottomSheetWillOpen()
-            return
         case informationDetailOpenCellIndex:
             informationDetailInputCellWillOpen()
-            return
         default:
             return
         }
     }
     
     private func categoryBottomSheetWillOpen(){
-        _ = categoryBottomSheet.show(in: self)
+        categoryBottomSheet.show(in: self)
         categoryBottomSheet.completion = { [self] categoryId in
             let cell = mainView.backTableView.cellForRow(at: categoryCellIndex, cellType: RegisterCategorySelectTableViewCell.self)
             cell.setCategoryTitle(id: categoryId)
@@ -192,16 +197,22 @@ extension ZatchRegisterFirstViewController: RegisterCellDelegate{
     
     func datePickerWillShow(dateType: ProductDetailInputTableViewCell.ProductDate, cell: ProductDateChoiceTableViewCell) {
         
-        let vc = DatePickerAlertViewController().show(in: self)
-        vc.titleLabel.text = dateType.rawValue
-        vc.pickerHandler = { array in
-            cell.yearTextField.text = String (array[0])
-            cell.monthTextField.text = String (array[1] + 1)
-            cell.dateTextField.text = String (array[2] + 1)
-            
-            let date = "\(array[0])-\(array[1] + 1)-\(array[2] + 1)"
-            dateType.update(date: date)
-        }
+//        let vc = DatePickerAlertViewController().show(in: self)
+//        vc.titleLabel.text = dateType.rawValue
+        
+        //will delete
+//        vc.pickerHandler = { array in
+//            cell.yearTextField.text = String (array[0])
+//            cell.monthTextField.text = String (array[1] + 1)
+//            cell.dateTextField.text = String (array[2] + 1)
+//
+//            let date = "\(array[0])-\(array[1] + 1)-\(array[2] + 1)"
+//            dateType.update(date: date)
+//        }
+//
+//        vc.completionTest = {
+////            dateType.update(date: $0)
+//        }
     }
 }
 
