@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//TODO: WILL DELETE
 class ProductDetailInputTableViewCell: BaseTableViewCell {
     
     enum ProductDate: String{
@@ -74,14 +74,16 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
         case 0:
             return tableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self)
         case 1:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
-                $0.setTitle(type: .buy)
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self)
+//                .then{
+//                $0.setTitle(type: .buy)
+//            }
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self).then{
-                $0.setTitle(type: .end)
-            }
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductDateChoiceTableViewCell.self)
+//                .then{
+//                $0.setTitle(type: .end)
+//            }
             return cell
         case 3:
             return tableView.dequeueReusableCell(for: indexPath, cellType: ProductIsOpenTableViewCell.self)
@@ -112,13 +114,13 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
     }
 }
 
-extension ProductDetailInputTableViewCell.ProductDate{
-    func update(date: String){
-        switch self{
-        case .buy:  ZatchRegisterRequestManager.shared.buyDate = date
-            return
-        case .end:  ZatchRegisterRequestManager.shared.endDate = date
-            return
-        }
-    }
-}
+//extension ProductDetailInputTableViewCell.ProductDate{
+//    func update(date: String){
+//        switch self{
+//        case .buy:  ZatchRegisterRequestManager.shared.buyDate = date
+//            return
+//        case .end:  ZatchRegisterRequestManager.shared.endDate = date
+//            return
+//        }
+//    }
+//}

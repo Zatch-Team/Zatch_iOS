@@ -8,6 +8,7 @@
 import Foundation
 
 protocol ZatchRegisterDelegate{
+    func willShowUnitBottomSheet()
     func changeIsOpenState(_ state: Int)
     func dateNotConfirmed(about type: Register.ProductDate)
 }

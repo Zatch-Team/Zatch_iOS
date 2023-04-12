@@ -45,11 +45,8 @@ class ZatchSearchResultViewController: BaseViewController<BaseHeaderView, ZatchS
     }
     
     override func initialize() {
-        
         super.initialize()
-        
         setTagWithProductType()
-        
         mainView.tableView.initializeDelegate(self)
     }
     
