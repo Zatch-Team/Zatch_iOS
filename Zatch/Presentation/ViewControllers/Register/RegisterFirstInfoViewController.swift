@@ -251,7 +251,7 @@ extension RegisterFirstInfoViewController: UITextFieldDelegate{
 
 //MARK: - ProductRegisterDelegate
 
-extension RegisterFirstInfoViewController: ZatchRegisterDelegate{
+extension RegisterFirstInfoViewController: RegisterFirstInfoDelegate{
     
     func willShowUnitBottomSheet() {
         //임시

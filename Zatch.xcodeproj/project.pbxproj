@@ -266,7 +266,7 @@
 		EE0AD54529E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */; };
 		EE0AD54729E5033400C1CDA1 /* RegisterFirstInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */; };
 		EE0AD54929E542A400C1CDA1 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54829E542A400C1CDA1 /* Register.swift */; };
-		EE0AD54B29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */; };
+		EE0AD54B29E5AAEA00C1CDA1 /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54A29E5AAEA00C1CDA1 /* RegisterDelegate.swift */; };
 		EE0AD54F29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54E29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift */; };
 		EE0AD55129E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */; };
 		EE0AD55529E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD55429E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift */; };
@@ -673,7 +673,7 @@
 		EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstInfoTestViewModel.swift; sourceTree = "<group>"; };
 		EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstInfoViewController.swift; sourceTree = "<group>"; };
 		EE0AD54829E542A400C1CDA1 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterDelegate.swift; sourceTree = "<group>"; };
+		EE0AD54A29E5AAEA00C1CDA1 /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
 		EE0AD54E29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondInfoViewModel.swift; sourceTree = "<group>"; };
 		EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondInfoViewController.swift; sourceTree = "<group>"; };
 		EE0AD55429E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPriorityTableViewCell.swift; sourceTree = "<group>"; };
@@ -2091,7 +2091,7 @@
 			children = (
 				EE642C59298FA9A000E15869 /* ZatchRegisterRequestManager.swift */,
 				EE0AD54829E542A400C1CDA1 /* Register.swift */,
-				EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */,
+				EE0AD54A29E5AAEA00C1CDA1 /* RegisterDelegate.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2887,7 +2887,7 @@
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
-				EE0AD54B29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift in Sources */,
+				EE0AD54B29E5AAEA00C1CDA1 /* RegisterDelegate.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* PlaceSearchRepsonseModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
 				EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */,

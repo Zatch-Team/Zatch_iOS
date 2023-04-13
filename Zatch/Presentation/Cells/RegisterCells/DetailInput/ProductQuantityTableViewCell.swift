@@ -11,7 +11,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
     
     //MARK: - UIView
     
-    var delegate: ZatchRegisterDelegate!
+    var delegate: RegisterFirstInfoDelegate!
     
     private let titleLabel = UILabel().then{
         $0.text = "수량"
@@ -104,7 +104,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         unitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(unitStackViewDidTapped)))
     }
     
