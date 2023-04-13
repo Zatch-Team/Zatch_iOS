@@ -12,3 +12,7 @@ protocol RegisterFirstInfoDelegate{
     func changeIsOpenState(_ state: Int)
     func dateNotConfirmed(about type: Register.ProductDate)
 }
+
+protocol RegisterSecondInfoDelegate{
+    func selectWantZatchType(_ type: Register.WantZatch)
+}

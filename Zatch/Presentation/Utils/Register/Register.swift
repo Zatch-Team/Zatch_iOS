@@ -8,6 +8,7 @@
 import Foundation
 
 struct Register{
+    
     @frozen
     enum ProductDate: String{
         case buy = "구매일자"
@@ -18,6 +19,12 @@ struct Register{
     enum ProductOpenState: Int{
         case open = 1
         case unopen = 2
+    }
+    
+    @frozen
+    enum WantZatch: Int{
+        case onlyRegister = 0
+        case anyZatch = 1
     }
     
     typealias DateString = (year: String, month: String, date: String)
