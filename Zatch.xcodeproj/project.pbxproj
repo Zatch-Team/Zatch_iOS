@@ -263,10 +263,14 @@
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
-		EE0AD54529E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54429E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift */; };
-		EE0AD54729E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54629E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift */; };
+		EE0AD54529E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */; };
+		EE0AD54729E5033400C1CDA1 /* RegisterFirstInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */; };
 		EE0AD54929E542A400C1CDA1 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54829E542A400C1CDA1 /* Register.swift */; };
 		EE0AD54B29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */; };
+		EE0AD54F29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54E29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift */; };
+		EE0AD55129E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */; };
+		EE0AD55529E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD55429E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift */; };
+		EE0AD55729E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD55629E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift */; };
 		EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */; };
 		EE0D8E4D29B7561200D96050 /* TableOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */; };
 		EE27C54529C826E000285CC5 /* SearchRepositotyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */; };
@@ -666,10 +670,14 @@
 		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
-		EE0AD54429E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterTestViewModel.swift; sourceTree = "<group>"; };
-		EE0AD54629E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProductInfoTestViewController.swift; sourceTree = "<group>"; };
+		EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstInfoTestViewModel.swift; sourceTree = "<group>"; };
+		EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstInfoViewController.swift; sourceTree = "<group>"; };
 		EE0AD54829E542A400C1CDA1 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		EE0AD54A29E5AAEA00C1CDA1 /* ZatchRegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterDelegate.swift; sourceTree = "<group>"; };
+		EE0AD54E29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondInfoViewModel.swift; sourceTree = "<group>"; };
+		EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondInfoViewController.swift; sourceTree = "<group>"; };
+		EE0AD55429E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPriorityTableViewCell.swift; sourceTree = "<group>"; };
+		EE0AD55629E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyZatchSelectTableViewCell.swift; sourceTree = "<group>"; };
 		EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOnlyView.swift; sourceTree = "<group>"; };
 		EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositotyInterface.swift; sourceTree = "<group>"; };
@@ -1104,7 +1112,8 @@
 		23C9031428C5CE6400FB6D3D /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				EE0AD54629E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift */,
+				EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */,
+				EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */,
 				57600C072963073900A7F27B /* Zatch */,
 			);
 			path = Register;
@@ -1170,6 +1179,8 @@
 				5767D786286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift */,
 				57EBCE3828A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift */,
 				57EBCE3A28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift */,
+				EE0AD55429E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift */,
+				EE0AD55629E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift */,
 			);
 			path = RegisterCells;
 			sourceTree = "<group>";
@@ -2089,7 +2100,8 @@
 			isa = PBXGroup;
 			children = (
 				EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */,
-				EE0AD54429E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift */,
+				EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */,
+				EE0AD54E29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2606,10 +2618,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE0AD54529E4FCF600C1CDA1 /* FirstRegisterTestViewModel.swift in Sources */,
+				EE0AD54529E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift in Sources */,
 				EE813FFD29C585400091F16E /* UserRepository.swift in Sources */,
 				EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */,
 				57B32C34291FB58F0018C0CB /* Image.swift in Sources */,
+				EE0AD55729E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift in Sources */,
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift in Sources */,
 				EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */,
@@ -2621,6 +2634,7 @@
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
 				EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
+				EE0AD54F29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift in Sources */,
 				57397FD2296FC0150088B5F4 /* BaseCollectionViewCell.swift in Sources */,
 				EEE6D1622997AFA30004FC7B /* PaddingLabel.swift in Sources */,
 				EEE1154729A747AD003FD4E3 /* MyProfileViewController.swift in Sources */,
@@ -2695,6 +2709,7 @@
 				23B051C528E206C5005D08EA /* MyQuestionsViewController.swift in Sources */,
 				57B5D6D328346AB100EA1439 /* TextFieldTabeViewCell.swift in Sources */,
 				23A86A5B28C73D8600B073CB /* MainCollectionViewTableViewCell.swift in Sources */,
+				EE0AD55129E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift in Sources */,
 				EE541C2329B45D7200DD0F20 /* ChattingSideSheetView.swift in Sources */,
 				23B7FBB228CED37D0018642E /* TownSettingTableViewCell.swift in Sources */,
 				23B051C328E206B7005D08EA /* RegisterQuestionViewController.swift in Sources */,
@@ -2704,6 +2719,7 @@
 				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				EE0AD55529E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift in Sources */,
 				EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */,
 				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
 				EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */,
@@ -2765,7 +2781,7 @@
 				EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
-				EE0AD54729E5033400C1CDA1 /* RegisterProductInfoTestViewController.swift in Sources */,
+				EE0AD54729E5033400C1CDA1 /* RegisterFirstInfoViewController.swift in Sources */,
 				576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */,
 				EEE6D1652997BF830004FC7B /* ZatchButton.swift in Sources */,
 				57D6D79F28CDC02600F805B7 /* ModifyMeetingSheetViewController.swift in Sources */,
