@@ -16,7 +16,7 @@ class ZatchRegisterSecondView: BaseView {
     let tableView = UITableView().then{
         $0.showsVerticalScrollIndicator = false
         $0.isScrollEnabled = Device.isSmallDevice ? true : false
-        $0.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: 0, right: 0)
+        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         $0.register(cellType: RegisterPriorityTableViewCell.self)
         $0.register(cellType: RegisterCategorySelectTableViewCell.self)
         $0.register(cellType: TextFieldTabeViewCell.self)
@@ -52,9 +52,9 @@ class ZatchRegisterSecondView: BaseView {
         }
         
         tableView.snp.makeConstraints{
-            $0.top.equalTo(topTitleView.snp.bottom).offset(-11)
+            $0.top.equalTo(topTitleView.snp.bottom).offset(-10)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(btnFrame).inset(10)
+            $0.bottom.equalTo(btnFrame.snp.top).offset(-10)
         }
         
         btnFrame.snp.makeConstraints{
