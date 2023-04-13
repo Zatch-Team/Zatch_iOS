@@ -69,7 +69,7 @@ class MyZatchStatisticTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize() {
+    override func initialize() {
         myZatchCountView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(myZatchCountViewDidTapped)))
         heartCountView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heartCountViewDidTapped)))
         exchangeCountView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exchangeCountViewDidTapped)))

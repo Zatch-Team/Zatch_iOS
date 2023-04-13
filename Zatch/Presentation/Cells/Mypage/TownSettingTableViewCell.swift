@@ -27,18 +27,8 @@ class TownSettingTableViewCell: BaseTableViewCell {
         $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
     }
     private let borderLine = ZatchComponent.SectionDivider()
-
-    // MARK: - LifeCycles
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func initialize(){
+    override func initialize(){
         townStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(townStackViewDidTappeed)))
     }
 

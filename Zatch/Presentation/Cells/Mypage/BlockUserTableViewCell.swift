@@ -80,7 +80,7 @@ class BlockUserTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         unblockBtn.addTarget(self, action: #selector(unblockBtnDidClicked), for: .touchUpInside)
     }
     
