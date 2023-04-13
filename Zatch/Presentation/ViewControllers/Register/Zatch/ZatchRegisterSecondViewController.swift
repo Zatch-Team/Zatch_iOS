@@ -50,17 +50,17 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     override func bind() {
-        mainView.topRadioButtonFrame.rx.tapGesture()
-            .when(.recognized)
-            .bind(onNext: { [weak self] in
-                self?.radioButtonDidSelected($0)
-            }).disposed(by: disposeBag)
-        
-        mainView.belowRadioButtonFrame.rx.tapGesture()
-            .when(.recognized)
-            .bind(onNext: { [weak self] in
-                self?.radioButtonDidSelected($0)
-            }).disposed(by: disposeBag)
+//        mainView.topRadioButtonFrame.rx.tapGesture()
+//            .when(.recognized)
+//            .bind(onNext: { [weak self] in
+//                self?.radioButtonDidSelected($0)
+//            }).disposed(by: disposeBag)
+//
+//        mainView.belowRadioButtonFrame.rx.tapGesture()
+//            .when(.recognized)
+//            .bind(onNext: { [weak self] in
+//                self?.radioButtonDidSelected($0)
+//            }).disposed(by: disposeBag)
     }
     
     //MARK: - Action
