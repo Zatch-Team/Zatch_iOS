@@ -104,7 +104,7 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
         
         output.productsInputEmpty
             .subscribe(onNext: { secondInfo in
-                let alert = Alert.ChangeShare.generateAlert().show(in: self)
+                let alert = Alert.ChangeShare.show(in: self)
                 alert.completion = {
                     self.moveShareViewController(with: secondInfo)
                 }

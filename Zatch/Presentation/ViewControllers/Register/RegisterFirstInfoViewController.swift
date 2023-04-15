@@ -112,7 +112,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
         
         output.dissatisfactionType
             .drive(onNext: {
-                $0.generateAlert().show(in: self)
+                $0.show(in: self)
             }).disposed(by: disposeBag)
     }
     

@@ -30,7 +30,7 @@ class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, I
     
     //MARK: - Action
     @objc func deleteButtonDidClicked(){
-        let alert = Alert.ImageDelete.generateAlert().show(in: self)
+        let alert = Alert.ImageDelete.show(in: self)
         alert.completion = {
             self.completion()
         }

@@ -62,18 +62,18 @@ class RegisterQuestionViewController: UIViewController {
         // 예외처리
         // 카테고리 선택 안 했을 때
         if !isCategorySelected {
-            _ = Alert.QuestionCategory.generateAlert().show(in: self)
+            _ = Alert.QuestionCategory.show(in: self)
         }
         // 제목을 입력하지 않았을 때
         if self.questionTitle == nil {
-            _ = Alert.QuestionTitle.generateAlert().show(in: self)
+            _ = Alert.QuestionTitle.show(in: self)
         }
         // 내용을 입력하지 않았을 때
         if self.questionContent == nil {
-            _ = Alert.QuestionContent.generateAlert().show(in: self)
+            _ = Alert.QuestionContent.show(in: self)
         }
         if isCategorySelected && self.questionTitle != nil && self.questionContent != nil {
-            let alert = Alert.QuestionRegister.generateAlert().show(in: self)
+            let alert = Alert.QuestionRegister.show(in: self)
             alert.completion = {
                 print("등록 clicked!")
             }

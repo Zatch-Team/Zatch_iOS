@@ -126,7 +126,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
             let blockVC = BlockUserViewController()
             self.navigationController?.pushViewController(blockVC, animated: true)
         case [2,2]:
-            let alert = Alert.Logout.generateAlert().show(in: self)
+            let alert = Alert.Logout.show(in: self)
             alert.completion = {
                 print("로그아웃 버튼 클릭")
             }

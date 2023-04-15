@@ -37,7 +37,7 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
     //MARK: - Action
     
     @objc func registerBtnDidClicked(){
-        let alert = Alert.Register.generateAlert().show(in: self)
+        let alert = Alert.Register.show(in: self)
         alert.completion = {
             print("등록 완료 버튼 눌림")
         }

@@ -73,7 +73,7 @@ class MakeMeetingSheetViewController: BaseBottomSheetViewController<Void> {
     @objc func alarmSwitchWillChange(_ sender: UISwitch){
     
         if(sender.isOn){
-            _ = Alert.AlarmInfo.generateAlert().show(in: self)
+            _ = Alert.AlarmInfo.show(in: self)
         }
     }
 }
