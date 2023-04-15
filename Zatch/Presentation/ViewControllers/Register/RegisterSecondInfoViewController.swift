@@ -32,6 +32,8 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
     private var isCategoryFieldOpen = [true, false, false]
 
     private let CATEGORY_ROW = 1
+    
+    private let viewModel = RegisterSecondInfoViewModel()
     private let categoryBottomSheet = CategorySheetViewController()
     
     private let firstCategorySubject = BehaviorRelay<Int?>(value: nil)
@@ -49,15 +51,9 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
     
     private func setButtonTarget(){
         headerView.etcButton.addTarget(self, action: #selector(exitBtnDidClicked), for: .touchUpInside)
-        mainView.shareBtn.addTarget(self, action: #selector(shareBtnDidClicked), for: .touchUpInside)
-        mainView.nextBtn.addTarget(self, action: #selector(nextBtnDidClicked), for: .touchUpInside)
     }
     
     override func bind() {
-        
-        firstProductNameSubject.subscribe(onNext: {
-            print("first",$0)
-        })
         
         secondCategorySubject
             .skip(1)
@@ -93,6 +89,36 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
             }.subscribe{ [weak self] in
                 self?.bindingCategoryCell(section: 2, categoryId: $0)
             }.disposed(by: disposeBag)
+        
+        let input = RegisterSecondInfoViewModel.Input(firstPriorityCategory: firstCategorySubject.asObservable(),
+                                                      firstProductName: firstProductNameSubject.asObservable(),
+                                                      secondPriorityCategory: secondCategorySubject.asObservable(),
+                                                      secondProductName: secondProductNameSubject.asObservable(),
+                                                      thirdPriorityCategory: thirdCategorySubject.asObservable(),
+                                                      thirdProductName: thirdProductNameSubject.asObservable(),
+                                                      wantProductType: wantProductTypeSubject.asObservable(),
+                                                      shareButtonTap: mainView.shareBtn.rx.tap,
+                                                      nextButtonTap: mainView.nextBtn.rx.tap)
+        
+        let output = viewModel.transform(input)
+        
+        output.productsInputEmpty
+            .subscribe(onNext: { secondInfo in
+                let alert = Alert.ChangeShare.generateAlert().show(in: self)
+                alert.completion = {
+                    self.moveShareViewController(with: secondInfo)
+                }
+            }).disposed(by: disposeBag)
+        
+        output.moveShare
+            .subscribe(onNext: { [weak self] in
+                self?.moveShareViewController(with: $0)
+            }).disposed(by: disposeBag)
+        
+        output.moveExchange
+            .subscribe(onNext: { [weak self] in
+                self?.moveExchangeViewController(with: $0)
+            }).disposed(by: disposeBag)
     }
     
     private func reloadSection(_ section: Int){
@@ -114,12 +140,12 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
             }
     }
     
-    @objc private func shareBtnDidClicked(){
+    private func moveShareViewController(with info: RegisterSecondInformationDTO){
         let vc = CheckShareRegisterViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc private func nextBtnDidClicked(){
+    private func moveExchangeViewController(with info: RegisterSecondInformationDTO){
         let vc = CheckExchangeRegisterViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -172,9 +198,9 @@ extension RegisterSecondInfoViewController: UITableViewDelegate, UITableViewData
     
     private func subscribeProductName(_ value: String, section: Int){
         switch section{
-        case 0:         self.firstProductNameSubject.onNext(value)
-        case 1:         self.secondProductNameSubject.onNext(value)
-        case 2:         self.thirdProductNameSubject.onNext(value)
+        case 0:         firstProductNameSubject.onNext(value)
+        case 1:         secondProductNameSubject.onNext(value)
+        case 2:         thirdProductNameSubject.onNext(value)
         default:        return
         }
     }
