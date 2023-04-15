@@ -33,15 +33,6 @@ class ProductDetailInputTableViewCell: BaseTableViewCell {
         $0.register(cellType: ProductIsOpenTableViewCell.self)
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func hierarchy() {
         super.hierarchy()
         baseView.addSubview(tableView)
@@ -55,7 +46,7 @@ class ProductDetailInputTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none

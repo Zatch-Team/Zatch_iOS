@@ -70,7 +70,7 @@ class MyInfoTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         goProfileButton.addTarget(self, action: #selector(goProfileButtonDidTapped), for: .touchUpInside)
     }
     

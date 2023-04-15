@@ -39,17 +39,8 @@ class ImageAddTableViewCell: BaseTableViewCell {
         $0.setTypoStyleWithSingleLine(typoStyle: .medium14)
         $0.text = "0 / 10"
     }
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func initialize(){
+    override func initialize(){
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
     }

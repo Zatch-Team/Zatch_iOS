@@ -11,7 +11,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
     
     //MARK: - UIView
     
-    var delegate: ZatchRegisterDelegate!
+    var delegate: RegisterFirstInfoDelegate!
     
     private let titleLabel = UILabel().then{
         $0.text = "수량"
@@ -19,6 +19,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
     }
     
     let countTextField = UITextField().then{
+        $0.font = UIFont.pretendard(family: .Medium)
         $0.textAlignment = .center
         $0.keyboardType = .numberPad
     }
@@ -85,7 +86,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
         
         textFieldBorderLine.snp.makeConstraints{ make in
             make.height.equalTo(1)
-            make.bottom.equalTo(countTextField)
+            make.bottom.equalTo(countTextField).offset(2)
             make.leading.trailing.equalTo(countTextField)
         }
         unitStackView.snp.makeConstraints{
@@ -103,7 +104,7 @@ class ProductQuantityTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         unitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(unitStackViewDidTapped)))
     }
     

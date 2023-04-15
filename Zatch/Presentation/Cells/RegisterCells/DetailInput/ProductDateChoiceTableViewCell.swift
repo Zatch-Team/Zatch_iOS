@@ -19,7 +19,7 @@ final class ProductDateChoiceTableViewCell: BaseTableViewCell {
         checkButton.isSelected
     }
     
-    var delegate: ZatchRegisterDelegate!
+    var delegate: RegisterFirstInfoDelegate!
     
     private let backView = UIView()
     private let titleLabel = UILabel().then{

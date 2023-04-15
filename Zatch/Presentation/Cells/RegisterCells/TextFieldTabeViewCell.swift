@@ -30,6 +30,12 @@ class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
         }
     }
     
+    var textFieldDelegate: UITextFieldDelegate?{
+        didSet{
+            textField.delegate = textFieldDelegate
+        }
+    }
+    
     var textObservable: Observable<String>!{
         textField.rx.text.orEmpty.asObservable()
     }
@@ -49,15 +55,6 @@ class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
     }
     private let textField = UITextField().then{
         $0.font = UIFont.pretendard(family: .Medium)
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        bind()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func hierarchy(){

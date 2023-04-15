@@ -54,15 +54,6 @@ class ProfileTableViewCell: BaseTableViewCell {
     }
     private let borderLine = ZatchComponent.SectionDivider()
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - Functions
     
     override func hierarchy() {
@@ -115,7 +106,7 @@ class ProfileTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         moreButton.addTarget(self, action: #selector(moreButtonDidTapped), for: .touchUpInside)
     }
     

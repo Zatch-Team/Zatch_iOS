@@ -12,7 +12,7 @@ import RxCocoa
 class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
     
     let disposeBag = DisposeBag()
-    var delegate: ZatchRegisterDelegate!
+    var delegate: RegisterFirstInfoDelegate!
     
     private lazy var selectRadioButton: ZatchComponent.FilledTag = unOpenRadioButton{
         willSet{

@@ -19,7 +19,7 @@ struct RegisterFirstInformationDTO{
     let isOpen: Int
 }
 
-final class FirstRegisterTestViewModel: BaseViewModel{
+final class RegisterFirstInfoTestViewModel: BaseViewModel{
     
     var productName: Observable<String>!
     
@@ -114,5 +114,5 @@ final class FirstRegisterTestViewModel: BaseViewModel{
     }
 }
 
-extension FirstRegisterTestViewModel{
+extension RegisterFirstInfoTestViewModel{
 }

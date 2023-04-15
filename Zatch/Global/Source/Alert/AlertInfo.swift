@@ -17,6 +17,7 @@ enum Alert{
     case ImageMin
     case BuyDate
     case EndDate
+    case ChangeShare
     
     //Map
     case LocationAuthority
@@ -58,6 +59,7 @@ extension Alert{
         case .ImageMin:             return AlertDescription(message: "이미지를 최소 1장 이상 첨부해주세요.")
         case .BuyDate:              return AlertDescription(message: "구매일자를 입력해주세요.")
         case .EndDate:              return AlertDescription(message: "유통기한을 입력해주세요.")
+        case .ChangeShare:          return AlertDescription(message: "받고 싶은 상품이 없는 경우 해당 재치가\n나눔으로 전환됩니다.")
             
         case .LocationAuthority:    return AlertDescription(message: "위치 권한을 허용하셔야 동네 인증이 가능합니다.")
         case .TownCertification:    return AlertDescription(message: "현 위치와 선택하신 동네가 다릅니다.")
@@ -101,7 +103,8 @@ extension Alert{
                 .QuestionTitle,
                 .QuestionContent:       return InfoAlertViewController(message: self.information.message)
             
-        case    .ChattingRoomExit,
+        case    .ChangeShare,
+                .ChattingRoomExit,
                 .UnBlock,
                 .Register,
                 .ImageDelete,

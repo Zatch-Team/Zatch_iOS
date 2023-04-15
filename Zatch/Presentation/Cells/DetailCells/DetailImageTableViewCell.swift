@@ -30,18 +30,7 @@ class DetailImageTableViewCell: BaseTableViewCell {
         $0.currentPageIndicatorTintColor = UIColor(red: 255/255, green: 171/255, blue: 66/255, alpha: 0.6)
         $0.pageIndicatorTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.4)
     }
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        initialize()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func hierarchy() {
         super.hierarchy()
         baseView.addSubview(scrollView)
@@ -65,7 +54,7 @@ class DetailImageTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize(){
+    override func initialize(){
         scrollView.delegate = self
         addImageContentToScrollView()
         setPageControl()

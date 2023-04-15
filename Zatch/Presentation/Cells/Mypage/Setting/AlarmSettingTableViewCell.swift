@@ -75,7 +75,7 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
         }
     }
     
-    private func initialize() {
+    override func initialize() {
         alarmSwitch.addTarget(self, action: #selector(willSwitchValueChange), for: .valueChanged)
     }
     

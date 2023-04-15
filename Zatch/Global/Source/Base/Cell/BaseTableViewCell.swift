@@ -19,6 +19,7 @@ class BaseTableViewCell: UITableViewCell, CellReuse {
         self.style()
         hierarchy()
         layout()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -38,5 +39,7 @@ class BaseTableViewCell: UITableViewCell, CellReuse {
             make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
+    
+    func initialize(){ }
     
 }

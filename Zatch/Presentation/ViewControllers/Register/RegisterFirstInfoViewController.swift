@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class RegisterProductInfoTestViewController: BaseViewController<LeftNavigationHeaderView, ZatchRegisterFirstView>{
+final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHeaderView, ZatchRegisterFirstView>{
     
     //MARK: - Generator
     
@@ -39,7 +39,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
     private let BUY_DATE_CELL_INDEX: IndexPath = [1,1]
     private let END_DATE_CELL_INDEX: IndexPath = [1,2]
     
-    private let viewModel = FirstRegisterTestViewModel()
+    private let viewModel = RegisterFirstInfoTestViewModel()
     private let categoryBottomSheet = CategorySheetViewController()
     
     //불충족 조건 파악 위한 모든 Relay에 기본 값 설정
@@ -94,7 +94,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
             }).disposed(by: disposeBag)
         
         
-        let input = FirstRegisterTestViewModel.Input(nextButtonTap: mainView.nextButton.rx.tap,
+        let input = RegisterFirstInfoTestViewModel.Input(nextButtonTap: mainView.nextButton.rx.tap,
                                                      categoryId: categoryRelay.asObservable(),
                                                      count: countSubject.asObservable(),
                                                      countUnit: countUnitSubject.asObservable(),
@@ -123,7 +123,7 @@ final class RegisterProductInfoTestViewController: BaseViewController<LeftNaviga
 
 //MARK: - UITableViewDelegate
 
-extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableViewDataSource{
+extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         2
@@ -183,6 +183,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     
     private func getProductQuantityTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ProductQuantityTableViewCell.self).then{
+            $0.delegate = self
             $0.countTextField.delegate = self
         }
     }
@@ -242,7 +243,7 @@ extension RegisterProductInfoTestViewController: UITableViewDelegate, UITableVie
     }
 }
 
-extension RegisterProductInfoTestViewController: UITextFieldDelegate{
+extension RegisterFirstInfoViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         countSubject.onNext(textField.text ?? "")
     }
@@ -250,7 +251,7 @@ extension RegisterProductInfoTestViewController: UITextFieldDelegate{
 
 //MARK: - ProductRegisterDelegate
 
-extension RegisterProductInfoTestViewController: ZatchRegisterDelegate{
+extension RegisterFirstInfoViewController: RegisterFirstInfoDelegate{
     
     func willShowUnitBottomSheet() {
         //임시
