@@ -38,7 +38,7 @@ class BlockUserViewController: BaseViewController<CenterNavigationHeaderView, Bl
 
 extension BlockUserViewController: BlockUserDelegate{
     func willBlockUser(){
-        Alert.UnBlock.generateAlert().show(in: self).do{
+        Alert.UnBlock.show(in: self).do{
             $0.completion = {
                 print("block success")
             }

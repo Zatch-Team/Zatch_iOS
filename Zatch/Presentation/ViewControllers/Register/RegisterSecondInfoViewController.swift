@@ -11,22 +11,16 @@ import RxCocoa
 
 class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButtonHeaderView,ZatchRegisterSecondView>{
     
-//    private let firstInformation: RegisterFirstInformationDTO
-//
-//    init(firstInformation: RegisterFirstInformationDTO){
-//        self.firstInformation = firstInformation
-//        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
-//                   mainView: ZatchRegisterSecondView())
-//    }
-    
-    init(){
+    private let myProductInfo: RegisterFirstInformationDTO
+
+    init(firstInformation: RegisterFirstInformationDTO){
+        self.myProductInfo = firstInformation
         super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: ZatchRegisterSecondView())
     }
     
     required init?(coder: NSCoder) {
-        super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
-                   mainView: ZatchRegisterSecondView())
+        fatalError("init(coder:) has not been implemented")
     }
     
     private var isCategoryFieldOpen = [true, false, false]
@@ -56,14 +50,14 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
     override func bind() {
         
         secondCategorySubject
-            .skip(1)
+            .skip(1) //기본 값 nil skip
             .first()
             .subscribe{ [weak self] _ in
                 self?.reloadSection(1)
             }.disposed(by: disposeBag)
         
         thirdCategorySubject
-            .skip(1)
+            .skip(1) //기본 값 nil skip
             .first()
             .subscribe{ [weak self] _ in
                 self?.reloadSection(2)
@@ -104,7 +98,7 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
         
         output.productsInputEmpty
             .subscribe(onNext: { secondInfo in
-                let alert = Alert.ChangeShare.generateAlert().show(in: self)
+                let alert = Alert.ChangeShare.show(in: self)
                 alert.completion = {
                     self.moveShareViewController(with: secondInfo)
                 }
@@ -140,13 +134,13 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
             }
     }
     
-    private func moveShareViewController(with info: RegisterSecondInformationDTO){
-        let vc = CheckShareRegisterViewController()
+    private func moveShareViewController(with wantProductInfo: RegisterSecondInformationDTO){
+        let vc = CheckShareRegisterViewController(myProductInfo: myProductInfo, wantProductInfo: wantProductInfo)
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func moveExchangeViewController(with info: RegisterSecondInformationDTO){
-        let vc = CheckExchangeRegisterViewController()
+    private func moveExchangeViewController(with wantProductInfo: RegisterSecondInformationDTO){
+        let vc = CheckExchangeRegisterViewController(myProductInfo: myProductInfo, wantProductInfo: wantProductInfo)
         navigationController?.pushViewController(vc, animated: true)
     }
     

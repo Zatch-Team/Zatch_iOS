@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
-    //MARK: - LifeCycle
+    let myProductInfo: RegisterFirstInformationDTO
     
-    init(infoView: BaseView){
+    init(myProductInfo: RegisterFirstInformationDTO, infoView: MyProductInformationView){
+        self.myProductInfo = myProductInfo
         super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: CheckRegisterView(infoView: infoView))
     }
@@ -20,62 +22,118 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         fatalError("init(coder:) has not been implemented")
     }
     
+    let registerSubject = PublishSubject<Void>()
+    var commentObservable: Observable<String>!
+    
     override func initialize(){
-        
         super.initialize()
+        setDelegate()
+        addButtonTarget()
+        bindingRegisterData()
+        bindTextView()
+    }
+    
+    private func setDelegate(){
+        mainView.photoCollectionView.initializeDelegate(self)
+    }
+    
+    private func addButtonTarget(){
+        headerView.etcButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.exitButtonDidTap()
+            }).disposed(by: disposeBag)
         
-        headerView.etcButton.addTarget(self, action: #selector(exitButtonDidClicked), for: .touchUpInside)
+        mainView.registerBtn.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.registerAlertWillShow()
+            }).disposed(by: disposeBag)
+    }
+    
+    private func bindingRegisterData(){
+        mainView.infoFrame.do{
+            $0.myProductCategoryTag
+                .setCategoryTitle(categoryId: myProductInfo.category)
+            $0.myProductNameLabel
+                .text = myProductInfo.productName
+        }
+        mainView.infoFrame.myProductDetailView.do{
+            $0.endDateFrame.setInfo(value: myProductInfo.endDate ?? "")
+            $0.buyDateFrame.setInfo(value: myProductInfo.buyDate ?? "")
+            $0.countFrame.setInfo(value: myProductInfo.count ?? "")
+            $0.openFrame.setInfo(value: Register.ProductOpenState(rawValue: myProductInfo.isOpen)?.title ?? "")
+        }
+    }
+    
+    private final func bindTextView(){
         
-        mainView.photoCollectionView.delegate = self
-        mainView.photoCollectionView.dataSource = self
+        let text = mainView.addExplainTextView.rx.text.orEmpty
+            .asObservable()
+            .startWith(CheckRegisterView.placeholder).share()
         
-        mainView.addExplainTextView.delegate = self
+        text
+            .first()
+            .subscribe({ [weak self] _ in
+                self?.setTextColorEmptyMode()
+            }).disposed(by: disposeBag)
         
-        mainView.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
+        mainView.addExplainTextView.rx.didBeginEditing
+            .withLatestFrom(text)
+            .bind(onNext: { [weak self] startText in
+                if(startText == CheckRegisterView.placeholder){
+                    self?.setTextEmpty()
+                }
+                self?.setTextColorEditingMode()
+            }).disposed(by: disposeBag)
+        
+        mainView.addExplainTextView.rx.didEndEditing
+            .withLatestFrom(text)
+            .bind(onNext: { [weak self] endText in
+                if(endText.isEmpty){
+                    self?.setTextPlaceholder()
+                    self?.setTextColorEmptyMode()
+                }
+            }).disposed(by: disposeBag)
+        
+        commentObservable = text
+            .filter{
+                $0 != CheckRegisterView.placeholder
+            }
+        
+    }
+    
+    private func setTextEmpty(){
+        mainView.addExplainTextView.text = nil
+    }
+    
+    private func setTextPlaceholder(){
+        mainView.addExplainTextView.text = CheckRegisterView.placeholder
+    }
+    
+    private func setTextColorEmptyMode(){
+        mainView.addExplainTextView.textColor = .black20
+    }
+    
+    private func setTextColorEditingMode(){
+        mainView.addExplainTextView.textColor = .black85
     }
 
     //MARK: - Action
     
-    @objc func registerBtnDidClicked(){
-        let alert = Alert.Register.generateAlert().show(in: self)
+    @objc private func registerAlertWillShow(){
+        let alert = Alert.Register.show(in: self)
         alert.completion = {
-            print("등록 완료 버튼 눌림")
+            self.registerSubject.onNext(Void())
         }
     }
     
-    @objc func exitButtonDidClicked(){
-        self.navigationController?.popToRootViewController(animated: true)
+    @objc private final func exitButtonDidTap(){
+        navigationController?.popToRootViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        
+        view.endEditing(true)
         UIView.animate(withDuration: 0.3){
             self.view.window?.frame.origin.y = 0
-        }
-    }
-    
-}
-
-//MARK: - TextView
-extension CheckRegisterViewController: UITextViewDelegate{
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-
-        UIView.animate(withDuration: 0.3){
-            self.view.window?.frame.origin.y -= 200
-        }
-
-        if textView.text == CheckRegisterView.placeHolder {
-            textView.text = nil
-            textView.textColor = .black85
-        }
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            textView.text = CheckRegisterView.placeHolder
-            textView.textColor = .black20
         }
     }
 }

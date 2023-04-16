@@ -9,7 +9,7 @@ import UIKit
 
 class CheckRegisterView: BaseView {
     
-    init(infoView: BaseView){
+    init(infoView: MyProductInformationView){
         self.infoFrame = infoView
         super.init(frame: .zero)
     }
@@ -20,7 +20,7 @@ class CheckRegisterView: BaseView {
     
     //MARK: - Properties
 
-    static let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
+    static let placeholder = "추가 설명이 필요하다면 여기에 적어주세요."
 
     //MARK: - UI
     
@@ -45,7 +45,7 @@ class CheckRegisterView: BaseView {
         $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
     }
 
-    let infoFrame: BaseView
+    let infoFrame: MyProductInformationView
     
     let addTitle = UILabel().then{
         $0.text = "추가 설명"
@@ -56,7 +56,7 @@ class CheckRegisterView: BaseView {
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 8
 
-        $0.text = CheckRegisterView.placeHolder
+        $0.text = CheckRegisterView.placeholder
         $0.setTextWithLineHeight(lineHeight: 15.6)
         $0.textColor = .black20
         $0.font = UIFont.pretendard(size: 12, family: .Medium)
@@ -68,16 +68,16 @@ class CheckRegisterView: BaseView {
     }
     
     override func hierarchy(){
-        self.addSubview(titleView)
-        self.addSubview(registerBtn)
-        self.addSubview(photoFrame)
-        self.addSubview(infoFrame)
+        addSubview(titleView)
+        addSubview(registerBtn)
+        addSubview(photoFrame)
+        addSubview(infoFrame)
 
-        self.photoFrame.addSubview(photoTitle)
-        self.photoFrame.addSubview(photoCollectionView)
+        photoFrame.addSubview(photoTitle)
+        photoFrame.addSubview(photoCollectionView)
 
-        self.addSubview(addTitle)
-        self.addSubview(addExplainTextView)
+        addSubview(addTitle)
+        addSubview(addExplainTextView)
     }
 
     override func layout(){
@@ -130,6 +130,13 @@ class CheckRegisterView: BaseView {
     }
 }
 
+protocol MyProductInformationView where Self: BaseView{
+    var myProductCategoryTag: ZatchComponent.FilledTag { get }
+    var myProductNameLabel: UILabel { get }
+    var myProductDetailView: CheckRegisterView.MyProductDetailView { get }
+}
+
+
 extension CheckRegisterView{
     
     class MyProductDetailView: UIStackView{
@@ -150,16 +157,16 @@ extension CheckRegisterView{
         }
         
         private func hierarchy(){
-            self.addArrangedSubview(endDateFrame)
-            self.addArrangedSubview(buyDateFrame)
-            self.addArrangedSubview(countFrame)
-            self.addArrangedSubview(openFrame)
+            addArrangedSubview(endDateFrame)
+            addArrangedSubview(buyDateFrame)
+            addArrangedSubview(countFrame)
+            addArrangedSubview(openFrame)
         }
         
         private func style(){
-            self.axis = .vertical
-            self.spacing = 8
-            self.alignment = .leading
+            axis = .vertical
+            spacing = 8
+            alignment = .leading
         }
     }
 }
@@ -175,12 +182,11 @@ extension CheckRegisterView.MyProductDetailView{
         private let infoLabel = UILabel().then{
             $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
             $0.textColor = .black85
-            $0.text = "2022/02/03"
         }
         
         init(title: String){
-            self.titleLabel.text = title
             super.init(frame: .zero)
+            titleLabel.text = title
             style()
             layout()
         }
@@ -190,14 +196,13 @@ extension CheckRegisterView.MyProductDetailView{
         }
         
         private func style(){
-            self.spacing = 10
-            self.axis = .horizontal
+            spacing = 10
+            axis = .horizontal
         }
         
         private func layout(){
-            self.addArrangedSubview(titleLabel)
-            self.addArrangedSubview(infoLabel)
-            
+            addArrangedSubview(titleLabel)
+            addArrangedSubview(infoLabel)
             titleLabel.snp.makeConstraints{
                 $0.width.equalTo(47)
             }

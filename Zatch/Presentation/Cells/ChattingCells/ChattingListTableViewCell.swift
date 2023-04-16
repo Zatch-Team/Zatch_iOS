@@ -117,7 +117,7 @@ class ChattingListTableViewCell: BaseTableViewCell {
     
     @objc func deleteBtnDidClicked(){
         
-        let alert = Alert.ChattingRoomExit.generateAlert().show(in: self.navigationController)
+        let alert = Alert.ChattingRoomExit.show(in: self.navigationController)
         
         alert.completion = {
                 //TODO: - 채팅방 삭제 API 연결 -> VC에서 데이터 삭제 및 테이블 뷰 reload

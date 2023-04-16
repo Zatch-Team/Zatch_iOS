@@ -133,7 +133,7 @@ extension ImageAddTableViewCell : UICollectionViewDelegate, UICollectionViewData
                 self.navigationController?.present(alert, animated: true, completion: nil)
                 
             }else{
-                _ = Alert.ImageMax.generateAlert().show(in: self.navigationController)
+                _ = Alert.ImageMax.show(in: self.navigationController)
             }
         }else{
 

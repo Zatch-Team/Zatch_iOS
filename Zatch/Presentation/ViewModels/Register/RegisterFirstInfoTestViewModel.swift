@@ -108,11 +108,8 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
     
     private func dateFormat(_ date: Register.DateString?) -> String?{
         if let date = date{
-            return date.year + "." + date.month + "." + date.date
+            return date.year + "." + date.month.dateFormat + "." + date.date.dateFormat
         }
         return nil
     }
-}
-
-extension RegisterFirstInfoTestViewModel{
 }

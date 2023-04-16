@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CheckExchangeRegisterInfoView: BaseView{
+class CheckExchangeRegisterInfoView: BaseView, MyProductInformationView{
     
     let exchangeImage = UIImageView().then{
         $0.image = Image.exchange
@@ -50,7 +50,7 @@ class CheckExchangeRegisterInfoView: BaseView{
         $0.setTypoStyleWithMultiLine(typoStyle: .medium12)
         $0.textAlignment = .center
     }
-    let myProductDetail = CheckRegisterView.MyProductDetailView()
+    let myProductDetailView = CheckRegisterView.MyProductDetailView()
     
     
     override func hierarchy(){
@@ -68,7 +68,7 @@ class CheckExchangeRegisterInfoView: BaseView{
         
         myFrame.addSubview(myProductCategoryTag)
         myFrame.addSubview(myProductNameLabel)
-        myFrame.addSubview(myProductDetail)
+        myFrame.addSubview(myProductDetailView)
         
     }
     
@@ -115,7 +115,7 @@ class CheckExchangeRegisterInfoView: BaseView{
             $0.trailing.equalToSuperview().offset(-11)
             $0.height.equalTo(32)
         }
-        myProductDetail.snp.makeConstraints{
+        myProductDetailView.snp.makeConstraints{
             $0.top.equalTo(myProductNameLabel.snp.bottom).offset(11)
             $0.leading.equalToSuperview()
         }

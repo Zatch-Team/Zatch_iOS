@@ -98,7 +98,7 @@ class MapViewController: UIViewController{
     }
     
     private func willShowRestrictedServiceAlert(){
-        Alert.LocationAuthority.generateAlert().show(in: self).then{
+        Alert.LocationAuthority.show(in: self).then{
             $0.completion = { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }

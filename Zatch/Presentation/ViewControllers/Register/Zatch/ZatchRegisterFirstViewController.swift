@@ -104,7 +104,7 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
             return
         }
         
-        _ = alert.generateAlert().show(in: self)
+        _ = alert.show(in: self)
     }
 
 }

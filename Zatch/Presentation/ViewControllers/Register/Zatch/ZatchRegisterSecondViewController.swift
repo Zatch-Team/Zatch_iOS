@@ -106,13 +106,13 @@ class ZatchRegisterSecondViewController: BaseViewController<LeftNavigationEtcBut
     }
     
     @objc func shareBtnDidClicked(){
-        let vc = CheckShareRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = CheckShareRegisterViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func nextBtnDidClicked(){
-        let vc = CheckExchangeRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = CheckExchangeRegisterViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func exitBtnDidClicked(){

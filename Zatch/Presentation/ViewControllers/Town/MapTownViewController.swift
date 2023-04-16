@@ -53,7 +53,7 @@ class MapTownViewController: KakaoMapViewController{
             
             self.present(alert, animated: false, completion: nil)
         }else{
-            _ = Alert.TownCertification.generateAlert().show(in: self)
+            _ = Alert.TownCertification.show(in: self)
         }
     }
     

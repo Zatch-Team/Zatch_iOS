@@ -47,6 +47,6 @@ class TownRegisterMapViewController: MapViewController, Map{
     }
     
     func showRegisterTownFailAlert(){
-        Alert.TownCertification.generateAlert().show(in: self)
+        Alert.TownCertification.show(in: self)
     }
 }

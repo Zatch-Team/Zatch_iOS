@@ -112,12 +112,13 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
         
         output.dissatisfactionType
             .drive(onNext: {
-                $0.generateAlert().show(in: self)
+                $0.show(in: self)
             }).disposed(by: disposeBag)
     }
     
     private func moveNextViewController(zatchDTO: RegisterFirstInformationDTO){
-        print(zatchDTO)
+        let vc = RegisterSecondInfoViewController(firstInformation: zatchDTO)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
