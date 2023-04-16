@@ -16,11 +16,9 @@ class CheckShareRegisterInfoView: BaseView, MyProductInformationView{
     let shareTag = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20).then{
         $0.setTitle("나눔")
     }
-    let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
-        $0.setCategoryTitle(categoryId: 2)
-    }
+    let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20)
+
     let myProductNameLabel = UILabel().then{
-        $0.text = "맥도날드 해피밀 마이멜로디 장난감"
         $0.textColor = .black85
         $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
     }

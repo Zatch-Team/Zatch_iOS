@@ -182,7 +182,6 @@ extension CheckRegisterView.MyProductDetailView{
         private let infoLabel = UILabel().then{
             $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
             $0.textColor = .black85
-            $0.text = "2022/02/03"
         }
         
         init(title: String){

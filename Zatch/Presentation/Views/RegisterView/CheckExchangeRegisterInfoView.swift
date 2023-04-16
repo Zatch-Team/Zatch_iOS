@@ -68,7 +68,7 @@ class CheckExchangeRegisterInfoView: BaseView, MyProductInformationView{
         
         myFrame.addSubview(myProductCategoryTag)
         myFrame.addSubview(myProductNameLabel)
-        myFrame.addSubview(myProductDetail)
+        myFrame.addSubview(myProductDetailView)
         
     }
     
