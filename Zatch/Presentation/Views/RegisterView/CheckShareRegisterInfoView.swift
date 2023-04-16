@@ -26,9 +26,9 @@ class CheckShareRegisterInfoView: BaseView, MyProductInformationView{
     let myProductDetailView = CheckRegisterView.MyProductDetailView()
     
     override func hierarchy() {
-        self.addSubview(tagStackView)
-        self.addSubview(myProductNameLabel)
-        self.addSubview(myProductDetail)
+        addSubview(tagStackView)
+        addSubview(myProductNameLabel)
+        addSubview(myProductDetailView)
         
         tagStackView.addArrangedSubview(shareTag)
         tagStackView.addArrangedSubview(myProductCategoryTag)
