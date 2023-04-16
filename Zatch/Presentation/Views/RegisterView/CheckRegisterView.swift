@@ -9,7 +9,7 @@ import UIKit
 
 class CheckRegisterView: BaseView {
     
-    init(infoView: BaseView){
+    init(infoView: MyProductInformationView){
         self.infoFrame = infoView
         super.init(frame: .zero)
     }
@@ -45,7 +45,7 @@ class CheckRegisterView: BaseView {
         $0.register(ImageRegisterCollectionViewCell.self, forCellWithReuseIdentifier: ImageRegisterCollectionViewCell.cellIdentifier)
     }
 
-    let infoFrame: BaseView
+    let infoFrame: MyProductInformationView
     
     let addTitle = UILabel().then{
         $0.text = "추가 설명"
@@ -129,6 +129,13 @@ class CheckRegisterView: BaseView {
         }
     }
 }
+
+protocol MyProductInformationView where Self: BaseView{
+    var myProductCategoryTag: ZatchComponent.FilledTag { get }
+    var myProductNameLabel: UILabel { get }
+    var myProductDetailView: CheckRegisterView.MyProductDetailView { get }
+}
+
 
 extension CheckRegisterView{
     

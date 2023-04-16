@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CheckShareRegisterInfoView: BaseView{
+class CheckShareRegisterInfoView: BaseView, MyProductInformationView{
     
     let tagStackView = UIStackView().then{
         $0.axis = .horizontal
@@ -24,7 +24,8 @@ class CheckShareRegisterInfoView: BaseView{
         $0.textColor = .black85
         $0.setTypoStyleWithSingleLine(typoStyle: .medium12)
     }
-    let myProductDetail = CheckRegisterView.MyProductDetailView()
+    
+    let myProductDetailView = CheckRegisterView.MyProductDetailView()
     
     override func hierarchy() {
         self.addSubview(tagStackView)
@@ -44,7 +45,7 @@ class CheckShareRegisterInfoView: BaseView{
             $0.top.equalTo(tagStackView.snp.bottom).offset(7)
             $0.leading.equalToSuperview().offset(36)
         }
-        myProductDetail.snp.makeConstraints{
+        myProductDetailView.snp.makeConstraints{
             $0.top.equalTo(myProductNameLabel.snp.bottom).offset(22)
             $0.leading.equalToSuperview().offset(36)
         }
