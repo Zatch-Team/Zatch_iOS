@@ -24,16 +24,26 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
     override func initialize(){
         
         super.initialize()
-        
-        headerView.etcButton.addTarget(self, action: #selector(exitButtonDidClicked), for: .touchUpInside)
-        
-        mainView.photoCollectionView.initializeDelegate(self)
-        
-        mainView.addExplainTextView.delegate = self
-        
-        mainView.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
-        
+        setDelegate()
+        addButtonTarget()
         bindingRegisterData()
+        bindTextView()
+    }
+    
+    private func setDelegate(){
+        mainView.photoCollectionView.initializeDelegate(self)
+    }
+    
+    private func addButtonTarget(){
+        headerView.etcButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.exitButtonDidTap()
+            }).disposed(by: disposeBag)
+        
+        mainView.registerBtn.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.registerAlertWillShow()
+            }).disposed(by: disposeBag)
     }
     
     private func bindingRegisterData(){
@@ -53,14 +63,14 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
 
     //MARK: - Action
     
-    @objc func registerBtnDidClicked(){
+    @objc private func registerAlertWillShow(){
         let alert = Alert.Register.show(in: self)
         alert.completion = {
             print("등록 완료 버튼 눌림")
         }
     }
     
-    @objc func exitButtonDidClicked(){
+    @objc private final func exitButtonDidTap(){
         navigationController?.popToRootViewController(animated: true)
     }
     
