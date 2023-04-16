@@ -27,12 +27,28 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         
         headerView.etcButton.addTarget(self, action: #selector(exitButtonDidClicked), for: .touchUpInside)
         
-        mainView.photoCollectionView.delegate = self
-        mainView.photoCollectionView.dataSource = self
+        mainView.photoCollectionView.initializeDelegate(self)
         
         mainView.addExplainTextView.delegate = self
         
         mainView.registerBtn.addTarget(self, action: #selector(registerBtnDidClicked), for: .touchUpInside)
+        
+        bindingRegisterData()
+    }
+    
+    private func bindingRegisterData(){
+        mainView.infoFrame.do{
+            $0.myProductCategoryTag
+                .setCategoryTitle(categoryId: myProductInfo.category)
+            $0.myProductNameLabel
+                .text = myProductInfo.productName
+        }
+        mainView.infoFrame.myProductDetailView.do{
+            $0.endDateFrame.setInfo(value: myProductInfo.endDate ?? "")
+            $0.buyDateFrame.setInfo(value: myProductInfo.buyDate ?? "")
+            $0.countFrame.setInfo(value: myProductInfo.count ?? "")
+            $0.openFrame.setInfo(value: Register.ProductOpenState(rawValue: myProductInfo.isOpen)?.title ?? "")
+        }
     }
 
     //MARK: - Action
