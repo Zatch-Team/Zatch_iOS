@@ -117,7 +117,8 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
     }
     
     private func moveNextViewController(zatchDTO: RegisterFirstInformationDTO){
-        print(zatchDTO)
+        let vc = RegisterSecondInfoViewController(firstInformation: zatchDTO)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

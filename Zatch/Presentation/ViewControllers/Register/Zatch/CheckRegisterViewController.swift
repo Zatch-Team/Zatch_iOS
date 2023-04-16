@@ -9,9 +9,10 @@ import UIKit
 
 class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
-    //MARK: - LifeCycle
+    let myProductInfo: RegisterFirstInformationDTO
     
-    init(infoView: BaseView){
+    init(myProductInfo: RegisterFirstInformationDTO, infoView: MyProductInformationView){
+        self.myProductInfo = myProductInfo
         super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: CheckRegisterView(infoView: infoView))
     }

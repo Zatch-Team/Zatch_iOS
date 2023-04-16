@@ -9,12 +9,15 @@ import UIKit
 
 class CheckShareRegisterViewController: CheckRegisterViewController {
     
-    init(){
-        super.init(infoView: CheckShareRegisterInfoView())
+    private let wantProductInfo: RegisterSecondInformationDTO
+    
+    init(myProductInfo: RegisterFirstInformationDTO, wantProductInfo: RegisterSecondInformationDTO){
+        self.wantProductInfo = wantProductInfo
+        super.init(myProductInfo: myProductInfo,
+                   infoView: CheckShareRegisterInfoView())
     }
     
     required init?(coder: NSCoder) {
-        super.init(infoView: CheckShareRegisterInfoView())
+        fatalError("init(coder:) has not been implemented")
     }
-    
 }
