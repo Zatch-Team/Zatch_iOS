@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
@@ -21,8 +22,10 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         fatalError("init(coder:) has not been implemented")
     }
     
+    let registerSubject = PublishSubject<Void>()
+    var commentObservable: Observable<String>!
+    
     override func initialize(){
-        
         super.initialize()
         setDelegate()
         addButtonTarget()
@@ -66,7 +69,7 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
     @objc private func registerAlertWillShow(){
         let alert = Alert.Register.show(in: self)
         alert.completion = {
-            print("등록 완료 버튼 눌림")
+            self.registerSubject.onNext(Void())
         }
     }
     
