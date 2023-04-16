@@ -20,7 +20,7 @@ class CheckRegisterView: BaseView {
     
     //MARK: - Properties
 
-    static let placeHolder = "추가 설명이 필요하다면 여기에 적어주세요."
+    static let placeholder = "추가 설명이 필요하다면 여기에 적어주세요."
 
     //MARK: - UI
     
@@ -56,7 +56,7 @@ class CheckRegisterView: BaseView {
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 8
 
-        $0.text = CheckRegisterView.placeHolder
+        $0.text = CheckRegisterView.placeholder
         $0.setTextWithLineHeight(lineHeight: 15.6)
         $0.textColor = .black20
         $0.font = UIFont.pretendard(size: 12, family: .Medium)

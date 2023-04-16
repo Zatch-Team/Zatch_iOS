@@ -63,6 +63,59 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
             $0.openFrame.setInfo(value: Register.ProductOpenState(rawValue: myProductInfo.isOpen)?.title ?? "")
         }
     }
+    
+    private final func bindTextView(){
+        
+        let text = mainView.addExplainTextView.rx.text.orEmpty
+            .asObservable()
+            .startWith(CheckRegisterView.placeholder).share()
+        
+        text
+            .first()
+            .subscribe({ [weak self] _ in
+                self?.setTextColorEmptyMode()
+            }).disposed(by: disposeBag)
+        
+        mainView.addExplainTextView.rx.didBeginEditing
+            .withLatestFrom(text)
+            .bind(onNext: { [weak self] startText in
+                if(startText == CheckRegisterView.placeholder){
+                    self?.setTextEmpty()
+                }
+                self?.setTextColorEditingMode()
+            }).disposed(by: disposeBag)
+        
+        mainView.addExplainTextView.rx.didEndEditing
+            .withLatestFrom(text)
+            .bind(onNext: { [weak self] endText in
+                if(endText.isEmpty){
+                    self?.setTextPlaceholder()
+                    self?.setTextColorEmptyMode()
+                }
+            }).disposed(by: disposeBag)
+        
+        commentObservable = text
+            .filter{
+                $0 != CheckRegisterView.placeholder
+            }
+        
+    }
+    
+    private func setTextEmpty(){
+        mainView.addExplainTextView.text = nil
+    }
+    
+    private func setTextPlaceholder(){
+        mainView.addExplainTextView.text = CheckRegisterView.placeholder
+    }
+    
+    private func setTextColorEmptyMode(){
+        mainView.addExplainTextView.textColor = .black20
+    }
+    
+    private func setTextColorEditingMode(){
+        mainView.addExplainTextView.textColor = .black85
+    }
 
     //MARK: - Action
     
@@ -81,30 +134,6 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         view.endEditing(true)
         UIView.animate(withDuration: 0.3){
             self.view.window?.frame.origin.y = 0
-        }
-    }
-    
-}
-
-//MARK: - TextView
-extension CheckRegisterViewController: UITextViewDelegate{
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-
-        UIView.animate(withDuration: 0.3){
-            self.view.window?.frame.origin.y -= 200
-        }
-
-        if textView.text == CheckRegisterView.placeHolder {
-            textView.text = nil
-            textView.textColor = .black85
-        }
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            textView.text = CheckRegisterView.placeHolder
-            textView.textColor = .black20
         }
     }
 }
