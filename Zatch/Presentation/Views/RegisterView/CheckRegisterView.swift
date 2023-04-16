@@ -68,16 +68,16 @@ class CheckRegisterView: BaseView {
     }
     
     override func hierarchy(){
-        self.addSubview(titleView)
-        self.addSubview(registerBtn)
-        self.addSubview(photoFrame)
-        self.addSubview(infoFrame)
+        addSubview(titleView)
+        addSubview(registerBtn)
+        addSubview(photoFrame)
+        addSubview(infoFrame)
 
-        self.photoFrame.addSubview(photoTitle)
-        self.photoFrame.addSubview(photoCollectionView)
+        photoFrame.addSubview(photoTitle)
+        photoFrame.addSubview(photoCollectionView)
 
-        self.addSubview(addTitle)
-        self.addSubview(addExplainTextView)
+        addSubview(addTitle)
+        addSubview(addExplainTextView)
     }
 
     override func layout(){
@@ -150,16 +150,16 @@ extension CheckRegisterView{
         }
         
         private func hierarchy(){
-            self.addArrangedSubview(endDateFrame)
-            self.addArrangedSubview(buyDateFrame)
-            self.addArrangedSubview(countFrame)
-            self.addArrangedSubview(openFrame)
+            addArrangedSubview(endDateFrame)
+            addArrangedSubview(buyDateFrame)
+            addArrangedSubview(countFrame)
+            addArrangedSubview(openFrame)
         }
         
         private func style(){
-            self.axis = .vertical
-            self.spacing = 8
-            self.alignment = .leading
+            axis = .vertical
+            spacing = 8
+            alignment = .leading
         }
     }
 }
@@ -179,8 +179,8 @@ extension CheckRegisterView.MyProductDetailView{
         }
         
         init(title: String){
-            self.titleLabel.text = title
             super.init(frame: .zero)
+            titleLabel.text = title
             style()
             layout()
         }
@@ -190,14 +190,13 @@ extension CheckRegisterView.MyProductDetailView{
         }
         
         private func style(){
-            self.spacing = 10
-            self.axis = .horizontal
+            spacing = 10
+            axis = .horizontal
         }
         
         private func layout(){
-            self.addArrangedSubview(titleLabel)
-            self.addArrangedSubview(infoLabel)
-            
+            addArrangedSubview(titleLabel)
+            addArrangedSubview(infoLabel)
             titleLabel.snp.makeConstraints{
                 $0.width.equalTo(47)
             }
