@@ -61,12 +61,11 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
     }
     
     @objc func exitButtonDidClicked(){
-        self.navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        
+        view.endEditing(true)
         UIView.animate(withDuration: 0.3){
             self.view.window?.frame.origin.y = 0
         }
