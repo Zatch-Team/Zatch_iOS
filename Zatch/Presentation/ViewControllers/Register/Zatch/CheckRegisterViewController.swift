@@ -11,9 +11,13 @@ import RxSwift
 class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHeaderView, CheckRegisterView> {
     
     let myProductInfo: RegisterFirstInformationDTO
+    let wantProductInfo: RegisterSecondInformationDTO
     
-    init(myProductInfo: RegisterFirstInformationDTO, infoView: MyProductInformationView){
+    init(myProductInfo: RegisterFirstInformationDTO,
+         wantProductInfo: RegisterSecondInformationDTO,
+         infoView: MyProductInformationView){
         self.myProductInfo = myProductInfo
+        self.wantProductInfo = wantProductInfo
         super.init(headerView: LeftNavigationEtcButtonHeaderView(title: "재치 등록하기", etcButton: Image.exit),
                    mainView: CheckRegisterView(infoView: infoView))
     }

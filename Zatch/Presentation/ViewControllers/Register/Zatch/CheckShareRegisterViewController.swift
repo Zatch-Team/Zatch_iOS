@@ -8,12 +8,10 @@
 import UIKit
 
 class CheckShareRegisterViewController: CheckRegisterViewController {
-    
-    private let wantProductInfo: RegisterSecondInformationDTO
-    
+
     init(myProductInfo: RegisterFirstInformationDTO, wantProductInfo: RegisterSecondInformationDTO){
-        self.wantProductInfo = wantProductInfo
         super.init(myProductInfo: myProductInfo,
+                   wantProductInfo: wantProductInfo,
                    infoView: CheckShareRegisterInfoView())
     }
     
