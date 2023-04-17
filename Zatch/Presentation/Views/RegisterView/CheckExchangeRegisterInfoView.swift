@@ -38,6 +38,8 @@ class CheckExchangeRegisterInfoView: BaseView, MyProductInformationView{
         $0.setCategoryTitle(categoryId: 1)
         $0.setProductName("신상 햄스터 고양이 강아지 모양 말랑이")
     }
+    let secondWantFrame = WantPriorityProductInfoView(priority: 2)
+    let thirdWantFrame = WantPriorityProductInfoView(priority: 3)
     
     let myFrame = UIView()
     let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
@@ -128,6 +130,15 @@ extension CheckExchangeRegisterInfoView{
     
     class WantPriorityProductInfoView: BaseView{
         
+        init(priority: Int){
+            priorityLabel.text = "\(priority)순위"
+            super.init(frame: .zero)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
         private let priorityLabel = UILabel().then{
             $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
             $0.textColor = .zatchDeepYellow
@@ -144,12 +155,13 @@ extension CheckExchangeRegisterInfoView{
         private let categoryLabel = UILabel().then{
             $0.textColor = .black20
             $0.setTypoStyleWithSingleLine(typoStyle: .medium10)
+            $0.textAlignment = .center
         }
         
         override func hierarchy() {
-            self.addSubview(priorityLabel)
-            self.addSubview(productLabel)
-            self.addSubview(categoryLabel)
+            addSubview(priorityLabel)
+            addSubview(productLabel)
+            addSubview(categoryLabel)
         }
         
         override func layout() {
@@ -171,17 +183,12 @@ extension CheckExchangeRegisterInfoView{
             }
         }
         
-        func setPriorityTitle(priority: Int){
-            priorityLabel.text = "\(priority)순위"
-        }
-        
-        func setCategoryTitle(categoryId: Int){
-            let category = ServiceType.Zatch.getCategoryFromCategories(at: categoryId).title
-            categoryLabel.text = category
-        }
-        
-        func setProductName(_ name: String){
-            productLabel.text = name
+        func setInformation(_ information: RegisterZatchRequestModel.WantProductPriority?){
+            guard let information = information else {
+                [priorityLabel, productLabel, categoryLabel].forEach{ $0.textColor = .white }; return
+            }
+            categoryLabel.text = ServiceType.Zatch.getCategoryFromCategories(at: information.p_category).title
+            productLabel.text = information.p_name
         }
     }
 
