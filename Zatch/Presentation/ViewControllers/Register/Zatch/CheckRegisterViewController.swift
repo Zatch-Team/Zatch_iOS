@@ -83,7 +83,6 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         let text = mainView.addExplainTextView.rx.text.orEmpty
             .asObservable()
             .startWith(CheckRegisterView.placeholder)
-//            .share()
         
         text
             .first()
