@@ -26,15 +26,14 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         fatalError("init(coder:) has not been implemented")
     }
     
-    let registerSubject = PublishSubject<Void>()
-    var commentObservable: Observable<String>!
+    private let registerSubject = PublishSubject<Void>()
+    private let viewModel = CheckRegisterViewModel()
     
     override func initialize(){
         super.initialize()
         setDelegate()
         addButtonTarget()
         bindingRegisterData()
-        bindTextView()
     }
     
     private func setDelegate(){
@@ -68,11 +67,23 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         }
     }
     
-    private final func bindTextView(){
+    override func bind() {
+
+        let commentObservable = bindTextView()
         
+        let input = CheckRegisterViewModel.Input(myProductInfo: myProductInfo,
+                                                 wantProductInfo: wantProductInfo,
+                                                 comment: commentObservable,
+                                                 registerButtonTap: registerSubject.asObservable())
+        let output = viewModel.transform(input)
+    }
+    
+    private final func bindTextView() -> Observable<String>{
+        //TextView
         let text = mainView.addExplainTextView.rx.text.orEmpty
             .asObservable()
-            .startWith(CheckRegisterView.placeholder).share()
+            .startWith(CheckRegisterView.placeholder)
+//            .share()
         
         text
             .first()
@@ -83,7 +94,8 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
         mainView.addExplainTextView.rx.didBeginEditing
             .withLatestFrom(text)
             .bind(onNext: { [weak self] startText in
-                if(startText == CheckRegisterView.placeholder){
+                
+                if(startText == CheckRegisterView.placeholder || startText.isEmpty){
                     self?.setTextEmpty()
                 }
                 self?.setTextColorEditingMode()
@@ -98,11 +110,7 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
                 }
             }).disposed(by: disposeBag)
         
-        commentObservable = text
-            .filter{
-                $0 != CheckRegisterView.placeholder
-            }
-        
+        return text
     }
     
     private func setTextEmpty(){

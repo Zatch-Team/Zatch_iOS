@@ -18,11 +18,5 @@ class CheckShareRegisterViewController: CheckRegisterViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func bind() {
-        commentObservable
-            .subscribe(onNext: {
-                print("comment check",$0)
-            }).disposed(by: disposeBag)
-    }
+
 }
