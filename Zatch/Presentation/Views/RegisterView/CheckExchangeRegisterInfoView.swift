@@ -9,44 +9,28 @@ import Foundation
 
 class CheckExchangeRegisterInfoView: BaseView, MyProductInformationView{
     
-    let exchangeImage = UIImageView().then{
+    private let exchangeImage = UIImageView().then{
         $0.image = Image.exchange
     }
-
-    let wantFrame = UIView()
-    let firstWantCategoryTag = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20).then{
-        $0.setCategoryTitle(categoryId: 8)
-    }
+    private let wantFrame = UIView()
+    
+    let firstWantCategoryTag = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20)
     let firstWantProductNameLabel = UILabel().then{
-        $0.text = "맥도날드 해피밀 마이멜로디 장난감"
         $0.numberOfLines = 2
         $0.textColor = .black85
         $0.setTypoStyleWithMultiLine(typoStyle: .medium12)
         $0.textAlignment = .center
     }
-    let secondThirdStackView = UIStackView().then{
+    private let secondThirdStackView = UIStackView().then{
         $0.spacing = 13
         $0.axis = .vertical
-    }
-    let secondWantFrame = WantPriorityProductInfoView().then{
-        $0.setPriorityTitle(priority: 2)
-        $0.setCategoryTitle(categoryId: 1)
-        $0.setProductName("신상 햄스터 말랑이")
-    }
-    let thirdWantFrame = WantPriorityProductInfoView().then{
-        $0.setPriorityTitle(priority: 3)
-        $0.setCategoryTitle(categoryId: 1)
-        $0.setProductName("신상 햄스터 고양이 강아지 모양 말랑이")
     }
     let secondWantFrame = WantPriorityProductInfoView(priority: 2)
     let thirdWantFrame = WantPriorityProductInfoView(priority: 3)
     
-    let myFrame = UIView()
-    let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
-        $0.setTitle("생활용품")
-    }
+    private let myFrame = UIView()
+    let myProductCategoryTag = ZatchComponent.Tag.filled(color: .purple, configuration: .height20)
     let myProductNameLabel = UILabel().then{
-        $0.text = "장난감"
         $0.numberOfLines = 2
         $0.textColor = .black85
         $0.setTypoStyleWithMultiLine(typoStyle: .medium12)
@@ -54,12 +38,10 @@ class CheckExchangeRegisterInfoView: BaseView, MyProductInformationView{
     }
     let myProductDetailView = CheckRegisterView.MyProductDetailView()
     
-    
     override func hierarchy(){
-        
-        self.addSubview(wantFrame)
-        self.addSubview(exchangeImage)
-        self.addSubview(myFrame)
+        addSubview(wantFrame)
+        addSubview(exchangeImage)
+        addSubview(myFrame)
         
         wantFrame.addSubview(firstWantCategoryTag)
         wantFrame.addSubview(firstWantProductNameLabel)
@@ -71,7 +53,6 @@ class CheckExchangeRegisterInfoView: BaseView, MyProductInformationView{
         myFrame.addSubview(myProductCategoryTag)
         myFrame.addSubview(myProductNameLabel)
         myFrame.addSubview(myProductDetailView)
-        
     }
     
     override func layout(){
