@@ -87,12 +87,7 @@ class RegisterSecondInfoViewModel: BaseViewModel{
     }
     
     private func checkExchangeValidation(_ observable: RequestObservableType) -> Bool{
-        
-        let category = [observable.firstCategory, observable.secondCategory, observable.thirdCategory]
-        let productName = [observable.firstProductName, observable.secondProductName, observable.thirdProductName]
-        let zip = zip(category, productName)
-        
-        return zip.contains{ $0.0 != nil && !$0.1.isEmpty }
+        [observable.firstCategory, observable.secondCategory, observable.thirdCategory].contains{ $0 != nil }
     }
     
     private func setRegisterSecondInfoDTO(_ observable: RequestObservableType, isFree: Bool) -> RegisterSecondInformationDTO{
@@ -118,10 +113,7 @@ class RegisterSecondInfoViewModel: BaseViewModel{
     }
     
     private func getPriorityModel(priority: Int, cateogoryId: Int?, productName: String) -> RegisterZatchRequestModel.WantProductPriority?{
-        if cateogoryId == nil || productName.isEmpty {
-            return nil
-        }
-        return RegisterZatchRequestModel.WantProductPriority(priority: priority, p_name: productName, p_category: cateogoryId!)
+        cateogoryId == nil ? nil : RegisterZatchRequestModel.WantProductPriority(priority: priority, p_name: productName, p_category: cateogoryId!)
     }
     
 }
