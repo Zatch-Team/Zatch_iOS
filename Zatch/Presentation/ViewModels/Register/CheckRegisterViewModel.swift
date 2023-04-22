@@ -11,6 +11,12 @@ import RxCocoa
 
 class CheckRegisterViewModel: BaseViewModel{
     
+    private let registerUseCase: RegisterUseCaseInterface
+    
+    init(registerUseCase: RegisterUseCaseInterface = RegisterUseCase()){
+        self.registerUseCase = registerUseCase
+    }
+    
     private let disposeBag = DisposeBag()
     
     struct Input{
@@ -33,16 +39,15 @@ class CheckRegisterViewModel: BaseViewModel{
 //        let registerRequestStatus =
         input.registerButtonTap
             .withLatestFrom(commentObservable)
-            .map{ [self] in
-                makeRequestModel(
-                    myProduct: input.myProductInfo,
-                    wantProduct: input.wantProductInfo,
-                    comment: $0
-                )
-            }
-            .subscribe(onNext: {
-                print($0)
-            })
+//            .map{
+//                return self.makeRequestModel(
+//                    myProduct: input.myProductInfo,
+//                    wantProduct: input.wantProductInfo,
+//                    comment: $0
+//                )
+//            }.flatMap{
+//                self.registerUseCase.execute(requestValue: $0)
+//            }
         
         return Output()
     }
