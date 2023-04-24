@@ -23,9 +23,9 @@ class RegisterCategorySelectView: BaseView{
   
     override func hierarchy() {
         super.hierarchy()
-        self.addSubview(boundaryLine)
-        self.addSubview(categoryText)
-        self.addSubview(arrowImage)
+        addSubview(boundaryLine)
+        addSubview(categoryText)
+        addSubview(arrowImage)
     }
     
     override func layout() {
