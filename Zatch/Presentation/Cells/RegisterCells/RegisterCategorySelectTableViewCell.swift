@@ -9,14 +9,13 @@ import UIKit
 
 class RegisterCategorySelectTableViewCell: BaseTableViewCell {
 
-    //MARK: - UI
-    
-    var isSubViewOpen = false{
+    var isSubViewOpen = false {
         didSet{
             mainView.arrowImage.isSelected = isSubViewOpen
         }
     }
-    private let mainView = RegisterCategorySelectView()
+    
+    let mainView = RegisterCategorySelectView()
     
     override func hierarchy() {
         super.hierarchy()
@@ -30,11 +29,13 @@ class RegisterCategorySelectTableViewCell: BaseTableViewCell {
         }
     }
     
-    func setDefaultTitle(_ title: String){
-        mainView.categoryText.text = title
-    }
-    
-    func setCategoryTitle(id: Int){
+    func setCategory(id: Int){
         mainView.categoryText.text = ServiceType.Zatch.getCategoryFromCategories(at: id).title
+    }
+}
+
+class MoreInformationTableViewCell: RegisterCategorySelectTableViewCell {
+    func setTitle(_ title: String){
+        mainView.categoryText.text = title
     }
 }

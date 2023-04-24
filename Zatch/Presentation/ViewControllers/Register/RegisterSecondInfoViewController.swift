@@ -130,7 +130,7 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
         mainView.tableView
             .cellForRow(at: [section, CATEGORY_ROW], cellType: RegisterCategorySelectTableViewCell.self)
             .do{
-                $0.setCategoryTitle(id: categoryId)
+                $0.setCategory(id: categoryId)
             }
     }
     

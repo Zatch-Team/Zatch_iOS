@@ -71,7 +71,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
                     self.mainView.backTableView
                         .cellForRow(at: self.CATEGORY_CELL_INDEX,
                                     cellType: RegisterCategorySelectTableViewCell.self)
-                        .setCategoryTitle(id: id)
+                        .setCategory(id: id)
                 }
             }).disposed(by: disposeBag)
 
@@ -167,8 +167,8 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
     }
     
     private func getRegisterCategorySelectTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
-        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectTableViewCell.self).then{
-            $0.setDefaultTitle("입력사항 더보기")
+        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: MoreInformationTableViewCell.self).then{
+            $0.setTitle("입력사항 더보기")
         }
     }
     
