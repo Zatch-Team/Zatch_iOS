@@ -33,6 +33,7 @@ class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, I
         let alert = Alert.ImageDelete.show(in: self)
         alert.completion = {
             self.completion()
+            self.viewControllerWillPop()
         }
     }
 }
