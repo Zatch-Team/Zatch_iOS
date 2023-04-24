@@ -153,11 +153,12 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
 extension CheckRegisterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 5
+        myProductInfo.images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self)
-        return cell
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: ImageRegisterCollectionViewCell.self).then{
+            $0.imageView.image = myProductInfo.images[indexPath.row]
+        }
     }
 }

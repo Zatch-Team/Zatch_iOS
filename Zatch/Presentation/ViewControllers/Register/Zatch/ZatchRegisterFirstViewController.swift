@@ -84,7 +84,7 @@ class ZatchRegisterFirstViewController: BaseViewController<LeftNavigationHeaderV
     @objc func nextBtnDidClicked(){
         //cell에서 등록한 이미지 데이터 가져오기
         guard let imageCell = mainView.backTableView.cellForRow(at: [0,2]) as? ImageAddTableViewCell else { return }
-        registerManager.images = imageCell.imageArray
+//        registerManager.images = imageCell.imageArray
         
         let alert: Alert
         
