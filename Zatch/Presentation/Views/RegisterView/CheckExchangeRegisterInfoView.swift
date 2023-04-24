@@ -136,7 +136,7 @@ extension CheckExchangeRegisterInfoView{
         private let categoryLabel = UILabel().then{
             $0.textColor = .black20
             $0.setTypoStyleWithSingleLine(typoStyle: .medium10)
-            $0.textAlignment = .center
+            $0.textAlignment = .left
         }
         
         override func hierarchy() {
