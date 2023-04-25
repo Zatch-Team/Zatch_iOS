@@ -158,8 +158,6 @@
 		576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */; };
 		576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */; };
 		576B376C28D85F8B00EF36E6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B376B28D85F8B00EF36E6 /* UITableView.swift */; };
-		576EA923282B7F840028046C /* ZatchRegisterFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA922282B7F840028046C /* ZatchRegisterFirstViewController.swift */; };
-		576EA925282B7FBB0028046C /* ZatchRegisterSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA924282B7FBB0028046C /* ZatchRegisterSecondViewController.swift */; };
 		576EA927282B7FD60028046C /* CheckRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EA926282B7FD60028046C /* CheckRegisterViewController.swift */; };
 		57713944281F596C0066DEEB /* TopTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57713943281F596C0066DEEB /* TopTitleView.swift */; };
 		577A01B628A496D1004B2575 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A01B528A496D1004B2575 /* UITextView.swift */; };
@@ -555,8 +553,6 @@
 		576B376728D8306800EF36E6 /* DefaultSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingTableViewCell.swift; sourceTree = "<group>"; };
 		576B376928D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBorderLineTableViewCell.swift; sourceTree = "<group>"; };
 		576B376B28D85F8B00EF36E6 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		576EA922282B7F840028046C /* ZatchRegisterFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewController.swift; sourceTree = "<group>"; };
-		576EA924282B7FBB0028046C /* ZatchRegisterSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterSecondViewController.swift; sourceTree = "<group>"; };
 		576EA926282B7FD60028046C /* CheckRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegisterViewController.swift; sourceTree = "<group>"; };
 		57713943281F596C0066DEEB /* TopTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitleView.swift; sourceTree = "<group>"; };
 		577A01B528A496D1004B2575 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
@@ -1116,7 +1112,11 @@
 			children = (
 				EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */,
 				EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */,
-				57600C072963073900A7F27B /* Zatch */,
+				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
+				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
+				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
+				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
+				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1565,20 +1565,6 @@
 				575BF72027E0CBC8008D5B3C /* Info.plist */,
 			);
 			path = ZatchUITests;
-			sourceTree = "<group>";
-		};
-		57600C072963073900A7F27B /* Zatch */ = {
-			isa = PBXGroup;
-			children = (
-				576EA922282B7F840028046C /* ZatchRegisterFirstViewController.swift */,
-				576EA924282B7FBB0028046C /* ZatchRegisterSecondViewController.swift */,
-				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
-				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
-				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
-				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
-				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
-			);
-			path = Zatch;
 			sourceTree = "<group>";
 		};
 		57600C0A2963077F00A7F27B /* Zatch */ = {
@@ -2648,7 +2634,6 @@
 				57468A9428A000CB00056691 /* SearchZatchByRegister.swift in Sources */,
 				EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */,
 				23A5791E296546C8004F08DE /* ZatchChattingListViewController.swift in Sources */,
-				576EA923282B7F840028046C /* ZatchRegisterFirstViewController.swift in Sources */,
 				EEE1154929A747B6003FD4E3 /* OthersProfileViewController.swift in Sources */,
 				EE541C1B29B44E9100DD0F20 /* MoyaLoggerPlugin.swift in Sources */,
 				5795770428BB1AB400237A12 /* MemberDeclarationSheetViewController.swift in Sources */,
@@ -2757,7 +2742,6 @@
 				EE938DA329CDA9C6003A5BF6 /* TagCollectionViewCell.swift in Sources */,
 				57E75EC928E5481900AC24B2 /* FindWantZatchSearchView.swift in Sources */,
 				5767D78D286C4AB70075DB28 /* ZatchTextRadioButton.swift in Sources */,
-				576EA925282B7FBB0028046C /* ZatchRegisterSecondViewController.swift in Sources */,
 				57468A90289FEF3200056691 /* SearchTagSheetViewController.swift in Sources */,
 				EE27C54A29C8280A00285CC5 /* PopularKeywordUseCase.swift in Sources */,
 				576B376128D82F7300EF36E6 /* UserLeaveView.swift in Sources */,
