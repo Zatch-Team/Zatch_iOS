@@ -240,7 +240,7 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
     
     private func datePickerWillShow(about type: Register.ProductDate){
         
-        if(isNotConfirmedState(type: type)) { return }
+        if isNotConfirmedState(type: type) { return }
          
         let datePicker = DatePickerAlertViewController(about: type).show(in: self)
         datePicker.completionTest = { [weak self] in

@@ -229,10 +229,7 @@ extension RegisterSecondInfoViewController: UITableViewDelegate, UITableViewData
 }
 
 extension RegisterSecondInfoViewController: RegisterSecondInfoDelegate{
-    
     func selectWantZatchType(_ type: Register.WantZatch) {
         wantProductTypeSubject.onNext(type)
     }
-    
-    
 }
