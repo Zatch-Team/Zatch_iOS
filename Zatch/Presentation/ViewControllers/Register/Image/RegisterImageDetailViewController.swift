@@ -7,33 +7,40 @@
 
 import UIKit
 
-class RegisterImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView> {
+class RegisterImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView>, ImageDetailViewController {
     
     //MARK: - Properties
     
     var completion: (() -> ())!
-    private let image: UIImage
     
     init(image: UIImage){
-        self.image = image
         super.init(headerView: EtcButtonHeaderView(title: "확인"),
                    mainView: ImageDetailView())
+        mainView.imageView.image = image
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layout() {
+        super.layout()
+        setLayout()
+    }
 
     override func initialize() {
         super.initialize()
-        mainView.imageView.image = image
-        headerView.etcButton.addTarget(self, action: #selector(okBtnDidClicked), for: .touchUpInside)
+        initializeProcessButton()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        setHeaderViewHiddenState()
     }
     
     //MARK: - Action
-    @objc func okBtnDidClicked(){
-        self.completion()
-        self.navigationController?.popViewController(animated: true)
+    @objc func imageProcessButtonDidTapped() {
+        completion()
+        viewControllerWillPop()
     }
 
 }
