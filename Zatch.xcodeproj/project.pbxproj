@@ -842,7 +842,6 @@
 			isa = PBXGroup;
 			children = (
 				EEE1154029A7424B003FD4E3 /* ProfileViewController.swift */,
-				EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */,
 				EEE1154829A747B6003FD4E3 /* OthersProfileViewController.swift */,
 				232DD0A528ECDBC900BC6E91 /* ReviewViewController.swift */,
 			);
@@ -1253,6 +1252,7 @@
 			children = (
 				23A767EF2908518B003E46AB /* Notice */,
 				23CB3CF428C7D38500C42858 /* MypageViewController.swift */,
+				EEE1154629A747AD003FD4E3 /* MyProfileViewController.swift */,
 				234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */,
 				576B375A28D82E9A00EF36E6 /* SettingViewController.swift */,
 				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
