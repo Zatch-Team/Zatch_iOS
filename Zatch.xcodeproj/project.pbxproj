@@ -351,6 +351,7 @@
 		EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */; };
 		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
 		EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */; };
+		EEC3752D29F8D9AE00190B22 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3752C29F8D9AE00190B22 /* ImageDetailViewController.swift */; };
 		EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153729A713ED003FD4E3 /* SectionDivider.swift */; };
 		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
 		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
@@ -757,6 +758,7 @@
 		EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeCycle+Rx.swift"; sourceTree = "<group>"; };
+		EEC3752C29F8D9AE00190B22 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		EEE1153729A713ED003FD4E3 /* SectionDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDivider.swift; sourceTree = "<group>"; };
 		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
 		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -1110,13 +1112,12 @@
 		23C9031428C5CE6400FB6D3D /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				EEC3752B29F8D9A000190B22 /* Image */,
 				EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */,
 				EE0AD55029E6DBB100C1CDA1 /* RegisterSecondInfoViewController.swift */,
 				576EA926282B7FD60028046C /* CheckRegisterViewController.swift */,
 				57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */,
 				57FFEDC428DD2F0D0041719B /* CheckShareRegisterViewController.swift */,
-				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
-				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2228,6 +2229,16 @@
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
+		EEC3752B29F8D9A000190B22 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				57EBCE4728AA064C00212D20 /* RegisterImageDetailViewController.swift */,
+				57EBCE4928AA17BE00212D20 /* DeleteImageDetailViewController.swift */,
+				EEC3752C29F8D9AE00190B22 /* ImageDetailViewController.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		EEE1153929A71CA7003FD4E3 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -2896,6 +2907,7 @@
 				57B32C3829220EA10018C0CB /* BottomSheetSystem.swift in Sources */,
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
 				EE27C54E29C890BB00285CC5 /* ZatchSearchResultViewModel.swift in Sources */,
+				EEC3752D29F8D9AE00190B22 /* ImageDetailViewController.swift in Sources */,
 				57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */,
 				57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
