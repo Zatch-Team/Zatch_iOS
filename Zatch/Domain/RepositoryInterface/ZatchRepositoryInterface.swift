@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol ZatchRepositoryInterface {
     func registerZatch()
+//    -> Observable<Int>
     func getPopularZatch()
     func getAroundZatch()
     func fetchHeartState()

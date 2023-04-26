@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct RegisterZatchRequestModel {
     
@@ -29,7 +30,8 @@ struct RegisterZatchRequestModel {
 }
 
 protocol RegisterUseCaseInterface {
-    func execute(requestValue: RegisterZatchRequestModel) async throws
+    func execute(requestValue: RegisterZatchRequestModel)
+//    -> Observable<Int>
 }
 
 final class RegisterUseCase: RegisterUseCaseInterface {
@@ -40,7 +42,7 @@ final class RegisterUseCase: RegisterUseCaseInterface {
         self.zatchRepository = zatchRepository
     }
 
-    func execute(requestValue: RegisterZatchRequestModel) async throws {
-        return try await zatchRepository.registerZatch()
+    func execute(requestValue: RegisterZatchRequestModel) {//-> Observable<Int>{
+        return zatchRepository.registerZatch()
     }
 }
