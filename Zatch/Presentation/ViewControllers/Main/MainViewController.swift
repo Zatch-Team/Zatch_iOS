@@ -126,7 +126,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
             break
         case 2:
-            navigationController?.pushViewController(ZatchRegisterFirstViewController(), animated: true)
+            navigationController?.pushViewController(RegisterFirstInfoViewController(), animated: true)
             break
         default:
             return
