@@ -7,32 +7,39 @@
 
 import UIKit
 
-class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView> {
+class DeleteImageDetailViewController: BaseViewController<EtcButtonHeaderView, ImageDetailView>, ImageDetailViewController {
     
-    private let image: UIImage
     var completion: (() -> Void)!
     
     init(image: UIImage){
-        self.image = image
         super.init(headerView: EtcButtonHeaderView(title: "삭제"),
                    mainView: ImageDetailView())
+        mainView.imageView.image = image
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func initialize() {
-        super.initialize()
-        mainView.imageView.image = image
-        headerView.etcButton.addTarget(self, action: #selector(deleteButtonDidClicked), for: .touchUpInside)
+    override func layout() {
+        super.layout()
+        setLayout()
     }
     
-    //MARK: - Action
-    @objc func deleteButtonDidClicked(){
+    override func initialize() {
+        super.initialize()
+        initializeProcessButton()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        setHeaderViewHiddenState()
+    }
+    
+    @objc func imageProcessButtonDidTapped(){
         let alert = Alert.ImageDelete.show(in: self)
         alert.completion = {
             self.completion()
+            self.viewControllerWillPop()
         }
     }
 }

@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 final class ZatchRepository: ZatchRepositoryInterface {
     
-    func registerZatch(){
-        
+    func registerZatch() {
+
     }
     
     func getRegisterZatch() {

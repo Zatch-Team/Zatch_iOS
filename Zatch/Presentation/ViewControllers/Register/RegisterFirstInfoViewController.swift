@@ -27,9 +27,16 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
     
     private var isDetailCellOpen = false {
         didSet{
-            mainView.backTableView.cellForRow(at: DETAIL_OPEN_CELL_INDEX, cellType: RegisterCategorySelectTableViewCell.self).isSubViewOpen = isDetailCellOpen
-            mainView.backTableView.reloadSections(IndexSet.init(integer: 1), with: .automatic)
-            mainView.backTableView.isScrollEnabled = Device.isSmallDevice ? true : isDetailCellOpen
+            mainView.backTableView.do{
+                $0.cellForRow(
+                    at: DETAIL_OPEN_CELL_INDEX,
+                    cellType: RegisterCategorySelectTableViewCell.self
+                )
+                .isSubViewOpen = isDetailCellOpen
+                
+                $0.reloadSections(IndexSet.init(integer: 1), with: .automatic)
+                $0.isScrollEnabled = Device.isSmallDevice ? true : isDetailCellOpen
+            }
         }
     }
     
@@ -65,13 +72,19 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
             .textObservable
             .startWith("")
         
+        viewModel.images = mainView.backTableView
+            .cellForRow(at: [0,2],
+                        cellType: ImageAddTableViewCell.self)
+            .imagesRelay
+            .asObservable()
+        
         categoryRelay
             .subscribe(onNext: { id in
                 if let id = id{
                     self.mainView.backTableView
                         .cellForRow(at: self.CATEGORY_CELL_INDEX,
                                     cellType: RegisterCategorySelectTableViewCell.self)
-                        .setCategoryTitle(id: id)
+                        .setCategory(id: id)
                 }
             }).disposed(by: disposeBag)
 
@@ -94,13 +107,16 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
             }).disposed(by: disposeBag)
         
         
-        let input = RegisterFirstInfoTestViewModel.Input(nextButtonTap: mainView.nextButton.rx.tap,
-                                                     categoryId: categoryRelay.asObservable(),
-                                                     count: countSubject.asObservable(),
-                                                     countUnit: countUnitSubject.asObservable(),
-                                                     buyDate: buyDateSubject.asObservable(),
-                                                     endDate: endDateSubject.asObservable(),
-                                                     isOpen: isOpenRelay.asObservable())
+        let input = RegisterFirstInfoTestViewModel
+            .Input(nextButtonTap: mainView.nextButton.rx.tap,
+                   categoryId: categoryRelay.asObservable(),
+                   count: countSubject.asObservable(),
+                   countUnit: countUnitSubject.asObservable(),
+                   buyDate: buyDateSubject.asObservable(),
+                   endDate: endDateSubject.asObservable(),
+                   isOpen: isOpenRelay.asObservable()
+            )
+        
         let output = viewModel.transform(input)
         
         output.zatchDTO
@@ -163,12 +179,14 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
     }
     
     private func getImageAddTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
-        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ImageAddTableViewCell.self)
+        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: ImageAddTableViewCell.self).then{
+            $0.navigationController = self.navigationController
+        }
     }
     
     private func getRegisterCategorySelectTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
-        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: RegisterCategorySelectTableViewCell.self).then{
-            $0.setDefaultTitle("입력사항 더보기")
+        return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: MoreInformationTableViewCell.self).then{
+            $0.setTitle("입력사항 더보기")
         }
     }
     
@@ -222,7 +240,7 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
     
     private func datePickerWillShow(about type: Register.ProductDate){
         
-        if(isNotConfirmedState(type: type)) { return }
+        if isNotConfirmedState(type: type) { return }
          
         let datePicker = DatePickerAlertViewController(about: type).show(in: self)
         datePicker.completionTest = { [weak self] in

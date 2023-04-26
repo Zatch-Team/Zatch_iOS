@@ -10,12 +10,9 @@ import RxSwift
 import RxCocoa
 
 struct RegisterSecondInformationDTO{
-    let firstPriorityCategory: Int?
-    let firstProductName: String?
-    let secondPriorityCategory: Int?
-    let secondProductName: String?
-    let thirdPriorityCategory: Int?
-    let thirdProductName: String?
+    let firstPriority: RegisterZatchRequestModel.WantProductPriority?
+    let secondPriority: RegisterZatchRequestModel.WantProductPriority?
+    let thirdPriority: RegisterZatchRequestModel.WantProductPriority?
     let wantProductType: Int
     let isFree: Bool
 }
@@ -89,24 +86,34 @@ class RegisterSecondInfoViewModel: BaseViewModel{
                       moveExchange: moveExchange)
     }
     
-    private func setRegisterSecondInfoDTO(_ observable: RequestObservableType, isFree: Bool) -> RegisterSecondInformationDTO{
-        return RegisterSecondInformationDTO(firstPriorityCategory: observable.firstCategory,
-                                            firstProductName: observable.firstProductName,
-                                            secondPriorityCategory: observable.secondCategory,
-                                            secondProductName: observable.secondProductName,
-                                            thirdPriorityCategory: observable.thirdCategory,
-                                            thirdProductName: observable.thirdProductName,
-                                            wantProductType: observable.wantType.rawValue,
-                                            isFree: isFree)
+    private func checkExchangeValidation(_ observable: RequestObservableType) -> Bool{
+        [observable.firstCategory, observable.secondCategory, observable.thirdCategory].contains{ $0 != nil }
     }
     
-    private func checkExchangeValidation(_ observable: RequestObservableType) -> Bool{
-        
-        let category = [observable.firstCategory, observable.secondCategory, observable.thirdCategory]
-        let productName = [observable.firstProductName, observable.secondProductName, observable.thirdProductName]
-        let zip = zip(category, productName)
-        
-        return zip.contains{ $0.0 != nil && !$0.1.isEmpty }
+    private func setRegisterSecondInfoDTO(_ observable: RequestObservableType, isFree: Bool) -> RegisterSecondInformationDTO{
+        return RegisterSecondInformationDTO(
+            firstPriority: getPriorityModel(
+                priority: 1,
+                cateogoryId: observable.firstCategory,
+                productName: observable.firstProductName
+            ),
+            secondPriority: getPriorityModel(
+                priority: 2,
+                cateogoryId: observable.secondCategory,
+                productName: observable.secondProductName
+            ),
+            thirdPriority: getPriorityModel(
+                priority: 3,
+                cateogoryId: observable.thirdCategory,
+                productName: observable.thirdProductName
+            ),
+            wantProductType: observable.wantType.rawValue,
+            isFree: isFree
+        )
+    }
+    
+    private func getPriorityModel(priority: Int, cateogoryId: Int?, productName: String) -> RegisterZatchRequestModel.WantProductPriority?{
+        cateogoryId == nil ? nil : RegisterZatchRequestModel.WantProductPriority(priority: priority, p_name: productName, p_category: cateogoryId!)
     }
     
 }

@@ -21,6 +21,7 @@ class ZatchRegisterFirstView: BaseView {
         $0.register(cellType: RegisterCategorySelectTableViewCell.self)
         $0.register(cellType: TextFieldTabeViewCell.self)
         $0.register(cellType: ImageAddTableViewCell.self)
+        $0.register(cellType: MoreInformationTableViewCell.self)
         $0.register(cellType: ProductQuantityTableViewCell.self)
         $0.register(cellType: ProductDateChoiceTableViewCell.self)
         $0.register(cellType: ProductIsOpenTableViewCell.self)

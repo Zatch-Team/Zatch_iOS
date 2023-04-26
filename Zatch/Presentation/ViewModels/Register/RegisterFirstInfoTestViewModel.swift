@@ -12,7 +12,7 @@ import RxCocoa
 struct RegisterFirstInformationDTO{
     let category: Int
     let productName: String
-//    let image: UIImage
+    let images: [UIImage]
     let count: String?
     let buyDate: String?
     let endDate: String?
@@ -22,6 +22,7 @@ struct RegisterFirstInformationDTO{
 final class RegisterFirstInfoTestViewModel: BaseViewModel{
     
     var productName: Observable<String>!
+    var images: Observable<[UIImage]>!
     
     private let disposeBag = DisposeBag()
     
@@ -60,6 +61,7 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
         
         let requestObservable = Observable.combineLatest(input.categoryId,
                                                          productName,
+                                                         images,
                                                          countObservable,
                                                          buyDateObservable,
                                                          endDateObservable,
@@ -67,15 +69,15 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
         
         let isDissatisfaction: Observable<Alert?> = input.nextButtonTap
             .withLatestFrom(requestObservable)
-            .map{ category, productName, count, buyDate, endDate, isOpen in
+            .map{ category, productName, images, count, buyDate, endDate, isOpen in
                 if(category == nil){
                     return Alert.RegisterCategory
                 }else if(productName.isEmpty){
                     return Alert.ProductName
                 }
-//                else if(images.count == 0){
-//                    return Alert.ImageMin
-//                }
+                else if(images.count == 0){
+                    return Alert.ImageMin
+                }
                 else if(category == 0 && buyDate == nil){
                     return Alert.BuyDate
                 }else if(category == 0 && endDate == nil){
@@ -92,9 +94,10 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
         let zatchDTO = isDissatisfaction
             .filter{ $0 == nil }
             .withLatestFrom(requestObservable)
-            .map{ category, productName, count, buyDate, endDate, isOpen in
+            .map{ category, productName, images, count, buyDate, endDate, isOpen in
                 return RegisterFirstInformationDTO(category: category!,
                                                    productName: productName,
+                                                   images: images,
                                                    count: count,
                                                    buyDate: buyDate,
                                                    endDate: endDate,
@@ -107,9 +110,7 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
     }
     
     private func dateFormat(_ date: Register.DateString?) -> String?{
-        if let date = date{
-            return date.year + "." + date.month.dateFormat + "." + date.date.dateFormat
-        }
-        return nil
+        guard let date = date else { return nil }
+        return date.year + "." + date.month.dateFormat + "." + date.date.dateFormat
     }
 }
