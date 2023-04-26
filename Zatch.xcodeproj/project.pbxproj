@@ -352,6 +352,9 @@
 		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
 		EEB13B94297FCD0A001A8DD9 /* LifeCycle+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */; };
 		EEC3752D29F8D9AE00190B22 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3752C29F8D9AE00190B22 /* ImageDetailViewController.swift */; };
+		EEC3753029F8E18C00190B22 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */; };
+		EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753129F8E21800190B22 /* ProfileViewModel.swift */; };
+		EEC3753429F8E22300190B22 /* ModifyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */; };
 		EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153729A713ED003FD4E3 /* SectionDivider.swift */; };
 		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
 		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
@@ -759,6 +762,9 @@
 		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EEB13B93297FCD0A001A8DD9 /* LifeCycle+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeCycle+Rx.swift"; sourceTree = "<group>"; };
 		EEC3752C29F8D9AE00190B22 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		EEC3753129F8E21800190B22 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewModel.swift; sourceTree = "<group>"; };
 		EEE1153729A713ED003FD4E3 /* SectionDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDivider.swift; sourceTree = "<group>"; };
 		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
 		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -1024,6 +1030,7 @@
 				EE642C5B298FAE1D00E15869 /* Register */,
 				23CB3CF828C7D85500C42858 /* Main */,
 				5722461928C6C84D009B7C78 /* Chatting */,
+				EEC3752E29F8E17800190B22 /* MyPage */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2239,6 +2246,16 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		EEC3752E29F8E17800190B22 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */,
+				EEC3753129F8E21800190B22 /* ProfileViewModel.swift */,
+				EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		EEE1153929A71CA7003FD4E3 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -2659,6 +2676,7 @@
 				5724EC8F291E0E9B00DC529B /* LoginView.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
+				EEC3753029F8E18C00190B22 /* MyPageViewModel.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
 				576B375628D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift in Sources */,
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
@@ -2677,6 +2695,7 @@
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
 				EE7B76D629C5F61C00942798 /* HeartZatchUseCase.swift in Sources */,
+				EEC3753429F8E22300190B22 /* ModifyProfileViewModel.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
@@ -2822,6 +2841,7 @@
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
+				EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */,
 				EE813FE429C481690091F16E /* Tagable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,

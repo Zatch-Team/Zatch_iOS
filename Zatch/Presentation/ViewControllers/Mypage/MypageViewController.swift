@@ -7,10 +7,7 @@
 
 import UIKit
 
-class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
-    
-    private var isCertified: Bool = false    // 인증 전 후
-    private let mainView = TableOnlyView()
+final class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     
     init(){
         super.init(headerView: BaseTabBarHeaderView(title: "내 정보", button: Image.setting))
@@ -20,9 +17,12 @@ class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var isCertified: Bool = true    // 인증 전 후
+    private let mainView = TableOnlyView()
+    
     override func layout() {
         super.layout()
-        self.view.addSubview(mainView)
+        view.addSubview(mainView)
         mainView.snp.makeConstraints{
             $0.top.equalToSuperview().offset(Const.Offset.TOP_OFFSET)
             $0.leading.trailing.bottom.equalToSuperview()
@@ -30,21 +30,22 @@ class MypageViewController: BaseTabBarViewController<BaseTabBarHeaderView> {
     }
     
     override func initialize(){
-        headerView.etcButton.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
         mainView.tableView.initializeDelegate(self)
-        mainView.registerCell(cellTypes: [MyInfoTableViewCell.self,
-                                          BannerTableViewCell.self,
-                                          MyZatchStatisticTableViewCell.self,
-                                          TownSettingTableViewCell.self,
-                                          BaseMyPageTableViewCell.self])
+        mainView.registerCell(
+            cellTypes: [MyInfoTableViewCell.self,
+                        BannerTableViewCell.self,
+                        MyZatchStatisticTableViewCell.self,
+                        TownSettingTableViewCell.self,
+                        BaseMyPageTableViewCell.self]
+        )
+        headerView.etcButton.addTarget(self, action: #selector(goSettingButtonDidTap), for: .touchUpInside)
     }
 
-    // MARK: - Actions
-    @objc func goSettingButtonDidTap() {
-        let vc = SettingViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    @objc private func goSettingButtonDidTap() {
+        navigationController?.pushViewController(SettingViewController(), animated: true)
     }
 }
+
 // MARK: - TableView delegate
 extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -53,10 +54,7 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(section == 1){
-            return 4
-        }
-        return isCertified ? 1 : 2
+        section == 1 ? 4 : isCertified ? 1 : 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
