@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class MyPageViewModel: BaseViewModel{
     
@@ -14,10 +16,10 @@ final class MyPageViewModel: BaseViewModel{
     }
     
     struct Output{
-//        let profileImage: String
-//        let myZatchCountBinding: Int
-//        let likeCountBinding: Int
-//        let exchangeFinishBinding: Int
+//        let profileImage: Driver<String>
+//        let myZatchCountBinding: Driver<Int>
+//        let likeCountBinding: Driver<Int>
+//        let exchangeFinishBinding: Driver<Int>
     }
     
     func transform(_ input: Input) -> Output{

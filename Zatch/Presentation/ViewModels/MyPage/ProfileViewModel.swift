@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class ProfileViewModel: BaseViewModel{
     
@@ -14,11 +16,11 @@ class ProfileViewModel: BaseViewModel{
     }
     
     struct Output{
-//        let nickname: String
-//        let profileImage: String
-//        let starRating: Int
-//        let oneLineComment: String
-//        let willZatchTableReload: Void
+//        let nickname: Driver<String>
+//        let profileImage: Driver<String>
+//        let starRating: Driver<Int>
+//        let oneLineComment: Driver<String>
+//        let willZatchTableReload: Driver<Void>
     }
     
     func transform(_ input: Input) -> Output{
