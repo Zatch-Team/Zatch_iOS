@@ -51,9 +51,8 @@ final class ServiceCenterViewController: BaseViewController<CenterNavigationHead
         }
     }
     
-    
     private let selectServiceRelay = BehaviorRelay<Int>(value: 0)
-    private lazy var selectCellUnderLine = UIView().then{
+    private let selectCellUnderLine = UIView().then{
         $0.backgroundColor = .zatchPurple
     }
     
@@ -105,13 +104,9 @@ extension ServiceCenterViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ServiceTitleCollectionViewCell.self).then{
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: ServiceTitleCollectionViewCell.self).then{
             $0.title = getServiceTitle(row: indexPath.row)
         }
-        if indexPath.row == 0 {
-            selectServiceCell = cell
-        }
-        return cell
     }
     
     private func getServiceTitle(row: Int) -> String{
@@ -135,8 +130,6 @@ extension ServiceCenterViewController: UICollectionViewDelegate, UICollectionVie
         defer {
             animateChangeUnderLineLayout()
         }
-        
-        selectCellUnderLine.translatesAutoresizingMaskIntoConstraints = false
         
         if underLineConstraints != nil {
             NSLayoutConstraint.deactivate(underLineConstraints)
