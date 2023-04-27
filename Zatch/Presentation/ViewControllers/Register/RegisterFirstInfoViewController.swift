@@ -31,7 +31,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
                 $0.cellForRow(
                     at: DETAIL_OPEN_CELL_INDEX,
                     cellType: RegisterCategorySelectTableViewCell.self
-                )
+                )?
                 .isSubViewOpen = isDetailCellOpen
                 
                 $0.reloadSections(IndexSet.init(integer: 1), with: .automatic)
@@ -68,13 +68,13 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
     
         viewModel.productName = mainView.backTableView
             .cellForRow(at: PRODUCT_NAME_CELL_INDEX,
-                        cellType: TextFieldTabeViewCell.self)
+                        cellType: TextFieldTabeViewCell.self)?
             .textObservable
             .startWith("")
         
         viewModel.images = mainView.backTableView
             .cellForRow(at: [0,2],
-                        cellType: ImageAddTableViewCell.self)
+                        cellType: ImageAddTableViewCell.self)?
             .imagesRelay
             .asObservable()
         
@@ -83,7 +83,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
                 if let id = id{
                     self.mainView.backTableView
                         .cellForRow(at: self.CATEGORY_CELL_INDEX,
-                                    cellType: RegisterCategorySelectTableViewCell.self)
+                                    cellType: RegisterCategorySelectTableViewCell.self)?
                         .setCategory(id: id)
                 }
             }).disposed(by: disposeBag)
@@ -93,7 +93,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
             .subscribe(onNext: {
                 self.mainView.backTableView
                     .cellForRow(at: self.BUY_DATE_CELL_INDEX,
-                                cellType: ProductDateChoiceTableViewCell.self)
+                                cellType: ProductDateChoiceTableViewCell.self)?
                     .setDate($0)
             }).disposed(by: disposeBag)
         
@@ -102,7 +102,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
             .subscribe(onNext: {
                 self.mainView.backTableView
                     .cellForRow(at: self.END_DATE_CELL_INDEX,
-                                cellType: ProductDateChoiceTableViewCell.self)
+                                cellType: ProductDateChoiceTableViewCell.self)?
                     .setDate($0)
             }).disposed(by: disposeBag)
         
@@ -258,7 +258,8 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
             case .end:  return self.END_DATE_CELL_INDEX
             }
         }()
-        return mainView.backTableView.cellForRow(at: indexPath,cellType: ProductDateChoiceTableViewCell.self).isNotConfirmed
+        guard let cell = mainView.backTableView.cellForRow(at: indexPath,cellType: ProductDateChoiceTableViewCell.self) else { fatalError() }
+        return cell.isNotConfirmed
     }
 }
 

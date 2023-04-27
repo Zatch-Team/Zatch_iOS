@@ -85,9 +85,9 @@ extension ProductDetailInputTableViewCell: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         getDateType(indexPath: indexPath){
-            let cell = tableView.cellForRow(at: indexPath, cellType: ProductDateChoiceTableViewCell.self)
-            
-            delegate.datePickerWillShow(dateType: $0, cell: cell)
+            if let cell = tableView.cellForRow(at: indexPath, cellType: ProductDateChoiceTableViewCell.self){
+                delegate.datePickerWillShow(dateType: $0, cell: cell)
+            }
         }
     }
     
