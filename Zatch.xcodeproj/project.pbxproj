@@ -45,12 +45,6 @@
 		23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* MypageViewController.swift */; };
 		23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */; };
 		23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */; };
-		23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */; };
-		23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */; };
-		23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CF28E9EF7A002F234C /* PolicyViewController.swift */; };
-		23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D128E9EF80002F234C /* AccountViewController.swift */; };
-		23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D328E9EF89002F234C /* TradeViewController.swift */; };
-		23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D528E9EF92002F234C /* EtcViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
 		57067864281C143A00F48342 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* Color.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
@@ -433,12 +427,6 @@
 		23CB3CF428C7D38500C42858 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabViewController.swift; sourceTree = "<group>"; };
 		23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationSheetViewController.swift; sourceTree = "<group>"; };
-		23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
-		23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterTabmanViewController.swift; sourceTree = "<group>"; };
-		23E764CF28E9EF7A002F234C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
-		23E764D128E9EF80002F234C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		23E764D328E9EF89002F234C /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
-		23E764D528E9EF92002F234C /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
 		2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1040,7 +1028,6 @@
 			children = (
 				EEE1154429A746D3003FD4E3 /* Util */,
 				5724EC8A291E0CB400DC529B /* Login */,
-				23E764CA28E9EDFE002F234C /* ServiceCenter */,
 				23B051BD28E2060A005D08EA /* QnA */,
 				23B051B428E1FD70005D08EA /* Notification */,
 				23CB3CEF28C7D35600C42858 /* Mypage */,
@@ -1289,19 +1276,6 @@
 				531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		23E764CA28E9EDFE002F234C /* ServiceCenter */ = {
-			isa = PBXGroup;
-			children = (
-				23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */,
-				23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */,
-				23E764CF28E9EF7A002F234C /* PolicyViewController.swift */,
-				23E764D128E9EF80002F234C /* AccountViewController.swift */,
-				23E764D328E9EF89002F234C /* TradeViewController.swift */,
-				23E764D528E9EF92002F234C /* EtcViewController.swift */,
-			);
-			path = ServiceCenter;
 			sourceTree = "<group>";
 		};
 		57067862281C13D500F48342 /* Font */ = {
@@ -2710,7 +2684,6 @@
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */,
-				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
 				EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
@@ -2745,7 +2718,6 @@
 				EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */,
 				57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */,
 				EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */,
-				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
 				57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */,
 				EE4D888B29D013CC003B6383 /* Map.swift in Sources */,
@@ -2816,7 +2788,6 @@
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
-				2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */,
@@ -2898,11 +2869,9 @@
 				EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
-				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
 				EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */,
-				2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
-				23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */,
+				EEC3753729F8EB2A00190B22 /* ServiceCenterViewController.swift in Sources */,
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
@@ -2948,13 +2917,11 @@
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				EE7B76D829C5F61C00942798 /* PopularZatchUseCase.swift in Sources */,
 				EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */,
-				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
 				EE2801BC29C6F07E003595A5 /* GetRegisterZatchUseCase.swift in Sources */,
 				EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
 				EE813FDE29C445B30091F16E /* FilledTag.swift in Sources */,
-				23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
