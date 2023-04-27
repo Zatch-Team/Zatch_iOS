@@ -286,6 +286,7 @@
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
 		EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* ImageDetailView.swift */; };
+		EE4CE7B929F910AF00943FE5 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = EE4CE7B829F910AF00943FE5 /* FAQ.json */; };
 		EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887229CFF127003B6383 /* MapRepository.swift */; };
 		EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */; };
 		EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887929CFF3B4003B6383 /* MapRouter.swift */; };
@@ -690,6 +691,7 @@
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE410196298557440083B7E0 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		EE4CE7B829F910AF00943FE5 /* FAQ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		EE4D887229CFF127003B6383 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
 		EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE4D887929CFF3B4003B6383 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
@@ -1779,6 +1781,7 @@
 		57B32C2A291E93220018C0CB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EE4CE7B729F9105000943FE5 /* FAQ */,
 				57067862281C13D500F48342 /* Font */,
 				57FEFA7F297A5B2D008A78B0 /* BottomSheet */,
 				57FEFA80297A5B41008A78B0 /* Storyboard */,
@@ -1968,6 +1971,14 @@
 				EE410190298541010083B7E0 /* MyZatchView.swift */,
 			);
 			path = MyZatch;
+			sourceTree = "<group>";
+		};
+		EE4CE7B729F9105000943FE5 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				EE4CE7B829F910AF00943FE5 /* FAQ.json */,
+			);
+			path = FAQ;
 			sourceTree = "<group>";
 		};
 		EE4D887129CF0D91003B6383 /* Map */ = {
@@ -2458,6 +2469,7 @@
 				57A28CD328CF05D300263079 /* noimage256.png in Resources */,
 				57A28CD528CF05D300263079 /* map_pin.png in Resources */,
 				57A28CCF28CF05D300263079 /* info_box.png in Resources */,
+				EE4CE7B929F910AF00943FE5 /* FAQ.json in Resources */,
 				57A28CD128CF05D300263079 /* map_pinup_custom.png in Resources */,
 				57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */,
 				57A28CC428CF05D300263079 /* detail_button.png in Resources */,
