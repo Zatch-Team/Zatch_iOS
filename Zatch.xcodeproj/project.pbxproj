@@ -12,8 +12,6 @@
 		232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */; };
 		232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */; };
 		232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */; };
-		2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */; };
-		2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */; };
 		234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */; };
 		234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */; };
 		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
@@ -350,6 +348,11 @@
 		EEC3753029F8E18C00190B22 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */; };
 		EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753129F8E21800190B22 /* ProfileViewModel.swift */; };
 		EEC3753429F8E22300190B22 /* ModifyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */; };
+		EEC3753729F8EB2A00190B22 /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753629F8EB2A00190B22 /* ServiceCenterViewController.swift */; };
+		EEC3753A29F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753929F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift */; };
+		EEC3753C29F8EC0600190B22 /* FAQTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753B29F8EC0600190B22 /* FAQTitleTableViewCell.swift */; };
+		EEC3753E29F8EC0F00190B22 /* FAQContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753D29F8EC0F00190B22 /* FAQContentTableViewCell.swift */; };
+		EEC3754129F8EC9400190B22 /* ServiceCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3754029F8EC9400190B22 /* ServiceCenterView.swift */; };
 		EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153729A713ED003FD4E3 /* SectionDivider.swift */; };
 		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
 		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
@@ -395,8 +398,6 @@
 		232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProfileTableViewCell.swift; sourceTree = "<group>"; };
 		232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherReviewTableViewCell.swift; sourceTree = "<group>"; };
-		2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
-		2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
 		234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -755,6 +756,11 @@
 		EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		EEC3753129F8E21800190B22 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewModel.swift; sourceTree = "<group>"; };
+		EEC3753629F8EB2A00190B22 /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
+		EEC3753929F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEC3753B29F8EC0600190B22 /* FAQTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTitleTableViewCell.swift; sourceTree = "<group>"; };
+		EEC3753D29F8EC0F00190B22 /* FAQContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQContentTableViewCell.swift; sourceTree = "<group>"; };
+		EEC3754029F8EC9400190B22 /* ServiceCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterView.swift; sourceTree = "<group>"; };
 		EEE1153729A713ED003FD4E3 /* SectionDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDivider.swift; sourceTree = "<group>"; };
 		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
 		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -823,15 +829,6 @@
 				232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */,
 			);
 			path = Review;
-			sourceTree = "<group>";
-		};
-		2342271C28EA9C2D004D6F99 /* FAQCells */ = {
-			isa = PBXGroup;
-			children = (
-				2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */,
-				2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */,
-			);
-			path = FAQCells;
 			sourceTree = "<group>";
 		};
 		235613F128D0973900D44E97 /* Profile */ = {
@@ -941,6 +938,7 @@
 				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
 				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
 				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
+				EEC3754029F8EC9400190B22 /* ServiceCenterView.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -948,6 +946,7 @@
 		23B7FBAA28CEBFBC0018642E /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				EEC3753829F8EBD400190B22 /* ServiceCenter */,
 				576B376228D82FFD00EF36E6 /* Setting */,
 				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
 				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
@@ -1135,7 +1134,6 @@
 			isa = PBXGroup;
 			children = (
 				EE532954299BCFEF00C79CF2 /* Util */,
-				2342271C28EA9C2D004D6F99 /* FAQCells */,
 				23B051C628E20BC2005D08EA /* QnACells */,
 				23B051BA28E1FE77005D08EA /* NotificationCells */,
 				57A28CE028CF23E000263079 /* TownCells */,
@@ -1254,6 +1252,7 @@
 				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
 				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
 				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
+				EEC3753629F8EB2A00190B22 /* ServiceCenterViewController.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -2241,6 +2240,16 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		EEC3753829F8EBD400190B22 /* ServiceCenter */ = {
+			isa = PBXGroup;
+			children = (
+				EEC3753929F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift */,
+				EEC3753B29F8EC0600190B22 /* FAQTitleTableViewCell.swift */,
+				EEC3753D29F8EC0F00190B22 /* FAQContentTableViewCell.swift */,
+			);
+			path = ServiceCenter;
+			sourceTree = "<group>";
+		};
 		EEE1153929A71CA7003FD4E3 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -2742,6 +2751,7 @@
 				EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */,
+				EEC3754129F8EC9400190B22 /* ServiceCenterView.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
@@ -2794,6 +2804,7 @@
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
+				EEC3753C29F8EC0600190B22 /* FAQTitleTableViewCell.swift in Sources */,
 				EE410191298541010083B7E0 /* MyZatchView.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
@@ -2820,11 +2831,13 @@
 				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
 				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
+				EEC3753A29F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */,
+				EEC3753E29F8EC0F00190B22 /* FAQContentTableViewCell.swift in Sources */,
 				EE813FE429C481690091F16E /* Tagable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
