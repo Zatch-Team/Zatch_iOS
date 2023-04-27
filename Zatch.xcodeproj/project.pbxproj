@@ -12,8 +12,6 @@
 		232DD0A928ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */; };
 		232DD0AB28ECDE6200BC6E91 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */; };
 		232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */; };
-		2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */; };
-		2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */; };
 		234CAC1228D8397D007CAD13 /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */; };
 		234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */; };
 		234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E5DBB28C762810079640F /* TabBarViewController.swift */; };
@@ -45,12 +43,6 @@
 		23CB3CF528C7D38500C42858 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF428C7D38500C42858 /* MypageViewController.swift */; };
 		23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */; };
 		23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */; };
-		23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */; };
-		23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */; };
-		23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764CF28E9EF7A002F234C /* PolicyViewController.swift */; };
-		23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D128E9EF80002F234C /* AccountViewController.swift */; };
-		23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D328E9EF89002F234C /* TradeViewController.swift */; };
-		23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E764D528E9EF92002F234C /* EtcViewController.swift */; };
 		23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */; };
 		57067864281C143A00F48342 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067863281C143A00F48342 /* Color.swift */; };
 		57067866281C167100F48342 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57067865281C167100F48342 /* UIFont.swift */; };
@@ -292,6 +284,7 @@
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
 		EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* ImageDetailView.swift */; };
+		EE4CE7B929F910AF00943FE5 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = EE4CE7B829F910AF00943FE5 /* FAQ.json */; };
 		EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887229CFF127003B6383 /* MapRepository.swift */; };
 		EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */; };
 		EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887929CFF3B4003B6383 /* MapRouter.swift */; };
@@ -355,6 +348,11 @@
 		EEC3753029F8E18C00190B22 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */; };
 		EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753129F8E21800190B22 /* ProfileViewModel.swift */; };
 		EEC3753429F8E22300190B22 /* ModifyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */; };
+		EEC3753729F8EB2A00190B22 /* ServiceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753629F8EB2A00190B22 /* ServiceCenterViewController.swift */; };
+		EEC3753A29F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753929F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift */; };
+		EEC3753C29F8EC0600190B22 /* FAQTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753B29F8EC0600190B22 /* FAQTitleTableViewCell.swift */; };
+		EEC3753E29F8EC0F00190B22 /* FAQContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3753D29F8EC0F00190B22 /* FAQContentTableViewCell.swift */; };
+		EEC3754129F8EC9400190B22 /* ServiceCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3754029F8EC9400190B22 /* ServiceCenterView.swift */; };
 		EEE1153829A713ED003FD4E3 /* SectionDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153729A713ED003FD4E3 /* SectionDivider.swift */; };
 		EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */; };
 		EEE1153F29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */; };
@@ -400,8 +398,6 @@
 		232DD0A828ECDC9900BC6E91 /* ReviewProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProfileTableViewCell.swift; sourceTree = "<group>"; };
 		232DD0AA28ECDE6200BC6E91 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherReviewTableViewCell.swift; sourceTree = "<group>"; };
-		2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
-		2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		234CAC1128D8397D007CAD13 /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
 		234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		234E5DBB28C762810079640F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -433,12 +429,6 @@
 		23CB3CF428C7D38500C42858 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		23CB3CF628C7D38F00C42858 /* MyZatchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchTabViewController.swift; sourceTree = "<group>"; };
 		23CB3CFE28C7EB4200C42858 /* ChangeLocationSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationSheetViewController.swift; sourceTree = "<group>"; };
-		23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
-		23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterTabmanViewController.swift; sourceTree = "<group>"; };
-		23E764CF28E9EF7A002F234C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
-		23E764D128E9EF80002F234C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		23E764D328E9EF89002F234C /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
-		23E764D528E9EF92002F234C /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
 		23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListViewController.swift; sourceTree = "<group>"; };
 		2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DB6F40920A0455BE7A1D58 /* Pods-ZatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatchTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatchTests/Pods-ZatchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -702,6 +692,7 @@
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE410196298557440083B7E0 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		EE4CE7B829F910AF00943FE5 /* FAQ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		EE4D887229CFF127003B6383 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
 		EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE4D887929CFF3B4003B6383 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
@@ -765,6 +756,11 @@
 		EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		EEC3753129F8E21800190B22 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewModel.swift; sourceTree = "<group>"; };
+		EEC3753629F8EB2A00190B22 /* ServiceCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewController.swift; sourceTree = "<group>"; };
+		EEC3753929F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEC3753B29F8EC0600190B22 /* FAQTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTitleTableViewCell.swift; sourceTree = "<group>"; };
+		EEC3753D29F8EC0F00190B22 /* FAQContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQContentTableViewCell.swift; sourceTree = "<group>"; };
+		EEC3754029F8EC9400190B22 /* ServiceCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterView.swift; sourceTree = "<group>"; };
 		EEE1153729A713ED003FD4E3 /* SectionDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDivider.swift; sourceTree = "<group>"; };
 		EEE1153A29A7263E003FD4E3 /* MyPageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCellDelegate.swift; sourceTree = "<group>"; };
 		EEE1153E29A733E6003FD4E3 /* BaseMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -833,15 +829,6 @@
 				232DD0AC28ECE00900BC6E91 /* OtherReviewTableViewCell.swift */,
 			);
 			path = Review;
-			sourceTree = "<group>";
-		};
-		2342271C28EA9C2D004D6F99 /* FAQCells */ = {
-			isa = PBXGroup;
-			children = (
-				2342271D28EA9C3E004D6F99 /* FAQTableViewCell.swift */,
-				2342271F28EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift */,
-			);
-			path = FAQCells;
 			sourceTree = "<group>";
 		};
 		235613F128D0973900D44E97 /* Profile */ = {
@@ -951,6 +938,7 @@
 				234CAC1328D8398E007CAD13 /* ModifyProfileView.swift */,
 				576341A828D29CE10067D2C5 /* BlockUserView.swift */,
 				576B376028D82F7300EF36E6 /* UserLeaveView.swift */,
+				EEC3754029F8EC9400190B22 /* ServiceCenterView.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -958,6 +946,7 @@
 		23B7FBAA28CEBFBC0018642E /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				EEC3753829F8EBD400190B22 /* ServiceCenter */,
 				576B376228D82FFD00EF36E6 /* Setting */,
 				23B7FBAB28CEBFD10018642E /* MyInfoTableViewCell.swift */,
 				23B7FBAF28CECEAF0018642E /* MyZatchStatisticTableViewCell.swift */,
@@ -1040,7 +1029,6 @@
 			children = (
 				EEE1154429A746D3003FD4E3 /* Util */,
 				5724EC8A291E0CB400DC529B /* Login */,
-				23E764CA28E9EDFE002F234C /* ServiceCenter */,
 				23B051BD28E2060A005D08EA /* QnA */,
 				23B051B428E1FD70005D08EA /* Notification */,
 				23CB3CEF28C7D35600C42858 /* Mypage */,
@@ -1146,7 +1134,6 @@
 			isa = PBXGroup;
 			children = (
 				EE532954299BCFEF00C79CF2 /* Util */,
-				2342271C28EA9C2D004D6F99 /* FAQCells */,
 				23B051C628E20BC2005D08EA /* QnACells */,
 				23B051BA28E1FE77005D08EA /* NotificationCells */,
 				57A28CE028CF23E000263079 /* TownCells */,
@@ -1265,6 +1252,7 @@
 				23EEA44E28D883AA00C4C67E /* HeartListViewController.swift */,
 				576341A628D29CC70067D2C5 /* BlockUserViewController.swift */,
 				576B375E28D82F6400EF36E6 /* UserLeaveViewController.swift */,
+				EEC3753629F8EB2A00190B22 /* ServiceCenterViewController.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -1289,19 +1277,6 @@
 				531003BC25AF2D2FA8F5B2DD /* Pods-ZatchTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		23E764CA28E9EDFE002F234C /* ServiceCenter */ = {
-			isa = PBXGroup;
-			children = (
-				23E764CB28E9EE17002F234C /* ServiceCenterViewController.swift */,
-				23E764CD28E9EF10002F234C /* ServiceCenterTabmanViewController.swift */,
-				23E764CF28E9EF7A002F234C /* PolicyViewController.swift */,
-				23E764D128E9EF80002F234C /* AccountViewController.swift */,
-				23E764D328E9EF89002F234C /* TradeViewController.swift */,
-				23E764D528E9EF92002F234C /* EtcViewController.swift */,
-			);
-			path = ServiceCenter;
 			sourceTree = "<group>";
 		};
 		57067862281C13D500F48342 /* Font */ = {
@@ -1805,6 +1780,7 @@
 		57B32C2A291E93220018C0CB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EE4CE7B729F9105000943FE5 /* FAQ */,
 				57067862281C13D500F48342 /* Font */,
 				57FEFA7F297A5B2D008A78B0 /* BottomSheet */,
 				57FEFA80297A5B41008A78B0 /* Storyboard */,
@@ -1994,6 +1970,14 @@
 				EE410190298541010083B7E0 /* MyZatchView.swift */,
 			);
 			path = MyZatch;
+			sourceTree = "<group>";
+		};
+		EE4CE7B729F9105000943FE5 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				EE4CE7B829F910AF00943FE5 /* FAQ.json */,
+			);
+			path = FAQ;
 			sourceTree = "<group>";
 		};
 		EE4D887129CF0D91003B6383 /* Map */ = {
@@ -2256,6 +2240,16 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		EEC3753829F8EBD400190B22 /* ServiceCenter */ = {
+			isa = PBXGroup;
+			children = (
+				EEC3753929F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift */,
+				EEC3753B29F8EC0600190B22 /* FAQTitleTableViewCell.swift */,
+				EEC3753D29F8EC0F00190B22 /* FAQContentTableViewCell.swift */,
+			);
+			path = ServiceCenter;
+			sourceTree = "<group>";
+		};
 		EEE1153929A71CA7003FD4E3 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -2484,6 +2478,7 @@
 				57A28CD328CF05D300263079 /* noimage256.png in Resources */,
 				57A28CD528CF05D300263079 /* map_pin.png in Resources */,
 				57A28CCF28CF05D300263079 /* info_box.png in Resources */,
+				EE4CE7B929F910AF00943FE5 /* FAQ.json in Resources */,
 				57A28CD128CF05D300263079 /* map_pinup_custom.png in Resources */,
 				57067879281C2F4D00F48342 /* pretendard_regular.ttf in Resources */,
 				57A28CC428CF05D300263079 /* detail_button.png in Resources */,
@@ -2710,7 +2705,6 @@
 				57D6D79728CDBC5000F805B7 /* MakeMeetingSheetView.swift in Sources */,
 				577A01B628A496D1004B2575 /* UITextView.swift in Sources */,
 				EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */,
-				23E764D428E9EF89002F234C /* TradeViewController.swift in Sources */,
 				EEE6D160299762670004FC7B /* CheckExchangeRegisterInfoView.swift in Sources */,
 				576B375B28D82E9A00EF36E6 /* SettingViewController.swift in Sources */,
 				571C0C6C28AB151A002293B6 /* ChattingListViewController.swift in Sources */,
@@ -2745,7 +2739,6 @@
 				EE642C5A298FA9A000E15869 /* ZatchRegisterRequestManager.swift in Sources */,
 				57468A9828A000F900056691 /* SearchWantZatchByRegisterCollectionViewCell.swift in Sources */,
 				EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */,
-				23E764D228E9EF80002F234C /* AccountViewController.swift in Sources */,
 				23A767F1290851A3003E46AB /* NoticeViewController.swift in Sources */,
 				57B32C3A292261D30018C0CB /* AlertInfo.swift in Sources */,
 				EE4D888B29D013CC003B6383 /* Map.swift in Sources */,
@@ -2758,6 +2751,7 @@
 				EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */,
 				23C9031E28C5CF7900FB6D3D /* MainViewController.swift in Sources */,
 				EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */,
+				EEC3754129F8EC9400190B22 /* ServiceCenterView.swift in Sources */,
 				23CB3CFF28C7EB4200C42858 /* ChangeLocationSheetViewController.swift in Sources */,
 				5722461828C6C822009B7C78 /* SearchAddressBottomSheet.swift in Sources */,
 				235613FB28D09A2300D44E97 /* ProfileTableViewCell.swift in Sources */,
@@ -2810,13 +2804,13 @@
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
 				EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
+				EEC3753C29F8EC0600190B22 /* FAQTitleTableViewCell.swift in Sources */,
 				EE410191298541010083B7E0 /* MyZatchView.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
-				2342271E28EA9C3E004D6F99 /* FAQTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */,
@@ -2837,11 +2831,13 @@
 				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
 				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
+				EEC3753A29F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */,
+				EEC3753E29F8EC0F00190B22 /* FAQContentTableViewCell.swift in Sources */,
 				EE813FE429C481690091F16E /* Tagable.swift in Sources */,
 				57468A7D289DF60000056691 /* LeftAlignCollectionViewFlowLayout.swift in Sources */,
 				575BF6FF27E0CBC6008D5B3C /* SceneDelegate.swift in Sources */,
@@ -2898,11 +2894,9 @@
 				EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
-				23E764D028E9EF7A002F234C /* PolicyViewController.swift in Sources */,
 				EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */,
-				2342272028EA9CA4004D6F99 /* FAQAnswerTableViewCell.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
-				23E764D628E9EF92002F234C /* EtcViewController.swift in Sources */,
+				EEC3753729F8EB2A00190B22 /* ServiceCenterViewController.swift in Sources */,
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
 				EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */,
 				57D6D79528CDBC3A00F805B7 /* MeetingSheetView.swift in Sources */,
@@ -2948,13 +2942,11 @@
 				23B7FBB428CED4FF0018642E /* MypageSettingTableViewCell.swift in Sources */,
 				EE7B76D829C5F61C00942798 /* PopularZatchUseCase.swift in Sources */,
 				EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */,
-				23E764CE28E9EF10002F234C /* ServiceCenterTabmanViewController.swift in Sources */,
 				57C23CD228B231E5006E7915 /* ChattingSideSheetViewController.swift in Sources */,
 				EE2801BC29C6F07E003595A5 /* GetRegisterZatchUseCase.swift in Sources */,
 				EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
 				EE813FDE29C445B30091F16E /* FilledTag.swift in Sources */,
-				23E764CC28E9EE17002F234C /* ServiceCenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

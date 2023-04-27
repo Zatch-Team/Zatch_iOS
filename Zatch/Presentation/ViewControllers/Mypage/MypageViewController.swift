@@ -111,11 +111,8 @@ extension MypageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         switch indexPath.row {
-        case 2:
-            navigationController?.pushViewController(NoticeViewController(), animated: true)
-        case 3:
-//            let vc = ServiceCenterViewController()
-//            self.navigationController?.pushViewController(vc, animated: true)
+        case 2:     navigationController?.pushViewController(NoticeViewController(), animated: true)
+        case 3:     navigationController?.pushViewController(ServiceCenterViewController(), animated: true)
         default:    return
         }
     }

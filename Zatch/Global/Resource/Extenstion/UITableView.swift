@@ -30,8 +30,7 @@ extension UITableView{
         return cell
     }
     
-    final func cellForRow<T: BaseTableViewCell>(at indexPath: IndexPath, cellType: T.Type) -> T {
-        guard let cell = self.cellForRow(at: indexPath) as? T else { fatalError() }
-        return cell
+    final func cellForRow<T: BaseTableViewCell>(at indexPath: IndexPath, cellType: T.Type) -> T? {
+        cellForRow(at: indexPath) as? T
     }
 }

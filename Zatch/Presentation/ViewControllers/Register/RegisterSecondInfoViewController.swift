@@ -128,7 +128,7 @@ class RegisterSecondInfoViewController: BaseViewController<LeftNavigationEtcButt
     
     private func bindingCategoryCell(section: Int, categoryId: Int){
         mainView.tableView
-            .cellForRow(at: [section, CATEGORY_ROW], cellType: RegisterCategorySelectTableViewCell.self)
+            .cellForRow(at: [section, CATEGORY_ROW], cellType: RegisterCategorySelectTableViewCell.self)?
             .do{
                 $0.setCategory(id: categoryId)
             }

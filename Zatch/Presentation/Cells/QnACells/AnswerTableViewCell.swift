@@ -86,11 +86,11 @@ class AnswerTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview().offset(-12)
         }
     }
-    // MARK: set cell data
-    func setCellData(_ data: AnswerModel) {
-        questionTitleLabel.text = data.questionTitle
-        questionContentLabel.text = data.questionContent
-        answerTitleLabel.text = data.answerTitle
-        answerContentLabel.text = data.answerContent
-    }
+//    // MARK: set cell data
+//    func setCellData(_ data: AnswerModel) {
+//        questionTitleLabel.text = data.questionTitle
+//        questionContentLabel.text = data.questionContent
+//        answerTitleLabel.text = data.answerTitle
+//        answerContentLabel.text = data.answerContent
+//    }
 }
