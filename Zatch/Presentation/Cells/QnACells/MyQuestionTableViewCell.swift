@@ -34,20 +34,20 @@ class MyQuestionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Functions
-    func setUpContent(_ data: QnAModel) {
-        self.isAnswered = data.isAnswered
-        if isAnswered! {
-            stateButton.isEnabled = true
-            stateButton.setTitle("답변 완료", for: .normal)
-        } else {
-            stateButton.isEnabled = false
-            stateButton.setTitle("답변 예정", for: .normal)
-        }
-        if data.isOpened! {arrowButton.isSelected = true}
-        else {arrowButton.isSelected = false}
-        
-        titleLabel.text = data.questionTitle
-    }
+//    func setUpContent(_ data: QnAModel) {
+//        self.isAnswered = data.isAnswered
+//        if isAnswered! {
+//            stateButton.isEnabled = true
+//            stateButton.setTitle("답변 완료", for: .normal)
+//        } else {
+//            stateButton.isEnabled = false
+//            stateButton.setTitle("답변 예정", for: .normal)
+//        }
+//        if data.isOpened! {arrowButton.isSelected = true}
+//        else {arrowButton.isSelected = false}
+//
+//        titleLabel.text = data.questionTitle
+//    }
     func setUpView() {
         contentView.addSubview(arrowButton)
         contentView.addSubview(stateButton)
