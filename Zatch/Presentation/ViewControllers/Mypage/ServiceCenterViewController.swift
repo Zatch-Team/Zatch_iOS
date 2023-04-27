@@ -90,11 +90,10 @@ final class ServiceCenterViewController: BaseViewController<CenterNavigationHead
     }
     
     private func getFAQ(){
-        guard let path = Bundle.main.path(forResource: "FAQ", ofType: "json"),
-              let jsonString = try? String(contentsOfFile: path),
-              let data = jsonString.data(using: .utf8),
+        guard let path = Bundle.main.url(forResource: "FAQ", withExtension: "json"),
+              let data = try? Data(contentsOf: path),
               let faqData = try? JSONDecoder().decode(FAQ.self, from: data) else { fatalError() }
-
+                
         faq = faqData
     }
 }
@@ -132,6 +131,7 @@ extension ServiceCenterViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     private func changeSelectCellUnderLineLayout(){
+        
         defer {
             animateChangeUnderLineLayout()
         }
