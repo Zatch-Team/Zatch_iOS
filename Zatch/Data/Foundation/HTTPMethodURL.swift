@@ -20,6 +20,7 @@ enum HTTPMethodURL {
     }
     
     struct POST {
+        static let login = user + "/new"
     }
     
     struct PUT {
