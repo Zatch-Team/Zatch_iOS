@@ -83,9 +83,13 @@ final class ServiceCenterViewController: BaseViewController<CenterNavigationHead
     override func bind() {
         selectServiceRelay
             .subscribe(onNext: { [weak self] in
-                self?.isContentOpen = [Bool](repeating: false, count: self?.getListOfFAQ(serviceId: $0).count ?? 0)
-                self?.mainView.faqTableView.reloadData()
+                self?.reloadTableView(faqId: $0)
             }).disposed(by: disposeBag)
+    }
+    
+    private func reloadTableView(faqId: Int){
+        isContentOpen = [Bool](repeating: false, count: getListOfFAQ(serviceId: faqId).count)
+        mainView.faqTableView.reloadData()
     }
     
     private func getFAQ(){
@@ -120,8 +124,12 @@ extension ServiceCenterViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectServiceCell = collectionView.cellForItem(at: indexPath, cellType: ServiceTitleCollectionViewCell.self)
+        changeSelectCell(faqId: indexPath.row)
         selectServiceRelay.accept(indexPath.row)
+    }
+    
+    private func changeSelectCell(faqId: Int){
+        selectServiceCell = mainView.serviceCollectionView.cellForItem(at: [0,faqId], cellType: ServiceTitleCollectionViewCell.self)
         changeSelectCellUnderLineLayout()
     }
     
