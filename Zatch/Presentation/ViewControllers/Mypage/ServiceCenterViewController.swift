@@ -51,9 +51,8 @@ final class ServiceCenterViewController: BaseViewController<CenterNavigationHead
         }
     }
     
-    
     private let selectServiceRelay = BehaviorRelay<Int>(value: 0)
-    private lazy var selectCellUnderLine = UIView().then{
+    private let selectCellUnderLine = UIView().then{
         $0.backgroundColor = .zatchPurple
     }
     
@@ -84,17 +83,20 @@ final class ServiceCenterViewController: BaseViewController<CenterNavigationHead
     override func bind() {
         selectServiceRelay
             .subscribe(onNext: { [weak self] in
-                self?.isContentOpen = [Bool](repeating: false, count: self?.getListOfFAQ(serviceId: $0).count ?? 0)
-                self?.mainView.faqTableView.reloadData()
+                self?.reloadTableView(faqId: $0)
             }).disposed(by: disposeBag)
     }
     
+    private func reloadTableView(faqId: Int){
+        isContentOpen = [Bool](repeating: false, count: getListOfFAQ(serviceId: faqId).count)
+        mainView.faqTableView.reloadData()
+    }
+    
     private func getFAQ(){
-        guard let path = Bundle.main.path(forResource: "FAQ", ofType: "json"),
-              let jsonString = try? String(contentsOfFile: path),
-              let data = jsonString.data(using: .utf8),
+        guard let path = Bundle.main.url(forResource: "FAQ", withExtension: "json"),
+              let data = try? Data(contentsOf: path),
               let faqData = try? JSONDecoder().decode(FAQ.self, from: data) else { fatalError() }
-
+                
         faq = faqData
     }
 }
@@ -106,13 +108,9 @@ extension ServiceCenterViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ServiceTitleCollectionViewCell.self).then{
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: ServiceTitleCollectionViewCell.self).then{
             $0.title = getServiceTitle(row: indexPath.row)
         }
-        if indexPath.row == 0 {
-            selectServiceCell = cell
-        }
-        return cell
     }
     
     private func getServiceTitle(row: Int) -> String{
@@ -126,17 +124,20 @@ extension ServiceCenterViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectServiceCell = collectionView.cellForItem(at: indexPath, cellType: ServiceTitleCollectionViewCell.self)
+        changeSelectCell(faqId: indexPath.row)
         selectServiceRelay.accept(indexPath.row)
+    }
+    
+    private func changeSelectCell(faqId: Int){
+        selectServiceCell = mainView.serviceCollectionView.cellForItem(at: [0,faqId], cellType: ServiceTitleCollectionViewCell.self)
         changeSelectCellUnderLineLayout()
     }
     
     private func changeSelectCellUnderLineLayout(){
+        
         defer {
             animateChangeUnderLineLayout()
         }
-        
-        selectCellUnderLine.translatesAutoresizingMaskIntoConstraints = false
         
         if underLineConstraints != nil {
             NSLayoutConstraint.deactivate(underLineConstraints)
