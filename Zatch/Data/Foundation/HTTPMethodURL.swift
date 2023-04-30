@@ -8,7 +8,7 @@
 import Foundation
 
 enum HTTPMethodURL {
-    
+
     static let user = "/users"
     static let kakaoLocal = "/v2/local"
     
@@ -21,6 +21,7 @@ enum HTTPMethodURL {
     
     struct POST {
         static let login = user + "/new"
+        static let town = user
     }
     
     struct PUT {
