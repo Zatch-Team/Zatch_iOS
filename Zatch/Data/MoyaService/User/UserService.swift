@@ -15,7 +15,13 @@ public class UserService {
     private init() { }
     
     func login(request: LoginRequestModel, completion: @escaping (Result<LoginResponseModel, Error>) -> Void){
-        provider.requestDecoded(UserRouter.login(requestMode: request)){ response in
+        provider.requestDecoded(UserRouter.login(requestModel: request)){ response in
+            completion(response)
+        }
+    }
+    
+    func registerTown(request: RegisterTownRequestModel, completion: @escaping (Result<LoginResponseModel, Error>) -> Void){
+        provider.requestDecoded(UserRouter.registerTown(requestModel: request)){ response in
             completion(response)
         }
     }
