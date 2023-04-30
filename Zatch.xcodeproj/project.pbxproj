@@ -293,6 +293,7 @@
 		EE4CE7D729FD00B200943FE5 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7D629FD00B200943FE5 /* UserDefaultWrapper.swift */; };
 		EE4CE7DA29FD029500943FE5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7D929FD029500943FE5 /* UserRouter.swift */; };
 		EE4CE7DC29FD029C00943FE5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DB29FD029C00943FE5 /* UserService.swift */; };
+		EE4CE7DE29FD347100943FE5 /* RegisterTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */; };
 		EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887229CFF127003B6383 /* MapRepository.swift */; };
 		EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */; };
 		EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887929CFF3B4003B6383 /* MapRouter.swift */; };
@@ -709,6 +710,7 @@
 		EE4CE7D629FD00B200943FE5 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		EE4CE7D929FD029500943FE5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		EE4CE7DB29FD029C00943FE5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTownUseCase.swift; sourceTree = "<group>"; };
 		EE4D887229CFF127003B6383 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
 		EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE4D887929CFF3B4003B6383 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
@@ -2226,6 +2228,7 @@
 			children = (
 				EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */,
 				EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */,
+				EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2790,6 +2793,7 @@
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
 				EE0AD55529E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift in Sources */,
+				EE4CE7DE29FD347100943FE5 /* RegisterTownUseCase.swift in Sources */,
 				EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */,
 				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
 				EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */,
