@@ -6,11 +6,8 @@
 //
 
 import UIKit
-
-protocol AlarmSwitchDelegate{
-    func willChangeChattingAlarmState(_ isOn: Bool)
-    func willChangeGatchAlarmState(_ isOn: Bool)
-}
+import RxSwift
+import RxCocoa
 
 class SettingViewController: BaseViewController<CenterNavigationHeaderView, TableOnlyView> {
     
@@ -73,12 +70,11 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
                 }
             case 1:
                 return tableView.dequeueReusableCell(for: indexPath, cellType: AlarmSettingTableViewCell.self).then{
-                    $0.delegate = self
+                    viewModel.chattingAlarmObservable = $0.switchObservable
                     $0.setCaseAndSwitchValue(.chatting, isOn: true)
                 }
             case 2:
                 return tableView.dequeueReusableCell(for: indexPath, cellType: AlarmSettingTableViewCell.self).then{
-                    $0.delegate = self
                     $0.setCaseAndSwitchValue(.gatch, isOn: true)
                 }
             default:
