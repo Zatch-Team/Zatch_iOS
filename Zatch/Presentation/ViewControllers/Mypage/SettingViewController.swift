@@ -12,31 +12,50 @@ import RxCocoa
 class SettingViewController: BaseViewController<CenterNavigationHeaderView, TableOnlyView> {
     
     init(){
-        super.init(headerView: CenterNavigationHeaderView(title: "설정"), mainView: TableOnlyView())
+        super.init(
+            headerView: CenterNavigationHeaderView(title: "설정"),
+            mainView: TableOnlyView()
+        )
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let logoutAlert = Alert.Logout.getInstance()
+    private let viewModel = SettingViewModel()
+    
     override func initialize(){
         super.initialize()
         mainView.tableView.initializeDelegate(self)
-        mainView.registerCell(cellTypes: [AlarmSettingTableViewCell.self,
-                                          DefaultSettingTableViewCell.self,
-                                          SettingTitleTableViewCell.self,
-                                          SettingBorderLineTableViewCell.self])
+        mainView.registerCell(
+            cellTypes: [AlarmSettingTableViewCell.self,
+                        DefaultSettingTableViewCell.self,
+                        SettingTitleTableViewCell.self,
+                        SettingBorderLineTableViewCell.self]
+        )
     }
-}
-
-extension SettingViewController: AlarmSwitchDelegate{
-    
-    func willChangeChattingAlarmState(_ isOn: Bool) {
+    override func bindAfterViewAppear() {
         
+        let input = SettingViewModel.Input(
+            logoutBtnTap: logoutAlert.okBtn.rx.tap
+        )
+        let output = viewModel.transform(input)
+        
+        output.logoutResponse
+            .drive(onNext: {
+                if $0 == 200 {
+                    self.moveLoginViewController()
+                }
+            }).disposed(by: disposeBag)
     }
     
-    func willChangeGatchAlarmState(_ isOn: Bool) {
-        
+    private func moveLoginViewController(){
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+        guard let delegate = sceneDelegate else {
+            return
+        }
+        delegate.window?.rootViewController = LoginViewController()
     }
 }
 
@@ -48,14 +67,10 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         switch section {
-        case 0:
-            return 4
-        case 1:
-            return 3
-        case 2:
-            return 3
-        default:
-            return 0
+        case 0:     return 4
+        case 1:     return 3
+        case 2:     return 3
+        default:    return 0
         }
     }
     
@@ -119,13 +134,9 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath{
         case [1,1]:
-            let blockVC = BlockUserViewController()
-            self.navigationController?.pushViewController(blockVC, animated: true)
+            navigationController?.pushViewController(BlockUserViewController(), animated: true)
         case [2,2]:
-            let alert = Alert.Logout.show(in: self)
-            alert.completion = {
-                print("로그아웃 버튼 클릭")
-            }
+            logoutAlert.show(in: self)
         default:
             return
         }
