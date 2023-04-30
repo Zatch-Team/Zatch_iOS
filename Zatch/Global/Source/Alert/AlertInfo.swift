@@ -86,23 +86,21 @@ extension Alert{
         }
     }
     
-    @discardableResult
-    func show(in viewController: UIViewController) -> AlertViewController{
-        
+    func getInstance() -> AlertViewController{
         switch self{
         case    .ImageMax,
                 .RegisterCategory,
                 .ProductName,
                 .ImageMin,
                 .BuyDate,
-                .EndDate:               return BasicAlertViewController(message: self.information.message).show(in: viewController)
+                .EndDate:               return BasicAlertViewController(message: self.information.message)
             
         case    .LocationAuthority,
                 .TownCertification,
                 .AlarmInfo,
                 .QuestionCategory,
                 .QuestionTitle,
-                .QuestionContent:       return InfoAlertViewController(message: self.information.message).show(in: viewController)
+                .QuestionContent:       return InfoAlertViewController(message: self.information.message)
             
         case    .ChangeShare,
                 .ChattingRoomExit,
@@ -114,7 +112,12 @@ extension Alert{
                 .Block,
                 .Logout:                return CancelAlertViewController(message: self.information.message,
                                                                          confirmTitle: self.information.confirmTitle,
-                                                                         cancelTitle: self.information.cancelTitle).show(in: viewController)
+                                                                         cancelTitle: self.information.cancelTitle)
         }
+    }
+    
+    @discardableResult
+    func show(in viewController: UIViewController) -> AlertViewController{
+        self.getInstance().show(in: viewController)
     }
 }

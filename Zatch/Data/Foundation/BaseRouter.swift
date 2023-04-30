@@ -12,6 +12,11 @@ protocol BaseRouter: Moya.TargetType {
 }
 
 extension BaseRouter {
+    
+    var userIdPath: String{
+        guard let userId = UserManager.userId else { return "" }
+        return "/\(userId)"
+    }
 
     var baseURL: URL {
         let url = Bundle.main.infoDictionary?["Zatch_API_URL"] as? String ?? ""
@@ -19,13 +24,10 @@ extension BaseRouter {
     }
 
     var headers: [String: String]? {
-        // Token이 "Bearer ~ " 의 형태로 응답받고 저장됨.
-//        let token = UserManager.token ?? ""
-        let token = ""
-        let header = [
+        return [
             "Content-Type": "application/json",
-            "ACCESS-TOKEN": token]
-        return header
+            "ACCESS-TOKEN": UserManager.token ?? ""
+        ]
     }
 
     var sampleData: Data {

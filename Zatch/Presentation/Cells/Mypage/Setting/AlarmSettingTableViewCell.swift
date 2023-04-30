@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AlarmSettingTableViewCell: BaseTableViewCell {
     
@@ -14,7 +15,10 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
         case gatch
     }
 
-    var delegate: AlarmSwitchDelegate!
+    var switchObservable: Observable<Bool>{
+        alarmSwitch.rx.isOn.asObservable()
+    }
+    
     private var alarmType: AlarmSettingType!
     
     //MARK: - UI
@@ -72,21 +76,6 @@ class AlarmSettingTableViewCell: BaseTableViewCell {
             $0.top.equalToSuperview().offset(16)
             $0.leading.equalTo(explainLabel.snp.trailing).offset(27)
             $0.trailing.equalToSuperview().inset(20)
-        }
-    }
-    
-    override func initialize() {
-        alarmSwitch.addTarget(self, action: #selector(willSwitchValueChange), for: .valueChanged)
-    }
-    
-    @objc private func willSwitchValueChange(){
-        switch alarmType{
-        case .chatting:
-            delegate.willChangeChattingAlarmState(alarmSwitch.isOn); break
-        case .gatch:
-            delegate.willChangeGatchAlarmState(alarmSwitch.isOn); break
-        default:
-            break
         }
     }
     
