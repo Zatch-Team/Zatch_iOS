@@ -37,6 +37,10 @@ class SettingViewController: BaseViewController<CenterNavigationHeaderView, Tabl
     }
     override func bindAfterViewAppear() {
         
+        viewModel.chattingAlarmObservable = mainView.tableView
+            .cellForRow(at: [0,1], cellType: AlarmSettingTableViewCell.self)?
+            .switchObservable
+        
         let input = SettingViewModel.Input(
             logoutBtnTap: logoutAlert.okBtn.rx.tap
         )
@@ -51,10 +55,7 @@ class SettingViewController: BaseViewController<CenterNavigationHeaderView, Tabl
     }
     
     private func moveLoginViewController(){
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
-        guard let delegate = sceneDelegate else {
-            return
-        }
+        guard let delegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
         delegate.window?.rootViewController = LoginViewController()
     }
 }
@@ -62,7 +63,7 @@ class SettingViewController: BaseViewController<CenterNavigationHeaderView, Tabl
 extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -70,76 +71,81 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate{
         case 0:     return 4
         case 1:     return 3
         case 2:     return 3
-        default:    return 0
+        default:    fatalError()
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
         switch indexPath.section{
-        case 0:
-            switch indexPath.row{
-            case 0:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: SettingTitleTableViewCell.self).then{
-                    $0.setTitle("알림 설정")
-                }
-            case 1:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: AlarmSettingTableViewCell.self).then{
-                    viewModel.chattingAlarmObservable = $0.switchObservable
-                    $0.setCaseAndSwitchValue(.chatting, isOn: true)
-                }
-            case 2:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: AlarmSettingTableViewCell.self).then{
-                    $0.setCaseAndSwitchValue(.gatch, isOn: true)
-                }
-            default:
-                break
-            }
-        case 1:
-            switch indexPath.row{
-            case 0:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: SettingTitleTableViewCell.self).then{
-                    $0.setTitle("사용자 설정")
-                }
-            case 1:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: DefaultSettingTableViewCell.self).then{
-                    $0.setTitle("차단된 사용자")
-                }
-            default:
-                break
-            }
-        case 2:
-            switch indexPath.row{
-            case 0:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: SettingTitleTableViewCell.self).then{
-                    $0.setTitle("계정")
-                }
-            case 1:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: DefaultSettingTableViewCell.self).then{
-                    $0.setTitle("회원 탈퇴")
-                }
-            case 2:
-                return tableView.dequeueReusableCell(for: indexPath, cellType: DefaultSettingTableViewCell.self).then{
-                    $0.setTitle("로그아웃")
-                }
-            default:
-                break
-            }
-        default:
-            break
+        case 0:     return getAlarmSectionTableViewCell(indexPath: indexPath)
+        case 1:     return getUserSectionTableViewCell(indexPath: indexPath)
+        case 2:     return getAccountSectionTableViewCell(indexPath: indexPath)
+        default:    fatalError()
         }
-        return tableView.dequeueReusableCell(for: indexPath, cellType: SettingBorderLineTableViewCell.self)
+    }
+    
+    private func getAlarmSectionTableViewCell(indexPath: IndexPath) -> BaseTableViewCell {
+        switch indexPath.row{
+        case 0:     return getSettingTitleTableViewCell(indexPath: indexPath, title: "알림 설정")
+        case 1:     return getAlarmTableViewCell(indexPath: indexPath, type: .chatting)
+        case 2:     return getAlarmTableViewCell(indexPath: indexPath, type: .gatch)
+        default:    return getBorderLineTableViewCell(indexPath: indexPath)
+        }
+    }
+    
+    private func getAlarmTableViewCell(indexPath: IndexPath, type: AlarmSettingTableViewCell.AlarmSettingType) -> BaseTableViewCell{
+        mainView.tableView.dequeueReusableCell(for: indexPath, cellType: AlarmSettingTableViewCell.self).then{
+            $0.setCaseAndSwitchValue(type, isOn: true)
+        }
+    }
+    
+    private func getUserSectionTableViewCell(indexPath: IndexPath) -> BaseTableViewCell {
+        switch indexPath.row{
+        case 0:     return getSettingTitleTableViewCell(indexPath: indexPath, title: "사용자 설정")
+        case 1:     return getDefaultSettingTableViewCell(indexPath: indexPath, title: "차단된 사용자")
+        default:    return getBorderLineTableViewCell(indexPath: indexPath)
+        }
+    }
+    
+    private func getAccountSectionTableViewCell(indexPath: IndexPath) -> BaseTableViewCell {
+        switch indexPath.row{
+        case 0:     return getSettingTitleTableViewCell(indexPath: indexPath, title: "계정")
+        case 1:     return getDefaultSettingTableViewCell(indexPath: indexPath, title: "회원 탈퇴")
+        case 2:     return getDefaultSettingTableViewCell(indexPath: indexPath, title: "로그아웃")
+        default:    return getBorderLineTableViewCell(indexPath: indexPath)
+        }
+    }
+    
+    private func getSettingTitleTableViewCell(indexPath: IndexPath, title: String) -> BaseTableViewCell{
+        mainView.tableView.dequeueReusableCell(for: indexPath, cellType: SettingTitleTableViewCell.self).then{
+            $0.setTitle(title)
+        }
+    }
+    
+    private func getBorderLineTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
+        mainView.tableView.dequeueReusableCell(for: indexPath, cellType: SettingBorderLineTableViewCell.self)
+    }
+    
+    private func getDefaultSettingTableViewCell(indexPath: IndexPath, title: String) -> BaseTableViewCell{
+        mainView.tableView.dequeueReusableCell(for: indexPath, cellType: DefaultSettingTableViewCell.self).then{
+            $0.setTitle(title)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath{
-        case [1,1]:
-            navigationController?.pushViewController(BlockUserViewController(), animated: true)
-        case [2,2]:
-            logoutAlert.show(in: self)
-        default:
-            return
+        case [1,1]:     moveBlockUserViewController()
+        case [2,2]:     showLogoutAlert()
+        default:        return
         }
+    }
+    
+    private func moveBlockUserViewController(){
+        navigationController?.pushViewController(BlockUserViewController(), animated: true)
+    }
+    
+    private func showLogoutAlert(){
+        logoutAlert.show(in: self)
     }
 }
 
