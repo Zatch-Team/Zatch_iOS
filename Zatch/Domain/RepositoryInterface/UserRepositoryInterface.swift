@@ -10,6 +10,7 @@ import RxSwift
 
 protocol UserRepositoryInterface{
     func login(requestModel: LoginRequestModel) -> Observable<LoginResponseModel?>
+    func logout() -> Observable<Int>
     func registerTown(requestModel: RegisterTownRequestModel) -> Observable<Int>
     func getMyTowns()
 }

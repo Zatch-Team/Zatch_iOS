@@ -294,6 +294,8 @@
 		EE4CE7DA29FD029500943FE5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7D929FD029500943FE5 /* UserRouter.swift */; };
 		EE4CE7DC29FD029C00943FE5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DB29FD029C00943FE5 /* UserService.swift */; };
 		EE4CE7DE29FD347100943FE5 /* RegisterTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */; };
+		EE4CE7E029FE3AD900943FE5 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DF29FE3AD900943FE5 /* LogoutUseCase.swift */; };
+		EE4CE7E229FE3CA300943FE5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7E129FE3CA300943FE5 /* SettingViewModel.swift */; };
 		EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887229CFF127003B6383 /* MapRepository.swift */; };
 		EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */; };
 		EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887929CFF3B4003B6383 /* MapRouter.swift */; };
@@ -711,6 +713,8 @@
 		EE4CE7D929FD029500943FE5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		EE4CE7DB29FD029C00943FE5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTownUseCase.swift; sourceTree = "<group>"; };
+		EE4CE7DF29FE3AD900943FE5 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
+		EE4CE7E129FE3CA300943FE5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		EE4D887229CFF127003B6383 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
 		EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE4D887929CFF3B4003B6383 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
@@ -2229,6 +2233,7 @@
 				EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */,
 				EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */,
 				EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */,
+				EE4CE7DF29FE3AD900943FE5 /* LogoutUseCase.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2295,6 +2300,7 @@
 				EEC3752F29F8E18C00190B22 /* MyPageViewModel.swift */,
 				EEC3753129F8E21800190B22 /* ProfileViewModel.swift */,
 				EEC3753329F8E22300190B22 /* ModifyProfileViewModel.swift */,
+				EE4CE7E129FE3CA300943FE5 /* SettingViewModel.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -2868,6 +2874,7 @@
 				EEE1154B29A74CEC003FD4E3 /* TitleAndMoreButtonTableViewCell.swift in Sources */,
 				23A767F3290851AC003E46AB /* NoticeDetailViewController.swift in Sources */,
 				EEC3753C29F8EC0600190B22 /* FAQTitleTableViewCell.swift in Sources */,
+				EE4CE7E229FE3CA300943FE5 /* SettingViewModel.swift in Sources */,
 				EE410191298541010083B7E0 /* MyZatchView.swift in Sources */,
 				571C0C7B28AB584C002293B6 /* ChattingListTableViewCell+Layout.swift in Sources */,
 				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
@@ -2901,6 +2908,7 @@
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
+				EE4CE7E029FE3AD900943FE5 /* LogoutUseCase.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
 				EE4CE7DA29FD029500943FE5 /* UserRouter.swift in Sources */,
 				EEC3753229F8E21800190B22 /* ProfileViewModel.swift in Sources */,

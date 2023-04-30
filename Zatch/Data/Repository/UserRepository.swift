@@ -26,6 +26,22 @@ final class UserRepository: UserRepositoryInterface {
         return observable
     }
     
+    func logout() -> Observable<Int> {
+        let observable = Observable<Int>.create { observer -> Disposable in
+            let requestReference: () = UserService.shared.logout { response in
+                switch response {
+                case .success:
+                    observer.onNext(200)
+                case .failure(let err):
+                    print(err)
+                    observer.onNext(400)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
+    }
+    
     func registerTown(requestModel: RegisterTownRequestModel) -> Observable<Int> {
         let observable = Observable<Int>.create { observer -> Disposable in
             let requestReference: () = UserService.shared.registerTown(request: requestModel){ response in
