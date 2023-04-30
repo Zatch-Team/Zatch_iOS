@@ -20,6 +20,12 @@ public class UserService {
         }
     }
     
+    func logout(completion: @escaping (Result<Int, Error>) -> Void){
+        provider.requestDecoded(UserRouter.logout){ response in
+            completion(response)
+        }
+    }
+    
     func registerTown(request: RegisterTownRequestModel, completion: @escaping (Result<LoginResponseModel, Error>) -> Void){
         provider.requestDecoded(UserRouter.registerTown(requestModel: request)){ response in
             completion(response)

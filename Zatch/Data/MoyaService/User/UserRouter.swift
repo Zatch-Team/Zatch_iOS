@@ -10,6 +10,7 @@ import Moya
 
 enum UserRouter: BaseRouter{
     case login(requestModel: LoginRequestModel)
+    case logout
     case registerTown(requestModel: RegisterTownRequestModel)
 }
 
@@ -18,13 +19,15 @@ extension UserRouter{
     var path: String {
         switch self {
         case .login:            return HTTPMethodURL.POST.login
+        case .logout:           return HTTPMethodURL.GET.logout
         case .registerTown:     return HTTPMethodURL.POST.town + userIdPath + "/address"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login, .registerTown:    return .post
+        case .login, .registerTown:     return .post
+        case .logout:                   return .get
         }
     }
     
@@ -32,6 +35,7 @@ extension UserRouter{
         switch self {
         case .login(let request):               return .requestJSONEncodable(request)
         case .registerTown(let request):        return .requestJSONEncodable(request)
+        default:                                return .requestPlain
         }
     }
 }
