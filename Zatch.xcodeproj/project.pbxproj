@@ -296,6 +296,10 @@
 		EE4CE7DE29FD347100943FE5 /* RegisterTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */; };
 		EE4CE7E029FE3AD900943FE5 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7DF29FE3AD900943FE5 /* LogoutUseCase.swift */; };
 		EE4CE7E229FE3CA300943FE5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7E129FE3CA300943FE5 /* SettingViewModel.swift */; };
+		EE4CEA3929FF6EDD002BF87E /* TextConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CEA3829FF6EDD002BF87E /* TextConverter.swift */; };
+		EE4CEA3B29FF7F93002BF87E /* ModifyProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CEA3A29FF7F93002BF87E /* ModifyProfileUseCase.swift */; };
+		EE4CEA3D29FF7F9E002BF87E /* ModifyProfileImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CEA3C29FF7F9E002BF87E /* ModifyProfileImageUseCase.swift */; };
+		EE4CEA3F29FF8AE4002BF87E /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CEA3E29FF8AE4002BF87E /* RequestResponse.swift */; };
 		EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887229CFF127003B6383 /* MapRepository.swift */; };
 		EE4D887529CFF13B003B6383 /* MapRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */; };
 		EE4D887A29CFF3B4003B6383 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D887929CFF3B4003B6383 /* MapRouter.swift */; };
@@ -715,6 +719,10 @@
 		EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTownUseCase.swift; sourceTree = "<group>"; };
 		EE4CE7DF29FE3AD900943FE5 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		EE4CE7E129FE3CA300943FE5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		EE4CEA3829FF6EDD002BF87E /* TextConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConverter.swift; sourceTree = "<group>"; };
+		EE4CEA3A29FF7F93002BF87E /* ModifyProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileUseCase.swift; sourceTree = "<group>"; };
+		EE4CEA3C29FF7F9E002BF87E /* ModifyProfileImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileImageUseCase.swift; sourceTree = "<group>"; };
+		EE4CEA3E29FF8AE4002BF87E /* RequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResponse.swift; sourceTree = "<group>"; };
 		EE4D887229CFF127003B6383 /* MapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
 		EE4D887429CFF13B003B6383 /* MapRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE4D887929CFF3B4003B6383 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
@@ -1458,6 +1466,7 @@
 				5722460528BCCFE8009B7C78 /* Const.swift */,
 				57C585032821F2A70078FAFF /* ServiceType.swift */,
 				EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */,
+				EE4CEA3829FF6EDD002BF87E /* TextConverter.swift */,
 				EE4CE7D129FD006B00943FE5 /* UserManager */,
 				57B32C27291E8FB80018C0CB /* Base */,
 				571DADC5297BADDE0079CCD3 /* HeaderView */,
@@ -1895,6 +1904,7 @@
 		57FEFA84297A5B6E008A78B0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EE4CEA3E29FF8AE4002BF87E /* RequestResponse.swift */,
 				EE541C1129B44C7B00DD0F20 /* Foundation */,
 				23C9030B28C5CE2100FB6D3D /* Models */,
 				23C9030E28C5CE2E00FB6D3D /* Repository */,
@@ -2232,8 +2242,10 @@
 			children = (
 				EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */,
 				EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */,
+				EE4CEA3C29FF7F9E002BF87E /* ModifyProfileImageUseCase.swift */,
 				EE4CE7DD29FD347100943FE5 /* RegisterTownUseCase.swift */,
 				EE4CE7DF29FE3AD900943FE5 /* LogoutUseCase.swift */,
+				EE4CEA3A29FF7F93002BF87E /* ModifyProfileUseCase.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2868,6 +2880,7 @@
 				57E75EC728E5480A00AC24B2 /* ExchangeMyZatchSearchView.swift in Sources */,
 				EE2BC34D2982B067002B5C60 /* EtcButtonHeaderView.swift in Sources */,
 				EE2801BE29C6F0AD003595A5 /* LookingForZatchUseCase.swift in Sources */,
+				EE4CEA3929FF6EDD002BF87E /* TextConverter.swift in Sources */,
 				EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */,
 				57468AA028A214FD00056691 /* UILabel.swift in Sources */,
 				5722461428C230B3009B7C78 /* PickerAlertViewController.swift in Sources */,
@@ -2887,7 +2900,9 @@
 				57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
+				EE4CEA3D29FF7F9E002BF87E /* ModifyProfileImageUseCase.swift in Sources */,
 				5724EB5D290FC17700DC529B /* MeetingAlertController.swift in Sources */,
+				EE4CEA3F29FF8AE4002BF87E /* RequestResponse.swift in Sources */,
 				EE2BC34A29829A32002B5C60 /* CenterNavigationHeaderView.swift in Sources */,
 				EEE326A72998B5190017DF46 /* SearchTextFieldView.swift in Sources */,
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
@@ -2953,6 +2968,7 @@
 				57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */,
 				EEE6D16729987F0D0004FC7B /* ZatchFillButton.swift in Sources */,
 				57A28D1028D041F800263079 /* MapAlertViewController.swift in Sources */,
+				EE4CEA3B29FF7F93002BF87E /* ModifyProfileUseCase.swift in Sources */,
 				23EEA44F28D883AA00C4C67E /* HeartListViewController.swift in Sources */,
 				57397FD0296FBDFE0088B5F4 /* GatchSearchView.swift in Sources */,
 				57468A81289E3FB600056691 /* BaseViewController.swift in Sources */,
