@@ -31,4 +31,16 @@ public class UserService {
             completion(response)
         }
     }
+    
+    func modifyProfile(request: ModifyProfileRequestModel, completion: @escaping (Result<Int, Error>) -> Void){
+        provider.requestDecoded(UserRouter.modifyProfile(requestModel: request)){ response in
+            completion(response)
+        }
+    }
+    
+    func modifyProfileImage(request: UIImage, completion: @escaping (Result<Int, Error>) -> Void){
+        provider.requestDecoded(UserRouter.modifyProfileImage(request: request)){ response in
+            completion(response)
+        }
+    }
 }
