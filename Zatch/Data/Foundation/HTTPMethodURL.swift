@@ -28,7 +28,9 @@ enum HTTPMethodURL {
         static let town = user
     }
     
-    struct PUT {
+    struct PATCH {
+        static let profileImage = user
+        static let nickname = user
     }
     
     struct DELETE {
