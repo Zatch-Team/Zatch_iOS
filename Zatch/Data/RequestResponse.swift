@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RequestResponse{
-    case success
-    case fail
+enum RequestResponse: Int{
+    case success = 200 //임시 설정
+    case fail = 400
 }
