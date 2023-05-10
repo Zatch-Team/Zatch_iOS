@@ -22,8 +22,8 @@ class MyProfileViewController: ProfileViewController{
     }
 
     override func etcButtonDidTapped() {
-        let vc = ModifyProfileViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = ModifyProfileViewController(profile: ProfileDTO(nickname: "aa", profileImage: ""))
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

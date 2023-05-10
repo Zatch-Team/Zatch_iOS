@@ -57,6 +57,39 @@ final class UserRepository: UserRepositoryInterface {
         }
         return observable
     }
+    
+    func modifyProfile(requestModel: ModifyProfileRequestModel) -> RxSwift.Observable<Int> {
+        let observable = Observable<Int>.create { observer -> Disposable in
+            let requestReference: () = UserService.shared.modifyProfile(request: requestModel){ response in
+                switch response {
+                case .success:
+                    observer.onNext(200)
+                case .failure(let err):
+                    print(err)
+                    observer.onNext(400)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
+    }
+    
+    func modifyProfileImage(request: UIImage) -> Observable<Int> {
+        let observable = Observable<Int>.create { observer -> Disposable in
+            let requestReference: () = UserService.shared.modifyProfileImage(request: request){ response in
+                switch response {
+                case .success:
+                    observer.onNext(200)
+                case .failure(let err):
+                    print(err)
+                    observer.onNext(400)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
+    }
+    
 
     func getMyTowns(){
         
