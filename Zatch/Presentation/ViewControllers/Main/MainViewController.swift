@@ -150,7 +150,7 @@ extension MainViewController.ZatchData{
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch getCellType(of: collectionView){
+        switch getDataType(of: collectionView){
         case .around:       return viewModel.aroundZatch.count
         case .popular:      return viewModel.popularZatch.count
         }
@@ -167,8 +167,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         navigationController?.pushViewController(ZatchDetailViewController(), animated: true)
     }
     
-    private func getCellType(of collectionView: UICollectionView) -> ZatchDataType{
-        collectionView.tag == ZatchDataType.around.tag ? .around : .popular
+    private func getDataType(of collectionView: UICollectionView) -> ZatchData{
+        guard let type = ZatchData(rawValue: collectionView.tag) else { fatalError() }
+        return type
     }
     
     private func reloadZatchCollectionView(type: ZatchData){
