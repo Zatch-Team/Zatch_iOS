@@ -10,8 +10,8 @@ import RxSwift
 import RxCocoa
 
 protocol MainViewModelInterface{
-    var aroundZatch: [(Int, Bool)] { get }
-    var popularZatch: [(Int, Bool)] { get }
+    var aroundZatch: [ZatchResponseModel] { get }
+    var popularZatch: [ZatchResponseModel] { get }
 }
 
 protocol ZatchLikeViewModelInterface{
@@ -21,8 +21,26 @@ protocol ZatchLikeViewModelInterface{
 
 class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseViewModel{
     
-    var aroundZatch = [(Int, Bool)](repeating: (0, false), count: 10)
-    var popularZatch = [(Int, Bool)](repeating: (0, false), count: 10)
+    struct TemporaryData{
+        static let zatch = ZatchResponseModel(
+            anyZatch: 1,
+            categoryId: 1,
+            content: "임시 콘텐츠",
+            expirationDate: "2022.02.02",
+            id: 10,
+            isFree: true,
+            isOpened: 1,
+            itemName: "몰랑이 몰랑이",
+            likeCount: 10,
+            purchaseDate: "2022.02.03",
+            quantity: 1,
+            userId: 1,
+            isLike: false
+        )
+    }
+    
+    var aroundZatch = [ZatchResponseModel](repeating: TemporaryData.zatch, count: 10)
+    var popularZatch = [ZatchResponseModel](repeating: TemporaryData.zatch, count: 10)
     
     private var currentTownIndex = BehaviorSubject(value: 0)
     private var myTowns: [String] = ["상현동", "성복동", "풍덕천동"]
@@ -63,26 +81,28 @@ class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseVi
     
     func changeAroundZatchState(_ state: Bool, index: Int) {
         
-        let input = ZatchLikeViewModel.Input(zatchId: aroundZatch[index].0, heartState: state)
-        
+        let input = ZatchLikeViewModel.Input(zatchId: aroundZatch[index].id, heartState: state)
         let output = likeViewModel.transform(input)
+        
         output.heartState
-            .subscribe(onNext: {
+            .subscribe(onNext: { [weak self] in
                 if let data = $0 {
-                    self.aroundZatch[index].1 = data.isHeart
+                    self?.aroundZatch[index].isLike = data.isHeart
+                    self?.aroundZatch[index].likeCount = data.likeCount
                 }
             }).disposed(by: disposeBag)
     }
         
     func changePopularZatchState(_ state: Bool, index: Int) {
-        
-        let input = ZatchLikeViewModel.Input(zatchId: popularZatch[index].0, heartState: state)
-        
+    
+        let input = ZatchLikeViewModel.Input(zatchId: popularZatch[index].id, heartState: state)
         let output = likeViewModel.transform(input)
+        
         output.heartState
-            .subscribe(onNext: {
+            .subscribe(onNext: { [weak self] in
                 if let data = $0 {
-                    self.popularZatch[index].1 = data.isHeart
+                    self?.popularZatch[index].isLike = data.isHeart
+                    self?.popularZatch[index].likeCount = data.likeCount
                 }
             }).disposed(by: disposeBag)
     }
