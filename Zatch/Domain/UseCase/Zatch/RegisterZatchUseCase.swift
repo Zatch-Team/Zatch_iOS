@@ -8,9 +8,9 @@
 import Foundation
 import RxSwift
 
-struct RegisterZatchRequestModel {
+struct RegisterZatchRequestModel: Encodable {
     
-    struct WantProductPriority{
+    struct WantProductPriority: Encodable{
         let priority: Int
         let p_name: String
         let p_category: Int
