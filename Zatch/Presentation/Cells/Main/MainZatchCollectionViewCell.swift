@@ -12,7 +12,7 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     
     static let cellSize = CGSize(width: 136, height: 251)
     
-    var viewModel: ZatchLikeViewModelInterface!
+    var likeViewModel: ZatchLikeViewModelInterface!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -137,8 +137,8 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     
     private func fetchHeartState(info: (state: Bool, index: Int)){
         switch dataType {
-        case .around:       viewModel.changeAroundZatchState(info.state, index: info.index)
-        case .popular:      viewModel.changePopularZatchState(info.state, index: info.index)
+        case .around:       likeViewModel.changeAroundZatchState(info.state, index: info.index)
+        case .popular:      likeViewModel.changePopularZatchState(info.state, index: info.index)
         case .none:         fatalError()
         }
     }
