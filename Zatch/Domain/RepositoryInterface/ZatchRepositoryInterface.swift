@@ -13,7 +13,8 @@ protocol ZatchRepositoryInterface {
 //    -> Observable<Int>
     func getPopularZatch()
     func getAroundZatch()
-    func fetchHeartState()
+    func likeZatch(requestValue: ZatchLikeRequestValue) -> Observable<ZatchLikeResponseModel?>
+    func dislikeZatch(requestValue: ZatchLikeRequestValue)  -> Observable<ZatchLikeResponseModel?>
     func getRegisterZatch()
     func getLookingForZatch()
 }

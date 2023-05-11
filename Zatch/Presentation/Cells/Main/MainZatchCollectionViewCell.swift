@@ -12,55 +12,7 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     
     static let cellSize = CGSize(width: 136, height: 251)
     
-    //MARK: - Properties
-    
-    // 아이템 이미지
-    let image = UIImageView().then{
-        $0.backgroundColor = .black5
-        $0.layer.cornerRadius = 8
-        $0.contentMode = .scaleAspectFill
-    }
-    // 아이템 이름
-    let title = UILabel().then{
-        $0.text = "2022년 호랑이의 해 기념 호랑이 몰랑이 세트"
-        $0.setTypoStyleWithMultiLine(typoStyle: .bold15)
-        $0.numberOfLines = 3
-        $0.textColor = .black85
-    }
-    // 위치
-    let locationAndTimeLabel = UILabel().then{
-        $0.text = "location · time"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
-        $0.numberOfLines = 1
-        $0.textColor = .black20
-    }
-    
-    let stackView = UIStackView().then{
-        $0.axis = .vertical
-        $0.spacing = 0
-    }
-    // '교환을 원하는 재치' (라벨)
-    let label = UILabel().then{
-        $0.text = "교환을 원하는 재치"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
-        $0.numberOfLines = 0
-        $0.textColor = .black85
-    }
-    // 교환을 원하는 아이템
-    let zatchItem = UILabel().then{
-        $0.text = "몰랑이 피규어몰랑이피규어"
-        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
-        $0.numberOfLines = 1
-        $0.textColor = .zatchPurple
-    }
-    // 하트
-    let heart = UIButton().then{
-        $0.setImage(Image.heartSilver, for: .normal)
-        $0.setImage(Image.heartPurple, for: .selected)
-    }
-    
-    let disposeBag = DisposeBag()
-    let viewModel = MainZatchCollectionViewCellViewModel()
+    var viewModel: ZatchLikeViewModelInterface!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,6 +21,55 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private var dataType: MainViewController.ZatchData!
+    let disposeBag = DisposeBag()
+    
+    //MARK: - UI
+    
+    private let image = UIImageView().then{
+        $0.backgroundColor = .black5
+        $0.layer.cornerRadius = 8
+        $0.contentMode = .scaleAspectFill
+    }
+
+    private let title = UILabel().then{
+        $0.text = "2022년 호랑이의 해 기념 호랑이 몰랑이 세트"
+        $0.setTypoStyleWithMultiLine(typoStyle: .bold15)
+        $0.numberOfLines = 3
+        $0.textColor = .black85
+    }
+
+    private let locationAndTimeLabel = UILabel().then{
+        $0.text = "location · time"
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
+        $0.numberOfLines = 1
+        $0.textColor = .black20
+    }
+    
+    private let stackView = UIStackView().then{
+        $0.axis = .vertical
+        $0.spacing = 0
+    }
+
+    private let label = UILabel().then{
+        $0.text = "교환을 원하는 재치"
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
+        $0.numberOfLines = 0
+        $0.textColor = .black85
+    }
+
+    private let zatchItem = UILabel().then{
+        $0.text = "몰랑이 피규어몰랑이피규어"
+        $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
+        $0.numberOfLines = 1
+        $0.textColor = .zatchPurple
+    }
+    
+    private let heart = UIButton().then{
+        $0.setImage(Image.heartSilver, for: .normal)
+        $0.setImage(Image.heartPurple, for: .selected)
     }
     
     override func hierarchy() {
@@ -114,15 +115,31 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     }
     
     func bind() {
-        
-        let input = MainZatchCollectionViewCellViewModel.Input(heartTap: heart.rx.tap,
-                                                               heartState: heart.rx.isSelected)
-        
-        let output = viewModel.transform(input)
-        output.isHeartSelected
-            .drive(onNext: { state in
-                self.heart.isSelected = state
-            }).disposed(by: disposeBag)
-        
+        heart.rx.tap
+            .map{ [weak self] in
+                self?.getCurrentHeartStateAndCellIndex()
+            }.compactMap{
+                $0
+            }.subscribe{ [weak self] in
+                self?.heart.isSelected.toggle()
+                self?.fetchHeartState(info: $0)
+            }.disposed(by: disposeBag)
+    }
+    
+    func binding(data: (MainViewController.ZatchData, ZatchResponseModel)){
+        dataType = data.0
+    }
+    
+    private func getCurrentHeartStateAndCellIndex() -> (Bool, Int)?{
+        guard let indexPath = indexPath else { return nil }
+        return (heart.isSelected, indexPath.row)
+    }
+    
+    private func fetchHeartState(info: (state: Bool, index: Int)){
+        switch dataType {
+        case .around:       viewModel.changeAroundZatchState(info.state, index: info.index)
+        case .popular:      viewModel.changePopularZatchState(info.state, index: info.index)
+        case .none:         fatalError()
+        }
     }
 }

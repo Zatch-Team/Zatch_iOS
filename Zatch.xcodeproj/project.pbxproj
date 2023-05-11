@@ -206,7 +206,6 @@
 		57A28D5628D1A0BB00263079 /* GetTownResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D5528D1A0BB00263079 /* GetTownResponseModel.swift */; };
 		57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */; };
 		57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */; };
-		57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */; };
 		57B32C34291FB58F0018C0CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C33291FB58F0018C0CB /* Image.swift */; };
 		57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C352920C5320018C0CB /* CategoryInfo.swift */; };
 		57B32C3829220EA10018C0CB /* BottomSheetSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */; };
@@ -253,6 +252,9 @@
 		57FFEDC728DD2F1B0041719B /* CheckExchangeRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFEDC628DD2F1B0041719B /* CheckExchangeRegisterViewController.swift */; };
 		6AF93CFE86982B0FFAF29206 /* Pods_Zatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */; };
 		D1533A389FEC70B77AD110F6 /* Pods_ZatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828C8E20374F7AEAB414182 /* Pods_ZatchTests.framework */; };
+		EE0460B72A0BE18A0054F627 /* ZatchLikeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0460B62A0BE18A0054F627 /* ZatchLikeUseCase.swift */; };
+		EE0460B92A0BE1A40054F627 /* ZatchDislikeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0460B82A0BE1A40054F627 /* ZatchDislikeUseCase.swift */; };
+		EE0460BB2A0BE1E70054F627 /* ZatchLikeRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0460BA2A0BE1E70054F627 /* ZatchLikeRequestValue.swift */; };
 		EE0AD54529E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */; };
 		EE0AD54729E5033400C1CDA1 /* RegisterFirstInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */; };
 		EE0AD54929E542A400C1CDA1 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD54829E542A400C1CDA1 /* Register.swift */; };
@@ -263,6 +265,9 @@
 		EE0AD55729E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AD55629E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift */; };
 		EE0D8E4B29B73CE000D96050 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */; };
 		EE0D8E4D29B7561200D96050 /* TableOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */; };
+		EE1840CA2A0C955F00DF5D06 /* ZatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1840C92A0C955F00DF5D06 /* ZatchService.swift */; };
+		EE1840CC2A0C956400DF5D06 /* ZatchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1840CB2A0C956400DF5D06 /* ZatchRouter.swift */; };
+		EE1840CE2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1840CD2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift */; };
 		EE27C54529C826E000285CC5 /* SearchRepositotyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */; };
 		EE27C54729C8273C00285CC5 /* FindWantZatchSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27C54629C8273C00285CC5 /* FindWantZatchSearchViewModel.swift */; };
 		EE27C54A29C8280A00285CC5 /* PopularKeywordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27C54929C8280A00285CC5 /* PopularKeywordUseCase.swift */; };
@@ -312,6 +317,7 @@
 		EE4D888B29D013CC003B6383 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888A29D013CC003B6383 /* Map.swift */; };
 		EE4D888E29D01987003B6383 /* TownRegisterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */; };
 		EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */; };
+		EE4EFAF32A0CBFE200734D31 /* ZatchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4EFAF22A0CBFE200734D31 /* ZatchResponseModel.swift */; };
 		EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */; };
 		EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */; };
 		EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1429B44CF700DD0F20 /* BaseRouter.swift */; };
@@ -335,7 +341,6 @@
 		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
 		EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */; };
 		EE7B76C229C5E36D00942798 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */; };
-		EE7B76D629C5F61C00942798 /* HeartZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D129C5F61C00942798 /* HeartZatchUseCase.swift */; };
 		EE7B76D729C5F61C00942798 /* AroundZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D229C5F61C00942798 /* AroundZatchUseCase.swift */; };
 		EE7B76D829C5F61C00942798 /* PopularZatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D329C5F61C00942798 /* PopularZatchUseCase.swift */; };
 		EE7B76D929C5F61C00942798 /* GetMyTownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */; };
@@ -354,7 +359,7 @@
 		EEB13B6D297F969E001A8DD9 /* AppKey.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */; };
 		EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */; };
 		EEB13B87297FB81B001A8DD9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */; };
-		EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */; };
+		EEB13B89297FB865001A8DD9 /* ZatchLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B88297FB865001A8DD9 /* ZatchLikeViewModel.swift */; };
 		EEB13B8B297FBBAE001A8DD9 /* DefaultObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */; };
 		EEB13B8D297FC68B001A8DD9 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */; };
 		EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */; };
@@ -626,7 +631,6 @@
 		57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstView.swift; sourceTree = "<group>"; };
 		57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterSecondView.swift; sourceTree = "<group>"; };
-		57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterModel.swift; sourceTree = "<group>"; };
 		57B32C33291FB58F0018C0CB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		57B32C352920C5320018C0CB /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
 		57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSystem.swift; sourceTree = "<group>"; };
@@ -676,6 +680,9 @@
 		6E2CF233E53955D92629E42D /* Pods-Zatch-ZatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch-ZatchUITests.release.xcconfig"; path = "Target Support Files/Pods-Zatch-ZatchUITests/Pods-Zatch-ZatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A9FAD0C12F2252FE5C8E69 /* Pods_Zatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BEB6442FCA2A68AFE12C0 /* Pods-Zatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.debug.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0460B62A0BE18A0054F627 /* ZatchLikeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchLikeUseCase.swift; sourceTree = "<group>"; };
+		EE0460B82A0BE1A40054F627 /* ZatchDislikeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDislikeUseCase.swift; sourceTree = "<group>"; };
+		EE0460BA2A0BE1E70054F627 /* ZatchLikeRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchLikeRequestValue.swift; sourceTree = "<group>"; };
 		EE0AD54429E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstInfoTestViewModel.swift; sourceTree = "<group>"; };
 		EE0AD54629E5033400C1CDA1 /* RegisterFirstInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstInfoViewController.swift; sourceTree = "<group>"; };
 		EE0AD54829E542A400C1CDA1 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -686,6 +693,9 @@
 		EE0AD55629E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyZatchSelectTableViewCell.swift; sourceTree = "<group>"; };
 		EE0D8E4A29B73CE000D96050 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		EE0D8E4C29B7561200D96050 /* TableOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOnlyView.swift; sourceTree = "<group>"; };
+		EE1840C92A0C955F00DF5D06 /* ZatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchService.swift; sourceTree = "<group>"; };
+		EE1840CB2A0C956400DF5D06 /* ZatchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRouter.swift; sourceTree = "<group>"; };
+		EE1840CD2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchLikeResponseModel.swift; sourceTree = "<group>"; };
 		EE27C54429C826E000285CC5 /* SearchRepositotyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositotyInterface.swift; sourceTree = "<group>"; };
 		EE27C54629C8273C00285CC5 /* FindWantZatchSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWantZatchSearchViewModel.swift; sourceTree = "<group>"; };
 		EE27C54929C8280A00285CC5 /* PopularKeywordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularKeywordUseCase.swift; sourceTree = "<group>"; };
@@ -735,6 +745,7 @@
 		EE4D888A29D013CC003B6383 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterMapViewController.swift; sourceTree = "<group>"; };
 		EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterMapViewModel.swift; sourceTree = "<group>"; };
+		EE4EFAF22A0CBFE200734D31 /* ZatchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchResponseModel.swift; sourceTree = "<group>"; };
 		EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodURL.swift; sourceTree = "<group>"; };
 		EE541C1429B44CF700DD0F20 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -758,7 +769,6 @@
 		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
 		EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZatchRepositoryInterface.swift; sourceTree = "<group>"; };
 		EE7B76C029C5E36D00942798 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
-		EE7B76D129C5F61C00942798 /* HeartZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartZatchUseCase.swift; sourceTree = "<group>"; };
 		EE7B76D229C5F61C00942798 /* AroundZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundZatchUseCase.swift; sourceTree = "<group>"; };
 		EE7B76D329C5F61C00942798 /* PopularZatchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularZatchUseCase.swift; sourceTree = "<group>"; };
 		EE7B76D529C5F61C00942798 /* GetMyTownUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyTownUseCase.swift; sourceTree = "<group>"; };
@@ -777,7 +787,7 @@
 		EEB13B6C297F969E001A8DD9 /* AppKey.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppKey.xcconfig; sourceTree = "<group>"; };
 		EEB13B71297F9A12001A8DD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainZatchCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EEB13B88297FB865001A8DD9 /* ZatchLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchLikeViewModel.swift; sourceTree = "<group>"; };
 		EEB13B8A297FBBAE001A8DD9 /* DefaultObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultObservable.swift; sourceTree = "<group>"; };
 		EEB13B8C297FC68B001A8DD9 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		EEB13B90297FC7A1001A8DD9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -1034,7 +1044,7 @@
 				EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */,
 				EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */,
 				EE4CE7C829FCF6E900943FE5 /* User */,
-				57B32C2F291F55F20018C0CB /* RegisterModels */,
+				57B32C2F291F55F20018C0CB /* Zatch */,
 				57A28D5428D1A07000263079 /* Map */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
 			);
@@ -1293,7 +1303,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB13B86297FB81B001A8DD9 /* MainViewModel.swift */,
-				EEB13B88297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift */,
+				EEB13B88297FB865001A8DD9 /* ZatchLikeViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1823,12 +1833,12 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		57B32C2F291F55F20018C0CB /* RegisterModels */ = {
+		57B32C2F291F55F20018C0CB /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */,
+				EE4EFAF22A0CBFE200734D31 /* ZatchResponseModel.swift */,
 			);
-			path = RegisterModels;
+			path = Zatch;
 			sourceTree = "<group>";
 		};
 		57B32C32291FB3D90018C0CB /* Namespace */ = {
@@ -1944,6 +1954,17 @@
 				EE410196298557440083B7E0 /* ImageDetailView.swift */,
 			);
 			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		EE0460B52A0BE16E0054F627 /* HeartUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				EE0460BA2A0BE1E70054F627 /* ZatchLikeRequestValue.swift */,
+				EE1840CD2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift */,
+				EE0460B62A0BE18A0054F627 /* ZatchLikeUseCase.swift */,
+				EE0460B82A0BE1A40054F627 /* ZatchDislikeUseCase.swift */,
+			);
+			path = HeartUseCase;
 			sourceTree = "<group>";
 		};
 		EE1C3CD229A9DA89008964E3 /* Notice */ = {
@@ -2075,6 +2096,8 @@
 		EE4D887729CFF399003B6383 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
+				EE1840CB2A0C956400DF5D06 /* ZatchRouter.swift */,
+				EE1840C92A0C955F00DF5D06 /* ZatchService.swift */,
 			);
 			path = Zatch;
 			sourceTree = "<group>";
@@ -2227,8 +2250,8 @@
 		EE7B76D029C5F61C00942798 /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
+				EE0460B52A0BE16E0054F627 /* HeartUseCase */,
 				EE2AE71129E43311007046C8 /* RegisterZatchUseCase.swift */,
-				EE7B76D129C5F61C00942798 /* HeartZatchUseCase.swift */,
 				EE7B76D229C5F61C00942798 /* AroundZatchUseCase.swift */,
 				EE7B76D329C5F61C00942798 /* PopularZatchUseCase.swift */,
 				EE2801BB29C6F07E003595A5 /* GetRegisterZatchUseCase.swift */,
@@ -2721,6 +2744,7 @@
 				EE73C51C299600230000F8AC /* RegisterCellDelegate.swift in Sources */,
 				571C0C7528AB224E002293B6 /* ChattingListTableViewCell.swift in Sources */,
 				57EBCE4028A8906000212D20 /* CancelAlertViewController.swift in Sources */,
+				EE0460BB2A0BE1E70054F627 /* ZatchLikeRequestValue.swift in Sources */,
 				EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */,
 				574E1CAC2964011D005D2048 /* TypoDesignSystem.swift in Sources */,
 				EE0AD54F29E6DB9F00C1CDA1 /* RegisterSecondInfoViewModel.swift in Sources */,
@@ -2749,6 +2773,7 @@
 				EE27C55029C892D700285CC5 /* SearchResultUseCase.swift in Sources */,
 				5724EC8F291E0E9B00DC529B /* LoginView.swift in Sources */,
 				234E5DBC28C762810079640F /* TabBarViewController.swift in Sources */,
+				EE1840CC2A0C956400DF5D06 /* ZatchRouter.swift in Sources */,
 				23CB3CF728C7D38F00C42858 /* MyZatchTabViewController.swift in Sources */,
 				EEC3753029F8E18C00190B22 /* MyPageViewModel.swift in Sources */,
 				57D6D79B28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift in Sources */,
@@ -2768,7 +2793,6 @@
 				232DD0A628ECDBC900BC6E91 /* ReviewViewController.swift in Sources */,
 				578B7A9C28AC892800E7B4F4 /* ChatInputView.swift in Sources */,
 				5767D7732868248E0075DB28 /* ZatchDetailViewController.swift in Sources */,
-				EE7B76D629C5F61C00942798 /* HeartZatchUseCase.swift in Sources */,
 				EEC3753429F8E22300190B22 /* ModifyProfileViewModel.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
@@ -2810,6 +2834,7 @@
 				57A28B3F28CED94B00263079 /* SearchTownViewController.swift in Sources */,
 				57D6D79D28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift in Sources */,
 				57067866281C167100F48342 /* UIFont.swift in Sources */,
+				EE1840CA2A0C955F00DF5D06 /* ZatchService.swift in Sources */,
 				EE0AD55529E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift in Sources */,
 				EE4CE7DE29FD347100943FE5 /* RegisterTownUseCase.swift in Sources */,
 				EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */,
@@ -2870,6 +2895,7 @@
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
+				EE1840CE2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift in Sources */,
 				EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
@@ -2916,6 +2942,7 @@
 				EE4CE7DC29FD029C00943FE5 /* UserService.swift in Sources */,
 				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
+				EE4EFAF32A0CBFE200734D31 /* ZatchResponseModel.swift in Sources */,
 				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
 				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
@@ -2983,9 +3010,10 @@
 				576B375428D6D82200EF36E6 /* MapMeetingViewController.swift in Sources */,
 				57EBCE3B28A87BFD00212D20 /* ImageAddBtnCollectionViewCell.swift in Sources */,
 				EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */,
+				EE0460B92A0BE1A40054F627 /* ZatchDislikeUseCase.swift in Sources */,
 				57468A8B289FEB2000056691 /* BaseBottomSheetViewController.swift in Sources */,
 				576341C628D40A3A0067D2C5 /* MeetingMapAlertViewController.swift in Sources */,
-				EEB13B89297FB865001A8DD9 /* MainZatchCollectionViewCellViewModel.swift in Sources */,
+				EEB13B89297FB865001A8DD9 /* ZatchLikeViewModel.swift in Sources */,
 				576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */,
 				EEC3753729F8EB2A00190B22 /* ServiceCenterViewController.swift in Sources */,
 				23B051BF28E20622005D08EA /* QnAViewController.swift in Sources */,
@@ -3014,7 +3042,6 @@
 				EE27C54E29C890BB00285CC5 /* ZatchSearchResultViewModel.swift in Sources */,
 				EEC3752D29F8D9AE00190B22 /* ImageDetailViewController.swift in Sources */,
 				57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */,
-				57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
 				23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */,
@@ -3026,6 +3053,7 @@
 				571DADC7297BAE030079CCD3 /* BaseTabBarHeaderView.swift in Sources */,
 				5724EB61290FC1BB00DC529B /* ModifyMeetingAlertController.swift in Sources */,
 				EE27C54529C826E000285CC5 /* SearchRepositotyInterface.swift in Sources */,
+				EE0460B72A0BE18A0054F627 /* ZatchLikeUseCase.swift in Sources */,
 				EEE7F2B5299BD83C00C674B9 /* ZatchExchangeTableViewCell.swift in Sources */,
 				EE4CE7CD29FCF8FC00943FE5 /* LoginViewModel.swift in Sources */,
 				EEB13B8B297FBBAE001A8DD9 /* DefaultObservable.swift in Sources */,

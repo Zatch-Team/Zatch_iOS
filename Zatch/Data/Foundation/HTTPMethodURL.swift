@@ -9,7 +9,8 @@ import Foundation
 
 enum HTTPMethodURL {
 
-    static let user = "/users"
+    static let zatchUrl = "/zatch"
+    static let userUrl = "/users"
     static let kakaoLocal = "/v2/local"
     
     struct GET {
@@ -19,21 +20,24 @@ enum HTTPMethodURL {
         static let meetingLocation = kakaoLocal + "/geo/coord2address.json"
         
         //USER
-        static let logout = user + "/logout"
+        static let logout = userUrl + "/logout"
     }
     
     struct POST {
         //USER
-        static let login = user + "/new"
-        static let town = user
+        static let login = userUrl + "/new"
+        static let town = userUrl
+        static let likeZatch = zatch
+        static let zatch = zatchUrl
     }
     
     struct PATCH {
-        static let profileImage = user
-        static let nickname = user
+        static let profileImage = userUrl
+        static let nickname = userUrl
     }
     
     struct DELETE {
+        static let dislikeZatch = zatchUrl
     }
     
     

@@ -10,9 +10,9 @@ import Foundation
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     @frozen
-    enum ZatchCollectionViewType{
-        case around
-        case popular
+    enum ZatchData: Int{
+        case around = 100
+        case popular = 200
     }
     
     private let mainView = MainView()
@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
                 $0.setTitleAndSubtitle(title: "내 주변 재치", subtitle: "내 주변에서는 이런 재치들이 거래되고 있어요!")
                 $0.collectionView.initializeDelegate(self)
-                $0.collectionView.tag = ZatchCollectionViewType.around.tag
+                $0.collectionView.tag = ZatchData.around.tag
             }
         case 2:
             return tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
@@ -113,7 +113,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
                 $0.setTitleAndSubtitle(title: "지금 인기있는 재치", subtitle: "재치 있는 자취인이 되는 법")
                 $0.collectionView.initializeDelegate(self)
-                $0.collectionView.tag = ZatchCollectionViewType.popular.tag
+                $0.collectionView.tag = ZatchData.popular.tag
             }
         default:
             fatalError()
@@ -134,7 +134,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MainViewController.ZatchCollectionViewType{
+extension MainViewController.ZatchData{
+    var tag: Int{
+        rawValue
+    }
     
     var indexPath: IndexPath{
         switch self{
@@ -142,37 +145,45 @@ extension MainViewController.ZatchCollectionViewType{
         case .popular:  return [0,3]
         }
     }
-    
-    var tag: Int{
-        switch self{
-        case .around:   return 100
-        case .popular:  return 200
-        }
-    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch getCellType(of: collectionView){
-        case .around:       return viewModel.aroundZatchCount()
-        case .popular:      return viewModel.popularZatchCount()
+        switch getDataType(of: collectionView){
+        case .around:       return viewModel.aroundZatch.count
+        case .popular:      return viewModel.popularZatch.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self)
+        return collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self).then{
+            $0.viewModel = viewModel
+            $0.binding(data: getZatchDataAndType(collectionView, indexPath: indexPath))
+        }
+    }
+    
+    private func getZatchDataAndType(_ collectionView: UICollectionView, indexPath: IndexPath) -> (ZatchData, ZatchResponseModel){
+        let dataType = getDataType(of: collectionView)
+        let zatch: ZatchResponseModel = {
+            switch dataType{
+            case .around:   return self.viewModel.aroundZatch[indexPath.row]
+            case .popular:  return self.viewModel.popularZatch[indexPath.row]
+            }
+        }()
+        return (dataType, zatch)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigationController?.pushViewController(ZatchDetailViewController(), animated: true)
     }
     
-    private func getCellType(of collectionView: UICollectionView) -> ZatchCollectionViewType{
-        collectionView.tag == ZatchCollectionViewType.around.tag ? .around : .popular
+    private func getDataType(of collectionView: UICollectionView) -> ZatchData{
+        guard let type = ZatchData(rawValue: collectionView.tag) else { fatalError() }
+        return type
     }
     
-    private func reloadZatchCollectionView(type: ZatchCollectionViewType){
+    private func reloadZatchCollectionView(type: ZatchData){
         if let cell = mainView.tableView.cellForRow(at: type.indexPath) as? MainCollectionViewTableViewCell{
             cell.collectionView.reloadData()
         }
