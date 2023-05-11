@@ -9,6 +9,12 @@ import UIKit
 
 class BaseCollectionViewCell: UICollectionViewCell, CellReuse {
     
+    var indexPath: IndexPath?{
+        guard let collectionView = superview as? UICollectionView,
+                let cellIndex =  collectionView.indexPath(for: self) else { return nil }
+        return cellIndex
+    }
+    
     let baseView = UIView().then{
         $0.backgroundColor = .white
     }
