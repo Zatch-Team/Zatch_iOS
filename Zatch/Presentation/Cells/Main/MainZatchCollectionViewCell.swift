@@ -12,10 +12,23 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     
     static let cellSize = CGSize(width: 136, height: 251)
     
-    //MARK: - Properties
+    var dataType: MainViewController.ZatchDataType!
+    var viewModel: ZatchLikeViewModelInterface!
     
-    // 아이템 이미지
-    let image = UIImageView().then{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let disposeBag = DisposeBag()
+    
+    //MARK: - UI
+    
+    private let image = UIImageView().then{
         $0.backgroundColor = .black5
         $0.layer.cornerRadius = 8
         $0.contentMode = .scaleAspectFill
@@ -57,18 +70,6 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     private let heart = UIButton().then{
         $0.setImage(Image.heartSilver, for: .normal)
         $0.setImage(Image.heartPurple, for: .selected)
-    }
-    
-    let disposeBag = DisposeBag()
-    let viewModel = MainZatchCollectionViewCellViewModel()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        bind()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func hierarchy() {
@@ -114,15 +115,26 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     }
     
     func bind() {
-        
-        let input = MainZatchCollectionViewCellViewModel.Input(heartTap: heart.rx.tap,
-                                                               heartState: heart.rx.isSelected)
-        
-        let output = viewModel.transform(input)
-        output.isHeartSelected
-            .drive(onNext: { state in
-                self.heart.isSelected = state
-            }).disposed(by: disposeBag)
-        
+        heart.rx.tap
+            .map{ [weak self] in
+                self?.getCurrentHeartStateAndCellIndex()
+            }.compactMap{
+                $0
+            }.subscribe{ [weak self] in
+                self?.fetchHeartState(info: $0)
+            }.disposed(by: disposeBag)
+    }
+    
+    private func getCurrentHeartStateAndCellIndex() -> (Bool, Int)?{
+        guard let indexPath = indexPath else { return nil }
+        return (heart.isSelected, indexPath.row)
+    }
+    
+    private func fetchHeartState(info: (state: Bool, index: Int)){
+        switch dataType {
+        case .around:       viewModel.changeAroundZatchState(info.state, index: info.index)
+        case .popular:      viewModel.changePopularZatchState(info.state, index: info.index)
+        case .none:         fatalError()
+        }
     }
 }
