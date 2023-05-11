@@ -206,7 +206,6 @@
 		57A28D5628D1A0BB00263079 /* GetTownResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A28D5528D1A0BB00263079 /* GetTownResponseModel.swift */; };
 		57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */; };
 		57B32C2E291F49DC0018C0CB /* ZatchRegisterSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */; };
-		57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */; };
 		57B32C34291FB58F0018C0CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C33291FB58F0018C0CB /* Image.swift */; };
 		57B32C362920C5320018C0CB /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C352920C5320018C0CB /* CategoryInfo.swift */; };
 		57B32C3829220EA10018C0CB /* BottomSheetSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */; };
@@ -318,6 +317,7 @@
 		EE4D888B29D013CC003B6383 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888A29D013CC003B6383 /* Map.swift */; };
 		EE4D888E29D01987003B6383 /* TownRegisterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */; };
 		EE4D889129D01E57003B6383 /* TownRegisterMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */; };
+		EE4EFAF32A0CBFE200734D31 /* ZatchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4EFAF22A0CBFE200734D31 /* ZatchResponseModel.swift */; };
 		EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */; };
 		EE541C1329B44C8500DD0F20 /* HTTPMethodURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */; };
 		EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1429B44CF700DD0F20 /* BaseRouter.swift */; };
@@ -631,7 +631,6 @@
 		57B14B93184043F3CBF58093 /* Pods-Zatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zatch.release.xcconfig"; path = "Target Support Files/Pods-Zatch/Pods-Zatch.release.xcconfig"; sourceTree = "<group>"; };
 		57B32C2B291F49CF0018C0CB /* ZatchRegisterFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstView.swift; sourceTree = "<group>"; };
 		57B32C2D291F49DC0018C0CB /* ZatchRegisterSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterSecondView.swift; sourceTree = "<group>"; };
-		57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterModel.swift; sourceTree = "<group>"; };
 		57B32C33291FB58F0018C0CB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		57B32C352920C5320018C0CB /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
 		57B32C3729220EA10018C0CB /* BottomSheetSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSystem.swift; sourceTree = "<group>"; };
@@ -746,6 +745,7 @@
 		EE4D888A29D013CC003B6383 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		EE4D888D29D01987003B6383 /* TownRegisterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterMapViewController.swift; sourceTree = "<group>"; };
 		EE4D889029D01E57003B6383 /* TownRegisterMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownRegisterMapViewModel.swift; sourceTree = "<group>"; };
+		EE4EFAF22A0CBFE200734D31 /* ZatchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchResponseModel.swift; sourceTree = "<group>"; };
 		EE532956299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EE541C1229B44C8500DD0F20 /* HTTPMethodURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodURL.swift; sourceTree = "<group>"; };
 		EE541C1429B44CF700DD0F20 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -1044,7 +1044,7 @@
 				EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */,
 				EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */,
 				EE4CE7C829FCF6E900943FE5 /* User */,
-				57B32C2F291F55F20018C0CB /* RegisterModels */,
+				57B32C2F291F55F20018C0CB /* Zatch */,
 				57A28D5428D1A07000263079 /* Map */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
 			);
@@ -1833,12 +1833,12 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		57B32C2F291F55F20018C0CB /* RegisterModels */ = {
+		57B32C2F291F55F20018C0CB /* Zatch */ = {
 			isa = PBXGroup;
 			children = (
-				57B32C30291F56120018C0CB /* ZatchRegisterModel.swift */,
+				EE4EFAF22A0CBFE200734D31 /* ZatchResponseModel.swift */,
 			);
-			path = RegisterModels;
+			path = Zatch;
 			sourceTree = "<group>";
 		};
 		57B32C32291FB3D90018C0CB /* Namespace */ = {
@@ -2942,6 +2942,7 @@
 				EE4CE7DC29FD029C00943FE5 /* UserService.swift in Sources */,
 				5722462728C778E0009B7C78 /* SearchAddressResultView.swift in Sources */,
 				5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */,
+				EE4EFAF32A0CBFE200734D31 /* ZatchResponseModel.swift in Sources */,
 				57468AAE28A3A58900056691 /* RegisterCategorySelectWithPriorityTableViewCell.swift in Sources */,
 				EE541C1529B44CF700DD0F20 /* BaseRouter.swift in Sources */,
 				57468A6E289CFFB700056691 /* CategorySheetViewController.swift in Sources */,
@@ -3041,7 +3042,6 @@
 				EE27C54E29C890BB00285CC5 /* ZatchSearchResultViewModel.swift in Sources */,
 				EEC3752D29F8D9AE00190B22 /* ImageDetailViewController.swift in Sources */,
 				57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */,
-				57B32C31291F56120018C0CB /* ZatchRegisterModel.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
 				23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */,
