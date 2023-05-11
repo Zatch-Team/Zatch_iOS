@@ -20,41 +20,41 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
         $0.layer.cornerRadius = 8
         $0.contentMode = .scaleAspectFill
     }
-    // 아이템 이름
-    let title = UILabel().then{
+
+    private let title = UILabel().then{
         $0.text = "2022년 호랑이의 해 기념 호랑이 몰랑이 세트"
         $0.setTypoStyleWithMultiLine(typoStyle: .bold15)
         $0.numberOfLines = 3
         $0.textColor = .black85
     }
-    // 위치
-    let locationAndTimeLabel = UILabel().then{
+
+    private let locationAndTimeLabel = UILabel().then{
         $0.text = "location · time"
         $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
         $0.numberOfLines = 1
         $0.textColor = .black20
     }
     
-    let stackView = UIStackView().then{
+    private let stackView = UIStackView().then{
         $0.axis = .vertical
         $0.spacing = 0
     }
-    // '교환을 원하는 재치' (라벨)
-    let label = UILabel().then{
+
+    private let label = UILabel().then{
         $0.text = "교환을 원하는 재치"
         $0.setTypoStyleWithSingleLine(typoStyle: .bold12)
         $0.numberOfLines = 0
         $0.textColor = .black85
     }
-    // 교환을 원하는 아이템
-    let zatchItem = UILabel().then{
+
+    private let zatchItem = UILabel().then{
         $0.text = "몰랑이 피규어몰랑이피규어"
         $0.setTypoStyleWithSingleLine(typoStyle: .bold15)
         $0.numberOfLines = 1
         $0.textColor = .zatchPurple
     }
-    // 하트
-    let heart = UIButton().then{
+    
+    private let heart = UIButton().then{
         $0.setImage(Image.heartSilver, for: .normal)
         $0.setImage(Image.heartPurple, for: .selected)
     }
