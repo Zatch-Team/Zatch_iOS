@@ -159,8 +159,19 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self).then{
             $0.viewModel = viewModel
-            $0.dataType = .around
+            $0.binding(data: getZatchDataAndType(collectionView, indexPath: indexPath))
         }
+    }
+    
+    private func getZatchDataAndType(_ collectionView: UICollectionView, indexPath: IndexPath) -> (ZatchData, ZatchResponseModel){
+        let dataType = getDataType(of: collectionView)
+        let zatch: ZatchResponseModel = {
+            switch dataType{
+            case .around:   return self.viewModel.aroundZatch[indexPath.row]
+            case .popular:  return self.viewModel.popularZatch[indexPath.row]
+            }
+        }()
+        return (dataType, zatch)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

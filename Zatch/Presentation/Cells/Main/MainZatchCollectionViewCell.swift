@@ -121,8 +121,13 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
             }.compactMap{
                 $0
             }.subscribe{ [weak self] in
+                self?.heart.isSelected.toggle()
                 self?.fetchHeartState(info: $0)
             }.disposed(by: disposeBag)
+    }
+    
+    func binding(data: (MainViewController.ZatchData, ZatchResponseModel)){
+        dataType = data.0
     }
     
     private func getCurrentHeartStateAndCellIndex() -> (Bool, Int)?{
