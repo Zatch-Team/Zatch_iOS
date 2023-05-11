@@ -10,9 +10,9 @@ import Foundation
 class MainViewController: BaseTabBarViewController<MainHeaderView>{
     
     @frozen
-    enum ZatchDataType{
-        case around
-        case popular
+    enum ZatchData: Int{
+        case around = 100
+        case popular = 200
     }
     
     private let mainView = MainView()
@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
                 $0.setTitleAndSubtitle(title: "내 주변 재치", subtitle: "내 주변에서는 이런 재치들이 거래되고 있어요!")
                 $0.collectionView.initializeDelegate(self)
-                $0.collectionView.tag = ZatchDataType.around.tag
+                $0.collectionView.tag = ZatchData.around.tag
             }
         case 2:
             return tableView.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then{
@@ -113,7 +113,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.dequeueReusableCell(for: indexPath, cellType: MainCollectionViewTableViewCell.self).then{
                 $0.setTitleAndSubtitle(title: "지금 인기있는 재치", subtitle: "재치 있는 자취인이 되는 법")
                 $0.collectionView.initializeDelegate(self)
-                $0.collectionView.tag = ZatchDataType.popular.tag
+                $0.collectionView.tag = ZatchData.popular.tag
             }
         default:
             fatalError()
@@ -134,19 +134,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MainViewController.ZatchDataType{
+extension MainViewController.ZatchData{
+    var tag: Int{
+        rawValue
+    }
     
     var indexPath: IndexPath{
         switch self{
         case .around:   return [0,1]
         case .popular:  return [0,3]
-        }
-    }
-    
-    var tag: Int{
-        switch self{
-        case .around:   return 100
-        case .popular:  return 200
         }
     }
 }
@@ -175,7 +171,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.tag == ZatchDataType.around.tag ? .around : .popular
     }
     
-    private func reloadZatchCollectionView(type: ZatchDataType){
+    private func reloadZatchCollectionView(type: ZatchData){
         if let cell = mainView.tableView.cellForRow(at: type.indexPath) as? MainCollectionViewTableViewCell{
             cell.collectionView.reloadData()
         }

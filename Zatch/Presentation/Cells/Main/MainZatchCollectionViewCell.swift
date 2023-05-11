@@ -12,7 +12,6 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
     
     static let cellSize = CGSize(width: 136, height: 251)
     
-    var dataType: MainViewController.ZatchDataType!
     var viewModel: ZatchLikeViewModelInterface!
     
     override init(frame: CGRect) {
@@ -24,6 +23,7 @@ class MainZatchCollectionViewCell: BaseCollectionViewCell, DefaultObservable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var dataType: MainViewController.ZatchData!
     let disposeBag = DisposeBag()
     
     //MARK: - UI
