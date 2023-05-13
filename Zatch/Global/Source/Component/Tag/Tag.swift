@@ -54,9 +54,11 @@ extension ZatchComponent{
             text = title
         }
         
-        func setCategoryTitle(categoryId: Int){
-            let category = ServiceType.Zatch.getCategoryFromCategories(at: categoryId)
-            text = category.title
+        func setCategoryTitle(categoryId: Int?){
+            if let categoryId = categoryId {
+                let category = ServiceType.Zatch.getCategoryFromCategories(at: categoryId)
+                text = category.title
+            }
         }
     }
 }
