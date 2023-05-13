@@ -10,8 +10,19 @@ import RxSwift
 
 final class ZatchRepository: ZatchRepositoryInterface {
     
-    func registerZatch() {
-
+    func registerZatch(requestModel: RegisterZatchDTO) -> Observable<RequestResponse> {
+        let observable = Observable<RequestResponse>.create { observer -> Disposable in
+            let requestReference: () = ZatchService.shared.registerZatch(requestModel: requestModel.info, images: requestModel.images){ response in
+                switch response {
+                case .success:
+                    observer.onNext(.success)
+                case .failure:
+                    observer.onNext(.fail)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
     }
     
     func getRegisterZatch() {
