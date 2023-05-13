@@ -71,12 +71,14 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
                         cellType: TextFieldTabeViewCell.self)?
             .textObservable
             .startWith("")
+            .share()
         
         viewModel.images = mainView.backTableView
             .cellForRow(at: [0,2],
                         cellType: ImageAddTableViewCell.self)?
             .imagesRelay
             .asObservable()
+            .share()
         
         categoryRelay
             .subscribe(onNext: { id in
