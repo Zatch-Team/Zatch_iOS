@@ -14,6 +14,12 @@ public class ZatchService {
     
     private init() { }
     
+    func registerZatch(requestModel: RegisterZatchRequestModel, images: [UIImage], completion: @escaping (Result<BaseResponseModel<Int>, Error>) -> Void){
+        provider.requestDecoded(ZatchRouter.registerZatch(requestModel: requestModel, images: images)){ response in
+            completion(response)
+        }
+    }
+    
     func likeZatch(requestValue: ZatchLikeRequestValue, completion: @escaping (Result<ZatchLikeResponseModel, Error>) -> Void){
         provider.requestDecoded(ZatchRouter.likeZatch(requestValue: requestValue)){ response in
             completion(response)
