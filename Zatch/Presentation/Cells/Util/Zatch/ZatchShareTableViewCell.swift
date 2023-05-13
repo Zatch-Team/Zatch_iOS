@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ZatchShareTableViewCell: ZatchTableViewCell, ZatchInformationAttach{
+final class ZatchShareTableViewCell: ZatchTableViewCell, ZatchInformationAttach{
     
     let zatchStackView = UIStackView().then{
         $0.spacing = 4
