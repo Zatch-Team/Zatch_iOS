@@ -8,6 +8,11 @@
 import Foundation
 import RxSwift
 
+struct RegisterZatchDTO{
+    let info: RegisterZatchRequestModel
+    let images: [UIImage]
+}
+
 struct RegisterZatchRequestModel: Encodable {
     
     struct WantProductPriority: Encodable{
@@ -30,8 +35,7 @@ struct RegisterZatchRequestModel: Encodable {
 }
 
 protocol RegisterUseCaseInterface {
-    func execute(requestValue: RegisterZatchRequestModel)
-//    -> Observable<Int>
+    func execute(requestValue: RegisterZatchDTO) -> Observable<RequestResponse>
 }
 
 final class RegisterUseCase: RegisterUseCaseInterface {
@@ -42,7 +46,7 @@ final class RegisterUseCase: RegisterUseCaseInterface {
         self.zatchRepository = zatchRepository
     }
 
-    func execute(requestValue: RegisterZatchRequestModel) {//-> Observable<Int>{
-        return zatchRepository.registerZatch()
+    func execute(requestValue: RegisterZatchDTO) -> Observable<RequestResponse>{
+        return zatchRepository.registerZatch(requestModel: requestValue)
     }
 }
