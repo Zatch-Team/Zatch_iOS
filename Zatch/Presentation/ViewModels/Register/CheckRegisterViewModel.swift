@@ -27,7 +27,7 @@ class CheckRegisterViewModel: BaseViewModel{
     }
     
     struct Output{
-//        let registerRequestStatus: Driver<Void>
+        let registerResponse: Observable<RequestResponse>
     }
     
     func transform(_ input: Input) -> Output {
@@ -36,20 +36,19 @@ class CheckRegisterViewModel: BaseViewModel{
                 $0 == CheckRegisterView.placeholder ? "" : $0
             }
         
-//        let registerRequestStatus =
-        input.registerButtonTap
+        let response = input.registerButtonTap
             .withLatestFrom(commentObservable)
-//            .map{
-//                return self.makeRequestModel(
-//                    myProduct: input.myProductInfo,
-//                    wantProduct: input.wantProductInfo,
-//                    comment: $0
-//                )
-//            }.flatMap{
-//                self.registerUseCase.execute(requestValue: $0)
-//            }
+            .map{
+                return self.makeRequestModel(
+                    myProduct: input.myProductInfo,
+                    wantProduct: input.wantProductInfo,
+                    comment: $0
+                )
+            }.flatMap{
+                self.registerUseCase.execute(requestValue: RegisterZatchDTO(info: $0, images: input.myProductInfo.images))
+            }
         
-        return Output()
+        return Output(registerResponse: response)
     }
     
     private func makeRequestModel(myProduct: RegisterFirstInformationDTO, wantProduct: RegisterSecondInformationDTO, comment: String) -> RegisterZatchRequestModel{
