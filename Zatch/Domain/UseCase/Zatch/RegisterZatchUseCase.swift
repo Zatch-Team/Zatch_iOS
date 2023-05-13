@@ -15,14 +15,9 @@ struct RegisterZatchDTO{
 
 struct RegisterZatchRequestModel: Encodable {
     
-    struct WantProductPriority: Encodable{
-        let priority: Int
-        let p_name: String
-        let p_category: Int
-    }
-    
-    let anyZatch: Int
+    let userId: Int = UserManager.userId!
     let categoryId: Int
+    let anyZatch: Int
     let content: String
     let expirationDate: String?
     let isFree: Bool
@@ -30,8 +25,13 @@ struct RegisterZatchRequestModel: Encodable {
     let itemName: String
     let purchaseDate: String?
     let quantity: String?
-    let priorites: [WantProductPriority]
-    let userId: Int
+    
+    let p_first_category: Int?
+    let p_first_name: String
+    let p_second_category: Int?
+    let p_second_name: String
+    let p_third_category: Int?
+    let p_third_name: String
 }
 
 protocol RegisterUseCaseInterface {
