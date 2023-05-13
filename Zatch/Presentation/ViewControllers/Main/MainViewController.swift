@@ -158,7 +158,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(for: indexPath, cellType: MainZatchCollectionViewCell.self).then{
-            $0.viewModel = viewModel
+            $0.likeViewModel = viewModel
             $0.binding(data: getZatchDataAndType(collectionView, indexPath: indexPath))
         }
     }

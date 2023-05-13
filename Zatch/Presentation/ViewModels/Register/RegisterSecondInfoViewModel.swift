@@ -10,10 +10,13 @@ import RxSwift
 import RxCocoa
 
 struct RegisterSecondInformationDTO{
-    let firstPriority: RegisterZatchRequestModel.WantProductPriority?
-    let secondPriority: RegisterZatchRequestModel.WantProductPriority?
-    let thirdPriority: RegisterZatchRequestModel.WantProductPriority?
-    let wantProductType: Int
+    let firstPriorityCategory: Int?
+    let firstPriorityName: String
+    let secondPriorityCategory: Int?
+    let secondPriorityName: String
+    let thirdPriorityCategory: Int?
+    let thirdPriorityName: String
+    let anyZatch: Int
     let isFree: Bool
 }
 
@@ -92,28 +95,15 @@ class RegisterSecondInfoViewModel: BaseViewModel{
     
     private func setRegisterSecondInfoDTO(_ observable: RequestObservableType, isFree: Bool) -> RegisterSecondInformationDTO{
         return RegisterSecondInformationDTO(
-            firstPriority: getPriorityModel(
-                priority: 1,
-                cateogoryId: observable.firstCategory,
-                productName: observable.firstProductName
-            ),
-            secondPriority: getPriorityModel(
-                priority: 2,
-                cateogoryId: observable.secondCategory,
-                productName: observable.secondProductName
-            ),
-            thirdPriority: getPriorityModel(
-                priority: 3,
-                cateogoryId: observable.thirdCategory,
-                productName: observable.thirdProductName
-            ),
-            wantProductType: observable.wantType.rawValue,
+            firstPriorityCategory: observable.firstCategory,
+            firstPriorityName: observable.firstProductName,
+            secondPriorityCategory: observable.secondCategory,
+            secondPriorityName: observable.secondProductName,
+            thirdPriorityCategory: observable.thirdCategory,
+            thirdPriorityName: observable.thirdProductName,
+            anyZatch: observable.wantType.rawValue,
             isFree: isFree
         )
-    }
-    
-    private func getPriorityModel(priority: Int, cateogoryId: Int?, productName: String) -> RegisterZatchRequestModel.WantProductPriority?{
-        cateogoryId == nil ? nil : RegisterZatchRequestModel.WantProductPriority(priority: priority, p_name: productName, p_category: cateogoryId!)
     }
     
 }

@@ -47,40 +47,43 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
         let countObservable = Observable.combineLatest(input.count, input.countUnit)
             .map{
                 $0.isEmpty || $1 == nil ? nil : $0 + $1!
-            }
+            }.share()
         
         let buyDateObservable = input.buyDate
             .map{
                 self.dateFormat($0)
-            }
+            }.share()
         
         let endDateObservable = input.endDate
             .map{
                 self.dateFormat($0)
-            }
+            }.share()
         
-        let requestObservable = Observable.combineLatest(input.categoryId,
-                                                         productName,
-                                                         images,
-                                                         countObservable,
-                                                         buyDateObservable,
-                                                         endDateObservable,
-                                                         input.isOpen)
+        let requestObservable = Observable
+            .combineLatest(
+                input.categoryId,
+                productName,
+                images,
+                countObservable,
+                buyDateObservable,
+                endDateObservable,
+                input.isOpen
+            ).share()
         
         let isDissatisfaction: Observable<Alert?> = input.nextButtonTap
             .withLatestFrom(requestObservable)
             .map{ category, productName, images, count, buyDate, endDate, isOpen in
-                if(category == nil){
+                if category == nil {
                     return Alert.RegisterCategory
-                }else if(productName.isEmpty){
+                }else if productName.isEmpty {
                     return Alert.ProductName
                 }
-                else if(images.count == 0){
+                else if images.count == 0 {
                     return Alert.ImageMin
                 }
-                else if(category == 0 && buyDate == nil){
+                else if category == 0 && buyDate == nil {
                     return Alert.BuyDate
-                }else if(category == 0 && endDate == nil){
+                }else if category == 0 && endDate == nil {
                     return Alert.EndDate
                 }else{
                     return nil
@@ -95,13 +98,15 @@ final class RegisterFirstInfoTestViewModel: BaseViewModel{
             .filter{ $0 == nil }
             .withLatestFrom(requestObservable)
             .map{ category, productName, images, count, buyDate, endDate, isOpen in
-                return RegisterFirstInformationDTO(category: category!,
-                                                   productName: productName,
-                                                   images: images,
-                                                   count: count,
-                                                   buyDate: buyDate,
-                                                   endDate: endDate,
-                                                   isOpen: isOpen)
+                return RegisterFirstInformationDTO(
+                    category: category!,
+                    productName: productName,
+                    images: images,
+                    count: count,
+                    buyDate: buyDate,
+                    endDate: endDate,
+                    isOpen: isOpen
+                )
             }.asDriver(onErrorJustReturn: nil)
         
         

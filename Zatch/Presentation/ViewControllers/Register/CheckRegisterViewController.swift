@@ -76,6 +76,13 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
                                                  comment: commentObservable,
                                                  registerButtonTap: registerSubject.asObservable())
         let output = viewModel.transform(input)
+        
+        output.registerResponse
+            .subscribe{ [weak self] in
+                if $0 == .success{
+                    self?.navigationController?.popToRootViewController(animated: true)
+                }
+            }.disposed(by: disposeBag)
     }
     
     private final func bindTextView() -> Observable<String>{

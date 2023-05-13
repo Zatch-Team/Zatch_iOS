@@ -27,7 +27,7 @@ class CheckRegisterViewModel: BaseViewModel{
     }
     
     struct Output{
-//        let registerRequestStatus: Driver<Void>
+        let registerResponse: Observable<RequestResponse>
     }
     
     func transform(_ input: Input) -> Output {
@@ -36,26 +36,25 @@ class CheckRegisterViewModel: BaseViewModel{
                 $0 == CheckRegisterView.placeholder ? "" : $0
             }
         
-//        let registerRequestStatus =
-        input.registerButtonTap
+        let response = input.registerButtonTap
             .withLatestFrom(commentObservable)
-//            .map{
-//                return self.makeRequestModel(
-//                    myProduct: input.myProductInfo,
-//                    wantProduct: input.wantProductInfo,
-//                    comment: $0
-//                )
-//            }.flatMap{
-//                self.registerUseCase.execute(requestValue: $0)
-//            }
+            .map{
+                return self.makeRequestModel(
+                    myProduct: input.myProductInfo,
+                    wantProduct: input.wantProductInfo,
+                    comment: $0
+                )
+            }.flatMap{
+                self.registerUseCase.execute(requestValue: RegisterZatchDTO(info: $0, images: input.myProductInfo.images))
+            }
         
-        return Output()
+        return Output(registerResponse: response)
     }
     
     private func makeRequestModel(myProduct: RegisterFirstInformationDTO, wantProduct: RegisterSecondInformationDTO, comment: String) -> RegisterZatchRequestModel{
         return RegisterZatchRequestModel(
-            anyZatch: wantProduct.wantProductType,
             categoryId: myProduct.category,
+            anyZatch: wantProduct.anyZatch,
             content: comment,
             expirationDate: myProduct.endDate,
             isFree: wantProduct.isFree,
@@ -63,12 +62,12 @@ class CheckRegisterViewModel: BaseViewModel{
             itemName: myProduct.productName,
             purchaseDate: myProduct.buyDate,
             quantity: myProduct.count,
-            priorites: getPriorites(wantProduct),
-            userId: 0
+            p_first_category: wantProduct.firstPriorityCategory,
+            p_first_name: wantProduct.firstPriorityName,
+            p_second_category: wantProduct.secondPriorityCategory,
+            p_second_name: wantProduct.secondPriorityName,
+            p_third_category: wantProduct.thirdPriorityCategory,
+            p_third_name: wantProduct.thirdPriorityName
         )
-    }
-    
-    private func getPriorites(_ wantProduct: RegisterSecondInformationDTO) -> [RegisterZatchRequestModel.WantProductPriority]{
-        wantProduct.isFree ? [] : [wantProduct.firstPriority, wantProduct.secondPriority, wantProduct.thirdPriority].compactMap{ $0 }
     }
 }

@@ -9,8 +9,7 @@ import Foundation
 import RxSwift
 
 protocol ZatchRepositoryInterface {
-    func registerZatch()
-//    -> Observable<Int>
+    func registerZatch(requestModel: RegisterZatchDTO) -> Observable<RequestResponse>
     func getPopularZatch()
     func getAroundZatch()
     func likeZatch(requestValue: ZatchLikeRequestValue) -> Observable<ZatchLikeResponseModel?>

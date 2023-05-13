@@ -28,10 +28,18 @@ class CheckExchangeRegisterViewController: CheckRegisterViewController {
         
         guard let mainView = mainView.infoFrame as? CheckExchangeRegisterInfoView else { fatalError("type error") }
         
-        mainView.firstWantCategoryTag.setCategoryTitle(categoryId: wantProductInfo.firstPriority!.p_category)
-        mainView.firstWantProductNameLabel.text = wantProductInfo.firstPriority?.p_name
-        mainView.secondWantFrame.setInformation(wantProductInfo.secondPriority)
-        mainView.thirdWantFrame.setInformation(wantProductInfo.thirdPriority)
+        mainView.firstWantCategoryTag.setCategoryTitle(categoryId: wantProductInfo.firstPriorityCategory)
+        mainView.firstWantProductNameLabel.text = wantProductInfo.firstPriorityName.isEmpty ? "(선제시 후교환)" : wantProductInfo.firstPriorityName
+        mainView.secondWantFrame
+            .setPriority(
+                productName: wantProductInfo.secondPriorityName,
+                categoryId: wantProductInfo.secondPriorityCategory
+            )
+        mainView.thirdWantFrame
+            .setPriority(
+                productName: wantProductInfo.thirdPriorityName,
+                categoryId: wantProductInfo.thirdPriorityCategory
+            )
     }
 }
 

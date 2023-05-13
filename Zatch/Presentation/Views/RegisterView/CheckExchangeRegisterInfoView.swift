@@ -164,12 +164,12 @@ extension CheckExchangeRegisterInfoView{
             }
         }
         
-        func setInformation(_ information: RegisterZatchRequestModel.WantProductPriority?){
-            guard let information = information else {
+        func setPriority(productName: String, categoryId: Int?){
+            guard let categoryId = categoryId else {
                 [priorityLabel, productLabel, categoryLabel].forEach{ $0.textColor = .white }; return
             }
-            categoryLabel.text = ServiceType.Zatch.getCategoryFromCategories(at: information.p_category).title
-            productLabel.text = information.p_name
+            categoryLabel.text = ServiceType.Zatch.getCategoryFromCategories(at: categoryId).title
+            productLabel.text = productName.isEmpty ? "(선제시 후교환)" : productName
         }
     }
 

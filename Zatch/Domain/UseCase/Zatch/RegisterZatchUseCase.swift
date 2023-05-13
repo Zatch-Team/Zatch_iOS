@@ -8,16 +8,16 @@
 import Foundation
 import RxSwift
 
+struct RegisterZatchDTO{
+    let info: RegisterZatchRequestModel
+    let images: [UIImage]
+}
+
 struct RegisterZatchRequestModel: Encodable {
     
-    struct WantProductPriority: Encodable{
-        let priority: Int
-        let p_name: String
-        let p_category: Int
-    }
-    
-    let anyZatch: Int
+    let userId: Int = UserManager.userId!
     let categoryId: Int
+    let anyZatch: Int
     let content: String
     let expirationDate: String?
     let isFree: Bool
@@ -25,13 +25,17 @@ struct RegisterZatchRequestModel: Encodable {
     let itemName: String
     let purchaseDate: String?
     let quantity: String?
-    let priorites: [WantProductPriority]
-    let userId: Int
+    
+    let p_first_category: Int?
+    let p_first_name: String
+    let p_second_category: Int?
+    let p_second_name: String
+    let p_third_category: Int?
+    let p_third_name: String
 }
 
 protocol RegisterUseCaseInterface {
-    func execute(requestValue: RegisterZatchRequestModel)
-//    -> Observable<Int>
+    func execute(requestValue: RegisterZatchDTO) -> Observable<RequestResponse>
 }
 
 final class RegisterUseCase: RegisterUseCaseInterface {
@@ -42,7 +46,7 @@ final class RegisterUseCase: RegisterUseCaseInterface {
         self.zatchRepository = zatchRepository
     }
 
-    func execute(requestValue: RegisterZatchRequestModel) {//-> Observable<Int>{
-        return zatchRepository.registerZatch()
+    func execute(requestValue: RegisterZatchDTO) -> Observable<RequestResponse>{
+        return zatchRepository.registerZatch(requestModel: requestValue)
     }
 }
