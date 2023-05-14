@@ -9,6 +9,24 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+struct TemporaryData{
+    static let zatch = ZatchResponseModel(
+        anyZatch: 1,
+        categoryId: 1,
+        content: "임시 콘텐츠",
+        expirationDate: "2022.02.02",
+        id: 10,
+        isFree: true,
+        isOpened: 1,
+        itemName: "몰랑이 몰랑이",
+        likeCount: 10,
+        purchaseDate: "2022.02.03",
+        quantity: 1,
+        userId: 1,
+        isLike: false
+    )
+}
+
 protocol MainViewModelInterface{
     var aroundZatch: [ZatchResponseModel] { get }
     var popularZatch: [ZatchResponseModel] { get }
@@ -20,24 +38,6 @@ protocol ZatchLikeViewModelInterface{
 }
 
 class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseViewModel{
-    
-    struct TemporaryData{
-        static let zatch = ZatchResponseModel(
-            anyZatch: 1,
-            categoryId: 1,
-            content: "임시 콘텐츠",
-            expirationDate: "2022.02.02",
-            id: 10,
-            isFree: true,
-            isOpened: 1,
-            itemName: "몰랑이 몰랑이",
-            likeCount: 10,
-            purchaseDate: "2022.02.03",
-            quantity: 1,
-            userId: 1,
-            isLike: false
-        )
-    }
     
     var aroundZatch = [ZatchResponseModel](repeating: TemporaryData.zatch, count: 10)
     var popularZatch = [ZatchResponseModel](repeating: TemporaryData.zatch, count: 10)

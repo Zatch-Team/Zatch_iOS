@@ -8,6 +8,9 @@
 import Foundation
 
 enum Alert{
+    //Zatch
+    case zatchDelete
+    
     //Register
     case ImageMax
     case Register
@@ -50,6 +53,9 @@ extension Alert{
     
     private var information: AlertDescription{
         switch self{
+        case .zatchDelete:          return AlertDescription(message: "해당 게시물을 삭제하시겠습니까?",
+                                                            confirmTitle: "삭제")
+            
         case .ImageMax:             return AlertDescription(message: "이미지는 최대 10장까지 등록 가능합니다.")
         case .Register:             return AlertDescription(message: "재치 등록을 완료하시겠습니까?",
                                                             confirmTitle: "등록 완료")
@@ -93,16 +99,17 @@ extension Alert{
                 .ProductName,
                 .ImageMin,
                 .BuyDate,
-                .EndDate:               return BasicAlertViewController(message: self.information.message)
+                .EndDate:               return BasicAlertViewController(message: information.message)
             
         case    .LocationAuthority,
                 .TownCertification,
                 .AlarmInfo,
                 .QuestionCategory,
                 .QuestionTitle,
-                .QuestionContent:       return InfoAlertViewController(message: self.information.message)
+                .QuestionContent:       return InfoAlertViewController(message: information.message)
             
-        case    .ChangeShare,
+        case    .zatchDelete,
+                .ChangeShare,
                 .ChattingRoomExit,
                 .UnBlock,
                 .Register,
@@ -110,9 +117,9 @@ extension Alert{
                 .QuestionRegister,
                 .ChangeNickname,
                 .Block,
-                .Logout:                return CancelAlertViewController(message: self.information.message,
-                                                                         confirmTitle: self.information.confirmTitle,
-                                                                         cancelTitle: self.information.cancelTitle)
+                .Logout:                return CancelAlertViewController(message: information.message,
+                                                                         confirmTitle: information.confirmTitle,
+                                                                         cancelTitle: information.cancelTitle)
         }
     }
     

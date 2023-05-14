@@ -131,7 +131,7 @@
 		5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */; };
 		5767D777286832420075DB28 /* ExchangeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */; };
 		5767D77B286883020075DB28 /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */; };
-		5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77C286944FB0075DB28 /* BottomFixView.swift */; };
+		5767D77D286944FB0075DB28 /* ZatchDetailBottomFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77C286944FB0075DB28 /* ZatchDetailBottomFixView.swift */; };
 		5767D77F28695BD60075DB28 /* MoreTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */; };
 		5767D781286962A20075DB28 /* SimilarZatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */; };
 		5767D783286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */; };
@@ -337,6 +337,10 @@
 		EE73C51E299610F80000F8AC /* ProductQuantityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */; };
 		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
 		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
+		EE764CAB2A10DF800030E5D4 /* MyZatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAA2A10DF800030E5D4 /* MyZatchDetailViewModel.swift */; };
+		EE764CAE2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAD2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift */; };
+		EE764CB02A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift */; };
+		EE764CB22A10DFFD0030E5D4 /* DetailStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */; };
 		EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */; };
 		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
 		EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */; };
@@ -548,7 +552,7 @@
 		5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
-		5767D77C286944FB0075DB28 /* BottomFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomFixView.swift; sourceTree = "<group>"; };
+		5767D77C286944FB0075DB28 /* ZatchDetailBottomFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDetailBottomFixView.swift; sourceTree = "<group>"; };
 		5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTextTableViewCell.swift; sourceTree = "<group>"; };
 		5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchTableViewCell.swift; sourceTree = "<group>"; };
 		5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarZatchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -765,6 +769,10 @@
 		EE73C51D299610F80000F8AC /* ProductQuantityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductQuantityTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		EE764CAA2A10DF800030E5D4 /* MyZatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchDetailViewModel.swift; sourceTree = "<group>"; };
+		EE764CAD2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchDetailStrategy.swift; sourceTree = "<group>"; };
+		EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersZatchDetailStrategy.swift; sourceTree = "<group>"; };
+		EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStrategy.swift; sourceTree = "<group>"; };
 		EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLocationRegisterMapViewController.swift; sourceTree = "<group>"; };
 		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
 		EE7B76BF29C5E36D00942798 /* ZatchRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZatchRepositoryInterface.swift; sourceTree = "<group>"; };
@@ -1054,6 +1062,7 @@
 		23C9030C28C5CE2500FB6D3D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EE764CA92A10DF630030E5D4 /* Detail */,
 				EE532955299BD00400C79CF2 /* Util */,
 				EE4CE7CE29FCF91300943FE5 /* Login */,
 				EE4D888F29D01E3E003B6383 /* Town */,
@@ -1121,6 +1130,7 @@
 		23C9031128C5CE5600FB6D3D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				EE764CAC2A10DFCB0030E5D4 /* Strategy */,
 				57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */,
 				5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */,
 				57600C082963076E00A7F27B /* GatchDetailViewController.swift */,
@@ -1228,7 +1238,7 @@
 			children = (
 				57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */,
 				57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */,
-				5767D77C286944FB0075DB28 /* BottomFixView.swift */,
+				5767D77C286944FB0075DB28 /* ZatchDetailBottomFixView.swift */,
 				57600C0C296307E000A7F27B /* GatchDetailView.swift */,
 				57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */,
 			);
@@ -2208,6 +2218,24 @@
 			path = DetailInput;
 			sourceTree = "<group>";
 		};
+		EE764CA92A10DF630030E5D4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EE764CAA2A10DF800030E5D4 /* MyZatchDetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		EE764CAC2A10DFCB0030E5D4 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */,
+				EE764CAD2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift */,
+				EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
 		EE7B76B029C5E2FC00942798 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -2738,6 +2766,7 @@
 				5722462B28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift in Sources */,
 				5767D787286ADA4D0075DB28 /* ProductDetailInputTableViewCell.swift in Sources */,
 				EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */,
+				EE764CAB2A10DF800030E5D4 /* MyZatchDetailViewModel.swift in Sources */,
 				5767752C281CDA4B000BC7CD /* ExchangeMyZatchSearchViewController.swift in Sources */,
 				5767D77528682D120075DB28 /* DetailImageTableViewCell.swift in Sources */,
 				EE2AE71229E43311007046C8 /* RegisterZatchUseCase.swift in Sources */,
@@ -2894,6 +2923,7 @@
 				23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */,
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
+				EE764CAE2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
 				EE1840CE2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift in Sources */,
 				EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */,
@@ -2919,6 +2949,7 @@
 				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				EE4CE7C729FCF60E00943FE5 /* LoginUseCase.swift in Sources */,
+				EE764CB02A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift in Sources */,
 				EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
@@ -2949,6 +2980,7 @@
 				EEC3753A29F8EBF500190B22 /* ServiceTitleCollectionViewCell.swift in Sources */,
 				57397FC9296FBD7C0088B5F4 /* GatchSearchViewController.swift in Sources */,
 				57A28B4228CED9DD00263079 /* SearchTownView.swift in Sources */,
+				EE764CB22A10DFFD0030E5D4 /* DetailStrategy.swift in Sources */,
 				5722462528C772E9009B7C78 /* SheetNavigationViewController.swift in Sources */,
 				EE4CE7E029FE3AD900943FE5 /* LogoutUseCase.swift in Sources */,
 				23B051C128E2064C005D08EA /* QnATabmanViewController.swift in Sources */,
@@ -3045,7 +3077,7 @@
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
 				23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */,
-				5767D77D286944FB0075DB28 /* BottomFixView.swift in Sources */,
+				5767D77D286944FB0075DB28 /* ZatchDetailBottomFixView.swift in Sources */,
 				23B051C828E20BE1005D08EA /* QuestionContentTableViewCell.swift in Sources */,
 				57EBCE3928A7CD3800212D20 /* ImageRegisterCollectionViewCell.swift in Sources */,
 				EEE6D15B299752EB0004FC7B /* TagStlye.swift in Sources */,

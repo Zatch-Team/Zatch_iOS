@@ -6,11 +6,37 @@
 //
 
 import UIKit
+import RxSwift
 
-class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView> {
+final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView> {
     
-    init() {
-        super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: ZatchDetailView())
+    @frozen
+    enum Writer{
+        case me
+        case others
+    }
+    
+    private let zatch: ZatchResponseModel
+    private var detailStrategy: DetailStrategy!
+    
+    convenience init(){ //임시 생성자
+        self.init(zatch: TemporaryData.zatch)
+    }
+    
+    init(zatch: ZatchResponseModel) {
+        self.zatch = zatch
+        let writer: Writer = zatch.userId == UserManager.userId ? .me : .me//임시
+        super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: ZatchDetailView(writer: writer))
+        setStrategy(of: writer)
+    }
+    
+    private func setStrategy(of writer: Writer){
+        detailStrategy = {
+            switch writer {
+            case .me:       return MyZatchDetailStrategy(vc: self)
+            case .others:   return OthersZatchDetailStrategy(vc: self)
+            }
+        }()
     }
     
     required init?(coder: NSCoder) {
@@ -18,20 +44,42 @@ class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDe
     }
     
     override func layout() {
-        
         super.layout()
+        changeMainViewLayout()
+    }
     
-        self.view.bringSubviewToFront(self.headerView)
-        mainView.snp.updateConstraints{
-            $0.top.equalToSuperview()
+    private func changeMainViewLayout(){
+        view.bringSubviewToFront(headerView)
+        mainView.snp.remakeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
     }
     
     override func initialize(){
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+        mainView.tableView.initializeDelegate(self)
+        bindStrategyAction()
     }
+    
+    private func bindStrategyAction(){
+        //TODO: HeaderView back button 탭 인식X
+        headerView.etcButton.rx.tap
+            .subscribe{ [weak self] _ in
+                self?.detailStrategy.etcBtnDidTapped()
+            }.disposed(by: disposeBag)
+        
+        mainView.likeView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe{ [weak self] _ in
+                self?.detailStrategy.likeBtnDidTapped()
+            }.disposed(by: disposeBag)
+        
+        mainView.chatView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe{ [weak self] _ in
+                self?.detailStrategy.chatBtnDidTapped()
+            }.disposed(by: disposeBag)
+    }
+    
 
 }
 
