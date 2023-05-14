@@ -8,13 +8,19 @@
 import UIKit
 
 protocol DetailStrategy{
-    var viewController: UIViewController! { get set }
+    init(vc: UIViewController)
     func etcBtnDidTapped()
     func likeBtnDidTapped()
     func chatBtnDidTapped()
 }
 
 class MyZatchDetail: DetailStrategy{
+    
+    private let vc: UIViewController
+    
+    required init(vc: UIViewController){
+        self.vc = vc
+    }
 
     var viewController: UIViewController!
     
@@ -35,7 +41,11 @@ class MyZatchDetail: DetailStrategy{
 
 class OthersZatchDetail: DetailStrategy{
     
-    var viewController: UIViewController!
+    private let vc: UIViewController
+    
+    required init(vc: UIViewController) {
+        self.vc = vc
+    }
     
     func etcBtnDidTapped() {
         //기능 없음
@@ -77,8 +87,8 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     private func setStrategy(of writer: Writer){
         detailStrategy = {
             switch writer {
-            case .me:       return MyZatchDetail()
-            case .others:   return OthersZatchDetail()
+            case .me:       return MyZatchDetail(vc: self)
+            case .others:   return OthersZatchDetail(vc: self)
             }
         }()
     }
@@ -102,7 +112,6 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     override func initialize(){
         mainView.tableView.initializeDelegate(self)
         bindStrategyAction()
-        detailStrategy.viewController = self
     }
     
     private func bindStrategyAction(){
