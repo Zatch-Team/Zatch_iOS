@@ -7,10 +7,80 @@
 
 import UIKit
 
-class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView> {
+protocol DetailStrategy{
+    var viewController: UIViewController! { get set }
+    func etcBtnDidTapped()
+    func likeBtnDidTapped()
+    func chatBtnDidTapped()
+}
+
+class MyZatchDetail: DetailStrategy{
+
+    var viewController: UIViewController!
     
-    init() {
-        super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: ZatchDetailView())
+    func etcBtnDidTapped() {
+        //TODO: 삭제 로직
+    }
+    
+    func likeBtnDidTapped() {
+        //TODO: 관심 목록 이동
+    }
+    
+    func chatBtnDidTapped() {
+        //TODO: 채팅 리스트 이동
+    }
+    
+
+}
+
+class OthersZatchDetail: DetailStrategy{
+    
+    var viewController: UIViewController!
+    
+    func etcBtnDidTapped() {
+        //기능 없음
+    }
+    
+    func likeBtnDidTapped() {
+        //TODO: 좋아요 / 좋아요 취소
+    }
+    
+    func chatBtnDidTapped() {
+        //TODO: 채팅방 이동
+    }
+    
+    
+}
+
+final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView> {
+    
+    @frozen
+    enum Writer{
+        case me
+        case others
+    }
+    
+    private let zatch: ZatchResponseModel
+    private var detailStrategy: DetailStrategy!
+    
+    convenience init(){ //임시 생성자
+        self.init(zatch: TemporaryData.zatch)
+    }
+    
+    init(zatch: ZatchResponseModel) {
+        self.zatch = zatch
+        let writer: Writer = zatch.userId == UserManager.userId ? .me : .others
+        super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: ZatchDetailView(writer: writer))
+        setStrategy(of: writer)
+    }
+    
+    private func setStrategy(of writer: Writer){
+        detailStrategy = {
+            switch writer {
+            case .me:       return MyZatchDetail()
+            case .others:   return OthersZatchDetail()
+            }
+        }()
     }
     
     required init?(coder: NSCoder) {
@@ -18,20 +88,43 @@ class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDe
     }
     
     override func layout() {
-        
         super.layout()
+        changeMainViewLayout()
+    }
     
-        self.view.bringSubviewToFront(self.headerView)
-        mainView.snp.updateConstraints{
-            $0.top.equalToSuperview()
+    private func changeMainViewLayout(){
+        view.bringSubviewToFront(headerView)
+        mainView.snp.remakeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
     }
     
     override func initialize(){
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.dataSource = self
-        mainView.tableView.delegate = self
+        mainView.tableView.initializeDelegate(self)
+        bindStrategyAction()
+        detailStrategy.viewController = self
     }
+    
+    private func bindStrategyAction(){
+        
+        headerView.etcButton.rx.tap
+            .subscribe{ [weak self] _ in
+                self?.detailStrategy.etcBtnDidTapped()
+            }.disposed(by: disposeBag)
+        
+        mainView.likeView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe{ [weak self] _ in
+                self?.detailStrategy.likeBtnDidTapped()
+            }.disposed(by: disposeBag)
+        
+        mainView.chatView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe{ [weak self] _ in
+                self?.detailStrategy.chatBtnDidTapped()
+            }.disposed(by: disposeBag)
+    }
+    
 
 }
 
