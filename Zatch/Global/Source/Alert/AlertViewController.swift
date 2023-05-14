@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AlertViewController: UIViewController {
     
@@ -17,6 +18,13 @@ class AlertViewController: UIViewController {
      
      3의 경우 버튼 위치 및 특성은 각각 조절
      */
+    
+    var complete: Observable<Void> {
+        return okBtn.rx.tap
+            .do{ [weak self] _ in
+                self?.dismiss(animated: false)
+            }.share()
+    }
     
     var completion : (() -> ())? //TODO: Generic으로 변경하기
     
