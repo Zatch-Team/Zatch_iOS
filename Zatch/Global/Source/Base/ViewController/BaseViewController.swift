@@ -67,7 +67,10 @@ class BaseViewController<T: BaseHeaderView,
     }
     
     func initialize() {
-        headerView.backButton.addTarget(self, action: #selector(viewControllerWillPop), for: .touchUpInside)
+        headerView.backButton.rx.tap
+            .subscribe{ [weak self] _ in
+                self?.viewControllerWillPop()
+            }.disposed(by: disposeBag)
     }
     
     func bind() { }

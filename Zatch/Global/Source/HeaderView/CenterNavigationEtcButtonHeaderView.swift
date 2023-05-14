@@ -9,7 +9,7 @@ import Foundation
 
 class CenterNavigationEtcButtonHeaderView: CenterNavigationHeaderView, HeaderFirstEtcButton{
     
-    var etcButton: EtcButton
+    let etcButton: EtcButton
     
     init(title: String, etcButton text: String){
         self.etcButton = EtcButton(title: text)

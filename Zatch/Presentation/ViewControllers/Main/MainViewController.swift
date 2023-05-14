@@ -175,7 +175,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(ZatchDetailViewController(), animated: true)
+        navigationController?.pushViewController(ZatchDetailViewController.getInstance(data: TemporaryData.zatch), animated: true)
     }
     
     private func getDataType(of collectionView: UICollectionView) -> ZatchData{

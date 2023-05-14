@@ -9,20 +9,18 @@ import Foundation
 
 class BaseHeaderView: BaseView{
     
-    lazy var backButton = UIButton().then{
+     lazy var backButton = UIButton().then{
         $0.setImage(Image.arrowLeft, for: .normal)
     }
     
     override func hierarchy() {
-        self.addSubview(backButton)
+        addSubview(backButton)
     }
     
     override func layout() {
-        
         self.snp.makeConstraints{
             $0.height.equalTo(60)
         }
-        
         backButton.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(20)
             $0.top.equalToSuperview().offset(14)

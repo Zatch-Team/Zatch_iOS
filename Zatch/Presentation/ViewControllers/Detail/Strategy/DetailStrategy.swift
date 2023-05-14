@@ -8,7 +8,6 @@
 import Foundation
 
 protocol DetailStrategy{
-    init(vc: UIViewController)
     func etcBtnDidTapped()
     func likeBtnDidTapped()
     func chatBtnDidTapped()

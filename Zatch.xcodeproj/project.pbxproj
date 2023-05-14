@@ -338,8 +338,8 @@
 		EE73C520299611350000F8AC /* ProductIsOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */; };
 		EE73C52229961BF30000F8AC /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73C52129961BF30000F8AC /* RadioButtonView.swift */; };
 		EE764CAB2A10DF800030E5D4 /* MyZatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAA2A10DF800030E5D4 /* MyZatchDetailViewModel.swift */; };
-		EE764CAE2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAD2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift */; };
-		EE764CB02A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift */; };
+		EE764CAE2A10DFD60030E5D4 /* MyZatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAD2A10DFD60030E5D4 /* MyZatchDetailViewController.swift */; };
+		EE764CB02A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift */; };
 		EE764CB22A10DFFD0030E5D4 /* DetailStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */; };
 		EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */; };
 		EE7B76AD29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */; };
@@ -770,8 +770,8 @@
 		EE73C51F299611350000F8AC /* ProductIsOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIsOpenTableViewCell.swift; sourceTree = "<group>"; };
 		EE73C52129961BF30000F8AC /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		EE764CAA2A10DF800030E5D4 /* MyZatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchDetailViewModel.swift; sourceTree = "<group>"; };
-		EE764CAD2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchDetailStrategy.swift; sourceTree = "<group>"; };
-		EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersZatchDetailStrategy.swift; sourceTree = "<group>"; };
+		EE764CAD2A10DFD60030E5D4 /* MyZatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchDetailViewController.swift; sourceTree = "<group>"; };
+		EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersZatchDetailViewController.swift; sourceTree = "<group>"; };
 		EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStrategy.swift; sourceTree = "<group>"; };
 		EE7AFF5629D16652007872B9 /* MeetingLocationRegisterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLocationRegisterMapViewController.swift; sourceTree = "<group>"; };
 		EE7B76AC29C5D3ED00942798 /* BaseBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
@@ -2230,8 +2230,8 @@
 			isa = PBXGroup;
 			children = (
 				EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */,
-				EE764CAD2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift */,
-				EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift */,
+				EE764CAD2A10DFD60030E5D4 /* MyZatchDetailViewController.swift */,
+				EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift */,
 			);
 			path = Strategy;
 			sourceTree = "<group>";
@@ -2923,7 +2923,7 @@
 				23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */,
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
 				57EBCE4228A8C67B00212D20 /* DatePickerAlertViewController.swift in Sources */,
-				EE764CAE2A10DFD60030E5D4 /* MyZatchDetailStrategy.swift in Sources */,
+				EE764CAE2A10DFD60030E5D4 /* MyZatchDetailViewController.swift in Sources */,
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
 				EE1840CE2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift in Sources */,
 				EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */,
@@ -2949,7 +2949,7 @@
 				EEB13B91297FC7A1001A8DD9 /* BaseViewModel.swift in Sources */,
 				57468A78289D2CD800056691 /* SearchTagCollectionViewCell.swift in Sources */,
 				EE4CE7C729FCF60E00943FE5 /* LoginUseCase.swift in Sources */,
-				EE764CB02A10DFEA0030E5D4 /* OthersZatchDetailStrategy.swift in Sources */,
+				EE764CB02A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift in Sources */,
 				EE532957299BD03A00C79CF2 /* ZatchTableViewCellViewModel.swift in Sources */,
 				23B7FBAC28CEBFD10018642E /* MyInfoTableViewCell.swift in Sources */,
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,

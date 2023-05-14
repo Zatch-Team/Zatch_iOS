@@ -254,7 +254,7 @@ extension ZatchSearchResultViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(ZatchDetailViewController(), animated: true)
+        navigationController?.pushViewController(ZatchDetailViewController.getInstance(data: TemporaryData.zatch), animated: true)
     }
 }
 
