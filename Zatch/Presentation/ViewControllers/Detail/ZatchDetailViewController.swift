@@ -8,35 +8,26 @@
 import UIKit
 import RxSwift
 
-final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView> {
-    
+class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView>, DetailStrategy {
+
     @frozen
     enum Writer{
         case me
         case others
     }
     
+    static func getInstance(data zatch: ZatchResponseModel) -> ZatchDetailViewController {
+        return MyZatchDetailViewController(zatch: zatch) //임시
+//        zatch.userId == UserManager.userId
+//        ? MyZatchDetailViewController(zatch: zatch)
+//        : OthersZatchDetailViewController(zatch: zatch)
+    }
+    
     private let zatch: ZatchResponseModel
-    private var detailStrategy: DetailStrategy!
     
-    convenience init(){ //임시 생성자
-        self.init(zatch: TemporaryData.zatch)
-    }
-    
-    init(zatch: ZatchResponseModel) {
+    init(zatch: ZatchResponseModel, writer: Writer) {
         self.zatch = zatch
-        let writer: Writer = zatch.userId == UserManager.userId ? .me : .me//임시
         super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: ZatchDetailView(writer: writer))
-        setStrategy(of: writer)
-    }
-    
-    private func setStrategy(of writer: Writer){
-        detailStrategy = {
-            switch writer {
-            case .me:       return MyZatchDetailStrategy(vc: self)
-            case .others:   return OthersZatchDetailStrategy(vc: self)
-            }
-        }()
     }
     
     required init?(coder: NSCoder) {
@@ -62,24 +53,36 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     }
     
     private func bindStrategyAction(){
-        //TODO: HeaderView back button 탭 인식X
         headerView.etcButton.rx.tap
             .subscribe{ [weak self] _ in
-                self?.detailStrategy.etcBtnDidTapped()
+                self?.etcBtnDidTapped()
             }.disposed(by: disposeBag)
         
         mainView.likeView.rx.tapGesture()
             .when(.recognized)
             .subscribe{ [weak self] _ in
-                self?.detailStrategy.likeBtnDidTapped()
+                self?.likeBtnDidTapped()
             }.disposed(by: disposeBag)
         
         mainView.chatView.rx.tapGesture()
             .when(.recognized)
             .subscribe{ [weak self] _ in
-                self?.detailStrategy.chatBtnDidTapped()
+                self?.chatBtnDidTapped()
             }.disposed(by: disposeBag)
     }
+    
+    func etcBtnDidTapped() {
+        
+    }
+    
+    func likeBtnDidTapped() {
+        
+    }
+    
+    func chatBtnDidTapped() {
+        
+    }
+    
     
 
 }
