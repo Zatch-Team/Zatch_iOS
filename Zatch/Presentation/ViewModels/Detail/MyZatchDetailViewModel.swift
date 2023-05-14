@@ -21,13 +21,11 @@ class MyZatchDetailViewModel: BaseViewModel {
     }
     
     func transform(_ input: Input) -> Output {
+        //TODO: API 요청
         let deleteResponse = input.deleteBtnTap
             .map{
                 return RequestResponse.success
             }.share()
-//            .subscribe{ _ in
-//                print("tap tap tap")
-//            }.disposed(by: disposeBag)
         
         return Output(deleteResponse: deleteResponse)
     }

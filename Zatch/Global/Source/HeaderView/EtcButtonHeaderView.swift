@@ -9,7 +9,7 @@ import Foundation
 
 class EtcButtonHeaderView: BaseHeaderView, HeaderFirstEtcButton{
     
-    var etcButton: EtcButton
+    let etcButton: EtcButton
     
     init(image: UIImage){
         self.etcButton = EtcButton(image: image)
