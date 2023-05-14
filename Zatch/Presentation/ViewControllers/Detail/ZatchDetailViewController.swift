@@ -14,7 +14,7 @@ protocol DetailStrategy{
     func chatBtnDidTapped()
 }
 
-class MyZatchDetail: DetailStrategy{
+class MyZatchDetailStrategy: DetailStrategy{
     
     private let vc: UIViewController
     
@@ -39,7 +39,7 @@ class MyZatchDetail: DetailStrategy{
 
 }
 
-class OthersZatchDetail: DetailStrategy{
+class OthersZatchDetailStrategy: DetailStrategy{
     
     private let vc: UIViewController
     
@@ -87,8 +87,8 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     private func setStrategy(of writer: Writer){
         detailStrategy = {
             switch writer {
-            case .me:       return MyZatchDetail(vc: self)
-            case .others:   return OthersZatchDetail(vc: self)
+            case .me:       return MyZatchDetailStrategy(vc: self)
+            case .others:   return OthersZatchDetailStrategy(vc: self)
             }
         }()
     }
