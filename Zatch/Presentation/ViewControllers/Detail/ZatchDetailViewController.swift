@@ -56,6 +56,7 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     }
     
     override func initialize(){
+        super.initialize()
         mainView.tableView.initializeDelegate(self)
         bindStrategyAction()
     }
