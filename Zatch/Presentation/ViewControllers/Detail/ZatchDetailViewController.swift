@@ -6,61 +6,7 @@
 //
 
 import UIKit
-
-protocol DetailStrategy{
-    init(vc: UIViewController)
-    func etcBtnDidTapped()
-    func likeBtnDidTapped()
-    func chatBtnDidTapped()
-}
-
-class MyZatchDetailStrategy: DetailStrategy{
-    
-    private let vc: UIViewController
-    
-    required init(vc: UIViewController){
-        self.vc = vc
-    }
-
-    var viewController: UIViewController!
-    
-    func etcBtnDidTapped() {
-        //TODO: 삭제 로직
-    }
-    
-    func likeBtnDidTapped() {
-        //TODO: 관심 목록 이동
-    }
-    
-    func chatBtnDidTapped() {
-        //TODO: 채팅 리스트 이동
-    }
-    
-
-}
-
-class OthersZatchDetailStrategy: DetailStrategy{
-    
-    private let vc: UIViewController
-    
-    required init(vc: UIViewController) {
-        self.vc = vc
-    }
-    
-    func etcBtnDidTapped() {
-        //기능 없음
-    }
-    
-    func likeBtnDidTapped() {
-        //TODO: 좋아요 / 좋아요 취소
-    }
-    
-    func chatBtnDidTapped() {
-        //TODO: 채팅방 이동
-    }
-    
-    
-}
+import RxSwift
 
 final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView> {
     
@@ -79,7 +25,7 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     
     init(zatch: ZatchResponseModel) {
         self.zatch = zatch
-        let writer: Writer = zatch.userId == UserManager.userId ? .me : .others
+        let writer: Writer = zatch.userId == UserManager.userId ? .me : .me//임시
         super.init(headerView: EtcButtonHeaderView(image: Image.dot), mainView: ZatchDetailView(writer: writer))
         setStrategy(of: writer)
     }
@@ -115,7 +61,7 @@ final class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, Z
     }
     
     private func bindStrategyAction(){
-        
+        //TODO: HeaderView back button 탭 인식X
         headerView.etcButton.rx.tap
             .subscribe{ [weak self] _ in
                 self?.detailStrategy.etcBtnDidTapped()
