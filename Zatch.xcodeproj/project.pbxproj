@@ -1126,9 +1126,11 @@
 		23C9031128C5CE5600FB6D3D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				EE764CAC2A10DFCB0030E5D4 /* Strategy */,
-				57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */,
+				EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */,
 				5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */,
+				EE764CAD2A10DFD60030E5D4 /* MyZatchDetailViewController.swift */,
+				EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift */,
+				57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -2201,16 +2203,6 @@
 				EE764CAA2A10DF800030E5D4 /* MyZatchDetailViewModel.swift */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		EE764CAC2A10DFCB0030E5D4 /* Strategy */ = {
-			isa = PBXGroup;
-			children = (
-				EE764CB12A10DFFD0030E5D4 /* DetailStrategy.swift */,
-				EE764CAD2A10DFD60030E5D4 /* MyZatchDetailViewController.swift */,
-				EE764CAF2A10DFEA0030E5D4 /* OthersZatchDetailViewController.swift */,
-			);
-			path = Strategy;
 			sourceTree = "<group>";
 		};
 		EE7B76B029C5E2FC00942798 /* Domain */ = {
