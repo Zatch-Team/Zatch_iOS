@@ -39,6 +39,7 @@ final class ZatchDetailBottomFixView: BaseView {
     }
     
     private let chatImage = UIImageView().then{
+        $0.setImageTintColor(.black85)
         $0.image = Image.chat
     }
     
