@@ -8,14 +8,9 @@
 import UIKit
 import Then
 
-protocol BindingZatch where Self: BaseTableViewCell{
-    func bindingData(_ zatch: ZatchResponseModel)
-}
-
 final class ExchangeDetailTableViewCell: BaseTableViewCell, BindingZatch {
     
     private let myZatchCategory = ZatchComponent.Tag.filled(color: .purple, configuration: .height20)
-    
     private let wantZatchCategory = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20)
     
     private let myZatchLabel = UILabel().then{
@@ -23,13 +18,11 @@ final class ExchangeDetailTableViewCell: BaseTableViewCell, BindingZatch {
         $0.textAlignment = .center
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    
     private let wantZatchLabel = UILabel().then{
         $0.numberOfLines = 0
         $0.textAlignment = .center
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    
     private let exchangeImage = UIImageView().then{
         $0.image = Image.exchange
     }
