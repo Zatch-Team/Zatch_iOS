@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimilarZatchCollectionViewCell: UICollectionViewCell {
+final class SimilarZatchCollectionViewCell: UICollectionViewCell {
     
     let imageView = UIImageView().then{
         $0.backgroundColor = .black10

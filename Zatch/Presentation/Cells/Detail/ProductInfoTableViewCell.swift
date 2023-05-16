@@ -7,87 +7,69 @@
 
 import UIKit
 
-class ProductInfoTableViewCell: BaseTableViewCell {
+final class ProductInfoTableViewCell: BaseTableViewCell, BindingZatch {
     
     //stack
-    let stackView = UIStackView().then{
+    private let stackView = UIStackView().then{
         $0.spacing = 12
         $0.axis = .vertical
         $0.alignment = .leading
     }
     
-    let buyStack = UIStackView().then{
+    private let buyStack = UIStackView().then{
         $0.spacing = 32
         $0.axis = .horizontal
     }
     
-    let countStack = UIStackView().then{
+    private let countStack = UIStackView().then{
         $0.spacing = 32
         $0.axis = .horizontal
     }
     
-    let openStack = UIStackView().then{
+    private let openStack = UIStackView().then{
         $0.spacing = 32
         $0.axis = .horizontal
     }
     
     //title label
-    let buy = UILabel().then{
+    private let buy = UILabel().then{
         $0.text = "구매일자"
         $0.textColor = .black85
         $0.font = UIFont.pretendard(family: .Bold)
     }
     
-    let count = UILabel().then{
+    private let count = UILabel().then{
         $0.text = "수량"
         $0.textColor = .black85
         $0.font = UIFont.pretendard(family: .Bold)
     }
     
-    let open = UILabel().then{
+    private let open = UILabel().then{
         $0.text = "개봉상태"
         $0.textColor = .black85
         $0.font = UIFont.pretendard(family: .Bold)
     }
     
     //data label
-    let buyLabel = UILabel().then{
-        $0.text = "2021/01/28"
+    private let buyLabel = UILabel().then{
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 14,family: .Medium)
     }
     
-    let countLabel = UILabel().then{
-        $0.text = "12개"
+    private let countLabel = UILabel().then{
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 14,family: .Medium)
     }
     
-    let openLabel = UILabel().then{
-        $0.text = "개봉"
+    private let openLabel = UILabel().then{
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 14,family: .Medium)
     }
     
-    let borderLine = UIView().then{
-        $0.backgroundColor = .black5
-    }
+    private let borderLine = ZatchComponent.BorderLine(color: .black5, height: 1)
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstraint()
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpView(){
-        
+    override func hierarchy() {
+        super.hierarchy()
         baseView.addSubview(stackView)
         baseView.addSubview(borderLine)
         
@@ -105,8 +87,8 @@ class ProductInfoTableViewCell: BaseTableViewCell {
         openStack.addArrangedSubview(openLabel)
     }
     
-    func setUpConstraint(){
-        
+    override func layout(){
+        super.layout()
         stackView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(24)
             make.leading.equalToSuperview().offset(20)
@@ -118,7 +100,10 @@ class ProductInfoTableViewCell: BaseTableViewCell {
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
     }
-
+    func bindingData(_ zatch: ZatchResponseModel){
+        buyLabel.text = zatch.purchaseDate
+        countLabel.text = zatch.quantity
+        openLabel.text = Zatch.OpenState(rawValue: zatch.isOpened)?.title
+    }
 }
