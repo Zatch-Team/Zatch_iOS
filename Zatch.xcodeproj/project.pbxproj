@@ -117,9 +117,6 @@
 		575BF70927E0CBC8008D5B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BF70727E0CBC8008D5B3C /* LaunchScreen.storyboard */; };
 		575BF71427E0CBC8008D5B3C /* ZatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71327E0CBC8008D5B3C /* ZatchTests.swift */; };
 		575BF71F27E0CBC8008D5B3C /* ZatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */; };
-		57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C082963076E00A7F27B /* GatchDetailViewController.swift */; };
-		57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0C296307E000A7F27B /* GatchDetailView.swift */; };
-		57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */; };
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
@@ -537,9 +534,6 @@
 		575BF71A27E0CBC8008D5B3C /* ZatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BF71E27E0CBC8008D5B3C /* ZatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchUITests.swift; sourceTree = "<group>"; };
 		575BF72027E0CBC8008D5B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57600C082963076E00A7F27B /* GatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailViewController.swift; sourceTree = "<group>"; };
-		57600C0C296307E000A7F27B /* GatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailView.swift; sourceTree = "<group>"; };
-		57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailBottomFixView.swift; sourceTree = "<group>"; };
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -1131,7 +1125,6 @@
 				EE764CAC2A10DFCB0030E5D4 /* Strategy */,
 				57F68BA729652D6100DB1471 /* DetailEtcBottomSheetViewController.swift */,
 				5767D7722868248E0075DB28 /* ZatchDetailViewController.swift */,
-				57600C082963076E00A7F27B /* GatchDetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1237,8 +1230,6 @@
 				57F68BA929652ED300DB1471 /* DetailEtcBottomSheetView.swift */,
 				57E75EBE28E3C32800AC24B2 /* ZatchDetailView.swift */,
 				5767D77C286944FB0075DB28 /* ZatchDetailBottomFixView.swift */,
-				57600C0C296307E000A7F27B /* GatchDetailView.swift */,
-				57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -2791,7 +2782,6 @@
 				576B376828D8306800EF36E6 /* DefaultSettingTableViewCell.swift in Sources */,
 				5722461B28C6C89A009B7C78 /* SearchAddressView.swift in Sources */,
 				57B9F70C28D94B7800ACEC94 /* Delegate.swift in Sources */,
-				57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */,
 				57A28B3B28CED8DF00263079 /* SplashTownViewController.swift in Sources */,
 				57D6D78F28CDB62000F805B7 /* InfoAlertViewController.swift in Sources */,
 				5724EC91291E122F00DC529B /* BaseView.swift in Sources */,
@@ -2848,7 +2838,6 @@
 				EE0AD55529E8220300C1CDA1 /* RegisterPriorityTableViewCell.swift in Sources */,
 				EE4CE7DE29FD347100943FE5 /* RegisterTownUseCase.swift in Sources */,
 				EEE326AD2998C60E0017DF46 /* ZatchSearchRequestManager.swift in Sources */,
-				57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */,
 				EE4D887329CFF127003B6383 /* MapRepository.swift in Sources */,
 				EE4CE7D329FD008100943FE5 /* UserDefaultKey.swift in Sources */,
 				571AD7132828D9EB00390AAD /* CategoryCollectionViewCell.swift in Sources */,
@@ -2946,7 +2935,6 @@
 				57FFEDBF28DD27FE0041719B /* CheckRegisterView.swift in Sources */,
 				5722460228BCBD52009B7C78 /* RightChattingMessageTableViewCell.swift in Sources */,
 				EEB13B72297F9A12001A8DD9 /* TabBarItem.swift in Sources */,
-				57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */,
 				EEE1153B29A7263E003FD4E3 /* MyPageCellDelegate.swift in Sources */,
 				EE4CE7D729FD00B200943FE5 /* UserDefaultWrapper.swift in Sources */,
 				575BF6FD27E0CBC6008D5B3C /* AppDelegate.swift in Sources */,
