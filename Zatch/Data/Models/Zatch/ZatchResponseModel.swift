@@ -18,8 +18,22 @@ struct ZatchResponseModel: Decodable{
     let itemName: String
     var likeCount: Int
     let purchaseDate: String
-    let quantity: Int
+    let quantity: String
     let userId: Int
     //임시
     var isLike: Bool
+    let images: [String]
+    
+    let p_first_category: Int?
+    let p_first_name: String
+    let p_second_category: Int?
+    let p_second_name: String
+    let p_third_category: Int?
+    let p_third_name: String
+}
+
+extension ZatchResponseModel{
+    var isSecondAndThirdPriorityEmpty: Bool{
+        p_second_category == nil && p_third_category == nil
+    }
 }
