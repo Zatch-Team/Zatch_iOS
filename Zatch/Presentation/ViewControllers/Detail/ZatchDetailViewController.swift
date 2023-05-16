@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxGesture
 
 class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDetailView>, DetailStrategy {
 
@@ -23,7 +24,7 @@ class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDe
 //        : OthersZatchDetailViewController(zatch: zatch)
     }
     
-    private let zatch: ZatchResponseModel
+    let zatch: ZatchResponseModel
     
     init(zatch: ZatchResponseModel, writer: Writer) {
         self.zatch = zatch
