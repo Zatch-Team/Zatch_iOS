@@ -7,18 +7,20 @@
 
 import Foundation
 
+struct Zatch{
+    @frozen
+    enum OpenState: Int{
+        case open = 1
+        case unopen = 2
+    }
+}
+
 struct Register{
     
     @frozen
     enum ProductDate: String{
         case buy = "구매일자"
         case end = "유통기한"
-    }
-    
-    @frozen
-    enum ProductOpenState: Int{
-        case open = 1
-        case unopen = 2
     }
     
     @frozen
@@ -30,7 +32,7 @@ struct Register{
     typealias DateString = (year: String, month: String, date: String)
 }
 
-extension Register.ProductOpenState{
+extension Zatch.OpenState{
     var title: String{
         switch self{
         case .unopen:   return "미개봉"

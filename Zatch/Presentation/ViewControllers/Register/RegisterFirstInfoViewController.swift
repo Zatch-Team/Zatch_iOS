@@ -55,7 +55,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
     private let countUnitSubject = BehaviorRelay<String?>(value: nil)
     private let buyDateSubject = BehaviorRelay<Register.DateString?>(value: nil)
     private let endDateSubject = BehaviorRelay<Register.DateString?>(value: nil)
-    private let isOpenRelay = BehaviorRelay<Int>(value: Register.ProductOpenState.unopen.rawValue)
+    private let isOpenRelay = BehaviorRelay<Int>(value: Zatch.OpenState.unopen.rawValue)
     
     //MARK: - Template Method
     

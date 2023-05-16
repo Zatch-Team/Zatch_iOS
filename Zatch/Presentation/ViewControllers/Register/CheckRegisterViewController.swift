@@ -63,7 +63,7 @@ class CheckRegisterViewController: BaseViewController<LeftNavigationEtcButtonHea
             $0.endDateFrame.setInfo(value: myProductInfo.endDate ?? "")
             $0.buyDateFrame.setInfo(value: myProductInfo.buyDate ?? "")
             $0.countFrame.setInfo(value: myProductInfo.count ?? "")
-            $0.openFrame.setInfo(value: Register.ProductOpenState(rawValue: myProductInfo.isOpen)?.title ?? "")
+            $0.openFrame.setInfo(value: Zatch.OpenState(rawValue: myProductInfo.isOpen)?.title ?? "")
         }
     }
     
