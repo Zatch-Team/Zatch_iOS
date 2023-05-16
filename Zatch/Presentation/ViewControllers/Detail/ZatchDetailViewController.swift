@@ -71,57 +71,56 @@ class ZatchDetailViewController: BaseViewController<EtcButtonHeaderView, ZatchDe
             }.disposed(by: disposeBag)
     }
     
+    //MARK: - Template Method
+    //하위 클래스가 로직 구현
     func etcBtnDidTapped() {
-        
     }
     
     func likeBtnDidTapped() {
-        
     }
     
     func chatBtnDidTapped() {
-        
     }
-    
-    
-
 }
 
 extension ZatchDetailViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: DetailImageTableViewCell.self)
-            return cell
-        case 1:
-            
-            //1. exchange
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "firstWantCell", for: indexPath) as? ExchangeDetailTableViewCell else{
-//                fatalError("Cell Casting Error")
-//            }
-            
-            //2. share
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ShareDetailTableViewCell.self)
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductInfoTableViewCell.self)
-            return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MoreTextTableViewCell.self)
-            return cell
-        case 4:
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SimilarZatchTableViewCell.self)
-            return cell
+            return getImagesTableViewCell(indexPath: indexPath)
         default:
-            return UITableViewCell()
+            return getDetailTableViewCell(indexPath: indexPath)
         }
     }
     
+    private func getImagesTableViewCell(indexPath: IndexPath) -> UITableViewCell {
+        mainView.tableView.dequeueReusableCell(for: indexPath, cellType: DetailImageTableViewCell.self).then{
+            $0.images = zatch.images
+        }
+    }
     
+    private func getDetailTableViewCell(indexPath: IndexPath) -> UITableViewCell{
+        let cellType: BaseTableViewCell.Type = {
+            switch indexPath.row {
+            case 1:     return zatch.isFree ? ShareDetailTableViewCell.self : ExchangeDetailTableViewCell.self
+            case 2:     return ProductInfoTableViewCell.self
+            case 3:     return MoreTextTableViewCell.self
+            default:    fatalError()
+            }
+        }()
+        guard let cell = mainView.tableView.dequeueReusableCell(for: indexPath, cellType: cellType.self) as? BindingZatch else { fatalError() }
+        cell.bindingData(zatch)
+        return cell
+    }
+    
+    /* 보류 기능
+    private func getSimilarZatchTableViewCell(indexPath: IndexPath) -> UITableViewCell {
+        mainView.tableView.dequeueReusableCell(for: indexPath, cellType: SimilarZatchTableViewCell.self)
+    }
+     */
 }
