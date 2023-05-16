@@ -26,6 +26,6 @@ final class OthersZatchDetailViewController: ZatchDetailViewController{
     }
     
     override func chatBtnDidTapped() {
-        //TODO: 채팅방 이동
+        navigationController?.pushViewController(ChattingRoomViewController(), animated: true)
     }
 }
