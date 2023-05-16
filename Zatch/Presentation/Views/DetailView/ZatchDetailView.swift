@@ -11,12 +11,14 @@ import RxGesture
 
 class ZatchDetailView: BaseView {
     
-    var likeView: UIView{
-        bottomView.leftStack
+    var isLike: Bool = false{
+        didSet{
+            bottomView.likeImage.isSelected = isLike
+        }
     }
-    var chatView: UIView{
-        bottomView.rightStack
-    }
+    
+    lazy var likeView: UIView = bottomView.leftStack
+    lazy var chatView: UIView = bottomView.rightStack
     
     init(writer: ZatchDetailViewController.Writer) {
         super.init(frame: .zero)
