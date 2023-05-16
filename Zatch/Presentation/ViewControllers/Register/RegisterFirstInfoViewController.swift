@@ -176,7 +176,7 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
     
     private func getTextFieldTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self).then{
-            $0.informationTypeTest = .product
+            $0.informationType = .product
         }
     }
     

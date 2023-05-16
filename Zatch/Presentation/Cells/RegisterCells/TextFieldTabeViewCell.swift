@@ -9,44 +9,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
+class TextFieldTabeViewCell: BaseTableViewCell {
     
-    enum CellTypeTest{
+    enum Information{
         case product
         case question
     }
     
-    enum CellType{
-        case myProduct
-        case firstPriority
-        case secondPriority
-        case thirdPriority
-        case question
-    }
-    
-    var informationTypeTest: CellTypeTest?{
+    var informationType: Information?{
         didSet{
-            textField.placeholder = informationTypeTest?.placeholder
+            textField.placeholder = informationType?.placeholder
         }
     }
-    
-    var textFieldDelegate: UITextFieldDelegate?{
-        didSet{
-            textField.delegate = textFieldDelegate
-        }
-    }
-    
+
     var textObservable: Observable<String>!{
         textField.rx.text.orEmpty.asObservable()
     }
-    
-    var informationType: CellType!{
-        didSet{
-            textField.placeholder = informationType.placeholder
-        }
-    }
-    let disposeBag = DisposeBag()
-    private let registerManager = ZatchRegisterRequestManager.shared
     
     //MARK: - UI
     
@@ -85,50 +63,13 @@ class TextFieldTabeViewCell: BaseTableViewCell, DefaultObservable {
             make.centerY.equalToSuperview()
         }
     }
-    
-    func bind(){
-//        let input: Observable<String> = textField.rx.text.orEmpty.asObservable()
-//        input.asDriver(onErrorJustReturn: "")
-//            .drive{
-//                self.setProductNameToManager($0)
-//            }.disposed(by: disposeBag)
-    }
-    
-    private func setProductNameToManager(_ product: String){
-        switch informationType{
-        case .myProduct:
-            registerManager.productName = product
-            return
-        case .firstPriority:
-            registerManager.firstPriorityProductName = product
-            return
-        case .secondPriority:
-            registerManager.secondPriorityProductName = product
-            return
-        case .thirdPriority:
-            registerManager.thirdPriorityProductName = product
-            return
-        default:
-            return
-        }
-    }
-
 }
 
-extension TextFieldTabeViewCell.CellTypeTest{
+extension TextFieldTabeViewCell.Information{
     var placeholder: String{
         switch self{
         case .product:      return "상품 이름을 입력해주세요."
         case .question:     return "제목을 입력해주세요."
-        }
-    }
-}
-
-extension TextFieldTabeViewCell.CellType{
-    var placeholder: String{
-        switch self{
-        case .question:     return "제목을 입력해주세요."
-        default:            return "상품 이름을 입력해주세요."
         }
     }
 }

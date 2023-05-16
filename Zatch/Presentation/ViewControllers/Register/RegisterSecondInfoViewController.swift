@@ -182,7 +182,7 @@ extension RegisterSecondInfoViewController: UITableViewDelegate, UITableViewData
     
     private func getProductNameTextFieldTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
         mainView.tableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self).then{
-            $0.informationTypeTest = .product
+            $0.informationType = .product
             $0.textObservable
                 .subscribe(onNext: {
                     self.subscribeProductName($0, section: indexPath.section)
