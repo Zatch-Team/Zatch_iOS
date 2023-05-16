@@ -7,25 +7,23 @@
 
 import UIKit
 
-class DetailImageTableViewCell: BaseTableViewCell {
+final class DetailImageTableViewCell: BaseTableViewCell {
+
+    var images: [String]!{
+        didSet{
+            addImageContentToScrollView()
+            setPageControl()
+        }
+    }
     
-    //MARK: - Properties
-    var images : [UIImage?] = [
-        Image.chatCamera,
-        Image.chatClose,
-        Image.chatGallery
-    ]
+    private var imageViews = [UIImageView]()
     
-    var imageViews = [UIImageView]()
-    
-    //MARK: - UI
-    let scrollView = UIScrollView().then{
+    private let scrollView = UIScrollView().then{
         $0.isScrollEnabled = true
         $0.isPagingEnabled = true
         $0.showsHorizontalScrollIndicator = false
     }
-    
-    let pageControl = UIPageControl().then{
+    private let pageControl = UIPageControl().then{
         //TODO: 서비스 타입에 따른 색상 변경
         $0.currentPageIndicatorTintColor = UIColor(red: 255/255, green: 171/255, blue: 66/255, alpha: 0.6)
         $0.pageIndicatorTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.4)
@@ -39,15 +37,12 @@ class DetailImageTableViewCell: BaseTableViewCell {
     
     override func layout(){
         super.layout()
-        
         baseView.snp.makeConstraints{
-            $0.height.equalTo(self.baseView.snp.width)
+            $0.height.equalTo(baseView.snp.width)
         }
-        
-        self.scrollView.snp.makeConstraints{
+        scrollView.snp.makeConstraints{
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
-        
         pageControl.snp.makeConstraints{
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-16)
@@ -56,23 +51,19 @@ class DetailImageTableViewCell: BaseTableViewCell {
     
     override func initialize(){
         scrollView.delegate = self
-        addImageContentToScrollView()
-        setPageControl()
     }
-
 }
 
 extension DetailImageTableViewCell: UIScrollViewDelegate{
     
     private func addImageContentToScrollView() {
-        
         for i in 0..<images.count {
             let imageView = UIImageView().then{
                 $0.backgroundColor = .black45
             }
             let xPos = Device.width * CGFloat(i)
             imageView.frame = CGRect(x: xPos, y: 0, width: Device.width, height: Device.width)
-//            imageView.image = images[i]
+            imageView.kf.setImage(with: URL(string: images[i]))
             scrollView.addSubview(imageView)
             scrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
         }

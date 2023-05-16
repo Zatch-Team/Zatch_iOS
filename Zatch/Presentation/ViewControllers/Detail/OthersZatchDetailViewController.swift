@@ -9,7 +9,10 @@ import Foundation
 
 final class OthersZatchDetailViewController: ZatchDetailViewController{
     
+    private let viewModel: ZatchLikeViewModel
+    
     init(zatch: ZatchResponseModel){
+        self.viewModel = ZatchLikeViewModel()
         super.init(zatch: zatch, writer: .others) //임시
     }
     
@@ -22,10 +25,18 @@ final class OthersZatchDetailViewController: ZatchDetailViewController{
     }
     
     override func likeBtnDidTapped() {
-        //TODO: 좋아요 / 좋아요 취소
+        let input = ZatchLikeViewModel.Input(zatchId: zatch.id, heartState: mainView.isLike)
+        let output = viewModel.transform(input)
+        
+        output.heartState
+            .subscribe{ [weak self] in
+                if let result = $0 {
+                    self?.mainView.isLike = result.isLiked
+                }
+            }.disposed(by: disposeBag)
     }
     
     override func chatBtnDidTapped() {
-        //TODO: 채팅방 이동
+        navigationController?.pushViewController(ChattingRoomViewController(), animated: true)
     }
 }

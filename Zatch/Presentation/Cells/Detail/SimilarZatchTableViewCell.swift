@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimilarZatchTableViewCell: BaseTableViewCell {
+final class SimilarZatchTableViewCell: BaseTableViewCell {
     
     var collectionView: UICollectionView!
     

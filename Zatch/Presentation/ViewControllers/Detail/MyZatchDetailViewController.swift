@@ -39,7 +39,7 @@ class MyZatchDetailViewController: ZatchDetailViewController{
     }
     
     override func likeBtnDidTapped() {
-        //TODO: 관심 목록 이동
+        navigationController?.pushViewController(HeartListViewController(), animated: true)
     }
     
     override func chatBtnDidTapped() {

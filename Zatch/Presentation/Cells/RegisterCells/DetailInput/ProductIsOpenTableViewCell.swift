@@ -33,10 +33,10 @@ class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
         $0.axis = .horizontal
     }
     private let unOpenRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
-        $0.setTitle(Register.ProductOpenState.unopen.title)
+        $0.setTitle(Zatch.OpenState.unopen.title)
     }
     private let openRadioButton = ZatchComponent.Tag.filled(color: .purple, configuration: .height20).then{
-        $0.setTitle(Register.ProductOpenState.open.title)
+        $0.setTitle(Zatch.OpenState.open.title)
         $0.isDisabled = true
     }
     
@@ -87,13 +87,13 @@ class ProductIsOpenTableViewCell: BaseTableViewCell, DefaultObservable {
         unOpenRadioButton.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] in
-                self?.changetOpenState(recognizer: $0, state: Register.ProductOpenState.unopen.rawValue)
+                self?.changetOpenState(recognizer: $0, state: Zatch.OpenState.unopen.rawValue)
             }).disposed(by: disposeBag)
         
         openRadioButton.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] in
-                self?.changetOpenState(recognizer: $0, state: Register.ProductOpenState.open.rawValue)
+                self?.changetOpenState(recognizer: $0, state: Zatch.OpenState.open.rawValue)
             }).disposed(by: disposeBag)
     }
 

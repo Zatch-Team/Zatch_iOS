@@ -20,9 +20,10 @@ final class ZatchDetailBottomFixView: BaseView {
         }
     }
     
-    private let likeImage = UIImageView().then{
-        $0.image = Image.heart
-        $0.tintColor = .black85
+    let likeImage = UIButton().then{
+        $0.setImage(Image.heart.withTintColor(.black85), for: .normal)
+        $0.setImage(Image.heartYellow, for: .selected)
+        $0.isUserInteractionEnabled = false
     }
     
     private let likeLabel = UILabel().then{
@@ -39,6 +40,7 @@ final class ZatchDetailBottomFixView: BaseView {
     }
     
     private let chatImage = UIImageView().then{
+        $0.setImageTintColor(.black85)
         $0.image = Image.chat
     }
     
@@ -46,17 +48,19 @@ final class ZatchDetailBottomFixView: BaseView {
         $0.textColor = .black85
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    private let leftBackView = UIView()
+    private let leftBackView = UIView().then{
+        $0.isUserInteractionEnabled = true
+    }
     let leftStack = UIStackView().then{
         $0.axis = .horizontal
         $0.spacing = 6
+        $0.isUserInteractionEnabled = true
     }
     private let rightBackView = UIView()
     let rightStack = UIStackView().then{
         $0.axis = .horizontal
-        $0.alignment = .center
-        $0.distribution = .equalSpacing
         $0.spacing = 6
+        $0.isUserInteractionEnabled = true
     }
     
     override func style() {

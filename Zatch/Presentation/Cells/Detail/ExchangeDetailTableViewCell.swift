@@ -8,89 +8,47 @@
 import UIKit
 import Then
 
-class ExchangeDetailTableViewCell: BaseTableViewCell {
+final class ExchangeDetailTableViewCell: BaseTableViewCell, BindingZatch {
     
-    let myZatchCategory = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 8, top: 2, bottom: 2)).then{
-        $0.text = "생활용품"
-        $0.textColor = .zatchPurple
-        $0.backgroundColor = .purple40
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.layer.cornerRadius = 20/2
-        $0.clipsToBounds = true
-    }
+    private let myZatchCategory = ZatchComponent.Tag.filled(color: .purple, configuration: .height20)
+    private let wantZatchCategory = ZatchComponent.Tag.filled(color: .yellow, configuration: .height20)
     
-    let wantZatchCategory = PaddingLabel(padding: ZatchComponent.Padding(left: 8, right: 8, top: 2, bottom: 2)).then{
-        $0.text = "생활용품"
-        $0.textColor = .zatchDeepYellow
-        $0.backgroundColor = .yellow40
-        $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        $0.layer.cornerRadius = 20/2
-        $0.clipsToBounds = true
-    }
-    
-    let myZatchLabel = UILabel().then{
+    private let myZatchLabel = UILabel().then{
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.text = "몰랑이 피규어"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    
-    let wantZatchLabel = UILabel().then{
+    private let wantZatchLabel = UILabel().then{
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.text = "2022년 호랑이의 해 기념 호랑이 몰랑이 세트"
         $0.font = UIFont.pretendard(size: 16, family: .Bold)
     }
-    
-    let exchangeImage = UIImageView().then{
+    private let exchangeImage = UIImageView().then{
         $0.image = Image.exchange
     }
     
-    let firstBorderLine = UIView().then{
-        $0.backgroundColor = .black5
-    }
+    private let firstBorderLine = ZatchComponent.BorderLine(color: .black5, height: 1)
     
-    let firstView = UIView()
-    let firstLeftView = UIView()
-    let firstRightView = UIView()
+    private let firstView = UIView()
+    private let firstLeftView = UIView()
+    private let firstRightView = UIView()
     
-    let wantElseStackView = UIStackView().then{
+    private let wantElseStackView = UIStackView().then{
         $0.spacing = 12
         $0.axis = .horizontal
         $0.distribution = .fillProportionally
     }
     
-    let secondWantView = WantElseExchangeView().then{
-        $0.rankLabel.text = "2순위"
-    }
+    private let secondWantView = WantElseExchangeView(priority: 2)
+    private let thirdWantView = WantElseExchangeView(priority: 3)
+    private let elseBorderLine = ZatchComponent.BorderLine(color: .black5, height: 1)
     
-    let thirdWantView = WantElseExchangeView().then{
-        $0.rankLabel.text = "3순위"
-    }
-    
-    let elseBorderLine = UIView().then{
-        $0.backgroundColor = .black5
-    }
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpView()
-        setUpConstriant()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUpView(){
-        
+    override func hierarchy() {
+        super.hierarchy()
         baseView.addSubview(firstView)
         baseView.addSubview(firstBorderLine)
         baseView.addSubview(wantElseStackView)
-        baseView.addSubview(elseBorderLine)
-        
+
         firstView.addSubview(firstLeftView)
         firstView.addSubview(firstRightView)
         firstView.addSubview(exchangeImage)
@@ -103,10 +61,12 @@ class ExchangeDetailTableViewCell: BaseTableViewCell {
         
         wantElseStackView.addArrangedSubview(secondWantView)
         wantElseStackView.addArrangedSubview(thirdWantView)
-        
+        wantElseStackView.addSubview(elseBorderLine)
     }
     
-    func setUpConstriant(){
+    override func layout() {
+        
+        super.layout()
         
         firstView.snp.makeConstraints{ make in
             make.top.equalToSuperview().offset(20)
@@ -163,12 +123,35 @@ class ExchangeDetailTableViewCell: BaseTableViewCell {
             make.height.equalTo(1)
             make.leading.trailing.equalToSuperview()
         }
-        
+    }
+    
+    private func setLowerRankLayout(isBlank: Bool){
+        if isBlank {
+            setFirstBorderLineWithEmptyLowerRankView()
+        } else {
+            addLowerRankView()
+            setLowerRankViewLayout()
+        }
+    }
+    
+    private func setFirstBorderLineWithEmptyLowerRankView(){
+        firstBorderLine.snp.makeConstraints{
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
+    private func addLowerRankView(){
+        baseView.addSubview(wantElseStackView)
+        wantElseStackView.addArrangedSubview(secondWantView)
+        wantElseStackView.addArrangedSubview(thirdWantView)
+        wantElseStackView.addSubview(elseBorderLine)
+    }
+    
+    private func setLowerRankViewLayout(){
         wantElseStackView.snp.makeConstraints{
             $0.top.equalTo(firstBorderLine.snp.bottom).offset(20)
             $0.height.equalTo(34)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.trailing.bottom.equalToSuperview().inset(20)
         }
         
         secondWantView.snp.makeConstraints{
@@ -181,66 +164,70 @@ class ExchangeDetailTableViewCell: BaseTableViewCell {
         }
         
         elseBorderLine.snp.makeConstraints{
-            $0.top.equalTo(wantElseStackView.snp.bottom).offset(20)
-            $0.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(20)
+            $0.leading.trailing.equalTo(baseView)
             $0.height.equalTo(1)
         }
+    }
+    
+    func bindingData(_ zatch: ZatchResponseModel){
+        myZatchCategory.setCategoryTitle(categoryId: zatch.categoryId)
+        wantZatchCategory.setCategoryTitle(categoryId: zatch.firstPriorityCategory)
+        myZatchLabel.text = zatch.itemName
+        wantZatchLabel.text = zatch.firstPriorityItem
+        secondWantView.bindingData(categoryId: zatch.secondPriorityCategory, productName: zatch.secondPriorityItem)
+        thirdWantView.bindingData(categoryId: zatch.thirdPriorityCategory, productName: zatch.thirdPriorityItem)
+        
+        setLowerRankLayout(isBlank: zatch.isSecondAndThirdPriorityEmpty)
     }
 
 }
 
 extension ExchangeDetailTableViewCell{
     
-    class WantElseExchangeView: UIView{
+    class WantElseExchangeView: BaseView{
         
-        let rankLabel = UILabel().then{
-            $0.textColor = .zatchDeepYellow
-            $0.font = UIFont.pretendard(size: 15, family: .Bold)
-        }
-        
-        let categoryLabel = UILabel().then{
-            $0.text = "생활용품"
-            $0.numberOfLines = 1
-            $0.textColor = .black45
-            $0.font = UIFont.pretendard(size: 12, family: .Medium)
-        }
-        
-        let productLabel = UILabel().then{
-            $0.text = "몰랑이 햄스터 몰랑이 햄스터 몰랑이 햄스터 몰랑이 햄스터 "
-            $0.numberOfLines = 2
-            $0.textColor = .black85
-            $0.font = UIFont.pretendard(size: 14, family: .Bold)
-        }
-        
-        let stackView = UIStackView().then{
-            $0.axis = .vertical
-            $0.spacing = 0
-            $0.alignment = .center
-        }
-        
-        override init(frame: CGRect){
+        init(priority: Int){
+            rankLabel.text = "\(priority)순위"
             super.init(frame: .zero)
-            
-            setUpView()
-            setUpConstraint()
         }
         
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func setUpView(){
-            
-            self.addSubview(stackView)
-            self.addSubview(productLabel)
+        private let rankLabel = UILabel().then{
+            $0.textColor = .zatchDeepYellow
+            $0.font = UIFont.pretendard(size: 15, family: .Bold)
+        }
+        
+        private let categoryLabel = UILabel().then{
+            $0.numberOfLines = 1
+            $0.textColor = .black45
+            $0.font = UIFont.pretendard(size: 12, family: .Medium)
+        }
+        
+        private let productLabel = UILabel().then{
+            $0.numberOfLines = 2
+            $0.textColor = .black85
+            $0.font = UIFont.pretendard(size: 14, family: .Bold)
+        }
+        
+        private let stackView = UIStackView().then{
+            $0.axis = .vertical
+            $0.spacing = 0
+            $0.alignment = .center
+        }
+        
+        override func hierarchy() {
+            addSubview(stackView)
+            addSubview(productLabel)
             
             stackView.addArrangedSubview(rankLabel)
             stackView.addArrangedSubview(categoryLabel)
         }
         
-        func setUpConstraint(){
-        
+        override func layout() {
             stackView.snp.makeConstraints{ make in
                 make.top.leading.bottom.equalToSuperview()
                 
@@ -256,6 +243,14 @@ extension ExchangeDetailTableViewCell{
                 make.leading.equalTo(stackView.snp.trailing).offset(12) //12
                 make.trailing.equalToSuperview()
             }
+        }
+        
+        func bindingData(categoryId: Int?, productName: String){
+            guard let categoryId = categoryId else {
+                rankLabel.text = ""; return
+            }
+            categoryLabel.text = ServiceType.Zatch.getCategoryFromCategories(at: categoryId).title
+            productLabel.text = productName
         }
     }
 }

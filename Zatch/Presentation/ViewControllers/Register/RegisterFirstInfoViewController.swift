@@ -55,7 +55,7 @@ final class RegisterFirstInfoViewController: BaseViewController<LeftNavigationHe
     private let countUnitSubject = BehaviorRelay<String?>(value: nil)
     private let buyDateSubject = BehaviorRelay<Register.DateString?>(value: nil)
     private let endDateSubject = BehaviorRelay<Register.DateString?>(value: nil)
-    private let isOpenRelay = BehaviorRelay<Int>(value: Register.ProductOpenState.unopen.rawValue)
+    private let isOpenRelay = BehaviorRelay<Int>(value: Zatch.OpenState.unopen.rawValue)
     
     //MARK: - Template Method
     
@@ -176,7 +176,7 @@ extension RegisterFirstInfoViewController: UITableViewDelegate, UITableViewDataS
     
     private func getTextFieldTableViewCell(indexPath: IndexPath) -> BaseTableViewCell{
         return mainView.backTableView.dequeueReusableCell(for: indexPath, cellType: TextFieldTabeViewCell.self).then{
-            $0.informationTypeTest = .product
+            $0.informationType = .product
         }
     }
     

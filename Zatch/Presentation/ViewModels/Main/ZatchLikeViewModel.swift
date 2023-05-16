@@ -37,8 +37,7 @@ class ZatchLikeViewModel: BaseViewModel{
         let response = Observable.just(input.heartState)
             .map{
                 !$0
-            }
-            .flatMap{
+            }.flatMap{
                 $0
                 ? self.likeUseCaseInterface.execute(requestValue: requestValue)
                 : self.dislikeUseCaseInterface.execute(requestValue: requestValue)

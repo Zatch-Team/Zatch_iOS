@@ -10,20 +10,28 @@ import RxSwift
 import RxCocoa
 
 struct TemporaryData{
+    
     static let zatch = ZatchResponseModel(
         anyZatch: 1,
         categoryId: 1,
         content: "임시 콘텐츠",
         expirationDate: "2022.02.02",
         id: 10,
-        isFree: true,
+        isFree: false,
         isOpened: 1,
         itemName: "몰랑이 몰랑이",
         likeCount: 10,
         purchaseDate: "2022.02.03",
-        quantity: 1,
+        quantity: "1개",
         userId: 1,
-        isLike: false
+        isLike: false,
+        images: [""],
+        firstPriorityCategory: 1,
+        firstPriorityItem: "first",
+        secondPriorityCategory: 2,
+        secondPriorityItem: "second",
+        thirdPriorityCategory: nil,
+        thirdPriorityItem: "third"
     )
 }
 
@@ -87,7 +95,7 @@ class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseVi
         output.heartState
             .subscribe(onNext: { [weak self] in
                 if let data = $0 {
-                    self?.aroundZatch[index].isLike = data.isHeart
+                    self?.aroundZatch[index].isLike = data.isLiked
                     self?.aroundZatch[index].likeCount = data.likeCount
                 }
             }).disposed(by: disposeBag)
@@ -101,7 +109,7 @@ class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseVi
         output.heartState
             .subscribe(onNext: { [weak self] in
                 if let data = $0 {
-                    self?.popularZatch[index].isLike = data.isHeart
+                    self?.popularZatch[index].isLike = data.isLiked
                     self?.popularZatch[index].likeCount = data.likeCount
                 }
             }).disposed(by: disposeBag)
