@@ -9,5 +9,5 @@ import Foundation
 
 struct ZatchLikeResponseModel: Decodable{
     let likeCount: Int
-    let isHeart: Bool
+    let isLiked: Bool
 }

@@ -95,7 +95,7 @@ class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseVi
         output.heartState
             .subscribe(onNext: { [weak self] in
                 if let data = $0 {
-                    self?.aroundZatch[index].isLike = data.isHeart
+                    self?.aroundZatch[index].isLike = data.isLiked
                     self?.aroundZatch[index].likeCount = data.likeCount
                 }
             }).disposed(by: disposeBag)
@@ -109,7 +109,7 @@ class MainViewModel: MainViewModelInterface, ZatchLikeViewModelInterface, BaseVi
         output.heartState
             .subscribe(onNext: { [weak self] in
                 if let data = $0 {
-                    self?.popularZatch[index].isLike = data.isHeart
+                    self?.popularZatch[index].isLike = data.isLiked
                     self?.popularZatch[index].likeCount = data.likeCount
                 }
             }).disposed(by: disposeBag)
