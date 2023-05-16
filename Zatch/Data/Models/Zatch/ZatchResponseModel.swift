@@ -24,16 +24,39 @@ struct ZatchResponseModel: Decodable{
     var isLike: Bool
     let images: [String]
     
-    let p_first_category: Int?
-    let p_first_name: String
-    let p_second_category: Int?
-    let p_second_name: String
-    let p_third_category: Int?
-    let p_third_name: String
+    let firstPriorityCategory: Int?
+    let firstPriorityItem: String
+    let secondPriorityCategory: Int?
+    let secondPriorityItem: String
+    let thirdPriorityCategory: Int?
+    let thirdPriorityItem: String
+    
+    enum CodingKeys: String, CodingKey {
+        case anyZatch
+        case categoryId
+        case content
+        case expirationDate
+        case id
+        case isFree
+        case isOpened
+        case itemName
+        case likeCount
+        case purchaseDate
+        case quantity
+        case userId
+        case isLike
+        case images
+        case firstPriorityCategory = "p_first_category"
+        case firstPriorityItem = "p_first_name"
+        case secondPriorityCategory = "p_second_category"
+        case secondPriorityItem = "p_second_name"
+        case thirdPriorityCategory = "p_third_category"
+        case thirdPriorityItem = "p_third_name"
+    }
 }
 
 extension ZatchResponseModel{
     var isSecondAndThirdPriorityEmpty: Bool{
-        p_second_category == nil && p_third_category == nil
+        secondPriorityCategory == nil && thirdPriorityCategory == nil
     }
 }

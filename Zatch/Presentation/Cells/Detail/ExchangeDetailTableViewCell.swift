@@ -179,11 +179,11 @@ final class ExchangeDetailTableViewCell: BaseTableViewCell, BindingZatch {
     
     func bindingData(_ zatch: ZatchResponseModel){
         myZatchCategory.setCategoryTitle(categoryId: zatch.categoryId)
-        wantZatchCategory.setCategoryTitle(categoryId: zatch.p_first_category)
+        wantZatchCategory.setCategoryTitle(categoryId: zatch.firstPriorityCategory)
         myZatchLabel.text = zatch.itemName
-        wantZatchLabel.text = zatch.p_first_name
-        secondWantView.bindingData(categoryId: zatch.p_second_category, productName: zatch.p_second_name)
-        thirdWantView.bindingData(categoryId: zatch.p_third_category, productName: zatch.p_third_name)
+        wantZatchLabel.text = zatch.firstPriorityItem
+        secondWantView.bindingData(categoryId: zatch.secondPriorityCategory, productName: zatch.secondPriorityItem)
+        thirdWantView.bindingData(categoryId: zatch.thirdPriorityCategory, productName: zatch.thirdPriorityItem)
         
         setLowerRankLayout(isBlank: zatch.isSecondAndThirdPriorityEmpty)
     }

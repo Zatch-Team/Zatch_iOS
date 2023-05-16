@@ -26,12 +26,12 @@ struct TemporaryData{
         userId: 1,
         isLike: false,
         images: [""],
-        p_first_category: 1,
-        p_first_name: "first",
-        p_second_category: 2,
-        p_second_name: "second",
-        p_third_category: nil,
-        p_third_name: "third"
+        firstPriorityCategory: 1,
+        firstPriorityItem: "first",
+        secondPriorityCategory: 2,
+        secondPriorityItem: "second",
+        thirdPriorityCategory: nil,
+        thirdPriorityItem: "third"
     )
 }
 
