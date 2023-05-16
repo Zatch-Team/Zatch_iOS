@@ -120,7 +120,6 @@
 		57600C092963076E00A7F27B /* GatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C082963076E00A7F27B /* GatchDetailViewController.swift */; };
 		57600C0D296307E000A7F27B /* GatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0C296307E000A7F27B /* GatchDetailView.swift */; };
 		57600C0F296307F600A7F27B /* GatchDetailBottomFixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */; };
-		57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */; };
 		576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A628D29CC70067D2C5 /* BlockUserViewController.swift */; };
 		576341A928D29CE10067D2C5 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341A828D29CE10067D2C5 /* BlockUserView.swift */; };
 		576341AB28D29D120067D2C5 /* BlockUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */; };
@@ -541,7 +540,6 @@
 		57600C082963076E00A7F27B /* GatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailViewController.swift; sourceTree = "<group>"; };
 		57600C0C296307E000A7F27B /* GatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailView.swift; sourceTree = "<group>"; };
 		57600C0E296307F600A7F27B /* GatchDetailBottomFixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailBottomFixView.swift; sourceTree = "<group>"; };
-		57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatchDetailInfomationTableViewCell.swift; sourceTree = "<group>"; };
 		576341A628D29CC70067D2C5 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		576341A828D29CE10067D2C5 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
 		576341AA28D29D120067D2C5 /* BlockUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -1192,7 +1190,7 @@
 				23B7FBAA28CEBFBC0018642E /* Mypage */,
 				23A86A5728C731CB00B073CB /* Main */,
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
-				23C9031C28C5CF4000FB6D3D /* DetailCells */,
+				23C9031C28C5CF4000FB6D3D /* Detail */,
 				23C9031928C5CEDE00FB6D3D /* RegisterCells */,
 				23C9031828C5CEC900FB6D3D /* ChattingCells */,
 			);
@@ -1245,14 +1243,18 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
-		23C9031C28C5CF4000FB6D3D /* DetailCells */ = {
+		23C9031C28C5CF4000FB6D3D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				5767D77428682D120075DB28 /* DetailImageTableViewCell.swift */,
-				57600C0A2963077F00A7F27B /* Zatch */,
-				57600C0B2963078B00A7F27B /* Gatch */,
+				5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */,
+				57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */,
+				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
+				5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */,
+				5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */,
+				5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */,
 			);
-			path = DetailCells;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		23C9031F28C5CFA700FB6D3D /* SearchView */ = {
@@ -1602,27 +1604,6 @@
 				575BF72027E0CBC8008D5B3C /* Info.plist */,
 			);
 			path = ZatchUITests;
-			sourceTree = "<group>";
-		};
-		57600C0A2963077F00A7F27B /* Zatch */ = {
-			isa = PBXGroup;
-			children = (
-				5767D776286832420075DB28 /* ExchangeDetailTableViewCell.swift */,
-				57E75EC428E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift */,
-				5767D77A286883020075DB28 /* ProductInfoTableViewCell.swift */,
-				5767D77E28695BD60075DB28 /* MoreTextTableViewCell.swift */,
-				5767D780286962A20075DB28 /* SimilarZatchTableViewCell.swift */,
-				5767D782286962BC0075DB28 /* SimilarZatchCollectionViewCell.swift */,
-			);
-			path = Zatch;
-			sourceTree = "<group>";
-		};
-		57600C0B2963078B00A7F27B /* Gatch */ = {
-			isa = PBXGroup;
-			children = (
-				57600C122963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift */,
-			);
-			path = Gatch;
 			sourceTree = "<group>";
 		};
 		5767D788286C0ACB0075DB28 /* UICheckBox */ = {
@@ -3073,7 +3054,6 @@
 				57EBCE3E28A88EF200212D20 /* BasicAlertViewController.swift in Sources */,
 				EE27C54E29C890BB00285CC5 /* ZatchSearchResultViewModel.swift in Sources */,
 				EEC3752D29F8D9AE00190B22 /* ImageDetailViewController.swift in Sources */,
-				57600C132963085E00A7F27B /* GatchDetailInfomationTableViewCell.swift in Sources */,
 				57C23CCD28B1D93E006E7915 /* ChatEtcBtnView.swift in Sources */,
 				578B7A9828AC6AF900E7B4F4 /* ChattingRoomViewController.swift in Sources */,
 				23A86A5F28C7408C00B073CB /* MainZatchCollectionViewCell.swift in Sources */,
