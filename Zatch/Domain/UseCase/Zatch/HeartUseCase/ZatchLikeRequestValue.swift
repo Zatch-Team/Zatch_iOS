@@ -9,4 +9,5 @@ import Foundation
 
 struct ZatchLikeRequestValue {
     let zatchId: Int
+    let userId: Int = UserManager.userId ?? 0
 }

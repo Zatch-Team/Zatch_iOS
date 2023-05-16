@@ -33,8 +33,11 @@ extension ZatchRouter{
     
     var task: Task {
         switch self {
-        case .likeZatch, .dislikeZatch:                     return .requestPlain
-        case .registerZatch(let request, let images):       return .uploadMultipart(getFormData(requestModel: request, images: images))
+        case .likeZatch(let request), .dislikeZatch(let request):
+            let requestDict = ["userId" : request.userId]
+            return .requestParameters(parameters: requestDict, encoding: JSONEncoding.default)
+        case .registerZatch(let request, let images):
+            return .uploadMultipart(getFormData(requestModel: request, images: images))
         }
     }
     
