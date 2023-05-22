@@ -27,7 +27,7 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
             currentSelectCell?.isSelectState = true
         }
     }
-    private let viewModel = FindWantZatchSearchViewModel()
+    private let viewModel: any FindWantZatchViewModelInterface = FindWantZatchSearchViewModel()
     
     init(){
         super.init(headerView: BaseHeaderView(), mainView: FindWantZatchSearchView())
@@ -41,6 +41,11 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.viewDidLoad()
     }
     
     override func initialize() {
@@ -65,6 +70,10 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
     }
     
     override func bind() {
+        
+        bindReloadData()
+        
+        guard let viewModel = viewModel as? FindWantZatchSearchViewModel else { return }
 
         let input = FindWantZatchSearchViewModel.Input(productNameTextField: mainView.searchTextFieldFrame.textField.rx.text.orEmpty.asObservable())
     
@@ -72,20 +81,31 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
         let output = viewModel.transform(input)
         
         //TODO: editingChanged와 editingDidBegin 조합해서 observable 방출시키고 싶다
-        mainView.searchTextFieldFrame.textField.rx.controlEvent([.editingChanged]).asObservable()
+        mainView.searchTextFieldFrame.textField.rx.controlEvent([.editingChanged])
+            .asObservable()
             .subscribe(onNext: {
                 self.currentSelectCell = nil
             }).disposed(by: disposeBag)
         
         output.searchProduct
-            .drive(onNext: { [weak self] in
-                self?.mainView.searchTextFieldFrame.textField.text = $0
-            }).disposed(by: disposeBag)
+            .drive(mainView.searchTextFieldFrame.textField.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindReloadData(){
+        viewModel.reloadPopularData
+            .subscribe{ [weak self] _ in
+                self?.mainView.popularKeywordCollectionView.reloadData()
+            }.disposed(by: disposeBag)
         
+        viewModel.reloadLookingForData
+            .subscribe{ [weak self] _ in
+                self?.mainView.lookingForCollectionView.reloadData()
+            }.disposed(by: disposeBag)
     }
     
     @objc private func willMoveSearchResultViewController(){
-        self.navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
+        navigationController?.pushViewController(ZatchSearchResultViewController(), animated: true)
     }
     
     private func setFlexibleSearchAttribute(){
@@ -98,41 +118,52 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
 
 extension FindWantZatchSearchViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate, UICollectionViewDataSource{
     
+    private func getCollectionViewType(tag: Int) -> SearchKeywordType{
+        guard let type = SearchKeywordType(rawValue: tag) else { fatalError() }
+        return type
+    }
+    
+    private func getKeywordTitle(tag: Int, index: Int) -> String{
+        switch getCollectionViewType(tag: tag) {
+        case .popular:      return viewModel.popularKeywords[index].keyword
+        case .want:         return viewModel.lookingForZatches[index]
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        collectionView == mainView.popularKeywordCollectionView ? viewModel.getPopularKeywordsCount() : viewModel.getLookingForZatchCount()
+        switch getCollectionViewType(tag: collectionView.tag) {
+        case .popular:      return viewModel.popularKeywords.count
+        case .want:         return viewModel.lookingForZatches.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let title = getCellTitle(of: collectionView, index: indexPath.row)
+        let title = getKeywordTitle(tag: collectionView.tag, index: indexPath.row)
         return collectionView.dequeueReusableCell(for: indexPath, cellType: SearchTagCollectionViewCell.self).then{
             $0.setTitle(title)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let title = getCellTitle(of: collectionView, index: indexPath.row)
+        let title = getKeywordTitle(tag: collectionView.tag, index: indexPath.row)
         return SearchTagCollectionViewCell.estimatedSize(of: title)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if(mainView.searchTextFieldFrame.textField.isFocused){
+        if mainView.searchTextFieldFrame.textField.isFocused {
             mainView.searchTextFieldFrame.textField.resignFirstResponder()
         }
 
         if let willSelectCell = collectionView.cellForItem(at: indexPath, cellType: SearchTagCollectionViewCell.self){
-            if(currentSelectCell == willSelectCell){
+            if currentSelectCell == willSelectCell {
                 currentSelectCell = nil
-                viewModel.deselectCell()
-                return
+                viewModel.productName.accept("")
+            } else {
+                currentSelectCell = willSelectCell
+                viewModel.productName.accept(getKeywordTitle(tag: collectionView.tag, index: indexPath.row))
             }
-            currentSelectCell = willSelectCell
-            collectionView == mainView.popularKeywordCollectionView ? viewModel.selectPopularKeyword(at: indexPath.row) : viewModel.selectLookingForZatch(at: indexPath.row)
         }
-    }
-    
-    private func getCellTitle(of collectionView: UICollectionView, index: Int) -> String{
-        collectionView == mainView.popularKeywordCollectionView ? viewModel.getPopularKeyword(at: index) : viewModel.getLookingForZatch(at: index)
     }
 }
 

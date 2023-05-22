@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        var startViewController: UIViewController
 //        startViewController = UserManager.token == nil ? UINavigationController(rootViewController: OnboardingViewController()) : TabBarController()
         
-        window?.rootViewController = UINavigationController(rootViewController: ZatchDetailViewController.getInstance(data: TemporaryData.zatch))
+        window?.rootViewController = UINavigationController(rootViewController: FindWantZatchSearchViewController())
 //        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
     }
