@@ -44,13 +44,24 @@ class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, Find
     }
     
     override func initialize() {
-        
         super.initialize()
-        
+        addBtnTarget()
+        setCollectionViewDelegate()
+        attachCollectionViewTag()
+    }
+    
+    private func addBtnTarget(){
         mainView.nextButton.addTarget(self, action: #selector(willMoveSearchResultViewController), for: .touchUpInside)
-        
+    }
+    
+    private func setCollectionViewDelegate(){
         mainView.popularKeywordCollectionView.initializeDelegate(self)
         mainView.lookingForCollectionView.initializeDelegate(self)
+    }
+    
+    private func attachCollectionViewTag(){
+        mainView.popularKeywordCollectionView.tag = SearchKeywordType.popular.rawValue
+        mainView.lookingForCollectionView.tag = SearchKeywordType.want.rawValue
     }
     
     override func bind() {
