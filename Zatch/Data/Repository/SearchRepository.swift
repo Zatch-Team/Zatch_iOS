@@ -6,12 +6,26 @@
 //
 
 import Foundation
+import RxSwift
 
 class SearchRepository: SearchRepositotyInterface{
+
     func getSearchResult() {
         
     }
-    
-    func getPopularKeyword() {
+
+    func getPopularKeywords() -> Observable<[PopularKeywords]?> {
+        let observable = Observable<[PopularKeywords]?>.create { observer -> Disposable in
+            let requestReference: () = SearchService.shared.getPopularKeywords{ response in
+                switch response {
+                case .success(let data):
+                    observer.onNext(data.popularItem)
+                case .failure:
+                    observer.onNext(nil)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
     }
 }
