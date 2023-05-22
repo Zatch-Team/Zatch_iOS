@@ -9,6 +9,18 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+protocol GetPopularSearchKeywordInterface{
+    var popularKeywords: [String] { get }
+}
+
+protocol GetWantZatchKeywordInterface{
+    var lookingForZatches : [String] { get }
+}
+
+protocol FindWantZatchViewModelInterface: BaseViewModel, GetPopularSearchKeywordInterface, GetWantZatchKeywordInterface {
+    func viewDidLoad()
+}
+
 class FindWantZatchSearchViewModel: BaseViewModel{
     
     private var searchPopularKeywords = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
