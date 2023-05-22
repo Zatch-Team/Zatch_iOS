@@ -284,6 +284,9 @@
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
 		EE410197298557440083B7E0 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410196298557440083B7E0 /* ImageDetailView.swift */; };
+		EE42D5BF2A1B33FC001BEF64 /* PopularKeywordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42D5BE2A1B33FC001BEF64 /* PopularKeywordResponseModel.swift */; };
+		EE42D5C22A1B3575001BEF64 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42D5C12A1B3575001BEF64 /* SearchRouter.swift */; };
+		EE42D5C42A1B357C001BEF64 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42D5C32A1B357C001BEF64 /* SearchService.swift */; };
 		EE4CE7B929F910AF00943FE5 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = EE4CE7B829F910AF00943FE5 /* FAQ.json */; };
 		EE4CE7C729FCF60E00943FE5 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */; };
 		EE4CE7CA29FCF6FD00943FE5 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7C929FCF6FD00943FE5 /* LoginResponseModel.swift */; };
@@ -711,6 +714,9 @@
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
 		EE410196298557440083B7E0 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		EE42D5BE2A1B33FC001BEF64 /* PopularKeywordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularKeywordResponseModel.swift; sourceTree = "<group>"; };
+		EE42D5C12A1B3575001BEF64 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		EE42D5C32A1B357C001BEF64 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		EE4CE7B829F910AF00943FE5 /* FAQ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		EE4CE7C929FCF6FD00943FE5 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -1045,6 +1051,7 @@
 				57B32C2F291F55F20018C0CB /* Zatch */,
 				57A28D5428D1A07000263079 /* Map */,
 				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
+				EE42D5BD2A1B33DF001BEF64 /* Search */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2010,6 +2017,23 @@
 			path = MyZatch;
 			sourceTree = "<group>";
 		};
+		EE42D5BD2A1B33DF001BEF64 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EE42D5BE2A1B33FC001BEF64 /* PopularKeywordResponseModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EE42D5C02A1B356D001BEF64 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EE42D5C12A1B3575001BEF64 /* SearchRouter.swift */,
+				EE42D5C32A1B357C001BEF64 /* SearchService.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		EE4CE7B729F9105000943FE5 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -2096,6 +2120,7 @@
 		EE4D887D29CFFA69003B6383 /* MoyaService */ = {
 			isa = PBXGroup;
 			children = (
+				EE42D5C02A1B356D001BEF64 /* Search */,
 				EE4CE7D829FD028E00943FE5 /* User */,
 				EE4D887729CFF399003B6383 /* Zatch */,
 				EE4D887829CFF3AA003B6383 /* Map */,
@@ -2791,6 +2816,7 @@
 				EEC3753429F8E22300190B22 /* ModifyProfileViewModel.swift in Sources */,
 				5722462928C77D64009B7C78 /* SearchAddressResultBottomSheet.swift in Sources */,
 				235613FD28D09DCD00D44E97 /* ZatchTableViewCell.swift in Sources */,
+				EE42D5C22A1B3575001BEF64 /* SearchRouter.swift in Sources */,
 				23B051CA28E21BAD005D08EA /* MyQuestionTableViewCell.swift in Sources */,
 				57A28D5628D1A0BB00263079 /* GetTownResponseModel.swift in Sources */,
 				57713944281F596C0066DEEB /* TopTitleView.swift in Sources */,
@@ -2891,6 +2917,7 @@
 				576341A728D29CC70067D2C5 /* BlockUserViewController.swift in Sources */,
 				EE1840CE2A0C9FAB00DF5D06 /* ZatchLikeResponseModel.swift in Sources */,
 				EE7AFF5729D16652007872B9 /* MeetingLocationRegisterMapViewController.swift in Sources */,
+				EE42D5C42A1B357C001BEF64 /* SearchService.swift in Sources */,
 				574EC1ED282E62A000E3CE4B /* RegisterCategorySelectTableViewCell.swift in Sources */,
 				57FFEDC528DD2F0D0041719B /* CheckShareRegisterViewController.swift in Sources */,
 				EE0AD54729E5033400C1CDA1 /* RegisterFirstInfoViewController.swift in Sources */,
@@ -2978,6 +3005,7 @@
 				571C0C7728AB5070002293B6 /* HiddenDeleteView.swift in Sources */,
 				23B7FBB028CECEAF0018642E /* MyZatchStatisticTableViewCell.swift in Sources */,
 				232DD0AD28ECE00900BC6E91 /* OtherReviewTableViewCell.swift in Sources */,
+				EE42D5BF2A1B33FC001BEF64 /* PopularKeywordResponseModel.swift in Sources */,
 				57D6D78D28CDB59100F805B7 /* MessageAlertViewController.swift in Sources */,
 				5722461028C074AE009B7C78 /* TimePickerAlertViewController.swift in Sources */,
 				57468A74289D071100056691 /* UIButton.swift in Sources */,
