@@ -9,15 +9,32 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class FindWantZatchSearchViewModel: BaseViewModel{
+protocol GetPopularSearchKeywordInterface{
+    var reloadPopularData: PublishSubject<Void> { get }
+    var popularKeywords: [PopularKeywords] { get }
+}
+
+protocol GetWantZatchKeywordInterface{
+    var reloadLookingForData: PublishSubject<Void> { get }
+    var lookingForZatches : [String] { get }
+}
+
+protocol SearchProductInterface{
+    var productName: PublishRelay<String> { get }
+}
+
+protocol FindWantZatchViewModelInterface: BaseViewModel, GetPopularSearchKeywordInterface, GetWantZatchKeywordInterface, SearchProductInterface {
+    func viewDidLoad()
+}
+
+class FindWantZatchSearchViewModel: FindWantZatchViewModelInterface{
+
+    var popularKeywords = [PopularKeywords]()
+    var lookingForZatches = ["몰랑이", "몰랑", "몰랑몰랑"]//[String]()
     
-    private var searchPopularKeywords = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
-    private var lookingForZatches = ["몰랑이","몰랑몰랑","몰랑"] //최대 3개
-    
-    private let searchManager = ZatchSearchRequestManager.shared
-    
-    private let wantProductName = PublishSubject<String>()
-    private let disposeBag = DisposeBag()
+    let productName = PublishRelay<String>()
+    let reloadPopularData = PublishSubject<Void>()
+    let reloadLookingForData = PublishSubject<Void>()
     
     private let popularKeywordUseCase: PopularKeywordUseCaseInterface
     private let lookingForZatchUseCase: LookingForZatchUseCaseInterface
@@ -27,6 +44,9 @@ class FindWantZatchSearchViewModel: BaseViewModel{
         self.popularKeywordUseCase = popularKeywordUseCase
         self.lookingForZatchUseCase = lookingForZatchUseCase
     }
+    
+    private let disposeBag = DisposeBag()
+    private let searchManager = ZatchSearchRequestManager.shared
     
     struct Input{
         let productNameTextField: Observable<String>
@@ -40,15 +60,15 @@ class FindWantZatchSearchViewModel: BaseViewModel{
         
         input.productNameTextField
             .subscribe{
-                self.wantProductName.onNext($0)
+                self.productName.accept($0)
             }.disposed(by: disposeBag)
         
-        wantProductName
+        productName
             .subscribe(onNext: {
                 self.searchManager.wantProduct = $0
             }).disposed(by: disposeBag)
         
-        let productName = wantProductName
+        let productName = productName
             .asDriver(onErrorJustReturn: "")
         
         return Output(searchProduct: productName)
@@ -58,31 +78,17 @@ class FindWantZatchSearchViewModel: BaseViewModel{
 
 extension FindWantZatchSearchViewModel{
     
-    func getPopularKeywordsCount() -> Int{
-        searchPopularKeywords.count
-    }
-    
-    func getLookingForZatchCount() -> Int{
-        lookingForZatches.count
-    }
-    
-    func getPopularKeyword(at: Int) -> String{
-        searchPopularKeywords[at]
-    }
-    
-    func getLookingForZatch(at: Int) -> String{
-        lookingForZatches[at]
-    }
-    
-    func selectPopularKeyword(at index: Int){
-        wantProductName.onNext(searchPopularKeywords[index])
-    }
-    
-    func selectLookingForZatch(at index: Int){
-        wantProductName.onNext(lookingForZatches[index])
-    }
-    
-    func deselectCell(){
-        wantProductName.onNext("")
+    func viewDidLoad(){
+        //인기있는 재치 키워드 조회
+        popularKeywordUseCase.execute()
+            .subscribe{ [weak self] in
+                if let data = $0 {
+                    self?.popularKeywords = data
+                    self?.reloadPopularData.onNext(Void())
+                }
+            }.disposed(by: disposeBag)
+        
+        //내가 찾는 재치 키워드 조회
+        reloadLookingForData.onNext(Void())
     }
 }

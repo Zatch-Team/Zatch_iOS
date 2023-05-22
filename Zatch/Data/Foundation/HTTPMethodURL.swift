@@ -10,6 +10,7 @@ import Foundation
 enum HTTPMethodURL {
 
     static let zatchUrl = "/zatch"
+    static let searchUrl = "/search"
     static let userUrl = "/users"
     static let kakaoLocal = "/v2/local"
     
@@ -21,6 +22,9 @@ enum HTTPMethodURL {
         
         //USER
         static let logout = userUrl + "/logout"
+        
+        //SEARCH
+        static let popularKeywords = zatchUrl + searchUrl + "/popularItem"
     }
     
     struct POST {

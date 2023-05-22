@@ -6,12 +6,10 @@
 //
 
 import Foundation
-
-struct PopularKeywordRequestValue {
-}
+import RxSwift
 
 protocol PopularKeywordUseCaseInterface {
-    func execute(requestValue: PopularKeywordRequestValue) async throws
+    func execute() -> Observable<[PopularKeywords]?>
 }
 
 final class PopularKeywordUseCase: PopularKeywordUseCaseInterface {
@@ -22,7 +20,7 @@ final class PopularKeywordUseCase: PopularKeywordUseCaseInterface {
         self.searchRepository = searchRepository
     }
 
-    func execute(requestValue: PopularKeywordRequestValue) async throws {
-        return try await searchRepository.getPopularKeyword()
+    func execute() -> Observable<[PopularKeywords]?>{
+        return searchRepository.getPopularKeywords()
     }
 }

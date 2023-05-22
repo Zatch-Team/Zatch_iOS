@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol SearchRepositotyInterface{
-    func getPopularKeyword()
+    func getPopularKeywords() -> Observable<[PopularKeywords]?>
     func getSearchResult()
 }
