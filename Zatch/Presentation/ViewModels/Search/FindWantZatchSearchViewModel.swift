@@ -10,14 +10,20 @@ import RxSwift
 import RxCocoa
 
 protocol GetPopularSearchKeywordInterface{
-    var popularKeywords: [String] { get }
+    var reloadPopularData: PublishSubject<Void> { get }
+    var popularKeywords: [PopularKeywords] { get }
 }
 
 protocol GetWantZatchKeywordInterface{
+    var reloadLookingForData: PublishSubject<Void> { get }
     var lookingForZatches : [String] { get }
 }
 
-protocol FindWantZatchViewModelInterface: BaseViewModel, GetPopularSearchKeywordInterface, GetWantZatchKeywordInterface {
+protocol SearchProductInterface{
+    var productName: PublishRelay<String> { get }
+}
+
+protocol FindWantZatchViewModelInterface: BaseViewModel, GetPopularSearchKeywordInterface, GetWantZatchKeywordInterface, SearchProductInterface {
     func viewDidLoad()
 }
 
