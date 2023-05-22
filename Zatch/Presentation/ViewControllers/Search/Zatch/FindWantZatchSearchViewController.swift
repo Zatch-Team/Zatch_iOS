@@ -12,6 +12,12 @@ import RxSwift
 
 class FindWantZatchSearchViewController: BaseViewController<BaseHeaderView, FindWantZatchSearchView> {
     
+    @frozen
+    enum SearchKeywordType: Int{
+        case popular = 100
+        case want = 200
+    }
+    
     //MARK: - Properties
     private var currentSelectCell: SearchTagCollectionViewCell?{
         willSet{
