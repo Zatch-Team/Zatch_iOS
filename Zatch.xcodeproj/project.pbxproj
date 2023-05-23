@@ -1192,12 +1192,12 @@
 				23C9032128C5CFDD00FB6D3D /* SearchCells */,
 				23C9031C28C5CF4000FB6D3D /* Detail */,
 				23C9031928C5CEDE00FB6D3D /* RegisterCells */,
-				23C9031828C5CEC900FB6D3D /* ChattingCells */,
+				23C9031828C5CEC900FB6D3D /* Chat */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		23C9031828C5CEC900FB6D3D /* ChattingCells */ = {
+		23C9031828C5CEC900FB6D3D /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				571C0C7628AB5070002293B6 /* HiddenDeleteView.swift */,
@@ -1211,7 +1211,7 @@
 				5722460928BE0D1B009B7C78 /* LeftChattingImageTableViewCell.swift */,
 				5722462A28C77FA5009B7C78 /* SearchAddressResultTableViewCell.swift */,
 			);
-			path = ChattingCells;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		23C9031928C5CEDE00FB6D3D /* RegisterCells */ = {
