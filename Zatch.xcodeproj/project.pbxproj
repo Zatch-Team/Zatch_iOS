@@ -1066,7 +1066,7 @@
 				EEE326AE2998C6CC0017DF46 /* Search */,
 				EE642C5B298FAE1D00E15869 /* Register */,
 				23CB3CF828C7D85500C42858 /* Main */,
-				5722461928C6C84D009B7C78 /* Chatting */,
+				5722461928C6C84D009B7C78 /* Chat */,
 				EEC3752E29F8E17800190B22 /* MyPage */,
 			);
 			path = ViewModels;
@@ -1365,7 +1365,7 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
-		5722461928C6C84D009B7C78 /* Chatting */ = {
+		5722461928C6C84D009B7C78 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */,
@@ -1373,7 +1373,7 @@
 				57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */,
 				57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */,
 			);
-			path = Chatting;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		5724EB59290FC08A00DC529B /* Map */ = {
