@@ -41,12 +41,13 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     }
 
     struct Input{
-//        let messageObservable: Observable<String>
-//        let sendBtnTap: ControlEvent<Void>
-//        let exitBtnTap: ControlEvent<Void>
+        let messageObservable: Observable<String>
+        let sendBtnTap: ControlEvent<Void>
+        let exitBtnTap: Observable<Void>
     }
     
     struct Output{
+//        let canSendMessage: Driver<Bool>
 //        let exitResponse: Observable<ResponseState>
     }
     
