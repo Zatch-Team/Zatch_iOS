@@ -27,19 +27,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     //MARK: - Properties
     var memberBlockBottomSheet: MemberDeclarationSheetViewController?
     var sideMenuViewController : ChattingSideSheetViewController?
-    
-    var messageData = [ChatMessage](){
-        didSet{
-            mainView.tableView.reloadData()
-        }
-    }
-    
-    //MARK: - UI
-    
-    private let blurView = UIView().then{
-        $0.backgroundColor = .popupBackgroundColor
-    }
-    
+
     init(){
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
@@ -48,34 +36,61 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
+    private let viewModel = ChattingRoomViewModel()
+    private let blurView = UIView().then{
+        $0.backgroundColor = .popupBackgroundColor
+    }
+    
     //MARK: - Override
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.viewDidLoad()
+    }
+    
     override func initialize() {
-        
         super.initialize()
-
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
-        
+        setViewGesture()
+        setHeaderViewAction()
+        setInputViewTarget()
+        setEtcViewTarget()
+        setTableViewDelegate()
+    }
+    
+    private func setViewGesture(){
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
+    }
+    
+    private func setHeaderViewAction(){
         headerView.etcButton.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
         headerView.opponentNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOthersProfile)))
-        
+    }
+    
+    private func setInputViewTarget(){
         mainView.chatInputView.chatTextField.delegate = self
         mainView.chatInputView.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
         mainView.chatInputView.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
-        
+    }
+    
+    private func setEtcViewTarget(){
         mainView.chatEtcBtnView.cameraStackView.button.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
         mainView.chatEtcBtnView.galleryStackView.button.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
         mainView.chatEtcBtnView.appointmentStackView.button.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
-        
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+    }
+    
+    private func setTableViewDelegate(){
+        mainView.tableView.initializeDelegate(self)
+    }
+    
+    override func bind() {
+        let input = ChattingRoomViewModel.Input()
+        let output = viewModel.transform(input)
     }
     
     //MARK: - Action
     
     @objc func viewDidTapped(){
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     @objc func chatSendBtnDidClicked(){
@@ -84,7 +99,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
                                      image: nil,
                                      chatType: .RightMessage)
         
-        messageData.append(newMessage)
+//        messageData.append(newMessage)
         mainView.chatInputView.sendBtn.isEnabled = false
         mainView.chatInputView.chatTextField.text = nil
 
@@ -95,7 +110,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         mainView.chatInputView.etcBtn.isSelected.toggle()
         
-        if(mainView.chatInputView.etcBtn.isSelected){
+        if mainView.chatInputView.etcBtn.isSelected {
             mainView.chatBottomFrame.addArrangedSubview(mainView.chatEtcBtnView)
         }else{
             mainView.chatEtcBtnView.removeFromSuperview()
@@ -109,7 +124,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
             $0.sourceType = .camera
         }
 
-        self.navigationController?.present(cameraPicker, animated: true, completion: nil)
+        navigationController?.present(cameraPicker, animated: true, completion: nil)
     }
     
     @objc func galleryBtnDidClicked(){
@@ -119,7 +134,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
             $0.sourceType = .photoLibrary
         }
         
-        self.navigationController?.present(imagePicker, animated: true, completion: nil)
+        navigationController?.present(imagePicker, animated: true, completion: nil)
     }
     
     @objc func appointmentBtnDidClicked(){
@@ -127,7 +142,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         bottomSheet.loadViewIfNeeded()
         
-        self.present(bottomSheet, animated: true, completion: nil)
+        present(bottomSheet, animated: true, completion: nil)
     }
     
     //오른쪽 기타 메뉴 함수
@@ -205,7 +220,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     }
 
     @objc private func goOthersProfile() {
-        self.navigationController?.pushViewController(OthersProfileViewController(nickName: "쑤야"), animated: true)
+        navigationController?.pushViewController(OthersProfileViewController(nickName: "쑤야"), animated: true)
     }
 }
 
@@ -218,12 +233,12 @@ extension ChattingRoomViewController: UITextViewDelegate{
 extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageData.count
+        viewModel.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let chatData = messageData[indexPath.row]
+        let chatData = viewModel.messages[indexPath.row]
         
         switch chatData.chatType {
         case .RightMessage:
