@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol GetMemberListOfChattingUseCaseInterface {
-    func execute(roomId: String) -> Observable<[String]>
+    func execute(roomId: String) -> Observable<[String]?>
 }
 
 final class GetMemberListOfChattingUseCase: GetMemberListOfChattingUseCaseInterface {
@@ -20,7 +20,7 @@ final class GetMemberListOfChattingUseCase: GetMemberListOfChattingUseCaseInterf
         self.chatRepository = chatRepository
     }
     
-    func execute(roomId: String) -> Observable<[String]> {
+    func execute(roomId: String) -> Observable<[String]?> {
         return chatRepository.getChattingMembers(roomId: roomId)
     }
 }
