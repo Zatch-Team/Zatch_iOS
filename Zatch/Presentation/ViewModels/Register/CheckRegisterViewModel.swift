@@ -27,7 +27,7 @@ class CheckRegisterViewModel: BaseViewModel{
     }
     
     struct Output{
-        let registerResponse: Observable<RequestResponse>
+        let registerResponse: Observable<ResponseState>
     }
     
     func transform(_ input: Input) -> Output {

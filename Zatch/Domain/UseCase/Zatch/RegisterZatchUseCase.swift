@@ -35,7 +35,7 @@ struct RegisterZatchRequestModel: Encodable {
 }
 
 protocol RegisterUseCaseInterface {
-    func execute(requestValue: RegisterZatchDTO) -> Observable<RequestResponse>
+    func execute(requestValue: RegisterZatchDTO) -> Observable<ResponseState>
 }
 
 final class RegisterUseCase: RegisterUseCaseInterface {
@@ -46,7 +46,7 @@ final class RegisterUseCase: RegisterUseCaseInterface {
         self.zatchRepository = zatchRepository
     }
 
-    func execute(requestValue: RegisterZatchDTO) -> Observable<RequestResponse>{
+    func execute(requestValue: RegisterZatchDTO) -> Observable<ResponseState>{
         return zatchRepository.registerZatch(requestModel: requestValue)
     }
 }
