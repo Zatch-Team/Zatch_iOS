@@ -22,11 +22,7 @@ struct ChatMessage{
     //TODO: 전송 시간 기준 프론트? 서버?
 }
 
-class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, ChattingRoomView> {
-
-    //MARK: - Properties
-    var memberBlockBottomSheet: MemberDeclarationSheetViewController?
-    var sideMenuViewController : ChattingSideSheetViewController?
+final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, ChattingRoomView> {
 
     init(){
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
@@ -36,7 +32,16 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
+    private var willBlockUserIndex: Int?
+    private var sideVC: SideMenuNavigationController!
+    
     private let viewModel = ChattingRoomViewModel()
+    private let blockBottomSheet = MemberDeclarationSheetViewController()
+    private let exitRoomAlert = Alert.ChattingRoomExit.getInstance()
+    
+    private let cameraPickerVC = UIImagePickerController()
+    private let imagePickerVC = UIImagePickerController()
+
     private let blurView = UIView().then{
         $0.backgroundColor = .popupBackgroundColor
     }
@@ -55,6 +60,48 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         setInputViewTarget()
         setEtcViewTarget()
         setTableViewDelegate()
+        setPickerViewControllerDelegate()
+        initializeSideViewController()
+        initializeBlockBottomSheet()
+    }
+    
+    private func initializeSideViewController(){
+        
+        let insideVC = ChattingSideSheetViewController()
+        
+        insideVC.mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
+        
+        insideVC.declarationHandler = { indexPath in
+            self.willBlockUserIndex = indexPath.row
+            insideVC.dismiss(animated: true, completion: {
+                self.blockBottomSheet.show(in: self)
+            })
+        }
+        
+        sideVC = SideMenuNavigationController(rootViewController: insideVC).then{
+            $0.menuWidth = 300 / 390 * Device.width
+            $0.presentationStyle = .menuSlideIn
+            $0.delegate = self
+        }
+    }
+    
+    private func initializeBlockBottomSheet(){
+        let blockGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
+        let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberDeclarationBtnDidClicked))
+        
+        blockBottomSheet.blockBtn.addGestureRecognizer(blockGesture)
+        blockBottomSheet.declarationBtn.addGestureRecognizer(declarationGesture)
+    }
+    
+    private func setPickerViewControllerDelegate(){
+        cameraPickerVC.do{
+            $0.delegate = self
+            $0.sourceType = .camera
+        }
+        imagePickerVC.do{
+            $0.delegate = self
+            $0.sourceType = .photoLibrary
+        }
     }
     
     private func setViewGesture(){
@@ -83,8 +130,18 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     }
     
     override func bind() {
-        let input = ChattingRoomViewModel.Input()
+        let input = ChattingRoomViewModel.Input(
+            messageObservable: mainView.chatInputView.chatTextField.rx.text.orEmpty.asObservable(),
+            sendBtnTap: mainView.chatInputView.sendBtn.rx.tap,
+            exitBtnTap: exitRoomAlert.complete
+        )
         let output = viewModel.transform(input)
+//        output.exitResponse
+//            .subscribe{ [weak self] in
+//                if $0 == .success {
+//                    self?.navigationController?.popViewController(animated: true)
+//                }
+//            }.disposed(by: disposeBag)
     }
     
     //MARK: - Action
@@ -117,24 +174,12 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         }
     }
     
-    @objc func cameraBtnDidClicked(){
-        
-        let cameraPicker = UIImagePickerController().then{
-            $0.delegate = self
-            $0.sourceType = .camera
-        }
-
-        navigationController?.present(cameraPicker, animated: true, completion: nil)
+    @objc private func cameraBtnDidClicked(){
+        navigationController?.present(cameraPickerVC, animated: true, completion: nil)
     }
     
-    @objc func galleryBtnDidClicked(){
-        
-        let imagePicker = UIImagePickerController().then{
-            $0.delegate = self
-            $0.sourceType = .photoLibrary
-        }
-        
-        navigationController?.present(imagePicker, animated: true, completion: nil)
+    @objc private func galleryBtnDidClicked(){
+        navigationController?.present(imagePickerVC, animated: true, completion: nil)
     }
     
     @objc func appointmentBtnDidClicked(){
@@ -147,76 +192,29 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
     
     //오른쪽 기타 메뉴 함수
     @objc func sideSheetWillOpen(){
-        
-        sideMenuViewController = ChattingSideSheetViewController()
-        
-        guard let sideMenu = sideMenuViewController else { return }
-        
-        sideMenu.mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
-        
-        sideMenu.declarationHandler = { indexPath in
-            print(indexPath)
-            
-            sideMenu.dismiss(animated: true, completion: {
-                self.memberBlockBottomSheet = MemberDeclarationSheetViewController()
-                
-                let blockGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
-                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(blockGesture)
-                
-                let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberDeclarationBtnDidClicked))
-                self.memberBlockBottomSheet!.declarationBtn.addGestureRecognizer(declarationGesture)
-                
-                self.memberBlockBottomSheet!.loadViewIfNeeded()
-                self.present(self.memberBlockBottomSheet!, animated: true, completion: nil)
-            })
-        }
-        
-        let menu = SideMenuNavigationController(rootViewController: sideMenu)
-        
-        let deviceWidth = UIScreen.main.bounds.size.width
-        
-        menu.menuWidth = 300 / 390 * deviceWidth
-        menu.presentationStyle = .menuSlideIn
-        menu.delegate = self
-        
-        present(menu, animated: true, completion: nil)
-
+        present(sideVC, animated: true, completion: nil)
     }
     
     @objc func chattingRoomExitBtnDidClicked(){
-        
-        sideMenuViewController?.dismiss(animated: true, completion: {
-
-            let alert = Alert.ChattingRoomExit.show(in: self)
-            
-            alert.completion = {
-                self.navigationController?.popViewController(animated: true)
-            }
+        sideVC.dismiss(animated: true, completion: {
+            self.exitRoomAlert.show(in: self)
         })
     }
     
     @objc func memberBlockBtnDidClicked(){
-        
-        print("block button click")
-        
-        guard let bottomSheet = memberBlockBottomSheet else { return }
-        
-        let alert = Alert.Block(user: "쑤야").show(in: bottomSheet)
-        
-        alert.completion = {
-            print("차단 완료")
-            bottomSheet.dismiss(animated: true, completion: nil)
+        let alert = Alert.Block(user: "쑤야").show(in: blockBottomSheet)
+        alert.completion = { [weak self] in
+            defer{
+                self?.willBlockUserIndex = nil
+            }
+            guard let willBlockUserIndex = self?.willBlockUserIndex else { return }
+            self?.viewModel.blockUserIndexSubject.onNext(willBlockUserIndex)
+            self?.blockBottomSheet.dismiss(animated: true)
         }
     }
     
     @objc func memberDeclarationBtnDidClicked(){
-        
-        print("declaration button click")
-        
-        guard let bottomSheet = memberBlockBottomSheet else { return }
-        
         //TODO: 신고 팝업 UI 추가 작업 필요
-
     }
 
     @objc private func goOthersProfile() {
