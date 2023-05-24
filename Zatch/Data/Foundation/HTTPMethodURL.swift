@@ -12,6 +12,8 @@ enum HTTPMethodURL {
     static let zatchUrl = "/zatch"
     static let searchUrl = "/search"
     static let userUrl = "/users"
+    static let chatUrl = "/chat"
+    static let blockUrl = "/block"
     static let kakaoLocal = "/v2/local"
     
     struct GET {
@@ -22,6 +24,12 @@ enum HTTPMethodURL {
         
         //USER
         static let logout = userUrl + "/logout"
+        static let block = blockUrl + "/list"
+        
+        //CHAT
+        static let existChattingRoom = chatUrl + "/chat_list"
+        static let chattingRoomMemebers = chatUrl
+        static let exitChattingRoom = chatUrl + "/chat_out" //TODO: 서버 문의 필요
         
         //SEARCH
         static let popularKeywords = zatchUrl + searchUrl + "/popularItem"
@@ -33,6 +41,7 @@ enum HTTPMethodURL {
         static let town = userUrl
         static let likeZatch = zatch
         static let zatch = zatchUrl
+        static let block = blockUrl
     }
     
     struct PATCH {
