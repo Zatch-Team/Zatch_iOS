@@ -9,6 +9,10 @@ import UIKit
 
 class BaseTableViewCell: UITableViewCell, CellReuse {
     
+    var cellIndexPath: IndexPath?{
+        return (superview as? UITableView)?.indexPath(for: self)
+    }
+    
     let baseView = UIView().then{
         $0.backgroundColor = .white
     }
