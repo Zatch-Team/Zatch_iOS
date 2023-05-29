@@ -31,11 +31,11 @@ class BaseTableViewCell: UITableViewCell, CellReuse {
     }
     
     func style() {
-        self.selectedBackgroundView = UIView()
+        selectedBackgroundView = UIView()
     }
     
     func hierarchy() {
-        self.contentView.addSubview(baseView)
+        contentView.addSubview(baseView)
     }
     
     func layout() {
