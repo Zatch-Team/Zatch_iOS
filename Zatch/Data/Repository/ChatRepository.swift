@@ -41,12 +41,12 @@ final class ChatRepository: ChatRepositoryInterface {
         return observable
     }
 
-    func getChattingMembers(roomId: String) -> Observable<[String]?> {
-        let observable = Observable<[String]?>.create { observer -> Disposable in
+    func getChattingMembers(roomId: String) -> Observable<[ChattingMember]?> {
+        let observable = Observable<[ChattingMember]?>.create { observer -> Disposable in
             let requestReference: () = ChatService.shared.getChattingRoomMemberList(roomId: roomId){ response in
                 switch response {
                 case .success(let data):
-                    observer.onNext(data)
+                    observer.onNext(data.map{ $0.toDomain() })
                 case .failure:
                     observer.onNext(nil)
                 }

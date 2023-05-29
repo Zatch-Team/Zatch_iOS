@@ -15,7 +15,7 @@ protocol ChattingRoomViewModelInterface: BaseViewModel, BlockUserInterface{
 }
 
 protocol BlockUserInterface{
-    var chattingmMembers: [String] { get }
+    var chattingmMembers: [ChattingMember] { get }
     var blockUserIndexSubject: PublishSubject<Int> { get }
     var blockUserResponse: PublishSubject<ResponseState> { get }
 }
@@ -23,7 +23,7 @@ protocol BlockUserInterface{
 class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     
     var messages = [ChatMessage]()
-    var chattingmMembers = [String]()
+    var chattingmMembers = [ChattingMember]()
     
     let blockUserIndexSubject = PublishSubject<Int>()
     let blockUserResponse = PublishSubject<ResponseState>()

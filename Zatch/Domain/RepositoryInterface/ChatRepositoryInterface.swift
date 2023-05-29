@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ChatRepositoryInterface{
     func blockUser(requestModel: BlockUserRequestModel) -> Observable<ResponseState>
-    func getChattingMembers(roomId: String) -> Observable<[String]?>
+    func getChattingMembers(roomId: String) -> Observable<[ChattingMember]?>
     func getChattingRooms() -> Observable<[String]?>
     func exitChattingRoom(roomId: String) -> Observable<ResponseState>
 }

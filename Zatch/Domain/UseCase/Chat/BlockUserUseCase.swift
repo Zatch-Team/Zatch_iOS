@@ -10,7 +10,7 @@ import RxSwift
 
 struct BlockUserRequestModel: Encodable{
     let blockedUserId: Int
-    let userId: Int
+    let userId: Int = UserManager.userId ?? 0
     
     enum CodingKeys: String, CodingKey {
         case blockedUserId = "blocked_id"

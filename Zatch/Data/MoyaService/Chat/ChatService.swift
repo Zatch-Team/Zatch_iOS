@@ -14,7 +14,7 @@ public class ChatService {
     
     private init() { }
     
-    func getChattingRoomMemberList(roomId: String, completion: @escaping (Result<[String], Error>) -> Void){
+    func getChattingRoomMemberList(roomId: String, completion: @escaping (Result<[ChattingMemberResponseDTO], Error>) -> Void){
         provider.requestDecoded(ChatRouter.getChattingMembers(roomId: roomId)){ response in
             completion(response)
         }
