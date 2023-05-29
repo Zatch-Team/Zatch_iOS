@@ -290,6 +290,8 @@
 		EE46CFF12A1E11770055E30B /* GetMemberListOfChattingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46CFF02A1E11770055E30B /* GetMemberListOfChattingUseCase.swift */; };
 		EE46CFF32A1E118F0055E30B /* GetChattingRoomListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46CFF22A1E118F0055E30B /* GetChattingRoomListUseCase.swift */; };
 		EE46CFF52A1E119F0055E30B /* ExitChattingRoomUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46CFF42A1E119F0055E30B /* ExitChattingRoomUseCase.swift */; };
+		EE47A89C2A246C3400FAAC06 /* ChattingMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47A89B2A246C3400FAAC06 /* ChattingMember.swift */; };
+		EE47A89F2A246C7500FAAC06 /* ChattingMemberResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47A89E2A246C7500FAAC06 /* ChattingMemberResponseDTO.swift */; };
 		EE4CE7B929F910AF00943FE5 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = EE4CE7B829F910AF00943FE5 /* FAQ.json */; };
 		EE4CE7C729FCF60E00943FE5 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */; };
 		EE4CE7CA29FCF6FD00943FE5 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4CE7C929FCF6FD00943FE5 /* LoginResponseModel.swift */; };
@@ -729,6 +731,8 @@
 		EE46CFF02A1E11770055E30B /* GetMemberListOfChattingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMemberListOfChattingUseCase.swift; sourceTree = "<group>"; };
 		EE46CFF22A1E118F0055E30B /* GetChattingRoomListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChattingRoomListUseCase.swift; sourceTree = "<group>"; };
 		EE46CFF42A1E119F0055E30B /* ExitChattingRoomUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitChattingRoomUseCase.swift; sourceTree = "<group>"; };
+		EE47A89B2A246C3400FAAC06 /* ChattingMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMember.swift; sourceTree = "<group>"; };
+		EE47A89E2A246C7500FAAC06 /* ChattingMemberResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMemberResponseDTO.swift; sourceTree = "<group>"; };
 		EE4CE7B829F910AF00943FE5 /* FAQ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		EE4CE7C629FCF60E00943FE5 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		EE4CE7C929FCF6FD00943FE5 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -1068,7 +1072,7 @@
 				EE4CE7C829FCF6E900943FE5 /* User */,
 				57B32C2F291F55F20018C0CB /* Zatch */,
 				57A28D5428D1A07000263079 /* Map */,
-				57D6D7A128CDC30C00F805B7 /* ChattingModels */,
+				57D6D7A128CDC30C00F805B7 /* Chat */,
 				EE42D5BD2A1B33DF001BEF64 /* Search */,
 			);
 			path = Models;
@@ -1868,12 +1872,13 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
-		57D6D7A128CDC30C00F805B7 /* ChattingModels */ = {
+		57D6D7A128CDC30C00F805B7 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				576B375528D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift */,
+				EE47A89E2A246C7500FAAC06 /* ChattingMemberResponseDTO.swift */,
 			);
-			path = ChattingModels;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		57EBCE3C28A88E5000212D20 /* Alert */ = {
@@ -2052,6 +2057,14 @@
 				EE42D5C32A1B357C001BEF64 /* SearchService.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		EE47A89D2A246C6A00FAAC06 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EE47A89B2A246C3400FAAC06 /* ChattingMember.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		EE4CE7B729F9105000943FE5 /* FAQ */ = {
@@ -2268,6 +2281,7 @@
 		EE7B76C329C5E37900942798 /* Entitiy */ = {
 			isa = PBXGroup;
 			children = (
+				EE47A89D2A246C6A00FAAC06 /* Chat */,
 			);
 			path = Entitiy;
 			sourceTree = "<group>";
@@ -2798,6 +2812,7 @@
 				EE0AD54529E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift in Sources */,
 				EE813FFD29C585400091F16E /* UserRepository.swift in Sources */,
 				EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */,
+				EE47A89C2A246C3400FAAC06 /* ChattingMember.swift in Sources */,
 				EEE0F2DB2A1C5C72006C0D25 /* ChatRepositoryInterface.swift in Sources */,
 				57B32C34291FB58F0018C0CB /* Image.swift in Sources */,
 				EE0AD55729E8225C00C1CDA1 /* AnyZatchSelectTableViewCell.swift in Sources */,
@@ -2947,6 +2962,7 @@
 				EE4D888729D00191003B6383 /* LocationCoordinateRequestValue.swift in Sources */,
 				576B375F28D82F6400EF36E6 /* UserLeaveViewController.swift in Sources */,
 				EE27C54C29C8286B00285CC5 /* SearchRepository.swift in Sources */,
+				EE47A89F2A246C7500FAAC06 /* ChattingMemberResponseDTO.swift in Sources */,
 				57D6D79928CDBC6000F805B7 /* ModifyMeetingSheetView.swift in Sources */,
 				57B32C2C291F49CF0018C0CB /* ZatchRegisterFirstView.swift in Sources */,
 				EE4D888E29D01987003B6383 /* TownRegisterMapViewController.swift in Sources */,
