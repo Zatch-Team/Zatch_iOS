@@ -124,18 +124,24 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     }
     
     override func bind() {
+        
         let input = ChattingRoomViewModel.Input(
             messageObservable: mainView.chatInputView.chatTextField.rx.text.orEmpty.asObservable(),
             sendBtnTap: mainView.chatInputView.sendBtn.rx.tap,
             exitBtnTap: exitRoomAlert.complete
         )
+        
         let output = viewModel.transform(input)
-//        output.exitResponse
-//            .subscribe{ [weak self] in
-//                if $0 == .success {
-//                    self?.navigationController?.popViewController(animated: true)
-//                }
-//            }.disposed(by: disposeBag)
+    
+        output.exitResponse
+            .subscribe{ [weak self] response in
+                switch response {
+                case .success:
+                    self?.navigationController?.popViewController(animated: true)
+                default:
+                    break
+                }
+            }.disposed(by: disposeBag)
     }
     
     //MARK: - Action

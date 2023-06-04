@@ -53,11 +53,17 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     
     struct Output{
 //        let canSendMessage: Driver<Bool>
-//        let exitResponse: Observable<ResponseState>
+        let exitResponse: Observable<ResponseState>
     }
     
     func transform(_ input: Input) -> Output{
-        Output()
+        
+        let exitResponse = input.exitBtnTap
+            .flatMap{
+                self.exitRoomUseCase.execute(roomId: self.roomId)
+            }
+        
+        return Output(exitResponse: exitResponse)
     }
     
     func viewDidLoad() {
