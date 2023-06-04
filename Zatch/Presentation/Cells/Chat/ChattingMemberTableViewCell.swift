@@ -6,20 +6,25 @@
 //
 
 import UIKit
+import Kingfisher
+
+protocol DeclarationDelegate: AnyObject{
+    func willShowDelclarationBottomSheet(index: Int)
+}
 
 class ChattingMemberTableViewCell: BaseTableViewCell {
     
     //MARK: - UI
     
-    let profileImage = UIImageView().then{
+    weak var delegate: (DeclarationDelegate)?
+    
+    private let profileImage = UIImageView().then{
         $0.image = Image.zatchProfile
     }
-    
-    let managerCrownImage = UIImageView().then{
+    private let managerCrownImage = UIImageView().then{
         $0.image = Image.chatCrown
     }
-    
-    let isMeTag = UILabel().then{
+    private let isMeTag = UILabel().then{
         $0.text = "ME"
         $0.textAlignment = .center
         $0.font = UIFont.pretendard(size: 12, family: .Medium)
@@ -30,23 +35,18 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         $0.backgroundColor = .white
         $0.textColor = .zatchPurple
     }
-    
-    let nameLabel = UILabel().then{
-        $0.text = "쑤야"
+    private let nameLabel = UILabel().then{
         $0.setTypoStyleWithSingleLine(typoStyle: .medium16)
         $0.textColor = .black85
     }
-    
-    lazy var declarationBtn = UIButton().then{
+    private lazy var declarationBtn = UIButton().then{
         $0.setImage(Image.chatDeclaration, for: .normal)
     }
 
     override func prepareForReuse(){
-        
-        self.declarationBtn.removeFromSuperview()
-        self.isMeTag.removeFromSuperview()
-        
-        self.nameLabel.text = ""
+        declarationBtn.removeFromSuperview()
+        isMeTag.removeFromSuperview()
+        nameLabel.text = ""
     }
     
     //MARK: - Helper
@@ -75,7 +75,17 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         }
     }
     
-    func setMeTag(){
+    override func initialize() {
+        declarationBtn.addTarget(self, action: #selector(declarationBtnDidTap), for: .touchUpInside)
+    }
+    
+    @objc private func declarationBtnDidTap(){
+        if let indexPath = cellIndexPath{
+            delegate?.willShowDelclarationBottomSheet(index: indexPath.row)
+        }
+    }
+    
+    private func setMeTag(){
     
         baseView.addSubview(isMeTag)
         
@@ -94,7 +104,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         
     }
     
-    func setDeclarationBtn(){
+    private func setDeclarationBtn(){
         
         baseView.addSubview(declarationBtn)
         
@@ -105,7 +115,7 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
         }
     }
     
-    func setCrownImage(){
+    private func setCrownImage(){
         
         baseView.addSubview(managerCrownImage)
         
@@ -113,6 +123,16 @@ class ChattingMemberTableViewCell: BaseTableViewCell {
             $0.width.height.equalTo(12.94)
             $0.bottom.equalTo(profileImage.snp.bottom).offset(-3.88)
             $0.trailing.equalTo(profileImage).offset(-6.47)
+        }
+    }
+    
+    func bindingData(_ member: ChattingMember){
+        nameLabel.text = member.name
+        profileImage.kf.setImage(with: URL(string: member.profileImageUrl), placeholder: Image.zatchProfile)
+        if member.isMe {
+            setMeTag()
+        } else {
+           setDeclarationBtn()
         }
     }
 
