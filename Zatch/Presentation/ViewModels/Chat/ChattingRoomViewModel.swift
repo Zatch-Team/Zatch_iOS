@@ -28,17 +28,22 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     let blockUserIndexSubject = PublishSubject<Int>()
     let blockUserResponse = PublishSubject<ResponseState>()
     
+    private let roomId: String
     private let blockUserUseCase: BlockUserUseCaseInterface
     private let exitRoomUseCase: ExitChattingRoomUseCaseInterface
     private let getChattingMemberListUseCase: GetMemberListOfChattingUseCaseInterface
 
-    init(blockUserUseCase: BlockUserUseCaseInterface = BlockUserUseCase(),
+    init(roomId: String = "0",
+         blockUserUseCase: BlockUserUseCaseInterface = BlockUserUseCase(),
          exitRoomUseCase: ExitChattingRoomUseCaseInterface = ExitChattingRoomUseCase(),
          getChattingMemberListUseCase: GetMemberListOfChattingUseCaseInterface = GetMemberListOfChattingUseCase()) {
+        self.roomId = roomId
         self.blockUserUseCase = blockUserUseCase
         self.exitRoomUseCase = exitRoomUseCase
         self.getChattingMemberListUseCase = getChattingMemberListUseCase
     }
+    
+    private let disposeBag = DisposeBag()
 
     struct Input{
         let messageObservable: Observable<String>
@@ -58,5 +63,6 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     func viewDidLoad() {
         //채팅방 멤버 조회
         
+        chattingmMembers = [ChattingMember(userId: 1, name: "쑤야", profileImageUrl: "23")]
     }
 }
