@@ -33,6 +33,7 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     }
     
     private var willBlockUserIndex: Int?
+    private var sideMenuInsideVC: ChattingSideSheetViewController!
     private var sideVC: SideMenuNavigationController!
     
     private let viewModel = ChattingRoomViewModel()
@@ -67,18 +68,11 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     
     private func initializeSideViewController(){
         
-        let insideVC = ChattingSideSheetViewController()
-        
-        insideVC.mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
-        
-        insideVC.declarationHandler = { indexPath in
-            self.willBlockUserIndex = indexPath.row
-            insideVC.dismiss(animated: true, completion: {
-                self.blockBottomSheet.show(in: self)
-            })
+        sideMenuInsideVC = ChattingSideSheetViewController(viewModel: viewModel).then{
+            $0.delegate = self
         }
         
-        sideVC = SideMenuNavigationController(rootViewController: insideVC).then{
+        sideVC = SideMenuNavigationController(rootViewController: sideMenuInsideVC).then{
             $0.menuWidth = 300 / 390 * Device.width
             $0.presentationStyle = .menuSlideIn
             $0.delegate = self
@@ -191,14 +185,8 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     }
     
     //오른쪽 기타 메뉴 함수
-    @objc func sideSheetWillOpen(){
+    @objc private func sideSheetWillOpen(){
         present(sideVC, animated: true, completion: nil)
-    }
-    
-    @objc func chattingRoomExitBtnDidClicked(){
-        sideVC.dismiss(animated: true, completion: {
-            self.exitRoomAlert.show(in: self)
-        })
     }
     
     @objc func memberBlockBtnDidClicked(){
@@ -219,6 +207,22 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
 
     @objc private func goOthersProfile() {
         navigationController?.pushViewController(OthersProfileViewController(nickName: "쑤야"), animated: true)
+    }
+}
+
+extension ChattingRoomViewController: ChattingSideMenuDelegate{
+    
+    func willShowDeclarationBottomSheet(index: Int) {
+        willBlockUserIndex = index
+        sideMenuInsideVC.dismiss(animated: true, completion: {
+            self.blockBottomSheet.show(in: self)
+        })
+    }
+    
+    func willShowExitRoomAlert() {
+        sideVC.dismiss(animated: true, completion: {
+            self.exitRoomAlert.show(in: self)
+        })
     }
 }
 
