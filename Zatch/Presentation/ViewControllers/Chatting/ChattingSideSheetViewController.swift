@@ -35,6 +35,10 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
         layout()
         initialzie()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        mainView.tableView.reloadData()
+    }
 
     private func style(){
         view.backgroundColor = .white
