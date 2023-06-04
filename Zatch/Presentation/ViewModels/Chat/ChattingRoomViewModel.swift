@@ -11,7 +11,7 @@ import RxCocoa
 
 protocol ChattingRoomViewModelInterface: BaseViewModel, BlockUserInterface{
     var messages: [ChatMessage] { get }
-    func viewDidLoad()
+    func requestChattingMembers()
 }
 
 protocol BlockUserInterface{
@@ -21,7 +21,6 @@ protocol BlockUserInterface{
 }
 
 class ChattingRoomViewModel: ChattingRoomViewModelInterface{
-    
     var messages = [ChatMessage]()
     var chattingmMembers = [ChattingMember]()
     
@@ -53,6 +52,7 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     
     struct Output{
 //        let canSendMessage: Driver<Bool>
+        let blockResponse: Observable<ResponseState>
         let exitResponse: Observable<ResponseState>
     }
     
@@ -63,10 +63,18 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
                 self.exitRoomUseCase.execute(roomId: self.roomId)
             }
         
-        return Output(exitResponse: exitResponse)
+        let blockResponse = blockUserIndexSubject
+            .map{ index in
+                self.chattingmMembers[index].userId
+            }
+            .flatMap{ userId in
+                self.blockUserUseCase.execute(requestValue: BlockUserRequestModel(blockedUserId: userId))
+            }
+        
+        return Output(blockResponse: blockResponse, exitResponse: exitResponse)
     }
     
-    func viewDidLoad() {
+    func requestChattingMembers() {
         //채팅방 멤버 조회
         getChattingMemberListUseCase
             .execute(roomId: roomId)

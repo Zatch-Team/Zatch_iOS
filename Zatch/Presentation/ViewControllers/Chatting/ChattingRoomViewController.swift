@@ -51,7 +51,7 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
+        viewModel.requestChattingMembers()
     }
     
     override func initialize() {
@@ -138,6 +138,16 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
                 switch response {
                 case .success:
                     self?.navigationController?.popViewController(animated: true)
+                default:
+                    break
+                }
+            }.disposed(by: disposeBag)
+        
+        output.blockResponse
+            .subscribe{ [weak self] response in
+                switch response {
+                case .success:
+                    self?.viewModel.requestChattingMembers()
                 default:
                     break
                 }
