@@ -62,6 +62,13 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     
     func viewDidLoad() {
         //채팅방 멤버 조회
+        getChattingMemberListUseCase
+            .execute(roomId: roomId)
+            .subscribe{ [weak self] in
+                if let members = $0 {
+                    self?.chattingmMembers = members
+                }
+            }.disposed(by: disposeBag)
         
         chattingmMembers = [ChattingMember(userId: 1, name: "쑤야", profileImageUrl: "23")]
     }
