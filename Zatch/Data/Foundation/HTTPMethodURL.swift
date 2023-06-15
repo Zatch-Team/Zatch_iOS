@@ -14,6 +14,7 @@ enum HTTPMethodURL {
     static let userUrl = "/users"
     static let chatUrl = "/chat"
     static let blockUrl = "/block"
+    static let reportUrl = "/report"
     static let kakaoLocal = "/v2/local"
     
     struct GET {
@@ -42,6 +43,7 @@ enum HTTPMethodURL {
         static let likeZatch = zatch
         static let zatch = zatchUrl
         static let block = blockUrl
+        static let report = reportUrl
     }
     
     struct PATCH {

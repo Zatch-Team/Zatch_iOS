@@ -330,6 +330,8 @@
 		EE541C1D29B44EE400DD0F20 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */; };
 		EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */; };
 		EE541C2329B45D7200DD0F20 /* ChattingSideSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE541C2229B45D7200DD0F20 /* ChattingSideSheetView.swift */; };
+		EE5CEEC22A38889F00E1907E /* DeclarationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CEEC12A38889F00E1907E /* DeclarationAlertViewController.swift */; };
+		EE5CEEC42A38992D00E1907E /* DeclarationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CEEC32A38992D00E1907E /* DeclarationUseCase.swift */; };
 		EE62F1662991324F0014B33C /* ZatchDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */; };
 		EE642C5D298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */; };
 		EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */; };
@@ -771,6 +773,8 @@
 		EE541C1C29B44EE400DD0F20 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		EE541C1E29B44F1200DD0F20 /* StatusResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponseModel.swift; sourceTree = "<group>"; };
 		EE541C2229B45D7200DD0F20 /* ChattingSideSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingSideSheetView.swift; sourceTree = "<group>"; };
+		EE5CEEC12A38889F00E1907E /* DeclarationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationAlertViewController.swift; sourceTree = "<group>"; };
+		EE5CEEC32A38992D00E1907E /* DeclarationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationUseCase.swift; sourceTree = "<group>"; };
 		EE62F1652991324F0014B33C /* ZatchDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchDateFormatter.swift; sourceTree = "<group>"; };
 		EE642C5C298FAE2C00E15869 /* ZatchRegisterFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchRegisterFirstViewModel.swift; sourceTree = "<group>"; };
 		EE661A42299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -1143,6 +1147,7 @@
 				578B7A9728AC6AF900E7B4F4 /* ChattingRoomViewController.swift */,
 				57C23CD128B231E5006E7915 /* ChattingSideSheetViewController.swift */,
 				5795770328BB1AB400237A12 /* MemberDeclarationSheetViewController.swift */,
+				EE5CEEC12A38889F00E1907E /* DeclarationAlertViewController.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -2414,6 +2419,7 @@
 			isa = PBXGroup;
 			children = (
 				EEE0F2D82A1C5C65006C0D25 /* BlockUserUseCase.swift */,
+				EE5CEEC32A38992D00E1907E /* DeclarationUseCase.swift */,
 				EE46CFF02A1E11770055E30B /* GetMemberListOfChattingUseCase.swift */,
 				EE46CFF22A1E118F0055E30B /* GetChattingRoomListUseCase.swift */,
 				EE46CFF42A1E119F0055E30B /* ExitChattingRoomUseCase.swift */,
@@ -2971,6 +2977,7 @@
 				EE938DA129CD8936003A5BF6 /* UIColor.swift in Sources */,
 				579F5E58281E574200D3F0D5 /* FindWantZatchSearchViewController.swift in Sources */,
 				57E75EC528E3C4CE00AC24B2 /* ShareDetailTableViewCell.swift in Sources */,
+				EE5CEEC42A38992D00E1907E /* DeclarationUseCase.swift in Sources */,
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				EE9B053529953A1200068503 /* FilterView.swift in Sources */,
 				57FFEDC128DD28090041719B /* CheckShareRegisterInfoView.swift in Sources */,
@@ -3011,6 +3018,7 @@
 				234CAC1428D8398E007CAD13 /* ModifyProfileView.swift in Sources */,
 				57EBCE4A28AA17BE00212D20 /* DeleteImageDetailViewController.swift in Sources */,
 				57F68BA829652D6100DB1471 /* DetailEtcBottomSheetViewController.swift in Sources */,
+				EE5CEEC22A38889F00E1907E /* DeclarationAlertViewController.swift in Sources */,
 				571C0C7228AB1D56002293B6 /* BaseTabBarViewController.swift in Sources */,
 				57C23CD428B2698C006E7915 /* ChattingMemberTableViewCell.swift in Sources */,
 				EE4CEA3D29FF7F9E002BF87E /* ModifyProfileImageUseCase.swift in Sources */,

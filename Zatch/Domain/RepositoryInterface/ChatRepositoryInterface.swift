@@ -13,5 +13,6 @@ protocol ChatRepositoryInterface{
     func getChattingMembers(roomId: String) -> Observable<[ChattingMember]?>
     func getChattingRooms() -> Observable<[String]?>
     func exitChattingRoom(roomId: String) -> Observable<ResponseState>
+    func declarationUser(requestModel: DeclarationRequestModel) -> Observable<ResponseState>
 }
 

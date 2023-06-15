@@ -70,4 +70,19 @@ final class ChatRepository: ChatRepositoryInterface {
         }
         return observable
     }
+    
+    func declarationUser(requestModel: DeclarationRequestModel) -> Observable<ResponseState> {
+        let observable = Observable<ResponseState>.create { observer -> Disposable in
+            let requestReference: () = ChatService.shared.declarationUser(requestModel: requestModel){ response in
+                switch response {
+                case .success:
+                    observer.onNext(.success)
+                case .failure:
+                    observer.onNext(.fail)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
+    }
 }

@@ -37,4 +37,10 @@ public class ChatService {
             completion(response)
         }
     }
+    
+    func declarationUser(requestModel: DeclarationRequestModel, completion: @escaping (Result<BaseResponseModel<Int>, Error>) -> Void){
+        provider.requestDecoded(ChatRouter.declarationUser(requestModel: requestModel)){ response in
+            completion(response)
+        }
+    }
 }

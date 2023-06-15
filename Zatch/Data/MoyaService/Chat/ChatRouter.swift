@@ -13,6 +13,7 @@ enum ChatRouter: BaseRouter{
     case getChattingMembers(roomId: String)
     case exitRoom(roomId: String)
     case blockUser(requestModel: BlockUserRequestModel)
+    case declarationUser(requestModel: DeclarationRequestModel)
 }
 
 extension ChatRouter{
@@ -23,6 +24,7 @@ extension ChatRouter{
         case .getChattingMembers(let roomId):       return HTTPMethodURL.GET.chattingRoomMemebers + userIdPath + "/\(roomId)" + "/profile"
         case .exitRoom(let roomId):                 return HTTPMethodURL.GET.exitChattingRoom + userIdPath + "/\(roomId)"
         case .blockUser:                            return HTTPMethodURL.POST.block
+        case .declarationUser:                      return HTTPMethodURL.POST.report
         }
     }
     
@@ -34,7 +36,7 @@ extension ChatRouter{
             return .get
         case .exitRoom:
             return .get
-        case .blockUser:
+        case .blockUser, .declarationUser:
             return .post
         }
     }
@@ -42,6 +44,7 @@ extension ChatRouter{
     var task: Task {
         switch self {
         case .blockUser(let requestModel):      return .requestJSONEncodable(requestModel)
+        case .declarationUser(let requestModel):      return .requestJSONEncodable(requestModel)
         default:                                return .requestPlain
         }
     }
