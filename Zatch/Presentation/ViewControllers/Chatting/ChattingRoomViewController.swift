@@ -211,14 +211,29 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
             defer{
                 self?.willBlockUserIndex = nil
             }
-            guard let willBlockUserIndex = self?.willBlockUserIndex else { return }
-            self?.viewModel.blockUserIndexSubject.onNext(willBlockUserIndex)
-            self?.blockBottomSheet.dismiss(animated: true)
+            self?.processOfMemberBlock()
         }
     }
     
+    private func processOfMemberBlock(){
+        guard let willBlockUserIndex = willBlockUserIndex else { return }
+        viewModel.blockUserIndexSubject.onNext(willBlockUserIndex)
+    }
+    
     @objc func memberDeclarationBtnDidClicked(){
-        //TODO: 신고 팝업 UI 추가 작업 필요
+        let alert = DeclarationAlertViewController()
+        alert.targetUserName = "쑤야"
+        alert.complete
+            .subscribe{ [weak self] reason in
+                defer{
+                    self?.willBlockUserIndex = nil
+                }
+                guard let index = self?.willBlockUserIndex else { return }
+                self?.viewModel.declarationUser(index: index, reason: reason)
+            }
+            .disposed(by: disposeBag)
+        blockBottomSheet.dismiss(animated: true)
+        alert.show(in: self)
     }
 
     @objc private func goOthersProfile() {

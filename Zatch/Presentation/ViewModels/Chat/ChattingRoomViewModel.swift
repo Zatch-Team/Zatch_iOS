@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol ChattingRoomViewModelInterface: BaseViewModel, BlockUserInterface{
+protocol ChattingRoomViewModelInterface: BaseViewModel, BlockUserInterface, DeclarationUserInterface{
     var messages: [ChatMessage] { get }
     func requestChattingMembers()
 }
@@ -17,7 +17,11 @@ protocol ChattingRoomViewModelInterface: BaseViewModel, BlockUserInterface{
 protocol BlockUserInterface{
     var chattingmMembers: [ChattingMember] { get }
     var blockUserIndexSubject: PublishSubject<Int> { get }
-    var blockUserResponse: PublishSubject<ResponseState> { get }
+}
+
+protocol DeclarationUserInterface{
+    var declarationUserResponse: PublishSubject<ResponseState> { get }
+    func declarationUser(index: Int, reason: Int)
 }
 
 class ChattingRoomViewModel: ChattingRoomViewModelInterface{
@@ -25,19 +29,22 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
     var chattingmMembers = [ChattingMember]()
     
     let blockUserIndexSubject = PublishSubject<Int>()
-    let blockUserResponse = PublishSubject<ResponseState>()
+    let declarationUserResponse = PublishSubject<ResponseState>()
     
     private let roomId: String
     private let blockUserUseCase: BlockUserUseCaseInterface
+    private let declarationUserUseCase: DeclarationUserUseCaseInterface
     private let exitRoomUseCase: ExitChattingRoomUseCaseInterface
     private let getChattingMemberListUseCase: GetMemberListOfChattingUseCaseInterface
 
     init(roomId: String = "0",
          blockUserUseCase: BlockUserUseCaseInterface = BlockUserUseCase(),
+         declarationUserUseCase: DeclarationUserUseCaseInterface = DeclarationUserUseCase(),
          exitRoomUseCase: ExitChattingRoomUseCaseInterface = ExitChattingRoomUseCase(),
          getChattingMemberListUseCase: GetMemberListOfChattingUseCaseInterface = GetMemberListOfChattingUseCase()) {
         self.roomId = roomId
         self.blockUserUseCase = blockUserUseCase
+        self.declarationUserUseCase = declarationUserUseCase
         self.exitRoomUseCase = exitRoomUseCase
         self.getChattingMemberListUseCase = getChattingMemberListUseCase
     }
@@ -85,5 +92,13 @@ class ChattingRoomViewModel: ChattingRoomViewModelInterface{
             }.disposed(by: disposeBag)
         
         chattingmMembers = [ChattingMember(userId: 1, name: "쑤야", profileImageUrl: "23")]
+    }
+    
+    func declarationUser(index: Int, reason: Int){
+        declarationUserUseCase
+            .execute(requestValue: DeclarationRequestModel(reason: reason, targetId: chattingmMembers[index].userId))
+            .subscribe{ [weak self] in
+                self?.declarationUserResponse.onNext($0)
+            }.disposed(by: disposeBag)
     }
 }
