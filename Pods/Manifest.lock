@@ -28,6 +28,9 @@ PODS:
   - RxSwift (6.5.0)
   - SideMenu (6.5.0)
   - SnapKit (5.6.0)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
   - Then (3.0.0)
 
 DEPENDENCIES:
@@ -42,6 +45,7 @@ DEPENDENCIES:
   - RxSwift
   - SideMenu (~> 6.0)
   - SnapKit (~> 5.6.0)
+  - Socket.IO-Client-Swift (~> 15.2.0)
   - Then
 
 SPEC REPOS:
@@ -59,6 +63,8 @@ SPEC REPOS:
     - RxSwift
     - SideMenu
     - SnapKit
+    - Socket.IO-Client-Swift
+    - Starscream
     - Then
 
 SPEC CHECKSUMS:
@@ -75,8 +81,10 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 3be5fbf230a72dcb35bcba3983f8c94a582b24ac
+PODFILE CHECKSUM: 9e2302a412299e28f98b9804e5c75615070bcd23
 
 COCOAPODS: 1.11.3

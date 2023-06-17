@@ -9,6 +9,10 @@ import UIKit
 
 class BaseTableViewCell: UITableViewCell, CellReuse {
     
+    var cellIndexPath: IndexPath?{
+        return (superview as? UITableView)?.indexPath(for: self)
+    }
+    
     let baseView = UIView().then{
         $0.backgroundColor = .white
     }
@@ -27,11 +31,11 @@ class BaseTableViewCell: UITableViewCell, CellReuse {
     }
     
     func style() {
-        self.selectedBackgroundView = UIView()
+        selectedBackgroundView = UIView()
     }
     
     func hierarchy() {
-        self.contentView.addSubview(baseView)
+        contentView.addSubview(baseView)
     }
     
     func layout() {

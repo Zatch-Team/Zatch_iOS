@@ -22,24 +22,8 @@ struct ChatMessage{
     //TODO: 전송 시간 기준 프론트? 서버?
 }
 
-class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, ChattingRoomView> {
+final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, ChattingRoomView> {
 
-    //MARK: - Properties
-    var memberBlockBottomSheet: MemberDeclarationSheetViewController?
-    var sideMenuViewController : ChattingSideSheetViewController?
-    
-    var messageData = [ChatMessage](){
-        didSet{
-            mainView.tableView.reloadData()
-        }
-    }
-    
-    //MARK: - UI
-    
-    private let blurView = UIView().then{
-        $0.backgroundColor = .popupBackgroundColor
-    }
-    
     init(){
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
@@ -48,34 +32,132 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
+    private var willBlockUserIndex: Int?
+    private var sideMenuInsideVC: ChattingSideSheetViewController!
+    private var sideVC: SideMenuNavigationController!
+    
+    private let viewModel = ChattingRoomViewModel()
+    private let blockBottomSheet = MemberDeclarationSheetViewController()
+    private let exitRoomAlert = Alert.ChattingRoomExit.getInstance()
+    
+    private let cameraPickerVC = UIImagePickerController()
+    private let imagePickerVC = UIImagePickerController()
+
+    private let blurView = UIView().then{
+        $0.backgroundColor = .popupBackgroundColor
+    }
+    
     //MARK: - Override
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.requestChattingMembers()
+    }
+    
     override func initialize() {
-        
         super.initialize()
-
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
+        setViewGesture()
+        setHeaderViewAction()
+        setInputViewTarget()
+        setEtcViewTarget()
+        setTableViewDelegate()
+        setPickerViewControllerDelegate()
+        initializeSideViewController()
+        initializeBlockBottomSheet()
+    }
+    
+    private func initializeSideViewController(){
         
+        sideMenuInsideVC = ChattingSideSheetViewController(viewModel: viewModel).then{
+            $0.delegate = self
+        }
+        
+        sideVC = SideMenuNavigationController(rootViewController: sideMenuInsideVC).then{
+            $0.menuWidth = 300 / 390 * Device.width
+            $0.presentationStyle = .menuSlideIn
+            $0.delegate = self
+        }
+    }
+    
+    private func initializeBlockBottomSheet(){
+        let blockGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
+        let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberDeclarationBtnDidClicked))
+        
+        blockBottomSheet.blockBtn.addGestureRecognizer(blockGesture)
+        blockBottomSheet.declarationBtn.addGestureRecognizer(declarationGesture)
+    }
+    
+    private func setPickerViewControllerDelegate(){
+        cameraPickerVC.do{
+            $0.delegate = self
+            $0.sourceType = .camera
+        }
+        imagePickerVC.do{
+            $0.delegate = self
+            $0.sourceType = .photoLibrary
+        }
+    }
+    
+    private func setViewGesture(){
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTapped)))
+    }
+    
+    private func setHeaderViewAction(){
         headerView.etcButton.addTarget(self, action: #selector(sideSheetWillOpen), for: .touchUpInside)
         headerView.opponentNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOthersProfile)))
-        
+    }
+    
+    private func setInputViewTarget(){
         mainView.chatInputView.chatTextField.delegate = self
         mainView.chatInputView.etcBtn.addTarget(self, action: #selector(chatEtcBtnDidClicked), for: .touchUpInside)
         mainView.chatInputView.sendBtn.addTarget(self, action: #selector(chatSendBtnDidClicked), for: .touchUpInside)
-        
+    }
+    
+    private func setEtcViewTarget(){
         mainView.chatEtcBtnView.cameraStackView.button.addTarget(self, action: #selector(cameraBtnDidClicked), for: .touchUpInside)
         mainView.chatEtcBtnView.galleryStackView.button.addTarget(self, action: #selector(galleryBtnDidClicked), for: .touchUpInside)
         mainView.chatEtcBtnView.appointmentStackView.button.addTarget(self, action: #selector(appointmentBtnDidClicked), for: .touchUpInside)
+    }
+    
+    private func setTableViewDelegate(){
+        mainView.tableView.initializeDelegate(self)
+    }
+    
+    override func bind() {
         
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+        let input = ChattingRoomViewModel.Input(
+            messageObservable: mainView.chatInputView.chatTextField.rx.text.orEmpty.asObservable(),
+            sendBtnTap: mainView.chatInputView.sendBtn.rx.tap,
+            exitBtnTap: exitRoomAlert.complete
+        )
+        
+        let output = viewModel.transform(input)
+    
+        output.exitResponse
+            .subscribe{ [weak self] response in
+                switch response {
+                case .success:
+                    self?.navigationController?.popViewController(animated: true)
+                default:
+                    break
+                }
+            }.disposed(by: disposeBag)
+        
+        output.blockResponse
+            .subscribe{ [weak self] response in
+                switch response {
+                case .success:
+                    self?.viewModel.requestChattingMembers()
+                default:
+                    break
+                }
+            }.disposed(by: disposeBag)
     }
     
     //MARK: - Action
     
     @objc func viewDidTapped(){
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     @objc func chatSendBtnDidClicked(){
@@ -84,7 +166,7 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
                                      image: nil,
                                      chatType: .RightMessage)
         
-        messageData.append(newMessage)
+//        messageData.append(newMessage)
         mainView.chatInputView.sendBtn.isEnabled = false
         mainView.chatInputView.chatTextField.text = nil
 
@@ -95,31 +177,19 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         mainView.chatInputView.etcBtn.isSelected.toggle()
         
-        if(mainView.chatInputView.etcBtn.isSelected){
+        if mainView.chatInputView.etcBtn.isSelected {
             mainView.chatBottomFrame.addArrangedSubview(mainView.chatEtcBtnView)
         }else{
             mainView.chatEtcBtnView.removeFromSuperview()
         }
     }
     
-    @objc func cameraBtnDidClicked(){
-        
-        let cameraPicker = UIImagePickerController().then{
-            $0.delegate = self
-            $0.sourceType = .camera
-        }
-
-        self.navigationController?.present(cameraPicker, animated: true, completion: nil)
+    @objc private func cameraBtnDidClicked(){
+        navigationController?.present(cameraPickerVC, animated: true, completion: nil)
     }
     
-    @objc func galleryBtnDidClicked(){
-        
-        let imagePicker = UIImagePickerController().then{
-            $0.delegate = self
-            $0.sourceType = .photoLibrary
-        }
-        
-        self.navigationController?.present(imagePicker, animated: true, completion: nil)
+    @objc private func galleryBtnDidClicked(){
+        navigationController?.present(imagePickerVC, animated: true, completion: nil)
     }
     
     @objc func appointmentBtnDidClicked(){
@@ -127,85 +197,63 @@ class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, Cha
         
         bottomSheet.loadViewIfNeeded()
         
-        self.present(bottomSheet, animated: true, completion: nil)
+        present(bottomSheet, animated: true, completion: nil)
     }
     
     //오른쪽 기타 메뉴 함수
-    @objc func sideSheetWillOpen(){
-        
-        sideMenuViewController = ChattingSideSheetViewController()
-        
-        guard let sideMenu = sideMenuViewController else { return }
-        
-        sideMenu.mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chattingRoomExitBtnDidClicked)))
-        
-        sideMenu.declarationHandler = { indexPath in
-            print(indexPath)
-            
-            sideMenu.dismiss(animated: true, completion: {
-                self.memberBlockBottomSheet = MemberDeclarationSheetViewController()
-                
-                let blockGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberBlockBtnDidClicked))
-                self.memberBlockBottomSheet!.blockBtn.addGestureRecognizer(blockGesture)
-                
-                let declarationGesture = UITapGestureRecognizer(target: self, action: #selector(self.memberDeclarationBtnDidClicked))
-                self.memberBlockBottomSheet!.declarationBtn.addGestureRecognizer(declarationGesture)
-                
-                self.memberBlockBottomSheet!.loadViewIfNeeded()
-                self.present(self.memberBlockBottomSheet!, animated: true, completion: nil)
-            })
-        }
-        
-        let menu = SideMenuNavigationController(rootViewController: sideMenu)
-        
-        let deviceWidth = UIScreen.main.bounds.size.width
-        
-        menu.menuWidth = 300 / 390 * deviceWidth
-        menu.presentationStyle = .menuSlideIn
-        menu.delegate = self
-        
-        present(menu, animated: true, completion: nil)
-
-    }
-    
-    @objc func chattingRoomExitBtnDidClicked(){
-        
-        sideMenuViewController?.dismiss(animated: true, completion: {
-
-            let alert = Alert.ChattingRoomExit.show(in: self)
-            
-            alert.completion = {
-                self.navigationController?.popViewController(animated: true)
-            }
-        })
+    @objc private func sideSheetWillOpen(){
+        present(sideVC, animated: true, completion: nil)
     }
     
     @objc func memberBlockBtnDidClicked(){
-        
-        print("block button click")
-        
-        guard let bottomSheet = memberBlockBottomSheet else { return }
-        
-        let alert = Alert.Block(user: "쑤야").show(in: bottomSheet)
-        
-        alert.completion = {
-            print("차단 완료")
-            bottomSheet.dismiss(animated: true, completion: nil)
+        let alert = Alert.Block(user: "쑤야").show(in: blockBottomSheet)
+        alert.completion = { [weak self] in
+            defer{
+                self?.willBlockUserIndex = nil
+            }
+            self?.processOfMemberBlock()
         }
     }
     
+    private func processOfMemberBlock(){
+        guard let willBlockUserIndex = willBlockUserIndex else { return }
+        viewModel.blockUserIndexSubject.onNext(willBlockUserIndex)
+    }
+    
     @objc func memberDeclarationBtnDidClicked(){
-        
-        print("declaration button click")
-        
-        guard let bottomSheet = memberBlockBottomSheet else { return }
-        
-        //TODO: 신고 팝업 UI 추가 작업 필요
-
+        let alert = DeclarationAlertViewController()
+        alert.targetUserName = "쑤야"
+        alert.complete
+            .subscribe{ [weak self] reason in
+                defer{
+                    self?.willBlockUserIndex = nil
+                }
+                guard let index = self?.willBlockUserIndex else { return }
+                self?.viewModel.declarationUser(index: index, reason: reason)
+            }
+            .disposed(by: disposeBag)
+        blockBottomSheet.dismiss(animated: true)
+        alert.show(in: self)
     }
 
     @objc private func goOthersProfile() {
-        self.navigationController?.pushViewController(OthersProfileViewController(nickName: "쑤야"), animated: true)
+        navigationController?.pushViewController(OthersProfileViewController(nickName: "쑤야"), animated: true)
+    }
+}
+
+extension ChattingRoomViewController: ChattingSideMenuDelegate{
+    
+    func willShowDeclarationBottomSheet(index: Int) {
+        willBlockUserIndex = index
+        sideMenuInsideVC.dismiss(animated: true, completion: {
+            self.blockBottomSheet.show(in: self)
+        })
+    }
+    
+    func willShowExitRoomAlert() {
+        sideVC.dismiss(animated: true, completion: {
+            self.exitRoomAlert.show(in: self)
+        })
     }
 }
 
@@ -218,12 +266,12 @@ extension ChattingRoomViewController: UITextViewDelegate{
 extension ChattingRoomViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageData.count
+        viewModel.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let chatData = messageData[indexPath.row]
+        let chatData = viewModel.messages[indexPath.row]
         
         switch chatData.chatType {
         case .RightMessage:

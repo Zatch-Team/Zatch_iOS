@@ -72,7 +72,7 @@ class ModifyProfileViewController: BaseViewController<CenterNavigationEtcButtonH
         
         output.responseState
             .subscribe(onNext: { [weak self] in
-                if $0 == RequestResponse.success {
+                if $0 == ResponseState.success {
                     self?.viewControllerWillPop()
                 }
             }).disposed(by: disposeBag)

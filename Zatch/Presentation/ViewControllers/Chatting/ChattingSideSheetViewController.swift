@@ -7,12 +7,27 @@
 
 import UIKit
 
-class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDelegate {
+protocol ChattingSideMenuDelegate: AnyObject{
+    func willShowDeclarationBottomSheet(index: Int)
+    func willShowExitRoomAlert()
+}
+
+class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDelegate, DeclarationDelegate {
+
+    weak var delegate: ChattingSideMenuDelegate?
     
-    //MARK: - Properties
-    var declarationHandler: ((IndexPath) -> Void)?
+    private let viewModel: any BlockUserInterface
     
-    let mainView = ChattingSideSheetView()
+    init(viewModel: BlockUserInterface){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let mainView = ChattingSideSheetView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +35,22 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
         layout()
         initialzie()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        mainView.tableView.reloadData()
+    }
 
     private func style(){
         view.backgroundColor = .white
     }
     
     private func initialzie(){
-        mainView.tableView.separatorStyle = .none
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+        setTableViewDelegate()
+        mainView.exitStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exitBtnDidTap)))
+    }
+    
+    private func setTableViewDelegate(){
+        mainView.tableView.initializeDelegate(self)
     }
     
     private func layout(){
@@ -39,38 +61,25 @@ class ChattingSideSheetViewController: UIViewController, UIGestureRecognizerDele
         }
     }
     
-    @objc func declarationBtnDidClicked(_ sender: UIButton){
-        
-        let cell = sender.superview?.superview?.superview as! ChattingMemberTableViewCell
-
-        let index = mainView.tableView.indexPath(for: cell)
-
-        self.declarationHandler!(index!)
+    func willShowDelclarationBottomSheet(index: Int) {
+        delegate?.willShowDeclarationBottomSheet(index: index)
     }
     
+    @objc private func exitBtnDidTap(){
+        delegate?.willShowExitRoomAlert()
+    }
 }
 
 extension ChattingSideSheetViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 3
+        viewModel.chattingmMembers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if(indexPath.row == 0){
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ChattingMemberTableViewCell.cellIdentifier, for: indexPath) as? ChattingMemberTableViewCell else{
-                fatalError()
-            }
-            cell.setMeTag()
-            cell.setCrownImage() // TODO: - 방장 데이터 불러오면 선언 위치 바꾸기
-            return cell
-        }else{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ChattingMemberTableViewCell.cellIdentifier, for: indexPath) as? ChattingMemberTableViewCell else{
-                fatalError()
-            }
-            cell.setDeclarationBtn()
-            cell.declarationBtn.addTarget(self, action: #selector(declarationBtnDidClicked), for: .touchUpInside)
-            return cell
+        tableView.dequeueReusableCell(for: indexPath, cellType: ChattingMemberTableViewCell.self).then{
+            $0.delegate = self
+            $0.bindingData(viewModel.chattingmMembers[indexPath.row])
         }
     }
 }

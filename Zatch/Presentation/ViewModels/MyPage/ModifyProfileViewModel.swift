@@ -31,7 +31,7 @@ class ModifyProfileViewModel: BaseViewModel{
     
     struct Output{
         let nickname: Driver<String> //8자 제한
-        let responseState: Observable<RequestResponse>
+        let responseState: Observable<ResponseState>
     }
     
     func transform(_ input: Input) -> Output{
@@ -77,7 +77,7 @@ class ModifyProfileViewModel: BaseViewModel{
             isRequest.profile ? nicknameResponse : Observable.of(200),
             isRequest.profileImage ? profileImageResponse : Observable.of(200)
         ).map{ profile, profileImage in
-            profile == 200 && profileImage == 200 ? RequestResponse.success : .fail
+            profile == 200 && profileImage == 200 ? ResponseState.success : .fail
         }
 
         return Output(nickname: nicknameBinding,

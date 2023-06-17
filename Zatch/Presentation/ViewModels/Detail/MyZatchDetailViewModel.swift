@@ -17,14 +17,14 @@ class MyZatchDetailViewModel: BaseViewModel {
     }
     
     struct Output{
-        let deleteResponse: Observable<RequestResponse>
+        let deleteResponse: Observable<ResponseState>
     }
     
     func transform(_ input: Input) -> Output {
         //TODO: API 요청
         let deleteResponse = input.deleteBtnTap
             .map{
-                return RequestResponse.success
+                return ResponseState.success
             }.share()
         
         return Output(deleteResponse: deleteResponse)

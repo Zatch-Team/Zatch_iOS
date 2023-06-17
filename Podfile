@@ -33,6 +33,8 @@ target 'Zatch' do
 
   pod 'Cosmos', '~> 23.0' # 별점
 
+  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+
   target 'ZatchTests' do
     inherit! :search_paths
     # Pods for testing
