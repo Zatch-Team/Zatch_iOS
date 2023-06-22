@@ -7,15 +7,17 @@
 
 import UIKit
 import SideMenu
+import SocketIO
 
-enum ChatType{
+enum ChatType: Decodable{
     case RightMessage
     case RightImage
     case LeftMessage
     case LeftImage
 }
 
-struct ChatMessage{
+struct ChatMessage: Decodable{
+    let nickname: String
     let message: String?
     let image: UIImage?
     let chatType: ChatType
@@ -24,11 +26,15 @@ struct ChatMessage{
 
 final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderView, ChattingRoomView> {
 
-    init(){
+    private let viewModel: ChattingRoomViewModel
+    
+    init(room: ChattingRoomResponseModel){
+        self.viewModel = ChattingRoomViewModel()
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
     required init?(coder: NSCoder) {
+        self.viewModel = ChattingRoomViewModel()
         super.init(headerView: ChattingRoomHeaderView(), mainView: ChattingRoomView())
     }
     
@@ -36,7 +42,6 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     private var sideMenuInsideVC: ChattingSideSheetViewController!
     private var sideVC: SideMenuNavigationController!
     
-    private let viewModel = ChattingRoomViewModel()
     private let blockBottomSheet = MemberDeclarationSheetViewController()
     private let exitRoomAlert = Alert.ChattingRoomExit.getInstance()
     
@@ -52,6 +57,10 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.requestChattingMembers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.closeChat()
     }
     
     override func initialize() {
@@ -125,11 +134,24 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
     
     override func bind() {
         
+        viewModel.addMessageSubject
+            .subscribe{ _ in
+                self.mainView.tableView.beginUpdates()
+                self.mainView.tableView.insertRows(at: [[0, self.viewModel.messages.count-1]], with: .none)
+                self.mainView.tableView.endUpdates()
+            }.disposed(by: disposeBag)
+        
         let input = ChattingRoomViewModel.Input(
             messageObservable: mainView.chatInputView.chatTextField.rx.text.orEmpty.asObservable(),
             sendBtnTap: mainView.chatInputView.sendBtn.rx.tap,
             exitBtnTap: exitRoomAlert.complete
         )
+        
+        input.sendBtnTap
+            .subscribe{ _ in
+                self.mainView.chatInputView.sendBtn.isEnabled = false
+                self.mainView.chatInputView.chatTextField.text = nil
+            }.disposed(by: disposeBag)
         
         let output = viewModel.transform(input)
     
@@ -160,17 +182,20 @@ final class ChattingRoomViewController: BaseViewController<ChattingRoomHeaderVie
         view.endEditing(true)
     }
     
-    @objc func chatSendBtnDidClicked(){
-        
-        let newMessage = ChatMessage(message: mainView.chatInputView.chatTextField.text!,
-                                     image: nil,
-                                     chatType: .RightMessage)
-        
-//        messageData.append(newMessage)
-        mainView.chatInputView.sendBtn.isEnabled = false
-        mainView.chatInputView.chatTextField.text = nil
-
-    }
+//    @objc func chatSendBtnDidClicked(){
+//
+//        let newMessage = ChatMessage(nickname: <#String#>,
+//                                     message: mainView.chatInputView.chatTextField.text!,
+//                                     image: nil,
+//                                     chatType: .RightMessage)
+//
+//
+//
+////        messageData.append(newMessage)
+//        mainView.chatInputView.sendBtn.isEnabled = false
+//        mainView.chatInputView.chatTextField.text = nil
+//
+//    }
     
     //채팅 하단 기타 기능 함수
     @objc func chatEtcBtnDidClicked(){
