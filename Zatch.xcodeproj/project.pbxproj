@@ -280,6 +280,11 @@
 		EE2BC3512982B881002B5C60 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BC3502982B881002B5C60 /* MainHeaderView.swift */; };
 		EE33D21C2993BF710020866E /* LettersAndArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33D21B2993BF710020866E /* LettersAndArrowView.swift */; };
 		EE33D21E2993E1120020866E /* ZatchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33D21D2993E1120020866E /* ZatchComponent.swift */; };
+		EE3828032A43FCDD003042E6 /* GenerateChattingRoomUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3828022A43FCDD003042E6 /* GenerateChattingRoomUseCase.swift */; };
+		EE3828052A43FD0B003042E6 /* GetOpenedChattingRoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3828042A43FD0B003042E6 /* GetOpenedChattingRoomsUseCase.swift */; };
+		EE3828072A43FE77003042E6 /* ChattingRoomResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3828062A43FE77003042E6 /* ChattingRoomResponseModel.swift */; };
+		EE3828092A4403A9003042E6 /* ChattingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3828082A4403A9003042E6 /* ChattingListViewModel.swift */; };
+		EE38280D2A4406D8003042E6 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38280C2A4406D8003042E6 /* SocketIOManager.swift */; };
 		EE410191298541010083B7E0 /* MyZatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE410190298541010083B7E0 /* MyZatchView.swift */; };
 		EE41019329854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */; };
 		EE41019529854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */; };
@@ -723,6 +728,11 @@
 		EE2BC3502982B881002B5C60 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		EE33D21B2993BF710020866E /* LettersAndArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersAndArrowView.swift; sourceTree = "<group>"; };
 		EE33D21D2993E1120020866E /* ZatchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatchComponent.swift; sourceTree = "<group>"; };
+		EE3828022A43FCDD003042E6 /* GenerateChattingRoomUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateChattingRoomUseCase.swift; sourceTree = "<group>"; };
+		EE3828042A43FD0B003042E6 /* GetOpenedChattingRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOpenedChattingRoomsUseCase.swift; sourceTree = "<group>"; };
+		EE3828062A43FE77003042E6 /* ChattingRoomResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomResponseModel.swift; sourceTree = "<group>"; };
+		EE3828082A4403A9003042E6 /* ChattingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewModel.swift; sourceTree = "<group>"; };
+		EE38280C2A4406D8003042E6 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		EE410190298541010083B7E0 /* MyZatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZatchView.swift; sourceTree = "<group>"; };
 		EE41019229854DED0083B7E0 /* LeftNavigationTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationTitleHeaderView.swift; sourceTree = "<group>"; };
 		EE41019429854EE60083B7E0 /* LeftNavigationEtcButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationEtcButtonHeaderView.swift; sourceTree = "<group>"; };
@@ -1396,11 +1406,13 @@
 		5722461928C6C84D009B7C78 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				EE38280C2A4406D8003042E6 /* SocketIOManager.swift */,
 				5722461C28C6C8CA009B7C78 /* SearchAddressViewModel.swift */,
 				5722462C28C77FE1009B7C78 /* SearchAddressResusltViewModel.swift */,
 				57D6D79A28CDBD6600F805B7 /* MakeMeetingSheetViewModel.swift */,
 				57D6D79C28CDBD7A00F805B7 /* ModifyMeetingSheetViewModel.swift */,
 				EEE0F2CC2A1C59EA006C0D25 /* ChattingRoomViewModel.swift */,
+				EE3828082A4403A9003042E6 /* ChattingListViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1882,6 +1894,7 @@
 			children = (
 				576B375528D6FAFE00EF36E6 /* MeetingLoactionResponseModel.swift */,
 				EE47A89E2A246C7500FAAC06 /* ChattingMemberResponseDTO.swift */,
+				EE3828062A43FE77003042E6 /* ChattingRoomResponseModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -2423,6 +2436,8 @@
 				EE46CFF02A1E11770055E30B /* GetMemberListOfChattingUseCase.swift */,
 				EE46CFF22A1E118F0055E30B /* GetChattingRoomListUseCase.swift */,
 				EE46CFF42A1E119F0055E30B /* ExitChattingRoomUseCase.swift */,
+				EE3828022A43FCDD003042E6 /* GenerateChattingRoomUseCase.swift */,
+				EE3828042A43FD0B003042E6 /* GetOpenedChattingRoomsUseCase.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -2815,6 +2830,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3828092A4403A9003042E6 /* ChattingListViewModel.swift in Sources */,
 				EE0AD54529E4FCF600C1CDA1 /* RegisterFirstInfoTestViewModel.swift in Sources */,
 				EE813FFD29C585400091F16E /* UserRepository.swift in Sources */,
 				EE541C1F29B44F1200DD0F20 /* StatusResponseModel.swift in Sources */,
@@ -2937,6 +2953,7 @@
 				EE4D888B29D013CC003B6383 /* Map.swift in Sources */,
 				EE4D888329D00102003B6383 /* GetTownLocationUseCase.swift in Sources */,
 				5722461D28C6C8CA009B7C78 /* SearchAddressViewModel.swift in Sources */,
+				EE3828032A43FCDD003042E6 /* GenerateChattingRoomUseCase.swift in Sources */,
 				EE4D888529D0010F003B6383 /* GetMeetingLocationUseCase.swift in Sources */,
 				57468A76289D077200056691 /* PurpleButton.swift in Sources */,
 				5722460628BCCFE8009B7C78 /* Const.swift in Sources */,
@@ -2980,6 +2997,7 @@
 				EE5CEEC42A38992D00E1907E /* DeclarationUseCase.swift in Sources */,
 				576B376A28D846CB00EF36E6 /* SettingBorderLineTableViewCell.swift in Sources */,
 				EE9B053529953A1200068503 /* FilterView.swift in Sources */,
+				EE3828052A43FD0B003042E6 /* GetOpenedChattingRoomsUseCase.swift in Sources */,
 				57FFEDC128DD28090041719B /* CheckShareRegisterInfoView.swift in Sources */,
 				23A86A5928C7321C00B073CB /* BannerTableViewCell.swift in Sources */,
 				571DADC2297BA41B0079CCD3 /* BaseHeaderView.swift in Sources */,
@@ -3122,6 +3140,7 @@
 				EE0AD54B29E5AAEA00C1CDA1 /* RegisterDelegate.swift in Sources */,
 				57D6D7A328CDC32200F805B7 /* PlaceSearchRepsonseModel.swift in Sources */,
 				57F68BAA29652ED300DB1471 /* DetailEtcBottomSheetView.swift in Sources */,
+				EE38280D2A4406D8003042E6 /* SocketIOManager.swift in Sources */,
 				EE7B76C129C5E36D00942798 /* ZatchRepositoryInterface.swift in Sources */,
 				57468A8E289FEF1800056691 /* SearchWantRegisterZatchSheetViewController.swift in Sources */,
 				EEE6D15E299757EF0004FC7B /* Padding.swift in Sources */,
@@ -3167,6 +3186,7 @@
 				EE661A43299D0DF7002904A7 /* CenterAlignCollectionViewFlowLayout.swift in Sources */,
 				23B051B928E1FDCC005D08EA /* NotificationView.swift in Sources */,
 				EE813FDE29C445B30091F16E /* FilledTag.swift in Sources */,
+				EE3828072A43FE77003042E6 /* ChattingRoomResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
