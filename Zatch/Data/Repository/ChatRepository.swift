@@ -9,6 +9,37 @@ import Foundation
 import RxSwift
 
 final class ChatRepository: ChatRepositoryInterface {
+    
+    func generateChattingRoom(requestModel: GenerateChattingRoomRequestModel) -> Observable<ChattingRoomResponseModel?> {
+        let observable = Observable<ChattingRoomResponseModel?>.create { observer -> Disposable in
+            let requestReference: () = ChatService.shared.generateChattingRoom(requestModel: requestModel){ response in
+                switch response {
+                case .success(let data):
+                    observer.onNext(data.data)
+                case .failure:
+                    observer.onNext(nil)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
+    }
+    
+    func getOpenedChattingRooms() -> Observable<[ChattingRoomResponseModel]?> {
+        let observable = Observable<[ChattingRoomResponseModel]?>.create { observer -> Disposable in
+            let requestReference: () = ChatService.shared.getOpenedChatRooms { response in
+                switch response {
+                case .success(let data):
+                    observer.onNext(data.data)
+                case .failure:
+                    observer.onNext(nil)
+                }
+            }
+            return Disposables.create(with: { requestReference })
+        }
+        return observable
+    }
+    
 
     func getChattingRooms() -> Observable<[String]?> {
         let observable = Observable<[String]?>.create { observer -> Disposable in

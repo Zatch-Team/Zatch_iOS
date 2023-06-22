@@ -14,6 +14,18 @@ public class ChatService {
     
     private init() { }
     
+    func generateChattingRoom(requestModel: GenerateChattingRoomRequestModel, completion: @escaping (Result<BaseResponseModel<ChattingRoomResponseModel>, Error>) -> Void){
+        provider.requestDecoded(ChatRouter.generateRoom(requestModel: requestModel)){ response in
+            completion(response)
+        }
+    }
+    
+    func getOpenedChatRooms(completion: @escaping (Result<BaseResponseModel<[ChattingRoomResponseModel]>, Error>) -> Void){
+        provider.requestDecoded(ChatRouter.openRooms){ response in
+            completion(response)
+        }
+    }
+    
     func getChattingRoomMemberList(roomId: String, completion: @escaping (Result<[ChattingMemberResponseDTO], Error>) -> Void){
         provider.requestDecoded(ChatRouter.getChattingMembers(roomId: roomId)){ response in
             completion(response)
