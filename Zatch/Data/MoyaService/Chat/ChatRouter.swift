@@ -9,6 +9,8 @@ import Foundation
 import Moya
 
 enum ChatRouter: BaseRouter{
+    case openRooms
+    case generateRoom(requestModel: GenerateChattingRoomRequestModel)
     case getRooms
     case getChattingMembers(roomId: String)
     case exitRoom(roomId: String)
@@ -20,6 +22,8 @@ extension ChatRouter{
 
     var path: String {
         switch self {
+        case .openRooms:                            return HTTPMethodURL.GET.openChatRoom
+        case .generateRoom:                         return HTTPMethodURL.POST.generateChatRoom
         case .getRooms:                             return HTTPMethodURL.GET.existChattingRoom + userIdPath
         case .getChattingMembers(let roomId):       return HTTPMethodURL.GET.chattingRoomMemebers + userIdPath + "/\(roomId)" + "/profile"
         case .exitRoom(let roomId):                 return HTTPMethodURL.GET.exitChattingRoom + userIdPath + "/\(roomId)"
@@ -30,22 +34,17 @@ extension ChatRouter{
     
     var method: Moya.Method {
         switch self {
-        case .getRooms:
-            return .get
-        case .getChattingMembers:
-            return .get
-        case .exitRoom:
-            return .get
-        case .blockUser, .declarationUser:
-            return .post
+        case .openRooms, .getRooms, .getChattingMembers, .exitRoom:     return .get
+        case .blockUser, .declarationUser, .generateRoom:                              return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .blockUser(let requestModel):      return .requestJSONEncodable(requestModel)
-        case .declarationUser(let requestModel):      return .requestJSONEncodable(requestModel)
-        default:                                return .requestPlain
+        case .generateRoom(let name):                   return .requestJSONEncodable(name)
+        case .blockUser(let requestModel):              return .requestJSONEncodable(requestModel)
+        case .declarationUser(let requestModel):        return .requestJSONEncodable(requestModel)
+        default:                                        return .requestPlain
         }
     }
 }

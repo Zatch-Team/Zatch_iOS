@@ -28,12 +28,15 @@ enum HTTPMethodURL {
         static let block = blockUrl + "/list"
         
         //CHAT
+        static let openChatRoom = chatUrl
         static let existChattingRoom = chatUrl + "/chat_list"
         static let chattingRoomMemebers = chatUrl
         static let exitChattingRoom = chatUrl + "/chat_out" //TODO: 서버 문의 필요
+        static let afterDeal = chatUrl + "/after_deal"
         
         //SEARCH
         static let popularKeywords = zatchUrl + searchUrl + "/popularItem"
+        
     }
     
     struct POST {
@@ -44,6 +47,9 @@ enum HTTPMethodURL {
         static let zatch = zatchUrl
         static let block = blockUrl
         static let report = reportUrl
+        
+        //CHAT
+        static let generateChatRoom = chatUrl
     }
     
     struct PATCH {
